@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latest Promo Codes - BLOXBURST</title>
+
+  <link rel="icon" type="image/png" href="Images/FinalLogo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { overflow-x: hidden; }
+    img  { max-width: 100%; height: auto; display: block; }
+
+    /* ============================================================
+       GRIDS
+       ============================================================ */
+    .promo-codes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1100px) { .promo-codes-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .promo-codes-grid { grid-template-columns: 1fr; } }
+
+    .game-promo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 600px) { .game-promo-grid { grid-template-columns: 1fr; } }
+
+    /* ============================================================
+       ENHANCED PROMO CARD
+       ============================================================ */
+    .promo-card-wrap {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(145deg, rgba(21,26,77,0.9), rgba(28,34,102,0.8));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 16px;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promo-card-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #7d5cff, #00ff88);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .promo-card-wrap:hover {
+      transform: translateY(-6px);
+      border-color: rgba(125,92,255,0.45);
+      box-shadow:
+        0 0 0 1px rgba(125,92,255,0.25),
+        0 0 24px rgba(125,92,255,0.15),
+        0 18px 45px rgba(0,0,0,0.45);
+    }
+
+    .promo-card-wrap:hover::before { opacity: 1; }
+
+    .promo-card-title {
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .promo-img-box {
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .promo-card-wrap:hover .promo-img-box {
+      border-color: rgba(125,92,255,0.3);
+    }
+
+    .promo-img {
+      max-width: 75%;
+      max-height: 75%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .promo-card-wrap:hover .promo-img { transform: scale(1.06); }
+
+    .promo-pill {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 5px 10px;
+      border-radius: 10px;
+      background: rgba(125,92,255,0.35);
+      border: 1px solid rgba(125,92,255,0.5);
+      color: #ffffff;
+    }
+
+    /* Active badge */
+    .active-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(0,255,136,0.18);
+      border: 1px solid rgba(0,255,136,0.4);
+      color: #00ff88;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .active-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00ff88;
+      box-shadow: 0 0 6px #00ff88;
+      animation: pulse-dot 1.5s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.75); }
+    }
+
+    /* Code card area */
+    .code-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    /* ============================================================
+       ENHANCED COPY BUTTON
+       ============================================================ */
+    .copy-btn {
+      width: 100%;
+      word-break: break-all;
+      text-align: center;
+      background: rgba(125,92,255,0.22);
+      border: 1px solid rgba(125,92,255,0.45);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: rgba(125,92,255,0.38);
+      border-color: rgba(125,92,255,0.7);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(125,92,255,0.3);
+    }
+
+    .copy-btn:active { transform: scale(0.97); }
+
+    .copy-btn.copied {
+      background: rgba(0,255,136,0.2) !important;
+      border-color: rgba(0,255,136,0.5) !important;
+      color: #00ff88 !important;
+      box-shadow: 0 0 18px rgba(0,255,136,0.25) !important;
+    }
+
+    .copy-btn::after {
+      content: '';
+      position: absolute;
+      top: -60%; left: -40%;
+      width: 40%; height: 220%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: rotate(18deg);
+      opacity: 0;
+      transition: none;
+    }
+    .copy-btn:hover::after {
+      opacity: 1;
+      animation: btnShine 0.6s ease forwards;
+    }
+    @keyframes btnShine {
+      0%   { left: -40%; }
+      100% { left: 140%; }
+    }
+
+    .redeem-link {
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      padding: 6px;
+      border-radius: 8px;
+      transition: 0.2s ease;
+    }
+    .redeem-link:hover { color: #00ff88; }
+
+    /* ============================================================
+       HOW TO REDEEM SECTION
+       ============================================================ */
+    .how-to-redeem {
+      width: 100%;
+      margin: 40px 0 10px;
+      padding: 32px 36px;
+      background: linear-gradient(135deg, rgba(21,26,77,0.85), rgba(28,34,102,0.75));
+      border: 1px solid rgba(125,92,255,0.2);
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .how-to-redeem h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .how-to-redeem .section-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .redeem-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .redeem-step {
+      text-align: center;
+      padding: 20px 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      position: relative;
+      transition: 0.25s ease;
+    }
+
+    .redeem-step:hover {
+      background: rgba(125,92,255,0.1);
+      border-color: rgba(125,92,255,0.3);
+      transform: translateY(-3px);
+    }
+
+    .step-num {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: rgba(125,92,255,0.8);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .step-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+
+    .redeem-step h3 {
+      font-size: 14px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .redeem-step p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    .redeem-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .redeem-cta a {
+      text-decoration: none;
+      font-weight: 900;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(125,92,255,0.85), rgba(0,255,136,0.75));
+      color: #ffffff;
+      font-size: 14px;
+      transition: 0.2s ease;
+      box-shadow: 0 8px 22px rgba(125,92,255,0.3);
+    }
+
+    .redeem-cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(125,92,255,0.45);
+    }
+
+    /* ============================================================
+       CODE CHECKLIST SECTION
+       ============================================================ */
+    .checklist-section {
+      width: 100%;
+      margin: 16px 0;
+      padding: 28px 32px;
+      background: rgba(21,26,77,0.7);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .checklist-section h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .checklist-section .section-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      user-select: none;
+    }
+
+    .checklist-item:hover {
+      background: rgba(0,255,136,0.06);
+      border-color: rgba(0,255,136,0.2);
+    }
+
+    .checklist-item.checked {
+      background: rgba(0,255,136,0.1);
+      border-color: rgba(0,255,136,0.35);
+    }
+
+    .check-box {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 13px;
+      transition: 0.2s ease;
+      margin-top: 1px;
+    }
+
+    .checklist-item.checked .check-box {
+      background: #00ff88;
+      border-color: #00ff88;
+      color: #002b1f;
+    }
+
+    .check-text h4 {
+      font-size: 13px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .check-text p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    .checklist-item.checked .check-text h4 {
+      text-decoration: line-through;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .checklist-progress {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .progress-bar-wrap {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7d5cff, #00ff88);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+
+    .progress-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.65);
+      white-space: nowrap;
+    }
+
+    /* ============================================================
+       HEADER — CSS Grid
+       ============================================================ */
+    body.subpage .main-header {
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center !important;
+      gap: 16px !important;
+      min-height: unset !important;
+      padding: 12px 30px !important;
+      width: min(1400px, 92%) !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+    }
+
+    body.subpage .main-header > a.logo {
+      justify-self: start !important;
+      align-self: center !important;
+    }
+
+    body.subpage .main-header .logo-img,
+    body.subpage .main-header .logo img {
+      position: static !important;
+      top: auto !important;
+      left: auto !important;
+      height: 150px !important;
+      width: auto !important;
+      max-width: 240px !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    body.subpage .main-header .header-search {
+      position: static !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+      justify-self: center !important;
+      width: 380px !important;
+      max-width: 380px !important;
+      min-width: 180px !important;
+      flex: none !important;
+    }
+
+    body.subpage .main-header .header-search .search-shell {
+      width: 100% !important;
+      height: 46px !important;
+      padding: 0 18px !important;
+      box-sizing: border-box !important;
+    }
+
+    body.subpage .main-header .header-search .search-shell input { font-size: 15px !important; }
+
+    body.subpage .header-actions {
+      position: static !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      justify-self: end !important;
+      flex-shrink: 0 !important;
+    }
+
+    body.subpage .header-actions .nav-dropdown {
+      width: 100px !important;
+      min-width: 100px !important;
+      display: block !important;
+    }
+
+    body.subpage .header-actions .mini-btn,
+    body.subpage .header-actions .nav-dropdown #codesBtn {
+      width: 100px !important;
+      min-width: 100px !important;
+      max-width: 100px !important;
+      height: 42px !important;
+      padding: 0 !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+      white-space: nowrap !important;
+    }
+
+    .update-floating {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      gap: 4px !important;
+      font-size: 15px !important;
+      padding: 16px 22px !important;
+    }
+    .update-floating .update-date { display: block !important; margin-top: 2px !important; }
+
+    body.subpage .sub-main { padding-top: 32px !important; padding-bottom: 40px !important; }
+
+    /* ============================================================
+       TABLET ≤ 900px
+       ============================================================ */
+    @media (max-width: 900px) {
+      body.subpage .main-header {
+        grid-template-columns: auto 1fr auto !important;
+        gap: 12px !important;
+        padding: 12px 18px !important;
+      }
+      body.subpage .main-header .logo-img,
+      body.subpage .main-header .logo img { height: 90px !important; }
+      body.subpage .main-header .header-search { width: 100% !important; max-width: 100% !important; }
+
+      .redeem-steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .checklist-grid    { grid-template-columns: 1fr !important; }
+    }
+
+    /* ============================================================
+       MOBILE ≤ 600px
+       ============================================================ */
+    @media (max-width: 600px) {
+      html { font-size: 13px; }
+
+      body.subpage .main-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 10px 14px !important;
+        width: 100% !important;
+      }
+
+      body.subpage .main-header > a.logo { display: flex !important; justify-content: center !important; }
+
+      body.subpage .main-header .logo-img,
+      body.subpage .main-header .logo img { height: 60px !important; max-width: 150px !important; }
+
+      body.subpage .main-header .header-search {
+        width: 85% !important; max-width: 280px !important; min-width: 0 !important;
+      }
+      body.subpage .main-header .header-search .search-shell { height: 36px !important; padding: 0 12px !important; }
+      body.subpage .main-header .header-search .search-shell input { font-size: 13px !important; }
+
+      /* ✅ FIX: header-actions — pantay na ang Codes at Wiki */
+      body.subpage .header-actions {
+        width: 85% !important;
+        max-width: 280px !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        display: flex !important;
+        align-items: stretch !important;
+      }
+
+      /* ✅ FIX: nav-dropdown same flex as mini-btn */
+      body.subpage .header-actions .nav-dropdown {
+        flex: 1 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      /* ✅ FIX: codesBtn fills the dropdown container */
+      body.subpage .header-actions .nav-dropdown #codesBtn {
+        flex: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: 34px !important;
+        font-size: 13px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+      }
+
+      /* ✅ FIX: Wiki button same size */
+      body.subpage .header-actions .mini-btn {
+        flex: 1 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: 34px !important;
+        font-size: 13px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+      }
+
+      .sub-main    { padding: 10px 14px 14px !important; width: 100% !important; }
+      .sub-content { width: 100% !important; padding: 0 !important; }
+      .sub-title   { font-size: 17px !important; margin-top: 6px !important; }
+
+      .update-floating {
+        width: 82% !important; font-size: 11px !important;
+        padding: 7px 10px !important; margin: 8px auto !important;
+      }
+
+      .legal-card  { padding: 10px !important; border-radius: 10px !important; margin-bottom: 10px !important; }
+      .legal-card h2 { font-size: 13px !important; }
+
+      .promo-card-wrap { padding: 10px !important; border-radius: 14px !important; }
+      .promo-img-box   { height: 110px !important; }
+      .promo-pill      { font-size: 9px !important; padding: 3px 6px !important; }
+      .copy-btn        { font-size: 11px !important; padding: 8px 10px !important; }
+      .redeem-link     { font-size: 10px !important; }
+      .code-note       { font-size: 10px !important; padding: 6px 8px !important; }
+
+      .how-to-redeem { padding: 20px 16px !important; margin: 24px 0 10px !important; }
+      .how-to-redeem h2 { font-size: 18px !important; }
+      .redeem-steps-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+      .redeem-step { padding: 14px 10px !important; border-radius: 12px !important; }
+      .step-num    { font-size: 22px !important; }
+      .step-icon   { font-size: 20px !important; margin-bottom: 6px !important; }
+      .redeem-step h3 { font-size: 12px !important; }
+      .redeem-step p  { font-size: 10px !important; }
+
+      .checklist-section { padding: 18px 14px !important; }
+      .checklist-section h2 { font-size: 18px !important; }
+      .checklist-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+      .checklist-item { padding: 10px 12px !important; }
+      .check-text h4  { font-size: 12px !important; }
+      .check-text p   { font-size: 10px !important; }
+
+      .wiki-card    { padding: 8px !important; min-height: unset !important; }
+      .wiki-card h3 { font-size: 11px !important; }
+      .wiki-card p  { font-size: 10px !important; }
+      .game-promo-img { height: 80px !important; }
+
+      .promo-discovery { width: 100% !important; padding: 0 14px !important; }
+      .promo-discovery .more-grid { grid-template-columns: 1fr !important; gap: 6px !important; }
+      .more-card    { padding: 7px 8px !important; gap: 8px !important; }
+      .more-card img { width: 54px !important; height: 36px !important; }
+      .more-title   { font-size: 14px !important; }
+
+      .wiki-faq     { padding: 0 14px !important; }
+      .wiki-faq h2  { font-size: 14px !important; }
+      .faq-question { font-size: 11px !important; padding: 10px 12px !important; }
+      .faq-answer   { font-size: 10px !important; }
+
+      .promo-helper { padding: 12px 10px !important; margin: 12px 0 !important; }
+      .promo-helper h2 { font-size: 14px !important; }
+      .promo-helper p  { font-size: 11px !important; }
+      .promo-helper-btn { width: 100% !important; font-size: 11px !important; }
+
+      .site-footer  { margin-top: 18px !important; padding: 18px 0 12px !important; }
+      .footer-inner { grid-template-columns: 1fr !important; gap: 14px !important; width: 85% !important; }
+      .footer-logo  { font-size: 20px !important; }
+      .footer-desc  { font-size: 11px !important; }
+      .footer-col h4 { font-size: 12px !important; }
+      .footer-col a  { font-size: 11px !important; }
+      .footer-meta,
+      .footer-copy  { font-size: 10px !important; }
+    }
+  </style>
+</head>
+
+<body class="subpage">
+
+<header class="main-header">
+  <a href="https://www.bloxburst.com/" class="logo">
+    <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
+  </a>
+  <div class="header-search">
+    <div class="search-shell">
+      <input id="globalSearch" type="text" placeholder="🔍 Search Roblox Code" autocomplete="off">
+      <button class="clear-btn" type="button" onclick="clearGlobalSearch()">✕</button>
+      <div id="searchSuggestions" class="suggestions"></div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <div id="codesDropdown" class="nav-dropdown">
+      <a href="gamecode.html" id="codesBtn" class="mini-btn">Codes</a>
+      <div class="nav-menu">
+        <a class="nav-item" href="gamecode.html">Game Codes</a>
+        <a class="nav-item" href="promo-latest-codes.html">Promo Codes</a>
+      </div>
+    </div>
+    <a href="wiki.html" class="mini-btn">Wiki</a>
+  </div>
+</header>
+
+<main class="sub-main">
+  <h1 class="sub-title">Latest Promo Codes</h1>
+
+  <div class="update-floating">
+    <span>🎟️ <strong>Updated promo codes list</strong></span>
+    <span class="update-date">Updated: Feb 22, 2026</span>
+  </div>
+
+  <section class="sub-content" style="width:100%;">
+    <div class="legal-card" style="width:100%;">
+      <h2 style="font-family:'Fredoka',sans-serif; margin-bottom:18px;">Roblox Promo Codes:</h2>
+
+      <div class="promo-codes-grid">
+
+        <div class="promo-card-wrap">
+          <div class="promo-card-title">The Bird Says_____.</div>
+          <div class="promo-img-box">
+            <div class="active-badge"><span class="active-dot"></span>Active</div>
+            <img src="Images/TweetBird.png" alt="The Bird Says" class="promo-img">
+            <div class="promo-pill">Shoulder Accessories</div>
+          </div>
+          <div class="code-card" data-code="TWEETROBLOX">
+            <button class="copy-btn" onclick="copyCode(this, 'TWEETROBLOX')">TWEETROBLOX</button>
+            <a href="https://www.roblox.com/redeem" target="_blank" class="redeem-link">↗ Redeem on Roblox</a>
+          </div>
+        </div>
+
+        <div class="promo-card-wrap">
+          <div class="promo-card-title">Spider Cola</div>
+          <div class="promo-img-box">
+            <div class="active-badge"><span class="active-dot"></span>Active</div>
+            <img src="Images/SPider Cola.png" alt="Spider Cola" class="promo-img">
+            <div class="promo-pill">Shoulder Accessories</div>
+          </div>
+          <div class="code-card" data-code="SPIDERCOLA">
+            <button class="copy-btn" onclick="copyCode(this, 'SPIDERCOLA')">SPIDERCOLA</button>
+            <a href="https://www.roblox.com/redeem" target="_blank" class="redeem-link">↗ Redeem on Roblox</a>
+          </div>
+        </div>
+
+        <div class="promo-card-wrap">
+          <div class="promo-card-title">Nguyễn Boi</div>
+          <div class="promo-img-box">
+            <div class="active-badge"><span class="active-dot"></span>Active</div>
+            <img src="Images/Nguyen Boi.png" alt="Nguyen Boi" class="promo-img">
+            <div class="promo-pill">Bundle</div>
+          </div>
+          <div class="code-card" data-code="FREEENGNBOI">
+            <button class="copy-btn" onclick="copyCode(this, 'FREEENGNBOI')">FREEENGNBOI</button>
+            <a href="https://www.roblox.com/redeem" target="_blank" class="redeem-link">↗ Redeem on Roblox</a>
+          </div>
+        </div>
+
+        <div class="promo-card-wrap">
+          <div class="promo-card-title">Nguyễn Gơn</div>
+          <div class="promo-img-box">
+            <div class="active-badge"><span class="active-dot"></span>Active</div>
+            <img src="Images/Nguyen Gon.png" alt="Nguyen Gon" class="promo-img">
+            <div class="promo-pill">Bundle</div>
+          </div>
+          <div class="code-card" data-code="FREEENGNGON">
+            <button class="copy-btn" onclick="copyCode(this, 'FREEENGNGON')">FREEENGNGON</button>
+            <a href="https://www.roblox.com/redeem" target="_blank" class="redeem-link">↗ Redeem on Roblox</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="code-note" style="margin-top:18px;">
+        💡 Tip: Click any code button to copy instantly, then paste it on Roblox's redeem page.
+      </div>
+    </div>
+
+    <!-- Game Specific Promo Codes -->
+    <div class="legal-card" style="width:100%; margin-top:24px;">
+      <h2 style="font-family:'Fredoka',sans-serif; margin-bottom:18px;">Game Specific Promo Codes:</h2>
+      <div class="game-promo-grid">
+        <a class="wiki-card game-promo-card" href="roblox/Island-of-Move.html">
+          <div class="game-promo-img">
+            <img src="Images/Island of Move Codes.webp" alt="Island of Move">
+          </div>
+          <div class="wiki-card-top">
+            <span class="wiki-tag">EVENT</span>
+            <span class="wiki-date">Codes</span>
+          </div>
+          <h3>Island of Move Codes</h3>
+          <p>Promo rewards inside the experience.</p>
+          <span class="wiki-read">Open ➜</span>
+        </a>
+        <a class="wiki-card game-promo-card" href="roblox/Mansion-of-Wonder.html">
+          <div class="game-promo-img">
+            <img src="Images/Mansion of Wonder.webp" alt="Mansion of Wonder">
+          </div>
+          <div class="wiki-card-top">
+            <span class="wiki-tag">EVENT</span>
+            <span class="wiki-date">Codes</span>
+          </div>
+          <h3>Mansion of Wonder Codes</h3>
+          <p>Special items from the Roblox event map.</p>
+          <span class="wiki-read">Open ➜</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO REDEEM SECTION -->
+  <section class="how-to-redeem">
+    <h2>🎯 How To Redeem Promo Codes</h2>
+    <p class="section-sub">Follow these 4 simple steps to claim your free items</p>
+    <div class="redeem-steps-grid">
+      <div class="redeem-step">
+        <div class="step-num">01</div>
+        <span class="step-icon">📋</span>
+        <h3>Copy the Code</h3>
+        <p>Click any code button above to instantly copy it to your clipboard.</p>
+      </div>
+      <div class="redeem-step">
+        <div class="step-num">02</div>
+        <span class="step-icon">🌐</span>
+        <h3>Open Roblox</h3>
+        <p>Go to roblox.com/redeem or open the Roblox app on your device.</p>
+      </div>
+      <div class="redeem-step">
+        <div class="step-num">03</div>
+        <span class="step-icon">⌨️</span>
+        <h3>Enter &amp; Submit</h3>
+        <p>Paste the code exactly as copied. Codes are case-sensitive!</p>
+      </div>
+      <div class="redeem-step">
+        <div class="step-num">04</div>
+        <span class="step-icon">🎁</span>
+        <h3>Claim Reward</h3>
+        <p>Your item will appear in your Roblox inventory within minutes.</p>
+      </div>
+    </div>
+    <div class="redeem-cta">
+      <a href="https://www.roblox.com/redeem" target="_blank">🚀 Go to Roblox Redeem Page</a>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CHECKLIST -->
+  <section class="checklist-section">
+    <h2>✅ Before You Redeem — Quick Checklist</h2>
+    <p class="section-sub">Tick everything off to make sure your code works!</p>
+    <div class="checklist-grid">
+      <div class="checklist-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <h4>I copied the code exactly</h4>
+          <p>No extra spaces, correct capitalization</p>
+        </div>
+      </div>
+      <div class="checklist-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <h4>I'm logged into my Roblox account</h4>
+          <p>Must be logged in to redeem any code</p>
+        </div>
+      </div>
+      <div class="checklist-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <h4>I haven't used this code before</h4>
+          <p>Most promo codes are one-time use per account</p>
+        </div>
+      </div>
+      <div class="checklist-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <h4>Code is still marked as Active</h4>
+          <p>Check the green Active badge on the card above</p>
+        </div>
+      </div>
+      <div class="checklist-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <h4>I'm on the correct redeem page</h4>
+          <p>Use roblox.com/redeem — not the in-game menu</p>
+        </div>
+      </div>
+      <div class="checklist-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          <h4>I checked my Roblox inventory after</h4>
+          <p>Items appear in Avatar → Wardrobe section</p>
+        </div>
+      </div>
+    </div>
+    <div class="checklist-progress">
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="checkProgress"></div>
+      </div>
+      <span class="progress-label" id="checkLabel">0 / 6 done</span>
+    </div>
+  </section>
+
+  <section class="promo-discovery">
+    <section class="more-section">
+      <h2 class="more-title">Suggestion</h2>
+      <div id="suggestGrid" class="more-grid"></div>
+    </section>
+    <section class="more-section">
+      <h2 class="more-title">More from BLOXBURST</h2>
+      <div id="moreFromGrid" class="more-grid"></div>
+    </section>
+  </section>
+
+  <!-- ✅ FIXED: wiki-faq INSIDE main -->
+  <div class="wiki-faq">
+    <h2>Quick FAQ</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question" type="button">How often do codes expire? <span>+</span></button>
+        <div class="faq-answer">Some codes expire within hours or days, others last longer—developers can disable them anytime.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">Can I redeem codes twice? <span>+</span></button>
+        <div class="faq-answer">Usually no. Most codes are one-time use per account. If it says 'Already Redeemed,' it means you've already claimed it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">Why do some codes not work? <span>+</span></button>
+        <div class="faq-answer">Common reasons: expired, wrong spelling/case, already redeemed, or may group/level/server requirement.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ FIXED: promo-helper INSIDE main + CENTERED -->
+  <section class="promo-helper" style="text-align:center;">
+    <h2>Promo Helper</h2>
+    <p>Copy the code, redeem on Roblox, then refresh this page for the latest updated list. We update promo codes regularly.</p>
+    <div class="promo-helper-meta" style="justify-content:center;">
+      <span>🕒 Last updated: <strong>Feb 22, 2026</strong></span>
+      <span>✅ Status: <strong>Verified List</strong></span>
+    </div>
+    <div class="promo-helper-actions" style="justify-content:center;">
+      <a class="promo-helper-btn primary" href="https://www.roblox.com/redeem" target="_blank">Open Roblox Redeem</a>
+      <a class="promo-helper-btn" href="promo-troubleshoot.html">Fix Promo Issues</a>
+      <a class="promo-helper-btn" href="promo-how-to-redeem.html">How to Redeem</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-left">
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">
+        BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="gamecode.html">Game Codes</a>
+      <a href="promo-latest-codes.html">Promo Codes</a>
+      <a href="wiki.html">Wiki</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="Terms-and-Condition/about.html">About Us</a>
+      <a href="Terms-and-Condition/faq.html">FAQ</a>
+      <a href="Terms-and-Condition/contactus.html">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="Terms-and-Condition/terms.html">Terms of Use</a>
+      <a href="Terms-and-Condition/privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+    <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+  function copyCode(btn, code) {
+    navigator.clipboard.writeText(code).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = code; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+    });
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.classList.remove('copied');
+    }, 2000);
+  }
+
+  function toggleCheck(item) {
+    item.classList.toggle('checked');
+    item.querySelector('.check-box').textContent =
+      item.classList.contains('checked') ? '✓' : '';
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const total   = document.querySelectorAll('.checklist-item').length;
+    const checked = document.querySelectorAll('.checklist-item.checked').length;
+    const pct     = Math.round((checked / total) * 100);
+    document.getElementById('checkProgress').style.width = pct + '%';
+    document.getElementById('checkLabel').textContent    = checked + ' / ' + total + ' done';
+  }
+</script>
+
+</body>
+</html>

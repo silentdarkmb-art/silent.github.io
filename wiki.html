@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wiki - BLOXBURST🔥</title>
+
+  <link rel="icon" type="image/png" href="Images/FinalLogo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELF86MPP23');
+  </script>
+
+  <style>
+    /* ── Wiki Hero ── */
+    .wiki-hero {
+      width: 100%;
+      text-align: center;
+      padding: 50px 30px 40px;
+      background: rgba(21,26,77,0.65);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+    }
+    .wiki-hero h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 42px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .wiki-hero p {
+      color: rgba(255,255,255,0.75);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    /* ── Wiki Search ── */
+    .wiki-search-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .wiki-search-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 10px 20px;
+      gap: 10px;
+      width: min(480px, 100%);
+    }
+    .wiki-search-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 15px;
+    }
+    .wiki-search-box input::placeholder { color: rgba(255,255,255,0.45); }
+    .wiki-search-box span { color: rgba(255,255,255,0.4); font-size: 18px; }
+
+    /* ── Category Tabs ── */
+    .wiki-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .wiki-tab {
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.8);
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .wiki-tab:hover, .wiki-tab.active {
+      background: rgba(125,92,255,0.3);
+      border-color: rgba(125,92,255,0.6);
+      color: #fff;
+    }
+
+    /* ── Section Header ── */
+    .wiki-section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .wiki-section-head h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      white-space: nowrap;
+    }
+    .wiki-section-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+    .wiki-count {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* ── Featured Banner ── */
+    .wiki-featured {
+      background: linear-gradient(135deg, rgba(125,92,255,0.25), rgba(0,200,120,0.15));
+      border: 1px solid rgba(125,92,255,0.35);
+      border-radius: 22px;
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .wiki-featured-text h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .wiki-featured-text p {
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      max-width: 500px;
+    }
+    .wiki-featured-badge {
+      background: rgba(0,255,136,0.15);
+      border: 1px solid rgba(0,255,136,0.35);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(0,255,136,0.95);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .wiki-featured-btn {
+      text-decoration: none;
+      font-weight: 900;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: rgba(125,92,255,0.35);
+      border: 1px solid rgba(125,92,255,0.5);
+      color: #fff;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .wiki-featured-btn:hover {
+      background: rgba(125,92,255,0.55);
+      transform: translateY(-2px);
+    }
+
+    /* ── Game Wiki Section ── */
+    .game-wiki-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) { .game-wiki-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .game-wiki-grid { grid-template-columns: 1fr; } }
+
+    .game-wiki-card {
+      text-decoration: none;
+      color: inherit;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .game-wiki-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.22);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.35);
+    }
+    .game-wiki-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .game-wiki-info {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .game-wiki-tag {
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(125,92,255,0.22);
+      color: rgba(180,160,255,0.95);
+      width: fit-content;
+    }
+    .game-wiki-info h3 {
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.35;
+      margin: 4px 0;
+    }
+    .game-wiki-info p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+    .game-wiki-read {
+      margin-top: 10px;
+      font-weight: 900;
+      font-size: 13px;
+      color: rgba(0,255,136,0.95);
+    }
+
+    /* ── Tips Box ── */
+    .wiki-tips {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) { .wiki-tips { grid-template-columns: 1fr; } }
+    .wiki-tip-card {
+      background: rgba(21,26,77,0.55);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 24px 22px;
+    }
+    .wiki-tip-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .wiki-tip-card h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .wiki-tip-card p {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <!-- ── HEADER (same as Index HTML) ── -->
+  <a href="../wiki.html" class="top-text-link" aria-label="BLOXBURST Home">
+    <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
+  </a>
+
+  <div class="top-nav">
+    <div class="nav-dropdown" id="codesDropdown">
+      <a href="gamecode.html" class="mini-btn" id="codesBtn">Codes</a>
+      <div class="nav-menu" id="codesMenu">
+        <a class="nav-item" href="gamecode.html">Game Codes</a>
+        <a class="nav-item" href="promo-latest-codes.html">Promo Codes</a>
+      </div>
+    </div>
+    <a href="wiki.html" class="nav-box nav-link">Wiki</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="wiki-hero">
+    <h1>📚 BLOXBURST Wiki</h1>
+    <p>
+      Guides, fixes, and tips for Roblox codes — everything you need to claim rewards faster and smarter.
+    </p>
+    <div class="wiki-search-wrap">
+      <div class="wiki-search-box" style="position:relative; flex-direction:column; align-items:stretch; border-radius:18px; padding:0;">
+        <div style="display:flex; align-items:center; padding:10px 20px; gap:10px;">
+          <span>🔍</span>
+          <input type="text" placeholder="Search wiki articles or games..." id="wikiSearch" autocomplete="off">
+        </div>
+        <div id="wikiDropdown" style="
+          display:none;
+          position:absolute;
+          top:100%;
+          left:0; right:0;
+          background:#0d1240;
+          border:1px solid rgba(255,255,255,0.15);
+          border-radius:0 0 18px 18px;
+          overflow:hidden;
+          z-index:999;
+          max-height:260px;
+          overflow-y:auto;
+        "></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GAME WIKI ── -->
+  <div class="wiki-section-head">
+    <h2>🎮 Game Wiki</h2>
+    <div class="wiki-section-line"></div>
+    <span class="wiki-count" id="wikiGameCount"></span>
+  </div>
+
+  <div class="game-wiki-grid" id="wikiGameGrid">
+    <!-- Auto-filled by script.js GAME_WIKIS array -->
+  </div>
+
+  <!-- ── CATEGORY TABS ── -->
+  <div class="wiki-tabs">
+    <button class="wiki-tab active" onclick="filterWiki('all', this)">All Articles</button>
+    <button class="wiki-tab" onclick="filterWiki('guide', this)">Guides</button>
+    <button class="wiki-tab" onclick="filterWiki('fix', this)">Fixes</button>
+    <button class="wiki-tab" onclick="filterWiki('process', this)">Process</button>
+  </div>
+
+  <!-- ── FEATURED BANNER ── -->
+  <div class="wiki-featured">
+    <div class="wiki-featured-text">
+      <div class="wiki-featured-badge">⭐ FEATURED GUIDE</div>
+      <h2>How to Redeem Roblox Codes</h2>
+      <p>
+        New to Roblox codes? This step-by-step guide covers everything — from finding the Codes button
+        inside a game, to claiming your rewards without errors.
+      </p>
+    </div>
+    <a class="wiki-featured-btn" href="Wiki-Folder/wiki-redeem-codes.html">Read Guide ➜</a>
+  </div>
+
+  <!-- ── ALL ARTICLES ── -->
+  <div class="wiki-section-head">
+    <h2>All Articles</h2>
+    <div class="wiki-section-line"></div>
+    <span class="wiki-count">3 Articles</span>
+  </div>
+
+  <div class="wiki-latest-grid" id="wikiGrid">
+
+    <a class="wiki-card" href="Wiki-Folder/wiki-redeem-codes.html" data-tag="guide">
+      <div class="wiki-card-top">
+        <span class="wiki-tag">GUIDE</span>
+        <span class="wiki-date">Feb 22, 2026</span>
+      </div>
+      <h3>How to Redeem Roblox Codes</h3>
+      <p>Step-by-step guide to redeem game codes inside any Roblox game without errors.</p>
+      <span class="wiki-read">Read ➜</span>
+    </a>
+
+    <a class="wiki-card" href="Wiki-Folder/wiki-invalid-code-reasons.html" data-tag="fix">
+      <div class="wiki-card-top">
+        <span class="wiki-tag">FIX</span>
+        <span class="wiki-date">Feb 19, 2026</span>
+      </div>
+      <h3>Common Reasons "Invalid Code"</h3>
+      <p>Why codes fail and quick fixes to help you claim rewards even when they don't work at first.</p>
+      <span class="wiki-read">Read ➜</span>
+    </a>
+
+    <a class="wiki-card" href="Wiki-Folder/wiki-how-we-check-codes.html" data-tag="process">
+      <div class="wiki-card-top">
+        <span class="wiki-tag">PROCESS</span>
+        <span class="wiki-date">Feb 21, 2026</span>
+      </div>
+      <h3>How We Check Codes (Manual Testing)</h3>
+      <p>Our manual verification workflow — how we confirm every code before adding it to the list.</p>
+      <span class="wiki-read">Read ➜</span>
+    </a>
+
+  </div>
+
+  <!-- ── QUICK TIPS ── -->
+  <div class="wiki-section-head">
+    <h2>Quick Tips</h2>
+    <div class="wiki-section-line"></div>
+  </div>
+
+  <div class="wiki-tips">
+    <div class="wiki-tip-card">
+      <div class="wiki-tip-icon">📋</div>
+      <h3>Always Copy & Paste</h3>
+      <p>Typing codes manually can cause typos. Always copy the code from BLOXBURST and paste it directly into the game to avoid errors.</p>
+    </div>
+    <div class="wiki-tip-card">
+      <div class="wiki-tip-icon">⚡</div>
+      <h3>Redeem Quickly</h3>
+      <p>Codes can expire at any time without warning. Once you find a new code, redeem it immediately before it gets deactivated.</p>
+    </div>
+    <div class="wiki-tip-card">
+      <div class="wiki-tip-icon">🔄</div>
+      <h3>Check for Updates Often</h3>
+      <p>New codes are released during game updates, events, and milestone celebrations. Check BLOXBURST regularly to stay ahead.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER (same as Index HTML) ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-left">
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">
+        BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="gamecode.html">Game Codes</a>
+      <a href="promo-latest-codes.html">Promo Codes</a>
+      <a href="wiki.html">Wiki</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="Terms-and-Condition/about.html">About Us</a>
+      <a href="Terms-and-Condition/faq.html">FAQ</a>
+      <a href="Terms-and-Condition/contactus.html">Contact Us</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="Terms-and-Condition/terms.html">Terms of Use</a>
+      <a href="Terms-and-Condition/privacy.html">Privacy Policy</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+    <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Tab Filter
+  function filterWiki(tag, btn) {
+    document.querySelectorAll('.wiki-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#wikiGrid .wiki-card').forEach(card => {
+      card.style.display = (tag === 'all' || card.dataset.tag === tag) ? '' : 'none';
+    });
+  }
+
+  // Wiki Search
+  document.getElementById('wikiSearch').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('#wikiGrid .wiki-card').forEach(card => {
+      card.style.display = card.innerText.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

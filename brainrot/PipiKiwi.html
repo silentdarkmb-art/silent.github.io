@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipi Kiwi - Steal A Brainrots Wiki | BLOXBURST</title>
+
+  <link rel="icon" type="image/png" href="../../Images/FinalLogo.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELF86MPP23');
+  </script>
+
+  <style>
+    /* ============================================================
+       BRAINROT SEARCH BAR
+       ============================================================ */
+    .brainrot-search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 480px;
+      min-width: 180px;
+    }
+
+    .brainrot-search-shell {
+      width: 100%;
+      height: 46px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      background: rgba(143,140,199,0.25);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      gap: 8px;
+      position: relative;
+    }
+
+    .brainrot-search-shell:focus-within {
+      border-color: rgba(125,92,255,0.7);
+      box-shadow: 0 0 0 3px rgba(125,92,255,0.15), 0 4px 18px rgba(0,0,0,0.25);
+    }
+
+    .brainrot-search-icon {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      flex-shrink: 0;
+    }
+
+    .brainrot-search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #fff;
+      font-size: 14px;
+      font-family: 'Nunito', 'Arial', sans-serif;
+      font-weight: 700;
+    }
+
+    .brainrot-search-input::placeholder {
+      color: rgba(255,255,255,0.45);
+      font-weight: 600;
+    }
+
+    .brainrot-search-clear {
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.45);
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0 2px;
+      line-height: 1;
+      transition: color 0.15s;
+      flex-shrink: 0;
+    }
+    .brainrot-search-clear:hover { color: rgba(255,255,255,0.85); }
+
+    /* Dropdown suggestions */
+    .brainrot-suggestions {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 8px);
+      width: 100%;
+      background: rgba(15,18,60,0.98);
+      border: 1px solid rgba(125,92,255,0.3);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+      display: none;
+      z-index: 9999;
+      max-height: 340px;
+      overflow-y: auto;
+    }
+
+    .brainrot-suggestions.show { display: block; }
+
+    /* Scrollbar styling */
+    .brainrot-suggestions::-webkit-scrollbar { width: 4px; }
+    .brainrot-suggestions::-webkit-scrollbar-track { background: transparent; }
+    .brainrot-suggestions::-webkit-scrollbar-thumb { background: rgba(125,92,255,0.4); border-radius: 4px; }
+
+    /* Rarity group header */
+    .bs-group-header {
+      padding: 8px 14px 4px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .bs-group-header:first-child { border-top: none; }
+
+    /* Individual suggestion item */
+    .bs-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease;
+    }
+
+    .bs-item:hover {
+      background: rgba(125,92,255,0.15);
+    }
+
+    .bs-img-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .bs-img-wrap img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .bs-info { flex: 1; min-width: 0; }
+
+    .bs-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .bs-rarity {
+      font-size: 10px;
+      font-weight: 900;
+      margin-top: 2px;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .bs-pill {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0,255,136,0.10);
+      color: rgba(0,255,136,0.85);
+      border: 1px solid rgba(0,255,136,0.20);
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    /* No results */
+    .bs-empty {
+      padding: 18px 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+    }
+
+    /* ============================================================
+       HEADER LAYOUT — Logo | Search | Buttons
+       ============================================================ */
+    body.subpage .main-header {
+      display: grid !important;
+      grid-template-columns: auto 1fr auto !important;
+      align-items: center !important;
+      gap: 16px !important;
+      padding: 12px 30px !important;
+      width: min(1400px, 92%) !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      min-height: unset !important;
+    }
+
+    body.subpage .main-header > a.logo {
+      justify-self: start !important;
+      align-self: center !important;
+    }
+
+    body.subpage .main-header .logo-img {
+      position: static !important;
+      height: 150px !important;
+      width: auto !important;
+      max-width: 240px !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    /* Search center */
+    body.subpage .main-header .brainrot-search-wrap {
+      justify-self: center !important;
+      width: 100% !important;
+      max-width: 480px !important;
+    }
+
+    body.subpage .header-actions {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      justify-self: end !important;
+      flex-shrink: 0 !important;
+    }
+
+    body.subpage .header-actions .nav-dropdown {
+      width: 110px !important;
+      min-width: 110px !important;
+      display: block !important;
+    }
+
+    body.subpage .header-actions .mini-btn,
+    body.subpage .header-actions .nav-dropdown #codesBtn {
+      width: 110px !important;
+      min-width: 110px !important;
+      max-width: 110px !important;
+      height: 44px !important;
+      padding: 0 !important;
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+      white-space: nowrap !important;
+      background: rgba(143,140,199,0.25) !important;
+      border: 1px solid rgba(255,255,255,0.25) !important;
+      border-radius: 10px !important;
+      color: #fff !important;
+      text-decoration: none !important;
+      transition: background 0.2s ease, border-color 0.2s ease !important;
+    }
+
+    body.subpage .header-actions .mini-btn:hover,
+    body.subpage .header-actions .nav-dropdown #codesBtn:hover {
+      background: rgba(143,140,199,0.45) !important;
+      border-color: rgba(255,255,255,0.5) !important;
+    }
+
+    /* ============================================================
+       BRAINROT PAGE STYLES
+       ============================================================ */
+    .brainrot-hero {
+      display: flex; align-items: center; gap: 40px;
+      max-width: 900px; margin: 30px auto 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px; padding: 32px;
+    }
+    .brainrot-hero-img {
+      width: 180px; height: 180px; object-fit: contain;
+      border-radius: 20px; background: rgba(255,255,255,0.06);
+      padding: 10px; flex-shrink: 0;
+    }
+    .brainrot-hero-info { flex: 1; }
+    .brainrot-hero-info h1 { font-family: 'Fredoka', sans-serif; font-size: 36px; margin-bottom: 8px; }
+    .brainrot-rarity-badge {
+      display: inline-block; padding: 5px 16px; border-radius: 999px;
+      font-size: 13px; font-weight: 900; margin-bottom: 14px;
+      background: linear-gradient(135deg, #ff6ec7, #ff9a3c); color: #fff;
+    }
+    .brainrot-hero-info p { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.6; }
+    .obtain-section {
+      max-width: 900px; margin: 28px auto;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px; padding: 28px 32px;
+    }
+    .obtain-section h2 { font-family: 'Fredoka', sans-serif; font-size: 22px; margin-bottom: 16px; }
+    .obtain-method {
+      display: flex; align-items: flex-start; gap: 16px; padding: 16px;
+      background: rgba(255,255,255,0.05); border-radius: 14px; margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .obtain-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+    .obtain-method h3 { font-size: 15px; font-weight: 900; margin-bottom: 4px; }
+    .obtain-method p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.6); text-decoration: none;
+      font-size: 14px; font-weight: 700; margin-bottom: 10px; transition: color 0.2s;
+    }
+    .back-link:hover { color: #fff; }
+
+    /* STAT CARDS */
+    .stat-cards { display: flex; gap: 14px; max-width: 900px; margin: 20px auto; flex-wrap: wrap; }
+    .stat-card {
+      flex: 1; min-width: 150px; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 16px;
+      padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .stat-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.08); }
+    .stat-card .stat-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.55; }
+    .stat-card .stat-value { font-family: 'Fredoka', sans-serif; font-size: 28px; line-height: 1; }
+    .stat-card.stat-red   { border-color: rgba(255,99,99,0.3);   background: rgba(255,99,99,0.07); }
+    .stat-card.stat-red   .stat-label, .stat-card.stat-red   .stat-value { color: #ff6363; }
+    .stat-card.stat-green { border-color: rgba(72,210,121,0.3);  background: rgba(72,210,121,0.07); }
+    .stat-card.stat-green .stat-label, .stat-card.stat-green .stat-value { color: #48d279; }
+    .stat-card.stat-purple{ border-color: rgba(167,139,250,0.3); background: rgba(167,139,250,0.07); }
+    .stat-card.stat-purple .stat-label, .stat-card.stat-purple .stat-value { color: #a78bfa; }
+    .stat-card.stat-orange{ border-color: rgba(251,146,60,0.3);  background: rgba(251,146,60,0.07); }
+    .stat-card.stat-orange .stat-label, .stat-card.stat-orange .stat-value { color: #fb923c; }
+
+    /* WIKI SUGGESTIONS */
+    .wiki-suggestions { max-width: 900px; margin: 10px auto 40px; }
+    .wiki-suggestions-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;
+    }
+    .wiki-suggestions-header h2 {
+      font-family: 'Fredoka', sans-serif; font-size: 22px; margin: 0;
+      background: linear-gradient(135deg, #a78bfa, #60a5fa);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .ws-shuffle-btn {
+      display: flex; align-items: center; gap: 7px;
+      background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.3);
+      color: #a78bfa; font-size: 13px; font-weight: 700;
+      padding: 7px 18px; border-radius: 999px; cursor: pointer; transition: all 0.2s;
+    }
+    .ws-shuffle-btn:hover { background: rgba(167,139,250,0.2); transform: translateY(-1px); }
+    .ws-shuffle-btn .sicon { transition: transform 0.45s; display: inline-block; }
+    .ws-shuffle-btn:hover .sicon { transform: rotate(180deg); }
+
+    .wiki-suggestions-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+    .ws-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px; padding: 14px 10px; text-align: center; text-decoration: none;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+      animation: wsFadeUp 0.35s ease both;
+    }
+    .ws-card:hover {
+      transform: translateY(-7px) scale(1.05);
+      border-color: var(--glow);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.4), 0 0 0 1px var(--glow);
+    }
+    .ws-img-wrap {
+      width: 64px; height: 64px; border-radius: 12px;
+      background: rgba(255,255,255,0.06); display: flex; align-items: center;
+      justify-content: center; overflow: hidden; flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .ws-card:hover .ws-img-wrap { background: rgba(255,255,255,0.1); }
+    .ws-img-wrap img { width: 56px; height: 56px; object-fit: contain; }
+    .ws-name { font-size: 12px; font-weight: 700; color: #fff; line-height: 1.3; }
+    .ws-rarity { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+    @keyframes wsFadeUp {
+      from { opacity: 0; transform: translateY(12px) scale(0.94); }
+      to   { opacity: 1; transform: translateY(0)    scale(1); }
+    }
+    .ws-card:nth-child(1) { animation-delay: 0.00s; }
+    .ws-card:nth-child(2) { animation-delay: 0.06s; }
+    .ws-card:nth-child(3) { animation-delay: 0.12s; }
+    .ws-card:nth-child(4) { animation-delay: 0.18s; }
+    .ws-card:nth-child(5) { animation-delay: 0.24s; }
+    .ws-card:nth-child(6) { animation-delay: 0.30s; }
+
+    /* ============================================================
+       TABLET ≤ 900px
+       ============================================================ */
+    @media (max-width: 900px) {
+      body.subpage .main-header {
+        grid-template-columns: auto 1fr auto !important;
+        padding: 14px 20px !important;
+        gap: 12px !important;
+      }
+      body.subpage .main-header .logo-img { height: 90px !important; }
+      .wiki-suggestions-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ============================================================
+       MOBILE ≤ 600px
+       ============================================================ */
+    @media (max-width: 600px) {
+      body.subpage .main-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 10px 14px !important;
+        width: 100% !important;
+      }
+      body.subpage .main-header > a.logo { justify-content: center !important; }
+      body.subpage .main-header .logo-img { height: 60px !important; max-width: 150px !important; }
+      body.subpage .main-header .brainrot-search-wrap { width: 100% !important; max-width: 100% !important; }
+      body.subpage .header-actions {
+        width: 80% !important; max-width: 260px !important;
+        justify-content: center !important; gap: 8px !important;
+        display: flex !important; position: static !important;
+      }
+      body.subpage .header-actions .nav-dropdown {
+        flex: 1 1 0 !important; width: 0 !important; min-width: 0 !important; max-width: none !important; display: flex !important;
+      }
+      body.subpage .header-actions .nav-dropdown #codesBtn {
+        flex: 1 !important; width: 100% !important; min-width: 0 !important; max-width: none !important;
+        height: 34px !important; font-size: 12px !important;
+      }
+      body.subpage .header-actions .mini-btn {
+        flex: 1 1 0 !important; width: 0 !important; min-width: 0 !important;
+        max-width: none !important; height: 34px !important; font-size: 12px !important;
+      }
+      .brainrot-hero { flex-direction: column; text-align: center; padding: 20px 16px; gap: 20px; }
+      .brainrot-hero-img { width: 130px; height: 130px; margin: 0 auto; }
+      .brainrot-hero-info h1 { font-size: 26px; }
+      .obtain-section { padding: 20px 16px; margin: 16px 12px; }
+      .stat-cards { gap: 10px; margin: 14px 12px; }
+      .stat-card { min-width: calc(50% - 5px); padding: 14px 16px; }
+      .stat-card .stat-value { font-size: 22px; }
+      .wiki-suggestions { margin: 10px 12px 30px; }
+      .wiki-suggestions-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    }
+  </style>
+</head>
+
+<body class="subpage">
+
+<!-- HEADER -->
+<header class="main-header">
+  <a href="../../Game-Wiki-Folder/wiki-steal-a-brainrot.html" class="logo">
+    <img src="../../Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
+  </a>
+
+  <!-- 🔍 BRAINROT SEARCH BAR -->
+  <div class="brainrot-search-wrap">
+    <div class="brainrot-search-shell">
+      <span class="brainrot-search-icon">🔍</span>
+      <input
+        id="brainrotSearch"
+        class="brainrot-search-input"
+        type="text"
+        placeholder="Search brainrots...(e.g. Noobini, Rare)"
+        autocomplete="off"
+      >
+      <button class="brainrot-search-clear" id="brainrotClear" onclick="clearBrainrotSearch()" style="display:none;">✕</button>
+    </div>
+    <div class="brainrot-suggestions" id="brainrotSuggestions"></div>
+  </div>
+
+  <div class="header-actions">
+    <div id="codesDropdown" class="nav-dropdown">
+      <a href="../../gamecode.html" id="codesBtn" class="mini-btn">Codes</a>
+      <div class="nav-menu">
+        <a class="nav-item" href="../../gamecode.html">Game Codes</a>
+        <a class="nav-item" href="../../promo-latest-codes.html">Promo Codes</a>
+      </div>
+    </div>
+    <a href="../../wiki.html" class="mini-btn">Wiki</a>
+  </div>
+</header>
+
+<main class="sub-main" style="padding-top:20px;">
+
+  <div style="max-width:900px; margin:0 auto 10px; padding:0 20px;">
+    <a class="back-link" href="../../Game-Wiki-Folder/wiki-steal-a-brainrot.html">← Back to Steal A Brainrots Wiki</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="brainrot-hero">
+    <img class="brainrot-hero-img" src="../../Images/Pipi Corni.png" alt="Pipi Corni">
+    <div class="brainrot-hero-info">
+      <h1>Pipi Corni</h1>
+      <span class="brainrot-rarity-badge">⭐ Common</span>
+      <p>Pipi Corni is a small, curious member of the Pipi Family who finds comfort in the golden fields of the digital world. Like his relatives, he believes that technology is no substitute for the bond of family, wandering the game to ensure no Pipi is left behind.</p>
+    </div>
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-cards">
+    <div class="stat-card stat-red">
+      <span class="stat-label">💰 Base Cost</span>
+      <span class="stat-value">$1.7k</span>
+    </div>
+    <div class="stat-card stat-green">
+      <span class="stat-label">⚡ Income / Second</span>
+      <span class="stat-value">$14</span>
+    </div>
+    <div class="stat-card stat-purple">
+      <span class="stat-label">📈 Efficiency</span>
+      <span class="stat-value">0.82%</span>
+    </div>
+    <div class="stat-card stat-orange">
+      <span class="stat-label">🎉 Event</span>
+      <span class="stat-value">Regular</span>
+    </div>
+  </div>
+
+  <!-- HOW TO OBTAIN -->
+  <div class="obtain-section">
+    <h2>🎯 How to Obtain Pipi Corni</h2>
+
+    <div class="obtain-method">
+      <div class="obtain-icon">📖</div>
+      <div>
+        <h3>Overview</h3>
+        <p>Pipi Corni is a rodent-type Brainrot belonging to the Pipi Family. He is primarily recognized as an OG Fuse Machine unit, as he was originally designed to be obtained by combining other units rather than being bought or found naturally.</p>
+      </div>
+    </div>
+
+    <div class="obtain-method">
+      <div class="obtain-icon">🎨</div>
+      <div>
+        <h3>Appearance</h3>
+        <p>Following the Pipi Family design language, Pipi Corni is a hamster-like rodent hybrid. He is distinguished by yellow, corn-themed visual accents and a small, rounded silhouette that matches the aesthetic of Pipi Kiwi and Pipi Avocado.</p>
+      </div>
+    </div>
+
+    <div class="obtain-method">
+      <div class="obtain-icon">📊</div>
+      <div>
+        <h3>Value</h3>
+        <p>Classified as a Common rarity, Pipi Corni's market value is relatively stable because he is a required unit for the Pipi Index. While his base value is low, his rarity can increase if he possesses special mutations or event-specific traits like the "Taco" trait.</p>
+      </div>
+    </div>
+
+    <div class="obtain-method">
+      <div class="obtain-icon">🧠</div>
+      <div>
+        <h3>Trivia</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">
+            <span style="color:#fff; font-size:16px; flex-shrink:0;">•</span>
+            <span><strong style="color:#fff;">The OG:</strong> He is one of the original units associated with the Fuse Machine mechanics.</span>
+          </li>
+          <li style="display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">
+            <span style="color:#fff; font-size:16px; flex-shrink:0;">•</span>
+            <span><strong style="color:#fff;">Family Tree:</strong> He is a core member of the Pipi Family, which includes Pipi Kiwi, Pipi Avocado, Pipi Potato, and Pi Pi Watermelon.</span>
+          </li>
+          <li style="display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">
+            <span style="color:#fff; font-size:16px; flex-shrink:0;">•</span>
+            <span><strong style="color:#fff;">Audio:</strong> He has a specific sound file in the game code titled PipiCorni.mp3.</span>
+          </li>
+          <li style="display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">
+            <span style="color:#fff; font-size:16px; flex-shrink:0;">•</span>
+            <span><strong style="color:#fff;">Unobtainable Status:</strong> At certain points in the game's history, he became impossible to get through normal means and could only be acquired via the Fuse Machine.</span>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- WIKI SUGGESTIONS -->
+  <div class="wiki-suggestions">
+    <div class="wiki-suggestions-header">
+      <h2>✨ More Brainrots to Explore</h2>
+      <button class="ws-shuffle-btn" onclick="shuffleCards()">
+        <span class="sicon">🔀</span> Shuffle
+      </button>
+    </div>
+    <div class="wiki-suggestions-grid" id="wsGrid"></div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">BLOXBURST is a Roblox code discovery platform designed to help players unlock exclusive in-game rewards across top Roblox titles.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="../../gamecode.html">Game Codes</a>
+      <a href="../../promo-latest-codes.html">Promo Codes</a>
+      <a href="../../wiki.html">Wiki</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="../../Terms-and-Condition/about.html">About Us</a>
+      <a href="../../Terms-and-Condition/faq.html">FAQ</a>
+      <a href="../../Terms-and-Condition/contactus.html">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="../../Terms-and-Condition/terms.html">Terms of Use</a>
+      <a href="../../Terms-and-Condition/privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+    <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+  </div>
+</footer>
+
+<script src="../../script.js"></script>
+
+<script>
+  /* ============================================================
+     BRAINROT MASTER LIST
+     — same list used by wiki-steal-a-brainrot.html
+     — add more here as you grow!
+     ============================================================ */
+  const BRAINROTS = [
+    { name:"Noobini",                     rarity:"Common",       img:"../../Images/Noobini.png",                      url:"../Brainrot-Details-Folder/noobini.html" },
+    { name:"Pipi Kiwi",                   rarity:"Common",       img:"../../Images/Pipi Kiwi.png",                   url:"../Brainrot-Details-Folder/PipiKiwi.html" },
+    { name:"Pipi Corni",                  rarity:"Common",       img:"../../Images/Pipi Corni.png",                  url:"../Brainrot-Details-Folder/PipiCorni.html" },
+    { name:"Tim Cheese",                  rarity:"Common",       img:"../../Images/Tim Cheese.png",                  url:"../Brainrot-Details-Folder/TimCheese.html" },
+    { name:"TrippiTroppi",                rarity:"Rare",         img:"../../Images/TrippiTroppi.png",                url:"../Brainrot-Details-Folder/trippitroppi.html" },
+    { name:"Cappuccino Assassino",        rarity:"Epic",         img:"../../Images/Cappuccino Assassino.png",        url:"../Brainrot-Details-Folder/cappuccino-assassino.html" },
+    { name:"Burbaloni Loliloli",          rarity:"Legendary",    img:"../../Images/Burbaloni Loliloli.png",          url:"../Brainrot-Details-Folder/burbaloni-loliloli.html" },
+    { name:"Frigo Camelo",                rarity:"Mythic",       img:"../../Images/Frigo Camelo.png",                url:"../Brainrot-Details-Folder/frigo-camelo.html" },
+    { name:"Cocofanto Elefanto",          rarity:"Brainrot God", img:"../../Images/Cocofanto Elefanto.png",          url:"../Brainrot-Details-Folder/cocofanto-elefanto.html" },
+    { name:"La Vacca Staturno Saturnita", rarity:"Secret",       img:"../../Images/La Vacca Staturno Saturnita.png", url:"../Brainrot-Details-Folder/la-vacca-staturno-saturnita.html" },
+    { name:"Strawberry Elephant",         rarity:"OG",           img:"../../Images/Strawberry Elephant.png",         url:"../Brainrot-Details-Folder/strawberry-elephant.html" },
+  ];
+
+  /* Rarity styling */
+  const RARITY_STYLE = {
+    "Common":       { badge:"linear-gradient(135deg,#ff6ec7,#ff9a3c)", glow:"rgba(255,154,60,0.45)",  text:"#fff" },
+    "Rare":         { badge:"linear-gradient(135deg,#29b6f6,#0288d1)", glow:"rgba(79,195,247,0.45)",  text:"#fff" },
+    "Epic":         { badge:"linear-gradient(135deg,#ce93d8,#9c27b0)", glow:"rgba(206,147,216,0.45)", text:"#fff" },
+    "Legendary":    { badge:"linear-gradient(135deg,#ffd700,#ff8c00)", glow:"rgba(255,215,0,0.45)",   text:"#fff" },
+    "Mythic":       { badge:"linear-gradient(135deg,#ff4081,#c2185b)", glow:"rgba(255,64,129,0.45)",  text:"#fff" },
+    "Brainrot God": { badge:"linear-gradient(135deg,#ff6d00,#ffab40)", glow:"rgba(255,109,0,0.45)",   text:"#fff" },
+    "Secret":       { badge:"linear-gradient(135deg,#bdbdbd,#616161)", glow:"rgba(224,224,224,0.3)",  text:"#fff" },
+    "OG":           { badge:"linear-gradient(135deg,#a5d6a7,#388e3c)", glow:"rgba(165,214,167,0.45)", text:"#fff" },
+  };
+
+  const CURRENT = "Lirili Larila";
+
+  /* ============================================================
+     SEARCH BAR LOGIC
+     ============================================================ */
+  const searchInput   = document.getElementById('brainrotSearch');
+  const suggestBox    = document.getElementById('brainrotSuggestions');
+  const clearBtn      = document.getElementById('brainrotClear');
+
+  function renderSuggestions(query) {
+    const q = query.trim().toLowerCase();
+
+    if (!q) {
+      suggestBox.classList.remove('show');
+      suggestBox.innerHTML = '';
+      clearBtn.style.display = 'none';
+      return;
+    }
+
+    clearBtn.style.display = 'block';
+
+    // Filter — match by name OR rarity
+    const matches = BRAINROTS.filter(b =>
+      b.name.toLowerCase().includes(q) ||
+      b.rarity.toLowerCase().includes(q)
+    );
+
+    if (!matches.length) {
+      suggestBox.innerHTML = `<div class="bs-empty">😢 No brainrots found for "<strong>${query}</strong>"</div>`;
+      suggestBox.classList.add('show');
+      return;
+    }
+
+    // Group by rarity
+    const groups = {};
+    matches.forEach(b => {
+      if (!groups[b.rarity]) groups[b.rarity] = [];
+      groups[b.rarity].push(b);
+    });
+
+    const rarityOrder = ["Common","Rare","Epic","Legendary","Mythic","Brainrot God","Secret","OG"];
+    let html = '';
+
+    rarityOrder.forEach(r => {
+      if (!groups[r]) return;
+      const rs = RARITY_STYLE[r] || RARITY_STYLE["Common"];
+      html += `<div class="bs-group-header">${r}</div>`;
+      groups[r].forEach(b => {
+        const isCurrent = b.name === CURRENT;
+        html += `
+          <a class="bs-item" href="${b.url}" ${isCurrent ? 'style="background:rgba(125,92,255,0.1);"' : ''}>
+            <div class="bs-img-wrap">
+              <img src="${b.img}" alt="${b.name}"
+                onerror="this.parentNode.innerHTML='<span style=font-size:22px>🧠</span>'">
+            </div>
+            <div class="bs-info">
+              <div class="bs-name">${b.name}${isCurrent ? ' <span style="font-size:10px;color:rgba(255,255,255,0.4);">(current)</span>' : ''}</div>
+              <span class="bs-rarity" style="background:${rs.badge}; color:${rs.text};">${r}</span>
+            </div>
+            <span class="bs-pill">View →</span>
+          </a>
+        `;
+      });
+    });
+
+    suggestBox.innerHTML = html;
+    suggestBox.classList.add('show');
+  }
+
+  searchInput.addEventListener('input', function() {
+    renderSuggestions(this.value);
+  });
+
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') clearBrainrotSearch();
+    if (e.key === 'Enter') {
+      const q = this.value.trim().toLowerCase();
+      const match = BRAINROTS.find(b =>
+        b.name.toLowerCase().includes(q) || b.rarity.toLowerCase().includes(q)
+      );
+      if (match) window.location.href = match.url;
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    const wrap = document.querySelector('.brainrot-search-wrap');
+    if (wrap && !wrap.contains(e.target)) {
+      suggestBox.classList.remove('show');
+    }
+  });
+
+  window.clearBrainrotSearch = function() {
+    searchInput.value = '';
+    suggestBox.classList.remove('show');
+    suggestBox.innerHTML = '';
+    clearBtn.style.display = 'none';
+    searchInput.focus();
+  };
+
+  /* ============================================================
+     WIKI SUGGESTIONS (shuffle cards)
+     ============================================================ */
+  function pickRandom(arr, n) {
+    const pool = arr.filter(b => b.name !== CURRENT);
+    return pool.sort(() => Math.random() - 0.5).slice(0, n);
+  }
+
+  function renderCards(picks) {
+    const grid = document.getElementById('wsGrid');
+    grid.innerHTML = '';
+    picks.forEach((b, i) => {
+      const rs = RARITY_STYLE[b.rarity] || RARITY_STYLE["Common"];
+      const card = document.createElement('a');
+      card.href = b.url;
+      card.className = 'ws-card';
+      card.style.cssText = `--glow:${rs.glow}; animation-delay:${i*0.06}s;`;
+      card.innerHTML = `
+        <div class="ws-img-wrap">
+          <img src="${b.img}" alt="${b.name}" loading="lazy"
+            onerror="this.parentNode.innerHTML='<span style=font-size:28px>🧠</span>'">
+        </div>
+        <div class="ws-name">${b.name}</div>
+        <div class="ws-rarity" style="background:${rs.badge};color:${rs.text};">${b.rarity}</div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function shuffleCards() {
+    const grid = document.getElementById('wsGrid');
+    grid.style.opacity = '0';
+    grid.style.transform = 'translateY(6px) scale(0.98)';
+    setTimeout(() => {
+      renderCards(pickRandom(BRAINROTS, 6));
+      grid.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
+      grid.style.opacity = '1';
+      grid.style.transform = 'none';
+    }, 200);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderCards(pickRandom(BRAINROTS, 6));
+  });
+</script>
+
+</body>
+</html>

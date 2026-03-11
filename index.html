@@ -1,59 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Portfolio</title>
-    <link rel="stylesheet" href="style-index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOXBURST – Working Roblox Game Codes & Promo Codes (2026)</title>
+  <meta name="description" content="BLOXBURST is your #1 source for working Roblox game codes, promo codes, and wiki guides. Updated daily and manually verified. Never miss a free reward again!" />
+  <link rel="canonical" href="https://www.bloxburst.com/" />
+  <meta name="keywords" content="Roblox codes, Roblox game codes, working codes, promo codes, free rewards, Roblox wiki" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="BLOXBURST" />
+  <meta property="og:title" content="Roblox Code Finder - BLOXBURST" />
+  <meta property="og:description" content="Find all working Roblox game codes and promo codes. Updated daily and manually verified by BLOXBURST." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bloxburst.com/" />
 
-    <!-- Bawal pumasok kung walang loggedUser -->
-    <script>
-        if (!localStorage.getItem("loggedUser")) {
-            window.location.href = "login.html";
-        }
-    </script>
+  <link rel="icon" type="image/png" href="Images/FinalLogo.png">
+  <link rel="preload" as="image" href="Images/FinalLogo.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Schema.org JSON-LD — Homepage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BLOXBURST",
+    "url": "https://www.bloxburst.com/",
+    "description": "BLOXBURST is your #1 source for working Roblox game codes and promo codes. Updated daily and manually verified.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.bloxburst.com/gamecode.html?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELF86MPP23');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { overflow-x: hidden; }
+    img  { max-width: 100%; height: auto; display: block; }
+
+    .game-card {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #151a4d, #1c2266) !important;
+      padding: 16px 18px !important;
+      border-radius: 18px !important;
+      border: 1px solid rgba(255,255,255,0.07) !important;
+      transition: all 0.25s ease !important;
+      position: relative;
+      overflow: visible;
+      gap: 14px;
+    }
+
+    .game-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: rgba(125,92,255,0.55) !important;
+      box-shadow:
+        0 0 0 1px rgba(125,92,255,0.35),
+        0 0 22px rgba(125,92,255,0.25),
+        0 16px 40px rgba(0,0,0,0.5) !important;
+    }
+
+    .game-thumb {
+      width: 58px !important;
+      height: 58px !important;
+      border-radius: 14px !important;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      transition: transform 0.25s ease;
+    }
+    .game-card:hover .game-thumb { transform: scale(1.06); }
+
+    .game-info { flex: 1; min-width: 0; }
+    .game-info h3 { font-size: 14px !important; font-weight: 900; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 4px; }
+    .game-info p  { font-size: 12px !important; color: rgba(157,243,196,0.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; }
+    .game-info span { color: #00ff88; font-weight: 900; }
+
+    .game-new-badge {
+      position: absolute;
+      background: linear-gradient(135deg, #00ff88, #00d4aa) !important;
+      color: #002b1f !important; font-size: 10px !important; font-weight: 900 !important;
+      padding: 4px 10px !important; border-radius: 999px !important;
+      box-shadow: 0 0 14px rgba(0,255,136,0.55) !important;
+      top: 10px !important; right: 10px !important;
+    }
+
+    .game-card::after {
+      content: "➜"; position: absolute; right: 14px; bottom: 12px;
+      font-size: 12px; color: rgba(0,255,136,0.7); opacity: 0;
+      transform: translateX(-4px); transition: all 0.2s ease; pointer-events: none;
+    }
+    .game-card:hover::after { opacity: 1; transform: translateX(0); }
+
+    /* STATS */
+    .stats-section {
+      width: 100%; margin: 10px 0 30px; padding: 28px 32px;
+      background: linear-gradient(135deg, rgba(21,26,77,0.8), rgba(28,34,102,0.7));
+      border: 1px solid rgba(125,92,255,0.22); border-radius: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 40px rgba(125,92,255,0.08);
+    }
+    .stats-title { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 900; text-align: center; color: rgba(255,255,255,0.9); margin-bottom: 24px; letter-spacing: 0.5px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stat-card { text-align: center; padding: 20px 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; transition: 0.25s ease; }
+    .stat-card:hover { background: rgba(125,92,255,0.12); border-color: rgba(125,92,255,0.3); transform: translateY(-3px); }
+    .stat-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+    .stat-number { font-family: 'Fredoka', sans-serif; font-size: 32px; font-weight: 900; color: #00ff88; line-height: 1; margin-bottom: 6px; letter-spacing: -0.5px; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,0.65); font-weight: 700; }
+
+    .section-divider-title {
+      display: flex; align-items: center; gap: 14px; width: 100%; margin: 0 0 20px;
+    }
+    .section-divider-title::before,
+    .section-divider-title::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    }
+    .section-divider-title span {
+      font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700;
+      color: rgba(255,255,255,0.92); white-space: nowrap; letter-spacing: 0.5px;
+    }
+
+    /* Loading skeleton */
+    .games-loading {
+      text-align: center; padding: 40px 20px;
+      color: rgba(255,255,255,0.4); font-size: 14px;
+    }
+
+    @media (min-width: 769px) {
+      .index-header-wrap { display: contents; }
+      .top-text-link { position: absolute !important; top: 28px !important; left: 28px !important; }
+      .top-text-link .logo-img { height: 120px !important; width: auto !important; max-width: 220px !important; object-fit: contain !important; }
+    }
+
+    @media (max-width: 768px) {
+      html { font-size: 13px; }
+      main.page { padding-top: 10px !important; padding-left: 14px !important; padding-right: 14px !important; padding-bottom: 24px !important; width: 100% !important; }
+      .index-header-wrap { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 8px !important; padding: 10px 0 6px !important; margin-bottom: 6px !important; }
+      .index-header-wrap .top-text-link { position: static !important; }
+      .index-header-wrap .top-text-link .logo-img, .top-text-link .logo-img { height: 60px !important; max-width: 150px !important; width: auto !important; }
+      .index-header-wrap .top-nav, .top-nav { position: static !important; display: flex !important; flex-direction: row !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: 80% !important; max-width: 260px !important; margin: 0 auto !important; }
+      .nav-box, .mini-btn { height: 36px !important; padding: 0 !important; font-size: 13px !important; border-radius: 10px !important; flex: 1 1 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown { flex: 1 1 0 !important; display: flex !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown .mini-btn { width: 100% !important; flex: 1 !important; }
+      .hero-title { font-size: 18px !important; margin: 8px 0 6px !important; }
+      .search-wrap { margin-bottom: 12px !important; width: 100% !important; }
+      .search-shell { height: 36px !important; padding: 0 12px !important; border-width: 1.5px !important; width: 100% !important; border-radius: 999px !important; }
+      .search-shell input { font-size: 13px !important; }
+      .topGames-text { font-size: 15px !important; margin-bottom: 10px !important; }
+      .games-row { grid-template-columns: 1fr !important; gap: 8px !important; }
+      .game-card { padding: 10px 12px !important; border-radius: 12px !important; gap: 10px !important; }
+      .game-thumb { width: 44px !important; height: 44px !important; border-radius: 10px !important; }
+      .game-info h3 { font-size: 12px !important; }
+      .game-info p  { font-size: 11px !important; }
+      .stats-section { padding: 18px 14px !important; border-radius: 16px !important; margin: 8px 0 20px !important; }
+      .stats-title { font-size: 16px !important; margin-bottom: 14px !important; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+      .stat-card { padding: 14px 10px !important; border-radius: 12px !important; }
+      .stat-icon { font-size: 22px !important; }
+      .stat-number { font-size: 24px !important; }
+      .stat-label { font-size: 11px !important; }
+      .section-divider-title span { font-size: 16px !important; }
+      .explore-section { margin: 14px 0 12px !important; }
+      .explore-btn { font-size: 13px !important; padding: 11px 24px !important; }
+      .promo-section { padding: 14px 12px !important; border-radius: 12px !important; margin: 0 0 14px !important; width: 100% !important; }
+      .promo-head h2 { font-size: 15px !important; }
+      .promo-head p  { font-size: 11px !important; margin-bottom: 10px !important; }
+      .promo-grid    { grid-template-columns: 1fr !important; gap: 7px !important; }
+      .promo-card    { padding: 10px !important; border-radius: 9px !important; min-height: unset !important; }
+      .wiki-latest { padding: 14px 12px !important; border-radius: 12px !important; margin: 0 0 14px !important; width: 100% !important; }
+      .wiki-latest-head h2 { font-size: 15px !important; }
+      .wiki-latest-head p  { font-size: 11px !important; }
+      .wiki-latest-grid { grid-template-columns: 1fr !important; gap: 7px !important; }
+      .suggest-bottom { margin: 0 0 14px !important; width: 100% !important; }
+      .suggest-grid { grid-template-columns: 1fr !important; gap: 7px !important; }
+      .suggest-card { padding: 7px 9px !important; border-radius: 9px !important; gap: 9px !important; }
+      .suggest-card img { width: 52px !important; height: 36px !important; border-radius: 7px !important; }
+      .suggest-info h3 { font-size: 11px !important; }
+      .suggest-info p  { font-size: 10px !important; }
+      .bottom-text { margin: 14px 0 !important; width: 100% !important; }
+      .bottom-text h2 { font-size: 15px !important; }
+      .bottom-text p  { font-size: 11px !important; }
+      .site-footer { margin-top: 16px !important; padding: 16px 0 10px !important; }
+      .footer-inner { grid-template-columns: 1fr !important; gap: 12px !important; width: 86% !important; }
+      .footer-logo { font-size: 18px !important; }
+      .footer-desc { font-size: 11px !important; }
+      .footer-col h4 { font-size: 11px !important; }
+      .footer-col a  { font-size: 10px !important; margin: 3px 0 !important; }
+      .footer-bottom { margin-top: 12px !important; padding: 8px 14px 0 !important; gap: 4px !important; }
+      .footer-meta, .footer-copy { font-size: 10px !important; }
+    }
+  </style>
 </head>
+
 <body>
+  <main class="page">
 
-    <div class="background"></div>
-
-    <!-- NAVBAR -->
-    <header class="navbar">
-    <div class="logo">My Portfolio</div>
-    <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <a href="#" onclick="logout()">Logout</a>
-    </nav>
-</header>
-
-
-    <!-- HOME CONTENT -->
-    <main class="page hero">
-        <div class="hero-content">
-            <h1> <span>Welcome to My Page!</span></h1>
-            <p>
-                Step into a space where ideas come to life. Whether you're here to explore, get inspired, or start a new project, we're excited to be part of your creative journey.
-Make yourself at home!
-            </p>
-
-            <!-- ✅ FIXED: diretso na sa projects.html -->
-            <a href="projects.html" class="btn-primary">View My Projects</a>
+    <div class="index-header-wrap">
+      <a href="https://www.bloxburst.com/" class="top-text-link" aria-label="BLOXBURST Home">
+        <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img" fetchpriority="high">
+      </a>
+      <div class="top-nav">
+        <div class="nav-dropdown" id="codesDropdown">
+          <a href="gamecode.html" class="mini-btn" id="codesBtn">Codes</a>
+          <div class="nav-menu" id="codesMenu">
+            <a class="nav-item" href="gamecode.html">Game Codes</a>
+            <a class="nav-item" href="promo-latest-codes.html">Promo Codes</a>
+          </div>
         </div>
-    </main>
+        <a href="wiki.html" class="nav-box nav-link">Wiki</a>
+      </div>
+    </div>
 
-    <!-- LOGOUT SCRIPT -->
-    <script>
-        function logout() {
-            let confirmLogout = confirm("Are you sure you want to logout?");
-            if (confirmLogout) {
-                localStorage.removeItem("loggedUser");
-                alert("You have been logged out successfully.");
-                window.location.href = "login.html";
-            }
-        }
-    </script>
+    <h1 class="hero-title">🔍Search Roblox Games</h1>
+
+    <div class="search-wrap">
+      <div class="search-shell">
+        <input id="globalSearch" type="text" placeholder="Search Roblox Code" autocomplete="off" />
+        <button class="clear-btn" type="button" onclick="clearGlobalSearch()" aria-label="Clear">✕</button>
+        <div id="searchSuggestions" class="suggestions" aria-label="Search Suggestions"></div>
+      </div>
+    </div>
+
+    <!-- STATS COUNTER -->
+    <section class="stats-section">
+      <p class="stats-title">📊 BLOXBURST Stats</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-icon">🎮</span>
+          <div class="stat-number" data-target="500" data-suffix="+">0</div>
+          <div class="stat-label">Games Tracked</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🔑</span>
+          <div class="stat-number" data-target="1200" data-suffix="+">0</div>
+          <div class="stat-label">Active Codes</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">✅</span>
+          <div class="stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="stat-label">Manually Verified</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">⚡</span>
+          <div class="stat-number" data-target="24" data-suffix="h">0</div>
+          <div class="stat-label">Update Frequency</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="topGames-text">Top Code Released!</div>
+
+    
+
+    <!-- ✅ EMPTY — script.js fills this automatically from games.json -->
+    <div class="games-scroll">
+      <div class="games-row" data-max="16">
+        <div class="games-loading">Loading games...</div>
+      </div>
+    </div>
+    
+    <div class="explore-section">
+      <a href="gamecode.html" class="explore-btn">🚀 Explore More Codes</a>
+    </div>
+
+    <!-- SEO Static Content — always visible to Google crawlers -->
+    <section style="max-width:860px; margin:0 auto 28px; padding:0 28px; text-align:center;">
+      <h2 style="font-family:'Fredoka',sans-serif; font-size:20px; color:#fff; margin-bottom:10px;">Working Roblox Game Codes — Updated Daily</h2>
+      <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.8; margin-bottom:12px;">
+        BLOXBURST is a free Roblox codes site that manually verifies every active code before publishing. Every code listed here is tested, confirmed working, and updated the moment it expires or a new one is released — no guesswork, no outdated lists.
+      </p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.8;">
+        Looking for free in-game rewards? Browse our full list of working game codes, check the latest Roblox promo codes for free items, or visit the BLOXBURST Wiki for step-by-step guides on how to redeem codes and fix common errors like "Invalid Code." All codes are verified daily — no expired codes, no guesswork.
+      </p>
+    </section>
+
+    <!-- Promo Codes Section -->
+    <section class="promo-section">
+      <div class="promo-head">
+        <h2>Promo Codes</h2>
+        <p>Claim extra rewards from promo events and special drops.</p>
+      </div>
+      <div class="promo-grid">
+        <a class="promo-card" href="promo-latest-codes.html">
+          <div class="promo-tag">UPDATED</div>
+          <h3>Latest Promo Codes</h3>
+          <p>See all working promo codes in one place.</p>
+          <span class="promo-cta">Open Promo Codes ➜</span>
+        </a>
+        <a class="promo-card" href="promo-how-to-redeem.html">
+          <div class="promo-tag">GUIDE</div>
+          <h3>How to Redeem Promo Codes</h3>
+          <p>A step-by-step guide on how to claim your rewards correctly.</p>
+          <span class="promo-cta">Learn More ➜</span>
+        </a>
+        <a class="promo-card" href="promo-troubleshoot.html">
+          <div class="promo-tag">TIP</div>
+          <h3>Promo Code Troubleshoot</h3>
+          <p>Fix "Invalid" errors + common issues.</p>
+          <span class="promo-cta">View Fixes ➜</span>
+        </a>
+      </div>
+      <div class="promo-btn-wrap">
+        <a class="wiki-btn" href="promo-latest-codes.html">🎟️ Browse All Promo Codes</a>
+      </div>
+    </section>
+
+    <!-- Latest Update Wiki -->
+    <section class="wiki-latest">
+      <div class="wiki-latest-head">
+        <h2>Latest Update Wiki</h2>
+        <p>Fresh guides + updates from BLOXBURST Wiki</p>
+      </div>
+      <div class="wiki-latest-grid">
+        <a class="wiki-card" href="Wiki-Folder/wiki-redeem-codes.html">
+          <div class="wiki-card-top"><span class="wiki-tag">UPDATE</span><span class="wiki-date">Feb 22, 2026</span></div>
+          <h3>How to Redeem Roblox Codes (Step-by-step)</h3>
+          <p>A quick guide to make sure you don't make mistakes when redeeming.</p>
+          <span class="wiki-read">Read ➜</span>
+        </a>
+        <a class="wiki-card" href="Wiki-Folder/wiki-how-we-check-codes.html">
+          <div class="wiki-card-top"><span class="wiki-tag">GUIDE</span><span class="wiki-date">Feb 21, 2026</span></div>
+          <h3>How we check codes (manual testing)</h3>
+          <p>An explanation of how we scan and test codes.</p>
+          <span class="wiki-read">Read ➜</span>
+        </a>
+        <a class="wiki-card" href="Wiki-Folder/wiki-invalid-code-reasons.html">
+          <div class="wiki-card-top"><span class="wiki-tag">NEW</span><span class="wiki-date">Feb 19, 2026</span></div>
+          <h3>Common reasons bakit "Invalid Code"</h3>
+          <p>Common issues and fast solutions.</p>
+          <span class="wiki-read">Read ➜</span>
+        </a>
+      </div>
+      <div class="wiki-latest-cta">
+        <a class="wiki-btn" href="wiki.html">📚 Open Wiki</a>
+      </div>
+    </section>
+
+    <!-- SUGGESTION FOR YOU -->
+    <section class="suggest-bottom">
+      <div class="section-divider-title">
+        <span>✨ Suggestion For You</span>
+      </div>
+      <div class="suggest-grid" id="suggestGrid"></div>
+    </section>
+
+    <!-- GAME WIKI -->
+    <section class="suggest-bottom">
+      <div class="section-divider-title">
+        <span>🎮 Game Wiki</span>
+      </div>
+      <div class="suggest-grid" id="gameWikiGrid"></div>
+    </section>
+
+    <section class="bottom-text">
+      <h2>Stay Updated. Never Miss a Code.</h2>
+      <p>We manually check and verify working Roblox codes daily to ensure you get real and active rewards.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">BLOXBURST🔥</div>
+        <p class="footer-desc">
+          BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="gamecode.html">Game Codes</a>
+        <a href="promo-latest-codes.html">Promo Codes</a>
+        <a href="wiki.html">Wiki</a>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="Terms-and-Condition/about.html">About Us</a>
+        <a href="Terms-and-Condition/faq.html">FAQ</a>
+        <a href="Terms-and-Condition/contactus.html">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Policies</h4>
+        <a href="Terms-and-Condition/terms.html">Terms of Use</a>
+        <a href="Terms-and-Condition/privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+      <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- STATS COUNTER ANIMATION -->
+  <script>
+    function animateCounter(el) {
+      const target     = parseInt(el.dataset.target, 10);
+      const suffix     = el.dataset.suffix || '';
+      const duration   = 1800;
+      const step       = 16;
+      const increments = Math.ceil(duration / step);
+      let current      = 0;
+      const timer      = setInterval(() => {
+        current += Math.ceil(target / increments);
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = current.toLocaleString() + suffix;
+      }, step);
+    }
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.stat-number').forEach(animateCounter);
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(statsSection);
+    }
+  </script>
+
 </body>
 </html>

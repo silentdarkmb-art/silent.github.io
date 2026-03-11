@@ -1,0 +1,740 @@
+[
+  {
+    "name": "Brew a Potion",
+    "image": "Images/Brew a Potion.webp",
+    "url": "roblox/Brew-a-Potion.html",
+    "lastupdate": "2026-02-22T18:00",
+    "tooltip": "Grab free Chests and Cash in Brew a Potion — ingredients for your next big batch are waiting.",
+    "rewards": "Chests, Cash",
+    "activeCodes": 32
+  },
+  {
+    "name": "a dusty trip",
+    "image": "Images/a dusty trip.webp",
+    "url": "roblox/a-dusty-trip.html",
+    "lastupdate": "2026-02-26T10:00",
+    "tooltip": "Stock up on Dusty Coins, Easter Eggs, and Highland Tokens with these a dusty trip codes — fuel your desert run today.",
+    "rewards": "Dusty Coins, Easter Eggs, Highland Tokens",
+    "activeCodes": 4
+  },
+  {
+  "name": "Build a Mini Golf",
+  "image": "Images/Build a Mini Golf.webp",
+  "url": "roblox/Build-a-Mini-Golf.html",
+  "lastupdate": "2026-03-07T12:00",
+  "tooltip": "Design your own mini golf course and grab free Cash for blocks and upgrades — these Build a Mini Golf codes give your build a head start.",
+  "rewards": "Cash",
+  "activeCodes": 1
+  },
+  {
+    "name": "A Lion's Pride Beta",
+    "image": "Images/A Lion's Pride Beta.webp",
+    "url": "roblox/A-Lion's-Pride-Beta.html",
+    "lastupdate": "2026-02-26T10:00",
+    "tooltip": "Claim the Golden Leaf Body, Head, and Neck accessories for free — these A Lion's Pride Beta codes won't last long.",
+    "rewards": "Golden Leaf Body, Head, Neck",
+    "activeCodes": 2
+  },
+  {
+    "name": "Build A Pet Factory",
+    "image": "Images/Build A Pet Factory.webp",
+    "url": "roblox/Build-A-Pet-Factory.html",
+    "lastupdate": "2026-03-07T12:00",
+    "tooltip": "Kickstart your pet production line with free Gems and Cash — these four Build A Pet Factory codes are all active and confirmed across every major tracker.",
+    "rewards": "Cash, Gems",
+    "activeCodes": 4
+  },
+  {
+    "name": "Climb and Jump Tower",
+    "image": "Images/Climb and Jump Tower.webp",
+    "url": "roblox/Climb-and-Jump-Tower.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Scale the Eiffel Tower, Statue of Liberty, and more iconic landmarks in Climb and Jump Tower — free Souvenir Boxes and a Summer Pet are waiting in the latest codes.",
+    "rewards": "Souvenir Boxes, Summer Pet",
+    "activeCodes": 14
+  },
+  {
+    "name": "Deadly Delivery",
+    "image": "Images/Deadly Delivery.webp",
+    "url": "roblox/Deadly-Delivery.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Descend into monster-infested floors, scavenge supplies, and extract alive in Deadly Delivery — 32 active codes unlock free Z-Ray Guns, Revive Tickets, Gold Bars, and Gear Bundles.",
+    "rewards": "Z-Ray Guns, Revive Tickets, Gold Bars, Gear Bundles",
+    "activeCodes": 32
+  },
+  {
+    "name": "Dress To Impress",
+    "image": "Images/Dress To Impress.webp",
+    "url": "roblox/Dress-To-Impress.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Design themed outfits, walk the runway, and earn votes to climb the model ranks in Dress To Impress — 30 active codes unlock free exclusive fashion items, accessories, and seasonal sets.",
+    "rewards": "Outfits, Accessories, Seasonal Items",
+    "activeCodes": 30
+  },
+  {
+    "name": "Cursed Tank Simulator",
+    "image": "Images/Cursed Tank Simulator.webp",
+    "url": "roblox/Cursed-Tank-Simulator.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Mix and match tank modules, battle other players, and collect parts in Cursed Tank Simulator — over 300,000 free Gold, Tokens, Crates, and Materials are waiting across 20 active codes.",
+    "rewards": "Gold, Tokens, Crates, Materials",
+    "activeCodes": 20
+  },
+  {
+    "name": "Craft Anime",
+    "image": "Images/Craft Anime.webp",
+    "url": "roblox/Craft-Anime.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Buy Elements, craft iconic Anime characters at your table, and earn passive Cash in Craft Anime — over 47,500 free Cash is waiting across all active codes.",
+    "rewards": "Cash",
+    "activeCodes": 6
+  },
+  {
+    "name": "Craft a Brainrot",
+    "image": "Images/Craft a Brainrot.webp",
+    "url": "roblox/Craft-a-Brainrot.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Mix wild ingredients, craft viral Brainrots from internet meme culture, and earn passive Cash in Craft a Brainrot — free Galaxies, Animals, and Plants are waiting in the latest codes.",
+    "rewards": "Ingredients, Animals, Galaxy",
+    "activeCodes": 10
+  },
+  {
+    "name": "Craft a Baddie",
+    "image": "Images/Craft a Baddie.webp",
+    "url": "roblox/Craft-a-Baddie.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Mix chaotic ingredients, craft viral Baddies, and build a passive Cash empire in Craft a Baddie — free Fantasy Books and crafting ingredients are waiting in the latest codes.",
+    "rewards": "Crafting Ingredients, Fantasy Book",
+    "activeCodes": 2
+  },
+  {
+    "name": "Combat Arena",
+    "image": "Images/Combat Arena.webp",
+    "url": "roblox/Combat-Arena.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Battle players across real-world arenas, earn Coins, and open Crates for Legendary weapon skins in Combat Arena — a free Primordial Crate and Coins are waiting in the latest codes.",
+    "rewards": "Primordial Crate, Coins",
+    "activeCodes": 2
+  },
+  {
+    "name": "Coaster and Plunge",
+    "image": "Images/Coaster and Plunge.webp",
+    "url": "roblox/Coaster-and-Plunge.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Ride your own coaster, climb to the mountain peak, and slide back down collecting Coins in Coaster and Plunge — free Speed, Coin, Trophy, and Stamina Potions are waiting in the latest codes.",
+    "rewards": "Coin Potions, Speed Potions, Trophy Potions, Stamina Potions",
+    "activeCodes": 4
+  },
+  {
+    "name": "Catch And Tame",
+    "image": "Images/Catch And Tame.webp",
+    "url": "roblox/Catch-And-Tame.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Lasso wild animals, fill your pen with rare hybrids, and earn coins even offline in Catch And Tame — free Steaks and Bones are waiting in the latest codes.",
+    "rewards": "Steaks, Bones",
+    "activeCodes": 2
+  },
+  {
+    "name": "Catch a Monster",
+    "image": "Images/Catch a Monster.webp",
+    "url": "roblox/Catch-a-Monster.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Battle wild creatures, hatch rare eggs, and fill your Monsterdex in Catch a Monster — free XP Potions, Rifts, and Eggs are just a code away.",
+    "rewards": "Eggs, Rifts, XP Potions, Coin Potions, Gear Chests",
+    "activeCodes": 10
+  },
+  {
+    "name": "Case Paradise",
+    "image": "Images/Case Paradise.webp",
+    "url": "roblox/Case-Paradise.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Crack open rare weapon cases, chase Covert-grade skins, and battle other players in Case Paradise — free Gingerbreads and in-game rewards are just a code away.",
+    "rewards": "Gingerbreads, In-Game Rewards",
+    "activeCodes": 2
+  },
+  {
+    "name": "Car Zone Racing & Drifting",
+    "image": "Images/Car Zone Racing Drifting.webp",
+    "url": "roblox/Car-Zone-Racing-Drifting.html",
+    "lastupdate": "2026-03-08T00:00",
+    "tooltip": "Hit the open road, collect over 100 cars, and claim free Cash with the latest Car Zone Racing & Drifting codes to fast-track your dream garage.",
+    "rewards": "Cash",
+    "activeCodes": 4
+  },
+  {
+    "name": "Blade Ball",
+    "image": "Images/Blade Ball.webp",
+    "url": "roblox/Blade-Ball.html",
+    "lastupdate": "2026-03-07T00:00",
+    "tooltip": "Deflect the homing ball, outlast every opponent, and grab free Wheel Spins, Sword Skins, and Luck Boosts with the latest Blade Ball codes.",
+    "rewards": "Wheel Spins, Sword Skins, Luck Boosts",
+    "activeCodes": 11
+  },
+  {
+    "name": "Be a YouTuber",
+    "image": "Images/Be a YouTuber.webp",
+    "url": "roblox/Be-a-YouTuber.html",
+    "lastupdate": "2026-03-07T12:00",
+    "tooltip": "Start small, upload videos, and hire an army of creators to build your empire in Be a YouTuber — free Rebirth Coins and Cash are just a code away.",
+    "rewards": "Rebirth Coins, Cash",
+    "activeCodes": 7
+  },
+  {
+    "name": "Build an Arcade",
+    "image": "Images/Build an Arcade.webp",
+    "url": "roblox/Build-an-Arcade.html",
+    "lastupdate": "2026-03-07T12:00",
+    "tooltip": "Build your dream arcade from scratch and score free VIP Customers, Prismatic Potions, and Luck Potions in Build an Arcade — high-rollers who spend big are just a code away.",
+    "rewards": "VIP Customers, Prismatic Potions, Luck Potions",
+    "activeCodes": 9
+  },
+  {
+    "name": "Build a Tower to Jump",
+    "image": "Images/Build a Tower to Jump.webp",
+    "url": "roblox/Build-a-Tower-to-Jump.html",
+    "lastupdate": "2026-03-07T12:00",
+    "tooltip": "Stack blocks sky-high and grab a free Speed Potion in Build a Tower to Jump — the higher your tower, the bigger your coin haul on the way down.",
+    "rewards": "Speed Potions",
+    "activeCodes": 1
+  },
+  {
+    "name": "Anime Eternal",
+    "image": "Images/Anime Eternal.webp",
+    "url": "roblox/Anime-Eternal.html",
+    "lastupdate": "2026-02-26T10:00",
+    "tooltip": "Power up with free Potions and Credits in Anime Eternal — give your roster the boost it needs.",
+    "rewards": "Potions, Credits",
+    "activeCodes": 20
+  },
+  {
+  "name": "Build a Brainrot Farm",
+  "image": "Images/Build a Brainrot Farm.webp",
+  "url": "roblox/Build-a-Brainrot-Farm.html",
+  "lastupdate": "2026-03-07T12:00",
+  "tooltip": "Hatch a Legendary Egg and stack Cash and Luck Boosts for free — these Build a Brainrot Farm codes give your farm a serious head start.",
+  "rewards": "Cash, Legendary Egg, Cash Boost, Luck Boost",
+  "activeCodes": 16
+  },
+  {
+    "name": "50 Days on a Raft",
+    "image": "Images/50 Days on a Raft.webp",
+    "url": "roblox/50-Days-on-a-Raft.html",
+    "lastupdate": "2026-03-02T18:00",
+    "tooltip": "Spin the wheel and grab limited skins for free — these 50 Days on a Raft codes give you Wheel Spins and Caps at no cost.",
+    "rewards": "Wheel Spins, Caps, Skins",
+    "activeCodes": 3
+  },
+  {
+    "name": "2D Basketball",
+    "image": "Images/2D Basketball.webp",
+    "url": "roblox/2D-Basketball.html",
+    "lastupdate": "2026-03-02T18:00",
+    "tooltip": "Hit the court with free Cash, Spins, and exclusive banners — these 2D Basketball codes are your fast break to the top.",
+    "rewards": "Cash, Spins",
+    "activeCodes": 2
+  },
+  {
+    "name": "Jujutsu Legacy",
+    "image": "Images/Jujutsu Legacy.webp",
+    "url": "roblox/Jujutsu-Legacy.html",
+    "lastupdate": "2026-02-23T18:00",
+    "tooltip": "Use these Jujutsu Legacy codes to rack up free Spins and reroll your way to a stronger cursed build.",
+    "rewards": "Spins",
+    "activeCodes": 32
+  },
+  {
+    "name": "24 Hours Overnight",
+    "image": "Images/24 Hours Overnight.webp",
+    "url": "roblox/24-Hours-Overnight.html",
+    "lastupdate": "2026-03-02T18:00",
+    "tooltip": "Unlock new character classes and pocket free Gems with these 24 Hours Overnight codes — survive the night fully equipped.",
+    "rewards": "Gems, Classes",
+    "activeCodes": 2
+  },
+  {
+    "name": "2 Player Battle Tycoon",
+    "image": "Images/2 Player Battle Tycoon.webp",
+    "url": "roblox/2-Player-Battle-Tycoon.html",
+    "lastupdate": "2026-02-22T18:00",
+    "tooltip": "Dominate your opponent faster — these 2 Player Battle Tycoon codes hand you free Diamonds and Speed Coils right away.",
+    "rewards": "Diamonds, Speed Coils",
+    "activeCodes": 5
+  },
+  {
+    "name": "Anime Final Quest",
+    "image": "Images/Anime Final Quest.webp",
+    "url": "roblox/Anime-Final-Quest.html",
+    "lastupdate": "2026-02-22T18:00",
+    "tooltip": "Spin your way to a better build — these Anime Final Quest codes award free Spins, Runes, and Cash for your adventure.",
+    "rewards": "Spins, Runes, Cash",
+    "activeCodes": 4
+  },
+  {
+    "name": "Plant Brainrot Simulator",
+    "image": "Images/Plant Brainrot Simulator.webp",
+    "url": "roblox/Plant-Brainrot-Simulator.html",
+    "lastupdate": "2026-02-23T18:00",
+    "tooltip": "Grow your collection faster — grab free Fruits and Crystals with these Plant Brainrot Simulator codes.",
+    "rewards": "Fruits, Crystals",
+    "activeCodes": 6
+  },
+  {
+    "name": "Be Dino - Jurassic Dinosaur Simulation",
+    "image": "Images/Be Dino.webp",
+    "url": "roblox/Be-Dino.html",
+    "lastupdate": "2026-03-06T19:00",
+    "tooltip": "Evolve your dinosaur faster — these Be Dino codes give you free Gems, Dinosaurs, and XP Boosts to rule the prehistoric world.",
+    "rewards": "Gems, Dinosaurs, XP Boosts",
+    "activeCodes": 3
+  },
+  {
+    "name": "Bubble Gum Simulator INFINITY",
+    "image": "Images/Bubble Gum Simulator INFINITY.webp",
+    "url": "roblox/Bubble-Gum-Simulator-INFINITY.html",
+    "lastupdate": "2026-03-06T19:00",
+    "tooltip": "19 working codes! Boost your bubble with free Elixirs, Infinity Potions, Mystery Boxes, and Spin Tickets in BGSI.",
+    "rewards": "Elixirs, Infinity Potions, Mystery Boxes",
+    "activeCodes": 19
+  },
+  {
+    "name": "Brainrot Evolution",
+    "image": "Images/Brainrot Evolution.webp",
+    "url": "roblox/Brainrot-Evolution.html",
+    "lastupdate": "2026-03-06T19:00",
+    "tooltip": "Level up your brainrot creature fast — these Brainrot Evolution codes hand out free EXP Potions, Mega EXP Potions, and Crates.",
+    "rewards": "EXP Potions, Mega EXP Potions, Crates",
+    "activeCodes": 8
+  },
+  {
+    "name": "Blue Lock Rivals",
+    "image": "Images/Blue Lock Rivals.webp",
+    "url": "roblox/Blue-Lock-Rivals.html",
+    "lastupdate": "2026-03-06T19:00",
+    "tooltip": "Spin for your dream playstyle — these Blue Lock Rivals codes award free Lucky Style Spins, Lucky Flow Spins, and Cash.",
+    "rewards": "Cash, Lucky Style Spins, Lucky Flow Spins",
+    "activeCodes": 9
+  },
+  {
+    "name": "BloxStrike",
+    "image": "Images/BloxStrike.webp",
+    "url": "roblox/BloxStrike.html",
+    "lastupdate": "2026-03-06T19:00",
+    "tooltip": "Unlock weapon skins and open crates for free — check back here for new BloxStrike codes as they drop.",
+    "rewards": "Credits, Weapon Skins",
+    "activeCodes": 0
+  },
+  {
+    "name": "Battle Minigames",
+    "image": "Images/Battle Minigames.webp",
+    "url": "roblox/Battle-Minigames.html",
+    "lastupdate": "2026-03-06T19:00",
+    "tooltip": "Gear up for free in Battle Minigames — claim Coins and unlock weapons without spending a thing.",
+    "rewards": "Coins, Gear",
+    "activeCodes": 6
+  },
+  {
+    "name": "Banana Eats",
+    "image": "Images/Banana Eats.webp",
+    "url": "roblox/Banana-Eats.html",
+    "lastupdate": "2026-03-06T19:00",
+    "tooltip": "Outrun the banana with style — grab free Beacons, Coins, and exclusive Skins in Banana Eats.",
+    "rewards": "Beacons, Coins, Skins",
+    "activeCodes": 24
+  },
+  {
+    "name": "Anime Ascendants",
+    "image": "Images/Anime Ascendants.webp",
+    "url": "roblox/Anime-Ascendants.html",
+    "lastupdate": "2026-03-06T19:00",
+    "tooltip": "Ascend faster with free Gems, Magic Tokens, and Stat Cubes — these Anime Ascendants codes are all working.",
+    "rewards": "Gems, Magic Tokens, Stat Cubes",
+    "activeCodes": 42
+  },
+  {
+    "name": "Azure Latch",
+    "image": "Images/Azure Latch.webp",
+    "url": "roblox/Azure-Latch.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Express yourself for free — these Azure Latch codes give you Cash, Style Coins, and exclusive Emotes to customize your look.",
+    "rewards": "Cash, Style Coins, Emotes",
+    "activeCodes": 6
+  },
+  {
+    "name": "Rogue Piece",
+    "image": "Images/Rogue Piece.webp",
+    "url": "roblox/Rogue-Piece.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Set sail with a head start — these Rogue Piece codes drop free Gems and Chests to power up your pirate journey.",
+    "rewards": "Gems, Chests",
+    "activeCodes": 6
+  },
+  {
+    "name": "Forgotten",
+    "image": "Images/Forgotten.webp",
+    "url": "roblox/Forgotten.html",
+    "lastupdate": "2026-02-22T19:00",
+    "tooltip": "Don't leave these Forgotten codes behind — claim your free Cash and get back into the fight.",
+    "rewards": "Cash",
+    "activeCodes": 11
+  },
+  {
+    "name": "A Universal Time",
+    "image": "Images/A Universal Time.webp",
+    "url": "roblox/A-Universal-Time.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Stop time and grab your rewards — these A Universal Time codes give you free UCoins, UShards, and Skin Crates.",
+    "rewards": "UCoins, UShards, Skin Crates",
+    "activeCodes": 11
+  },
+  {
+    "name": "Asylum Life",
+    "image": "Images/Asylum Life.webp",
+    "url": "roblox/Asylum-Life.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Escape the grind — these Asylum Life codes unlock free EXP Boosters, Credits, and exclusive in-game items for your character.",
+    "rewards": "EXP Boosters, Credits",
+    "activeCodes": 11
+  },
+  {
+    "name": "Arsenal",
+    "image": "Images/Arsenal.webp",
+    "url": "roblox/Arsenal.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Look good while you frag — these Arsenal codes award free Skins, Announcer Packs, BattleBucks, and Kill Effects.",
+    "rewards": "Skins, BattleBucks, Kill Effects",
+    "activeCodes": 11
+  },
+  {
+    "name": "Arm Wrestle Simulator",
+    "image": "Images/Arm Wrestle Simulator.webp",
+    "url": "roblox/Arm-Wrestle-Simulator.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Crush the competition faster — these Arm Wrestle Simulator codes give you free Stat Boosts and Strength multipliers.",
+    "rewards": "Stat Boosts, Strength Multipliers",
+    "activeCodes": 11
+  },
+  {
+    "name": "Dig Training",
+    "image": "Images/Dig Legends.webp",
+    "url": "roblox/Dig-Training.html",
+    "lastupdate": "2026-02-22T19:00",
+    "tooltip": "Dig deeper without the grind — these Dig Training codes hand out free Potions to keep your excavation going strong.",
+    "rewards": "Potions",
+    "activeCodes": 11
+  },
+  {
+    "name": "ARISE CROSSOVER",
+    "image": "Images/ARISE CROSSOVER.webp",
+    "url": "roblox/ARISE-CROSSOVER.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Strengthen your Shadow Army with free Tickets, Gems, and Potions — ARISE CROSSOVER codes are all verified.",
+    "rewards": "Gems, Tickets, Potions",
+    "activeCodes": 132
+  },
+  {
+    "name": "AniPixels",
+    "image": "Images/AniPixels.webp",
+    "url": "roblox/AniPixels.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Catch more AniPixels for free — these codes give you Dragon Balls and exclusive characters to grow your anime roster.",
+    "rewards": "Dragon Balls, Characters",
+    "activeCodes": 5
+  },
+  {
+    "name": "Anime Weapons",
+    "image": "Images/Anime Weapons.webp",
+    "url": "roblox/Anime-Weapons.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Gear up with free Emeralds, Potions, Reset Tokens, and Keys — Anime Weapons has one of the biggest code lists on Roblox.",
+    "rewards": "Emeralds, Potions, Reset Tokens, Keys",
+    "activeCodes": 132
+  },
+  {
+    "name": "Anime Vanguards",
+    "image": "Images/Anime Vanguards.webp",
+    "url": "roblox/Anime-Vanguards.html",
+    "lastupdate": "2026-03-05T19:00",
+    "tooltip": "Upgrade your defense lineup with free Gems, Gold, Trait Rerolls, and Memoria Shards in Anime Vanguards.",
+    "rewards": "Gems, Gold, Trait Rerolls, Memoria Shards",
+    "activeCodes": 51
+  },
+  {
+    "name": "Anime Paradox",
+    "image": "Images/Anime Paradox.webp",
+    "url": "roblox/Anime-Paradox.html",
+    "lastupdate": "2026-03-04T19:00",
+    "tooltip": "Reroll your traits and power up your units — these Anime Paradox codes drop free Gems, Trait Rerolls, Stat Chips, and Ragnar.",
+    "rewards": "Gems, Trait Rerolls, Stat Chips, Ragnar",
+    "activeCodes": 37
+  },
+  {
+    "name": "Anime Last Stand",
+    "image": "Images/Anime Last Stand.webp",
+    "url": "roblox/Anime-Last-Stand.html",
+    "lastupdate": "2026-03-04T19:00",
+    "tooltip": "Hold the line with a stronger team — these Anime Last Stand codes give you free Emeralds, Rerolls, Pearls, and Shard Locks.",
+    "rewards": "Emeralds, Rerolls, Pearls, Shard Locks",
+    "activeCodes": 43
+  },
+  {
+    "name": "Anime Ghosts",
+    "image": "Images/Anime Ghosts.webp",
+    "url": "roblox/Anime-Ghosts.html",
+    "lastupdate": "2026-03-04T19:00",
+    "tooltip": "Haunt the leaderboard — these Anime Ghosts codes award free Gems, Tier 2 Potions, and Cooldown Resets to keep you in the fight.",
+    "rewards": "Gems, Tier 2 Potions, Cooldown Resets",
+    "activeCodes": 12
+  },
+  {
+    "name": "Anime Fighting Simulator: Endless",
+    "image": "Images/Anime Fighting Simulator Endless.webp",
+    "url": "roblox/Anime-Fighting-Simulator-Endless.html",
+    "lastupdate": "2026-03-04T19:00",
+    "tooltip": "Train without limits — these Anime Fighting Simulator: Endless codes hand out free Shiny Potions, Cursed Orbs, and Fragments.",
+    "rewards": "Shiny Potions, Cursed Orbs, Fragments",
+    "activeCodes": 18
+  },
+  {
+    "name": "Anime Fighters Simulator",
+    "image": "Images/Anime Fighters Simulator.webp",
+    "url": "roblox/Anime-Fighters-Simulator.html",
+    "lastupdate": "2026-03-04T19:00",
+    "tooltip": "Build the ultimate fighter roster — these Anime Fighters Simulator codes give you free Shiny Potions, Cursed Orbs, and Weapon Fragments.",
+    "rewards": "Shiny Potions, Cursed Orbs, Weapon Fragments",
+    "activeCodes": 22
+  },
+  {
+    "name": "Anime Evolution",
+    "image": "Images/Anime Evolution.webp",
+    "url": "roblox/Anime-Evolution.html",
+    "lastupdate": "2026-03-04T19:00",
+    "tooltip": "Evolve your anime warrior faster — claim free Potions, Weapon Crystals, and Raid Keys with these Anime Evolution codes.",
+    "rewards": "Potions, Weapon Crystals, Raid Keys",
+    "activeCodes": 14
+  },
+  {
+    "name": "AFK for UGC",
+    "image": "Images/AFK for UGC.webp",
+    "url": "roblox/AFK-for-UGC.html",
+    "lastupdate": "2026-03-04T19:00",
+    "tooltip": "Earn UGC items while you idle — these AFK for UGC codes boost your Points and Clicks to speed up your UGC collection.",
+    "rewards": "Points, Clicks, UGC Items",
+    "activeCodes": 8
+  },
+  {
+    "name": "Adopt Me",
+    "image": "Images/Adopt Me.webp",
+    "url": "roblox/Adopt-Me.html",
+    "lastupdate": "2026-02-22T19:00",
+    "tooltip": "Grow your pet family for free — these Adopt Me codes award Bucks, pets, boosters, and seasonal items for your collection.",
+    "rewards": "Bucks, Pets, Boosters",
+    "activeCodes": 3
+  },
+  {
+    "name": "Arise Shadow Hunt",
+    "image": "Images/Arise-Shadow Hunt.webp",
+    "url": "roblox/Arise-Shadow-Hunt.html",
+    "lastupdate": "2026-02-22T19:00",
+    "tooltip": "Hunt stronger shadows from the start — these Arise Shadow Hunt codes pack in free Gems, Spins, and Potions.",
+    "rewards": "Gems, Spins, Potions",
+    "activeCodes": 21
+  },
+  {
+    "name": "Chainsaw Man Devil's Heart",
+    "image": "Images/Chainsaw Man Devil's Heart.webp",
+    "url": "roblox/Chainsaw-Man-Devil's-Heart.html",
+    "lastupdate": "2026-02-22T19:00",
+    "tooltip": "Awaken your devil power faster — these Chainsaw Man Devil's Heart codes give you free Spins and Gems.",
+    "rewards": "Spins, Gems",
+    "activeCodes": 19
+  },
+  {
+    "name": "Fabled Legacy! RPG",
+    "image": "Images/Fabled Legacy.webp",
+    "url": "roblox/Fabled-Legacy.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Write your legend without the grind — these Fabled Legacy RPG codes drop free Gold, Gems, and exclusive items.",
+    "rewards": "Gold, Gems",
+    "activeCodes": 6
+  },
+  {
+    "name": "Unbox a Boba Stand",
+    "image": "Images/Unbox a Boba Stand.webp",
+    "url": "roblox/Unbox-a-Boba-Stand.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Open more crates from the start — these Unbox a Boba Stand codes give you free Cash to spend at your boba shop.",
+    "rewards": "Cash",
+    "activeCodes": 3
+  },
+  {
+    "name": "Hood Wars",
+    "image": "Images/Hood Wars.webp",
+    "url": "roblox/Hood-Wars.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Run the block with more resources — these Hood Wars codes hand out free Money to spend on gear and upgrades.",
+    "rewards": "Money",
+    "activeCodes": 4
+  },
+  {
+    "name": "Royal Hatchers",
+    "image": "Images/Royal Hatchers.webp",
+    "url": "roblox/Royal-Hatchers.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Hatch powerful pets from day one — these Royal Hatchers codes give you free OP Pets and Potions to build your royal team.",
+    "rewards": "OP Pets, Potions",
+    "activeCodes": 3
+  },
+  {
+    "name": "18 FLOORS",
+    "image": "Images/18 FLOORS.webp",
+    "url": "roblox/18-FLOORS.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Climb all 18 floors fully equipped — grab free Credits, Skins, and exclusive Titles with these working codes.",
+    "rewards": "Credits, Skins, Titles",
+    "activeCodes": 33
+  },
+  {
+    "name": "100 Players vs 1 Gorilla",
+    "image": "Images/100 Players vs 1 Gorilla.webp",
+    "url": "roblox/100-Players-vs-1-Gorilla.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Arm yourself before the gorilla arrives — these 100 Players vs 1 Gorilla codes give you free Bananas, Coins, and weapon skins.",
+    "rewards": "Bananas, Coins, Weapon Skins",
+    "activeCodes": 13
+  },
+  {
+    "name": "Cookie Runners Kingdom",
+    "image": "Images/Cookie Runners Kingdom.webp",
+    "url": "roblox/Cookie-Runners-Kingdom.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Bake a stronger kingdom faster — these Cookie Runners Kingdom codes drop free Spins, Lucky Spins, and Cookie Cutters.",
+    "rewards": "Spins, Lucky Spins, Cookie Cutters",
+    "activeCodes": 9
+  },
+  {
+    "name": "Zero to Hero",
+    "image": "Images/Zero to Hero.webp",
+    "url": "roblox/Zero-to-Hero.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Skip the zero stage — these Zero to Hero codes give you free Gems, Dungeon Coins, and Potions to kick off your hero journey.",
+    "rewards": "Gems, Dungeon Coins, Potions",
+    "activeCodes": 3
+  },
+  {
+    "name": "99 Nights in the Wild West",
+    "image": "Images/99 Nights in the Wild West.webp",
+    "url": "roblox/99-Nights-in-the-Wild-West.html",
+    "lastupdate": "2026-03-04T19:00",
+    "tooltip": "Survive the frontier with extra resources — these 99 Nights in the Wild West codes give you free Gems and Candy.",
+    "rewards": "Gems, Candy",
+    "activeCodes": 8
+  },
+  {
+    "name": "KAIZEN",
+    "image": "Images/KAIZEN.webp",
+    "url": "roblox/KAIZEN.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Improve every day for free — these KAIZEN codes stack up Clan Spins, Lucky Spins, Binding Vow Spins, and Domain Shards.",
+    "rewards": "Clan Spins, Lucky Spins, Binding Vow Spins, Domain Shards",
+    "activeCodes": 15
+  },
+  {
+    "name": "Evolve it",
+    "image": "Images/Evolve It.webp",
+    "url": "roblox/Evolve-it.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Speed up your evolution with free Food, Tokens, and Potions — these Evolve It codes keep your creature growing.",
+    "rewards": "Food, Tokens, Potions",
+    "activeCodes": 36
+  },
+  {
+    "name": "Corsa Legends",
+    "image": "Images/Corsa Legends.webp",
+    "url": "roblox/Corsa-Legends.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Hit the track with a better garage — these Corsa Legends codes give you free Cash and Cars to stay ahead of the competition.",
+    "rewards": "Cash, Cars",
+    "activeCodes": 3
+  },
+  {
+    "name": "PARANORMAL",
+    "image": "Images/Paranormal.webp",
+    "url": "roblox/Paranormal.html",
+    "lastupdate": "2026-02-21T19:00",
+    "tooltip": "Investigate the unknown with better gear — these PARANORMAL codes give you free Tokens to spend on your haunted adventure.",
+    "rewards": "Tokens",
+    "activeCodes": 3
+  },
+  {
+    "name": "Sailor Piece",
+    "image": "Images/Sailor Piece.webp",
+    "url": "roblox/Sailor-Piece.html",
+    "lastupdate": "2026-02-26T19:00",
+    "tooltip": "Set sail with a full wallet — these Sailor Piece codes give you free Cash and Gems for your pirate voyage.",
+    "rewards": "Cash, Gems",
+    "activeCodes": 71
+  },
+  {
+    "name": "Build a Zoo",
+    "image": "Images/Build a Zoo.webp",
+    "url": "roblox/Build-a-Zoo.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Fill your zoo for free — these Build a Zoo codes give you Eggs to hatch new animals and expand your collection instantly.",
+    "rewards": "Eggs",
+    "activeCodes": 32
+  },
+  {
+    "name": "Rensselaer County",
+    "image": "Images/Rensselaer County.webp",
+    "url": "roblox/Rensselaer-County.html",
+    "lastupdate": "2026-03-01T19:00",
+    "tooltip": "Start your county career with extra funds — these Rensselaer County codes drop free Cash to spend across the map.",
+    "rewards": "Cash",
+    "activeCodes": 7
+  },
+  {
+    "name": "Prior Extinction Dinosaur Survival",
+    "image": "Images/Prior Extinction Dinosaur Survival.webp",
+    "url": "roblox/Prior-Extinction.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Survive the Cretaceous with a bigger roster — these Prior Extinction codes give you free Dinosaurs, Opals, and Amber.",
+    "rewards": "Dinosaurs, Opals, Amber",
+    "activeCodes": 5
+  },
+  {
+    "name": "99 Nights in the Forest",
+    "image": "Images/99 Nights in the Forest.webp",
+    "url": "roblox/99-Nights-in-the-Forest.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Stay alive through all 99 nights — grab your free Gems with these 99 Nights in the Forest codes before they run out.",
+    "rewards": "Gems",
+    "activeCodes": 1
+  },
+  {
+    "name": "99 Nights in the Arctic",
+    "image": "Images/99 Nights in the Arctic.webp",
+    "url": "roblox/99-Nights-in-the-Arctic.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Brave the frozen wilderness fully stocked — these 99 Nights in the Arctic codes hand you free Gems to make it through.",
+    "rewards": "Gems",
+    "activeCodes": 2
+  },
+  {
+    "name": "Real Futbol",
+    "image": "Images/Real Futbol.webp",
+    "url": "roblox/Real-Futbol.html",
+    "lastupdate": "2026-02-19T19:00",
+    "tooltip": "Hit the pitch with more RF Points — these Real Futbol codes give you a free head start on the road to the top division.",
+    "rewards": "RF Points",
+    "activeCodes": 9
+  },
+  {
+    "name": "MotoPrix Racing",
+    "image": "Images/MotoPrix Racing.webp",
+    "url": "roblox/MotoPrix-Racing.html",
+    "lastupdate": "2026-02-24T19:00",
+    "tooltip": "Take pole position from the start — these MotoPrix Racing codes load you up with free Cash and upgrade resources.",
+    "rewards": "Cash, Upgrade Resources",
+    "activeCodes": 27
+  }
+]

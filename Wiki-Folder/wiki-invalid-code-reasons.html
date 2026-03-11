@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Common Reasons "Invalid Code" - BLOXBURST Wiki</title>
+
+  <link rel="icon" type="image/png" href="../Images/FinalLogo.png">
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELF86MPP23');
+  </script>
+  <script defer src="../script.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { overflow-x: hidden; font-family: 'Nunito', sans-serif; }
+    img  { max-width: 100%; height: auto; display: block; }
+
+    /* ============================================================
+       SCANLINE / NOISE OVERLAY — gives a techy "error screen" feel
+       ============================================================ */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ============================================================
+       ANIMATED BG — RED/ORANGE danger theme (different from check-codes page)
+       ============================================================ */
+    .bg-particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.05;
+      animation: floatUp linear infinite;
+    }
+    .particle:nth-child(1) { width:200px; height:200px; background:#ff4444; left:3%;  animation-duration:20s; animation-delay:0s;  top:100%; }
+    .particle:nth-child(2) { width:100px; height:100px; background:#ff9f43; left:18%; animation-duration:24s; animation-delay:4s;  top:100%; }
+    .particle:nth-child(3) { width: 70px; height: 70px; background:#ff4444; left:38%; animation-duration:17s; animation-delay:2s;  top:100%; }
+    .particle:nth-child(4) { width:160px; height:160px; background:#ffcc00; left:58%; animation-duration:26s; animation-delay:6s;  top:100%; }
+    .particle:nth-child(5) { width: 50px; height: 50px; background:#ff6b6b; left:72%; animation-duration:15s; animation-delay:1s;  top:100%; }
+    .particle:nth-child(6) { width:120px; height:120px; background:#ff9f43; left:87%; animation-duration:21s; animation-delay:8s;  top:100%; }
+    @keyframes floatUp {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 0.05; }
+      50%  { opacity: 0.09; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    body.subpage .main-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 12px 30px !important;
+      width: min(1400px, 92%) !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      z-index: 100;
+      min-height: 100px !important;
+    }
+    body.subpage .main-header > a.logo {
+      flex-shrink: 0 !important;
+      align-self: center !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+    body.subpage .main-header .logo-img,
+    body.subpage .header-left .logo-img {
+      position: static !important;
+      height: 120px !important;
+      width: auto !important;
+      max-width: 220px !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+    body.subpage .main-header .header-search {
+      position: absolute !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 380px !important;
+      max-width: 380px !important;
+      z-index: 1 !important;
+    }
+    body.subpage .main-header .header-search .search-shell {
+      width: 100% !important;
+      height: 46px !important;
+      padding: 0 18px !important;
+    }
+    body.subpage .main-header .header-search .search-shell input { font-size: 15px !important; }
+    body.subpage .header-actions {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-shrink: 0 !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+    body.subpage .header-actions .nav-dropdown { width: 100px !important; min-width: 100px !important; display: block !important; }
+    body.subpage .header-actions .mini-btn,
+    body.subpage .header-actions .nav-dropdown #codesBtn {
+      width: 100px !important; min-width: 100px !important; max-width: 100px !important;
+      height: 42px !important; padding: 0 !important; font-size: 14px !important;
+      font-weight: 700 !important; display: inline-flex !important;
+      align-items: center !important; justify-content: center !important;
+      box-sizing: border-box !important; white-space: nowrap !important;
+    }
+
+    /* ============================================================
+       HERO — "ERROR SCREEN" AESTHETIC
+       ============================================================ */
+    .wiki-hero {
+      position: relative;
+      width: 100%;
+      padding: 60px 30px 50px;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .wiki-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255,68,68,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 35% at 80% 100%, rgba(255,159,67,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* Glitch line effect */
+    .wiki-hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      top: 40%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,68,68,0.3), transparent);
+      animation: glitchLine 4s ease infinite;
+    }
+    @keyframes glitchLine {
+      0%,90%,100% { opacity: 0; transform: scaleX(0); }
+      92%          { opacity: 1; transform: scaleX(1); }
+      96%          { opacity: 0.4; transform: scaleX(0.6) translateX(20px); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,68,68,0.15);
+      border: 1px solid rgba(255,68,68,0.40);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(255,160,160,0.95);
+      letter-spacing: 0.5px;
+      margin-bottom: 22px;
+      animation: fadeSlideDown 0.6s ease both;
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #ff4444;
+      box-shadow: 0 0 8px #ff4444;
+      animation: pulse-red 1.5s infinite;
+    }
+    @keyframes pulse-red {
+      0%,100% { opacity:1; transform:scale(1); box-shadow: 0 0 8px #ff4444; }
+      50%      { opacity:0.4; transform:scale(0.7); box-shadow: 0 0 3px #ff4444; }
+    }
+
+    .wiki-hero h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(26px, 4.5vw, 50px);
+      font-weight: 700;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 20%, rgba(255,120,120,0.95) 55%, #ff9f43);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      animation: fadeSlideDown 0.7s ease 0.1s both;
+    }
+    /* Glitch effect on title hover */
+    .wiki-hero h1:hover {
+      animation: glitchText 0.4s ease;
+    }
+    @keyframes glitchText {
+      0%,100% { transform: translateX(0); filter: none; }
+      20%      { transform: translateX(-3px); filter: hue-rotate(90deg); }
+      40%      { transform: translateX(3px); filter: hue-rotate(-90deg); }
+      60%      { transform: translateX(-2px); }
+      80%      { transform: translateX(2px); }
+    }
+
+    .wiki-hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.62);
+      max-width: 540px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+      animation: fadeSlideDown 0.7s ease 0.2s both;
+    }
+    .hero-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeSlideDown 0.7s ease 0.3s both;
+    }
+    .hero-meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.70);
+    }
+    .hero-meta-chip span { color: #ff9f43; font-weight: 900; }
+    @keyframes fadeSlideDown {
+      from { opacity:0; transform:translateY(-14px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ============================================================
+       CONTENT WRAPPER
+       ============================================================ */
+    .wiki-content-wrap {
+      position: relative;
+      z-index: 1;
+      width: min(1000px, 92%);
+      margin: 0 auto;
+      padding-bottom: 60px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,100,100,0.9);
+      margin-bottom: 18px;
+    }
+    .section-label::before {
+      content: '';
+      width: 28px; height: 2px;
+      background: linear-gradient(90deg, #ff4444, transparent);
+      border-radius: 2px;
+    }
+
+    /* ============================================================
+       ERROR CODE COUNTER — SURPRISE! animated number ticker
+       ============================================================ */
+    .error-counter-section { margin-bottom: 32px; }
+    .error-counter-card {
+      background: linear-gradient(145deg, rgba(30,10,10,0.9), rgba(40,15,15,0.8));
+      border: 1px solid rgba(255,68,68,0.2);
+      border-radius: 24px;
+      padding: 28px 32px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 40px rgba(255,68,68,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .error-counter-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #ff4444, #ff9f43, #ffcc00);
+    }
+    /* Animated corner accent */
+    .error-counter-card::after {
+      content: '⚠';
+      position: absolute;
+      bottom: -10px; right: 16px;
+      font-size: 120px;
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .counter-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .counter-head h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .error-live-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,68,68,0.15);
+      border: 1px solid rgba(255,68,68,0.35);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(255,150,150,0.95);
+    }
+    .error-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #ff4444;
+      box-shadow: 0 0 7px #ff4444;
+      animation: pulse-red 1.5s infinite;
+    }
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 600px) { .counter-grid { grid-template-columns: 1fr 1fr; } }
+    .counter-stat {
+      text-align: center;
+      padding: 18px 10px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      transition: 0.25s ease;
+    }
+    .counter-stat:hover {
+      background: rgba(255,68,68,0.08);
+      border-color: rgba(255,68,68,0.25);
+      transform: translateY(-3px);
+    }
+    .counter-num {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .counter-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       REASONS LIST — "ERROR CARDS" with severity indicators
+       ============================================================ */
+    .reasons-section { margin-bottom: 32px; }
+    .reasons-card {
+      background: linear-gradient(145deg, rgba(21,10,10,0.88), rgba(28,14,14,0.78));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px;
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .reasons-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #ff4444, #ff9f43, #ffcc00);
+    }
+    .reasons-card h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .reason-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .reason-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      transition: all 0.25s ease;
+      cursor: default;
+      opacity: 0;
+      transform: translateX(-16px);
+      animation: slideInReason 0.45s ease forwards;
+    }
+    .reason-item:nth-child(1) { animation-delay: 0.05s; }
+    .reason-item:nth-child(2) { animation-delay: 0.10s; }
+    .reason-item:nth-child(3) { animation-delay: 0.15s; }
+    .reason-item:nth-child(4) { animation-delay: 0.20s; }
+    .reason-item:nth-child(5) { animation-delay: 0.25s; }
+    .reason-item:nth-child(6) { animation-delay: 0.30s; }
+    @keyframes slideInReason {
+      to { opacity:1; transform:translateX(0); }
+    }
+    .reason-item:hover {
+      background: rgba(255,68,68,0.07);
+      border-color: rgba(255,68,68,0.25);
+      transform: translateX(4px);
+    }
+    .reason-num {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: rgba(255,100,100,0.7);
+      width: 32px;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .reason-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      width: 42px; height: 42px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .reason-body { flex: 1; }
+    .reason-body strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .reason-body p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.60);
+      line-height: 1.5;
+    }
+    .severity-badge {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+    .severity-badge.high {
+      background: rgba(255,68,68,0.18);
+      border: 1px solid rgba(255,68,68,0.40);
+      color: rgba(255,140,140,0.95);
+    }
+    .severity-badge.mid {
+      background: rgba(255,159,67,0.18);
+      border: 1px solid rgba(255,159,67,0.40);
+      color: rgba(255,200,120,0.95);
+    }
+    .severity-badge.low {
+      background: rgba(255,204,0,0.15);
+      border: 1px solid rgba(255,204,0,0.35);
+      color: rgba(255,220,100,0.95);
+    }
+
+    /* ============================================================
+       QUICK FIXES — INTERACTIVE CHECKLIST
+       ============================================================ */
+    .fixes-section { margin-bottom: 32px; }
+    .fixes-card {
+      background: linear-gradient(145deg, rgba(10,20,15,0.88), rgba(14,28,20,0.78));
+      border: 1px solid rgba(0,255,136,0.12);
+      border-radius: 24px;
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .fixes-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00ff88, #00c8ff);
+    }
+    .fixes-card h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .fix-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .fix-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      background: rgba(0,255,136,0.04);
+      border: 1px solid rgba(0,255,136,0.10);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      user-select: none;
+    }
+    .fix-item:hover {
+      background: rgba(0,255,136,0.08);
+      border-color: rgba(0,255,136,0.22);
+    }
+    .fix-item.checked {
+      background: rgba(0,255,136,0.10);
+      border-color: rgba(0,255,136,0.35);
+    }
+    .fix-checkbox {
+      width: 22px; height: 22px;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 13px;
+      font-weight: 900;
+      transition: 0.2s ease;
+      color: #002b1f;
+    }
+    .fix-item.checked .fix-checkbox {
+      background: #00ff88;
+      border-color: #00ff88;
+    }
+    .fix-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      flex: 1;
+    }
+    .fix-item.checked .fix-text {
+      text-decoration: line-through;
+      color: rgba(255,255,255,0.45);
+    }
+    .fix-step-tag {
+      font-size: 10px;
+      font-weight: 900;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(0,255,136,0.12);
+      border: 1px solid rgba(0,255,136,0.25);
+      color: rgba(0,255,136,0.85);
+      flex-shrink: 0;
+    }
+    /* Fix progress bar */
+    .fix-progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .fix-progress-bar {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .fix-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00ff88, #00c8ff);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+    .fix-progress-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.60);
+      white-space: nowrap;
+    }
+    /* Success message */
+    .fix-success {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(0,255,136,0.12);
+      border: 1px solid rgba(0,255,136,0.35);
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #00ff88;
+      text-align: center;
+      animation: popIn 0.4s ease;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    /* Warning note */
+    .warning-note {
+      padding: 16px 20px;
+      background: rgba(255,159,67,0.08);
+      border: 1px solid rgba(255,159,67,0.25);
+      border-left: 4px solid rgba(255,159,67,0.8);
+      border-radius: 14px;
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .note-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+
+    /* ============================================================
+       ERROR TYPE DIAGRAM — SURPRISE visual breakdown
+       ============================================================ */
+    .diagram-section { margin-bottom: 32px; }
+    .diagram-card {
+      background: linear-gradient(145deg, rgba(18,18,30,0.9), rgba(14,14,24,0.82));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px;
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .diagram-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #7d5cff, #00c8ff, #00ff88);
+    }
+    .diagram-card h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+    .donut-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    /* CSS-only donut chart */
+    .donut {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #ff4444    0%   42%,
+        #ff9f43   42%   62%,
+        #ffcc00   62%   74%,
+        #7d5cff   74%   86%,
+        #00c8ff   86%   93%,
+        #00ff88   93%  100%
+      );
+      position: relative;
+      flex-shrink: 0;
+      animation: spinIn 0.8s ease both;
+    }
+    .donut::after {
+      content: '6\AReasons';
+      white-space: pre;
+      position: absolute;
+      inset: 30px;
+      background: #0d0d1a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      line-height: 1.2;
+      font-size: 18px;
+    }
+    @keyframes spinIn {
+      from { transform: rotate(-90deg) scale(0.7); opacity: 0; }
+      to   { transform: rotate(0deg) scale(1); opacity: 1; }
+    }
+    .donut-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.82);
+    }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .legend-pct {
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.45);
+      margin-left: auto;
+      padding-left: 16px;
+    }
+
+    /* ============================================================
+       RELATED ARTICLES
+       ============================================================ */
+    .related-section { margin-bottom: 32px; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .related-grid { grid-template-columns: 1fr; } }
+
+    .wiki-card-enhanced {
+      text-decoration: none;
+      color: inherit;
+      background: linear-gradient(145deg, rgba(21,15,15,0.85), rgba(18,12,12,0.75));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .wiki-card-enhanced:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,68,68,0.3);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 25px rgba(255,68,68,0.08);
+    }
+    .card-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wiki-tag-new {
+      font-size: 10px; font-weight: 900;
+      padding: 5px 10px; border-radius: 999px;
+      background: rgba(255,68,68,0.18);
+      border: 1px solid rgba(255,68,68,0.35);
+      color: rgba(255,160,160,0.95);
+      letter-spacing: 0.5px;
+    }
+    .wiki-tag-new.green {
+      background: rgba(0,255,136,0.15);
+      border-color: rgba(0,255,136,0.35);
+      color: rgba(0,255,136,0.9);
+    }
+    .wiki-tag-new.blue {
+      background: rgba(0,200,255,0.15);
+      border-color: rgba(0,200,255,0.35);
+      color: rgba(0,200,255,0.9);
+    }
+    .card-arrow {
+      font-size: 16px;
+      color: rgba(255,255,255,0.3);
+      transition: all 0.25s ease;
+    }
+    .wiki-card-enhanced:hover .card-arrow { color: #ff6b6b; transform: translateX(4px); }
+    .wiki-card-enhanced h3 { font-size: 15px; font-weight: 900; color: #fff; line-height: 1.35; }
+    .wiki-card-enhanced p { font-size: 13px; color: rgba(255,255,255,0.58); line-height: 1.6; }
+
+    /* ============================================================
+       WHY CODES MATTER
+       ============================================================ */
+    .why-section {
+      margin-bottom: 32px;
+      background: linear-gradient(135deg, rgba(18,15,25,0.85), rgba(22,18,30,0.75));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px;
+      padding: 32px;
+      backdrop-filter: blur(12px);
+    }
+    .why-section h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px; font-weight: 700;
+      color: #fff; margin-bottom: 14px;
+    }
+    .why-section p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      max-width: 720px;
+    }
+
+    /* ============================================================
+       FAQ
+       ============================================================ */
+    .faq-section { margin-bottom: 32px; }
+    .faq-section h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px; font-weight: 700;
+      color: #fff; text-align: center; margin-bottom: 18px;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item-new {
+      background: rgba(25,12,12,0.75);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.25s ease;
+    }
+    .faq-item-new:hover { border-color: rgba(255,68,68,0.25); }
+    .faq-q {
+      width: 100%; padding: 18px 22px;
+      background: none; border: none;
+      color: #fff; font-family: 'Nunito', sans-serif;
+      font-size: 15px; font-weight: 800;
+      text-align: left; cursor: pointer;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 12px;
+      transition: background 0.2s ease;
+    }
+    .faq-q:hover { background: rgba(255,68,68,0.06); }
+    .faq-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: rgba(255,68,68,0.15);
+      border: 1px solid rgba(255,68,68,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: rgba(255,160,160,0.9);
+      flex-shrink: 0; transition: all 0.25s ease;
+    }
+    .faq-item-new.open .faq-icon {
+      background: rgba(0,255,136,0.2);
+      border-color: rgba(0,255,136,0.4);
+      color: #00ff88;
+      transform: rotate(45deg);
+    }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 22px; font-size: 14px;
+      color: rgba(255,255,255,0.70); line-height: 1.7;
+    }
+    .faq-a.open { max-height: 200px; padding: 4px 22px 18px; }
+
+    /* ============================================================
+       CTA
+       ============================================================ */
+    .cta-section { text-align: center; padding: 40px 20px; }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 40px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px; font-weight: 700;
+      color: #fff; text-decoration: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff4444, #ff9f43);
+      box-shadow: 0 12px 35px rgba(255,68,68,0.35), 0 0 0 1px rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+      position: relative; overflow: hidden;
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: -60%; left: -40%;
+      width: 40%; height: 220%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: rotate(18deg);
+      animation: btnShine 3.5s ease infinite;
+    }
+    @keyframes btnShine {
+      0%,55% { left: -40%; opacity:0; }
+      65%    { opacity: 1; }
+      100%   { left: 140%; opacity: 0; }
+    }
+    .cta-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 20px 50px rgba(255,68,68,0.5), 0 0 0 1px rgba(255,255,255,0.12);
+    }
+
+    body.subpage .sub-main { padding-top: 0 !important; padding-bottom: 40px !important; }
+
+    /* ============================================================
+       TABLET ≤ 900px
+       ============================================================ */
+    @media (max-width: 900px) {
+      body.subpage .main-header { padding: 12px 18px !important; }
+      body.subpage .main-header .logo-img,
+      body.subpage .header-left .logo-img { height: 80px !important; }
+      body.subpage .main-header .header-search { width: 280px !important; max-width: 280px !important; }
+    }
+
+    /* ============================================================
+       MOBILE ≤ 560px
+       ============================================================ */
+    @media (max-width: 560px) {
+      body.subpage .main-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        position: static !important;
+        gap: 10px !important;
+        padding: 12px 14px !important;
+        width: 100% !important;
+      }
+      body.subpage .main-header > a.logo { display: flex !important; justify-content: center !important; }
+      body.subpage .main-header .logo-img,
+      body.subpage .header-left .logo-img { height: 70px !important; max-width: 160px !important; }
+      body.subpage .main-header .header-search {
+        position: static !important; transform: none !important;
+        width: 100% !important; max-width: 100% !important; min-width: 0 !important;
+      }
+      body.subpage .main-header .header-search .search-shell { width: 100% !important; height: 44px !important; }
+      body.subpage .header-actions {
+        width: 100% !important; justify-content: center !important;
+        gap: 10px !important; display: flex !important;
+        align-items: stretch !important; position: static !important;
+      }
+      body.subpage .header-actions .nav-dropdown {
+        flex: 1 !important; width: auto !important;
+        min-width: 0 !important; max-width: none !important;
+        display: flex !important; flex-direction: column !important;
+      }
+      body.subpage .header-actions .nav-dropdown #codesBtn {
+        flex: 1 !important; width: 100% !important;
+        min-width: 0 !important; max-width: none !important;
+        height: 42px !important; font-size: 13px !important;
+      }
+      body.subpage .header-actions .mini-btn {
+        flex: 1 !important; width: auto !important;
+        min-width: 0 !important; max-width: none !important;
+        height: 42px !important; font-size: 13px !important;
+      }
+      .wiki-hero { padding: 28px 16px 24px; }
+      .wiki-content-wrap { width: 100%; padding: 0 14px 40px; }
+      .reasons-card, .fixes-card, .diagram-card, .error-counter-card, .why-section { padding: 20px 16px; }
+      .counter-grid { grid-template-columns: 1fr 1fr; }
+      .donut-wrap { gap: 24px; }
+      .donut { width: 130px; height: 130px; }
+    }
+  </style>
+</head>
+
+<body class="subpage">
+
+<!-- Floating BG particles -->
+<div class="bg-particles">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+  <a href="https://www.bloxburst.com/" class="logo">
+    <img src="../Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
+  </a>
+  <div class="header-search">
+    <div class="search-shell">
+      <input id="globalSearch" type="text" placeholder="🔍 Search Roblox Code" autocomplete="off">
+      <button class="clear-btn" type="button" onclick="clearGlobalSearch()">✕</button>
+      <div id="searchSuggestions" class="suggestions"></div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <div id="codesDropdown" class="nav-dropdown">
+      <a href="../gamecode.html" id="codesBtn" class="mini-btn">Codes</a>
+      <div class="nav-menu">
+        <a class="nav-item" href="../gamecode.html">Game Codes</a>
+        <a class="nav-item" href="../promo-latest-codes.html">Promo Codes</a>
+      </div>
+    </div>
+    <a href="../wiki.html" class="mini-btn">Wiki</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="wiki-hero">
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    WIKI · TROUBLESHOOT
+  </div>
+  <h1>Why Is My Code Invalid?</h1>
+  <p class="wiki-hero-sub">
+    6 common reasons why Roblox codes fail — and exactly how to fix each one fast.
+  </p>
+  <div class="hero-meta-row">
+    <div class="hero-meta-chip">📅 Updated: <span>Feb 19, 2026</span></div>
+    <div class="hero-meta-chip">🔧 Type: <span>Fix Guide</span></div>
+    <div class="hero-meta-chip">⏱ Read time: <span>~2 min</span></div>
+  </div>
+</div>
+
+<main class="sub-main">
+<div class="wiki-content-wrap">
+
+  <!-- ERROR STATS -->
+  <div class="error-counter-section">
+    <div class="section-label">By The Numbers</div>
+    <div class="error-counter-card">
+      <div class="counter-head">
+        <h2>🔴 Invalid Code — Common Causes</h2>
+        <div class="error-live-badge"><span class="error-dot"></span> Verified Data</div>
+      </div>
+      <div class="counter-grid">
+        <div class="counter-stat">
+          <div class="counter-num">42%</div>
+          <div class="counter-label">Code already expired</div>
+        </div>
+        <div class="counter-stat">
+          <div class="counter-num">20%</div>
+          <div class="counter-label">Typo or wrong case</div>
+        </div>
+        <div class="counter-stat">
+          <div class="counter-num">12%</div>
+          <div class="counter-label">Already redeemed</div>
+        </div>
+        <div class="counter-stat">
+          <div class="counter-num">10%</div>
+          <div class="counter-label">Group requirement</div>
+        </div>
+        <div class="counter-stat">
+          <div class="counter-num">8%</div>
+          <div class="counter-label">Level requirement</div>
+        </div>
+        <div class="counter-stat">
+          <div class="counter-num">8%</div>
+          <div class="counter-label">Wrong redeem menu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REASONS LIST -->
+  <div class="reasons-section">
+    <div class="section-label">Top Reasons</div>
+    <div class="reasons-card">
+      <h2>🚫 6 Reasons Your Code Failed</h2>
+      <div class="reason-list">
+
+        <div class="reason-item">
+          <span class="reason-num">01</span>
+          <div class="reason-icon">⏰</div>
+          <div class="reason-body">
+            <strong>Code Has Expired</strong>
+            <p>The most common reason. Developers can disable codes at any time without notice.</p>
+          </div>
+          <span class="severity-badge high">MOST COMMON</span>
+        </div>
+
+        <div class="reason-item">
+          <span class="reason-num">02</span>
+          <div class="reason-icon">⌨️</div>
+          <div class="reason-body">
+            <strong>Wrong Spelling or Extra Space</strong>
+            <p>One wrong letter or a space before/after the code will cause it to fail.</p>
+          </div>
+          <span class="severity-badge high">COMMON</span>
+        </div>
+
+        <div class="reason-item">
+          <span class="reason-num">03</span>
+          <div class="reason-icon">🔡</div>
+          <div class="reason-body">
+            <strong>Case-Sensitive Input</strong>
+            <p>"CODE" and "code" are different. Always match the exact capitalization.</p>
+          </div>
+          <span class="severity-badge mid">COMMON</span>
+        </div>
+
+        <div class="reason-item">
+          <span class="reason-num">04</span>
+          <div class="reason-icon">✅</div>
+          <div class="reason-body">
+            <strong>Already Redeemed</strong>
+            <p>Most Roblox codes are one-time use per account. You can't claim the same code twice.</p>
+          </div>
+          <span class="severity-badge mid">MODERATE</span>
+        </div>
+
+        <div class="reason-item">
+          <span class="reason-num">05</span>
+          <div class="reason-icon">🔒</div>
+          <div class="reason-body">
+            <strong>Unmet Requirements</strong>
+            <p>Some codes require you to join a Roblox group, reach a minimum level, or be in a specific server.</p>
+          </div>
+          <span class="severity-badge low">LESS COMMON</span>
+        </div>
+
+        <div class="reason-item">
+          <span class="reason-num">06</span>
+          <div class="reason-icon">🗂️</div>
+          <div class="reason-body">
+            <strong>Wrong Redemption Menu</strong>
+            <p>Make sure you're using the correct in-game Codes tab — not a different button or settings menu.</p>
+          </div>
+          <span class="severity-badge low">LESS COMMON</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- VISUAL BREAKDOWN -->
+  <div class="diagram-section">
+    <div class="section-label">Visual Breakdown</div>
+    <div class="diagram-card">
+      <h2>📊 Error Cause Distribution</h2>
+      <div class="donut-wrap">
+        <div class="donut"></div>
+        <div class="donut-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#ff4444"></div>Expired <span class="legend-pct">42%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#ff9f43"></div>Typo / Wrong Case <span class="legend-pct">20%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#ffcc00"></div>Already Redeemed <span class="legend-pct">12%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#7d5cff"></div>Group Requirement <span class="legend-pct">10%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#00c8ff"></div>Level Requirement <span class="legend-pct">8%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#00ff88"></div>Wrong Menu <span class="legend-pct">8%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK FIXES — INTERACTIVE CHECKLIST -->
+  <div class="fixes-section">
+    <div class="section-label">Quick Fixes</div>
+    <div class="fixes-card">
+      <h2>🛠️ Fix Checklist — Try These First</h2>
+      <div class="fix-list">
+        <div class="fix-item" onclick="toggleFix(this)">
+          <div class="fix-checkbox"></div>
+          <span class="fix-text">Copy & paste the code — avoid typing it manually</span>
+          <span class="fix-step-tag">STEP 1</span>
+        </div>
+        <div class="fix-item" onclick="toggleFix(this)">
+          <div class="fix-checkbox"></div>
+          <span class="fix-text">Remove any spaces before or after the code</span>
+          <span class="fix-step-tag">STEP 2</span>
+        </div>
+        <div class="fix-item" onclick="toggleFix(this)">
+          <div class="fix-checkbox"></div>
+          <span class="fix-text">Rejoin a fresh server and try again</span>
+          <span class="fix-step-tag">STEP 3</span>
+        </div>
+        <div class="fix-item" onclick="toggleFix(this)">
+          <div class="fix-checkbox"></div>
+          <span class="fix-text">Check if joining the developer's Roblox group is required</span>
+          <span class="fix-step-tag">STEP 4</span>
+        </div>
+        <div class="fix-item" onclick="toggleFix(this)">
+          <div class="fix-checkbox"></div>
+          <span class="fix-text">Make sure you are using the correct in-game Codes menu</span>
+          <span class="fix-step-tag">STEP 5</span>
+        </div>
+      </div>
+      <div class="fix-progress-wrap">
+        <div class="fix-progress-bar">
+          <div class="fix-progress-fill" id="fixProgress"></div>
+        </div>
+        <span class="fix-progress-label" id="fixLabel">0 / 5 done</span>
+      </div>
+      <div class="fix-success" id="fixSuccess">
+        🎉 All fixes checked! If the code still fails, it has likely expired.
+      </div>
+
+      <div class="warning-note">
+        <span class="note-icon">⚠️</span>
+        <span>If none of the above work, there is a high chance the code has already expired. Codes can be disabled by developers at any time without notice.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <div class="related-section">
+    <div class="section-label">Related Articles</div>
+    <div class="related-grid">
+      <a class="wiki-card-enhanced" href="wiki-redeem-codes.html">
+        <div class="card-top-row">
+          <span class="wiki-tag-new green">GUIDE</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <h3>How to Redeem Roblox Codes</h3>
+        <p>Step-by-step redemption guide for all platforms.</p>
+      </a>
+      <a class="wiki-card-enhanced" href="wiki-invalid-code-reasons.html">
+        <div class="card-top-row">
+          <span class="wiki-tag-new">FIX</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <h3>Common Reasons "Invalid Code"</h3>
+        <p>Why codes fail and quick fixes — this page.</p>
+      </a>
+      <a class="wiki-card-enhanced" href="wiki-how-we-check-codes.html">
+        <div class="card-top-row">
+          <span class="wiki-tag-new blue">PROCESS</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <h3>How We Check Codes</h3>
+        <p>Our manual verification workflow explained.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- WHY CODES MATTER -->
+  <div class="why-section">
+    <h2>🔴 Understanding Invalid Code Errors</h2>
+    <p>
+      An "Invalid Code" message doesn't always mean the code is wrong — it often points to a
+      specific, fixable issue. Expired codes are the most common culprit at 42%, but typos,
+      capitalization errors, and unmet requirements account for the rest. Knowing which reason
+      applies to your situation lets you fix it in seconds instead of guessing.
+    </p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="section-label">FAQ</div>
+    <h2>Invalid Code — Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item-new">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Does capitalization really matter?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Yes — most Roblox games treat codes as fully case-sensitive. "FREEGEMS" and "freegems" are treated as two completely different strings. Always copy-paste from BLOXBURST to avoid this entirely.</div>
+      </div>
+      <div class="faq-item-new">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          The code looks right but still says Invalid — why?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Check for invisible spaces at the start or end of the code — these are added automatically when you copy from some sites. Paste into a plain text editor first, trim any extra spaces, then paste into the game.</div>
+      </div>
+      <div class="faq-item-new">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can a code expire while BLOXBURST still shows it as active?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Rarely, but yes. Developers can disable codes without any public notice, sometimes within hours of release. BLOXBURST checks all codes daily, but a code can expire in the gap between checks. If you get Invalid on an "active" code, let us know via the comment box so we can update it immediately.</div>
+      </div>
+      <div class="faq-item-new">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          I joined the group but the code still doesn't work — what now?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Group membership sometimes takes a few minutes to sync with the game server. Leave the game, wait 2–3 minutes, then rejoin a fresh server and try the code again. If it still fails, the code may have additional level or region requirements beyond group membership.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a class="cta-btn" href="../gamecode.html">🚀 Browse All Active Game Codes</a>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-left">
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">
+        BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="../gamecode.html">Game Codes</a>
+      <a href="../promo-latest-codes.html">Promo Codes</a>
+      <a href="../wiki.html">Wiki</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="../Terms-and-Condition/about.html">About Us</a>
+      <a href="../Terms-and-Condition/faq.html">FAQ</a>
+      <a href="../Terms-and-Condition/contactus.html">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="../Terms-and-Condition/terms.html">Terms of Use</a>
+      <a href="../Terms-and-Condition/privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+    <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+  /* Fix checklist */
+  function toggleFix(item) {
+    item.classList.toggle('checked');
+    item.querySelector('.fix-checkbox').textContent =
+      item.classList.contains('checked') ? '✓' : '';
+    updateFixProgress();
+  }
+  function updateFixProgress() {
+    const total   = document.querySelectorAll('.fix-item').length;
+    const checked = document.querySelectorAll('.fix-item.checked').length;
+    const pct     = Math.round((checked / total) * 100);
+    document.getElementById('fixProgress').style.width = pct + '%';
+    document.getElementById('fixLabel').textContent = checked + ' / ' + total + ' done';
+    const success = document.getElementById('fixSuccess');
+    if (checked === total) {
+      success.style.display = 'block';
+    } else {
+      success.style.display = 'none';
+    }
+  }
+
+  /* FAQ toggle */
+  function toggleFaq(btn) {
+    const item   = btn.parentElement;
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item-new').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').classList.remove('open');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>

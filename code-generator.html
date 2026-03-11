@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLOXBURST — Code Card Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06091f;
+      --surface: rgba(18,22,65,0.90);
+      --border: rgba(255,255,255,0.08);
+      --purple: #7d5cff;
+      --green: #00ff88;
+      --pink: #c400ff;
+      --red: #ff4f4f;
+      --muted: rgba(255,255,255,0.45);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(125,92,255,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,255,136,0.07) 0%, transparent 55%);
+      min-height: 100vh;
+      color: #fff;
+      font-family: 'Fredoka', sans-serif;
+      padding: 48px 20px 80px;
+    }
+
+    .header { text-align: center; margin-bottom: 40px; }
+    .header h1 {
+      font-size: 38px; font-weight: 700; letter-spacing: 1px;
+      background: linear-gradient(90deg, #c400ff 0%, #7d5cff 50%, #00ff88 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 8px;
+    }
+    .header p { color: var(--muted); font-size: 15px; }
+
+    /* Auto-save indicator */
+    .autosave-bar {
+      max-width: 1020px; margin: 0 auto 16px;
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(0,255,136,0.05); border: 1px solid rgba(0,255,136,0.15);
+      border-radius: 12px; padding: 10px 18px; font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .autosave-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
+      50%      { box-shadow: 0 0 0 5px rgba(0,255,136,0); }
+    }
+    .autosave-status { margin-left: auto; font-size: 12px; color: var(--green); font-weight: 700; }
+
+    .main-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      max-width: 1020px;
+      margin: 0 auto 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+    }
+    .section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+
+    .table-wrapper { overflow-x: auto; margin-bottom: 16px; }
+
+    table { width: 100%; border-collapse: separate; border-spacing: 0 8px; min-width: 660px; }
+
+    thead th {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--muted);
+      padding: 0 12px 6px; text-align: left;
+    }
+    thead th.th-center { text-align: center; }
+
+    .row-cell {
+      background: rgba(255,255,255,0.04);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 12px; transition: background 0.15s;
+    }
+    .row-cell:first-child { border-left:1px solid var(--border); border-radius:12px 0 0 12px; }
+    .row-cell:last-child  { border-right:1px solid var(--border); border-radius:0 12px 12px 0; }
+
+    tbody tr:hover .row-cell { background: rgba(125,92,255,0.07); }
+    tbody tr.state-new      .row-cell { border-color: rgba(0,255,136,0.25); background: rgba(0,255,136,0.04); }
+    tbody tr.state-expired  .row-cell { border-color: rgba(255,79,79,0.25); background: rgba(255,79,79,0.06); }
+    tbody tr.state-expired .code-name { color: rgba(255,150,150,0.8) !important; }
+
+    .row-num {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted);
+      width: 32px; text-align: center; padding: 10px 8px;
+    }
+
+    input[type="text"].row-input {
+      width: 100%; background: transparent; border: none; outline: none;
+      color: #fff; font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; font-weight: 700; caret-color: var(--purple);
+    }
+    input[type="text"].row-input::placeholder { color: rgba(255,255,255,0.18); font-weight: 400; }
+    input[type="text"].desc-row-input {
+      font-family: 'Fredoka', sans-serif; font-size: 13px; font-weight: 400;
+      color: rgba(255,255,255,0.9);
+    }
+    input[type="text"].desc-row-input::placeholder { color: rgba(255,255,255,0.22); }
+
+    .toggle-wrap { display:flex; align-items:center; justify-content:center; }
+    .toggle-wrap input[type="checkbox"] { display: none; }
+    .toggle-wrap label {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 5px; padding: 5px 12px; border-radius: 999px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+      cursor: pointer; transition: all 0.18s ease;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05); color: var(--muted);
+      white-space: nowrap; user-select: none; font-family: 'Fredoka', sans-serif;
+    }
+    .toggle-new input:checked + label {
+      background: rgba(0,255,136,0.15); border-color: rgba(0,255,136,0.4); color: var(--green);
+    }
+    .toggle-expired input:checked + label {
+      background: rgba(255,79,79,0.15); border-color: rgba(255,79,79,0.4); color: var(--red);
+    }
+
+    .del-btn {
+      background: none; border: none; color: rgba(255,80,80,0.4);
+      font-size: 16px; cursor: pointer; padding: 6px 8px;
+      border-radius: 8px; transition: color 0.15s, background 0.15s; line-height: 1;
+    }
+    .del-btn:hover { color: #ff5050; background: rgba(255,80,80,0.10); }
+
+    .controls { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:8px; }
+    .add-btn {
+      display:inline-flex; align-items:center; gap:6px; padding:9px 18px;
+      border-radius:10px; background:rgba(255,255,255,0.06);
+      border:1px dashed rgba(255,255,255,0.18); color:rgba(255,255,255,0.65);
+      font-size:13px; font-family:'Fredoka',sans-serif; font-weight:600;
+      cursor:pointer; transition:all 0.18s;
+    }
+    .add-btn:hover { background:rgba(125,92,255,0.12); border-color:rgba(125,92,255,0.4); color:#fff; }
+
+    .clear-btn {
+      display:inline-flex; align-items:center; gap:6px; padding:9px 16px;
+      border-radius:10px; background:transparent;
+      border:1px solid rgba(255,80,80,0.20); color:rgba(255,100,100,0.65);
+      font-size:13px; font-family:'Fredoka',sans-serif; font-weight:600; cursor:pointer; transition:all 0.18s;
+    }
+    .clear-btn:hover { background:rgba(255,80,80,0.08); border-color:rgba(255,80,80,0.4); color:#ff6464; }
+
+    .spacer { flex:1; }
+
+    .generate-btn {
+      display:inline-flex; align-items:center; gap:8px; padding:11px 28px;
+      border:none; border-radius:12px;
+      background:linear-gradient(90deg,var(--purple),var(--pink));
+      color:#fff; font-size:15px; font-family:'Fredoka',sans-serif; font-weight:700;
+      cursor:pointer; box-shadow:0 8px 24px rgba(125,92,255,0.35);
+      transition:opacity 0.2s,transform 0.15s,box-shadow 0.15s;
+    }
+    .generate-btn:hover { opacity:.9; transform:translateY(-2px); box-shadow:0 12px 30px rgba(125,92,255,0.5); }
+    .generate-btn:active { transform:translateY(0); }
+
+    /* Output */
+    .output-card {
+      background: var(--surface); border:1px solid var(--border); border-radius:24px;
+      padding:28px; max-width:1020px; margin:0 auto 20px;
+      display:none; backdrop-filter:blur(12px); box-shadow:0 24px 60px rgba(0,0,0,0.4);
+    }
+    .output-card.show { display:block; animation:fadeUp 0.3s ease; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    .output-header { display:flex; align-items:center; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
+
+    .stat-pill {
+      font-size:12px; font-weight:700; padding:4px 14px;
+      border-radius:999px; font-family:'Fredoka',sans-serif;
+    }
+    .stat-active   { background:rgba(0,255,136,0.12); border:1px solid rgba(0,255,136,0.28); color:var(--green); }
+    .stat-expired  { background:rgba(255,79,79,0.12);  border:1px solid rgba(255,79,79,0.28);  color:var(--red); }
+
+    /* Output sections with separate copy buttons */
+    .output-section { margin-bottom: 24px; }
+    .output-section-header {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 10px; flex-wrap: wrap;
+    }
+    .output-section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; flex: 1;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .lbl-active  { color: var(--green); }
+    .lbl-expired { color: var(--red); }
+    .output-section-label::after { content:''; flex:1; height:1px; }
+    .lbl-active::after  { background: rgba(0,255,136,0.2); }
+    .lbl-expired::after { background: rgba(255,79,79,0.2); }
+
+    .copy-section-btn {
+      display:inline-flex; align-items:center; gap:6px; padding:7px 16px;
+      border-radius:9px; font-size:12px; font-family:'Fredoka',sans-serif; font-weight:700;
+      cursor:pointer; transition:all 0.18s; flex-shrink: 0;
+    }
+    .copy-active-btn {
+      background:rgba(0,255,136,0.12); border:1px solid rgba(0,255,136,0.30); color:var(--green);
+    }
+    .copy-active-btn:hover  { background:rgba(0,255,136,0.22); }
+    .copy-active-btn.copied { background:rgba(0,200,83,0.22); border-color:#00c853; color:#00c853; }
+
+    .copy-expired-btn {
+      background:rgba(255,79,79,0.12); border:1px solid rgba(255,79,79,0.30); color:var(--red);
+    }
+    .copy-expired-btn:hover  { background:rgba(255,79,79,0.22); }
+    .copy-expired-btn.copied { background:rgba(200,50,50,0.22); color:#ff6b6b; }
+
+    pre.out-pre {
+      background:rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px; padding:18px; font-size:12px;
+      font-family:'JetBrains Mono',monospace; color:rgba(255,255,255,0.88);
+      white-space:pre; overflow-x:auto; line-height:1.7;
+      max-height:340px; overflow-y:auto;
+    }
+    /* Expired pre — brighter text */
+    pre.out-pre.expired-pre {
+      color: rgba(255,180,180,0.95);
+      border-color: rgba(255,79,79,0.15);
+    }
+    pre.out-pre::-webkit-scrollbar { width:5px; height:5px; }
+    pre.out-pre::-webkit-scrollbar-thumb { background:rgba(125,92,255,0.4); border-radius:4px; }
+
+    .tip {
+      max-width:1020px; margin:0 auto;
+      background:rgba(0,255,136,0.04); border:1px solid rgba(0,255,136,0.12);
+      border-left:3px solid var(--green); border-radius:14px;
+      padding:14px 18px; font-size:13px; color:rgba(255,255,255,0.65); line-height:1.75;
+    }
+    .tip strong { color:var(--green); }
+    .tip code {
+      background:rgba(255,255,255,0.08); padding:2px 7px; border-radius:5px;
+      font-family:'JetBrains Mono',monospace; font-size:11px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎮 Code Card Generator</h1>
+  <p>Lagyan ng Code Name, Description — i-toggle ang NEW o EXPIRED bawat row — tapos Generate!</p>
+</div>
+
+<!-- Auto-save bar -->
+<div class="autosave-bar">
+  <div class="autosave-dot"></div>
+  <span>Auto-save ON — hindi mawawala ang data mo kahit mag-alt+tab ka!</span>
+  <span class="autosave-status" id="saveStatus">✅ Saved</span>
+</div>
+
+<div class="main-card">
+  <div class="section-label">Code List</div>
+  <div class="table-wrapper">
+    <table id="codeTable">
+      <thead>
+        <tr>
+          <th style="width:36px;">#</th>
+          <th style="width:210px;">Code Name</th>
+          <th>Code Description</th>
+          <th class="th-center" style="width:100px;">NEW Badge</th>
+          <th class="th-center" style="width:100px;">Expired</th>
+          <th style="width:44px;"></th>
+        </tr>
+      </thead>
+      <tbody id="codeBody"></tbody>
+    </table>
+  </div>
+  <div class="controls">
+    <button class="add-btn" onclick="addRow()">＋ Add Row</button>
+    <button class="clear-btn" onclick="clearAll()">✕ Clear All</button>
+    <div class="spacer"></div>
+    <button class="generate-btn" onclick="generate()">⚡ Generate HTML</button>
+  </div>
+</div>
+
+<div class="output-card" id="outputCard">
+  <div class="output-header">
+    <span class="section-label" style="margin:0;flex:none;">Output HTML</span>
+    <span class="stat-pill stat-active"  id="statActive">0 active</span>
+    <span class="stat-pill stat-expired" id="statExpired">0 expired</span>
+  </div>
+
+  <!-- Active codes block -->
+  <div class="output-section" id="activeSection">
+    <div class="output-section-header">
+      <div class="output-section-label lbl-active">✦ Active Codes — i-paste sa &lt;div class="codes-list"&gt;</div>
+      <button class="copy-section-btn copy-active-btn" id="copyActiveBtn" onclick="copySection('active')">📋 Copy Active</button>
+    </div>
+    <pre class="out-pre" id="outputActive"></pre>
+  </div>
+
+  <!-- Expired codes block -->
+  <div class="output-section" id="expiredSection" style="display:none;">
+    <div class="output-section-header">
+      <div class="output-section-label lbl-expired">✕ Expired Codes — i-paste sa expired &lt;div class="codes-list"&gt;</div>
+      <button class="copy-section-btn copy-expired-btn" id="copyExpiredBtn" onclick="copySection('expired')">📋 Copy Expired</button>
+    </div>
+    <pre class="out-pre expired-pre" id="outputExpired"></pre>
+  </div>
+</div>
+
+<div class="tip">
+  💡 <strong>Paano gamitin:</strong>
+  Lagyan ng Code Name + Description bawat row →
+  I-toggle ang <strong>NEW</strong> kung bagong code →
+  I-toggle ang <strong>EXPIRED</strong> kung expired na →
+  I-click <strong>Generate HTML</strong> →
+  I-click <strong>Copy Active</strong> o <strong>Copy Expired</strong> →
+  I-paste sa tamang <code>&lt;div class="codes-list"&gt;</code> sa HTML file mo. Tapos na! 🎉
+  <br><br>
+  ⌨️ <strong>Shortcut:</strong> Pindutin ang <strong>Enter</strong> sa dulo ng row para mag-add ng bagong row agad.
+  &nbsp;|&nbsp; 💾 <strong>Auto-save:</strong> Nase-save ang lahat ng data mo automatically — safe ka mag-alt+tab!
+</div>
+
+<script>
+  let rowCount = 0;
+  let saveTimer = null;
+
+  /* ============================================================
+     LOCAL STORAGE — AUTO SAVE & RESTORE
+     ============================================================ */
+  const STORAGE_KEY = 'bloxburst_codegen_v1';
+
+  function saveToStorage() {
+    try {
+      var rows = [];
+      document.querySelectorAll('#codeBody tr').forEach(function(tr) {
+        rows.push({
+          code:    tr.querySelector('.code-name')?.value  || '',
+          desc:    tr.querySelector('.code-desc')?.value  || '',
+          isNew:   tr.querySelector('.chk-new')?.checked  || false,
+          isExp:   tr.querySelector('.chk-expired')?.checked || false
+        });
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(rows));
+      document.getElementById('saveStatus').textContent = '✅ Saved';
+    } catch(e) {}
+  }
+
+  function debounceSave() {
+    document.getElementById('saveStatus').textContent = '💾 Saving...';
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(saveToStorage, 600);
+  }
+
+  function loadFromStorage() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return false;
+      var rows = JSON.parse(raw);
+      if (!rows || !rows.length) return false;
+      rows.forEach(function(r) {
+        addRow(r.code, r.desc, r.isNew, r.isExp);
+      });
+      return true;
+    } catch(e) { return false; }
+  }
+
+  /* ============================================================
+     ROW HELPERS
+     ============================================================ */
+  function escAttr(str) {
+    return (str || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function updateRowState(rowId) {
+    var tr = document.getElementById(rowId);
+    if (!tr) return;
+    var isNew     = tr.querySelector('.chk-new')?.checked;
+    var isExpired = tr.querySelector('.chk-expired')?.checked;
+    tr.classList.remove('state-new', 'state-expired');
+    if (isExpired) tr.classList.add('state-expired');
+    else if (isNew) tr.classList.add('state-new');
+    debounceSave();
+  }
+
+  function onNewChange(rowId) {
+    var tr = document.getElementById(rowId);
+    if (!tr) return;
+    var chkNew     = tr.querySelector('.chk-new');
+    var chkExpired = tr.querySelector('.chk-expired');
+    if (chkNew.checked && chkExpired.checked) chkExpired.checked = false;
+    updateRowState(rowId);
+  }
+
+  function onExpiredChange(rowId) {
+    var tr = document.getElementById(rowId);
+    if (!tr) return;
+    var chkNew     = tr.querySelector('.chk-new');
+    var chkExpired = tr.querySelector('.chk-expired');
+    if (chkExpired.checked && chkNew.checked) chkNew.checked = false;
+    updateRowState(rowId);
+  }
+
+  function addRow(codeName, codeDesc, isNew, isExpired) {
+    codeName  = codeName  === undefined ? '' : codeName;
+    codeDesc  = codeDesc  === undefined ? '' : codeDesc;
+    isNew     = isNew     === undefined ? true  : isNew;
+    isExpired = isExpired === undefined ? false : isExpired;
+
+    rowCount++;
+    var n   = rowCount;
+    var id  = 'row_' + n;
+    var chkNewId = 'new_' + n;
+    var chkExpId = 'exp_' + n;
+
+    var tr = document.createElement('tr');
+    tr.id  = id;
+    if (isExpired) tr.classList.add('state-expired');
+    else if (isNew) tr.classList.add('state-new');
+
+    tr.innerHTML =
+      '<td class="row-cell row-num">' + n + '</td>' +
+
+      '<td class="row-cell">' +
+        '<input type="text" class="row-input code-name"' +
+        ' placeholder="e.g. Update39P2" value="' + escAttr(codeName) + '">' +
+      '</td>' +
+
+      '<td class="row-cell">' +
+        '<input type="text" class="row-input desc-row-input code-desc"' +
+        ' placeholder="— Redeem code for free rewards"' +
+        ' value="' + escAttr(codeDesc) + '">' +
+      '</td>' +
+
+      '<td class="row-cell toggle-wrap toggle-new">' +
+        '<input type="checkbox" class="chk-new" id="' + chkNewId + '"' +
+        (isNew ? ' checked' : '') +
+        ' onchange="onNewChange(\'' + id + '\')">' +
+        '<label for="' + chkNewId + '">✦ NEW</label>' +
+      '</td>' +
+
+      '<td class="row-cell toggle-wrap toggle-expired">' +
+        '<input type="checkbox" class="chk-expired" id="' + chkExpId + '"' +
+        (isExpired ? ' checked' : '') +
+        ' onchange="onExpiredChange(\'' + id + '\')">' +
+        '<label for="' + chkExpId + '">✕ EXPIRED</label>' +
+      '</td>' +
+
+      '<td class="row-cell" style="padding:6px 8px;">' +
+        '<button class="del-btn" onclick="deleteRow(\'' + id + '\')" title="Remove">✕</button>' +
+      '</td>';
+
+    document.getElementById('codeBody').appendChild(tr);
+
+    // Auto-save on input change
+    tr.querySelectorAll('input[type="text"]').forEach(function(inp) {
+      inp.addEventListener('input', debounceSave);
+      inp.addEventListener('keydown', function(e) {
+        if (e.key !== 'Enter') return;
+        var rows = document.querySelectorAll('#codeBody tr');
+        var lastRow = rows[rows.length - 1];
+        if (lastRow && lastRow.id === id) {
+          e.preventDefault();
+          addRow();
+        }
+      });
+    });
+
+    tr.querySelector('.code-name').focus();
+  }
+
+  function deleteRow(rowId) {
+    var tr = document.getElementById(rowId);
+    if (tr) tr.remove();
+    renumberRows();
+    debounceSave();
+  }
+
+  function renumberRows() {
+    document.querySelectorAll('#codeBody tr').forEach(function(tr, i) {
+      var numCell = tr.querySelector('.row-num');
+      if (numCell) numCell.textContent = i + 1;
+    });
+  }
+
+  function clearAll() {
+    if (!confirm('Clear all rows? Hindi na ito ma-undo.')) return;
+    document.getElementById('codeBody').innerHTML = '';
+    document.getElementById('outputCard').classList.remove('show');
+    localStorage.removeItem(STORAGE_KEY);
+    rowCount = 0;
+    addRow();
+  }
+
+  /* ============================================================
+     GENERATE — NO COMMENTS
+     ============================================================ */
+  function generate() {
+    var rows = document.querySelectorAll('#codeBody tr');
+    var activeCards  = [];
+    var expiredCards = [];
+
+    rows.forEach(function(tr) {
+      var code  = (tr.querySelector('.code-name')?.value || '').trim();
+      var desc  = (tr.querySelector('.code-desc')?.value || '').trim();
+      var isNew     = tr.querySelector('.chk-new')?.checked;
+      var isExpired = tr.querySelector('.chk-expired')?.checked;
+
+      if (!code) return;
+      if (!desc) desc = '— Redeem code for Tons of Potions, Credits, and more';
+
+      var escaped = code.replace(/"/g, '&quot;');
+
+      if (isExpired) {
+        expiredCards.push(
+          '        <div class="code-card expired" data-code="' + escaped + '">\n' +
+          '          <button class="copy-btn expired-btn" disabled>Expired</button>\n' +
+          '          <span class="code-text">' + code + '</span>\n' +
+          '          <span class="code-desc">' + desc + '</span>\n' +
+          '        </div>'
+        );
+      } else {
+        var newBadge = isNew
+          ? '\n          <span class="new-badge">NEW</span>'
+          : '';
+        activeCards.push(
+          '        <div class="code-card' + (isNew ? ' new' : '') + '" data-code="' + escaped + '">\n' +
+          '          <button class="copy-btn">Copy</button>\n' +
+          '          <span class="code-text">' + code + '</span>' + newBadge + '\n' +
+          '          <span class="code-desc">' + desc + '</span>\n' +
+          '        </div>'
+        );
+      }
+    });
+
+    if (!activeCards.length && !expiredCards.length) {
+      alert('Wala pang codes boss! Lagyan mo muna ng Code Name.');
+      return;
+    }
+
+    // Active output
+    document.getElementById('outputActive').textContent = activeCards.join('\n\n');
+
+    // Expired output
+    if (expiredCards.length) {
+      document.getElementById('outputExpired').textContent = expiredCards.join('\n\n');
+      document.getElementById('expiredSection').style.display = 'block';
+    } else {
+      document.getElementById('expiredSection').style.display = 'none';
+    }
+
+    // Stats
+    document.getElementById('statActive').textContent  = activeCards.length  + ' active';
+    document.getElementById('statExpired').textContent = expiredCards.length + ' expired';
+
+    // Reset copy buttons
+    resetCopyBtn('copyActiveBtn',  '📋 Copy Active');
+    resetCopyBtn('copyExpiredBtn', '📋 Copy Expired');
+
+    document.getElementById('outputCard').classList.add('show');
+    document.getElementById('outputCard').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  /* ============================================================
+     COPY — SEPARATE ACTIVE / EXPIRED, NO COMMENTS
+     ============================================================ */
+  function copySection(type) {
+    var text = '';
+    var btnId = '';
+    var btnLabel = '';
+
+    if (type === 'active') {
+      text     = document.getElementById('outputActive').textContent;
+      btnId    = 'copyActiveBtn';
+      btnLabel = '📋 Copy Active';
+    } else {
+      text     = document.getElementById('outputExpired').textContent;
+      btnId    = 'copyExpiredBtn';
+      btnLabel = '📋 Copy Expired';
+    }
+
+    if (!text.trim()) return;
+
+    navigator.clipboard.writeText(text).then(function() {
+      var btn = document.getElementById(btnId);
+      btn.textContent = '✅ Copied!';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = btnLabel;
+        btn.classList.remove('copied');
+      }, 2500);
+    });
+  }
+
+  function resetCopyBtn(id, label) {
+    var btn = document.getElementById(id);
+    if (!btn) return;
+    btn.textContent = label;
+    btn.classList.remove('copied');
+  }
+
+  /* ============================================================
+     INIT — Load from localStorage or show default rows
+     ============================================================ */
+  var restored = loadFromStorage();
+  if (!restored) {
+    addRow('', '', true,  false);
+    addRow('', '', true,  false);
+    addRow('', '', false, false);
+    addRow('', '', false, true);
+  }
+</script>
+</body>
+</html>

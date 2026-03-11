@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Cheese - Steal A Brainrots Wiki | BLOXBURST</title>
+
+  <link rel="icon" type="image/png" href="../../Images/FinalLogo.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELF86MPP23');
+  </script>
+
+  <style>
+    .brainrot-hero {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 900px;
+      margin: 30px auto 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 32px;
+    }
+    .brainrot-hero-img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      padding: 10px;
+      flex-shrink: 0;
+    }
+    .brainrot-hero-info { flex: 1; }
+    .brainrot-hero-info h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+    .brainrot-rarity-badge {
+      display: inline-block;
+      padding: 5px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #ff6ec7, #ff9a3c);
+      color: #fff;
+    }
+    .brainrot-hero-info p {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .obtain-section {
+      max-width: 900px;
+      margin: 28px auto;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 28px 32px;
+    }
+    .obtain-section h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .obtain-method {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .obtain-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .obtain-method h3 {
+      font-size: 15px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .obtain-method p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #fff; }
+    /* ── STAT CARDS ── */
+    .stat-cards {
+      display: flex;
+      gap: 14px;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 0px;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      flex: 1;
+      min-width: 150px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .stat-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.08);
+    }
+    .stat-card .stat-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.55;
+    }
+    .stat-card .stat-value {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+    .stat-card.stat-red   { border-color: rgba(255,99,99,0.3);   background: rgba(255,99,99,0.07); }
+    .stat-card.stat-red   .stat-label { color: #ff6363; }
+    .stat-card.stat-red   .stat-value { color: #ff6363; }
+    .stat-card.stat-green { border-color: rgba(72,210,121,0.3);  background: rgba(72,210,121,0.07); }
+    .stat-card.stat-green .stat-label { color: #48d279; }
+    .stat-card.stat-green .stat-value { color: #48d279; }
+    .stat-card.stat-purple{ border-color: rgba(167,139,250,0.3); background: rgba(167,139,250,0.07); }
+    .stat-card.stat-purple .stat-label { color: #a78bfa; }
+    .stat-card.stat-purple .stat-value { color: #a78bfa; }
+    .stat-card.stat-orange{ border-color: rgba(251,146,60,0.3);  background: rgba(251,146,60,0.07); }
+    .stat-card.stat-orange .stat-label { color: #fb923c; }
+    .stat-card.stat-orange .stat-value { color: #fb923c; }
+
+    @media (max-width: 600px) {
+      .brainrot-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 16px;
+        gap: 20px;
+      }
+      .brainrot-hero-img {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto;
+      }
+      .brainrot-hero-info h1 {
+        font-size: 26px;
+      }
+      .obtain-section {
+        padding: 20px 16px;
+        margin: 16px 12px;
+      }
+      .obtain-section h2 {
+        font-size: 18px;
+      }
+      .obtain-method {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 12px;
+      }
+      .obtain-icon {
+        font-size: 22px;
+      }
+      .obtain-method h3 {
+        font-size: 14px;
+      }
+      .obtain-method p,
+      .obtain-method ul li {
+        font-size: 12px !important;
+      }
+      .stat-cards {
+        gap: 10px;
+        margin: 14px 12px;
+      }
+      .stat-card {
+        min-width: calc(50% - 5px);
+        padding: 14px 16px;
+      }
+      .stat-card .stat-value {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body class="subpage">
+
+<!-- ── HEADER ── -->
+<header class="main-header" style="padding-top:20px; padding-bottom:10px;">
+  <a href="../../index.html" class="logo">
+    <img src="../../Images/FinalLogo.png" alt="BLOXBURST" class="logo-img" style="height:150px;width:auto;max-width:260px;object-fit:contain;">
+  </a>
+  <div class="header-actions">
+    <div id="codesDropdown" class="nav-dropdown">
+      <a href="../../gamecode.html" id="codesBtn" class="mini-btn">Codes</a>
+      <div class="nav-menu">
+        <a class="nav-item" href="../../gamecode.html">Game Codes</a>
+        <a class="nav-item" href="../../promo-latest-codes.html">Promo Codes</a>
+      </div>
+    </div>
+    <a href="../../wiki.html" class="mini-btn">Wiki</a>
+  </div>
+</header>
+
+<main class="sub-main" style="padding-top:20px;">
+
+  <!-- Back link -->
+  <div style="max-width:900px; margin:0 auto 10px; padding:0 20px;">
+    <a class="back-link" href="../Game-Wiki-Folder/wiki-steal-a-brainrot.html">← Back to Steal A Brainrots Wiki</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="brainrot-hero">
+    <img class="brainrot-hero-img" src="../../Images/Tim Cheese.png" alt="Noobini">
+    <div class="brainrot-hero-info">
+      <h1>Tim Cheese</h1>
+      <span class="brainrot-rarity-badge">⭐ Common</span>
+      <p>Timothy Weinersnitzel Cheese, better known as Tim Cheese, is a notorious criminal mastermind and the leader of the "Breadsticks" gang. Abandoned as a youth on the streets of Chicago, he evolved into a master strategist and assassin. His life is driven by a refined palate for rare and exotic cheeses and a long-standing rivalry with other figures like John Pork.</p>
+    </div>
+  </div>
+
+  <!-- ── STAT CARDS ── -->
+  <div class="stat-cards">
+    <div class="stat-card stat-red">
+      <span class="stat-label">💰 Base Cost</span>
+      <span class="stat-value">$500</span>
+    </div>
+    <div class="stat-card stat-green">
+      <span class="stat-label">⚡ Income / Second</span>
+      <span class="stat-value">$5</span>
+    </div>
+    <div class="stat-card stat-purple">
+      <span class="stat-label">📈 Efficiency</span>
+      <span class="stat-value">1%</span>
+    </div>
+    <div class="stat-card stat-orange">
+      <span class="stat-label">🎉 Event</span>
+      <span class="stat-value">Regular</span>
+    </div>
+  </div>
+
+  <!-- ── HOW TO OBTAIN ── -->
+  <div class="obtain-section">
+    <h2>🎯 How to Obtain Tim Cheese</h2>
+
+    <div class="obtain-method">
+      <div class="obtain-icon">📖</div>
+      <div>
+        <h3>Overview</h3>
+        <p>Tim Cheese is a Common rarity Brainrot that serves as a cornerstone unit for new players. Due to his affordable price range of $500, players often "spam" him to build a quick economic foundation for their first Rebirth.</p>
+      </div>
+    </div>
+
+    <div class="obtain-method">
+      <div class="obtain-icon">🎨</div>
+      <div>
+        <h3>Appearance</h3>
+        <p>He is an anthropomorphic rat dressed in a sharp black suit, white dress shirt, and a blue necktie. His signature look is defined by his square-shaped sunglasses and a confident stance, typically with his hands tucked into his pockets.</p>
+      </div>
+    </div>
+
+    <div class="obtain-method">
+      <div class="obtain-icon">📊</div>
+      <div>
+        <h3>Value</h3>
+        <p>While he holds a low market value for veteran players, his utility value is extremely high for beginners. His worth increases significantly when found with rare mutations such as Diamond, Yin Yang, or the elusive Bloodrot variant</p>
+      </div>
+    </div>
+
+    <div class="obtain-method">
+      <div class="obtain-icon">🧠</div>
+      <div>
+        <h3>Trivia</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">
+            <span style="color:#fff; font-size:16px; flex-shrink:0;">•</span>
+            <span><strong style="color:#fff;">Origins:</strong> Unlike many characters in the game, Tim Cheese is not of Italian origin; he is derived from the John Pork Lore that went viral on TikTok in 2022.</span>
+          </li>
+          <li style="display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">
+            <span style="color:#fff; font-size:16px; flex-shrink:0;">•</span>
+            <span><strong style="color:#fff;">Family Ties::</strong> He is reportedly the cousin of the famous rapper Biggie Cheese.</span>
+          </li>
+          <li style="display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">
+            <span style="color:#fff; font-size:16px; flex-shrink:0;">•</span>
+            <span><strong style="color:#fff;">Obtainment:</strong> He can be found roaming the Red Carpet or acquired by stealing from other players' bases.</span>
+          </li>
+          <li style="display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">
+            <span style="color:#fff; font-size:16px; flex-shrink:0;">•</span>
+            <span><strong style="color:#fff;">Avatar Item:</strong> There is an official Tim Cheese Head UGC item available on Roblox for players who wish to match his look.</span>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">
+        BLOXBURST is a Roblox code discovery platform designed to help players unlock exclusive in-game rewards across top Roblox titles.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="../../gamecode.html">Game Codes</a>
+      <a href="../../promo-latest-codes.html">Promo Codes</a>
+      <a href="../../wiki.html">Wiki</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="../../Terms-and-Condition/about.html">About Us</a>
+      <a href="../../Terms-and-Condition/faq.html">FAQ</a>
+      <a href="../../Terms-and-Condition/contactus.html">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="../../Terms-and-Condition/terms.html">Terms of Use</a>
+      <a href="../../Terms-and-Condition/privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+    <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+  </div>
+</footer>
+
+<script src="../../script.js"></script>
+</body>
+</html>

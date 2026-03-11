@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/FinalLogo.png">
+  <link rel="preload" as="image" href="Images/FinalLogo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Codes - BLOXBURST🔥</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet"></noscript>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELF86MPP23');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { overflow-x: hidden; }
+    img  { max-width: 100%; height: auto; display: block; }
+
+    /* ── HERO SECTION ── */
+    .gc-hero {
+      width: 100%;
+      text-align: center;
+      padding: 24px 20px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .gc-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(125,92,255,0.15);
+      border: 1px solid rgba(125,92,255,0.35);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: rgba(200,185,255,0.95);
+      text-transform: uppercase;
+    }
+
+    .gc-hero-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #a78bfa;
+      box-shadow: 0 0 8px #a78bfa;
+      flex-shrink: 0;
+      animation: badgePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 0 8px #a78bfa; }
+      50%       { box-shadow: 0 0 16px #a78bfa, 0 0 24px rgba(167,139,250,0.5); }
+    }
+
+    .gc-hero-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 58px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .gc-hero-title .gc-icon {
+      color: #48d279;
+      display: inline-block;
+    }
+
+    .gc-hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.75;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .gc-hero-pills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .gc-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.85);
+      backdrop-filter: blur(8px);
+      transition: all 0.2s;
+    }
+
+    .gc-pill:hover {
+      background: rgba(255,255,255,0.09);
+      transform: translateY(-1px);
+    }
+
+    .gc-pill .pill-green  { color: #48d279; font-weight: 900; }
+    .gc-pill .pill-purple { color: #a78bfa; font-weight: 900; }
+
+    /* ============================================================
+       GAME CARDS — FIXED HEIGHT + PROPER TRUNCATION
+       ============================================================ */
+    .game-card {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #151a4d, #1a2060) !important;
+      padding: 16px 18px !important;
+      border-radius: 18px !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      transition: all 0.25s ease !important;
+      position: relative;
+      overflow: visible;
+      gap: 14px;
+      /* ✅ FIX: Fixed height para pantay lahat ng cards */
+      height: 90px;
+      min-height: 90px;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px) !important;
+      border-color: rgba(255,255,255,0.25) !important;
+      box-shadow:
+        0 0 0 1.5px rgba(125,92,255,0.4),
+        0 14px 35px rgba(0,0,0,0.45) !important;
+    }
+
+    .game-thumb {
+      width: 58px !important;
+      height: 58px !important;
+      border-radius: 14px !important;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+
+    .game-info {
+      flex: 1;
+      min-width: 0; /* ✅ FIX: Kailangan ito para gumana ang text truncation sa flex child */
+    }
+
+    .game-info h3 {
+      font-size: 14px !important;
+      font-weight: 900;
+      color: #ffffff;
+      /* ✅ FIX: Truncate with ellipsis */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+      display: block;
+      max-width: 100%;
+    }
+
+    .game-info p {
+      font-size: 13px !important;
+      color: rgba(157,243,196,0.9);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      max-width: 100%;
+    }
+
+    .game-info span { color: #00ff88; font-weight: 900; }
+
+    .game-new-badge {
+      background: linear-gradient(135deg, #00ff88, #00d4aa) !important;
+      color: #002b1f !important; font-size: 10px !important; font-weight: 900 !important;
+      padding: 4px 10px !important; border-radius: 999px !important;
+      box-shadow: 0 0 12px rgba(0,255,136,0.5) !important;
+      top: 10px !important; right: 10px !important;
+    }
+
+    .game-card::after {
+      content: "➜"; position: absolute; right: 16px; bottom: 14px;
+      font-size: 13px; color: rgba(0,255,136,0.7); opacity: 0;
+      transform: translateX(-4px); transition: all 0.2s ease;
+    }
+    .game-card:hover::after { opacity: 1; transform: translateX(0); }
+
+    .alpha-head {
+      font-family: 'Fredoka', sans-serif; font-size: 20px !important; font-weight: 900;
+      color: rgba(255,255,255,0.9); margin-bottom: 14px; padding-bottom: 8px;
+      border-bottom: 2px solid rgba(125,92,255,0.3); display: flex; align-items: center; gap: 10px;
+    }
+
+    /* ✅ FIX: Itago ang empty alpha sections (walang game cards) */
+    .alpha-section:not(:has(.game-card)) {
+      display: none;
+    }
+
+    /* PRO TIPS */
+    .pro-tips { width: 100%; margin: 48px 0 20px; padding: 0; }
+    .pro-tips-title { font-family: 'Fredoka', sans-serif; font-size: 26px; font-weight: 900; text-align: center; color: #ffffff; margin-bottom: 8px; letter-spacing: 1px; }
+    .pro-tips-sub { text-align: center; color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 28px; }
+    .pro-tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .tip-card { background: rgba(21,26,77,0.75); border: 1px solid rgba(255,255,255,0.10); border-radius: 20px; padding: 24px 20px; text-align: center; transition: 0.25s ease; backdrop-filter: blur(10px); }
+    .tip-card:hover { transform: translateY(-4px); border-color: rgba(125,92,255,0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+    .tip-icon { font-size: 36px; margin-bottom: 14px; display: block; }
+    .tip-card h3 { font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 900; color: #ffffff; margin-bottom: 8px; }
+    .tip-card p { font-size: 13px; color: rgba(255,255,255,0.70); line-height: 1.7; }
+    .tip-card.highlight { background: linear-gradient(135deg, rgba(125,92,255,0.22), rgba(0,255,136,0.10)); border-color: rgba(125,92,255,0.35); }
+
+    .dyk-banner { width: 100%; margin: 28px 0 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; background: none; border: none; box-shadow: none; padding: 0; }
+    .dyk-icon { font-size: 32px; flex-shrink: 0; }
+    .dyk-text h4 { font-family: 'Fredoka', sans-serif; font-size: 16px; color: #ffffff; margin-bottom: 4px; }
+    .dyk-text p { font-size: 13px; color: rgba(255,255,255,0.60); line-height: 1.6; max-width: 680px; margin: 0 auto; }
+
+    @media (min-width: 769px) {
+      .gamecode-header { display: contents; }
+      .top-text-link { position: absolute; top: 28px; left: 28px; }
+      .top-text-link .logo-img { height: 120px !important; width: auto; max-width: 220px; object-fit: contain; }
+    }
+
+    @media (max-width: 768px) {
+      html { font-size: 13px; }
+      main.page { padding-top: 10px !important; padding-left: 14px !important; padding-right: 14px !important; padding-bottom: 24px !important; width: 100% !important; }
+      .gamecode-header { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 8px !important; padding: 10px 0 6px !important; margin-bottom: 6px !important; }
+      .gamecode-header .top-text-link { position: static !important; }
+      .gamecode-header .top-text-link .logo-img { height: 60px !important; max-width: 150px !important; }
+      .gamecode-header .top-nav { position: static !important; display: flex !important; flex-direction: row !important; justify-content: center !important; gap: 8px !important; width: 80% !important; max-width: 260px !important; margin: 0 auto !important; }
+      .nav-box, .mini-btn { height: 36px !important; padding: 0 !important; font-size: 13px !important; border-radius: 10px !important; flex: 1 1 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown { flex: 1 1 0 !important; display: flex !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown .mini-btn { width: 100% !important; flex: 1 !important; }
+      .gc-hero { padding: 16px 16px 6px !important; gap: 10px !important; }
+      .gc-hero-title { font-size: 34px !important; gap: 10px !important; }
+      .gc-hero-sub { font-size: 13px !important; }
+      .gc-pill { font-size: 12px !important; padding: 7px 12px !important; }
+      .search-wrap, .gamecode-search-wrapper { margin-bottom: 12px !important; width: 100% !important; }
+      .search-shell { height: 36px !important; padding: 0 12px !important; border-width: 1.5px !important; width: 100% !important; border-radius: 999px !important; }
+      .search-shell input { font-size: 13px !important; }
+      .alpha-wrap { flex-direction: column !important; gap: 10px !important; width: 100% !important; }
+      .alpha-bar { width: 100% !important; max-height: unset !important; position: static !important; overflow-x: auto !important; overflow-y: hidden !important; padding: 6px 0 !important; border-radius: 10px !important; }
+      #alphaNav { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 4px !important; padding: 2px 4px !important; width: max-content !important; }
+      #alphaNav a, #alphaNav button { font-size: 11px !important; padding: 5px 8px !important; border-radius: 6px !important; white-space: nowrap !important; min-width: 28px !important; }
+      .alpha-content { width: 100% !important; padding: 0 !important; }
+      #alphaSections .alpha-section { margin-bottom: 16px !important; }
+      #alphaSections .alpha-head { font-size: 14px !important; margin-bottom: 8px !important; }
+      #alphaSections .games-row, #alphaSections .game-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+      /* ✅ FIX mobile: slightly shorter fixed height */
+      .game-card { padding: 10px 12px !important; border-radius: 12px !important; gap: 10px !important; height: 74px !important; min-height: 74px !important; }
+      .game-thumb { width: 44px !important; height: 44px !important; border-radius: 10px !important; }
+      .game-info h3 { font-size: 12px !important; }
+      .game-info p  { font-size: 11px !important; }
+      .loadmore-wrap { margin-top: 14px !important; }
+      .loadmore-btn { font-size: 13px !important; padding: 10px 24px !important; width: 80% !important; max-width: 260px !important; }
+      .pro-tips { margin: 32px 0 16px !important; }
+      .pro-tips-title { font-size: 20px !important; }
+      .pro-tips-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .tip-card { padding: 18px 16px !important; }
+      .tip-icon { font-size: 28px !important; }
+      .dyk-banner { flex-direction: column !important; text-align: center !important; padding: 0 !important; gap: 8px !important; }
+      .site-footer { margin-top: 16px !important; padding: 16px 0 10px !important; }
+      .footer-inner { grid-template-columns: 1fr !important; gap: 12px !important; width: 86% !important; }
+      .footer-logo { font-size: 18px !important; }
+      .footer-desc { font-size: 11px !important; }
+      .footer-col h4 { font-size: 11px !important; }
+      .footer-col a  { font-size: 10px !important; margin: 3px 0 !important; }
+      .footer-bottom { margin-top: 12px !important; padding: 8px 14px 0 !important; }
+      .footer-meta, .footer-copy { font-size: 10px !important; }
+    }
+  </style>
+</head>
+
+<body>
+<main class="page">
+
+  <div class="gamecode-header">
+    <a href="https://www.bloxburst.com/" class="top-text-link" aria-label="BLOXBURST Home">
+      <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img" fetchpriority="high">
+    </a>
+    <div class="top-nav">
+      <div class="nav-dropdown" id="codesDropdown">
+        <a href="gamecode.html" class="mini-btn" id="codesBtn">Codes</a>
+        <div class="nav-menu" id="codesMenu">
+          <a class="nav-item" href="gamecode.html">Game Codes</a>
+          <a class="nav-item" href="promo-latest-codes.html">Promo Codes</a>
+        </div>
+      </div>
+      <a href="wiki.html" class="nav-box nav-link">Wiki</a>
+    </div>
+  </div>
+
+  <!-- ── HERO SECTION ── -->
+  <div class="gc-hero">
+    <div class="gc-hero-badge">Always Up-To-Date</div>
+
+    <h1 class="gc-hero-title">
+      Game Codes <span class="gc-icon">🎮</span>
+    </h1>
+
+    <p class="gc-hero-sub">
+      Manually verified, always fresh. Find every working code for your
+      favorite Roblox games — all in one place.
+    </p>
+
+    <div class="gc-hero-pills">
+      <div class="gc-pill">🎯 <span class="pill-purple">100% Verified</span></div>
+      <div class="gc-pill">⚡ Updated <span class="pill-green">Daily</span></div>
+      <div class="gc-pill">🎮 50+ Games</div>
+    </div>
+  </div>
+
+  <div class="search-wrap gamecode-search-wrapper">
+    <div class="search-shell">
+      <input id="globalSearch" type="text" placeholder="🔍 Search Roblox Code" autocomplete="off" />
+      <button class="clear-btn" type="button" onclick="clearGlobalSearch()" aria-label="Clear">✕</button>
+      <div id="searchSuggestions" class="suggestions" aria-label="Search Suggestions"></div>
+    </div>
+  </div>
+
+  <section class="alpha-wrap">
+    <aside class="alpha-bar">
+      <div id="alphaNav"></div>
+    </aside>
+
+    <div class="alpha-content">
+      <div id="alphaSections"></div>
+
+      <div class="loadmore-wrap">
+        <button class="loadmore-btn" id="loadMoreBtn" type="button">View More</button>
+      </div>
+
+      <!-- PRO TIPS -->
+      <div class="pro-tips">
+        <p class="pro-tips-title">💡 Pro Tips for Redeeming Codes</p>
+        <p class="pro-tips-sub">Maximize your rewards with these quick tips from our team</p>
+
+        <div class="pro-tips-grid">
+          <div class="tip-card highlight">
+            <span class="tip-icon">⚡</span>
+            <h3>Redeem ASAP</h3>
+            <p>Most codes expire within hours or days. Bookmark this page and check daily so you never miss a reward.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">🔤</span>
+            <h3>Case Sensitive</h3>
+            <p>Always copy-paste codes exactly as shown. One wrong letter or extra space will cause "Invalid Code" error.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">🔄</span>
+            <h3>Try a New Server</h3>
+            <p>If a valid code doesn't work, leave and rejoin a different server. Some codes have server-side delays.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">👥</span>
+            <h3>Join the Group</h3>
+            <p>Some codes require you to join the developer's Roblox group first. Check the game description for requirements.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">📱</span>
+            <h3>Check Official Socials</h3>
+            <p>Developers drop exclusive codes on Discord, Twitter/X, and YouTube. Following them = early access to codes.</p>
+          </div>
+          <div class="tip-card highlight">
+            <span class="tip-icon">🎯</span>
+            <h3>One-Time Use Only</h3>
+            <p>Most codes are redeemable once per account. If it says "Already Redeemed" — you've already claimed it!</p>
+          </div>
+        </div>
+
+        <div class="dyk-banner">
+          <span class="dyk-icon">🧠</span>
+          <div class="dyk-text">
+            <h4>Did You Know?</h4>
+            <p>BLOXBURST manually tests every code before listing it as Active. If a code expired recently, we mark it within 24 hours so you're never wasting time on dead codes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">
+        BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="gamecode.html">Game Codes</a>
+      <a href="promo-latest-codes.html">Promo Codes</a>
+      <a href="wiki.html">Wiki</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="Terms-and-Condition/about.html">About Us</a>
+      <a href="Terms-and-Condition/faq.html">FAQ</a>
+      <a href="Terms-and-Condition/contactus.html">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="Terms-and-Condition/terms.html">Terms of Use</a>
+      <a href="Terms-and-Condition/privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+    <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
