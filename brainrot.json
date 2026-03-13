@@ -10,6 +10,8 @@
   { "name": "Racooni Jandelini",                  "rarity": "Common",       "img": "/Images/Racooni Jandelini.png",                    "url": "/brainrot/Racooni-Jandelini.html" },
   { "name": "Tartaragno",                  "rarity": "Common",       "img": "/Images/Tartaragno.png",                    "url": "/brainrot/Tartaragno.html" },
   { "name": "Trippi Troppi",                "rarity": "Rare",         "img": "/Images/TrippiTroppi.png",                  "url": "/brainrot/Trippi-Troppi.html" },
+  { "name": "Gangster Footera",                "rarity": "Rare",         "img": "/Images/Gangster Footera.png",                  "url": "/brainrot/Gangster-Footera.html" },
+  { "name": "Bandito Bobritto",                "rarity": "Rare",         "img": "/Images/Bandito Bobritto.png",                  "url": "/brainrot/Bandito-Bobritto.html" },
   { "name": "Cappuccino Assassino",        "rarity": "Epic",         "img": "/Images/Cappuccino Assassino.png",          "url": "/brainrot/cappuccino-assassino.html" },
   { "name": "Burbaloni Loliloli",          "rarity": "Legendary",    "img": "/Images/Burbaloni Loliloli.png",            "url": "/brainrot/burbaloni-loliloli.html" },
   { "name": "Frigo Camelo",                "rarity": "Mythic",       "img": "/Images/Frigo Camelo.png",                  "url": "/brainrot/frigo-camelo.html" },
