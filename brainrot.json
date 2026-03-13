@@ -1,0 +1,22 @@
+[
+  { "name": "Noobini Pizzanini",           "rarity": "Common",       "img": "/Images/Noobini.webp",                       "url": "/brainrot/noobini.html" },
+  { "name": "Lirili Larila",               "rarity": "Common",       "img": "/Images/Lirili Larila.webp",                 "url": "/brainrot/LiriliLarila.html" },
+  { "name": "Pipi Kiwi",                   "rarity": "Common",       "img": "/Images/Pipi Kiwi.webp",                     "url": "/brainrot/PipiKiwi.html" },
+  { "name": "Pipi Corni",                  "rarity": "Common",       "img": "/Images/Pipi Corni.webp",                    "url": "/brainrot/PipiCorni.html" },
+  { "name": "Tim Cheese",                  "rarity": "Common",       "img": "/Images/Tim Cheese.png",                    "url": "/brainrot/TimCheese.html" },
+  { "name": "Fluri Flura",                  "rarity": "Common",       "img": "/Images/FluriFlura.png",                    "url": "/brainrot/Fluriflura.html" },
+  { "name": "Talpa Di Fero",                  "rarity": "Common",       "img": "/Images/Talpa Di Fero.png",                    "url": "/brainrot/Talpa-Di-Fero.html" },
+  { "name": "Svinina Bombardino",                  "rarity": "Common",       "img": "/Images/Svinina Bombardino.png",                    "url": "/brainrot/Svinina-Bombardino.html" },
+  { "name": "Racooni Jandelini",                  "rarity": "Common",       "img": "/Images/Racooni Jandelini.png",                    "url": "/brainrot/Racooni-Jandelini.html" },
+  { "name": "Tartaragno",                  "rarity": "Common",       "img": "/Images/Tartaragno.png",                    "url": "/brainrot/Tartaragno.html" },
+  { "name": "Trippi Troppi",                "rarity": "Rare",         "img": "/Images/TrippiTroppi.png",                  "url": "/brainrot/Trippi-Troppi.html" },
+  { "name": "Cappuccino Assassino",        "rarity": "Epic",         "img": "/Images/Cappuccino Assassino.png",          "url": "/brainrot/cappuccino-assassino.html" },
+  { "name": "Burbaloni Loliloli",          "rarity": "Legendary",    "img": "/Images/Burbaloni Loliloli.png",            "url": "/brainrot/burbaloni-loliloli.html" },
+  { "name": "Frigo Camelo",                "rarity": "Mythic",       "img": "/Images/Frigo Camelo.png",                  "url": "/brainrot/frigo-camelo.html" },
+  { "name": "Cocofanto Elefanto",          "rarity": "Brainrot God", "img": "/Images/Cocofanto Elefanto.png",            "url": "/brainrot/cocofanto-elefanto.html" },
+  { "name": "La Vacca Staturno Saturnita", "rarity": "Secret",       "img": "/Images/La Vacca Staturno Saturnita.png",   "url": "/brainrot/la-vacca-staturno-saturnita.html" },
+  { "name": "Lave ve Vacca Staturno Satu", "rarity": "Secret",       "img": "/Images/La Vacca Staturno Saturnita.png",   "url": "/brainrot/la-vacca-staturno-saturnita.html" },
+  { "name": "Badingyy Staturno Saturnita", "rarity": "Secret",       "img": "/Images/La Vacca Staturno Saturnita.png",   "url": "/brainrot/la-vacca-staturno-saturnita.html" },
+  { "name": "Strawberry Elephant",         "rarity": "OG",           "img": "/Images/Strawberry Elephant.png",           "url": "/brainrot/strawberry-elephant.html" },
+  { "name": "Strawberry Panit",         "rarity": "OG",           "img": "/Images/Strawberry Elephant.png",           "url": "/brainrot/strawberry-elephant.html" }
+]

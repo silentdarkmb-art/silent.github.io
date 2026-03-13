@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lirili Larila - Steal A Brainrot Wiki | BLOXBURST</title>
-  <meta name="description" content="Lirili Larila is a Common Brainrot in Steal A Brainrot Roblox. Cost $250, earns $3/sec. Full guide: stats, how to obtain, appearance, trivia, and Strawberry variant." />
-  <meta name="keywords" content="lirili larila, steal a brainrot, roblox brainrot wiki, lirili larila stats, strawberry elephant, common brainrot, bloxburst" />
+  <meta name="description" content="Lirili Larila is a Common Brainrot in Steal A Brainrot Roblox. Costs $250, earns $3/sec. Full guide: stats, how to obtain, appearance, trivia, and its role in La Grande Combinasion." />
+  <meta name="keywords" content="lirili larila, steal a brainrot, roblox brainrot wiki, lirili larila stats, cactus elephant, italian brainrot, common brainrot, bloxburst" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="BLOXBURST" />
-  <link rel="canonical" href="https://bloxburst.com/Game-Wiki-Folder/brainrot/lirili-larila.html" />
+  <link rel="canonical" href="https://bloxburst.com/brainrot/LiriliLarila.html" />
   <meta property="og:title" content="Lirili Larila - Steal A Brainrot Wiki | BLOXBURST" />
   <meta property="og:description" content="Full guide for Lirili Larila in Steal A Brainrot. Stats, how to obtain, appearance, trivia and more." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://bloxburst.com/Images/Lirili Larila.png" />
+  <meta property="og:image" content="https://bloxburst.com/Images/Lirili Larila.webp" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <script type="application/ld+json">
@@ -23,8 +23,8 @@
     "description": "Full guide for Lirili Larila in Steal A Brainrot Roblox game. Stats, cost, income, appearance and trivia.",
     "author": { "@type": "Organization", "name": "BLOXBURST", "url": "https://bloxburst.com" },
     "publisher": { "@type": "Organization", "name": "BLOXBURST", "url": "https://bloxburst.com" },
-    "dateModified": "2026-02-26",
-    "image": "https://bloxburst.com/Images/Lirili Larila.png"
+    "dateModified": "2026-03-12",
+    "image": "https://bloxburst.com/Images/Lirili Larila.webp"
   }
   </script>
 
@@ -158,23 +158,26 @@
       background: linear-gradient(90deg, #ff6ec7, #ff9a3c, #ffd700);
     }
     .brainrot-hero::after {
-      content: '🐘'; position: absolute; right: -10px; bottom: -20px;
+      content: '🌵'; position: absolute; right: -10px; bottom: -20px;
       font-size: 160px; opacity: 0.04; pointer-events: none; line-height: 1;
     }
     @keyframes fadeUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
 
     .hero-img-wrap {
-      width: 180px; height: 180px; flex-shrink: 0;
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 24px; display: flex; align-items: center; justify-content: center;
-      padding: 10px; position: relative; overflow: hidden;
-      box-shadow: 0 0 40px rgba(255,110,199,0.15);
+      width: 190px; height: 190px; flex-shrink: 0;
+      position: relative; display: flex; align-items: center; justify-content: center;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #f5c842, #e8a800, #c88000);
+      padding: 6px;
+      box-shadow: 0 0 0 3px #ffe87a, 0 8px 32px rgba(232,168,0,0.45);
     }
     .hero-img-wrap::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 80%, rgba(255,154,60,0.15), transparent 70%);
+      content: ''; position: absolute; inset: 6px;
+      border-radius: 16px;
+      background: radial-gradient(ellipse at 35% 35%, #2a1a6e, #0e2240 60%, #051020);
+      z-index: 0;
     }
-    .hero-img-wrap img { width: 148px; height: 148px; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 8px 24px rgba(255,110,199,0.3)); }
+    .hero-img-wrap img { width: 148px; height: 148px; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5)); }
 
     .hero-info { flex: 1; }
     .hero-rarity {
@@ -446,15 +449,17 @@
       backdrop-filter:blur(8px); animation:fadeUp 0.2s ease;
     }
     .lightbox.open { display:flex; }
-    .lightbox-inner { position:relative; max-width:900px; width:100%; }
-    .lightbox-inner img { width:100%; border-radius:18px; box-shadow:0 30px 80px rgba(0,0,0,0.8); display:block; }
+    .lightbox-inner { position:relative; max-width:900px; width:100%; max-height:90vh; display:flex; align-items:center; justify-content:center; }
+    .lightbox-inner img { width:100%; max-height:85vh; object-fit:contain; border-radius:18px; box-shadow:0 30px 80px rgba(0,0,0,0.8); display:block; }
     .lightbox-close {
-      position:absolute; top:-44px; right:0; background:rgba(255,255,255,0.1);
-      border:1px solid rgba(255,255,255,0.2); color:#fff; font-size:18px;
-      width:38px; height:38px; border-radius:50%; cursor:pointer; display:flex;
+      position:fixed; top:20px; right:20px;
+      background:rgba(255,60,60,0.85);
+      border:2px solid rgba(255,255,255,0.5); color:#fff; font-size:20px;
+      width:46px; height:46px; border-radius:50%; cursor:pointer; display:flex;
       align-items:center; justify-content:center; transition:background 0.2s;
+      z-index:100000; font-weight:900; box-shadow:0 4px 20px rgba(0,0,0,0.5);
     }
-    .lightbox-close:hover { background:rgba(255,255,255,0.2); }
+    .lightbox-close:hover { background:rgba(255,60,60,1); transform:scale(1.1); }
 
     @media (max-width:600px) {
       .gallery-grid { grid-template-columns:1fr; gap:10px; }
@@ -542,26 +547,25 @@
 <div class="page-wrap">
 
   <!-- BACK LINK -->
-  <a class="back-link" href="../../Game-Wiki-Folder/wiki-steal-a-brainrot.html">← Back to Steal A Brainrots Wiki</a>
+  <a class="back-link" href="../../Game-Wiki-Folder/steal-a-brainrot.html">← Back to Steal A Brainrots Wiki</a>
 
   <!-- ══════════════════════════════════════
        HERO
   ══════════════════════════════════════ -->
   <div class="brainrot-hero">
     <div class="hero-img-wrap">
-      <img src="../../Images/Lirili Larila.png" alt="Lirili Larila brainrot Roblox"
-        onerror="this.style.fontSize='64px'; this.outerHTML='<span style=font-size:64px>🐘</span>'">
+      <img src="../../Images/Lirili Larila.webp" alt="Lirili Larila brainrot Roblox">
     </div>
     <div class="hero-info">
       <div class="hero-rarity"><span class="hero-rarity-dot"></span>⭐ Common Rarity</div>
       <h1>Lirili Larila</h1>
-      <p>A wandering desert elephant with a cactus body, brown sandals, and a floating clock. One of the most iconic early-game Brainrots in Steal A Brainrot, beloved for its viral Italian TikTok origin and Strawberry mutation.</p>
+      <p>A wandering desert creature from the Italian Brainrot meme wave — a living cactus body topped with the head of a baby elephant, strolling through endless sand on two oversized brown sandals. At $250 with $3/sec income, it is the second Brainrot most players pick up and the first meaningful upgrade beyond Noobini Pizzanini.</p>
       <div class="hero-tags">
         <span class="hero-tag">🎮 Steal A Brainrot</span>
-        <span class="hero-tag">🐘 Elephant-Type</span>
-        <span class="hero-tag">🌵 Desert Theme</span>
-        <span class="hero-tag">⚡ Early-Game</span>
-        <span class="hero-tag">🍓 Strawberry Variant</span>
+        <span class="hero-tag">🌵 Cactus-Elephant Hybrid</span>
+        <span class="hero-tag">🏜️ Desert Theme</span>
+        <span class="hero-tag">⏰ Time Control Lore</span>
+        <span class="hero-tag">🧩 La Grande Combinasion</span>
       </div>
     </div>
   </div>
@@ -571,7 +575,7 @@
     <div class="stat-card red">
       <span class="stat-label">💰 Base Cost</span>
       <span class="stat-value">$250</span>
-      <span class="stat-sub">Starting price</span>
+      <span class="stat-sub">Runway price</span>
     </div>
     <div class="stat-card green">
       <span class="stat-label">⚡ Income / sec</span>
@@ -609,23 +613,23 @@
           <div class="obtain-icon-box">📖</div>
           <div class="obtain-body">
             <h3>What is Lirili Larila?</h3>
-            <p>Lirilì Larilà is an elephant-type Brainrot in the Roblox game <strong>Steal A Brainrot</strong>. Priced at $250, it generates $3 per second and provides a steady stream of early-game income. While its earnings may not rival higher-tier Brainrots, its balanced cost and dependable performance make it a practical investment during the early stages of progression.</p>
-            <p>Readily accessible and consistently reliable, Lirilì Larilà serves as a solid economic stepping stone for players building their foundation. It is the second unit in the game index, making it one of the very first Brainrots players can unlock after starting.</p>
+            <p>Lirili Larila is a Common Brainrot in the Roblox game <strong>Steal A Brainrot</strong>. Priced at $250 and generating $3 per second, it is the natural next purchase after Noobini Pizzanini and delivers three times the passive income of the starter unit. Its low barrier of entry and permanent availability on the conveyor make it one of the first upgrades virtually every player encounters in their run.</p>
+            <p>Despite its low cost and Common classification, Lirili Larila holds a notable distinction in the game — it is the only Common Brainrot to appear inside La Grande Combinasion, the iconic fusion of five different Brainrots that forms a towering Secret-rarity unit. That connection gives Lirili Larila a cultural weight far beyond what its $3/sec income suggests.</p>
           </div>
         </div>
         <div class="obtain-row">
           <div class="obtain-icon-box">🎯</div>
           <div class="obtain-body">
             <h3>How to Obtain</h3>
-            <p>Lirili Larila is available as a standard unit in the regular game rotation. Simply start Steal A Brainrot, accumulate enough in-game currency, and purchase it from the Brainrot shop. No special events or limited-time conditions are needed — it is always available to players.</p>
-            <p>Its low cost of $150–$250 means most players can obtain it within the first few minutes of a new run, making it an ideal foundation unit for fast early progression.</p>
+            <p>Lirili Larila appears regularly on the central conveyor belt, known as the Runway, approximately every five minutes. Players can purchase it directly for $250 in in-game cash and carry it back to their base before a rival intercepts them. No events, machines, or rituals are required — it is always part of the normal rotation during standard gameplay.</p>
+            <p>Alternatively, Lirili Larila can be taken directly from another player's base if that base is left unlocked. Given its low value, it is generally considered a low-priority steal target, but it remains fair game during raids.</p>
           </div>
         </div>
         <div class="obtain-row">
           <div class="obtain-icon-box">🔁</div>
           <div class="obtain-body">
-            <h3>Rebirth Speedrun Use</h3>
-            <p>Because Lirili Larila is the second unit in the index and costs very little, experienced players "spam" purchase it repeatedly to generate income as fast as possible. This strategy allows players to reach their first Rebirth in minimal time, earning the "speedrun favorite" reputation among the community.</p>
+            <h3>Early Game Role</h3>
+            <p>Lirili Larila serves as a bridge unit — something players stack briefly to accelerate their early cash flow before transitioning to stronger options. Placing a few copies generates a steady combined stream that helps fund Rare-tier purchases faster. The target is to swap it out for higher-income Brainrots as soon as the budget allows, typically moving on to units like Svinina Bombardino at $10/sec or higher.</p>
           </div>
         </div>
       </div>
@@ -634,26 +638,28 @@
     <!-- APPEARANCE -->
     <div class="tab-panel" id="tab-appearance">
       <div class="info-card">
-        <p>Lirilì Larilà is a surreal, hybrid creature that blends soft animal features with a spiny desert form — a direct result of its AI-generated TikTok origin. Its design is instantly recognizable and has become one of the most iconic visual identities in the Steal A Brainrot game.</p>
+        <p>Lirili Larila is one of the most immediately recognizable characters in the Italian Brainrot meme family. Its design combines two completely unrelated living things — a desert plant and a baby elephant — into a single creature that somehow reads as cohesive due to how committed the design is to its own absurd logic.</p>
         <h3>Body Structure</h3>
-        <p>The main body is a <strong>green cactus</strong> — tall, rounded, and covered in typical cactus bumps and small spines. Attached to the top is a <strong>blue elephant head</strong>, complete with large ears, expressive eyes, and a short trunk. The contrast between the soft, rounded elephant features and the rough cactus body creates the surreal appeal that made the original TikTok video go viral.</p>
-        <h3>Accessories</h3>
-        <p>Lirili Larila wears <strong>two brown sandals</strong> — sometimes described as flip-flops — on the base of its cactus body. This detail adds personality and humor to the character, giving it a relaxed, wandering desert traveler vibe.</p>
-        <h3>In-Base Visual Effect</h3>
-        <p>When stationed at a player's base, a <strong>floating clock</strong> hovers near Lirili Larila as part of its visual effect. This ticking clock does not appear when the Brainrot is encountered in the open world or other locations — it is exclusive to the base placement animation. The clock is widely interpreted as a reference to the "tick-tock" rhythm of the original Italian song.</p>
+        <p>The body of Lirili Larila is a <strong>large, green, spiny cactus</strong> standing upright. The surface is covered in short spines that run across the full torso, giving it a rough and prickly texture. There are no arms — the cactus body is the entire trunk of the creature, with no limbs extending outward.</p>
+        <h3>Head</h3>
+        <p>Sitting atop the cactus body is the <strong>head of a baby elephant</strong>. It features floppy, oversized ears on each side and a short, stubby trunk hanging down the front. The combination of a soft, round elephant face on top of a hard spiny plant body is the defining visual contradiction that makes the character instantly memorable.</p>
+        <h3>Legs and Sandals</h3>
+        <p>Lirili Larila walks on two bare legs that end in <strong>oversized brown sandals</strong> — far too large for the body above them. The sandals have wide, flat soles and visible straps. They give the creature a lumbering, slow gait that matches the wandering desert traveler concept at the core of its original Italian Brainrot meme identity.</p>
+        <h3>The Floating Clock</h3>
+        <p>When placed inside a player's base, a <strong>small floating alarm clock</strong> appears above Lirili Larila's head. This clock was part of the original concept art and is tied to the character's lore about controlling time. It does not appear while the Brainrot is on the conveyor belt — only once it has been secured in a base.</p>
       </div>
     </div>
 
     <!-- VALUE -->
     <div class="tab-panel" id="tab-value">
       <div class="info-card">
-        <p>Lirilì Larilà is a <strong>Common rarity</strong> Brainrot in Steal A Brainrot. Its low cost makes it one of the most accessible units in the game, and its consistent $3/sec passive income provides a reliable economic foundation during the early game.</p>
-        <h3>Early Game Value</h3>
-        <p>At $250 base cost, Lirili Larila pays for itself in under 84 seconds of passive income. For newer players, this means it provides a positive return on investment very quickly — faster than most Common units. Buying multiple copies early in a run is a proven strategy for accelerating income generation before transitioning to higher-tier Brainrots.</p>
-        <h3>Market Value</h3>
-        <p>Its base market value in the player economy is low due to its Common rarity and wide availability. However, its utility for rapid early progression keeps demand steady among newer players. The unit's value can temporarily spike when found with rare mutations like <strong>Strawberry</strong> or other "Any" mutations, which can significantly increase its passive income and aesthetic appeal.</p>
-        <h3>Efficiency Rating</h3>
-        <p>With a 1.20% efficiency rating (income/cost ratio), Lirili Larila sits in the average range for Common units. While not the most efficient Brainrot in the game, its early availability and consistent output make it a top choice for foundational economic builds.</p>
+        <p>Lirili Larila sits at the bottom end of the Common tier alongside Noobini Pizzanini. At $250 and $3/sec, it technically generates more raw income than Noobini but carries a lower efficiency rating of 1.20% compared to Noobini's 4.00% — meaning it costs proportionally more per dollar of output than the starter unit.</p>
+        <h3>Ranking in the Game</h3>
+        <p>According to the game's Fandom wiki, Lirili Larila is the <strong>second worst Brainrot in the game</strong>, with only Noobini Pizzanini ranked below it. While Lirili gives less money per second than Tim Cheese and Fluriflura — both of which are also Common — it is technically rarer than those two units on the conveyor, which appears to be an unintended inconsistency in the game's design that has not been corrected due to low demand for the Brainrot.</p>
+        <h3>Mutation Income</h3>
+        <p>Lirili Larila responds to mutations the same way all Brainrots do. With a Rainbow or Divine mutation (10x multiplier), it reaches $30/sec. Lava and Galaxy mutations (6x) bring it to $18/sec. Bloodrot (2x) doubles it to $6/sec. While none of these make it competitive with mid- or late-game units, a highly mutated Lirili Larila is noticeably more useful than its base form in extended runs.</p>
+        <h3>Strawberry Trait Note</h3>
+        <p>Players frequently joke that Lirili Larila with the Strawberry trait applied visually resembles <strong>Strawberry Elephant</strong>, the OG-rarity Brainrot. This is a running community gag — the same observation is made about Strawberry-traited Cocofanto Elefanto, another elephant-type Brainrot in the game.</p>
       </div>
     </div>
 
@@ -663,27 +669,31 @@
         <div class="trivia-list">
           <div class="trivia-item">
             <div class="trivia-dot"></div>
-            <p><strong>Origin:</strong> Lirili Larila is based on a viral Italian TikTok trend featuring surreal, AI-generated animal hybrids. The video featured a blue elephant merged with a cactus, walking through a desert to an upbeat Italian song — becoming a global internet meme in early 2024.</p>
+            <p><strong>Origin:</strong> Lirili Larila debuted as an Italian Brainrot meme character on February 10, 2025 in a TikTok video posted by user @capybarawt. The original video has since been taken down. The character quickly became one of the most recognized figures in the Italian Brainrot wave that swept the internet in early 2025.</p>
           </div>
           <div class="trivia-item">
             <div class="trivia-dot"></div>
-            <p><strong>Design:</strong> Its unique appearance consists of a blue elephant head attached to a green cactus body wearing flip-flops. This direct translation of the viral video image is what made the Brainrot immediately recognizable to players who were familiar with the TikTok trend.</p>
+            <p><strong>Name:</strong> The name "Lirili Larila" comes directly from the Italian voiceover narration that accompanied the original TikTok video. The phrase "Lirilì Larilà, elefante nel deserto che cammina qua e là" translates roughly to "Lirili Larila, elephant in the desert walking here and there." The name is an onomatopoeic, nonsensical lyric — not a word with a fixed meaning.</p>
           </div>
           <div class="trivia-item">
             <div class="trivia-dot"></div>
-            <p><strong>Theme Song:</strong> Lirili Larila has a signature catchy Italian song that plays when you interact with it in the game index. The song is the same viral audio that accompanied the original TikTok video, creating an immediate audio-visual connection for players.</p>
+            <p><strong>Tone Marks:</strong> Lirili Larila is the only Brainrot in Steal A Brainrot whose proper spelling includes accent marks — written as <strong>Lirilì Larilà</strong>. These marks reflect the original Italian meme name and distinguish it from every other unit in the game's roster.</p>
           </div>
           <div class="trivia-item">
             <div class="trivia-dot"></div>
-            <p><strong>Strawberry Variant:</strong> The most popular mutation is the "Strawberry Elephant," which changes the Brainrot's color to pink and significantly boosts its income value. This variant became a community favorite due to both its visual appeal and economic advantage.</p>
+            <p><strong>The Floating Clock:</strong> The original concept art for Lirili Larila included a small clock floating above its head at all times. In the shipped version of Steal A Brainrot, this clock only appears once the Brainrot is placed inside a player's base — it does not float over the Brainrot while it is on the Runway conveyor belt. This is a deliberate difference from the source material's design.</p>
           </div>
           <div class="trivia-item">
             <div class="trivia-dot"></div>
-            <p><strong>Speedrun Favorite:</strong> Because it is the second unit in the index and very cheap, players "spam" purchase Lirili Larila to reach their first Rebirth as quickly as possible. It is widely considered the best early-game income unit for speedrun strategies.</p>
+            <p><strong>La Grande Combinasion:</strong> Lirili Larila is the <strong>only Common-rarity Brainrot</strong> to be featured as a component inside La Grande Combinasion — the Secret-rarity fusion unit that combines five different Brainrots into one structure. Lirili Larila's head appears at the top-left of the combination, and its alarm clock appears at the top-right above Boneca Ambalabu's head. Its sandal also appears on one of La Grande Combinasion's legs.</p>
           </div>
           <div class="trivia-item">
             <div class="trivia-dot"></div>
-            <p><strong>Name Pronunciation:</strong> The name "Lirilì Larilà" uses Italian accent marks, reflecting the Italian cultural origin of the viral meme. The accents on the final syllables create a sing-song rhythm that matches the melody of the original TikTok audio.</p>
+            <p><strong>Real-Life UGC Item:</strong> Lirili Larila's popularity led to an official UGC accessory being created on Roblox — a wearable keychain item called "Keychain Brainrot Lirili Larila." This makes it one of the few Steal A Brainrot characters to receive an in-platform cosmetic item outside the game itself.</p>
+          </div>
+          <div class="trivia-item">
+            <div class="trivia-dot"></div>
+            <p><strong>La Supreme Combinasion:</strong> Beyond La Grande Combinasion, Lirili Larila's floating clock also appears as a design element inside La Supreme Combinasion — the third-strongest Combination Brainrot in the game, costing $7 billion and generating $40 million per second. The clock was incorporated into the fusion's visual as a nod to Lirili Larila's time-control lore.</p>
           </div>
         </div>
       </div>
@@ -691,7 +701,7 @@
   </div>
 
   <!-- ══════════════════════════════════════
-       STRAWBERRY VARIANT CARD
+       SCREENSHOTS
   ══════════════════════════════════════ -->
   <div class="section-label">Screenshots</div>
   <div class="gallery-card">
@@ -701,17 +711,17 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="../../Images/Gallery/lirili-larila-1.png" alt="Lirili Larila screenshot 1" loading="lazy"
+        <img src="../../Images/lirili-larila-1.webp" alt="Lirili Larila screenshot 1" loading="lazy"
           onerror="this.parentNode.classList.add('img-placeholder')">
         <div class="gallery-overlay"><span>🔍 View</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="../../Images/Gallery/lirili-larila-2.png" alt="Lirili Larila screenshot 2" loading="lazy"
+        <img src="../../Images/lirili-larila-2.webp" alt="Lirili Larila screenshot 2" loading="lazy"
           onerror="this.parentNode.classList.add('img-placeholder')">
         <div class="gallery-overlay"><span>🔍 View</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="../../Images/Gallery/lirili-larila-3.png" alt="Lirili Larila screenshot 3" loading="lazy"
+        <img src="../../Images/lirili-larila-3.webp" alt="Lirili Larila screenshot 3" loading="lazy"
           onerror="this.parentNode.classList.add('img-placeholder')">
         <div class="gallery-overlay"><span>🔍 View</span></div>
       </div>
@@ -735,19 +745,19 @@
     <div class="tips-list">
       <div class="tip-row">
         <div class="tip-num">1</div>
-        <p><strong>Buy multiple early:</strong> Don't stop at one. Stack as many Lirili Larila as you can afford in the first minute of your run — the cumulative $3/sec per unit adds up fast and accelerates your path to the first Rebirth.</p>
+        <p><strong>Use it as your first upgrade:</strong> After buying your opening Noobini Pizzaninis, Lirili Larila at $250 should be your next purchase. At $3/sec it triples the income of the starter unit, and stacking a few copies early gives you a much faster ramp toward Rare-tier Brainrots than staying on Noobini alone.</p>
       </div>
       <div class="tip-row">
         <div class="tip-num">2</div>
-        <p><strong>Use as Rebirth fuel:</strong> Lirili Larila is the perfect "spam" unit for Rebirth speedrunning. Its low cost means you can purchase many in quick succession, generating income far faster than saving up for a single expensive unit.</p>
+        <p><strong>Don't hold onto it too long:</strong> Lirili Larila is a stepping stone, not a long-term unit. Once you have stable income and can afford stronger Common or Rare Brainrots — such as Svinina Bombardino at $10/sec — start replacing your Lirili Larilàs. Its contribution becomes negligible by mid-game and occupying base slots with it limits your earning ceiling.</p>
       </div>
       <div class="tip-row">
         <div class="tip-num">3</div>
-        <p><strong>Watch for the Strawberry mutation:</strong> If you get a Strawberry variant, keep it or trade it. <strong>Strawberry Elephant holds significantly more value</strong> than base Lirili Larila and is worth holding onto for trades or collection.</p>
+        <p><strong>Low steal priority — but still lock your base:</strong> Other players will rarely prioritize stealing a Lirili Larila due to its low income. However, an unlocked base is still an invitation for raids. Always activate the Lockdown button as soon as a Brainrot — any Brainrot — enters your base. Developing that habit early protects you later when the stakes are much higher.</p>
       </div>
       <div class="tip-row">
         <div class="tip-num">4</div>
-        <p><strong>Transition when ready:</strong> Once your economy is stable, start replacing Lirili Larila with higher-tier Brainrots. Its $3/sec becomes less impactful in the mid-to-late game, so treat it as a bridge — not a permanent anchor.</p>
+        <p><strong>Mutations make it viable longer:</strong> If you happen to land a high-multiplier mutation on a Lirili Larila — especially Rainbow (10x) or Divine (10x) — it reaches $30/sec, which is competitive well into the mid-game. A mutated copy is worth keeping in rotation while you save for a more expensive replacement rather than swapping it out immediately.</p>
       </div>
     </div>
   </div>
@@ -771,28 +781,29 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
+
     <div class="footer-left">
-      <a href="../../index.html" style="display:inline-block;text-decoration:none;">
-        <img src="../../Images/FinalLogo.png" alt="BLOXBURST" style="height:80px;width:auto;object-fit:contain;display:block;">
-      </a>
-      <p class="footer-desc">BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster.</p>
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">
+        BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
+      </p>
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
-      <a href="../../gamecode.html">Game Codes</a>
-      <a href="../../promo-latest-codes.html">Promo Codes</a>
-      <a href="../../wiki.html">Wiki</a>
+      <a href="gamecode.html">Game Codes</a>
+      <a href="promo-latest-codes.html">Promo Codes</a>
+      <a href="wiki.html">Wiki</a>
     </div>
     <div class="footer-col">
       <h4>More</h4>
-      <a href="../../Terms-and-Condition/about.html">About Us</a>
-      <a href="../../Terms-and-Condition/faq.html">FAQ</a>
-      <a href="../../Terms-and-Condition/contactus.html">Contact Us</a>
+      <a href="Terms-and-Condition/about.html">About Us</a>
+      <a href="Terms-and-Condition/faq.html">FAQ</a>
+      <a href="Terms-and-Condition/contactus.html">Contact Us</a>
     </div>
     <div class="footer-col">
       <h4>Policies</h4>
-      <a href="../../Terms-and-Condition/terms.html">Terms of Use</a>
-      <a href="../../Terms-and-Condition/privacy.html">Privacy Policy</a>
+      <a href="Terms-and-Condition/terms.html">Terms of Use</a>
+      <a href="Terms-and-Condition/privacy.html">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -812,75 +823,64 @@
 
   async function loadBrainrots() {
     try {
-      const res = await fetch('../../Game-Wiki-Folder/wiki-steal-a-brainrot.html');
+      // PRIMARY: Load from brainrots.json
+      const res = await fetch('/brainrot.json');
       if (!res.ok) throw new Error('HTTP ' + res.status);
-      const html = await res.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-
-      const brainrotData = [];
-
-      doc.querySelectorAll('.rarity-info').forEach(section => {
-        // Get rarity from the section ID e.g. id="rarity-common" -> "Common"
-        // or fallback to h3 text
-        const sectionId = section.id || '';
-        const idMap = {
-          'rarity-common':       'Common',
-          'rarity-rare':         'Rare',
-          'rarity-epic':         'Epic',
-          'rarity-legendary':    'Legendary',
-          'rarity-mythic':       'Mythic',
-          'rarity-brainrotgod':  'Brainrot God',
-          'rarity-secret':       'Secret',
-          'rarity-og':           'OG',
-        };
-        const rarity = idMap[sectionId] || (section.querySelector('h3')?.textContent?.trim() || 'Common');
-
-        // Each card: a[href] > div(wrapper) > img + div(name) + div(rarity-label)
-        section.querySelectorAll('a[href]').forEach(card => {
-          const imgEl  = card.querySelector('img');
-          // Name is the first div AFTER the img inside the wrapper div
-          const nameEl = card.querySelector('img ~ div');
-          if (!nameEl || !imgEl) return;
-
-          const name   = nameEl.textContent.trim();
-          // Normalize image path: ../Images/ -> ../../Images/
-          const rawImg = imgEl.getAttribute('src') || '';
-          const imgSrc = rawImg.startsWith('../Images/')
-            ? rawImg.replace('../Images/', '../../Images/')
-            : rawImg;
-
-          // Normalize url: ../Brainrot-Details-Folder/ stays as-is (already correct relative to detail pages)
-          const url = card.getAttribute('href') || '';
-
-          if (name && imgSrc && url) {
-            brainrotData.push({ name, rarity, img: imgSrc, url });
-          }
-        });
-      });
-
-      if (brainrotData.length === 0) throw new Error('No brainrots parsed from wiki');
-      BRAINROTS = brainrotData;
-      console.log('✅ Loaded', BRAINROTS.length, 'brainrots from wiki');
-
+      const data = await res.json();
+      if (!Array.isArray(data) || data.length === 0) throw new Error('Empty JSON');
+      BRAINROTS = data;
+      console.log('✅ Loaded', BRAINROTS.length, 'brainrots from brainrots.json');
     } catch(e) {
-      console.warn('⚠️ Brainrot fetch failed, using fallback:', e.message);
-      BRAINROTS = [
-        { name:"Noobini",                     rarity:"Common",       img:"../../Images/Noobini.png",                      url:"../Brainrot-Details-Folder/noobini.html" },
-        { name:"Lirili Larila",               rarity:"Common",       img:"../../Images/Lirili Larila.png",               url:"../Brainrot-Details-Folder/LiriliLarila.html" },
-        { name:"Pipi Kiwi",                   rarity:"Common",       img:"../../Images/Pipi Kiwi.png",                   url:"../Brainrot-Details-Folder/PipiKiwi.html" },
-        { name:"Pipi Corni",                  rarity:"Common",       img:"../../Images/Pipi Corni.png",                  url:"../Brainrot-Details-Folder/PipiCorni.html" },
-        { name:"Tim Cheese",                  rarity:"Common",       img:"../../Images/Tim Cheese.png",                  url:"../Brainrot-Details-Folder/TimCheese.html" },
-        { name:"TrippiTroppi",                rarity:"Rare",         img:"../../Images/TrippiTroppi.png",                url:"../Brainrot-Details-Folder/trippitroppi.html" },
-        { name:"Cappuccino Assassino",        rarity:"Epic",         img:"../../Images/Cappuccino Assassino.png",        url:"../Brainrot-Details-Folder/cappuccino-assassino.html" },
-        { name:"Burbaloni Loliloli",          rarity:"Legendary",    img:"../../Images/Burbaloni Loliloli.png",          url:"../Brainrot-Details-Folder/burbaloni-loliloli.html" },
-        { name:"Frigo Camelo",                rarity:"Mythic",       img:"../../Images/Frigo Camelo.png",                url:"../Brainrot-Details-Folder/frigo-camelo.html" },
-        { name:"Cocofanto Elefanto",          rarity:"Brainrot God", img:"../../Images/Cocofanto Elefanto.png",          url:"../Brainrot-Details-Folder/cocofanto-elefanto.html" },
-        { name:"La Vacca Staturno Saturnita", rarity:"Secret",       img:"../../Images/La Vacca Staturno Saturnita.png", url:"../Brainrot-Details-Folder/la-vacca-staturno-saturnita.html" },
-        { name:"Lave ve Vacca Staturno Satu", rarity:"Secret",       img:"../../Images/La Vacca Staturno Saturnita.png", url:"../Brainrot-Details-Folder/la-vacca-staturno-saturnita.html" },
-        { name:"Badingyy Staturno Saturnita", rarity:"Secret",       img:"../../Images/La Vacca Staturno Saturnita.png", url:"../Brainrot-Details-Folder/la-vacca-staturno-saturnita.html" },
-        { name:"Strawberry Elephant",         rarity:"OG",           img:"../../Images/Strawberry Elephant.png",         url:"../Brainrot-Details-Folder/strawberry-elephant.html" },
-      ];
+      console.warn('⚠️ brainrots.json fetch failed:', e.message);
+      // FALLBACK: try relative path (for local dev)
+      try {
+        const res2 = await fetch('../brainrot.json');
+        if (!res2.ok) throw new Error('HTTP ' + res2.status);
+        const data2 = await res2.json();
+        if (!Array.isArray(data2) || data2.length === 0) throw new Error('Empty JSON');
+        BRAINROTS = data2;
+        console.log('✅ Loaded', BRAINROTS.length, 'brainrots from relative brainrots.json');
+      } catch(e2) {
+        console.warn('⚠️ Relative path also failed, trying wiki HTML:', e2.message);
+        try {
+          const res3 = await fetch('../../Game-Wiki-Folder/steal-a-brainrot.html');
+          if (!res3.ok) throw new Error('HTTP ' + res3.status);
+          const html = await res3.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const brainrotData = [];
+          doc.querySelectorAll('.rarity-info').forEach(section => {
+            const sectionId = section.id || '';
+            const idMap = {
+              'rarity-common':       'Common',
+              'rarity-rare':         'Rare',
+              'rarity-epic':         'Epic',
+              'rarity-legendary':    'Legendary',
+              'rarity-mythic':       'Mythic',
+              'rarity-brainrotgod':  'Brainrot God',
+              'rarity-secret':       'Secret',
+              'rarity-og':           'OG',
+            };
+            const rarity = idMap[sectionId] || (section.querySelector('h3')?.textContent?.trim() || 'Common');
+            section.querySelectorAll('a[href]').forEach(card => {
+              const imgEl  = card.querySelector('img');
+              const nameEl = card.querySelector('img ~ div');
+              if (!nameEl || !imgEl) return;
+              const name   = nameEl.textContent.trim();
+              const rawImg = imgEl.getAttribute('src') || '';
+              const imgSrc = rawImg.startsWith('../Images/') ? rawImg.replace('../Images/', '../../Images/') : rawImg;
+              const url = card.getAttribute('href') || '';
+              if (name && imgSrc && url) brainrotData.push({ name, rarity, img: imgSrc, url });
+            });
+          });
+          if (brainrotData.length === 0) throw new Error('No brainrots parsed from wiki');
+          BRAINROTS = brainrotData;
+          console.log('✅ Loaded', BRAINROTS.length, 'brainrots from wiki HTML');
+        } catch(e3) {
+          console.warn('⚠️ All sources failed:', e3.message);
+          BRAINROTS = [];
+        }
+      }
     }
     renderCards(pickRandom(BRAINROTS, 6));
   }
