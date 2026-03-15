@@ -519,7 +519,7 @@
 
 <!-- HEADER -->
 <header class="main-header">
-  <a href="../../Game-Wiki-Folder/Steal-a-Brainrot.html" class="logo">
+  <a href="../../Game-Wiki/Steal-a-Brainrot.html" class="logo">
     <img src="../../Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
   </a>
   <div class="brainrot-search-wrap">
@@ -547,7 +547,7 @@
 <div class="page-wrap">
 
   <!-- BACK LINK -->
-  <a class="back-link" href="../../Game-Wiki-Folder/steal-a-brainrot.html">← Back to Steal A Brainrots Wiki</a>
+  <a class="back-link" href="../../Game-Wiki/steal-a-brainrot.html">← Back to Steal A Brainrots Wiki</a>
 
   <!-- ══════════════════════════════════════
        HERO
@@ -843,7 +843,7 @@
       } catch(e2) {
         console.warn('⚠️ Relative path also failed, trying wiki HTML:', e2.message);
         try {
-          const res3 = await fetch('../../Game-Wiki-Folder/steal-a-brainrot.html');
+          const res3 = await fetch('../../Game-Wiki/steal-a-brainrot.html');
           if (!res3.ok) throw new Error('HTTP ' + res3.status);
           const html = await res3.text();
           const parser = new DOMParser();

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steal A Brainrots Wiki - BLOXBURST</title>
+  <link rel="icon" type="image/png" href="../Images/FinalLogo.png">
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ELF86MPP23');</script>
+  <style>
+    .brainrot-search-wrap{position:relative;flex:1;max-width:480px;min-width:180px;}
+    .brainrot-search-shell{width:100%;height:46px;border-radius:999px;display:flex;align-items:center;padding:0 18px;background:rgba(143,140,199,0.25);border:1.5px solid rgba(255,255,255,0.25);box-shadow:0 4px 18px rgba(0,0,0,0.25);transition:border-color 0.2s,box-shadow 0.2s;gap:8px;}
+    .brainrot-search-shell:focus-within{border-color:rgba(125,92,255,0.7);box-shadow:0 0 0 3px rgba(125,92,255,0.15),0 4px 18px rgba(0,0,0,0.25);}
+    .brainrot-search-icon{font-size:15px;color:rgba(255,255,255,0.5);flex-shrink:0;}
+    .brainrot-search-input{flex:1;border:none;outline:none;background:transparent;color:#fff;font-size:14px;font-weight:700;}
+    .brainrot-search-input::placeholder{color:rgba(255,255,255,0.45);font-weight:600;}
+    .brainrot-search-clear{border:none;background:transparent;color:rgba(255,255,255,0.45);font-size:16px;cursor:pointer;padding:0 2px;line-height:1;transition:color 0.15s;flex-shrink:0;}
+    .brainrot-search-clear:hover{color:rgba(255,255,255,0.85);}
+    .brainrot-suggestions{position:absolute;left:0;top:calc(100% + 8px);width:100%;background:rgba(15,18,60,0.98);border:1px solid rgba(125,92,255,0.3);border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,0.55);display:none;z-index:9999;max-height:340px;overflow-y:auto;}
+    .brainrot-suggestions.show{display:block;}
+    .brainrot-suggestions::-webkit-scrollbar{width:4px;}
+    .brainrot-suggestions::-webkit-scrollbar-thumb{background:rgba(125,92,255,0.4);border-radius:4px;}
+    .bs-group-header{padding:8px 14px 4px;font-size:10px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.35);border-top:1px solid rgba(255,255,255,0.06);}
+    .bs-group-header:first-child{border-top:none;}
+    .bs-item{display:flex;align-items:center;gap:12px;padding:10px 14px;cursor:pointer;text-decoration:none;color:inherit;transition:background 0.15s;}
+    .bs-item:hover{background:rgba(125,92,255,0.15);}
+    .bs-img-wrap{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+    .bs-img-wrap img{width:36px;height:36px;object-fit:contain;}
+    .bs-info{flex:1;min-width:0;}
+    .bs-name{font-size:13px;font-weight:800;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .bs-rarity{font-size:10px;font-weight:900;margin-top:2px;display:inline-block;padding:2px 8px;border-radius:999px;}
+    .bs-pill{font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px;background:rgba(0,255,136,0.10);color:rgba(0,255,136,0.85);border:1px solid rgba(0,255,136,0.20);flex-shrink:0;white-space:nowrap;}
+    .bs-empty{padding:18px 14px;font-size:13px;color:rgba(255,255,255,0.45);text-align:center;}
+    body.subpage .main-header{display:grid !important;grid-template-columns:auto 1fr auto !important;align-items:center !important;gap:16px !important;padding:12px 30px !important;width:min(1400px,92%) !important;margin:0 auto !important;box-sizing:border-box !important;min-height:unset !important;}
+    body.subpage .main-header>a.logo{justify-self:start !important;}
+    body.subpage .main-header .logo-img{position:static !important;height:150px !important;width:auto !important;max-width:240px !important;object-fit:contain !important;display:block !important;}
+    body.subpage .main-header .brainrot-search-wrap{justify-self:center !important;width:100% !important;max-width:480px !important;}
+    body.subpage .header-actions{display:flex !important;align-items:center !important;gap:10px !important;justify-self:end !important;flex-shrink:0 !important;}
+    body.subpage .header-actions .nav-dropdown{width:110px !important;min-width:110px !important;}
+    body.subpage .header-actions .mini-btn,body.subpage .header-actions .nav-dropdown #codesBtn{width:110px !important;min-width:110px !important;max-width:110px !important;height:44px !important;padding:0 !important;font-size:14px !important;font-weight:800 !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;background:rgba(143,140,199,0.25) !important;border:1px solid rgba(255,255,255,0.25) !important;border-radius:10px !important;color:#fff !important;text-decoration:none !important;}
+    body.subpage .header-actions .mini-btn:hover,body.subpage .header-actions .nav-dropdown #codesBtn:hover{background:rgba(143,140,199,0.45) !important;}
+    @media(max-width:900px){body.subpage .main-header{padding:14px 20px !important;gap:12px !important;}body.subpage .main-header .logo-img{height:90px !important;}}
+    @media(max-width:600px){body.subpage .main-header{display:flex !important;flex-direction:column !important;align-items:center !important;gap:8px !important;padding:10px 14px !important;width:100% !important;}body.subpage .main-header .logo-img{height:60px !important;max-width:150px !important;}body.subpage .main-header .brainrot-search-wrap{width:100% !important;max-width:100% !important;}}
+    .gw-tab{padding:10px 24px;border-radius:999px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.8);font-weight:700;font-size:14px;cursor:pointer;transition:all 0.2s;}
+    .gw-tab:hover,.gw-tab.active{background:rgba(125,92,255,0.35);border-color:rgba(125,92,255,0.6);color:#fff;}
+    .gw-section{display:none;}.gw-section.active{display:block;}
+    .rarity-grid{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 8px;}
+    .rarity-btn{padding:10px 20px;border-radius:10px;background:#1e2235;border:1px solid rgba(255,255,255,0.1);font-size:14px;font-weight:700;cursor:pointer;transition:all 0.2s;}
+    .rarity-btn:hover{filter:brightness(1.2);transform:translateY(-2px);}
+
+    /* ✅ Active state — JS handles color, CSS handles base reset only */
+    .rarity-btn { opacity:0.55; }
+    .rarity-btn.active { opacity:1 !important; }
+
+    .rarity-info{background:#1e2235;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 24px;margin-top:4px;display:none;}
+    .rarity-info.active{display:block;}
+    .rarity-info h3{font-family:'Fredoka',sans-serif;font-size:20px;margin-bottom:8px;}
+    .rarity-info p{color:rgba(255,255,255,0.75);line-height:1.7;font-size:14px;}
+    .game-quick-links{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px auto 8px;flex-wrap:wrap;}
+    .quick-link.play{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:999px;background:linear-gradient(135deg,#00c853,#00e676);color:#002b10;font-weight:900;font-size:16px;text-decoration:none;transition:all 0.25s;box-shadow:0 8px 24px rgba(0,200,83,0.35);}
+    .quick-link.play:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,200,83,0.5);}
+    .social-icon-btn{position:relative;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.25s;flex-shrink:0;background:none;border:none;padding:4px;}
+    .social-icon-btn img{width:44px;height:44px;object-fit:contain;transition:transform 0.2s,filter 0.2s;display:block;}
+    .social-icon-btn:hover img{transform:scale(1.15) translateY(-2px);filter:drop-shadow(0 4px 12px rgba(255,255,255,0.25));}
+    .social-icon-btn::after{content:attr(data-label);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);background:rgba(10,12,40,0.97);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:12px;font-weight:800;padding:6px 14px;border-radius:10px;white-space:nowrap;opacity:0;pointer-events:none;transition:all 0.2s;box-shadow:0 8px 20px rgba(0,0,0,0.4);}
+    .social-icon-btn::before{content:'';position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%) translateY(4px);border:6px solid transparent;border-top-color:rgba(10,12,40,0.97);opacity:0;pointer-events:none;transition:all 0.2s;}
+    .social-icon-btn:hover::after,.social-icon-btn:hover::before{opacity:1;transform:translateX(-50%) translateY(0);}
+    .bc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:16px;}
+    .bc-grid a{text-decoration:none;}
+    .bc-grid a{text-decoration:none;display:flex;}
+    .bc-inner{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:12px;text-align:center;transition:all 0.2s;display:flex;flex-direction:column;align-items:center;width:100%;}
+    .bc-inner:hover{transform:translateY(-4px);}
+    .bc-inner img{width:80px;height:80px;object-fit:contain;border-radius:10px;flex-shrink:0;}
+    .bc-name{margin-top:8px;font-size:12px;font-weight:700;color:#fff;line-height:1.3;min-height:34px;display:flex;align-items:center;justify-content:center;}
+    .bc-rarity{font-size:11px;margin-top:4px;font-weight:900;color:#fff;display:inline-block;padding:2px 10px;border-radius:999px;}
+  </style>
+</head>
+<body class="subpage">
+
+<header class="main-header">
+  <a href="../wiki.html" class="logo"><img src="../Images/FinalLogo.png" alt="BLOXBURST" class="logo-img"></a>
+  <div class="brainrot-search-wrap">
+    <div class="brainrot-search-shell">
+      <span class="brainrot-search-icon">🔍</span>
+      <input id="brainrotSearch" class="brainrot-search-input" type="text" placeholder="Search brainrots... (e.g. Noobini, Rare)" autocomplete="off">
+      <button class="brainrot-search-clear" id="brainrotClear" onclick="clearBrainrotSearch()" style="display:none;">✕</button>
+    </div>
+    <div class="brainrot-suggestions" id="brainrotSuggestions"></div>
+  </div>
+  <div class="header-actions">
+    <div id="codesDropdown" class="nav-dropdown">
+      <a href="../gamecode.html" id="codesBtn" class="mini-btn">Codes</a>
+      <div class="nav-menu">
+        <a class="nav-item" href="../gamecode.html">Game Codes</a>
+        <a class="nav-item" href="../promo-latest-codes.html">Promo Codes</a>
+      </div>
+    </div>
+    <a href="../wiki.html" class="mini-btn">Wiki</a>
+  </div>
+</header>
+
+<main class="sub-main" style="padding-top:20px;">
+  <h1 class="sub-title">Steal A Brainrots Wiki</h1>
+  <div class="update-floating">🕒 <strong>Updated:</strong> March 12, 2026 <span class="update-date">Game Wiki</span></div>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px auto 4px;width:100%;">
+    <button class="gw-tab active" onclick="switchTab('brainrot',this)">Brainrot</button>
+    <button class="gw-tab" onclick="switchTab('events',this)">Events</button>
+    <button class="gw-tab" onclick="switchTab('mutations',this)">Mutations</button>
+    <button class="gw-tab" onclick="switchTab('rebirth',this)">Rebirth</button>
+  </div>
+
+  <div class="game-banner"><img src="../Images/Steal A Brainrots.png" alt="Steal A Brainrots Banner"></div>
+
+  <div class="game-quick-links">
+    <a class="social-icon-btn" href="https://discord.com/invite/GCxZdgU9je" target="_blank" rel="noopener" data-label="Discord Group"><img src="../Images/Discord-Logo.png" alt="Discord"></a>
+    <a class="quick-link play" href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot" target="_blank"><span>▶</span> Play Game <span>➜</span></a>
+    <a class="social-icon-btn" href="https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER#!/about" target="_blank" rel="noopener" data-label="Roblox Group"><img src="../Images/roblox_logoyea.png" alt="Roblox"></a>
+  </div>
+  <br><br><br><br><br>
+
+  <!-- TAB: BRAINROT -->
+  <div class="gw-section active" id="tab-brainrot">
+    <section class="legal-card">
+      <h2>🧠 What Are Brainrots?</h2>
+      <p>Brainrots are the main collectible characters in Steal A Brainrots. Each Brainrot has unique stats, rarity, and abilities. The more Brainrots you collect, the stronger your team becomes.</p>
+    </section>
+    <div class="rarity-grid">
+      <button class="rarity-btn active" data-bg="linear-gradient(135deg,#ff6ec7,#ff9a3c)" style="background:linear-gradient(135deg,#ff6ec7,#ff9a3c);color:#fff;" onclick="showRarity('common',this)">Common</button>
+      <button class="rarity-btn" data-bg="linear-gradient(135deg,#29b6f6,#0288d1)" style="background:linear-gradient(135deg,#29b6f6,#0288d1);color:#fff;" onclick="showRarity('rare',this)">Rare</button>
+      <button class="rarity-btn" data-bg="linear-gradient(135deg,#ce93d8,#9c27b0)" style="background:linear-gradient(135deg,#ce93d8,#9c27b0);color:#fff;" onclick="showRarity('epic',this)">Epic</button>
+      <button class="rarity-btn" data-bg="linear-gradient(135deg,#ffd700,#ff8c00)" style="background:linear-gradient(135deg,#ffd700,#ff8c00);color:#fff;" onclick="showRarity('legendary',this)">Legendary</button>
+      <button class="rarity-btn" data-bg="linear-gradient(135deg,#ff4081,#c2185b)" style="background:linear-gradient(135deg,#ff4081,#c2185b);color:#fff;" onclick="showRarity('mythic',this)">Mythic</button>
+      <button class="rarity-btn" data-bg="linear-gradient(135deg,#ff6d00,#ffab40)" style="background:linear-gradient(135deg,#ff6d00,#ffab40);color:#fff;" onclick="showRarity('brainrotgod',this)">Brainrot God</button>
+      <button class="rarity-btn" data-bg="linear-gradient(135deg,#bdbdbd,#616161)" style="background:linear-gradient(135deg,#bdbdbd,#616161);color:#fff;" onclick="showRarity('secret',this)">Secret</button>
+      <button class="rarity-btn" data-bg="linear-gradient(135deg,#a5d6a7,#388e3c)" style="background:linear-gradient(135deg,#a5d6a7,#388e3c);color:#fff;" onclick="showRarity('og',this)">OG</button>
+    </div>
+    <div id="rarity-common" class="rarity-info active"><h3 style="background:linear-gradient(135deg,#ff6ec7,#ff9a3c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Common</h3><p>The most basic Brainrots available. Easy to obtain and a great starting point for beginners.</p><div class="bc-grid" id="grid-common"></div></div>
+    <div id="rarity-rare" class="rarity-info"><h3 style="color:#4fc3f7;">Rare</h3><p>Harder to find than Common Brainrots. Noticeably better stats and worth keeping.</p><div class="bc-grid" id="grid-rare"></div></div>
+    <div id="rarity-epic" class="rarity-info"><h3 style="color:#ce93d8;">Epic</h3><p>Significantly stronger and much harder to obtain.</p><div class="bc-grid" id="grid-epic"></div></div>
+    <div id="rarity-legendary" class="rarity-info"><h3 style="color:#ffd700;">Legendary</h3><p>One of the rarest and most powerful tiers. Highly sought after by all players.</p><div class="bc-grid" id="grid-legendary"></div></div>
+    <div id="rarity-mythic" class="rarity-info"><h3 style="color:#ff4081;">Mythic</h3><p>Extremely rare and incredibly powerful.</p><div class="bc-grid" id="grid-mythic"></div></div>
+    <div id="rarity-brainrotgod" class="rarity-info"><h3 style="color:#ff6d00;">Brainrot God</h3><p>The pinnacle of obtainable Brainrots.</p><div class="bc-grid" id="grid-brainrotgod"></div></div>
+    <div id="rarity-secret" class="rarity-info"><h3 style="color:#e0e0e0;">Secret</h3><p>Hidden Brainrots obtained through special methods or undisclosed means.</p><div class="bc-grid" id="grid-secret"></div></div>
+    <div id="rarity-og" class="rarity-info"><h3 style="color:#a5d6a7;">OG</h3><p>Original Brainrots from the earliest days of the game.</p><div class="bc-grid" id="grid-og"></div></div>
+  </div>
+
+  <!-- TAB: EVENTS -->
+  <div class="gw-section" id="tab-events">
+    <section class="legal-card"><h2>🎉 About Events</h2><p>Steal A Brainrots regularly hosts limited-time events where players can earn exclusive Brainrots, special currency, and unique rewards.</p></section>
+    <section class="legal-card"><h2>📅 How to Participate</h2><ul class="redeem-steps"><li>Log in during the event period to automatically qualify.</li><li>Complete event-specific tasks or challenges to earn rewards.</li><li>Redeem event codes posted on developer socials for bonus items.</li><li>Check BLOXBURST for the latest event codes before they expire.</li></ul></section>
+    <section class="legal-card"><h2>💡 Event Tips</h2><ul class="redeem-steps"><li>Log in every day during events — daily rewards stack up fast.</li><li>Event Brainrots are usually limited and won't come back after the event ends.</li><li>Follow the developer's socials to know when events start.</li></ul></section>
+  </div>
+
+  <!-- TAB: MUTATIONS -->
+  <div class="gw-section" id="tab-mutations">
+    <section class="legal-card"><h2>🔬 What Are Mutations?</h2><p>Mutations are special upgrades that can be applied to your Brainrots to enhance their stats and abilities.</p></section>
+    <section class="legal-card"><h2>🧬 Types of Mutations</h2><ul class="redeem-steps"><li><strong>Speed Mutation</strong> — Increases movement speed for faster stealing.</li><li><strong>Power Mutation</strong> — Boosts attack and stealing strength.</li><li><strong>Shield Mutation</strong> — Adds a protective layer to your Brainrots.</li><li><strong>Luck Mutation</strong> — Increases the chance of stealing rare Brainrots.</li><li><strong>Aura Mutation</strong> — Rare cosmetic + stat boost combined.</li></ul></section>
+    <section class="legal-card"><h2>💡 Mutation Tips</h2><ul class="redeem-steps"><li>Apply mutations to your rarest Brainrots first for maximum impact.</li><li>Luck mutations are great for farming rare Brainrots efficiently.</li><li>Some mutations are only available during specific events.</li></ul></section>
+  </div>
+
+  <!-- TAB: REBIRTH -->
+  <div class="gw-section" id="tab-rebirth">
+    <section class="legal-card"><h2>🔁 What Is Rebirth?</h2><p>Rebirth is a prestige mechanic that allows you to reset your progress in exchange for permanent bonuses and exclusive rewards.</p></section>
+    <section class="legal-card"><h2>✅ Rebirth Requirements</h2><ul class="redeem-steps"><li>Reach the required level or Brainrot collection threshold.</li><li>Have enough in-game currency to initiate the rebirth.</li><li>Click the <strong>Rebirth</strong> button in the main menu.</li><li>Confirm the rebirth — your progress resets but bonuses are permanent.</li></ul></section>
+    <section class="legal-card"><h2>🎁 Rebirth Rewards</h2><ul class="redeem-steps"><li><strong>Rebirth Multiplier</strong> — Earn more currency per steal after rebirth.</li><li><strong>Exclusive Brainrots</strong> — Some Brainrots are only available after rebirthing.</li><li><strong>Rebirth Badge</strong> — Show off your rebirth count to other players.</li><li><strong>Bonus Starting Stats</strong> — Start stronger each time you rebirth.</li></ul></section>
+    <section class="legal-card"><h2>💡 Rebirth Tips</h2><ul class="redeem-steps"><li>Don't rebirth too early — make sure you have strong Brainrots first.</li><li>Use all active codes before rebirthing to maximize pre-rebirth rewards.</li><li>Rebirthing during an event can reward you with exclusive event items.</li></ul></section>
+  </div>
+
+  <section class="wiki-bottom">
+    <div class="wiki-bottom-head"><h2>📚 Related Wiki Articles</h2><p>More helpful guides from BLOXBURST Wiki.</p></div>
+    <div class="wiki-latest-grid wiki-related-grid">
+      <a class="wiki-card" href="../Wiki-Folder/wiki-redeem-codes.html"><div class="wiki-card-top"><span class="wiki-tag">GUIDE</span><span class="wiki-date">Redeem</span></div><h3>How to Redeem Roblox Codes</h3><p>Step-by-step redemption guide.</p><span class="wiki-read">Read ➜</span></a>
+      <a class="wiki-card" href="../Wiki-Folder/wiki-invalid-code-reasons.html"><div class="wiki-card-top"><span class="wiki-tag">FIX</span><span class="wiki-date">Issues</span></div><h3>Common Reasons "Invalid Code"</h3><p>Why codes fail + quick fixes.</p><span class="wiki-read">Read ➜</span></a>
+      <a class="wiki-card" href="../Wiki-Folder/wiki-how-we-check-codes.html"><div class="wiki-card-top"><span class="wiki-tag">PROCESS</span><span class="wiki-date">Manual</span></div><h3>How We Check Codes</h3><p>Our manual verification workflow.</p><span class="wiki-read">Read ➜</span></a>
+    </div>
+    <div class="wiki-cta"><a class="explore-btn" href="../wiki.html">📚 Back to Wiki</a></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.</p>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><a href="../gamecode.html">Game Codes</a><a href="../promo-latest-codes.html">Promo Codes</a><a href="../wiki.html">Wiki</a></div>
+    <div class="footer-col"><h4>More</h4><a href="../Terms-and-Condition/about.html">About Us</a><a href="../Terms-and-Condition/faq.html">FAQ</a><a href="../Terms-and-Condition/contactus.html">Contact Us</a></div>
+    <div class="footer-col"><h4>Policies</h4><a href="../Terms-and-Condition/terms.html">Terms of Use</a><a href="../Terms-and-Condition/privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-meta">v1.0.0 • Powered by Zenken</div><div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div></div>
+</footer>
+
+<script src="../script.js"></script>
+<script>
+  function switchTab(tab,btn){document.querySelectorAll('.gw-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.gw-section').forEach(s=>s.classList.remove('active'));document.getElementById('tab-'+tab).classList.add('active');}
+  function showRarity(id,btn){
+    // Reset all — restore each button's own color from data-bg
+    document.querySelectorAll('.rarity-btn').forEach(b=>{
+      b.classList.remove('active');
+      if(b.dataset.bg) b.style.background = b.dataset.bg;
+      b.style.opacity = '0.55';
+      b.style.transform = '';
+      b.style.boxShadow = '';
+    });
+    document.querySelectorAll('.rarity-info').forEach(d=>d.classList.remove('active'));
+    // Highlight clicked button
+    btn.classList.add('active');
+    if(btn.dataset.bg) btn.style.background = btn.dataset.bg;
+    btn.style.opacity = '1';
+    btn.style.transform = 'translateY(-2px)';
+    btn.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.6), 0 6px 20px rgba(0,0,0,0.4)';
+    document.getElementById('rarity-'+id).classList.add('active');
+  }
+
+  const RS = {
+    "Common":      {badge:"linear-gradient(135deg,#ff6ec7,#ff9a3c)",border:"rgba(255,110,199,0.2)",glow:"rgba(255,110,199,0.5)",text:"#fff"},
+    "Rare":        {badge:"linear-gradient(135deg,#29b6f6,#0288d1)",border:"rgba(79,195,247,0.2)", glow:"rgba(79,195,247,0.6)",  text:"#fff"},
+    "Epic":        {badge:"linear-gradient(135deg,#ce93d8,#9c27b0)",border:"rgba(206,147,216,0.2)",glow:"rgba(206,147,216,0.6)", text:"#fff"},
+    "Legendary":   {badge:"linear-gradient(135deg,#ffd700,#ff8c00)",border:"rgba(255,215,0,0.2)",  glow:"rgba(255,215,0,0.6)",   text:"#fff"},
+    "Mythic":      {badge:"linear-gradient(135deg,#ff4081,#c2185b)",border:"rgba(255,64,129,0.2)", glow:"rgba(255,64,129,0.6)",  text:"#fff"},
+    "Brainrot God":{badge:"linear-gradient(135deg,#ff6d00,#ffab40)",border:"rgba(255,109,0,0.2)",  glow:"rgba(255,109,0,0.6)",   text:"#fff"},
+    "Secret":      {badge:"linear-gradient(135deg,#bdbdbd,#616161)",border:"rgba(224,224,224,0.2)",glow:"rgba(224,224,224,0.6)", text:"#fff"},
+    "OG":          {badge:"linear-gradient(135deg,#a5d6a7,#388e3c)",border:"rgba(165,214,167,0.2)",glow:"rgba(165,214,167,0.6)", text:"#fff"},
+  };
+  const GRID_MAP = {
+    "Common":"grid-common","Rare":"grid-rare","Epic":"grid-epic","Legendary":"grid-legendary",
+    "Mythic":"grid-mythic","Brainrot God":"grid-brainrotgod","Secret":"grid-secret","OG":"grid-og"
+  };
+
+  let BRAINROTS = [];
+
+  async function loadBrainrots() {
+    const paths = ['/brainrot.json','../brainrot.json'];
+    for (const path of paths) {
+      try {
+        const res = await fetch(path);
+        if (!res.ok) continue;
+        const data = await res.json();
+        if (!Array.isArray(data) || !data.length) continue;
+        BRAINROTS = data;
+        console.log('✅ Loaded', BRAINROTS.length, 'brainrots from', path);
+        break;
+      } catch(e) { continue; }
+    }
+    renderCards();
+    initSearch();
+  }
+
+  function renderCards() {
+    Object.values(GRID_MAP).forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML=''; });
+    BRAINROTS.forEach(b => {
+      const gridId = GRID_MAP[b.rarity];
+      if (!gridId) return;
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+      const rs = RS[b.rarity] || RS["Common"];
+      const a = document.createElement('a');
+      a.href = b.url;
+      a.innerHTML = `<div class="bc-inner" style="border-color:${rs.border}" onmouseover="this.style.borderColor='${rs.glow}'" onmouseout="this.style.borderColor='${rs.border}'">
+        <img src="${b.img}" alt="${b.name}" onerror="this.style.opacity='0.2'">
+        <div class="bc-name">${b.name}</div>
+        <div class="bc-rarity" style="background:${rs.badge}">${b.rarity}</div>
+      </div>`;
+      grid.appendChild(a);
+    });
+  }
+
+  function initSearch() {
+    const inp = document.getElementById('brainrotSearch');
+    const box = document.getElementById('brainrotSuggestions');
+    const clr = document.getElementById('brainrotClear');
+    function suggest(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) { box.classList.remove('show'); box.innerHTML=''; clr.style.display='none'; return; }
+      clr.style.display='block';
+      const matches = BRAINROTS.filter(b => b.name.toLowerCase().includes(q) || b.rarity.toLowerCase().includes(q));
+      if (!matches.length) { box.innerHTML=`<div class="bs-empty">😢 No brainrots found for "<strong>${query}</strong>"</div>`; box.classList.add('show'); return; }
+      const groups={};
+      matches.forEach(b=>{ if(!groups[b.rarity]) groups[b.rarity]=[]; groups[b.rarity].push(b); });
+      const order=["Common","Rare","Epic","Legendary","Mythic","Brainrot God","Secret","OG"];
+      let html='';
+      order.forEach(r=>{
+        if(!groups[r]) return;
+        const rs=RS[r];
+        html+=`<div class="bs-group-header">${r}</div>`;
+        groups[r].forEach(b=>{ html+=`<a class="bs-item" href="${b.url}"><div class="bs-img-wrap"><img src="${b.img}" alt="${b.name}" onerror="this.parentNode.innerHTML='<span style=font-size:22px>🧠</span>'"></div><div class="bs-info"><div class="bs-name">${b.name}</div><span class="bs-rarity" style="background:${rs.badge};color:${rs.text};">${r}</span></div><span class="bs-pill">View →</span></a>`; });
+      });
+      box.innerHTML=html; box.classList.add('show');
+    }
+    inp.addEventListener('input',function(){ suggest(this.value); });
+    inp.addEventListener('keydown',function(e){
+      if(e.key==='Escape') clearBrainrotSearch();
+      if(e.key==='Enter'){ const q=this.value.trim().toLowerCase(); const m=BRAINROTS.find(b=>b.name.toLowerCase().includes(q)||b.rarity.toLowerCase().includes(q)); if(m) window.location.href=m.url; }
+    });
+    document.addEventListener('click',function(e){ const w=document.querySelector('.brainrot-search-wrap'); if(w&&!w.contains(e.target)) box.classList.remove('show'); });
+    window.clearBrainrotSearch=function(){ inp.value=''; box.classList.remove('show'); box.innerHTML=''; clr.style.display='none'; inp.focus(); };
+  }
+
+  document.addEventListener('DOMContentLoaded', ()=> {
+    loadBrainrots();
+    // On page load: dim all inactive buttons, keep Common (active) full opacity
+    document.querySelectorAll('.rarity-btn').forEach(b=>{
+      if(!b.classList.contains('active')){
+        b.style.opacity='0.55';
+      }
+    });
+  });
+</script>
+</body>
+</html>
