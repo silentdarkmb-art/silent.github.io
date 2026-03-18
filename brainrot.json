@@ -18,6 +18,7 @@
   { "name": "Cacto Hipopotamo",            "rarity": "Rare",         "img": "/Images/CactoHipopotamo.png",                  "url": "/brainrot/Cacto-Hipopotamo.html" },
   { "name": "Ta Ta Ta Ta Sahur",           "rarity": "Rare",         "img": "/Images/TaTaTaTaSahur.png",                  "url": "/brainrot/Ta-Ta-Ta-Ta-Sahur.html" },
   { "name": "Tric Trac Baraboom",          "rarity": "Rare",         "img": "/Images/TricTracBaraboom.png",                  "url": "/brainrot/Tric-Trac-Baraboom.html" },
+  { "name": "Cupcake Koala",          "rarity": "Rare",         "img": "/Images/Cupcake-Koala.png",                  "url": "/brainrot/Cupcake-Koala.html" },
   { "name": "Cappuccino Assassino",        "rarity": "Epic",         "img": "/Images/Cappuccino Assassino.png",          "url": "/brainrot/cappuccino-assassino.html" },
   { "name": "Burbaloni Loliloli",          "rarity": "Legendary",    "img": "/Images/Burbaloni Loliloli.png",            "url": "/brainrot/burbaloni-loliloli.html" },
   { "name": "Frigo Camelo",                "rarity": "Mythic",       "img": "/Images/Frigo Camelo.png",                  "url": "/brainrot/frigo-camelo.html" },
