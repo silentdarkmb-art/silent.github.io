@@ -729,6 +729,15 @@
     "activeCodes": 9
   },
   {
+  "name": "Demon Arena",
+  "image": "Images/Demon-Arena.webp",
+  "url": "roblox/demon-arena.html",
+  "lastupdate": "2026-03-19T12:00",
+  "tooltip": "Choose your faction and grab free Pierce, Health, and Attack Potions — these Demon Arena codes gear you up before your first arena match.",
+  "rewards": "Pierce Potion, Health Potion, Attack Potion",
+  "activeCodes": 3
+  },
+  {
   "name": "Death Ball",
   "image": "Images/Death-Ball.webp",
   "url": "roblox/death-ball.html",
