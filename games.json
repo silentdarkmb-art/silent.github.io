@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "name": "Brew a Potion",
     "image": "Images/Brew a Potion.webp",
@@ -727,6 +727,15 @@
     "tooltip": "Hit the pitch with more RF Points — these Real Futbol codes give you a free head start on the road to the top division.",
     "rewards": "RF Points",
     "activeCodes": 9
+  },
+  {
+  "name": "Death Ball",
+  "image": "Images/Death-Ball.webp",
+  "url": "roblox/death-ball.html",
+  "lastupdate": "2026-03-19T12:00",
+  "tooltip": "Deflect the ball and outlast your rivals for free — these Death Ball codes drop 120,000 Gems into your account before you step into the arena.",
+  "rewards": "Gems, Crystals, Orbs",
+  "activeCodes": 5
   },
   {
     "name": "MotoPrix Racing",
