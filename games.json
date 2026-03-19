@@ -783,6 +783,15 @@
   "activeCodes": 30
   },
   {
+  "name": "Dragon Adventures",
+  "image": "Images/Dragon-Adventures.webp",
+  "url": "roblox/dragon-adventures.html",
+  "lastupdate": "2026-03-19T12:00",
+  "tooltip": "Free potions, gold, and season pass xp waiting — redeem all working Dragon Adventures codes before they expire.",
+  "rewards": "Potions, Gold, Season Pass EXP",
+  "activeCodes": 1
+  },
+  {
   "name": "Drag Drive Simulator",
   "image": "Images/Drag-Drive-Simulator.webp",
   "url": "roblox/drag-drive-simulator.html",
