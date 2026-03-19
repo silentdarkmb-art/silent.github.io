@@ -774,6 +774,15 @@
   "activeCodes": 19
   },
   {
+  "name": "DOORS",
+  "image": "Images/DOORS.webp",
+  "url": "roblox/doors.html",
+  "lastupdate": "2026-03-19T12:00",
+  "tooltip": "Survive the haunted hotel and grab free Knobs, Stardust, and Revivals — these DOORS codes stock your shop before you open Door 1.",
+  "rewards": "Knobs, Stardust, Revivals",
+  "activeCodes": 30
+  },
+  {
   "name": "Death Ball",
   "image": "Images/Death-Ball.webp",
   "url": "roblox/death-ball.html",
