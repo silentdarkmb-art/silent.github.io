@@ -765,6 +765,15 @@
   "activeCodes": 13
   },
   {
+  "name": "Dolly's Factory",
+  "image": "Images/Dollys-Factory.webp",
+  "url": "roblox/dollys-factory.html",
+  "lastupdate": "2026-03-19T12:00",
+  "tooltip": "Survive the plushie factory and grab free DollyBucks and exclusive Nametags — these Dolly's Factory codes unlock new characters before your first run.",
+  "rewards": "DollyBucks, Nametags",
+  "activeCodes": 19
+  },
+  {
   "name": "Death Ball",
   "image": "Images/Death-Ball.webp",
   "url": "roblox/death-ball.html",
