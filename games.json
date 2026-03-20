@@ -117,10 +117,19 @@
     "activeCodes": 24
   },
   {
+    "name": "Fisch",
+    "image": "Images/Fisch.webp",
+    "url": "roblox/fisch.html",
+    "lastupdate": "2026-03-20T06:21",
+    "tooltip": "Cast your line across hundreds of unique biomes and catch over 400,000 fish variations in Roblox's top fishing simulator — 1 active code awards a free Carbon Bobber while you wait for the next weekly update drop.",
+    "rewards": "Bobbers, Rod Skins, Coins, Cash, Hunt Totems",
+    "activeCodes": 1
+  },
+  {
     "name": "Elemental Magic Arena",
     "image": "Images/Elemental-Magic-Arena.webp",
     "url": "roblox/elemental-magic-arena.html",
-    "lastupdate": "2026-03-21T06:20",
+    "lastupdate": "2026-03-20T06:20",
     "tooltip": "Pick a powerful element and battle opponents in fast-paced arena matches — 4 active codes award free Diamonds and Souls to unlock stronger elements and dominate every fight.",
     "rewards": "Diamonds, Souls",
     "activeCodes": 4
