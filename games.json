@@ -72,6 +72,15 @@
   "activeCodes": 18
   },
   {
+    "name": "Fistborn",
+    "image": "Images/Fistborn.webp",
+    "url": "roblox/fistborn.html",
+    "lastupdate": "2026-03-20T06:21",
+    "tooltip": "Master anime-inspired martial arts styles in a brutal open-world PvP city — 17 active codes award over 100,000 free Tokens to unlock and upgrade powerful fighting techniques from the Sambo and Ssireum update.",
+    "rewards": "Tokens, Free Rewards",
+    "activeCodes": 17
+  },
+  {
   "name": "Dragon Ball Rage",
   "image": "Images/Dragon-Ball-Rage.webp",
   "url": "roblox/dragon-ball-rage.html",
