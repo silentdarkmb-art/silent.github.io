@@ -90,6 +90,15 @@
     "activeCodes": 30
   },
   {
+  "name": "Dudes Battlegrounds",
+  "image": "Images/Dudes-Battlegrounds.webp",
+  "url": "roblox/dudes-battlegrounds.html",
+  "lastupdate": "2026-03-20T12:00",
+  "tooltip": "Pick your fighter and grab free Vialites, Tokens, and exclusive accessories — these Dudes Battlegrounds codes gear you up before your first arena match.",
+  "rewards": "Vialites, Tokens, Spins, Accessories",
+  "activeCodes": 6
+  },
+  {
     "name": "Cursed Tank Simulator",
     "image": "Images/Cursed Tank Simulator.webp",
     "url": "roblox/cursed-tank-simulator.html",
