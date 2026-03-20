@@ -108,6 +108,15 @@
   "activeCodes": 2
   },
   {
+    "name": "Dungeon Hunters",
+    "image": "Images/Dungeon-Hunters.webp",
+    "url": "roblox/dungeon-hunters.html",
+    "lastupdate": "2026-03-20T00:00",
+    "tooltip": "Team up and battle through monster-filled dungeons in Dungeon Hunters — 24 active codes each award 100 free Gems to summon rare weapons and power up your loadout faster.",
+    "rewards": "Gems",
+    "activeCodes": 24
+  },
+  {
   "name": "Dueling Grounds",
   "image": "Images/Dueling-Grounds.webp",
   "url": "roblox/dueling-grounds.html",
