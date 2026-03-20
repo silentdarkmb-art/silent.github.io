@@ -99,6 +99,15 @@
     "activeCodes": 30
   },
   {
+    "name": "Five Nights Hunted",
+    "image": "Images/Five-Nights-Hunted.webp",
+    "url": "roblox/five-nights-hunted.html",
+    "lastupdate": "2026-03-20T06:21",
+    "tooltip": "Survive terrifying animatronic hunts or play as Freddy in this FNAF-inspired Roblox horror escape game — 8 active codes award free FazTokens, Coins, and seasonal event bundles from the Lunar New Year and Valentine's update.",
+    "rewards": "FazTokens, Coins, Seasonal Rewards",
+    "activeCodes": 8
+  },
+  {
   "name": "Dudes Battlegrounds",
   "image": "Images/Dudes-Battlegrounds.webp",
   "url": "roblox/dudes-battlegrounds.html",
