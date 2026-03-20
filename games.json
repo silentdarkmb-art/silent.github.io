@@ -117,6 +117,15 @@
     "activeCodes": 24
   },
   {
+    "name": "Fish It",
+    "image": "Images/Fish-It.webp",
+    "url": "roblox/fish-it.html",
+    "lastupdate": "2026-03-20T06:21",
+    "tooltip": "Cast your line across biomes and catch over 1 million fish variations in Fish It — codes expire fast here, so bookmark BLOXBURST and join the Discord to catch the next drop the moment it releases.",
+    "rewards": "Luck Potions, Leviathan Scales, Bait, Totems, Presents",
+    "activeCodes": 0
+  },
+  {
     "name": "Fisch",
     "image": "Images/Fisch.webp",
     "url": "roblox/fisch.html",
