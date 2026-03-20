@@ -117,6 +117,15 @@
     "activeCodes": 24
   },
   {
+    "name": "Farm a Fish",
+    "image": "Images/Farm-a-Fish.webp",
+    "url": "roblox/farm-a-fish.html",
+    "lastupdate": "2026-03-20T06:21",
+    "tooltip": "Build an aquatic empire from a single pond — catch, mutate, and sell fish while hatching helpful pets in this addictive Roblox tycoon. 4 active codes award 75 free Food Scoops, a Wilco Cat pet, exclusive skins, and a Golden Cookie.",
+    "rewards": "Food Scoops, Skins, Pets, Golden Cookie, Fireworks",
+    "activeCodes": 4
+  },
+  {
     "name": "Fish It",
     "image": "Images/Fish-It.webp",
     "url": "roblox/fish-it.html",
