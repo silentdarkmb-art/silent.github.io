@@ -108,6 +108,15 @@
   "activeCodes": 2
   },
   {
+  "name": "Dueling Grounds",
+  "image": "Images/Dueling-Grounds.webp",
+  "url": "roblox/dueling-grounds.html",
+  "lastupdate": "2026-03-20T12:00",
+  "tooltip": "Sharpen your blade and grab free Coins and Gems — these Dueling Grounds codes unlock weapons before your first duel.",
+  "rewards": "Coins, Gems",
+  "activeCodes": 3
+  },
+  {
     "name": "Cursed Tank Simulator",
     "image": "Images/Cursed Tank Simulator.webp",
     "url": "roblox/cursed-tank-simulator.html",
