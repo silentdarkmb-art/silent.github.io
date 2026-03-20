@@ -99,6 +99,15 @@
     "activeCodes": 30
   },
   {
+    "name": "Five Nights TD 2",
+    "image": "Images/Five-Nights-TD-2.webp",
+    "url": "roblox/five-nights-td-2.html",
+    "lastupdate": "2026-03-20T06:21",
+    "tooltip": "Defend against animatronic waves in this FNAF-inspired tower defense sequel — 60 active codes award over 100,000 free Coins, Souls, Tokens, and Presents to build the strongest Season 3 defense roster.",
+    "rewards": "Coins, Souls, Tokens, Presents",
+    "activeCodes": 60
+  },
+  {
     "name": "Five Nights Hunted",
     "image": "Images/Five-Nights-Hunted.webp",
     "url": "roblox/five-nights-hunted.html",
