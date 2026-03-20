@@ -99,6 +99,15 @@
   "activeCodes": 6
   },
   {
+  "name": "DUEL Warriors",
+  "image": "Images/DUEL-Warriors.webp",
+  "url": "roblox/duel-warriors.html",
+  "lastupdate": "2026-03-20T12:00",
+  "tooltip": "Pick your weapon and grab free Gold and Gems — these DUEL Warriors codes drop weekly currency before your first arena fight.",
+  "rewards": "Gold, Gems, Coins",
+  "activeCodes": 2
+  },
+  {
     "name": "Cursed Tank Simulator",
     "image": "Images/Cursed Tank Simulator.webp",
     "url": "roblox/cursed-tank-simulator.html",
