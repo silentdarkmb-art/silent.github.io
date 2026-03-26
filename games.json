@@ -126,6 +126,15 @@
     "activeCodes": 8
   },
   {
+  "name": "Fruit Battlegrounds",
+  "image": "Images/FruitBattlegrounds.webp",
+  "url": "roblox/fruit-battlegrounds.html",
+  "lastupdate": "2026-03-26T12:00",
+  "tooltip": "Free Gems to spin for powerful devil fruits — redeem all working Fruit Battlegrounds codes before they expire.",
+  "rewards": "Gems, Titles",
+  "activeCodes": 7
+  },
+  {
   "name": "Flight World",
   "image": "Images/FlightWorld.webp",
   "url": "roblox/flight-world.html",
