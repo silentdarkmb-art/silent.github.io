@@ -126,6 +126,15 @@
     "activeCodes": 8
   },
   {
+  "name": "Free UGC Obby",
+  "image": "Images/FreeUGCObby.webp",
+  "url": "roblox/free-ugc-obby.html",
+  "lastupdate": "2026-03-26T12:00",
+  "tooltip": "Free Points to unlock exclusive limited UGC hairs, faces, and hats — redeem all working Free UGC Obby codes before they expire.",
+  "rewards": "Points, UGC Items",
+  "activeCodes": 3
+  },
+  {
   "name": "Fruit Battlegrounds",
   "image": "Images/FruitBattlegrounds.webp",
   "url": "roblox/fruit-battlegrounds.html",
