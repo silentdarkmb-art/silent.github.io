@@ -126,6 +126,15 @@
     "activeCodes": 8
   },
   {
+  "name": "Garden Horizons",
+  "image": "Images/GardenHorizons.webp",
+  "url": "roblox/garden-horizons.html",
+  "lastupdate": "2026-03-26T12:00",
+  "tooltip": "Free Shillings, Seed Packs, and exclusive Seeds — redeem all working Garden Horizons codes before they expire.",
+  "rewards": "Shillings, Seed Packs, Seeds, Gear",
+  "activeCodes": 8
+  },
+  {
   "name": "Free UGC Obby",
   "image": "Images/FreeUGCObby.webp",
   "url": "roblox/free-ugc-obby.html",
