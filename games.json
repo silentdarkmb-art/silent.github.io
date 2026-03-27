@@ -135,6 +135,15 @@
   "activeCodes": 8
   },
   {
+  "name": "Go Catch",
+  "image": "Images/GoCatch.webp",
+  "url": "roblox/go-catch.html",
+  "lastupdate": "2026-03-26T12:00",
+  "tooltip": "Free Coins to buy Dino Eggs, Blueprints, and Class Rerolls — redeem all working Go Catch codes before they expire.",
+  "rewards": "Coins, Dino Eggs",
+  "activeCodes": 4
+  },
+  {
   "name": "GHOUL://RE",
   "image": "Images/GhoulRE.webp",
   "url": "roblox/ghoul-re.html",
