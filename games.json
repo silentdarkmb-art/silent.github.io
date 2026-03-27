@@ -135,6 +135,15 @@
   "activeCodes": 8
   },
   {
+  "name": "GHOUL://RE",
+  "image": "Images/GhoulRE.webp",
+  "url": "roblox/ghoul-re.html",
+  "lastupdate": "2026-03-26T12:00",
+  "tooltip": "Free Ghoul Points to reroll traits and power up your Kagune or Quinque — redeem all working GHOUL://RE codes before they expire.",
+  "rewards": "Ghoul Points",
+  "activeCodes": 25
+  },
+  {
   "name": "Get Fat to Splash",
   "image": "Images/GetFatToSplash.webp",
   "url": "roblox/get-fat-to-splash.html",
