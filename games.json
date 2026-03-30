@@ -801,6 +801,15 @@
     "activeCodes": 3
   },
   {
+  "name": "Street Brawlers",
+  "image": "Images/StreetBrawlers.webp",
+  "url": "roblox/street-brawlers.html",
+  "lastupdate": "2026-03-30T00:00",
+  "tooltip": "Join a living city where skill-based street fighting PvP never stops — spin for rare Abilities and Flows, dominate fighting zones, and claim 3 active codes for free Cash and Spins to build your ultimate fighting style.",
+  "rewards": "Cash, Spins, Abilities, Flows",
+  "activeCodes": 3
+  },
+  {
     "name": "Hood Wars",
     "image": "Images/Hood Wars.webp",
     "url": "roblox/hood-wars.html",
