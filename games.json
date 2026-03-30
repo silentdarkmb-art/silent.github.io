@@ -261,6 +261,15 @@
     "activeCodes": 1
   },
   {
+  "name": "Pressure",
+  "image": "Images/Pressure.webp",
+  "url": "roblox/pressure.html",
+  "lastupdate": "2026-03-29T00:00",
+  "tooltip": "Survive 115 rooms inside the Hadal Blacksite as an expendable prisoner working for Urbanshade in Roblox's top horror roguelite — 3 active codes award free Kroner and Revive Tokens to help you escape the deep.",
+  "rewards": "Kroner, Revive Tokens, Exclusive Cosmetics",
+  "activeCodes": 4
+  },
+  {
     "name": "Elemental Magic Arena",
     "image": "Images/Elemental-Magic-Arena.webp",
     "url": "roblox/elemental-magic-arena.html",
@@ -795,10 +804,10 @@
     "name": "Hood Wars",
     "image": "Images/Hood Wars.webp",
     "url": "roblox/hood-wars.html",
-    "lastupdate": "2026-02-19T19:00",
+    "lastupdate": "2026-3-30T19:00",
     "tooltip": "Run the block with more resources — these Hood Wars codes hand out free Money to spend on gear and upgrades.",
     "rewards": "Money",
-    "activeCodes": 4
+    "activeCodes": 7
   },
   {
     "name": "Royal Hatchers",
