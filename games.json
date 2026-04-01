@@ -819,6 +819,15 @@
   "activeCodes": 1
   },
   {
+  "name": "Anime Leveling",
+  "image": "Images/AnimeLeveling.webp",
+  "url": "roblox/anime-leveling.html",
+  "lastupdate": "2026-04-01T12:00",
+  "tooltip": "Free Potions and Gems to hatch powerful units and unlock new worlds faster — redeem all working Anime Leveling codes before they expire.",
+  "rewards": "Potions, Gems",
+  "activeCodes": 4
+  },
+  {
     "name": "Hood Wars",
     "image": "Images/Hood Wars.webp",
     "url": "roblox/hood-wars.html",
