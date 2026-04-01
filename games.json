@@ -810,6 +810,15 @@
   "activeCodes": 3
   },
   {
+  "name": "Wrestling",
+  "image": "Images/Wrestling.webp",
+  "url": "roblox/wrestling.html",
+  "lastupdate": "2026-04-01T12:00",
+  "tooltip": "Free Coins to climb the card and reach SUPERCLASH faster — redeem all working Wrestling codes before they expire.",
+  "rewards": "Coins",
+  "activeCodes": 1
+  },
+  {
     "name": "Hood Wars",
     "image": "Images/Hood Wars.webp",
     "url": "roblox/hood-wars.html",
