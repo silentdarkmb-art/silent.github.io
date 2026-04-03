@@ -963,6 +963,15 @@
     "activeCodes": 3
   },
   {
+  "name": "Lost Currents",
+  "image": "Images/LostCurrents.webp",
+  "url": "roblox/lost-currents.html",
+  "lastupdate": "2026-04-03T00:00",
+  "tooltip": "Sail the AZR Sea with friends, dive in an old helmet for gold bars, and survive sharks and dark ocean secrets in this co-op survival game — 1 active code awards free Gold to unlock new classes for your next expedition.",
+  "rewards": "Gold, Class Unlocks",
+  "activeCodes": 1
+  },
+  {
   "name": "Sailor Piece",
   "image": "Images/SailorPiece.webp",
   "url": "roblox/sailor-piece.html",
