@@ -639,6 +639,15 @@
     "activeCodes": 11
   },
   {
+  "name": "Tensura Incremental",
+  "image": "Images/TensuraIncremental.webp",
+  "url": "roblox/tensura-incremental.html",
+  "lastupdate": "2026-04-03T12:00",
+  "tooltip": "Free Race Rerolls, Skill Rolls, and Spirit Rolls to build the perfect monster character faster — redeem all working Tensura Incremental codes before they expire.",
+  "rewards": "Race Rerolls, Skill Rolls, Spirit Rolls",
+  "activeCodes": 15
+},  
+  {
   "name": "Build a Military Base",
   "image": "Images/BuildAMilitaryBase.webp",
   "url": "roblox/build-a-military-base.html",
