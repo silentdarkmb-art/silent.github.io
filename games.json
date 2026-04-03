@@ -963,14 +963,14 @@
     "activeCodes": 3
   },
   {
-    "name": "Sailor Piece",
-    "image": "Images/Sailor Piece.webp",
-    "url": "roblox/sailor-piece.html",
-    "lastupdate": "2026-02-26T19:00",
-    "tooltip": "Set sail with a full wallet — these Sailor Piece codes give you free Cash and Gems for your pirate voyage.",
-    "rewards": "Cash, Gems",
-    "activeCodes": 71
-  },
+  "name": "Sailor Piece",
+  "image": "Images/SailorPiece.webp",
+  "url": "roblox/sailor-piece.html",
+  "lastupdate": "2026-04-03T00:00",
+  "tooltip": "Grind to level 13,000 in this One Piece-inspired Roblox RPG — hunt Devil Fruits, collect rare races, and battle across islands toward Sea 2. Redeem 16 active codes for free Beli, Gems, Clan Rerolls, Race Rerolls, Secret Chests, and Passive Shards.",
+  "rewards": "Beli, Gems, Clan Rerolls, Race Rerolls, Trait Rerolls, Secret Chests, Passive Shards",
+  "activeCodes": 16
+},
   {
     "name": "Build a Zoo",
     "image": "Images/Build a Zoo.webp",
