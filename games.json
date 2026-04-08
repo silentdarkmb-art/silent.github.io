@@ -963,6 +963,15 @@
     "activeCodes": 3
   },
   {
+  "name": "RNG Incremental",
+  "image": "Images/RNGIncremental.webp",
+  "url": "roblox/rng-incremental.html",
+  "lastupdate": "2026-04-08T12:00",
+  "tooltip": "Free Scrolls and Potions to upgrade your Soul Fragment skill tree and ascend faster — redeem all working RNG Incremental codes before they expire.",
+  "rewards": "Scrolls, Potions, Free Rewards",
+  "activeCodes": 4
+  },
+  {
   "name": "Project Sonic TD",
   "image": "Images/ProjectSonicTD.webp",
   "url": "roblox/project-sonic-td.html",
