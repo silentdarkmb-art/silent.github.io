@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================= */
   async function loadGames() {
     try {
-      const res  = await fetch(pathPrefix + 'games.json');
+      const res  = await fetch(pathPrefix + 'games.json?v=' + Date.now(), { cache: 'no-store' });
       const data = await res.json();
       return data;
     } catch (e) {
@@ -80,10 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const games = await loadGames();
     if (!games.length) return;
 
-    // Sort by lastupdate descending (newest first)
-    const sorted = [...games].sort((a, b) =>
-      new Date(b.lastupdate).getTime() - new Date(a.lastupdate).getTime()
-    );
+    // Sort by date descending — kahit saan nilagay sa JSON, ang date ang basehan
+    const sorted = [...games].sort((a, b) => {
+      const dateA = new Date(a.lastupdate).getTime() || 0;
+      const dateB = new Date(b.lastupdate).getTime() || 0;
+      return dateB - dateA;
+    });
 
     const MAX_VISIBLE = Number(rowEl.getAttribute('data-max')) || 16;
 
@@ -91,13 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sorted.forEach((game, idx) => {
       const gameIsNew   = isNew(game.lastupdate);
-      const displayDate = formatDate(game.lastupdate); // always use actual lastupdate from JSON
+      const displayDate = formatDate(game.lastupdate);
 
       const a = document.createElement('a');
       a.className   = 'game-link';
       a.href        = game.url;
       a.style.display = idx < MAX_VISIBLE ? '' : 'none';
-
 
       a.innerHTML = `
         <div class="game-card"

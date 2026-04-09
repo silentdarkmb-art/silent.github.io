@@ -646,7 +646,16 @@
   "tooltip": "Free Race Rerolls, Skill Rolls, and Spirit Rolls to build the perfect monster character faster — redeem all working Tensura Incremental codes before they expire.",
   "rewards": "Race Rerolls, Skill Rolls, Spirit Rolls",
   "activeCodes": 15
-},  
+  },
+  {
+  "name": "Hot's RNG",
+  "image": "Images/HotsRNG.webp",
+  "url": "roblox/hots-rng.html",
+  "lastupdate": "2026-04-09T12:00",
+  "tooltip": "Free Potions and Luck Boosts to roll rarer auras faster — redeem all 108 working Hot's RNG codes before they expire.",
+  "rewards": "Potions, Luck Boosts, Free Rewards",
+  "activeCodes": 108
+  },
   {
   "name": "Build a Military Base",
   "image": "Images/BuildAMilitaryBase.webp",
@@ -961,15 +970,6 @@
     "tooltip": "Investigate the unknown with better gear — these PARANORMAL codes give you free Tokens to spend on your haunted adventure.",
     "rewards": "Tokens",
     "activeCodes": 3
-  },
-  {
-  "name": "Hot's RNG",
-  "image": "Images/HotsRNG.webp",
-  "url": "roblox/hots-rng.html",
-  "lastupdate": "2026-04-09T12:00",
-  "tooltip": "Free Potions and Luck Boosts to roll rarer auras faster — redeem all 108 working Hot's RNG codes before they expire.",
-  "rewards": "Potions, Luck Boosts, Free Rewards",
-  "activeCodes": 108
   },
   {
   "name": "RNG Incremental",
