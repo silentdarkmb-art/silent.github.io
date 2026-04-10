@@ -684,6 +684,15 @@
     "activeCodes": 11
   },
   {
+  "name": "PARADOX",
+  "image": "Images/Paradox.webp",
+  "url": "roblox/paradox.html",
+  "lastupdate": "2026-04-10T12:00",
+  "tooltip": "Free Shards, Revives, Shard Boosts, and Rerolls to build your character and survive the mystery faster — redeem all working PARADOX codes before they expire.",
+  "rewards": "Shards, Revives, Shard Boost, Rerolls, Stat Reset",
+  "activeCodes": 5
+  },
+  {
     "name": "ARISE CROSSOVER",
     "image": "Images/ARISE CROSSOVER.webp",
     "url": "roblox/arise-crossover.html",
