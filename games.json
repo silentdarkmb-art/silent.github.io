@@ -1258,5 +1258,14 @@
     "tooltip": "Get free Chests and Coins with these NBA Champions Basketball codes — play 5v5 games, build winning streaks, and unlock new clothes and effects!",
     "rewards": "Chests, Coins",
     "activeCodes": 12
+  },
+  {
+    "name": "Omeni Fruits",
+    "image": "Images/OmeniFruits.webp",
+    "url": "roblox/omeni-fruits.html",
+    "lastupdate": "2026-04-11T01:17",
+    "tooltip": "Get free Beli and more with these Omeni Fruits codes — explore a big world, find unique abilities, and become the strongest player around!",
+    "rewards": "Beli, Freebies",
+    "activeCodes": 6
   }
 ]
