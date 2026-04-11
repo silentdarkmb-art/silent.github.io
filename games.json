@@ -474,7 +474,7 @@
     "lastupdate": "2026-02-23T18:00",
     "tooltip": "Use these Jujutsu Legacy codes to rack up free Spins and reroll your way to a stronger cursed build.",
     "rewards": "Spins",
-    "activeCodes": 32
+    "activeCodes": 33
   },
   {
     "name": "24 Hours Overnight",
@@ -570,10 +570,10 @@
     "name": "Banana Eats",
     "image": "Images/Banana Eats.webp",
     "url": "roblox/banana-eats.html",
-    "lastupdate": "2026-03-06T19:00",
+    "lastupdate": "2026-04-11T19:00",
     "tooltip": "Outrun the banana with style — grab free Beacons, Coins, and exclusive Skins in Banana Eats.",
     "rewards": "Beacons, Coins, Skins",
-    "activeCodes": 24
+    "activeCodes": 25
   },
   {
     "name": "Anime Ascendants",
