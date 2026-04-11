@@ -1222,5 +1222,14 @@
     "tooltip": "Get free Money with these Weak Battlegrounds codes — pick your items, fill your rage gauge, and unleash your ultimate attack!",
     "rewards": "Money",
     "activeCodes": 2
+  },
+  {
+    "name": "My Japanese Food Stand",
+    "image": "Images/MyJapaneseFoodStand.webp",
+    "url": "roblox/my-japanese-food-stand.html",
+    "lastupdate": "2026-04-11T04:22",
+    "tooltip": "Get free Cash and Potions with these My Japanese Food Stand codes — open crates, evolve your stands, and become the best Japanese food seller!",
+    "rewards": "Cash, Potions",
+    "activeCodes": 2
   }
 ]
