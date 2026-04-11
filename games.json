@@ -1276,5 +1276,14 @@
     "tooltip": "Get free Potions with these Infinite Fishing Simulator codes — cast your rod, upgrade floats, enchant catches, and unlock new islands!",
     "rewards": "Cash Potions, Rebirth Potions",
     "activeCodes": 3
+  },
+  {
+    "name": "Fix It Up",
+    "image": "Images/fix-it-up.webp",
+    "url": "roblox/FixItUp.html",
+    "lastupdate": "2026-04-11T02:01",
+    "tooltip": "Get free Cash with these Fix It Up codes — buy broken cars, repair parts, upgrade features, and sell for maximum profit!",
+    "rewards": "Cash, Euros",
+    "activeCodes": 3
   }
 ]
