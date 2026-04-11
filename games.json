@@ -1231,5 +1231,14 @@
     "tooltip": "Get free Cash and Potions with these My Japanese Food Stand codes — open crates, evolve your stands, and become the best Japanese food seller!",
     "rewards": "Cash, Potions",
     "activeCodes": 2
+  },
+  {
+    "name": "Golf Training",
+    "image": "Images/GolfTraining.webp",
+    "url": "roblox/golf-training.html",
+    "lastupdate": "2026-04-11T04:07",
+    "tooltip": "Get free Freebies with these Golf Training codes — hatch pets, upgrade clubs, and smash the ball massive distances to earn coins!",
+    "rewards": "Freebies",
+    "activeCodes": 1
   }
 ]
