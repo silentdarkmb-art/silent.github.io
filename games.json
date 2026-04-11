@@ -1240,5 +1240,23 @@
     "tooltip": "Get free Freebies with these Golf Training codes — hatch pets, upgrade clubs, and smash the ball massive distances to earn coins!",
     "rewards": "Freebies",
     "activeCodes": 1
+  },
+  {
+  "name": "Shovel It!",
+  "image": "Images/ShovelIt.webp",
+  "url": "roblox/shovel-it.html",
+  "lastupdate": "2026-04-11T04:11",
+  "tooltip": "Get free rewards with these Shovel It codes — earn relic spins, coin boosts, and power/luck buffs to uncover rare treasures hidden under the snow!",
+  "rewards": "Coins, Relic Spins, Boosts",
+  "activeCodes": 11
+  },
+  {
+    "name": "NBA Champions Basketball",
+    "image": "Images/nba-champions-basketball.webp",
+    "url": "roblox/nba-champions-basketball.html",
+    "lastupdate": "2026-04-11T04:22",
+    "tooltip": "Get free Chests and Coins with these NBA Champions Basketball codes — play 5v5 games, build winning streaks, and unlock new clothes and effects!",
+    "rewards": "Chests, Coins",
+    "activeCodes": 12
   }
 ]
