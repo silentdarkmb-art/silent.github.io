@@ -9,7 +9,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://www.bloxburst.com';
+const BASE_URL = 'https://bloxburst.com';
 
 // ── Static pages (hindi nagbabago) ──────────────────
 const staticPages = [
