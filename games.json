@@ -1213,5 +1213,14 @@
     "tooltip": "Take pole position from the start — these MotoPrix Racing codes load you up with free Cash and upgrade resources.",
     "rewards": "Cash, Upgrade Resources",
     "activeCodes": 27
+  },
+  {
+    "name": "Weak Battlegrounds",
+    "image": "Images/WeakBattlegrounds.webp",
+    "url": "roblox/weak-battlegrounds.html",
+    "lastupdate": "2026-04-11T04:37",
+    "tooltip": "Get free Money with these Weak Battlegrounds codes — pick your items, fill your rage gauge, and unleash your ultimate attack!",
+    "rewards": "Money",
+    "activeCodes": 2
   }
 ]
