@@ -1339,5 +1339,14 @@
     "tooltip": "Get free Rolls with these Exoria codes — explore cursed zones, fight demons, unlock purity-based skills, and reroll your race in this Blue Exorcist-inspired RPG!",
     "rewards": "Rolls",
     "activeCodes": 5
+  },
+  {
+    "name": "Jujutsu Randomizer",
+    "image": "Images/JujutsuRandomizer.webp",
+    "url": "roblox/jujutsu-randomizer.html",
+    "lastupdate": "2026-04-12T09:57",
+    "tooltip": "Get free Yen with these Jujutsu Randomizer codes — battle in the arena with random cursed techniques, unlock skins, and climb the ranks!",
+    "rewards": "Yen",
+    "activeCodes": 5
   }
 ]
