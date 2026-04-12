@@ -1330,5 +1330,14 @@
     "tooltip": "Get free Mon and Keys with these Boom Sumo codes — push opponents off the map, collect rare items, and unlock powerful special moves!",
     "rewards": "Mon, Keys",
     "activeCodes": 14
+  },
+  {
+    "name": "Exoria",
+    "image": "Images/Exoria.webp",
+    "url": "roblox/exoria.html",
+    "lastupdate": "2026-04-12T00:53",
+    "tooltip": "Get free Rolls with these Exoria codes — explore cursed zones, fight demons, unlock purity-based skills, and reroll your race in this Blue Exorcist-inspired RPG!",
+    "rewards": "Rolls",
+    "activeCodes": 5
   }
 ]
