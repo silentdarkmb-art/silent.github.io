@@ -1321,5 +1321,14 @@
     "tooltip": "Get free Cash with these Midnight Chasers codes — swerve through traffic, race supercars and motorcycles, and dominate the highway!",
     "rewards": "Cash",
     "activeCodes": 72
+  },
+  {
+    "name": "Boom Sumo",
+    "image": "Images/BoomSumo.webp",
+    "url": "roblox/boom-sumo.html",
+    "lastupdate": "2026-04-12T00:54",
+    "tooltip": "Get free Mon and Keys with these Boom Sumo codes — push opponents off the map, collect rare items, and unlock powerful special moves!",
+    "rewards": "Mon, Keys",
+    "activeCodes": 14
   }
 ]
