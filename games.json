@@ -1312,5 +1312,14 @@
     "tooltip": "Get free Cash with these Blue Lock Card Battles codes — collect cards, build your ultimate team, and battle your way to the top!",
     "rewards": "Cash, Freebies",
     "activeCodes": 9
+  },
+  {
+    "name": "Midnight Chasers",
+    "image": "Images/MidnightChasers.webp",
+    "url": "roblox/midnight-chasers.html",
+    "lastupdate": "2026-04-12T02:00",
+    "tooltip": "Get free Cash with these Midnight Chasers codes — swerve through traffic, race supercars and motorcycles, and dominate the highway!",
+    "rewards": "Cash",
+    "activeCodes": 72
   }
 ]
