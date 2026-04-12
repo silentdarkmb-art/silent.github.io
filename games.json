@@ -1357,5 +1357,14 @@
     "tooltip": "Get free Lumens, Clan Rolls, and XP Vows with these Jujutsu Zero codes — explore the jujutsu world, defeat cursed spirits, and hone your cursed techniques!",
     "rewards": "Lumens, Clan Rolls, XP Vows",
     "activeCodes": 16
+  },
+  {
+    "name": "Fart Training",
+    "image": "Images/FartTraining.webp",
+    "url": "roblox/fart-training.html",
+    "lastupdate": "2026-04-12T10:23",
+    "tooltip": "Get free Pets and Eggs with these Fart Training codes — fart your way to the top, hatch adorable pets, and dominate the leaderboards!",
+    "rewards": "Pets, Eggs, Brainrot Pets",
+    "activeCodes": 11
   }
 ]
