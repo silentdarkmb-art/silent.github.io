@@ -255,10 +255,10 @@
     "name": "Fisch",
     "image": "Images/Fisch.webp",
     "url": "roblox/fisch.html",
-    "lastupdate": "2026-03-20T06:21",
+    "lastupdate": "2026-04-12T06:21",
     "tooltip": "Cast your line across hundreds of unique biomes and catch over 400,000 fish variations in Roblox's top fishing simulator — 1 active code awards a free Carbon Bobber while you wait for the next weekly update drop.",
     "rewards": "Bobbers, Rod Skins, Coins, Cash, Hunt Totems",
-    "activeCodes": 1
+    "activeCodes": 2
   },
   {
   "name": "Pressure",
@@ -654,7 +654,7 @@
   "lastupdate": "2026-04-09T12:00",
   "tooltip": "Free Potions and Luck Boosts to roll rarer auras faster — redeem all 108 working Hot's RNG codes before they expire.",
   "rewards": "Potions, Luck Boosts, Free Rewards",
-  "activeCodes": 108
+  "activeCodes": 46
   },
   {
   "name": "Build a Military Base",
@@ -768,10 +768,10 @@
     "name": "Anime Fighters Simulator",
     "image": "Images/Anime Fighters Simulator.webp",
     "url": "roblox/anime-fighters-simulator.html",
-    "lastupdate": "2026-03-04T19:00",
+    "lastupdate": "2026-04-12T19:00",
     "tooltip": "Build the ultimate fighter roster — these Anime Fighters Simulator codes give you free Shiny Potions, Cursed Orbs, and Weapon Fragments.",
     "rewards": "Shiny Potions, Cursed Orbs, Weapon Fragments",
-    "activeCodes": 22
+    "activeCodes": 7
   },
   {
     "name": "Anime Evolution",
@@ -966,10 +966,10 @@
     "name": "Corsa Legends",
     "image": "Images/Corsa Legends.webp",
     "url": "roblox/corsa-legends.html",
-    "lastupdate": "2026-03-01T19:00",
+    "lastupdate": "2026-04-12T19:00",
     "tooltip": "Hit the track with a better garage — these Corsa Legends codes give you free Cash and Cars to stay ahead of the competition.",
     "rewards": "Cash, Cars",
-    "activeCodes": 3
+    "activeCodes": 1
   },
   {
     "name": "PARANORMAL",
@@ -1294,5 +1294,14 @@
     "tooltip": "Get free Auto Swing, Shiny Charms, and more with these OG Saber Simulator codes — swing your sword, build strength, and climb the leaderboards!",
     "rewards": "Auto Swing, Shiny Charms, Crowns, Freebies",
     "activeCodes": 13
+  },
+  {
+    "name": "Throwing Simulator",
+    "image": "Images/ThrowingSimulator.webp",
+    "url": "roblox/throwing-simulator.html",
+    "lastupdate": "2026-04-12T09:18",
+    "tooltip": "Get free Potions and Enchant Gems with these Throwing Simulator codes — launch objects farther, build your strength, and dominate the leaderboards!",
+    "rewards": "Potions, Enchant Gems, Essence",
+    "activeCodes": 9
   }
 ]
