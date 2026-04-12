@@ -1348,5 +1348,14 @@
     "tooltip": "Get free Yen with these Jujutsu Randomizer codes — battle in the arena with random cursed techniques, unlock skins, and climb the ranks!",
     "rewards": "Yen",
     "activeCodes": 5
+  },
+  {
+    "name": "Jujutsu Zero",
+    "image": "Images/JujutsuZero.webp",
+    "url": "roblox/jujutsu-zero.html",
+    "lastupdate": "2026-04-12T10:11",
+    "tooltip": "Get free Lumens, Clan Rolls, and XP Vows with these Jujutsu Zero codes — explore the jujutsu world, defeat cursed spirits, and hone your cursed techniques!",
+    "rewards": "Lumens, Clan Rolls, XP Vows",
+    "activeCodes": 16
   }
 ]
