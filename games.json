@@ -1465,5 +1465,14 @@
   "tooltip": "Redeem Dudung Universe codes for free Cash and D$ to upgrade your character, increase your power, and progress faster while exploring islands and battling enemies.",
   "rewards": "Cash, D$",
   "activeCodes": 11
-  } 
+  },
+  {
+  "name": "Universal Tower Defense X",
+  "image": "Images/UniversalTowerDefenseX.webp",
+  "url": "roblox/universal-tower-defense-x.html",
+  "lastupdate": "2026-04-15T07:03",
+  "tooltip": "Redeem Universal Tower Defense X codes for free Gems, Gold, Trait Rerolls, Stat Rerolls, Relic Rerolls, Stat Locks, Shards, Fragments, and units to summon stronger characters and progress faster through waves.",
+  "rewards": "Gems, Gold, Trait Rerolls, Stat Rerolls, Relic Rerolls, Stat Locks, Shards, Fragments, Units",
+  "activeCodes": 6
+  }
 ]
