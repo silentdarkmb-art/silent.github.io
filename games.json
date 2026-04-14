@@ -1420,5 +1420,14 @@
   "tooltip": "Redeem Anime Auras RNG codes for free Potions that boost your luck, improve rolls, and help you obtain rarer auras faster in this RNG-based adventure.",
   "rewards": "Potions",
   "activeCodes": 24
+  },
+  {
+  "name": "Azara's RNG",
+  "image": "Images/AzarasRNG.webp",
+  "url": "roblox/azaras-rng.html",
+  "lastupdate": "2026-04-14T06:48",
+  "tooltip": "Redeem Azara's RNG codes for free Potions and special boosts to increase your luck, improve rolls, and obtain rarer auras faster in this RNG-based experience.",
+  "rewards": "Potions, Boosts",
+  "activeCodes": 7
   }
 ]
