@@ -1393,5 +1393,14 @@
   "tooltip": "Redeem Anime Crash codes for free Shards, Coins, Potions, Keys, Tokens, and special items to boost your progression, unlock champions, and progress faster in battles.",
   "rewards": "Shards, Coins, Potions, Keys, Tokens, Skill Items",
   "activeCodes": 10
+  },
+  {
+  "name": "Dice Rolling Incremental",
+  "image": "Images/DiceRollingIncremental.webp",
+  "url": "roblox/dice-rolling-incremental.html",
+  "lastupdate": "2026-04-14T05:35",
+  "tooltip": "Redeem Dice Rolling Incremental codes for free Potions, Tokens, and Tickets to unlock boosts, strengthen your rolls, and progress faster toward rarer dice.",
+  "rewards": "Potions, Tokens, Tickets",
+  "activeCodes": 23
   }
 ]
