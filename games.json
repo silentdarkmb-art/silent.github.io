@@ -1474,5 +1474,14 @@
   "tooltip": "Redeem Universal Tower Defense X codes for free Gems, Gold, Trait Rerolls, Stat Rerolls, Relic Rerolls, Stat Locks, Shards, Fragments, and units to summon stronger characters and progress faster through waves.",
   "rewards": "Gems, Gold, Trait Rerolls, Stat Rerolls, Relic Rerolls, Stat Locks, Shards, Fragments, Units",
   "activeCodes": 6
+  },
+  {
+  "name": "Universal Piece",
+  "image": "Images/UniversalPiece.webp",
+  "url": "roblox/universal-piece.html",
+  "lastupdate": "2026-04-14T03:38",
+  "tooltip": "Redeem Universal Piece codes for free Gems and Yen to buy fruit, strengthen your build, and progress faster while exploring the sea, taking quests, and battling bosses.",
+  "rewards": "Gems, Yen",
+  "activeCodes": 3
   }
 ]
