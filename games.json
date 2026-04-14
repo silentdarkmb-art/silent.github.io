@@ -1263,10 +1263,10 @@
     "name": "Omeni Fruits",
     "image": "Images/OmeniFruits.webp",
     "url": "roblox/omeni-fruits.html",
-    "lastupdate": "2026-04-11T01:17",
+    "lastupdate": "2026-04-14T06:50",
     "tooltip": "Get free Beli and more with these Omeni Fruits codes — explore a big world, find unique abilities, and become the strongest player around!",
     "rewards": "Beli, Freebies",
-    "activeCodes": 6
+    "activeCodes": 8
   },
   {
     "name": "Infinite Fishing Simulator",
@@ -1429,5 +1429,14 @@
   "tooltip": "Redeem Azara's RNG codes for free Potions and special boosts to increase your luck, improve rolls, and obtain rarer auras faster in this RNG-based experience.",
   "rewards": "Potions, Boosts",
   "activeCodes": 7
-  }
+  },
+  {
+  "name": "Slay a Slime",
+  "image": "Images/SlayASlime.webp",
+  "url": "roblox/slay-a-slime.html",
+  "lastupdate": "2026-04-14T07:11",
+  "tooltip": "Redeem Slay a Slime codes for free Boosts, Keys, Potions, and resources to upgrade your character, craft stronger gear, and progress faster while battling waves of slimes.",
+  "rewards": "Boosts, Keys, Potions, Resources",
+  "activeCodes": 6
+  } 
 ]
