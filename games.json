@@ -1483,5 +1483,14 @@
   "tooltip": "Redeem Universal Piece codes for free Gems and Yen to buy fruit, strengthen your build, and progress faster while exploring the sea, taking quests, and battling bosses.",
   "rewards": "Gems, Yen",
   "activeCodes": 3
+  },
+  {
+  "name": "Chillmaxxing Card Collection",
+  "image": "Images/ChillmaxxingCardCollection.webp",
+  "url": "roblox/chillmaxxing-card-collection.html",
+  "lastupdate": "2026-04-15T07:46",
+  "tooltip": "Redeem Chillmaxxing Card Collection codes for free Bundles and Open All uses to unlock packs faster, collect rarer cards, and grow your collection efficiently.",
+  "rewards": "Bundles, Open All Uses",
+  "activeCodes": 5
   }
 ]
