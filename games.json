@@ -1375,5 +1375,14 @@
     "tooltip": "Get free rewards and boosts with these Card Shop Friends codes — build your shop, collect cards, and grow your business with friends!",
     "rewards": "Boosts, Coins, Cards",
     "activeCodes": 5
+  },
+  {
+  "name": "Clover Origins",
+  "image": "Images/CloverOrigins.webp",
+  "url": "roblox/clover-origins.html",
+  "lastupdate": "2026-04-14T04:26",
+  "tooltip": "Use Clover Origins codes to get free Yen, Spins, Resets, and Boosts to speed up your magical progression and upgrades.",
+  "rewards": "Yen, Spins, Resets, Boosts",
+  "activeCodes": 12
   }
 ]
