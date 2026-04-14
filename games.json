@@ -1438,5 +1438,14 @@
   "tooltip": "Redeem Slay a Slime codes for free Boosts, Keys, Potions, and resources to upgrade your character, craft stronger gear, and progress faster while battling waves of slimes.",
   "rewards": "Boosts, Keys, Potions, Resources",
   "activeCodes": 6
-  } 
+  },
+  {
+  "name": "WEST INDIES",
+  "image": "Images/WestIndies.webp",
+  "url": "roblox/west-indies.html",
+  "lastupdate": "2026-04-14T03:38",
+  "tooltip": "Redeem WEST INDIES codes for free Cash to buy better cars, expand your garage, and progress faster across the island.",
+  "rewards": "Cash",
+  "activeCodes": 10
+  }
 ]
