@@ -1402,5 +1402,14 @@
   "tooltip": "Redeem Dice Rolling Incremental codes for free Potions, Tokens, and Tickets to unlock boosts, strengthen your rolls, and progress faster toward rarer dice.",
   "rewards": "Potions, Tokens, Tickets",
   "activeCodes": 23
+  },
+  {
+  "name": "Urban Moto",
+  "image": "Images/UrbanMoto.webp",
+  "url": "roblox/urban-moto.html",
+  "lastupdate": "2026-04-14T05:53",
+  "tooltip": "Redeem Urban Moto codes for free Cash to buy new bikes, upgrade your ride, and progress faster while racing through city tracks and performing stunts.",
+  "rewards": "Cash",
+  "activeCodes": 4
   }
 ]
