@@ -1366,5 +1366,14 @@
     "tooltip": "Get free Pets and Eggs with these Fart Training codes — fart your way to the top, hatch adorable pets, and dominate the leaderboards!",
     "rewards": "Pets, Eggs, Brainrot Pets",
     "activeCodes": 11
+  },
+  {
+    "name": "Card Shop Friends",
+    "image": "Images/CardShopFriends.webp",
+    "url": "roblox/card-shop-friends.html",
+    "lastupdate": "2026-04-14T03:38",
+    "tooltip": "Get free rewards and boosts with these Card Shop Friends codes — build your shop, collect cards, and grow your business with friends!",
+    "rewards": "Boosts, Coins, Cards",
+    "activeCodes": 5
   }
 ]
