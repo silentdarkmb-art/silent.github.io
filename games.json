@@ -1411,5 +1411,14 @@
   "tooltip": "Redeem Urban Moto codes for free Cash to buy new bikes, upgrade your ride, and progress faster while racing through city tracks and performing stunts.",
   "rewards": "Cash",
   "activeCodes": 4
+  },
+  {
+  "name": "Anime Auras RNG",
+  "image": "Images/AnimeAurasRNG.webp",
+  "url": "roblox/anime-auras-rng.html",
+  "lastupdate": "2026-04-14T06:23",
+  "tooltip": "Redeem Anime Auras RNG codes for free Potions that boost your luck, improve rolls, and help you obtain rarer auras faster in this RNG-based adventure.",
+  "rewards": "Potions",
+  "activeCodes": 24
   }
 ]
