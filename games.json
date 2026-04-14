@@ -1447,5 +1447,14 @@
   "tooltip": "Redeem WEST INDIES codes for free Cash to buy better cars, expand your garage, and progress faster across the island.",
   "rewards": "Cash",
   "activeCodes": 10
+  },
+  {
+  "name": "Ascension Incremental",
+  "image": "Images/AscensionIncremental.webp",
+  "url": "roblox/ascension-incremental.html",
+  "lastupdate": "2026-04-14T08:52",
+  "tooltip": "Redeem Ascension Incremental codes for free Potions, Tokens, Gems, and boosts to increase your power, enhance upgrades, and ascend faster through the game.",
+  "rewards": "Potions, Tokens, Gems, Boosts",
+  "activeCodes": 8
   }
 ]
