@@ -1384,5 +1384,14 @@
   "tooltip": "Use Clover Origins codes to get free Yen, Spins, Resets, and Boosts to speed up your magical progression and upgrades.",
   "rewards": "Yen, Spins, Resets, Boosts",
   "activeCodes": 12
+  },
+  {
+  "name": "Anime Crash",
+  "image": "Images/AnimeCrash.webp",
+  "url": "roblox/anime-crash.html",
+  "lastupdate": "2026-04-14T05:13",
+  "tooltip": "Redeem Anime Crash codes for free Shards, Coins, Potions, Keys, Tokens, and special items to boost your progression, unlock champions, and progress faster in battles.",
+  "rewards": "Shards, Coins, Potions, Keys, Tokens, Skill Items",
+  "activeCodes": 10
   }
 ]
