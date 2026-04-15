@@ -1,627 +1,67 @@
-/* =========================================================
-   BLOXBURST - script.js
-   ✅ JSON-based — lahat ng games data galing sa games.json
-   ✅ Index auto NEW (3 days) + sort + date display
-   ✅ Copy buttons (codes)
-   ✅ Global search autocomplete (from games.json)
-   ✅ Codes dropdown (click + hover)
-   ✅ More Content auto RANDOM 6
-   ✅ Suggestion + More from BLOXBURST (random)
-   ✅ Gamecode.html auto A–Z + Load More (20)
-   ✅ Gamecode.html shows ACTIVE code count
-   ✅ Subfolder-safe: pathPrefix applied to ALL fetch + img + href
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* =========================
-     HELPERS
-     ========================= */
-  const MONTHS = [
-    'January','February','March','April','May','June',
-    'July','August','September','October','November','December'
-  ];
-
-  const NEW_BADGE_DAYS = 3; // days before NEW badge disappears
-
-  function formatDate(dateStr) {
-    const d = new Date(dateStr);
-    return '(' + MONTHS[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear() + ')';
-  }
-
-  function isNew(lastupdate) {
-    const diffMs   = Date.now() - new Date(lastupdate).getTime();
-    const diffDays = diffMs / (1000 * 60 * 60 * 24);
-    return diffDays <= NEW_BADGE_DAYS;
-  }
-
-  async function getActiveCodeCountFromPage(url) {
-    try {
-      const res  = await fetch(url, { cache: "no-store" });
-      const html = await res.text();
-      const doc  = new DOMParser().parseFromString(html, "text/html");
-      return Array.from(doc.querySelectorAll(".code-card"))
-        .filter(card => !card.classList.contains("expired")).length;
-    } catch (e) {
-      return 0;
-    }
-  }
-
-  const page = (location.pathname.split("/").pop() || "").toLowerCase();
-
-  /* =========================
-     PATH PREFIX (subfolder-safe)
-     ========================= */
-  const isSubfolder = window.location.pathname.split('/').filter(Boolean).length >= 2;
-  const pathPrefix  = isSubfolder ? '../' : '';
-
-  /* =========================
-     LOAD games.json — CORE
-     ========================= */
-  async function loadGames() {
-    try {
-      const res  = await fetch(pathPrefix + 'games.json?v=' + Date.now(), { cache: 'no-store' });
-      const data = await res.json();
-      return data;
-    } catch (e) {
-      console.warn('Failed to load games.json:', e);
-      return [];
-    }
-  }
-
-  /* =========================
-     A) INDEX.HTML — GAME CARDS
-     Auto NEW badge + Auto date + Sort by lastupdate
-     ========================= */
-  async function buildIndexCards() {
-    const rowEl = document.querySelector('.games-row');
-    if (!rowEl) return;
-
-    const games = await loadGames();
-    if (!games.length) return;
-
-    // Sort by date descending — kahit saan nilagay sa JSON, ang date ang basehan
-    const sorted = [...games].sort((a, b) => {
-      const dateA = new Date(a.lastupdate).getTime() || 0;
-      const dateB = new Date(b.lastupdate).getTime() || 0;
-      return dateB - dateA;
-    });
-
-    const MAX_VISIBLE = Number(rowEl.getAttribute('data-max')) || 16;
-
-    rowEl.innerHTML = '';
-
-    sorted.forEach((game, idx) => {
-      const gameIsNew   = isNew(game.lastupdate);
-      const displayDate = formatDate(game.lastupdate);
-
-      const a = document.createElement('a');
-      a.className   = 'game-link';
-      a.href        = game.url;
-      a.style.display = idx < MAX_VISIBLE ? '' : 'none';
-
-      a.innerHTML = `
+document.addEventListener("DOMContentLoaded",()=>{let s=["January","February","March","April","May","June","July","August","September","October","November","December"],t=3;function d(e){return(Date.now()-new Date(e).getTime())/864e5<=t}let c=(location.pathname.split("/").pop()||"").toLowerCase();let m=2<=window.location.pathname.split("/").filter(Boolean).length?"../":"";async function g(){try{return await(await fetch(m+"games.json?v="+Date.now(),{cache:"no-store"})).json()}catch(e){return console.warn("Failed to load games.json:",e),[]}}async function e(){let l=document.querySelector(".games-row");if(l){var e=await g();if(e.length){e=[...e].sort((e,t)=>{e=new Date(e.lastupdate).getTime()||0;return(new Date(t.lastupdate).getTime()||0)-e});let o=Number(l.getAttribute("data-max"))||16;l.innerHTML="",e.forEach((e,t)=>{var a=d(e.lastupdate),n=(n=e.lastupdate,n=new Date(n),"("+s[n.getMonth()]+" "+n.getDate()+" "+n.getFullYear()+")"),i=document.createElement("a");i.className="game-link",i.href=e.url,i.style.display=t<o?"":"none",i.innerHTML=`
         <div class="game-card"
-             data-name="${game.name.toLowerCase()}"
-             data-lastupdate="${game.lastupdate}"
-             data-tooltip="${game.tooltip || ''}">
-          ${gameIsNew ? '<span class="game-new-badge" style="display:inline-flex;">NEW</span>' : ''}
-          <img src="${game.image}" class="game-thumb" alt="${game.name}" loading="lazy">
+             data-name="${e.name.toLowerCase()}"
+             data-lastupdate="${e.lastupdate}"
+             data-tooltip="${e.tooltip||""}">
+          ${a?'<span class="game-new-badge" style="display:inline-flex;">NEW</span>':""}
+          <img src="${e.image}" class="game-thumb" alt="${e.name}" loading="lazy">
           <div class="game-info">
-            <h3>${game.name}</h3>
+            <h3>${e.name}</h3>
             <p><span>Code</span> Release!</p>
-            <p class="game-date-display">${displayDate}</p>
+            <p class="game-date-display">${n}</p>
           </div>
         </div>
-      `;
-
-      rowEl.appendChild(a);
-    });
-  }
-
- if (page === 'index.html' || page === 'index' || page === '') {
-    buildIndexCards();
-  }
-
-  /* =========================
-     B) COPY BUTTONS (codes pages)
-     ========================= */
-  document.querySelectorAll(".code-card").forEach((card) => {
-    const copyBtn = card.querySelector(".copy-btn");
-    if (!copyBtn) return;
-    if (copyBtn.disabled || copyBtn.classList.contains("expired-btn") || card.classList.contains("expired")) return;
-
-    if (!copyBtn.dataset.originalLabel) {
-      copyBtn.dataset.originalLabel = copyBtn.textContent.trim();
-    }
-
-    const getCode = () => {
-      const dataCode = card.getAttribute("data-code");
-      if (dataCode && dataCode.trim()) return dataCode.trim();
-      const codeEl = card.querySelector(".code-text");
-      if (!codeEl) return "";
-      return codeEl.textContent.replace(/\bNEW\b/g, "").trim();
-    };
-
-    copyBtn.addEventListener("click", async () => {
-      const code = getCode();
-      if (!code) return;
-      try {
-        await navigator.clipboard.writeText(code);
-        copyBtn.classList.add("copied");
-        copyBtn.textContent = "Copied ✓";
-        setTimeout(() => {
-          copyBtn.classList.remove("copied");
-          copyBtn.textContent = copyBtn.dataset.originalLabel;
-        }, 2000);
-      } catch (e) {
-        copyBtn.textContent = "Failed";
-        setTimeout(() => (copyBtn.textContent = copyBtn.dataset.originalLabel), 1500);
-      }
-    });
-  });
-
-  /* =========================
-     C) GLOBAL AUTOCOMPLETE SEARCH (from games.json)
-     ========================= */
-  const globalSearch   = document.getElementById("globalSearch");
-  const suggestionsBox = document.getElementById("searchSuggestions");
-
-  function hideSuggestions() {
-    if (!suggestionsBox) return;
-    suggestionsBox.classList.remove("show");
-    suggestionsBox.innerHTML = "";
-  }
-
-  function showSuggestions(items) {
-    if (!suggestionsBox) return;
-    suggestionsBox.innerHTML = "";
-    items.slice(0, 6).forEach((item) => {
-      const div = document.createElement("div");
-      div.className = "suggestion-item";
-      div.innerHTML = `
-        <img class="suggestion-thumb" src="${pathPrefix}${item.image}" alt="${item.name}" loading="lazy">
+      `,l.appendChild(i)})}}}"index.html"!==c&&"index"!==c&&""!==c||e(),document.querySelectorAll(".code-card").forEach(t=>{let a=t.querySelector(".copy-btn");if(a&&!(a.disabled||a.classList.contains("expired-btn")||t.classList.contains("expired"))){a.dataset.originalLabel||(a.dataset.originalLabel=a.textContent.trim());a.addEventListener("click",async()=>{var e=(e=t.getAttribute("data-code"))&&e.trim()?e.trim():(e=t.querySelector(".code-text"))?e.textContent.replace(/\bNEW\b/g,"").trim():"";if(e)try{await navigator.clipboard.writeText(e),a.classList.add("copied"),a.textContent="Copied ✓",setTimeout(()=>{a.classList.remove("copied"),a.textContent=a.dataset.originalLabel},2e3)}catch(e){a.textContent="Failed",setTimeout(()=>a.textContent=a.dataset.originalLabel,1500)}})}});let i=document.getElementById("globalSearch"),o=document.getElementById("searchSuggestions");function l(){o&&(o.classList.remove("show"),o.innerHTML="")}(async()=>{let a=await g();function n(e){let t=(e||"").toLowerCase().trim();return t?a.filter(e=>e.name.toLowerCase().includes(t)):[]}i&&o&&(window.clearGlobalSearch=function(){i&&(i.value="",i.focus(),l())},i.addEventListener("input",function(){var e=n(this.value);e.length?(e=e,o&&(o.innerHTML="",e.slice(0,6).forEach(e=>{var t=document.createElement("div");t.className="suggestion-item",t.innerHTML=`
+        <img class="suggestion-thumb" src="${m}${e.image}" alt="${e.name}" loading="lazy">
         <div class="suggestion-text">
-          <div class="suggestion-title">${item.name}</div>
+          <div class="suggestion-title">${e.name}</div>
           <div class="suggestion-sub">Click to open codes</div>
         </div>
         <div class="suggestion-pill">Open</div>
-      `;
-      div.addEventListener("click", () => { window.location.href = pathPrefix + item.url; });
-      suggestionsBox.appendChild(div);
-    });
-    suggestionsBox.classList.add("show");
-  }
-
-  async function initSearch() {
-    const games = await loadGames();
-    if (!globalSearch || !suggestionsBox) return;
-
-    function findMatches(query) {
-      const q = (query || "").toLowerCase().trim();
-      if (!q) return [];
-      return games.filter(g => g.name.toLowerCase().includes(q));
-    }
-
-    window.clearGlobalSearch = function() {
-      if (!globalSearch) return;
-      globalSearch.value = "";
-      globalSearch.focus();
-      hideSuggestions();
-    };
-
-    globalSearch.addEventListener("input", function() {
-      const matches = findMatches(this.value);
-      matches.length ? showSuggestions(matches) : hideSuggestions();
-    });
-
-    globalSearch.addEventListener("keydown", function(e) {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        const matches = findMatches(this.value);
-        if (matches.length) window.location.href = pathPrefix + matches[0].url;
-      }
-      if (e.key === "Escape") hideSuggestions();
-    });
-
-    document.addEventListener("click", function(e) {
-      const shell   = globalSearch.closest(".search-shell");
-      const wrapper = globalSearch.closest(".header-search");
-      const container = wrapper || shell;
-      if (container && !container.contains(e.target)) hideSuggestions();
-    });
-  }
-
-  initSearch();
-
-  /* =========================
-     D) CODES DROPDOWN (CLICK + HOVER)
-     ========================= */
-  const dropdown = document.getElementById("codesDropdown");
-  const codesBtn = document.getElementById("codesBtn");
-
-  if (dropdown && codesBtn) {
-    let pinned = false;
-    codesBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      pinned = !pinned;
-      dropdown.classList.toggle("open", pinned);
-    });
-    dropdown.addEventListener("mouseenter", () => { if (!pinned) dropdown.classList.add("open"); });
-    dropdown.addEventListener("mouseleave", () => { if (!pinned) dropdown.classList.remove("open"); });
-    document.addEventListener("click", (e) => {
-      if (!dropdown.contains(e.target)) { pinned = false; dropdown.classList.remove("open"); }
-    });
-  }
-
-  /* =========================
-     E) MORE CONTENT (RANDOM 6 from games.json)
-     ========================= */
-  async function buildMoreContent() {
-    const moreGrid = document.getElementById("moreGrid");
-    if (!moreGrid) return;
-
-    const games   = await loadGames();
-    const current = (location.pathname.split("/").pop() || "").toLowerCase();
-
-    const filtered = games.filter(g => g.url.toLowerCase() !== current);
-
-    // Shuffle
-    const shuffled = [...filtered];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-
-    moreGrid.innerHTML = '';
-    shuffled.slice(0, 6).forEach(game => {
-      const a = document.createElement('a');
-      a.className = 'more-card';
-      a.href = pathPrefix + game.url;
-      a.innerHTML = `
-        <img src="${pathPrefix}${game.image}" alt="${game.name}" loading="lazy">
-        <div class="more-info"><h3>${game.name} Codes</h3></div>
-      `;
-      moreGrid.appendChild(a);
-    });
-  }
-
-  buildMoreContent();
-
-  /* =========================
-     E2) SUGGESTION + MORE FROM BLOXBURST (RANDOM)
-     ========================= */
-  async function buildSuggestionGrids() {
-    const suggestGrid  = document.getElementById("suggestGrid");
-    const moreFromGrid = document.getElementById("moreFromGrid");
-    if (!suggestGrid && !moreFromGrid) return;
-
-    const games   = await loadGames();
-    const current = (location.pathname.split("/").pop() || "").toLowerCase();
-
-    const filtered = games.filter(g => g.url.toLowerCase() !== current);
-    filtered.sort((a, b) => new Date(b.lastupdate).getTime() - new Date(a.lastupdate).getTime());
-
-    const pool     = filtered.slice(0, 30);
-    const shuffled = [...pool];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-
-    const renderGrid = (gridEl, list) => {
-      if (!gridEl) return;
-      gridEl.innerHTML = '';
-      list.forEach(game => {
-        const a = document.createElement('a');
-        a.className = 'suggest-card';
-        a.href = pathPrefix + game.url;
-        a.innerHTML = `
-          <img src="${pathPrefix}${game.image}" alt="${game.name}" loading="lazy">
+      `,t.addEventListener("click",()=>{window.location.href=m+e.url}),o.appendChild(t)}),o.classList.add("show"))):l()}),i.addEventListener("keydown",function(e){var t;"Enter"===e.key&&(e.preventDefault(),(t=n(this.value)).length)&&(window.location.href=m+t[0].url),"Escape"===e.key&&l()}),document.addEventListener("click",function(e){var t=i.closest(".search-shell"),t=i.closest(".header-search")||t;t&&!t.contains(e.target)&&l()}))})();let a=document.getElementById("codesDropdown");var n=document.getElementById("codesBtn");if(a&&n){let t=!1;n.addEventListener("click",e=>{e.preventDefault(),t=!t,a.classList.toggle("open",t)}),a.addEventListener("mouseenter",()=>{t||a.classList.add("open")}),a.addEventListener("mouseleave",()=>{t||a.classList.remove("open")}),document.addEventListener("click",e=>{a.contains(e.target)||(t=!1,a.classList.remove("open"))})}(async()=>{let a=document.getElementById("moreGrid");if(a){var e=await g();let t=(location.pathname.split("/").pop()||"").toLowerCase();var n=[...e.filter(e=>e.url.toLowerCase()!==t)];for(let e=n.length-1;0<e;e--){var i=Math.floor(Math.random()*(e+1));[n[e],n[i]]=[n[i],n[e]]}a.innerHTML="",n.slice(0,6).forEach(e=>{var t=document.createElement("a");t.className="more-card",t.href=m+e.url,t.innerHTML=`
+        <img src="${m}${e.image}" alt="${e.name}" loading="lazy">
+        <div class="more-info"><h3>${e.name} Codes</h3></div>
+      `,a.appendChild(t)})}})(),(async()=>{var e=document.getElementById("suggestGrid"),a=document.getElementById("moreFromGrid");if(e||a){var n=await g();let t=(location.pathname.split("/").pop()||"").toLowerCase();var n=n.filter(e=>e.url.toLowerCase()!==t),n=(n.sort((e,t)=>new Date(t.lastupdate).getTime()-new Date(e.lastupdate).getTime()),n.slice(0,30)),i=[...n];for(let e=i.length-1;0<e;e--){var o=Math.floor(Math.random()*(e+1));[i[e],i[o]]=[i[o],i[e]]}n=(a,e)=>{a&&(a.innerHTML="",e.forEach(e=>{var t=document.createElement("a");t.className="suggest-card",t.href=m+e.url,t.innerHTML=`
+          <img src="${m}${e.image}" alt="${e.name}" loading="lazy">
           <div class="suggest-info">
-            <h3>${game.name} Codes</h3>
-            <p>${game.rewards || 'Free Rewards'}</p>
+            <h3>${e.name} Codes</h3>
+            <p>${e.rewards||"Free Rewards"}</p>
           </div>
-        `;
-        gridEl.appendChild(a);
-      });
-    };
-
-    renderGrid(suggestGrid, shuffled.slice(0, 6));
-    renderGrid(moreFromGrid, shuffled.slice(6, 12));
-  }
-
-  buildSuggestionGrids();
-
-  /* =========================
-     F) GAMECODE.HTML (AUTO A–Z FROM games.json)
-     ========================= */
-  async function buildGamecodeAZ() {
-    const sectionsRoot = document.getElementById("alphaSections");
-    const alphaNav     = document.getElementById("alphaNav");
-    const loadMoreBtn  = document.getElementById("loadMoreBtn");
-    if (!sectionsRoot || !alphaNav || !loadMoreBtn) return;
-
-    const games         = await loadGames();
-    const itemsPerClick = 20;
-
-    // ✅ FIX: Gamitin na lang ang activeCodes mula sa games.json — hindi na mag-fetch ng bawat HTML page (sobrang bagal noon!)
-    const items = games.map((game) => {
-      let desc = 'Code Release!';
-      if (page === 'gamecode.html') {
-        const count = game.activeCodes || 0;
-        desc = count === 1 ? '1 Active Code' : `${count} Active Codes`;
-      }
-      const first  = (game.name[0] || '#').toUpperCase();
-      const letter = /^[A-Z]$/.test(first) ? first : '#';
-      return { ...game, desc, letter };
-    });
-
-    // Sort A-Z
-    items.sort((a, b) => {
-      if (a.letter !== b.letter) return a.letter.localeCompare(b.letter);
-      return a.name.localeCompare(b.name);
-    });
-
-    const letters = ['#'].concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''));
-    const groups  = {};
-    letters.forEach(l => (groups[l] = []));
-    items.forEach(it => {
-      if (!groups[it.letter]) groups[it.letter] = [];
-      groups[it.letter].push(it);
-    });
-
-    // Build alpha nav
-    alphaNav.innerHTML = '';
-    letters.forEach(l => {
-      const has = groups[l] && groups[l].length > 0;
-      const a   = document.createElement('a');
-      a.className   = 'alpha-link' + (has ? '' : ' disabled');
-      a.href        = has ? `#sec-${l}` : '#';
-      a.textContent = l;
-      alphaNav.appendChild(a);
-    });
-
-    // Build sections
-    sectionsRoot.innerHTML = '';
-    const allCardEls = [];
-
-    letters.forEach(l => {
-      if (!groups[l] || !groups[l].length) return;
-
-      const sec = document.createElement('section');
-      sec.className = 'alpha-section';
-      sec.id        = `sec-${l}`;
-      sec.innerHTML = `<div class="alpha-head">${l}</div><div class="alpha-grid"></div>`;
-
-      const grid = sec.querySelector('.alpha-grid');
-
-      groups[l].forEach(item => {
-        const gameIsNew = isNew(item.lastupdate);
-        const a = document.createElement('a');
-        a.className = 'game-link';
-        a.href = pathPrefix + item.url;
-        a.innerHTML = `
+        `,a.appendChild(t)}))};n(e,i.slice(0,6)),n(a,i.slice(6,12))}})(),(async()=>{let l=document.getElementById("alphaSections"),n=document.getElementById("alphaNav"),s=document.getElementById("loadMoreBtn");if(l&&n&&s){var e=await g();var e=e.map(e=>{let t="Code Release!";"gamecode.html"===c&&(a=e.activeCodes||0,t=1===a?"1 Active Code":a+" Active Codes");var a=(e.name[0]||"#").toUpperCase(),a=/^[A-Z]$/.test(a)?a:"#";return{...e,desc:t,letter:a}}),t=(e.sort((e,t)=>e.letter!==t.letter?e.letter.localeCompare(t.letter):e.name.localeCompare(t.name)),["#"].concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")));let i={},o=(t.forEach(e=>i[e]=[]),e.forEach(e=>{i[e.letter]||(i[e.letter]=[]),i[e.letter].push(e)}),n.innerHTML="",t.forEach(e=>{var t=i[e]&&0<i[e].length,a=document.createElement("a");a.className="alpha-link"+(t?"":" disabled"),a.href=t?"#sec-"+e:"#",a.textContent=e,n.appendChild(a)}),l.innerHTML="",[]),a=(t.forEach(e=>{if(i[e]&&i[e].length){var t=document.createElement("section");t.className="alpha-section",t.id="sec-"+e,t.innerHTML=`<div class="alpha-head">${e}</div><div class="alpha-grid"></div>`;let n=t.querySelector(".alpha-grid");i[e].forEach(e=>{var t=d(e.lastupdate),a=document.createElement("a");a.className="game-link",a.href=m+e.url,a.innerHTML=`
           <div class="game-card">
-            ${gameIsNew ? '<span class="game-new-badge" style="display:inline-flex;">NEW</span>' : ''}
-            <img src="${pathPrefix}${item.image}" class="game-thumb" alt="${item.name}" loading="lazy">
+            ${t?'<span class="game-new-badge" style="display:inline-flex;">NEW</span>':""}
+            <img src="${m}${e.image}" class="game-thumb" alt="${e.name}" loading="lazy">
             <div class="game-info">
-              <h3>${item.name}</h3>
-              <p>${item.desc}</p>
+              <h3>${e.name}</h3>
+              <p>${e.desc}</p>
             </div>
           </div>
-        `;
-        grid.appendChild(a);
-        allCardEls.push(a);
-      });
-
-      sectionsRoot.appendChild(sec);
-    });
-
-    // Load more logic
-    let visibleCount = 0;
-    allCardEls.forEach(el => (el.style.display = 'none'));
-
-    function updateButton() {
-      const left = allCardEls.length - visibleCount;
-      if (left <= 0) {
-        loadMoreBtn.textContent = 'No more games';
-        loadMoreBtn.disabled    = true;
-      } else {
-        loadMoreBtn.textContent = `View More (${left} left)`;
-        loadMoreBtn.disabled    = false;
-      }
-    }
-
-    function showNext() {
-      const next = Math.min(visibleCount + itemsPerClick, allCardEls.length);
-      for (let i = visibleCount; i < next; i++) allCardEls[i].style.display = '';
-      visibleCount = next;
-      updateButton();
-      // ✅ FIX: Itago ang alpha-section kung walang visible cards
-      sectionsRoot.querySelectorAll('.alpha-section').forEach(sec => {
-        const hasVisible = Array.from(sec.querySelectorAll('.game-link')).some(el => el.style.display !== 'none');
-        sec.style.display = hasVisible ? '' : 'none';
-      });
-    }
-
-    loadMoreBtn.onclick = showNext;
-    showNext();
-  }
-
-  buildGamecodeAZ();
-
-  /* =========================
-     GAME WIKI — FROM wiki.json
-     ✅ Para mag-add ng bagong Game Wiki:
-        Buksan lang wiki.json, dagdagan ng entry!
-        Automatic lalabas sa wiki.html, index.html, at search.
-     ========================= */
-  async function loadWikiGames() {
-    try {
-      const res  = await fetch(pathPrefix + 'wiki.json');
-      const data = await res.json();
-      return data;
-    } catch (e) {
-      console.warn('Failed to load wiki.json:', e);
-      return [];
-    }
-  }
-
-  async function buildWikiGrids() {
-    const wikis = await loadWikiGames();
-    if (!wikis.length) return;
-
-    // Index page — "Game Wiki" suggest section (gameWikiGrid)
-    const indexGrid = document.getElementById('gameWikiGrid');
-    if (indexGrid) {
-      const shuffled = [...wikis].sort(() => Math.random() - 0.5);
-      indexGrid.innerHTML = shuffled.slice(0, 6).map(g => `
-        <a class="suggest-card" href="${pathPrefix}${g.url}">
-          <img src="${pathPrefix}${g.image}" alt="${g.name}" loading="lazy">
+        `,n.appendChild(a),o.push(a)}),l.appendChild(t)}}),0);function r(){var e,t=Math.min(a+20,o.length);for(let e=a;e<t;e++)o[e].style.display="";a=t,(e=o.length-a)<=0?(s.textContent="No more games",s.disabled=!0):(s.textContent=`View More (${e} left)`,s.disabled=!1),l.querySelectorAll(".alpha-section").forEach(e=>{var t=Array.from(e.querySelectorAll(".game-link")).some(e=>"none"!==e.style.display);e.style.display=t?"":"none"})}o.forEach(e=>e.style.display="none"),(s.onclick=r)()}})(),(async()=>{let n=await(async()=>{try{return await(await fetch(m+"wiki.json")).json()}catch(e){return console.warn("Failed to load wiki.json:",e),[]}})();if(n.length){var e,i=document.getElementById("gameWikiGrid"),i=(i&&(e=[...n].sort(()=>Math.random()-.5),i.innerHTML=e.slice(0,6).map(e=>`
+        <a class="suggest-card" href="${m}${e.url}">
+          <img src="${m}${e.image}" alt="${e.name}" loading="lazy">
           <div class="suggest-info">
-            <h3>${g.name} Wiki</h3>
+            <h3>${e.name} Wiki</h3>
             <p>Guides • Fixes • Tips</p>
           </div>
         </a>
-      `).join('');
-    }
-
-    // Wiki page — full game wiki grid (wikiGameGrid)
-    const wikiGameGrid = document.getElementById('wikiGameGrid');
-    if (wikiGameGrid) {
-      const count = document.getElementById('wikiGameCount');
-      if (count) count.textContent = `${wikis.length} Game${wikis.length !== 1 ? 's' : ''}`;
-      wikiGameGrid.innerHTML = wikis.map(g => `
-        <a class="game-wiki-card" href="${pathPrefix}${g.url}">
-          <img class="game-wiki-img" src="${pathPrefix}${g.image}" alt="${g.name}" loading="lazy">
+      `).join("")),document.getElementById("wikiGameGrid"));i&&((e=document.getElementById("wikiGameCount"))&&(e.textContent=n.length+" Game"+(1!==n.length?"s":"")),i.innerHTML=n.map(e=>`
+        <a class="game-wiki-card" href="${m}${e.url}">
+          <img class="game-wiki-img" src="${m}${e.image}" alt="${e.name}" loading="lazy">
           <div class="game-wiki-info">
             <span class="game-wiki-tag">GAME WIKI</span>
-            <h3>${g.name}</h3>
-            <p>${g.description || 'Guides, codes, and tips for ' + g.name + '.'}</p>
+            <h3>${e.name}</h3>
+            <p>${e.description||"Guides, codes, and tips for "+e.name+"."}</p>
             <span class="game-wiki-read">Read ➜</span>
           </div>
         </a>
-      `).join('');
-    }
-
-    // Wiki search
-    const wikiSearchInput = document.getElementById('wikiSearch');
-    const wikiDropdown    = document.getElementById('wikiDropdown');
-
-    if (wikiSearchInput && wikiDropdown) {
-      wikiSearchInput.addEventListener('input', function() {
-        const q = this.value.toLowerCase().trim();
-        if (!q) { wikiDropdown.style.display = 'none'; return; }
-        const matches = wikis.filter(g => g.name.toLowerCase().includes(q));
-        if (!matches.length) {
-          wikiDropdown.innerHTML = `<div style="padding:14px 20px; color:rgba(255,255,255,0.5); font-size:14px;">No results found for "${q}"</div>`;
-        } else {
-          wikiDropdown.innerHTML = matches.map(g => `
-            <a href="${pathPrefix}${g.url}" style="display:flex; align-items:center; gap:12px; padding:10px 16px; text-decoration:none; color:#fff; border-bottom:1px solid rgba(255,255,255,0.06); transition:background 0.15s;"
+      `).join(""));let t=document.getElementById("wikiSearch"),a=document.getElementById("wikiDropdown");t&&a&&(t.addEventListener("input",function(){let t=this.value.toLowerCase().trim();var e;t?((e=n.filter(e=>e.name.toLowerCase().includes(t))).length?a.innerHTML=e.map(e=>`
+            <a href="${m}${e.url}" style="display:flex; align-items:center; gap:12px; padding:10px 16px; text-decoration:none; color:#fff; border-bottom:1px solid rgba(255,255,255,0.06); transition:background 0.15s;"
               onmouseover="this.style.background='rgba(255,255,255,0.08)'"
               onmouseout="this.style.background=''">
-              <img src="${pathPrefix}${g.image}" alt="${g.name}" style="width:48px; height:48px; object-fit:cover; border-radius:10px; flex-shrink:0;" loading="lazy">
+              <img src="${m}${e.image}" alt="${e.name}" style="width:48px; height:48px; object-fit:cover; border-radius:10px; flex-shrink:0;" loading="lazy">
               <div>
                 <div style="font-size:11px; font-weight:900; color:rgba(180,160,255,0.95); margin-bottom:3px;">GAME WIKI</div>
-                <div style="font-size:14px; font-weight:700;">${g.name}</div>
+                <div style="font-size:14px; font-weight:700;">${e.name}</div>
               </div>
             </a>
-          `).join('');
-        }
-        wikiDropdown.style.display = 'block';
-      });
-
-      document.addEventListener('click', function(e) {
-        if (!wikiSearchInput.contains(e.target) && !wikiDropdown.contains(e.target)) {
-          wikiDropdown.style.display = 'none';
-        }
-      });
-
-      wikiSearchInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') { this.value = ''; wikiDropdown.style.display = 'none'; }
-      });
-    }
-  }
-
-  buildWikiGrids();
-
-  /* =========================
-     FAQ TOGGLE
-     ========================= */
-  document.querySelectorAll(".faq-question").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const answer = btn.nextElementSibling;
-      if (!answer) return;
-      answer.classList.toggle("open");
-      const icon = btn.querySelector("span");
-      if (icon) icon.textContent = answer.classList.contains("open") ? "–" : "+";
-    });
-  });
-
-  /* =========================
-     VIEW MORE — CODES (Active & Expired)
-     Shows 5 by default, expands on click
-     ========================= */
-  const CODES_INITIAL = 5;
-
-  function initViewMore(listId, wrapId, btnId, countId, type) {
-    const list  = document.getElementById(listId);
-    const wrap  = document.getElementById(wrapId);
-    const btn   = document.getElementById(btnId);
-    const count = document.getElementById(countId);
-    if (!list || !btn) return;
-
-    const cards = Array.from(list.querySelectorAll('.code-card'));
-    if (cards.length <= CODES_INITIAL) {
-      if (wrap) wrap.style.display = 'none';
-      return;
-    }
-
-    // Hide cards beyond initial count
-    cards.forEach((card, i) => {
-      card.style.display = i < CODES_INITIAL ? '' : 'none';
-    });
-
-    const hidden = cards.length - CODES_INITIAL;
-    if (count) count.textContent = '(' + hidden + ' more)';
-  }
-
-  window.toggleCodes = function(type) {
-    const listId  = type === 'active' ? 'activeList'          : 'expiredList';
-    const wrapId  = type === 'active' ? 'activeViewMoreWrap'  : 'expiredViewMoreWrap';
-    const btnId   = type === 'active' ? 'activeViewMoreBtn'   : 'expiredViewMoreBtn';
-    const countId = type === 'active' ? 'activeHiddenCount'   : 'expiredHiddenCount';
-
-    const list  = document.getElementById(listId);
-    const btn   = document.getElementById(btnId);
-    const count = document.getElementById(countId);
-    if (!list || !btn) return;
-
-    const cards    = Array.from(list.querySelectorAll('.code-card'));
-    const expanded = btn.getAttribute('data-expanded') === 'true';
-
-    if (expanded) {
-      // Collapse back to 5
-      cards.forEach((card, i) => {
-        card.style.display = i < CODES_INITIAL ? '' : 'none';
-      });
-      const hidden = cards.length - CODES_INITIAL;
-      if (count) count.textContent = '(' + hidden + ' more)';
-      btn.innerHTML = (type === 'active' ? '▼ View More Active Codes ' : '▼ View More Expired Codes ')
-        + '<span class="vm-count" id="' + countId + '">(' + hidden + ' more)</span>';
-      btn.setAttribute('data-expanded', 'false');
-      list.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      // Expand all
-      cards.forEach(card => { card.style.display = ''; });
-      if (count) count.textContent = '';
-      btn.innerHTML = (type === 'active' ? '▲ View Less Active Codes' : '▲ View Less Expired Codes');
-      btn.setAttribute('data-expanded', 'true');
-    }
-  };
-
-  initViewMore('activeList',  'activeViewMoreWrap',  'activeViewMoreBtn',  'activeHiddenCount',  'active');
-  initViewMore('expiredList', 'expiredViewMoreWrap', 'expiredViewMoreBtn', 'expiredHiddenCount', 'expired');
-
-});
+          `).join(""):a.innerHTML=`<div style="padding:14px 20px; color:rgba(255,255,255,0.5); font-size:14px;">No results found for "${t}"</div>`,a.style.display="block"):a.style.display="none"}),document.addEventListener("click",function(e){t.contains(e.target)||a.contains(e.target)||(a.style.display="none")}),t.addEventListener("keydown",function(e){"Escape"===e.key&&(this.value="",a.style.display="none")}))}})(),document.querySelectorAll(".faq-question").forEach(a=>{a.addEventListener("click",()=>{var e,t=a.nextElementSibling;t&&(t.classList.toggle("open"),e=a.querySelector("span"))&&(e.textContent=t.classList.contains("open")?"–":"+")})});function r(e,t,a,n){var e=document.getElementById(e),t=document.getElementById(t),a=document.getElementById(a),n=document.getElementById(n);e&&a&&((a=Array.from(e.querySelectorAll(".code-card"))).length<=5?t&&(t.style.display="none"):(a.forEach((e,t)=>{e.style.display=t<5?"":"none"}),e=a.length-5,n&&(n.textContent="("+e+" more)")))}window.toggleCodes=function(e){var t,a,n="active"===e?"activeViewMoreBtn":"expiredViewMoreBtn",i="active"===e?"activeHiddenCount":"expiredHiddenCount",o=document.getElementById("active"===e?"activeList":"expiredList"),n=document.getElementById(n),l=document.getElementById(i);o&&n&&(t=Array.from(o.querySelectorAll(".code-card")),"true"===n.getAttribute("data-expanded")?(t.forEach((e,t)=>{e.style.display=t<5?"":"none"}),a=t.length-5,l&&(l.textContent="("+a+" more)"),n.innerHTML=("active"===e?"▼ View More Active Codes ":"▼ View More Expired Codes ")+'<span class="vm-count" id="'+i+'">('+a+" more)</span>",n.setAttribute("data-expanded","false"),o.scrollIntoView({behavior:"smooth",block:"start"})):(t.forEach(e=>{e.style.display=""}),l&&(l.textContent=""),n.innerHTML="active"===e?"▲ View Less Active Codes":"▲ View Less Expired Codes",n.setAttribute("data-expanded","true")))},r("activeList","activeViewMoreWrap","activeViewMoreBtn","activeHiddenCount"),r("expiredList","expiredViewMoreWrap","expiredViewMoreBtn","expiredHiddenCount")});
