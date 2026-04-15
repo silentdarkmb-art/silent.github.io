@@ -1492,5 +1492,14 @@
   "tooltip": "Redeem Chillmaxxing Card Collection codes for free Bundles and Open All uses to unlock packs faster, collect rarer cards, and grow your collection efficiently.",
   "rewards": "Bundles, Open All Uses",
   "activeCodes": 5
+  },
+  {
+  "name": "Cut Grass for Anime Characters",
+  "image": "Images/CutGrassForAnimeCharacters.webp",
+  "url": "roblox/cut-grass-for-anime-characters.html",
+  "lastupdate": "2026-04-14T03:38",
+  "tooltip": "Redeem Cut Grass for Anime Characters codes for free Cash, Luck Boosts, and special character rewards to upgrade faster, improve drops, and unlock powerful anime units.",
+  "rewards": "Cash, Luck Boosts, Characters",
+  "activeCodes": 3
   }
 ]
