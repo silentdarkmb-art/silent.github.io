@@ -1510,5 +1510,14 @@
   "tooltip": "Redeem Football Universe 26 codes for free Cash and mission packs to buy players, upgrade your squad, and progress faster toward building a championship team.",
   "rewards": "Cash, Mission Packs",
   "activeCodes": 3
+  },
+  {
+  "name": "Slime RNG",
+  "image": "Images/SlimeRNG.webp",
+  "url": "roblox/slime-rng.html",
+  "lastupdate": "2026-04-14T09:38",
+  "tooltip": "Redeem Slime RNG codes for free Potions, Coins, and Food to upgrade faster, improve your slimes, and progress more efficiently.",
+  "rewards": "Potions, Coins, Food",
+  "activeCodes": 4
   }
 ]
