@@ -1501,5 +1501,14 @@
   "tooltip": "Redeem Cut Grass for Anime Characters codes for free Cash, Luck Boosts, and special character rewards to upgrade faster, improve drops, and unlock powerful anime units.",
   "rewards": "Cash, Luck Boosts, Characters",
   "activeCodes": 3
+  },
+  {
+  "name": "Football Universe 26",
+  "image": "Images/FootballUniverse26.webp",
+  "url": "roblox/football-universe-26.html",
+  "lastupdate": "2026-04-15T09:01",
+  "tooltip": "Redeem Football Universe 26 codes for free Cash and mission packs to buy players, upgrade your squad, and progress faster toward building a championship team.",
+  "rewards": "Cash, Mission Packs",
+  "activeCodes": 3
   }
 ]
