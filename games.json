@@ -1519,5 +1519,14 @@
   "tooltip": "Redeem Slime RNG codes for free Potions, Coins, and Food to upgrade faster, improve your slimes, and progress more efficiently.",
   "rewards": "Potions, Coins, Food",
   "activeCodes": 4
+  },
+  {
+  "name": "Dungeon Heroes",
+  "image": "Images/DungeonHeroes.webp",
+  "url": "roblox/dungeon-heroes.html",
+  "lastupdate": "2026-04-14T05:46",
+  "tooltip": "Redeem Dungeon Heroes codes for free Gold, Boosts, Gear, and Pets to upgrade your character, improve combat performance, and progress faster through dungeons.",
+  "rewards": "Gold, Boosts, Gear, Pets",
+  "activeCodes": 16
   }
 ]
