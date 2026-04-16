@@ -1609,6 +1609,15 @@
   "tooltip": "Redeem working codes for free Mounts in Battle Pets Roblox.",
   "rewards": "Mounts, Trailhorn",
   "activeCodes": 1
+},
+{
+  "name": "My Knife Farm",
+  "image": "Images/MyKnifeFarm.webp",
+  "url": "roblox/my-knife-farm.html",
+  "lastupdate": "2026-04-16T12:00",
+  "tooltip": "Redeem working codes for free Gems and Boosts in My Knife Farm Roblox.",
+  "rewards": "Gems, Cash Boost, Multipliers",
+  "activeCodes": 2
 }
 
 ]
