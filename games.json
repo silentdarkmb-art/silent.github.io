@@ -1582,6 +1582,15 @@
   "tooltip": "Redeem working codes for free Freebies, Presents, and Dark Aura in Idle Defense Roblox.",
   "rewards": "Freebies, Presents, Dark Aura, Skins",
   "activeCodes": 3
+},
+{
+  "name": "1 Unlimited World",
+  "image": "Images/UnlimitedWorld.webp",
+  "url": "roblox/+1-unlimited-world.html",
+  "lastupdate": "2026-04-16T12:00",
+  "tooltip": "Redeem working codes for free Coins, Gems, and Boosts in 1 Unlimited World Roblox.",
+  "rewards": "Coins, Gems, Boosts, Freebies",
+  "activeCodes": 12
 }
 
 ]
