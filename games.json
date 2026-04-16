@@ -1618,6 +1618,15 @@
   "tooltip": "Redeem working codes for free Gems and Boosts in My Knife Farm Roblox.",
   "rewards": "Gems, Cash Boost, Multipliers",
   "activeCodes": 2
+},
+{
+  "name": "Be a Brainrot",
+  "image": "Images/BeABrainrot.webp",
+  "url": "roblox/be-a-brainrot.html",
+  "lastupdate": "2026-04-16T00",
+  "tooltip": "Redeem working codes for free Cash in Be a Brainrot Roblox.",
+  "rewards": "Cash",
+  "activeCodes": 2
 }
 
 ]
