@@ -1584,13 +1584,22 @@
   "activeCodes": 3
 },
 {
-  "name": "1 Unlimited World",
+  "name": "+1 Unlimited World",
   "image": "Images/UnlimitedWorld.webp",
   "url": "roblox/+1-unlimited-world.html",
   "lastupdate": "2026-04-16T12:00",
   "tooltip": "Redeem working codes for free Coins, Gems, and Boosts in 1 Unlimited World Roblox.",
   "rewards": "Coins, Gems, Boosts, Freebies",
   "activeCodes": 12
+},
+{
+  "name": "Spin a Kitty",
+  "image": "Images/SpinAKitty.webp",
+  "url": "roblox/spin-a-kitty.html",
+  "lastupdate": "2026-04-16T12:00",
+  "tooltip": "Redeem working codes for free Dice in Spin a Kitty Roblox.",
+  "rewards": "Dice, Astral Dice, Eternal Dice",
+  "activeCodes": 8
 }
 
 ]
