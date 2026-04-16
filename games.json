@@ -435,10 +435,10 @@
     "name": "Anime Eternal",
     "image": "Images/Anime Eternal.webp",
     "url": "roblox/anime-eternal.html",
-    "lastupdate": "2026-04-11T10:00",
+    "lastupdate": "2026-04-15T10:00",
     "tooltip": "Power up with free Potions and Credits in Anime Eternal — give your roster the boost it needs.",
     "rewards": "Potions, Credits",
-    "activeCodes": 22
+    "activeCodes": 24
   },
   {
   "name": "Build a Brainrot Farm",
@@ -1501,5 +1501,33 @@
   "tooltip": "Redeem Dungeon Heroes codes for free Gold, Boosts, Gear, and Pets to upgrade your character, improve combat performance, and progress faster through dungeons.",
   "rewards": "Gold, Boosts, Gear, Pets",
   "activeCodes": 16
-  }
+  },
+  {
+  "name": "Dying Days Zombies",
+  "image": "Images/DyingDaysZombies.webp",
+  "url": "roblox/dying-days-zombies.html",
+  "lastupdate": "2026-04-15T10:00",
+  "tooltip": "Redeem working codes for free Points in Dying Days Zombies Roblox.",
+  "rewards": "Points",
+  "activeCodes": 15
+  },
+  {
+  "name": "Cursed Tower Defense",
+  "image": "Images/CursedTowerDefense.webp",
+  "url": "roblox/cursed-tower-defense.html",
+  "lastupdate": "2026-04-15T10:00",
+  "tooltip": "Redeem working codes for free Cash & Crates in Cursed Tower Defense Roblox.",
+  "rewards": "Cash, Crates",
+  "activeCodes": 5
+},
+{
+  "name": "Build A Farm Factory",
+  "image": "Images/BuildAFarmFactory.webp",
+  "url": "roblox/build-a-farm-factory.html",
+  "lastupdate": "2026-04-15T10:00",
+  "tooltip": "Redeem working codes for free Items in Build A Farm Factory Roblox.",
+  "rewards": "Items, Nature Bee",
+  "activeCodes": 1
+}
+
 ]
