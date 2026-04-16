@@ -1600,6 +1600,15 @@
   "tooltip": "Redeem working codes for free Dice in Spin a Kitty Roblox.",
   "rewards": "Dice, Astral Dice, Eternal Dice",
   "activeCodes": 8
+},
+{
+  "name": "Battle Pets",
+  "image": "Images/BattlePets.webp",
+  "url": "roblox/battle-pets.html",
+  "lastupdate": "2026-04-16T12:00",
+  "tooltip": "Redeem working codes for free Mounts in Battle Pets Roblox.",
+  "rewards": "Mounts, Trailhorn",
+  "activeCodes": 1
 }
 
 ]
