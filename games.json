@@ -1546,6 +1546,24 @@
   "tooltip": "Redeem working codes for free Fragments and Seed of Lights in Project Mirror Labyrinth Roblox.",
   "rewards": "Fragments, Seed of Lights, EGO Tickets",
   "activeCodes": 12
+},
+{
+  "name": "TV Defense",
+  "image": "Images/TVDefense.webp",
+  "url": "roblox/tv-defense.html",
+  "lastupdate": "2026-04-15T12:00",
+  "tooltip": "Redeem working codes for free Coins, Gems, and Event Items in TV Defense Roblox.",
+  "rewards": "Coins, Gems, Diamonds, Crystals, Event Items",
+  "activeCodes": 12
+},
+{
+  "name": "Anime Card Collection",
+  "image": "Images/AnimeCardCollection.webp",
+  "url": "roblox/anime-card-collection.html",
+  "lastupdate": "2026-04-15T12:00",
+  "tooltip": "Redeem working codes for free Cash and Packs in Anime Card Collection Roblox.",
+  "rewards": "Cash, Ninja Pack, Freebies",
+  "activeCodes": 12
 }
 
 ]
