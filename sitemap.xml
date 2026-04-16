@@ -246,7 +246,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/arise-shadow-hunt.html</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -628,13 +628,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://bloxburst.com/roblox/zero-to-hero.html</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://bloxburst.com/roblox/dungeon-hunters.html</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -810,6 +803,12 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/hots-rng.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/idle-defense.html</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1116,6 +1115,12 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/wrestling.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/wukashi.html</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
