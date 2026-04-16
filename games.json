@@ -901,7 +901,7 @@
   },
   {
     "name": "Zero to Hero",
-    "image": "Images/Zero to Hero.webp",
+    "image": "Images/ZeroToHero.webp",
     "url": "roblox/zero-to-hero.html",
     "lastupdate": "2026-03-01T19:00",
     "tooltip": "Skip the zero stage — these Zero to Hero codes give you free Gems, Dungeon Coins, and Potions to kick off your hero journey.",
@@ -1528,6 +1528,24 @@
   "tooltip": "Redeem working codes for free Items in Build A Farm Factory Roblox.",
   "rewards": "Items, Nature Bee",
   "activeCodes": 1
+},
+{
+  "name": "Sniper Arena",
+  "image": "Images/SniperArena.webp",
+  "url": "roblox/sniper-arena.html",
+  "lastupdate": "2026-04-15T12:00",
+  "tooltip": "Redeem working codes for free Cases and Skins in Sniper Arena Roblox.",
+  "rewards": "Cases, Skins",
+  "activeCodes": 5
+},
+{
+  "name": "Project Mirror Labyrinth",
+  "image": "Images/ProjectMirrorLabyrinth.webp",
+  "url": "roblox/project-mirror-labyrinth.html",
+  "lastupdate": "2026-04-15T12:00",
+  "tooltip": "Redeem working codes for free Fragments and Seed of Lights in Project Mirror Labyrinth Roblox.",
+  "rewards": "Fragments, Seed of Lights, EGO Tickets",
+  "activeCodes": 12
 }
 
 ]
