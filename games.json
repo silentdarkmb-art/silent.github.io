@@ -840,10 +840,10 @@
   "name": "Jujutsu Kaisen Incremental",
   "image": "Images/JujutsuKaisenIncremental.webp",
   "url": "roblox/jujutsu-kaisen-incremental.html",
-  "lastupdate": "2026-04-03T12:00",
+  "lastupdate": "2026-04-15T12:00",
   "tooltip": "Free Rolls and Rerolls to unlock powerful Cursed Techniques and progress through story arcs faster — redeem all working Jujutsu Kaisen Incremental codes before they expire.",
   "rewards": "Rolls, Rerolls, Free Rewards",
-  "activeCodes": 15
+  "activeCodes": 19
   },
   {
   "name": "Sorcerer Incremental",
@@ -1362,10 +1362,10 @@
   "name": "Anime Crash",
   "image": "Images/AnimeCrash.webp",
   "url": "roblox/anime-crash.html",
-  "lastupdate": "2026-04-14T05:13",
+  "lastupdate": "2026-04-15T12:00",
   "tooltip": "Redeem Anime Crash codes for free Shards, Coins, Potions, Keys, Tokens, and special items to boost your progression, unlock champions, and progress faster in battles.",
   "rewards": "Shards, Coins, Potions, Keys, Tokens, Skill Items",
-  "activeCodes": 10
+  "activeCodes": 11
   },
   {
   "name": "Dice Rolling Incremental",
@@ -1564,6 +1564,24 @@
   "tooltip": "Redeem working codes for free Cash and Packs in Anime Card Collection Roblox.",
   "rewards": "Cash, Ninja Pack, Freebies",
   "activeCodes": 12
+},
+{
+  "name": "Wukashi",
+  "image": "Images/Wukashi.webp",
+  "url": "roblox/wukashi.html",
+  "lastupdate": "2026-04-15T12:00",
+  "tooltip": "Redeem working codes for free Tokens and Freebies in Wukashi Roblox.",
+  "rewards": "Tokens, Freebies, Ryo, Blessed Chests",
+  "activeCodes": 12
+},
+{
+  "name": "Idle Defense",
+  "image": "Images/IdleDefense.webp",
+  "url": "roblox/idle-defense.html",
+  "lastupdate": "2026-04-15T12:00",
+  "tooltip": "Redeem working codes for free Freebies, Presents, and Dark Aura in Idle Defense Roblox.",
+  "rewards": "Freebies, Presents, Dark Aura, Skins",
+  "activeCodes": 3
 }
 
 ]
