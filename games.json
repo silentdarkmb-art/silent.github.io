@@ -723,10 +723,10 @@
     "name": "Anime Vanguards",
     "image": "Images/Anime Vanguards.webp",
     "url": "roblox/anime-vanguards.html",
-    "lastupdate": "2026-03-05T19:00",
+    "lastupdate": "2026-04-17T12:07",
     "tooltip": "Upgrade your defense lineup with free Gems, Gold, Trait Rerolls, and Memoria Shards in Anime Vanguards.",
     "rewards": "Gems, Gold, Trait Rerolls, Memoria Shards",
-    "activeCodes": 51
+    "activeCodes": 6
   },
   {
     "name": "Anime Paradox",
@@ -1708,6 +1708,15 @@
   "tooltip": "Redeem working codes for free Potions and Dice in Pickaxe Simulator Roblox.",
   "rewards": "Potions, Dice, Golden Dice, Speed Potions, Luck Potions, Coin Potions, Damage Potions, Snowflake Potions, Snowballs",
   "activeCodes": 3
+},
+{
+  "name": "Reign Piece",
+  "image": "Images/ReignPiece.webp",
+  "url": "roblox/reign-piece.html",
+  "lastupdate": "2026-04-18T00:00:00Z",
+  "tooltip": "Redeem working codes for free Yen, Race Tokens, and Crystals in Reign Piece Roblox.",
+  "rewards": "Yen, Race Tokens, Crystals, Freebies, Haki Fragments, Mythical Chests",
+  "activeCodes": 33
 }
 
 ]
