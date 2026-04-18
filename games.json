@@ -1690,6 +1690,15 @@
   "tooltip": "Redeem working codes for free Cash, Wheel Spins, and Luck Boosts in Ultra UnFair Roblox.",
   "rewards": "Cash, Wheel Spins, Ultra Luck Boosts, XP Boosts, Freebies",
   "activeCodes": 9
+},
+{
+  "name": "Saber Simulator",
+  "image": "Images/SaberSimulator.webp",
+  "url": "roblox/saber-simulator.html",
+  "lastupdate": "2026-04-17T12:05",
+  "tooltip": "Redeem working codes for free Crowns, Coins, and Charms in Saber Simulator Roblox.",
+  "rewards": "Crowns, Coins, Shiny Charms, Rainbow Charms, Void Charms, Strength",
+  "activeCodes": 74
 }
 
 ]
