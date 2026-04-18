@@ -1699,6 +1699,15 @@
   "tooltip": "Redeem working codes for free Crowns, Coins, and Charms in Saber Simulator Roblox.",
   "rewards": "Crowns, Coins, Shiny Charms, Rainbow Charms, Void Charms, Strength",
   "activeCodes": 74
+},
+{
+  "name": "Pickaxe Simulator",
+  "image": "Images/PickaxeSimulator.webp",
+  "url": "roblox/pickaxe-simulator.html",
+  "lastupdate": "2026-04-17T12:06",
+  "tooltip": "Redeem working codes for free Potions and Dice in Pickaxe Simulator Roblox.",
+  "rewards": "Potions, Dice, Golden Dice, Speed Potions, Luck Potions, Coin Potions, Damage Potions, Snowflake Potions, Snowballs",
+  "activeCodes": 3
 }
 
 ]
