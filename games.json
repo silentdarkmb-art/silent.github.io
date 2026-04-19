@@ -1744,6 +1744,15 @@
   "tooltip": "Redeem working codes for free Cash, Reroll Orbs, and Freebies in Hollow Era Roblox.",
   "rewards": "Cash, Weapon Reroll Orbs, Hair Color Reroll Orbs, Face Reroll Orbs, SP Reset, Freebies, 2x Drop Rate Boosts",
   "activeCodes": 7
+},
+{
+  "name": "NFL Universe Football",
+  "image": "Images/NFLUniverseFootball.webp",
+  "url": "roblox/nfl-universe-football.html",
+  "lastupdate": "2026-04-17T12:13",
+  "tooltip": "Redeem working codes for free Coins, Tokens, and Boosts in NFL Universe Football Roblox.",
+  "rewards": "Coins, Tokens, Stat Boosts, Freebies, XP Boosts",
+  "activeCodes": 28
 }
 
 ]
