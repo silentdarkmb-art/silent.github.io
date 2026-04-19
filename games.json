@@ -1266,7 +1266,7 @@
     "lastupdate": "2026-04-12T01:00",
     "tooltip": "Get free Auto Swing, Shiny Charms, and more with these OG Saber Simulator codes — swing your sword, build strength, and climb the leaderboards!",
     "rewards": "Auto Swing, Shiny Charms, Crowns, Freebies",
-    "activeCodes": 13
+    "activeCodes": 14
   },
   {
     "name": "Throwing Simulator",
@@ -1497,10 +1497,10 @@
   "name": "Dungeon Heroes",
   "image": "Images/DungeonHeroes.webp",
   "url": "roblox/dungeon-heroes.html",
-  "lastupdate": "2026-04-14T05:46",
+  "lastupdate": "2026-04-17T12:13",
   "tooltip": "Redeem Dungeon Heroes codes for free Gold, Boosts, Gear, and Pets to upgrade your character, improve combat performance, and progress faster through dungeons.",
   "rewards": "Gold, Boosts, Gear, Pets",
-  "activeCodes": 16
+  "activeCodes": 18
   },
   {
   "name": "Dying Days Zombies",
@@ -1771,6 +1771,15 @@
   "tooltip": "Redeem working codes for free Stars, Tokens, Spins, and Crates in Baddies Brawl Roblox.",
   "rewards": "Stars, Tokens, Daily/Hourly/Style Spins, Snowflakes, Candy, Emoji Crate, Witch Crate, Egg Spins",
   "activeCodes": 48
+},
+{
+  "name": "Multicrew Tank Combat",
+  "image": "Images/MulticrewTankCombat.webp",
+  "url": "roblox/multicrew-tank-combat.html",
+  "lastupdate": "2026-04-17T12:14",
+  "tooltip": "Redeem working codes for free Cash and Freebies in Multicrew Tank Combat Roblox.",
+  "rewards": "Cash, Money, Freebies",
+  "activeCodes": 3
 }
 
 ]
