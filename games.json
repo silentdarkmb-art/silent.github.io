@@ -1726,6 +1726,15 @@
   "tooltip": "Redeem working codes for free Ryo, XP, and Stat Points in Naruto Incremental Roblox.",
   "rewards": "Ryo, XP, Stat Points",
   "activeCodes": 18
+},
+{
+  "name": "Re Rangers X",
+  "image": "Images/ReRangersX.webp",
+  "url": "roblox/re-rangers-x.html",
+  "lastupdate": "2026-04-17T12:10",
+  "tooltip": "Redeem working codes for free Trait Rerolls, Gems, and Soul Fragments in Re Rangers X Roblox.",
+  "rewards": "Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Dr. Megga Punk",
+  "activeCodes": 14
 }
 
 ]
