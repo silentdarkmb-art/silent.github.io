@@ -1735,6 +1735,15 @@
   "tooltip": "Redeem working codes for free Trait Rerolls, Gems, and Soul Fragments in Re Rangers X Roblox.",
   "rewards": "Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Dr. Megga Punk",
   "activeCodes": 14
+},
+{
+  "name": "Hollow Era",
+  "image": "Images/HollowEra.webp",
+  "url": "roblox/hollow-era.html",
+  "lastupdate": "2026-04-17T12:12",
+  "tooltip": "Redeem working codes for free Cash, Reroll Orbs, and Freebies in Hollow Era Roblox.",
+  "rewards": "Cash, Weapon Reroll Orbs, Hair Color Reroll Orbs, Face Reroll Orbs, SP Reset, Freebies, 2x Drop Rate Boosts",
+  "activeCodes": 7
 }
 
 ]
