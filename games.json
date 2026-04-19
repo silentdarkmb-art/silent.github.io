@@ -1762,6 +1762,15 @@
   "tooltip": "Redeem working codes for free Gems in Jujutsu Beatdown Roblox.",
   "rewards": "Gems, Freebies",
   "activeCodes": 16
+},
+{
+  "name": "Baddies Brawl",
+  "image": "Images/BaddiesBrawl.webp",
+  "url": "roblox/baddies-brawl.html",
+  "lastupdate": "2026-04-17T12:15",
+  "tooltip": "Redeem working codes for free Stars, Tokens, Spins, and Crates in Baddies Brawl Roblox.",
+  "rewards": "Stars, Tokens, Daily/Hourly/Style Spins, Snowflakes, Candy, Emoji Crate, Witch Crate, Egg Spins",
+  "activeCodes": 48
 }
 
 ]
