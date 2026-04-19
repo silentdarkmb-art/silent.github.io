@@ -1713,10 +1713,19 @@
   "name": "Reign Piece",
   "image": "Images/ReignPiece.webp",
   "url": "roblox/reign-piece.html",
-  "lastupdate": "2026-04-18T00:00:00Z",
+  "lastupdate": "2026-04-17T12:09",
   "tooltip": "Redeem working codes for free Yen, Race Tokens, and Crystals in Reign Piece Roblox.",
   "rewards": "Yen, Race Tokens, Crystals, Freebies, Haki Fragments, Mythical Chests",
   "activeCodes": 33
+},
+{
+  "name": "Naruto Incremental",
+  "image": "Images/NarutoIncremental.webp",
+  "url": "roblox/naruto-incremental.html",
+  "lastupdate": "2026-04-17T12:08",
+  "tooltip": "Redeem working codes for free Ryo, XP, and Stat Points in Naruto Incremental Roblox.",
+  "rewards": "Ryo, XP, Stat Points",
+  "activeCodes": 18
 }
 
 ]
