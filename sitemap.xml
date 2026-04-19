@@ -257,8 +257,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bloxburst.com/roblox/arise-crossover.html</loc>
+    <loc>https://bloxburst.com/roblox/anipixels.html</loc>
     <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/arcade-basketball.html</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

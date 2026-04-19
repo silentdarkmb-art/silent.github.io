@@ -1780,6 +1780,15 @@
   "tooltip": "Redeem working codes for free Cash and Freebies in Multicrew Tank Combat Roblox.",
   "rewards": "Cash, Money, Freebies",
   "activeCodes": 3
+},
+{
+  "name": "Arcade Basketball",
+  "image": "Images/ArcadeBasketball.webp",
+  "url": "roblox/arcade-basketball.html",
+  "lastupdate": "2026-04-17T12:15",
+  "tooltip": "Redeem working codes for free Coins, Crates, and Exclusive Items in Arcade Basketball Roblox.",
+  "rewards": "Coins, Limited Crate, Exclusive Shirt, Green Effects Crate, Normal Tickets, Lucky Badge Roll, XP",
+  "activeCodes": 38
 }
 
 ]
