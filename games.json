@@ -1753,6 +1753,15 @@
   "tooltip": "Redeem working codes for free Coins, Tokens, and Boosts in NFL Universe Football Roblox.",
   "rewards": "Coins, Tokens, Stat Boosts, Freebies, XP Boosts",
   "activeCodes": 28
+},
+{
+  "name": "Jujutsu Beatdown",
+  "image": "Images/JujutsuBeatdown.webp",
+  "url": "roblox/jujutsu-beatdown.html",
+  "lastupdate": "2026-04-17T12:13",
+  "tooltip": "Redeem working codes for free Gems in Jujutsu Beatdown Roblox.",
+  "rewards": "Gems, Freebies",
+  "activeCodes": 16
 }
 
 ]
