@@ -1789,6 +1789,15 @@
   "tooltip": "Redeem working codes for free Coins, Crates, and Exclusive Items in Arcade Basketball Roblox.",
   "rewards": "Coins, Limited Crate, Exclusive Shirt, Green Effects Crate, Normal Tickets, Lucky Badge Roll, XP",
   "activeCodes": 38
+},
+{
+  "name": "Noob Experiment: Warzone",
+  "image": "Images/NoobExperimentWarzone.webp",
+  "url": "roblox/noob-experiment-warzone",
+  "lastupdate": "2026-04-21T09:20",
+  "tooltip": "Redeem working codes for free Screws in Noob Experiment: Warzone Roblox.",
+  "rewards": "Screws",
+  "activeCodes": 6
 }
 
 ]
