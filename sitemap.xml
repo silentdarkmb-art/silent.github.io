@@ -413,6 +413,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/build-a-candy-shop-farm</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/build-a-farm-factory</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -1291,6 +1297,13 @@
   <url>
     <loc>https://bloxburst.com/roblox/zero-to-hero</loc>
     <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- ═══ Steal A Brainrot Wiki Pages ═══ -->
+  <url>
+    <loc>https://bloxburst.com/roblox/avocadini-antilopini</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

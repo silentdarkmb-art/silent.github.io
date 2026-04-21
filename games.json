@@ -1816,6 +1816,15 @@
   "tooltip": "Redeem working codes for free Luck Potions, Speed Potions, Shiny Potions, Awakened Potions, and Event Roll Potions in Cardborn RNG Roblox.",
   "rewards": "Luck Potions, Speed Potions, Shiny Potions, Awakened Potions, Event Roll Potions, Freebies",
   "activeCodes": 27
+},
+{
+  "name": "Build a Candy Shop",
+  "image": "Images/BuildACandyShop.webp",
+  "url": "roblox/build-a-candy-shop",
+  "lastupdate": "2026-04-20T12:00:00Z",
+  "tooltip": "Redeem working codes for free Prismatic Potions and Ragers in Build a Candy Shop Roblox.",
+  "rewards": "Prismatic Potions, Ragers",
+  "activeCodes": 2
 }
 
 ]
