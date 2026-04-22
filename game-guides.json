@@ -1,13 +1,13 @@
 [
-  {
-    "id": "sailor-piece",
-    "title": "Sailor Piece",
-    "description": "7 Essential Tips You NEED To Know in Sailor Piece",
-    "category": "Beginner Guides",
-    "difficulty": "easy",
-    "readTime": "15 min",
-    "thumbnail": "Images/SailorPiece-7tips.webp", 
-    "link": "game-guides/sailor-piece",
-    "tags": ["pirates", "adventure", "combat", "exploration", "ships"]
+{
+  "id": "sailor-piece",
+  "title": "Sailor Piece",
+  "description": "7 Essential Tips You NEED To Know in Sailor Piece",
+  "category": "Beginner",
+  "readTime": "15 min",
+  "thumbnail": "Images/SailorPiece-7tips.webp",
+  "link": "game-guides/sailor-piece",
+  "releaseDate": "Apr 22, 2026",
+  "tags": ["pirates", "adventure"]
 }
 ]

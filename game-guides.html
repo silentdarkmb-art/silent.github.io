@@ -4,28 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 🔹 Optimized Title (Title Case + ~60 chars) -->
   <title>Game Guides - Bloxburst | Roblox Tips, Tricks & Tutorials</title>
-  
-  <!-- 🔹 Optimized Meta Description (~155 chars, Title Case, compelling CTA) -->
   <meta name="description" content="Browse all Roblox game guides on Bloxburst. Find tips, tricks, tutorials, and strategies to level up faster, redeem codes, and dominate your favorite games!">
-  
   <meta name="keywords" content="Roblox game guides, Roblox tips, Roblox tricks, Roblox tutorials, Bloxburst guides, how to play Roblox, Roblox strategies">
   <meta name="robots" content="index, follow">
-  
-  <!-- 🔹 Clean Canonical URL (no .html) -->
   <link rel="canonical" href="https://bloxburst.com/guides" />
-  
   <meta name="author" content="BLOXBURST">
   <meta name="language" content="en">
   <meta name="revisit-after" content="3 days">
 
-  <!-- 🔹 Performance: Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-
-  <!-- 🔹 Enhanced Open Graph -->
   <meta property="og:title" content="Game Guides - Bloxburst | Roblox Tips, Tricks & Tutorials">
   <meta property="og:description" content="Browse all Roblox game guides on Bloxburst. Find tips, tricks, tutorials, and strategies to level up faster and dominate your favorite games!">
   <meta property="og:image" content="https://bloxburst.com/Images/FinalLogo.png">
@@ -37,7 +24,6 @@
   <meta property="og:site_name" content="Bloxburst">
   <meta property="og:locale" content="en_US">
 
-  <!-- 🔹 Enhanced Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Bloxburst">
   <meta name="twitter:creator" content="@Bloxburst">
@@ -46,7 +32,6 @@
   <meta name="twitter:image" content="https://bloxburst.com/Images/FinalLogo.png">
   <meta name="twitter:image:alt" content="Bloxburst Game Guides - Roblox Tips & Tutorials">
 
-  <!-- 🔹 Enhanced Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,8 +100,6 @@
   <link rel="icon" type="image/png" href="Images/FinalLogo.png">
   <link rel="preload" as="image" href="Images/FinalLogo.png">
   <link rel="stylesheet" href="style.css">
-  
-  <!-- 🔹 Font Loading Optimization -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
@@ -129,7 +112,6 @@
   </script>
 
   <style>
-    /* ── Original Styles (Preserved) ── */
     :root {
       --primary-purple: #7d5cff;
       --primary-green: #00ff88;
@@ -140,7 +122,26 @@
 
     body { font-family: 'Poppins', sans-serif; }
 
-    /* ── Wiki Hero ── */
+    /* ── EXACT COPY FROM index.html ── */
+    @media (min-width: 769px) {
+      .index-header-wrap { display: contents; }
+      .top-text-link { position: absolute !important; top: 28px !important; left: 28px !important; }
+      .top-text-link .logo-img { height: 150px !important; width: auto !important; max-width: 500px !important; object-fit: contain !important; }
+    }
+
+    @media (max-width: 768px) {
+      html { font-size: 13px; }
+      main.page { padding-top: 10px !important; padding-left: 14px !important; padding-right: 14px !important; padding-bottom: 24px !important; width: 100% !important; }
+      .index-header-wrap { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 8px !important; padding: 10px 0 6px !important; margin-bottom: 6px !important; }
+      .index-header-wrap .top-text-link { position: static !important; }
+      .index-header-wrap .top-text-link .logo-img, .top-text-link .logo-img { height: 60px !important; max-width: 150px !important; width: auto !important; }
+      .index-header-wrap .top-nav, .top-nav { position: static !important; display: flex !important; flex-direction: row !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: 80% !important; max-width: 260px !important; margin: 0 auto !important; }
+      .nav-box, .mini-btn { height: 36px !important; padding: 0 !important; font-size: 13px !important; border-radius: 10px !important; flex: 1 1 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown { flex: 1 1 0 !important; display: flex !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown .mini-btn { width: 100% !important; flex: 1 !important; }
+    }
+
+    /* ── PAGE CONTENT ── */
     .wiki-hero {
       width: 100%;
       text-align: center;
@@ -163,7 +164,6 @@
       margin: 0 auto 28px;
     }
 
-    /* ── Section Header ── */
     .wiki-section-head {
       display: flex;
       align-items: center;
@@ -181,14 +181,7 @@
       height: 1px;
       background: rgba(255,255,255,0.12);
     }
-    .wiki-count {
-      font-size: 12px;
-      color: rgba(255,255,255,0.5);
-      font-weight: 700;
-      white-space: nowrap;
-    }
 
-    /* ── Quick Tips ── */
     .wiki-tips {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -206,7 +199,6 @@
     .wiki-tip-card h3 { font-family: 'Fredoka', sans-serif; font-size: 18px; margin-bottom: 8px; }
     .wiki-tip-card p { color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.7; }
 
-    /* ── Game Guides Section ── */
     .games-search-wrap {
       display: flex;
       justify-content: center;
@@ -252,7 +244,7 @@
       display: flex;
       flex-direction: column;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-      min-height: 320px; /* Para pare-pareho ang height */
+      min-height: 320px;
     }
     .game-guide-card:hover {
       transform: translateY(-4px);
@@ -269,20 +261,22 @@
       background: linear-gradient(135deg, rgba(125,92,255,0.2), rgba(21,26,77,0.6));
       position: relative;
     }
+
+    /* ── UPDATED: Release Date Badge ── */
     .game-guide-diff {
       position: absolute;
       top: 10px;
       right: 10px;
-      background: rgba(0,0,0,0.5);
-      padding: 4px 10px;
-      border-radius: 999px;
+      background: rgba(0,0,0,0.7);
+      padding: 5px 12px;
+      border-radius: 8px;
       font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
+      font-weight: 700;
+      color: #00ff88;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(0,255,136,0.3);
+      white-space: nowrap;
     }
-    .game-guide-diff.easy { color: #00ff88; }
-    .game-guide-diff.medium { color: #ffa500; }
-    .game-guide-diff.hard { color: #ff4757; }
 
     .game-guide-info {
       padding: 16px 18px 18px;
@@ -312,11 +306,7 @@
       color: rgba(255,255,255,0.65);
       line-height: 1.5;
       flex: 1;
-      overflow: visible;
-      text-overflow: clip;
-      white-space: normal;
-      display: block;
-      }
+    }
     .game-guide-read {
       margin-top: 10px;
       font-weight: 900;
@@ -337,12 +327,35 @@
       color: rgba(255,255,255,0.6);
       font-size: 15px;
     }
-    .games-count {
-      text-align: center;
+
+    /* ── UPDATED: Inline Count (moved to header side) ── */
+    .games-count-inline {
       font-size: 13px;
       color: rgba(255,255,255,0.5);
-      margin-top: -10px;
-      margin-bottom: 40px;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: 12px;
+      padding: 4px 12px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .games-count {
+      display: none; /* Hide old bottom count */
+    }
+
+    /* Mobile: stack count below header */
+    @media (max-width: 768px) {
+      .wiki-section-head {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .games-count-inline {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        order: 3;
+      }
     }
   </style>
 </head>
@@ -351,30 +364,28 @@
 
 <main class="page">
 
-  <!-- ── HEADER (Preserved) ── -->
-  <a href="../game-guides" class="top-text-link" aria-label="BLOXBURST Home">
-    <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
-  </a>
-  
-  <!-- ── SCALABLE NAVIGATION ── -->
-<div class="top-nav">
-  <a href="game-guides" class="nav-box">Guides</a>
-  
-  <div class="nav-dropdown" id="codesDropdown">
-    <a href="gamecode" class="nav-box" id="codesBtn">Codes</a>
-    <div class="nav-menu" id="codesMenu">
-      <a class="nav-item" href="gamecode">Game Codes</a>
-      <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
+  <!-- ✅ NAV — same structure as index.html -->
+  <div class="index-header-wrap">
+    <a href="game-guides" class="top-text-link" aria-label="BLOXBURST Home">
+      <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img" fetchpriority="high">
+    </a>
+    <div class="top-nav">
+
+      <a href="game-guides" class="nav-box nav-link">Guides</a>
+
+      <div class="nav-dropdown" id="codesDropdown">
+        <a href="gamecode" class="mini-btn" id="codesBtn">Codes</a>
+        <div class="nav-menu" id="codesMenu">
+          <a class="nav-item" href="gamecode">Game Codes</a>
+          <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
+        </div>
+      </div>
+
+      <a href="wiki" class="nav-box nav-link">Wiki</a>
+
     </div>
   </div>
-  
-  <a href="wiki" class="nav-box">Wiki</a>
-  
-  <!-- Magdagdag ng bagong button? Copy-paste lang to: -->
-  <!-- <a href="new-page.html" class="nav-box">New Button</a> -->
-</div>
 
-  <!-- ── HERO (Preserved) ── -->
   <div class="wiki-hero">
     <h1>📚 BLOXBURST Game Guides</h1>
     <p>
@@ -391,76 +402,68 @@
     </div>
   </div>
 
-  <!-- ── GAMES WITH GUIDES (Auto-fetch from game-guides.json) ── -->
+  <!-- ── UPDATED: Count inline with header ── -->
   <div class="wiki-section-head">
     <h2>🎮 Games with Guides</h2>
     <div class="wiki-section-line"></div>
+    <span class="games-count-inline">Showing <span id="gamesCount">0</span> guides</span>
   </div>
 
   <div id="gamesLoading" class="games-loading">⏳ Loading guides...</div>
   <div class="games-grid" id="gamesGrid" style="display: none;"></div>
   <div id="gamesNoResult" class="games-no-result" style="display: none;">🔍 No guides found. Try a different keyword!</div>
-  <div class="games-count">Showing <span id="gamesCount">0</span> guides</div>
 
-  <!-- ── QUICK TIPS (Preserved) ── -->
   <div class="wiki-section-head">
-    <h2>Quick Tips</h2>
+    <h2>🎯 Pro Gaming Tips</h2>
     <div class="wiki-section-line"></div>
   </div>
 
   <div class="wiki-tips">
     <div class="wiki-tip-card">
-      <div class="wiki-tip-icon">📋</div>
-      <h3>Always Copy & Paste</h3>
-      <p>Typing codes manually can cause typos. Always copy the guide steps directly to avoid missing key details.</p>
+      <div class="wiki-tip-icon">📊</div>
+      <h3>Master the Basics First</h3>
+      <p>Don't rush to endgame content. Focus on understanding core mechanics, optimal stat builds, and efficient farming routes before tackling advanced strategies.</p>
     </div>
     <div class="wiki-tip-card">
       <div class="wiki-tip-icon">⚡</div>
-      <h3>Update Regularly</h3>
-      <p>Game mechanics change often. We update our guides within 24 hours of major patches or events.</p>
+      <h3>Optimize Your Grinding</h3>
+      <p>Use AFK farming spots, server hopping, and multipliers wisely. The right farming location can 10x your progression speed compared to random grinding.</p>
     </div>
     <div class="wiki-tip-card">
-      <div class="wiki-tip-icon">🔄</div>
-      <h3>Check Requirements</h3>
-      <p>Some guides require specific levels, items, or game passes. Read the "Difficulty" tag before starting.</p>
+      <div class="wiki-tip-icon">🎁</div>
+      <h3>Redeem Codes Daily</h3>
+      <p>Most games offer free rewards through codes. Check our codes page regularly for gems, boosts, and exclusive items that accelerate your progress.</p>
     </div>
   </div>
 
 </main>
 
-<!-- ── FOOTER (Preserved) ── -->
 <footer class="site-footer">
   <div class="footer-inner">
-
     <div class="footer-left">
       <div class="footer-logo">BLOXBURST🔥</div>
       <p class="footer-desc">
         BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
       </p>
     </div>
-
     <div class="footer-col">
       <h4>Navigation</h4>
       <a href="gamecode">Game Codes</a>
       <a href="promo-latest-codes">Promo Codes</a>
       <a href="wiki">Wiki</a>
     </div>
-
     <div class="footer-col">
       <h4>More</h4>
       <a href="Terms-and-Condition/about">About Us</a>
       <a href="Terms-and-Condition/faq">FAQ</a>
       <a href="Terms-and-Condition/contactus">Contact Us</a>
     </div>
-
     <div class="footer-col">
       <h4>Policies</h4>
       <a href="Terms-and-Condition/terms">Terms of Use</a>
       <a href="Terms-and-Condition/privacy">Privacy Policy</a>
     </div>
-
   </div>
-
   <div class="footer-bottom">
     <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
     <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
@@ -469,7 +472,6 @@
 
 <script src="script.js"></script>
 <script>
-  // ── AUTO-FETCH FROM game-guides.json ──
   let GAME_GUIDES = [];
 
   async function loadGameGuides() {
@@ -485,10 +487,9 @@
     }
   }
 
-    // ── RENDER GAMES ──
   function renderGames(list) {
-    const grid = document.getElementById('gamesGrid');
-    const load = document.getElementById('gamesLoading');
+    const grid  = document.getElementById('gamesGrid');
+    const load  = document.getElementById('gamesLoading');
     const noRes = document.getElementById('gamesNoResult');
     const count = document.getElementById('gamesCount');
 
@@ -511,7 +512,7 @@
         <a class="game-guide-card" href="${g.link || '#'}">
           <div class="game-guide-img">
             <img src="${g.thumbnail || 'Images/FinalLogo.png'}" alt="${g.title}" style="width:100%; height:100%; object-fit:cover;">
-            <span class="game-guide-diff ${g.difficulty || 'easy'}">${g.difficulty || 'easy'}</span>
+            <span class="game-guide-diff">${g.releaseDate || 'N/A'}</span>
           </div>
           <div class="game-guide-info">
             <span class="game-guide-tag">${(g.category || 'Guide').toUpperCase()}</span>
@@ -527,29 +528,39 @@
     });
   }
 
-  // ── SEARCH FUNCTIONALITY ──
   function filterGames(query) {
     const q = query.toLowerCase().trim();
     if (!q) return renderGames(GAME_GUIDES);
-    
-    const filtered = GAME_GUIDES.filter(g => 
-      (g.title && g.title.toLowerCase().includes(q)) || 
+    const filtered = GAME_GUIDES.filter(g =>
+      (g.title       && g.title.toLowerCase().includes(q)) ||
       (g.description && g.description.toLowerCase().includes(q)) ||
-      (g.desc && g.desc.toLowerCase().includes(q)) ||
-      (g.category && g.category.toLowerCase().includes(q)) ||
-      (g.tags && g.tags.some(tag => tag.toLowerCase().includes(q)))
+      (g.desc        && g.desc.toLowerCase().includes(q)) ||
+      (g.category    && g.category.toLowerCase().includes(q)) ||
+      (g.tags        && g.tags.some(tag => tag.toLowerCase().includes(q)))
     );
     renderGames(filtered);
   }
 
-  // ── INIT ──
   document.addEventListener('DOMContentLoaded', () => {
     loadGameGuides();
 
     const searchInput = document.getElementById('gameGuideSearch');
     if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        filterGames(this.value);
+      searchInput.addEventListener('input', function() { filterGames(this.value); });
+    }
+
+    // ── DROPDOWN TOGGLE ──
+    const dropdown = document.getElementById('codesDropdown');
+    const btn      = document.getElementById('codesBtn');
+
+    if (dropdown && btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+      });
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) dropdown.classList.remove('active');
       });
     }
   });
