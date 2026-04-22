@@ -417,10 +417,10 @@
     "name": "Build an Arcade",
     "image": "Images/Build an Arcade.webp",
     "url": "roblox/build-an-arcade",
-    "lastupdate": "2026-03-07T12:00",
+    "lastupdate": "2026-04-21T12:00",
     "tooltip": "Build your dream arcade from scratch and score free VIP Customers, Prismatic Potions, and Luck Potions in Build an Arcade — high-rollers who spend big are just a code away.",
     "rewards": "VIP Customers, Prismatic Potions, Luck Potions",
-    "activeCodes": 9
+    "activeCodes": 16
   },
   {
     "name": "Build a Tower to Jump",
@@ -852,16 +852,16 @@
   "lastupdate": "2026-04-15T12:00",
   "tooltip": "Free Scrolls and Rerolls to unlock powerful Cursed Techniques and Weapons faster — redeem all working Sorcerer Incremental codes before they expire.",
   "rewards": "Scrolls, Rerolls, Technique Rolls, Weapon Rolls",
-  "activeCodes": 34
+  "activeCodes": 37
   },
   {
   "name": "Anime Leveling",
   "image": "Images/AnimeLeveling.webp",
   "url": "roblox/anime-leveling",
-  "lastupdate": "2026-04-16T12:00",
+  "lastupdate": "2026-04-21T20:50",
   "tooltip": "Free Potions and Gems to hatch powerful units and unlock new worlds faster — redeem all working Anime Leveling codes before they expire.",
   "rewards": "Potions, Gems",
-  "activeCodes": 2
+  "activeCodes": 9
   },
   {
     "name": "Hood Wars",
@@ -1362,10 +1362,10 @@
   "name": "Anime Crash",
   "image": "Images/AnimeCrash.webp",
   "url": "roblox/anime-crash",
-  "lastupdate": "2026-04-17T12:08",
+  "lastupdate": "2026-04-21T12:08",
   "tooltip": "Redeem Anime Crash codes for free Shards, Coins, Potions, Keys, Tokens, and special items to boost your progression, unlock champions, and progress faster in battles.",
   "rewards": "Shards, Coins, Potions, Keys, Tokens, Skill Items",
-  "activeCodes": 13
+  "activeCodes": 12
   },
   {
   "name": "Dice Rolling Incremental",
@@ -1542,10 +1542,10 @@
   "name": "Project Mirror Labyrinth",
   "image": "Images/ProjectMirrorLabyrinth.webp",
   "url": "roblox/project-mirror-labyrinth",
-  "lastupdate": "2026-04-15T12:00",
+  "lastupdate": "2026-04-21T12:00",
   "tooltip": "Redeem working codes for free Fragments and Seed of Lights in Project Mirror Labyrinth Roblox.",
   "rewards": "Fragments, Seed of Lights, EGO Tickets",
-  "activeCodes": 12
+  "activeCodes": 15
 },
 {
   "name": "TV Defense",
@@ -1825,6 +1825,87 @@
   "tooltip": "Redeem working codes for free Prismatic Potions and Ragers in Build a Candy Shop Roblox.",
   "rewards": "Prismatic Potions, Ragers",
   "activeCodes": 2
+},
+{
+  "name": "Heroes World",
+  "image": "Images/HeroesWorld.webp",
+  "url": "roblox/heroes-world",
+  "lastupdate": "2026-04-20T12:20:00Z",
+  "tooltip": "Redeem working codes for free Cash, Spins, and Fragments in Heroes World Roblox.",
+  "rewards": "Cash, Money, Legendary Spins, Epic Spins, Rare Spins, Wheel Spins, Star Fragments, EXP Boosts, Cash Boosts",
+  "activeCodes": 25
+},
+{
+  "name": "Swerve",
+  "image": "Images/Swerve.webp",
+  "url": "roblox/swerve",
+  "lastupdate": "2026-04-21T00:00:00Z",
+  "tooltip": "Redeem working codes for free Cash and Cars in Swerve Roblox.",
+  "rewards": "Cash, Free Cars, Maybach S850, GT3RS 992, Freebies",
+  "activeCodes": 5
+},
+{
+  "name": "World Fighters",
+  "image": "Images/WorldFighters.webp",
+  "url": "roblox/world-fighters",
+  "lastupdate": "2026-04-21T00:00:00Z",
+  "tooltip": "Redeem working codes for free Freebies, Potions, Gems, Saiyan Keys, and Dragon Ball Tokens in World Fighters Roblox.",
+  "rewards": "Freebies, Potions, Gems, Saiyan Keys, Dragon Ball Tokens, Gadi Jetpack Mount, Yen, Boosts, Powers",
+  "activeCodes": 27
+},
+{
+  "name": "Bite By Night",
+  "image": "Images/BiteByNight.webp",
+  "url": "roblox/bite-by-night",
+  "lastupdate": "2026-04-21T12:12:22Z",
+  "tooltip": "Redeem working codes for free Scrap and Freebies in Bite By Night Roblox.",
+  "rewards": "Scrap, Freebies",
+  "activeCodes": 3
+},
+{
+  "name": "Tiny Empires",
+  "image": "Images/TinyEmpires.webp",
+  "url": "roblox/tiny-empires",
+  "lastupdate": "2026-04-21T13:20:00Z",
+  "tooltip": "Redeem working codes for free Gold and Super Farms in Tiny Empires Roblox.",
+  "rewards": "Gold, Super Farms, Freebies",
+  "activeCodes": 5
+},
+{
+  "name": "Massacre",
+  "image": "Images/Massacre.webp",
+  "url": "roblox/massacre",
+  "lastupdate": "2026-04-21T00:00:00Z",
+  "tooltip": "Redeem working codes for Freebies, Credits, and Perk Crates in Massacre Roblox.",
+  "rewards": "Freebies, Credits, Perk Crates, Temp Game Passes, Emotes, Skins",
+  "activeCodes": 56
+},
+{
+  "name": "Build Your Gym",
+  "image": "Images/BuildYourGym.webp",
+  "url": "roblox/build-your-gym",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Money, Boxes, and NPC Coaches in Build Your Gym Roblox.",
+  "rewards": "Money, Money Boost, Magma Box, Basic Box, Aywen Coach, Boxes, NPC Coaches",
+  "activeCodes": 4
+},
+{
+  "name": "Catch A Baddie",
+  "image": "Images/CatchABaddie.webp",
+  "url": "roblox/catch-a-baddie",
+  "lastupdate": "2026-04-22T00:00:00Z",
+  "tooltip": "Redeem working codes for free Prismatic Potions, Gems, and Cash in Catch A Baddie Roblox.",
+  "rewards": "Prismatic Potions, Gems, Cash",
+  "activeCodes": 4
+},
+{
+  "name": "Bus Master",
+  "image": "Images/BusMaster.webp",
+  "url": "roblox/bus-master",
+  "lastupdate": "2026-04-22T00:00:00Z",
+  "tooltip": "Redeem working codes for free Cash in Bus Master Roblox.",
+  "rewards": "Cash",
+  "activeCodes": 1
 }
 
 ]
