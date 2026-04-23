@@ -1906,6 +1906,15 @@
   "tooltip": "Redeem working codes for free Cash in Bus Master Roblox.",
   "rewards": "Cash",
   "activeCodes": 1
+},
+{
+  "name": "Primal Pursuit",
+  "image": "Images/PrimalPursuit.webp",
+  "url": "roblox/primal-pursuit",
+  "lastupdate": "2026-04-22T00:00:00Z",
+  "tooltip": "Redeem working codes for free Bones, Hot Rods, and Exclusive Skins in Primal Pursuit Roblox.",
+  "rewards": "Bones, Patriot Hot Rod, Special Unreleased Skin, Nebula ATV Skin, Free Hot Rod Vehicle",
+  "activeCodes": 16
 }
 
 ]
