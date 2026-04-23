@@ -380,11 +380,11 @@
   </a>
   <div class="header-search">
     <div class="search-shell">
-      <input id="globalSearch" type="text" placeholder="Search Roblox Code" autocomplete="off">
-      <button class="clear-btn" type="button" onclick="clearGlobalSearch()">✕</button>
+        <input id="globalSearch" type="text" placeholder="Search Roblox Code" autocomplete="off" />
+        <button class="clear-btn" type="button" onclick="clearGlobalSearch()" aria-label="Clear">✕</button>
+        <div id="searchSuggestions" class="suggestions" aria-label="Search Suggestions"></div>
+      </div>
     </div>
-    <div id="searchSuggestions" class="suggestions"></div>
-  </div>
   <div class="header-actions">
     <div id="codesDropdown" class="nav-dropdown">
       <a href="../gamecode" id="codesBtn" class="mini-btn">Codes</a>
