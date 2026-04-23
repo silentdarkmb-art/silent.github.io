@@ -7,7 +7,7 @@
   <meta name="description" content="Contact BLOXBURST — send us a message for code corrections, suggestions, or partnership inquiries. We respond as fast as we can." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="BLOXBURST" />
-  <link rel="canonical" href="https://bloxburst.com/Terms-and-Condition/contactus.html" />
+  <link rel="canonical" href="https://bloxburst.com/Terms-and-Condition/contactus" />
   <meta property="og:title" content="Contact Us - BLOXBURST" />
   <meta property="og:description" content="Get in touch with the BLOXBURST team for code corrections, suggestions, or partnerships." />
   <meta property="og:type" content="website" />
@@ -29,9 +29,6 @@
     *, *::before, *::after { box-sizing: border-box; }
     body { font-family: 'Nunito', sans-serif; overflow-x: hidden; }
 
-    /* ============================================
-       HEADER — BULLETPROOF
-    ============================================ */
     body.subpage .main-header {
       position: static !important;
       display: flex !important;
@@ -116,9 +113,6 @@
       }
     }
 
-    /* ============================================
-       BACKGROUND MESH
-    ============================================ */
     .contact-bg-mesh {
       position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
     }
@@ -159,9 +153,6 @@
       background-size: 60px 60px;
     }
 
-    /* ============================================
-       PAGE CONTAINER
-    ============================================ */
     .contact-page {
       position: relative; z-index: 1;
       width: min(1000px, 92%);
@@ -169,9 +160,6 @@
       padding: 0 0 100px;
     }
 
-    /* ============================================
-       HERO
-    ============================================ */
     .contact-hero {
       position: relative;
       text-align: center;
@@ -189,7 +177,6 @@
       pointer-events: none;
     }
 
-    /* ✅ FIX: hero-float base styles */
     .hero-float {
       position: absolute;
       font-family: 'Fredoka', sans-serif;
@@ -199,13 +186,6 @@
       animation: hero-float-anim ease-in-out infinite;
     }
 
-    /*
-      ✅ BUG FIX: Original code used nth-child(2) through nth-child(5)
-      but the hero-float divs are children 1–4 of .contact-hero.
-      The 1st child (@) had NO position defined → appeared at top:0 left:0
-      as a ghost icon on the left side of the page.
-      Fixed: renumbered to nth-child(1) through nth-child(4).
-    */
     .hero-float:nth-child(1) { top: 15%; left: 4%;  font-size: 48px; color: rgba(125,92,255,0.12); animation-duration: 7s;  animation-delay: 0s;  }
     .hero-float:nth-child(2) { top: 60%; left: 2%;  font-size: 28px; color: rgba(0,255,136,0.10);   animation-duration: 9s;  animation-delay: 2s;  }
     .hero-float:nth-child(3) { top: 20%; right: 4%; font-size: 36px; color: rgba(0,255,136,0.10);   animation-duration: 8s;  animation-delay: 1s;  }
@@ -258,9 +238,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ============================================
-       STATS ROW
-    ============================================ */
     .stats-row {
       display: flex; align-items: center; justify-content: center;
       gap: 0; margin: 36px 0 48px;
@@ -297,9 +274,6 @@
       .stat-item { padding: 0; }
     }
 
-    /* ============================================
-       EMAIL SPOTLIGHT CARD
-    ============================================ */
     .email-card {
       position: relative;
       background: linear-gradient(145deg, rgba(21,26,77,0.92), rgba(28,34,102,0.82));
@@ -420,9 +394,6 @@
       animation: blink-dot 2s infinite;
     }
 
-    /* ============================================
-       3 REASON CARDS
-    ============================================ */
     .contact-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -509,9 +480,6 @@
     .c1 .card-tag { background: rgba(125,92,255,0.10); border-color: rgba(125,92,255,0.25); color: rgba(180,160,255,0.9); }
     .c3 .card-tag { background: rgba(99,179,237,0.10); border-color: rgba(99,179,237,0.25); color: rgba(150,200,240,0.9); }
 
-    /* ============================================
-       BOTTOM CTA BAND
-    ============================================ */
     .contact-cta {
       position: relative;
       background: linear-gradient(135deg, rgba(21,26,77,0.88), rgba(28,34,102,0.70));
@@ -586,17 +554,11 @@
       .email-pill { font-size: 14px; padding: 12px 22px; }
     }
 
-    /* ============================================
-       ANIMATIONS
-    ============================================ */
     @keyframes fade-up {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ============================================
-       COPY TOAST
-    ============================================ */
     .copy-toast {
       position: fixed; bottom: 30px; left: 50%;
       transform: translateX(-50%) translateY(20px);
@@ -627,7 +589,7 @@
 
   <!-- HEADER -->
   <header class="main-header">
-    <a href="../index.html" class="logo">
+    <a href="../" class="logo">
       <img src="../Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
     </a>
     <div class="header-search">
@@ -639,13 +601,13 @@
     </div>
     <div class="header-actions">
       <div class="nav-dropdown" id="codesDropdown">
-        <a href="../gamecode.html" class="mini-btn" id="codesBtn">Codes</a>
+        <a href="../gamecode" class="mini-btn" id="codesBtn">Codes</a>
         <div class="nav-menu" id="codesMenu">
-          <a class="nav-item" href="../gamecode.html">Game Codes</a>
-          <a class="nav-item" href="../promo-latest-codes.html">Promo Codes</a>
+          <a class="nav-item" href="../gamecode">Game Codes</a>
+          <a class="nav-item" href="../promo-latest-codes">Promo Codes</a>
         </div>
       </div>
-      <a href="../wiki.html" class="mini-btn">Wiki</a>
+      <a href="../wiki" class="mini-btn">Wiki</a>
     </div>
   </header>
 
@@ -655,12 +617,6 @@
 
       <!-- HERO -->
       <div class="contact-hero">
-        <!--
-          ✅ FIX: These 4 hero-float divs are children 1–4 of .contact-hero.
-          CSS now uses nth-child(1)–(4) to match. Previously nth-child(2)–(5)
-          left the "@" (child 1) with position:absolute but no coordinates,
-          causing it to appear as a ghost icon at the top-left of the page.
-        -->
         <div class="hero-float">@</div>
         <div class="hero-float">✉</div>
         <div class="hero-float">💬</div>
@@ -707,8 +663,8 @@
         <p>Click below to copy our email or tap to open your mail app directly.</p>
 
         <div class="email-pill-wrap">
-          <a class="email-pill" onclick="copyEmail(event)" href="/cdn-cgi/l/email-protection#5c1e3033243e292e2f28133a3a353f353d301c3b313d3530723f3331">
-            📧 <span class="__cf_email__" data-cfemail="0a48666572687f78797e456c6c6369636b664a6d676b636624696567">BloxburstOfficial@gmail.com&#160;</span>
+          <a class="email-pill" onclick="copyEmail(event)" href="#">
+            📧 BloxburstOfficial@gmail.com&#160;
             <span class="email-pill-badge">TAP TO COPY</span>
           </a>
         </div>
@@ -761,8 +717,8 @@
           <p>Browse hundreds of verified, working codes across your favorite Roblox games.</p>
         </div>
         <div class="contact-cta-btns">
-          <a class="cta-btn-primary" href="../gamecode.html">🎮 Game Codes</a>
-          <a class="cta-btn-secondary" href="../promo-latest-codes.html">🎟️ Promo Codes</a>
+          <a class="cta-btn-primary" href="../gamecode">🎮 Game Codes</a>
+          <a class="cta-btn-secondary" href="../promo-latest-codes">🎟️ Promo Codes</a>
         </div>
       </div>
 
@@ -784,20 +740,20 @@
     </div>
       <div class="footer-col">
         <h4>Navigation</h4>
-        <a href="../gamecode.html">Game Codes</a>
-        <a href="../promo-latest-codes.html">Promo Codes</a>
-        <a href="../wiki.html">Wiki</a>
+        <a href="../gamecode">Game Codes</a>
+        <a href="../promo-latest-codes">Promo Codes</a>
+        <a href="../wiki">Wiki</a>
       </div>
       <div class="footer-col">
         <h4>More</h4>
-        <a href="about.html">About Us</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contactus.html">Contact Us</a>
+        <a href="about">About Us</a>
+        <a href="faq">FAQ</a>
+        <a href="contactus">Contact Us</a>
       </div>
       <div class="footer-col">
         <h4>Policies</h4>
-        <a href="terms.html">Terms of Use</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms">Terms of Use</a>
+        <a href="privacy">Privacy Policy</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -806,7 +762,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     function copyEmail(e) {
       e.preventDefault();
       navigator.clipboard.writeText('BloxburstOfficial@gmail.com').then(function() {
