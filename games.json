@@ -1614,10 +1614,10 @@
   "name": "My Knife Farm",
   "image": "Images/MyKnifeFarm.webp",
   "url": "roblox/my-knife-farm",
-  "lastupdate": "2026-04-16T12:00",
+  "lastupdate": "2026-04-22T12:00",
   "tooltip": "Redeem working codes for free Gems and Boosts in My Knife Farm Roblox.",
   "rewards": "Gems, Cash Boost, Multipliers",
-  "activeCodes": 2
+  "activeCodes": 4
 },
 {
   "name": "Be a Brainrot",
@@ -1942,6 +1942,24 @@
   "tooltip": "Redeem working codes for free Gems, Trait Rerolls, and Freebies in Anime Guardians Roblox.",
   "rewards": "Gems, Freebies, Trait Rerolls, Artifact Trait Rerolls, Snowflakes, Reroll Tokens",
   "activeCodes": 130
+},
+{
+  "name": "Chasing Immortality",
+  "image": "Images/ChasingImmortality.webp",
+  "url": "roblox/chasing-immortality",
+  "lastupdate": "2026-04-22T00:00:00Z",
+  "tooltip": "Redeem working codes for free Soul Fragments, Heavens Pill, and RP in Chasing Immortality Roblox.",
+  "rewards": "Soul Fragments, Heavens Pill, RP",
+  "activeCodes": 11
+},
+{
+  "name": "Hunty Zombie",
+  "image": "Images/HuntyZombie.webp",
+  "url": "roblox/hunty-zombie",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Freebies in Hunty Zombie Roblox.",
+  "rewards": "Freebies",
+  "activeCodes": 94
 }
 
 ]
