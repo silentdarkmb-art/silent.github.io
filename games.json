@@ -795,10 +795,10 @@
     "name": "Arise Shadow Hunt",
     "image": "Images/Arise-Shadow Hunt.webp",
     "url": "roblox/arise-shadow-hunt",
-    "lastupdate": "2026-04-16T12:00",
+    "lastupdate": "2026-04-23T00:00",
     "tooltip": "Hunt stronger shadows from the start — these Arise Shadow Hunt codes pack in free Gems, Spins, and Potions.",
     "rewards": "Gems, Spins, Potions",
-    "activeCodes": 22
+    "activeCodes": 23
   },
   {
     "name": "Fabled Legacy! RPG",
@@ -1164,10 +1164,10 @@
     "name": "Reborn As SkillMaster",
     "image": "Images/RebornAsSkillMaster.webp",
     "url": "roblox/reborn-as-skillmaster",
-    "lastupdate": "2026-04-16T12:00",
+    "lastupdate": "2026-04-23T00:00",
     "tooltip": "Get free Potions and Freebies with these Reborn As SkillMaster codes — train hard and unlock new skills in this anime adventure!",
     "rewards": "Potions, Freebies",
-    "activeCodes": 29
+    "activeCodes": 30
   },
   {
     "name": "Realistic Car Driving",
@@ -1960,6 +1960,42 @@
   "tooltip": "Redeem working codes for free Freebies in Hunty Zombie Roblox.",
   "rewards": "Freebies",
   "activeCodes": 94
+},
+{
+  "name": "Plane Crash Simulator",
+  "image": "Images/PlaneCrashSimulator.webp",
+  "url": "roblox/plane-crash-simulator",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Crash Points in Plane Crash Simulator Roblox.",
+  "rewards": "Crash Points",
+  "activeCodes": 3
+},
+{
+  "name": "Pirate Piece",
+  "image": "Images/PiratePiece.webp",
+  "url": "roblox/pirate-piece",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Coins, Chests, Gems, and Crates in Pirate Piece Roblox.",
+  "rewards": "Coins, Chests, Gems, Crates, Epic Chests, Aura Crate",
+  "activeCodes": 8
+},
+{
+  "name": "Lineage Piece",
+  "image": "Images/LineagePiece.webp",
+  "url": "roblox/lineage-piece",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Cash, Gems, Reroll Essence, and Trait Rerolls in Lineage Piece Roblox.",
+  "rewards": "Cash, Gems, Reroll Essence, Trait Rerolls, Rerolls",
+  "activeCodes": 5
+},
+{
+  "name": "Death in the Box",
+  "image": "Images/DeathInTheBox.webp",
+  "url": "roblox/death-in-the-box",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Cash and Wheel Spins in Death in the Box Roblox.",
+  "rewards": "Cash, Wheel Spins",
+  "activeCodes": 1
 }
 
 ]

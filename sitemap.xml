@@ -282,7 +282,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/arise-shadow-hunt</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -637,6 +637,12 @@
   <url>
     <loc>https://bloxburst.com/roblox/death-ball</loc>
     <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/death-in-the-box</loc>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1013,6 +1019,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/lineage</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/lost-currents</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -1133,6 +1145,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/pirate-piece</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/plane-crash-simulator</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/plant-brainrot-simulator</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -1188,7 +1212,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/reborn-as-skillmaster</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
