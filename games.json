@@ -606,10 +606,10 @@
     "name": "Forgotten",
     "image": "Images/Forgotten.webp",
     "url": "roblox/forgotten",
-    "lastupdate": "2026-02-22T19:00",
+    "lastupdate": "2026-04-22T00:00",
     "tooltip": "Don't leave these Forgotten codes behind — claim your free Cash and get back into the fight.",
     "rewards": "Cash",
-    "activeCodes": 11
+    "activeCodes": 12
   },
   {
     "name": "A Universal Time",
@@ -1344,10 +1344,10 @@
     "name": "Card Shop Friends",
     "image": "Images/CardShopFriends.webp",
     "url": "roblox/card-shop-friends",
-    "lastupdate": "2026-04-14T03:38",
+    "lastupdate": "2026-04-22T03:38",
     "tooltip": "Get free rewards and boosts with these Card Shop Friends codes — build your shop, collect cards, and grow your business with friends!",
     "rewards": "Boosts, Coins, Cards",
-    "activeCodes": 5
+    "activeCodes": 7
   },
   {
   "name": "Clover Origins",
@@ -1915,6 +1915,33 @@
   "tooltip": "Redeem working codes for free Bones, Hot Rods, and Exclusive Skins in Primal Pursuit Roblox.",
   "rewards": "Bones, Patriot Hot Rod, Special Unreleased Skin, Nebula ATV Skin, Free Hot Rod Vehicle",
   "activeCodes": 16
+},
+{
+  "name": "RoCast Online",
+  "image": "Images/RoCast Online.webp",
+  "url": "roblox/rocast-online",
+  "lastupdate": "2026-04-22T00:00:00Z",
+  "tooltip": "Redeem working codes for free Spins, Stat Points, and Coins in RoCast Online Roblox.",
+  "rewards": "Spins, Stat Points, Coins, 2x Drop Rate, 2x Coins, 2x EXP, Character Slots, Sub-element Spins",
+  "activeCodes": 10
+},
+{
+  "name": "Block Tales Tower Defense",
+  "image": "Images/BlockTalesTowerDefense.webp",
+  "url": "roblox/block-tales-tower-defense",
+  "lastupdate": "2026-04-22T00:00:00Z",
+  "tooltip": "Redeem working codes for free Cash and Freebies in Block Tales Tower Defense Roblox.",
+  "rewards": "Cash, Freebies",
+  "activeCodes": 5
+},
+{
+  "name": "Anime Guardians",
+  "image": "Images/AnimeGuardians.webp",
+  "url": "roblox/anime-guardians",
+  "lastupdate": "2026-04-22T00:00:00Z",
+  "tooltip": "Redeem working codes for free Gems, Trait Rerolls, and Freebies in Anime Guardians Roblox.",
+  "rewards": "Gems, Freebies, Trait Rerolls, Artifact Trait Rerolls, Snowflakes, Reroll Tokens",
+  "activeCodes": 130
 }
 
 ]
