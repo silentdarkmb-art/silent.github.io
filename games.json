@@ -435,10 +435,10 @@
     "name": "Anime Eternal",
     "image": "Images/Anime Eternal.webp",
     "url": "roblox/anime-eternal",
-    "lastupdate": "2026-04-15T10:00",
+    "lastupdate": "2026-04-24T08:00:00Z",
     "tooltip": "Power up with free Potions and Credits in Anime Eternal — give your roster the boost it needs.",
     "rewards": "Potions, Credits",
-    "activeCodes": 24
+    "activeCodes": 31
   },
   {
   "name": "Build a Brainrot Farm",
@@ -1641,10 +1641,10 @@
   "name": "Anime Power League",
   "image": "Images/AnimePowerLeague.webp",
   "url": "roblox/anime-power-league",
-  "lastupdate": "2026-04-17T00:00:00Z",
+  "lastupdate": "2026-04-24T07:00:00Z",
   "tooltip": "Redeem working codes for free Tokens in Anime Power League Roblox.",
   "rewards": "Tokens, Base Tokens",
-  "activeCodes": 3
+  "activeCodes": 8
 },
 {
   "name": "Bugmon",
