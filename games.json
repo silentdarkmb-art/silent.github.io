@@ -1996,6 +1996,15 @@
   "tooltip": "Redeem working codes for free Cash and Wheel Spins in Death in the Box Roblox.",
   "rewards": "Cash, Wheel Spins",
   "activeCodes": 1
+},
+{
+  "name": "+1 Slayer Blade",
+  "image": "Images/1SlayerBlade.webp",
+  "url": "roblox/1-slayer-blade",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Magic Scrolls, Potions, Emblems, and Quirk Books in +1 Slayer Blade Roblox.",
+  "rewards": "Magic Scrolls, Gold +100% Potions, Eggshells, Quirk Books, +100 Damage Potions, Snow, +2 Luck Potions, +100% Damage Potions, +100% Power Potions, +100% Gold Potions, Common Emblems, Rare Emblems, Epic Emblems, Legendary Emblems, Mythical Emblems, Quirk 1 Books",
+  "activeCodes": 90
 }
 
 ]
