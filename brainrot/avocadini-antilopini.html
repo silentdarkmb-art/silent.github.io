@@ -150,8 +150,8 @@
   }
   </script>
 
-  <link rel="icon" type="image/png" href="../../Images/FinalLogo.png">
-  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" type="image/png" href="/Images/FinalLogo.png">
+  <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
@@ -162,7 +162,7 @@
     gtag('config', 'G-ELF86MPP23', { 'anonymize_ip': true });
   </script>
 
-  <script defer src="../../script.js"></script>
+  <script defer src="/script.js"></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -622,8 +622,8 @@
 
 <!-- HEADER -->
 <header class="main-header">
-  <a href="../../Game-Wiki/steal-a-brainrot" class="logo">
-    <img src="../../Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
+  <a href="/Game-Wiki/steal-a-brainrot" class="logo">
+    <img src="/Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
   </a>
   <div class="brainrot-search-wrap">
     <div class="brainrot-search-shell">
@@ -635,15 +635,15 @@
     <div class="brainrot-suggestions" id="brainrotSuggestions"></div>
   </div>
   <div class="header-actions">
-    <a href="guides" class="nav-box nav-link">Guides</a>
+    <a href="/guides" class="nav-box nav-link">Guides</a>
     <div id="codesDropdown" class="nav-dropdown">
-      <a href="../../gamecode" id="codesBtn" class="mini-btn">Codes</a>
+      <a href="/gamecode" id="codesBtn" class="mini-btn">Codes</a>
       <div class="nav-menu">
-        <a class="nav-item" href="../../gamecode">Game Codes</a>
-        <a class="nav-item" href="../../promo-latest-codes">Promo Codes</a>
+        <a class="nav-item" href="/gamecode">Game Codes</a>
+        <a class="nav-item" href="/promo-latest-codes">Promo Codes</a>
       </div>
     </div>
-    <a href="../../wiki" class="mini-btn">Wiki</a>
+    <a href="/wiki" class="mini-btn">Wiki</a>
   </div>
 </header>
 
@@ -651,14 +651,14 @@
 <div class="page-wrap">
 
   <!-- BACK LINK -->
-  <a class="back-link" href="../../Game-Wiki/steal-a-brainrot">← Back to Steal A Brainrots Wiki</a>
+  <a class="back-link" href="/Game-Wiki/steal-a-brainrot">← Back to Steal A Brainrots Wiki</a>
 
   <!-- ══════════════════════════════════════
        HERO
   ══════════════════════════════════════ -->
   <div class="brainrot-hero">
     <div class="hero-img-wrap">
-      <img src="../../Images/AvocadiniAntilopini.webp" alt="Avocadini Antilopini brainrot Roblox">
+      <img src="/Images/AvocadiniAntilopini.webp" alt="Avocadini Antilopini brainrot Roblox">
     </div>
     <div class="hero-info">
       <div class="hero-rarity"><span class="hero-rarity-dot"></span>🟣 Epic Rarity</div>
@@ -836,7 +836,7 @@
     </div>
     <div class="gallery-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="../../Images/AvocadiniAntilopini-1.webp" alt="Avocadini Antilopini screenshot 1" loading="lazy"
+        <img src="/Images/AvocadiniAntilopini-1.webp" alt="Avocadini Antilopini screenshot 1" loading="lazy"
           onerror="this.parentNode.classList.add('img-placeholder')">
         <div class="gallery-overlay"><span>🔍 View</span></div>
       </div>
@@ -879,21 +879,21 @@
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
-      <a href="../guides">Guides</a>
-      <a href="gamecode">Game Codes</a>
-      <a href="promo-latest-codes">Promo Codes</a>
-      <a href="wiki">Wiki</a>
+      <a href="/guides">Guides</a>
+      <a href="/gamecode">Game Codes</a>
+      <a href="/promo-latest-codes">Promo Codes</a>
+      <a href="/wiki">Wiki</a>
     </div>
     <div class="footer-col">
       <h4>More</h4>
-      <a href="Terms-and-Condition/about">About Us</a>
-      <a href="Terms-and-Condition/faq">FAQ</a>
-      <a href="Terms-and-Condition/contactus">Contact Us</a>
+      <a href="/Terms-and-Condition/about">About Us</a>
+      <a href="/Terms-and-Condition/faq">FAQ</a>
+      <a href="/Terms-and-Condition/contactus">Contact Us</a>
     </div>
     <div class="footer-col">
       <h4>Policies</h4>
-      <a href="Terms-and-Condition/terms">Terms of Use</a>
-      <a href="Terms-and-Condition/privacy">Privacy Policy</a>
+      <a href="/Terms-and-Condition/terms">Terms of Use</a>
+      <a href="/Terms-and-Condition/privacy">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -924,7 +924,7 @@
       console.warn('⚠️ brainrots.json fetch failed:', e.message);
       // FALLBACK: try relative path (for local dev)
       try {
-        const res2 = await fetch('../brainrot.json');
+        const res2 = await fetch('/brainrot.json');
         if (!res2.ok) throw new Error('HTTP ' + res2.status);
         const data2 = await res2.json();
         if (!Array.isArray(data2) || data2.length === 0) throw new Error('Empty JSON');
@@ -933,7 +933,7 @@
       } catch(e2) {
         console.warn('⚠️ Relative path also failed, trying wiki HTML:', e2.message);
         try {
-          const res3 = await fetch('../../Game-Wiki/steal-a-brainrot');
+          const res3 = await fetch('/Game-Wiki/steal-a-brainrot');
           if (!res3.ok) throw new Error('HTTP ' + res3.status);
           const html = await res3.text();
           const parser = new DOMParser();
@@ -958,7 +958,7 @@
               if (!nameEl || !imgEl) return;
               const name   = nameEl.textContent.trim();
               const rawImg = imgEl.getAttribute('src') || '';
-              const imgSrc = rawImg.startsWith('../Images/') ? rawImg.replace('../Images/', '../../Images/') : rawImg;
+              const imgSrc = rawImg.startsWith('/Images/') ? rawImg.replace('/Images/', '/Images/') : rawImg;
               const url = card.getAttribute('href') || '';
               if (name && imgSrc && url) brainrotData.push({ name, rarity, img: imgSrc, url });
             });

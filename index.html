@@ -290,23 +290,17 @@
         <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img" fetchpriority="high">
       </a>
       <div class="top-nav">
-
-        <!-- Existing: Wiki Link -->
-  <a href="guides" class="nav-box nav-link">Guides</a>
-        
-  <!-- Existing: Codes Dropdown -->
-  <div class="nav-dropdown" id="codesDropdown">
-    <a href="gamecode" class="mini-btn" id="codesBtn">Codes</a>
-    <div class="nav-menu" id="codesMenu">
-      <a class="nav-item" href="gamecode">Game Codes</a>
-      <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
+        <a href="guides" class="nav-box nav-link">Guides</a>
+        <div class="nav-dropdown" id="codesDropdown">
+          <a href="gamecode" class="mini-btn" id="codesBtn">Codes</a>
+          <div class="nav-menu" id="codesMenu">
+            <a class="nav-item" href="gamecode">Game Codes</a>
+            <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
+          </div>
+        </div>
+        <a href="wiki" class="nav-box nav-link">Wiki</a>
+      </div>
     </div>
-  </div>
-
-  <!-- Existing: Wiki Link -->
-  <a href="wiki" class="nav-box nav-link">Wiki</a>
-  
-</div>
 
     <h1 class="hero-title">🔍Search Roblox Games</h1>
 
@@ -319,35 +313,35 @@
     </div>
 
     <!-- STATS COUNTER -->
+    <!-- ✅ Hard-coded numbers para makita ng Google/AI crawlers -->
+    <!-- ✅ JS animation mag-o-override ito para sa real users -->
     <section class="stats-section">
       <p class="stats-title">📊 BLOXBURST Stats</p>
       <div class="stats-grid">
         <div class="stat-card">
           <span class="stat-icon">🎮</span>
-          <div class="stat-number" data-target="500" data-suffix="+">0</div>
+          <div class="stat-number" data-target="500" data-suffix="+">500+</div>
           <div class="stat-label">Games Tracked</div>
         </div>
         <div class="stat-card">
           <span class="stat-icon">🔑</span>
-          <div class="stat-number" data-target="1200" data-suffix="+">0</div>
+          <div class="stat-number" data-target="1200" data-suffix="+">1,200+</div>
           <div class="stat-label">Active Codes</div>
         </div>
         <div class="stat-card">
           <span class="stat-icon">✅</span>
-          <div class="stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="stat-number" data-target="100" data-suffix="%">100%</div>
           <div class="stat-label">Manually Verified</div>
         </div>
         <div class="stat-card">
           <span class="stat-icon">⚡</span>
-          <div class="stat-number" data-target="24" data-suffix="h">0</div>
+          <div class="stat-number" data-target="24" data-suffix="h">24h</div>
           <div class="stat-label">Update Frequency</div>
         </div>
       </div>
     </section>
 
     <div class="topGames-text">Top Code Released!</div>
-
-    
 
     <!-- ✅ EMPTY — script.js fills this automatically from games.json -->
     <div class="games-scroll">
@@ -464,9 +458,10 @@
           BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
         </p>
       </div>
+      <!-- ✅ Fixed footer links — removed ../guides, now all consistent -->
       <div class="footer-col">
         <h4>Navigation</h4>
-        <a href="../guides">Guides</a>
+        <a href="guides">Guides</a>
         <a href="gamecode">Game Codes</a>
         <a href="promo-latest-codes">Promo Codes</a>
         <a href="wiki">Wiki</a>
@@ -507,6 +502,7 @@
       }, step);
     }
 
+    // ✅ IntersectionObserver — para sa scroll trigger
     const statsSection = document.querySelector('.stats-section');
     if (statsSection) {
       const observer = new IntersectionObserver((entries) => {
@@ -516,9 +512,14 @@
             observer.disconnect();
           }
         });
-      }, { threshold: 0.3 });
+      }, { threshold: 0.1 });
       observer.observe(statsSection);
     }
+
+    // ✅ window.load fallback — para mag-animate agad kahit visible na agad ang stats
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.stat-number').forEach(animateCounter);
+    });
   </script>
 
 </body>
