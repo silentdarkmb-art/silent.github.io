@@ -1665,15 +1665,6 @@
   "activeCodes": 25
 },
 {
-  "name": "Dungeon Lootr",
-  "image": "Images/DungeonLootr.webp",
-  "url": "roblox/dungeon-lootr",
-  "lastupdate": "2026-04-17T12:03",
-  "tooltip": "Redeem working codes for free Stars, Forge Stones, and Blessings in Dungeon Lootr Roblox.",
-  "rewards": "Stars, Forge Stones, Reforge Stones, Random GM Blessings, Boss Loot Boxes, Coins",
-  "activeCodes": 12
-},
-{
   "name": "The Cul De Sac",
   "image": "Images/TheCulDeSac.webp",
   "url": "roblox/the-cul-de-sac",
@@ -2014,6 +2005,60 @@
   "tooltip": "Redeem working codes for free Fans, Tickets, and Capacity in Stadium Simulator 2 Roblox.",
   "rewards": "Fans, Tickets, Capacity",
   "activeCodes": 8
+},
+{
+  "name": "My Hello Kitty Cafe",
+  "image": "Images/MyHelloKittyCafe.webp",
+  "url": "roblox/my-hello-kitty-cafe",
+  "lastupdate": "2026-04-24T00:00:00Z",
+  "tooltip": "Redeem working codes for free Gacha Tickets, Diamonds, and Decorations in My Hello Kitty Cafe Roblox.",
+  "rewards": "Gacha Tickets, Diamonds, Pompompurin Mascot, Pompompurin Photo Decoration, Sunflower, Free Rewards, Decorations",
+  "activeCodes": 28
+},
+{
+  "name": "Camo Or Snipe",
+  "image": "Images/CamoOrSnipe.webp",
+  "url": "roblox/camo-or-snipe",
+  "lastupdate": "2026-04-24T01:00:00Z",
+  "tooltip": "Redeem working codes for free Cash and Spins in Camo Or Snipe Roblox.",
+  "rewards": "Cash, Spins",
+  "activeCodes": 1
+},
+{
+  "name": "Launch Your Rocket",
+  "image": "Images/LaunchYourRocket.webp",
+  "url": "roblox/launch-your-rocket",
+  "lastupdate": "2026-04-24T04:00:00Z",
+  "tooltip": "Redeem working codes for free Spins, Money Boosts, and Lucky Crates in Launch Your Rocket Roblox.",
+  "rewards": "Spins, Money Boosts, Chocolate Boosts, Exclusive Tower, Lucky Crates",
+  "activeCodes": 6
+},
+{
+  "name": "Anime Blade Clicker",
+  "image": "Images/AnimeBladeClicker.webp",
+  "url": "roblox/anime-blade-clicker",
+  "lastupdate": "2026-04-24T03:00:00Z",
+  "tooltip": "Redeem working codes for free Potions in Anime Blade Clicker Roblox.",
+  "rewards": "Potions",
+  "activeCodes": 1
+},
+{
+  "name": "Skibidi Masters Tower Defense",
+  "image": "Images/SkibidiMastersTowerDefense.webp",
+  "url": "roblox/skibidi-masters-tower-defense",
+  "lastupdate": "2026-04-24T05:00:00Z",
+  "tooltip": "Redeem working codes for free Cash, Gems, and Unit Spins in Skibidi Masters Tower Defense Roblox.",
+  "rewards": "Cash, Gems, Unit Spins, Skibidi Tokens, Freebies",
+  "activeCodes": 8
+},
+{
+  "name": "Dungeon Lootr",
+  "image": "Images/DungeonLootr.webp",
+  "url": "roblox/dungeon-lootr",
+  "lastupdate": "2026-04-24T07:00:00Z",
+  "tooltip": "Redeem working codes for free Stars, Forge Stones, and Blessings in Dungeon Lootr Roblox.",
+  "rewards": "Stars, Forge Stones, Reforge Stones, Random GM Blessings, Boss Loot Boxes, Coins",
+  "activeCodes": 14
 }
 
 ]
