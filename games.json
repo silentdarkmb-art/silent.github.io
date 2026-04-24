@@ -66,10 +66,10 @@
   "name": "Drive World",
   "image": "Images/Drive-World.webp",
   "url": "roblox/drive-world",
-  "lastupdate": "2026-03-20T12:00",
+  "lastupdate": "2026-03-23T00:00",
   "tooltip": "Race, drift, and grab free Cash, Gold, Wraps, and Cars — these Drive World codes stock your garage before your first lap.",
   "rewards": "Cash, Gold, Wraps, Rims, Cars",
-  "activeCodes": 18
+  "activeCodes": 22
   },
   {
     "name": "Fistborn",
@@ -642,10 +642,10 @@
   "name": "Tensura Incremental",
   "image": "Images/TensuraIncremental.webp",
   "url": "roblox/tensura-incremental",
-  "lastupdate": "2026-04-11T12:00",
+  "lastupdate": "2026-04-23T01:00",
   "tooltip": "Free Race Rerolls, Skill Rolls, and Spirit Rolls to build the perfect monster character faster — redeem all working Tensura Incremental codes before they expire.",
   "rewards": "Race Rerolls, Skill Rolls, Spirit Rolls",
-  "activeCodes": 25
+  "activeCodes": 8
   },
   {
   "name": "Hot's RNG",
@@ -1749,10 +1749,10 @@
   "name": "NFL Universe Football",
   "image": "Images/NFLUniverseFootball.webp",
   "url": "roblox/nfl-universe-football",
-  "lastupdate": "2026-04-17T12:13",
+  "lastupdate": "2026-04-23T00:00",
   "tooltip": "Redeem working codes for free Coins, Tokens, and Boosts in NFL Universe Football Roblox.",
   "rewards": "Coins, Tokens, Stat Boosts, Freebies, XP Boosts",
-  "activeCodes": 28
+  "activeCodes": 29
 },
 {
   "name": "Jujutsu Beatdown",
@@ -2005,6 +2005,15 @@
   "tooltip": "Redeem working codes for free Magic Scrolls, Potions, Emblems, and Quirk Books in +1 Slayer Blade Roblox.",
   "rewards": "Magic Scrolls, Gold +100% Potions, Eggshells, Quirk Books, +100 Damage Potions, Snow, +2 Luck Potions, +100% Damage Potions, +100% Power Potions, +100% Gold Potions, Common Emblems, Rare Emblems, Epic Emblems, Legendary Emblems, Mythical Emblems, Quirk 1 Books",
   "activeCodes": 90
+},
+{
+  "name": "Stadium Simulator 2",
+  "image": "Images/StadiumSimulator2.webp",
+  "url": "roblox/stadium-simulator-2",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Fans, Tickets, and Capacity in Stadium Simulator 2 Roblox.",
+  "rewards": "Fans, Tickets, Capacity",
+  "activeCodes": 8
 }
 
 ]
