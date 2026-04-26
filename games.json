@@ -195,7 +195,7 @@
   "lastupdate": "2026-03-26T12:00",
   "tooltip": "Free Cash to expand your fleet — redeem all working Flight World codes before they expire.",
   "rewards": "Cash",
-  "activeCodes": 2
+  "activeCodes": 6
   },
   {
   "name": "Flashpoint",
@@ -1281,10 +1281,10 @@
     "name": "Blue Lock Card Battles",
     "image": "Images/BlueLockCardBattles.webp",
     "url": "roblox/blue-lock-card-battles",
-    "lastupdate": "2026-04-12T12:21",
+    "lastupdate": "2026-04-25T24:00:00Z",
     "tooltip": "Get free Cash with these Blue Lock Card Battles codes — collect cards, build your ultimate team, and battle your way to the top!",
     "rewards": "Cash, Freebies",
-    "activeCodes": 9
+    "activeCodes": 12
   },
   {
     "name": "Midnight Chasers",
@@ -1326,10 +1326,10 @@
     "name": "Jujutsu Zero",
     "image": "Images/JujutsuZero.webp",
     "url": "roblox/jujutsu-zero",
-    "lastupdate": "2026-04-12T10:11",
+    "lastupdate": "2026-04-25T23:00:00Z",
     "tooltip": "Get free Lumens, Clan Rolls, and XP Vows with these Jujutsu Zero codes — explore the jujutsu world, defeat cursed spirits, and hone your cursed techniques!",
     "rewards": "Lumens, Clan Rolls, XP Vows",
-    "activeCodes": 16
+    "activeCodes": 9
   },
   {
     "name": "Fart Training",
@@ -2158,6 +2158,15 @@
   "tooltip": "Redeem working codes for free Freebies in One Fruit Simulator Roblox.",
   "rewards": "Freebies",
   "activeCodes": 25
+},
+{
+  "name": "Attack on Titan Revolution",
+  "image": "Images/AttackOnTitanRevolution.webp",
+  "url": "roblox/attack-on-titan-revolution",
+  "lastupdate": "2026-04-23T00:00:00Z",
+  "tooltip": "Redeem working codes for free Spins, Potions, Emperor Keys, and Gems in Attack on Titan Revolution Roblox.",
+  "rewards": "Spins, 2x Luck Potion, 2x Gold Potion, 2x XP Potion, Emperor Keys, Gems, Shards, Canes",
+  "activeCodes": 9
 }
 
 
