@@ -7,7 +7,7 @@
   { "name": "Fluri Flura",                 "rarity": "Common",       "img": "/Images/FluriFlura.webp",                     "url": "/brainrot/fluriflura" },
   { "name": "Talpa Di Fero",               "rarity": "Common",       "img": "/Images/TalpaDiFero.webp",                  "url": "/brainrot/talpa-di-fero" },
   { "name": "Svinina Bombardino",          "rarity": "Common",       "img": "/Images/SvininaBombardino2.webp",             "url": "/brainrot/svinina-bombardino" },
-  { "name": "Racooni Jandelini",           "rarity": "Common",       "img": "/Images/SvininaBombardino.webp",              "url": "/brainrot/raccooni-jandelini" },
+  { "name": "Racooni Jandelini",           "rarity": "Common",       "img": "/Images/RaccooniJandelini.webp",              "url": "/brainrot/raccooni-jandelini" },
   { "name": "Tartaragno",                  "rarity": "Common",       "img": "/Images/Tartaragno.webp",                     "url": "/brainrot/tartaragno" },
   { "name": "Noobini Santanini",           "rarity": "Common",       "img": "/Images/NoobiniSantanini.webp",              "url": "/brainrot/noobini-santanini" },
   { "name": "Holy Arepa",                  "rarity": "Common",       "img": "/Images/HolyArepa.webp",                      "url": "/brainrot/holy-arepa" },
@@ -109,13 +109,71 @@
   { "name": "Fizzy Soda",                "rarity": "Mythic",       "img": "/Images/Brainrot/FizzySoda.webp",                   "url": "/brainrot/fizzy-soda" },
   { "name": "Orbi Mochi",                "rarity": "Mythic",       "img": "/Images/Brainrot/OrbiMochi.webp",                   "url": "/brainrot/orbi-mochi" },
   { "name": "Bee Loco",                "rarity": "Mythic",       "img": "/Images/Brainrot/BeeLoco.webp",                   "url": "/brainrot/bee-loco" },
-  { "name": "Bee Loco",                "rarity": "Mythic",       "img": "/Images/Brainrot/BeeLoco.webp",                   "url": "/brainrot/bee-loco" },
+  { "name": "Berenjello Angello",                "rarity": "Mythic",       "img": "/Images/Brainrot/BerenjelloAngello.webp",                   "url": "/brainrot/berenjello-angello" },
+
+  { "name": "Brainrot God Lucky Block",          "rarity": "Brainrot God", "img": "/Images/BrainrotGodLuckyBlock.webp",             "url": "/brainrot/brainrot-god-lucky-block" },
+  { "name": "Cocofanto Elefanto",          "rarity": "Brainrot God", "img": "/Images/CocofantoElefanto.webp",             "url": "/brainrot/cocofanto-elefanto" },
+  { "name": "Girafa Celestre",          "rarity": "Brainrot God", "img": "/Images/GirafaCelestre.webp",             "url": "/brainrot/girafa-celestre" },
+  { "name": "Tralalero Tralala",          "rarity": "Brainrot God", "img": "/Images/TralaleroTralala.webp",             "url": "/brainrot/tralalero-tralala" },
+  { "name": "Odin Din Din Dun",          "rarity": "Brainrot God", "img": "/Images/OdinDinDinDun.webp",             "url": "/brainrot/odin-din-din-dun" },
+  { "name": "Tralalita Tralala",          "rarity": "Brainrot God", "img": "/Images/TralalitaTralala.webp",             "url": "/brainrot/tralalita-tralala" },
+  { "name": "Trippi Troppi Troppa Trippa",          "rarity": "Brainrot God", "img": "/Images/TrippiTroppiTroppaTrippa.webp",             "url": "/brainrot/trippi-troppi-troppa-trippa" },
+  { "name": "Trenostruzzo Turbo 3000",          "rarity": "Brainrot God", "img": "/Images/TrenostruzzoTurbo3000.webp",             "url": "/brainrot/trenostruzzo-turbo-3000" },
+  { "name": "Pakrahmatmamat",          "rarity": "Brainrot God", "img": "/Images/Pakrahmatmamat.webp",             "url": "/brainrot/pakrahmatmamat" },
+  { "name": "Ballerino Lololo",          "rarity": "Brainrot God", "img": "/Images/BallerinoLololo.webp",             "url": "/brainrot/ballerino-lololo" },
+  { "name": "Oiccione Macchina",          "rarity": "Brainrot God", "img": "/Images/PiccioneMacchina.webp",             "url": "/brainrot/piccione-macchina" },
+  { "name": "Tractoro Dinosauro",          "rarity": "Brainrot God", "img": "/Images/TractoroDinosauro.webp",             "url": "/brainrot/tractoro-dinosauro" },
+  { "name": "Cacasito Satalito",          "rarity": "Brainrot God", "img": "/Images/CacasitoSatalito.webp",             "url": "/brainrot/cacasito-satalito" },
+  { "name": "Aquanaut",          "rarity": "Brainrot God", "img": "/Images/Aquanaut.webp",             "url": "/brainrot/aquanaut" },
+  { "name": "Appelini",          "rarity": "Brainrot God", "img": "/Images/Appelini.webp",             "url": "/brainrot/appelini" },
+  { "name": "Gattatino Nyanino",          "rarity": "Brainrot God", "img": "/Images/GattatinoNyanino.webp",             "url": "/brainrot/gattatino-nyanino" },
+  { "name": "Matteo",          "rarity": "Brainrot God", "img": "/Images/Matteo.webp",             "url": "/brainrot/matteo" },
+  { "name": "Chihuanini Taconini",          "rarity": "Brainrot God", "img": "/Images/ChihuaniniTaconini.webp",             "url": "/brainrot/chihuanini-taconini" },
+  { "name": "Los Crocodillitos",          "rarity": "Brainrot God", "img": "/Images/LosCrocodillitos.webp",             "url": "/brainrot/los-crocodillitos" },
+  { "name": "Tigroligre Frutonni",          "rarity": "Brainrot God", "img": "/Images/TigroligreFrutonni.webp",             "url": "/brainrot/tigroligre-frutonni" },
+  { "name": "Money Money Man",          "rarity": "Brainrot God", "img": "/Images/MoneyMoneyMan.webp",             "url": "/brainrot/money-money-man" },
+  { "name": "Alessio",          "rarity": "Brainrot God", "img": "/Images/Alessio.webp",             "url": "/brainrot/alessio" },
+  { "name": "Tipi Topi Taco",          "rarity": "Brainrot God", "img": "/Images/TipiTopiTaco.webp",             "url": "/brainrot/tipi-topi-taco" },
+  { "name": "Unclito Samito",          "rarity": "Brainrot God", "img": "/Images/UnclitoSamito.webp",             "url": "/brainrot/unclito-samito" },
+  { "name": "Tukanno Bananno",          "rarity": "Brainrot God", "img": "/Images/TukannoBananno.webp",             "url": "/brainrot/tukanno-bananno" },
+  { "name": "Extinct Ballerina",          "rarity": "Brainrot God", "img": "/Images/ExtinctBallerina.webp",             "url": "/brainrot/extinct-ballerina" },
+  { "name": "Espresso Signora",          "rarity": "Brainrot God", "img": "/Images/EspressoSignora.webp",             "url": "/brainrot/espresso-signora" },
+  { "name": "Vampira Cappucina",          "rarity": "Brainrot God", "img": "/Images/Vampira Cappucina.webp",             "url": "/brainrot/vampira-cappucina" },
 
 
 
 
 
-  { "name": "Cocofanto Elefanto",          "rarity": "Brainrot God", "img": "/Images/Cocofanto Elefanto.png",             "url": "/brainrot/cocofanto-elefanto" },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   { "name": "La Vacca Staturno Saturnita", "rarity": "Secret",       "img": "/Images/La Vacca Staturno Saturnita.png",    "url": "/brainrot/la-vacca-staturno-saturnita" },
   { "name": "Lave ve Vacca Staturno Satu", "rarity": "Secret",       "img": "/Images/La Vacca Staturno Saturnita.png",    "url": "/brainrot/la-vacca-staturno-saturnita" },
   { "name": "Badingyy Staturno Saturnita", "rarity": "Secret",       "img": "/Images/La Vacca Staturno Saturnita.png",    "url": "/brainrot/la-vacca-staturno-saturnita" },
