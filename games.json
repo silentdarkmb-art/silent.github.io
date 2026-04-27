@@ -867,10 +867,10 @@
     "name": "Hood Wars",
     "image": "Images/Hood Wars.webp",
     "url": "roblox/hood-wars",
-    "lastupdate": "2026-3-30T19:00",
+    "lastupdate": "2026-4-27T00:00:08",
     "tooltip": "Run the block with more resources — these Hood Wars codes hand out free Money to spend on gear and upgrades.",
     "rewards": "Money",
-    "activeCodes": 7
+    "activeCodes": 10
   },
   {
     "name": "Royal Hatchers",
@@ -939,10 +939,10 @@
     "name": "Corsa Legends",
     "image": "Images/Corsa Legends.webp",
     "url": "roblox/corsa-legends",
-    "lastupdate": "2026-04-12T19:00",
+    "lastupdate": "2026-04-26T00:00:32",
     "tooltip": "Hit the track with a better garage — these Corsa Legends codes give you free Cash and Cars to stay ahead of the competition.",
     "rewards": "Cash, Cars",
-    "activeCodes": 1
+    "activeCodes": 2
   },
   {
     "name": "PARANORMAL",
@@ -1011,10 +1011,11 @@
   "name": "Sailor Piece",
   "image": "Images/SailorPiece.webp",
   "url": "roblox/sailor-piece",
-  "lastupdate": "2026-04-03T00:00",
-  "tooltip": "Grind to level 13,000 in this One Piece-inspired Roblox RPG — hunt Devil Fruits, collect rare races, and battle across islands toward Sea 2. Redeem 16 active codes for free Beli, Gems, Clan Rerolls, Race Rerolls, Secret Chests, and Passive Shards.",
-  "rewards": "Beli, Gems, Clan Rerolls, Race Rerolls, Trait Rerolls, Secret Chests, Passive Shards",
-  "activeCodes": 16
+  "lastupdate": "2026-04-27T00:00:10Z",
+  "tooltip": "Redeem working codes for free Freebies in Sailor Piece Roblox.",
+  "rewards": "Freebies",
+  "activeCodes": 20,
+  "expiredCodes": 130
 },
   {
     "name": "Build a Zoo",
@@ -1398,19 +1399,19 @@
   "name": "Azara's RNG",
   "image": "Images/AzarasRNG.webp",
   "url": "roblox/azaras-rng",
-  "lastupdate": "2026-04-14T06:48",
+  "lastupdate": "2026-04-26T00:00:31",
   "tooltip": "Redeem Azara's RNG codes for free Potions and special boosts to increase your luck, improve rolls, and obtain rarer auras faster in this RNG-based experience.",
   "rewards": "Potions, Boosts",
-  "activeCodes": 7
+  "activeCodes": 13
   },
   {
   "name": "Slay a Slime",
   "image": "Images/SlayASlime.webp",
   "url": "roblox/slay-a-slime",
-  "lastupdate": "2026-04-14T07:11",
+  "lastupdate": "2026-04-27T00:00:01Z",
   "tooltip": "Redeem Slay a Slime codes for free Boosts, Keys, Potions, and resources to upgrade your character, craft stronger gear, and progress faster while battling waves of slimes.",
   "rewards": "Boosts, Keys, Potions, Resources",
-  "activeCodes": 6
+  "activeCodes": 7
   },
   {
   "name": "West Indies",
@@ -1434,10 +1435,10 @@
   "name": "Dudung Universe",
   "image": "Images/DudungUniverse.webp",
   "url": "roblox/dudung-universe",
-  "lastupdate": "2026-04-16T10:33",
+  "lastupdate": "2026-04-27T00:00:06",
   "tooltip": "Redeem Dudung Universe codes for free Cash and D$ to upgrade your character, increase your power, and progress faster while exploring islands and battling enemies.",
   "rewards": "Cash, D$",
-  "activeCodes": 12
+  "activeCodes": 16
   },
   {
   "name": "Universal Tower Defense X",
@@ -1452,10 +1453,10 @@
   "name": "Universal Piece",
   "image": "Images/UniversalPiece.webp",
   "url": "roblox/universal-piece",
-  "lastupdate": "2026-04-14T03:38",
+  "lastupdate": "2026-04-27T00:00:14Z",
   "tooltip": "Redeem Universal Piece codes for free Gems and Yen to buy fruit, strengthen your build, and progress faster while exploring the sea, taking quests, and battling bosses.",
   "rewards": "Gems, Yen",
-  "activeCodes": 3
+  "activeCodes": 8
   },
   {
   "name": "Chillmaxxing Card Collection",
@@ -1632,10 +1633,10 @@
   "name": "Anime Reversal",
   "image": "Images/AnimeReversal.webp",
   "url": "roblox/anime-reversal",
-  "lastupdate": "2026-04-20T12:00",
+  "lastupdate": "2026-04-26T00:00:34",
   "tooltip": "Redeem working codes for free Gems, Tickets, and Rerolls in Anime Reversal Roblox.",
   "rewards": "Gems, Tickets, Rerolls, Freebies",
-  "activeCodes": 29
+  "activeCodes": 33
 },
 {
   "name": "Anime Power League",
@@ -1821,10 +1822,10 @@
   "name": "Heroes World",
   "image": "Images/HeroesWorld.webp",
   "url": "roblox/heroes-world",
-  "lastupdate": "2026-04-20T12:20:00Z",
+  "lastupdate": "2026-04-26T00:00:29Z",
   "tooltip": "Redeem working codes for free Cash, Spins, and Fragments in Heroes World Roblox.",
   "rewards": "Cash, Money, Legendary Spins, Epic Spins, Rare Spins, Wheel Spins, Star Fragments, EXP Boosts, Cash Boosts",
-  "activeCodes": 25
+  "activeCodes": 26
 },
 {
   "name": "Swerve",
@@ -1938,10 +1939,10 @@
   "name": "Chasing Immortality",
   "image": "Images/ChasingImmortality.webp",
   "url": "roblox/chasing-immortality",
-  "lastupdate": "2026-04-22T00:00:00Z",
+  "lastupdate": "2026-04-27T00:00:02Z",
   "tooltip": "Redeem working codes for free Soul Fragments, Heavens Pill, and RP in Chasing Immortality Roblox.",
   "rewards": "Soul Fragments, Heavens Pill, RP",
-  "activeCodes": 11
+  "activeCodes": 3
 },
 {
   "name": "Hunty Zombie",
@@ -1956,10 +1957,10 @@
   "name": "Plane Crash Simulator",
   "image": "Images/PlaneCrashSimulator.webp",
   "url": "roblox/plane-crash-simulator",
-  "lastupdate": "2026-04-23T00:00:00Z",
+  "lastupdate": "2026-04-27T00:00:09Z",
   "tooltip": "Redeem working codes for free Crash Points in Plane Crash Simulator Roblox.",
   "rewards": "Crash Points",
-  "activeCodes": 3
+  "activeCodes": 4
 },
 {
   "name": "Pirate Piece",
@@ -2293,6 +2294,105 @@
   "lastupdate": "2026-04-26T00:00:26Z",
   "tooltip": "Redeem working codes for free OG Buckets, Lovelost Buckets, Easter Buckets, and Whale Buckets in Own a Fish Pond Roblox.",
   "rewards": "OG Bucket, Lovelost Bucket, Easter Bucket, Whale Bucket, Freebies, Fishing Rods, Premium Packs, Tools",
+  "activeCodes": 3
+},
+{
+  "name": "Emote RNG",
+  "image": "Images/Emote-RNG.webp",
+  "url": "roblox/emote-rng",
+  "lastupdate": "2026-04-26T00:00:27Z",
+  "tooltip": "Redeem working codes for free Cash, Luck Boosts, and Freebies in Emote RNG Roblox.",
+  "rewards": "Freebies, Cash, Double Luck Boost, Triple Luck Boost",
+  "activeCodes": 17
+},
+{
+  "name": "Highway Legends",
+  "image": "Images/Highway-Legends.webp",
+  "url": "roblox/highway-legends",
+  "lastupdate": "2026-04-26T00:00:30Z",
+  "tooltip": "Redeem working codes for free Cash in Highway Legends Roblox.",
+  "rewards": "Cash",
+  "activeCodes": 2
+},
+{
+  "name": "Dirt Incremental X",
+  "image": "Images/Dirt-Incremental-X.webp",
+  "url": "roblox/dirt-incremental-x",
+  "lastupdate": "2026-04-26T00:00:31Z",
+  "tooltip": "Redeem working codes for free Potions, Tickets, Luck, and Freebies in Dirt Incremental X Roblox.",
+  "rewards": "Potions, Tickets, Luck, Freebies, Island Tickets, Exclusive Luck, Potion Box",
+  "activeCodes": 27
+},
+{
+  "name": "Merge Incremental",
+  "image": "Images/MergeIncremental.webp",
+  "url": "roblox/merge-incremental",
+  "lastupdate": "2026-04-26T00:00:36Z",
+  "tooltip": "Redeem working codes for free Tokens in Merge Incremental Roblox.",
+  "rewards": "Tokens",
+  "activeCodes": 2
+},
+{
+  "name": "Outrun a Speedster",
+  "image": "Images/Outrun-a-Speedster.webp",
+  "url": "roblox/outrun-a-speedster",
+  "lastupdate": "2026-04-27T00:00:04Z",
+  "tooltip": "Redeem working codes for free Potions, Wins, and Freebies in Outrun a Speedster Roblox.",
+  "rewards": "Potions, Wins, Freebies",
+  "activeCodes": 3
+},
+{
+  "name": "Anime Overload",
+  "image": "Images/AnimeOverload.webp",
+  "url": "roblox/anime-overload",
+  "lastupdate": "2026-04-27T00:00:06Z",
+  "tooltip": "Redeem working codes for free Crystals, Trait Rerolls, Tokens, and Stat Cubes in Anime Overload Roblox.",
+  "rewards": "Crystals, Crystal Shards, Trait Rerolls, Tokens, Basic Stat Cubes, Advanced Stat Cubes, Bloodied Chains, Freebies",
+  "activeCodes": 19
+},
+{
+  "name": "Adventure Guild Battles",
+  "image": "Images/Adventure-Guild-Battles.webp",
+  "url": "roblox/adventure-guild-battles",
+  "lastupdate": "2026-04-27T00:00:07Z",
+  "tooltip": "Redeem working codes for free Gems, Summons, Revives, and Stat Items in Adventure Guild Battles Roblox.",
+  "rewards": "Gems, Summons, Revives, Stat Items, Legendary Summon, Epic Summons, Freebies",
+  "activeCodes": 12
+},
+{
+  "name": "Evil Plate Game",
+  "image": "Images/Evil-Plate-Game.webp",
+  "url": "roblox/evil-plate-game",
+  "lastupdate": "2026-04-27T00:00:10Z",
+  "tooltip": "Redeem working codes for free Shards and Titles in Evil Plate Game Roblox.",
+  "rewards": "Shards, Titles, Crates, Emotes, Items",
+  "activeCodes": 20
+},
+{
+  "name": "Roblox Bees",
+  "image": "Images/Bees.webp",
+  "url": "roblox/roblox-bees",
+  "lastupdate": "2026-04-27T00:00:11Z",
+  "tooltip": "Redeem working codes for free Luck Potions, XP Potions, and Spins in Roblox Bees.",
+  "rewards": "Luck Potions, XP Potions, Spins",
+  "activeCodes": 5
+},
+{
+  "name": "Amber Alert",
+  "image": "Images/AmberAlert.webp",
+  "url": "roblox/amber-alert",
+  "lastupdate": "2026-04-27T00:00:12Z",
+  "tooltip": "Redeem working codes for free Crates, Amber, and Wheel Spins in Amber Alert Roblox.",
+  "rewards": "Crates, Amber, Wheel Spins, Skins, Asylum Crate, Amber Crate",
+  "activeCodes": 3
+},
+{
+  "name": "Fusion Piece",
+  "image": "Images/Fusion-Piece.webp",
+  "url": "roblox/fusion-piece",
+  "lastupdate": "2026-04-27T00:00:13Z",
+  "tooltip": "Redeem working codes for free Beli, Gems, EXP, Reroll Essence, and Dungeon Tickets in Fusion Piece Roblox.",
+  "rewards": "Beli, Gems, EXP, Reroll Essence, Dungeon Tickets",
   "activeCodes": 3
 }
 

@@ -161,8 +161,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/adventure-guild-battles</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/afk-for-ugc</loc>
     <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://bloxburst.com/roblox/amber-alert</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -251,6 +263,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/anime-overload</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/anime-paradox</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -264,7 +282,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/anime-reversal</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -342,7 +360,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/azaras-rng</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -397,6 +415,12 @@
   <url>
     <loc>https://bloxburst.com/roblox/become-superhero</loc>
     <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/bees</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -593,8 +617,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/chainsaw-man-devils-heart</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/chasing-immortality</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -731,6 +761,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/dirt-incremental-x</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/dispatch-police-simulator</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -786,7 +822,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/dudung-universe</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -839,6 +875,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/emote-rng</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/endless-cultivation</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -847,6 +889,12 @@
   <url>
     <loc>https://bloxburst.com/roblox/escape-mad-beasts-for-animals</loc>
     <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/evil-plate-game</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -959,6 +1007,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/fusion-piece</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/garden-horizons</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -1001,6 +1055,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/highway-legends</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/hollow-era</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -1008,7 +1068,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/hood-wars</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1151,6 +1211,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/merge-incremental</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/midnight-chasers</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -1264,6 +1330,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/outrun-a-speedster</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
    <url>
     <loc>https://bloxburst.com/roblox/own-a-fish-pond</loc>
     <lastmod>2026-04-27</lastmod>
@@ -1308,7 +1380,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/plane-crash-simulator</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1422,7 +1494,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/sailor-piece</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1452,7 +1524,7 @@
   </url>
   <url>
     <loc>https://bloxburst.com/roblox/slay-a-slime</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
