@@ -435,10 +435,10 @@
     "name": "Anime Eternal",
     "image": "Images/AnimeEternal.webp",
     "url": "roblox/anime-eternal",
-    "lastupdate": "2026-04-24T08:00:00Z",
+    "lastupdate": "2026-04-26T00:00:24Z",
     "tooltip": "Power up with free Potions and Credits in Anime Eternal — give your roster the boost it needs.",
     "rewards": "Potions, Credits",
-    "activeCodes": 31
+    "activeCodes": 33
   },
   {
   "name": "Build a Brainrot Farm",
@@ -2276,6 +2276,24 @@
   "tooltip": "Redeem working codes for free Clan Spins, Mythic Gacha, Gate Keys, and Boosts in Kanom Tokyo Roblox.",
   "rewards": "Clan Spins, Clan Rerolls, Mythic Gacha, Legend Gacha, Gate Keys, Yen, x2 EXP Boosts, x2 Yen Boosts, Freebies",
   "activeCodes": 9
+},
+{
+  "name": "Paradox",
+  "image": "Images/Paradox-code.webp",
+  "url": "roblox/paradox-code",
+  "lastupdate": "2026-04-26T00:00:25Z",
+  "tooltip": "Redeem working codes for free Freebies, Ability Rerolls, Clan Rerolls, and Stat Resets in Paradox Roblox.",
+  "rewards": "Freebies, Ability Rerolls, Clan Rerolls, Stat Reset, Wipe Essence",
+  "activeCodes": 16
+},
+{
+  "name": "Own a Fish Pond",
+  "image": "Images/OwnAFishPond.webp",
+  "url": "roblox/own-a-fish-pond",
+  "lastupdate": "2026-04-26T00:00:26Z",
+  "tooltip": "Redeem working codes for free OG Buckets, Lovelost Buckets, Easter Buckets, and Whale Buckets in Own a Fish Pond Roblox.",
+  "rewards": "OG Bucket, Lovelost Bucket, Easter Bucket, Whale Bucket, Freebies, Fishing Rods, Premium Packs, Tools",
+  "activeCodes": 3
 }
 
 
