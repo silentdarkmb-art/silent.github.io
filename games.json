@@ -642,19 +642,19 @@
   "name": "Tensura Incremental",
   "image": "Images/TensuraIncremental.webp",
   "url": "roblox/tensura-incremental",
-  "lastupdate": "2026-04-23T01:00",
+  "lastupdate": "2026-04-29T00:00:02",
   "tooltip": "Free Race Rerolls, Skill Rolls, and Spirit Rolls to build the perfect monster character faster — redeem all working Tensura Incremental codes before they expire.",
   "rewards": "Race Rerolls, Skill Rolls, Spirit Rolls",
-  "activeCodes": 8
+  "activeCodes": 9
   },
   {
   "name": "Hot's RNG",
   "image": "Images/HotsRNG.webp",
   "url": "roblox/hots-rng",
-  "lastupdate": "2026-04-26T00:00:14Z",
+  "lastupdate": "2026-04-28T00:00:07Z",
   "tooltip": "Free Potions and Luck Boosts to roll rarer auras faster — redeem all 108 working Hot's RNG codes before they expire.",
   "rewards": "Potions, Luck Boosts, Free Rewards",
-  "activeCodes": 55
+  "activeCodes": 56
   },
   {
   "name": "Build a Military Base",
@@ -885,10 +885,10 @@
     "name": "18 FLOORS",
     "image": "Images/18 FLOORS.webp",
     "url": "roblox/18-floors",
-    "lastupdate": "2026-03-01T19:00",
+    "lastupdate": "2026-04-28T00:00:09Z",
     "tooltip": "Climb all 18 floors fully equipped — grab free Credits, Skins, and exclusive Titles with these working codes.",
     "rewards": "Credits, Skins, Titles",
-    "activeCodes": 33
+    "activeCodes": 36
   },
   {
     "name": "100 Players vs 1 Gorilla",
@@ -1552,7 +1552,7 @@
   "name": "TV Defense",
   "image": "Images/TVDefense.webp",
   "url": "roblox/tv-defense",
-  "lastupdate": "2026-04-15T12:00",
+  "lastupdate": "2026-04-28T00:00:04",
   "tooltip": "Redeem working codes for free Coins, Gems, and Event Items in TV Defense Roblox.",
   "rewards": "Coins, Gems, Diamonds, Crystals, Event Items",
   "activeCodes": 12
@@ -1723,10 +1723,10 @@
   "name": "Re Rangers X",
   "image": "Images/ReRangersX.webp",
   "url": "roblox/re-rangers-x",
-  "lastupdate": "2026-04-21T12:10",
+  "lastupdate": "2026-04-28T00:00:08Z",
   "tooltip": "Redeem working codes for free Trait Rerolls, Gems, and Soul Fragments in Re Rangers X Roblox.",
   "rewards": "Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Dr. Megga Punk",
-  "activeCodes": 16
+  "activeCodes": 22
 },
 {
   "name": "Hollow Era",
@@ -1843,7 +1843,7 @@
   "lastupdate": "2026-04-26T00:00:16Z",
   "tooltip": "Redeem working codes for free Freebies, Potions, Gems, Saiyan Keys, and Dragon Ball Tokens in World Fighters Roblox.",
   "rewards": "Freebies, Potions, Gems, Saiyan Keys, Dragon Ball Tokens, Gadi Jetpack Mount, Yen, Boosts, Powers",
-  "activeCodes": 43
+  "activeCodes": 46
 },
 {
   "name": "Bite By Night",
@@ -2029,19 +2029,19 @@
   "name": "Launch Your Rocket",
   "image": "Images/LaunchYourRocket.webp",
   "url": "roblox/launch-your-rocket",
-  "lastupdate": "2026-04-24T04:00:00Z",
+  "lastupdate": "2026-04-29T00:00:01Z",
   "tooltip": "Redeem working codes for free Spins, Money Boosts, and Lucky Crates in Launch Your Rocket Roblox.",
   "rewards": "Spins, Money Boosts, Chocolate Boosts, Exclusive Tower, Lucky Crates",
-  "activeCodes": 6
+  "activeCodes": 7
 },
 {
   "name": "Anime Blade Clicker",
   "image": "Images/AnimeBladeClicker.webp",
   "url": "roblox/anime-blade-clicker",
-  "lastupdate": "2026-04-24T03:00:00Z",
+  "lastupdate": "2026-04-28T00:00:06Z",
   "tooltip": "Redeem working codes for free Potions in Anime Blade Clicker Roblox.",
   "rewards": "Potions",
-  "activeCodes": 1
+  "activeCodes": 2
 },
 {
   "name": "Skibidi Masters Tower Defense",
@@ -2394,7 +2394,123 @@
   "tooltip": "Redeem working codes for free Beli, Gems, EXP, Reroll Essence, and Dungeon Tickets in Fusion Piece Roblox.",
   "rewards": "Beli, Gems, EXP, Reroll Essence, Dungeon Tickets",
   "activeCodes": 3
+},
+{
+  "name": "Roblox Beaks",
+  "image": "Images/Beaks.webp",
+  "url": "roblox/beaks",
+  "lastupdate": "2026-04-27T00:00:17Z",
+  "tooltip": "Redeem working codes for free Golden Darts, Bucks, and Freebies in Roblox Beaks.",
+  "rewards": "Golden Darts, Bucks, Freebies, Sandstorm Event, Blood Moon Event",
+  "activeCodes": 10
+},
+{
+  "name": "Ronopoly",
+  "image": "Images/Ronopoly.webp",
+  "url": "roblox/ronopoly",
+  "lastupdate": "2026-04-28T00:00:01Z",
+  "tooltip": "Redeem working codes for free Cash, Properties, and Freebies in Ronopoly Roblox.",
+  "rewards": "Cash, Properties, Freebies, Dice Rolls, Boosts",
+  "activeCodes": 5
+},
+{
+  "name": "Waste Time",
+  "image": "Images/Waste-Time.webp",
+  "url": "roblox/waste-time",
+  "lastupdate": "2026-04-27T00:00:19Z",
+  "tooltip": "Redeem working codes for free Clicks, Boosts, and Freebies in Waste Time Roblox.",
+  "rewards": "Freebies, Clicks, Boosts, Enhancement Rerolls, Enhancement Locks, Server Clicks, Button Clicks, Stat Doubles",
+  "activeCodes": 13
+},
+{
+  "name": "Spin Anime Cards",
+  "image": "Images/Spin-Anime-Cards.webp",
+  "url": "roblox/spin-anime-cards",
+  "lastupdate": "2026-04-28T00:00:02Z",
+  "tooltip": "Redeem working codes for free Gems in Spin Anime Cards Roblox.",
+  "rewards": "Gems",
+  "activeCodes": 1
+},
+{
+  "name": "Brawl RNG",
+  "image": "Images/Brawl-RNG.webp",
+  "url": "roblox/brawl-rng",
+  "lastupdate": "2026-04-28T00:00:03Z",
+  "tooltip": "Redeem working codes for free Gems and Rico Brawler in Brawl RNG Roblox.",
+  "rewards": "Gems, Rico Brawler",
+  "activeCodes": 1
+},
+{
+  "name": "Life Incremental",
+  "image": "Images/Life-Incremental.webp",
+  "url": "roblox/life-incremental",
+  "lastupdate": "2026-04-28T00:00:09Z",
+  "tooltip": "Redeem working codes for free Freebies and Boosts in Life Incremental Roblox.",
+  "rewards": "Freebies, XP, x2 Cash Boosts",
+  "activeCodes": 2
+},
+{
+  "name": "YBA: New Universe",
+  "image": "Images/YBA-New-Universe.webp",
+  "url": "roblox/yba-new-universe",
+  "lastupdate": "2026-04-28T00:00:10Z",
+  "tooltip": "Redeem working codes for free Lucky Arrows, Roka Arrows, and Freebies in YBA: New Universe Roblox.",
+  "rewards": "Lucky Arrows, Roka Arrows, Freebies, Mythical Chests, Legendary Chests, Cash, Shinifiers, Prestige Boosts",
+  "activeCodes": 2
+},
+{
+  "name": "Lords Piece",
+  "image": "Images/Lords-Piece.webp",
+  "url": "roblox/lords-piece",
+  "lastupdate": "2026-04-28T00:00:11Z",
+  "tooltip": "Redeem working codes for free Gold, Gems, Trait Spins, and Boosts in Lords Piece Roblox.",
+  "rewards": "Gold, Gems, Trait Spins, Boosts (Gold/Luck/XP/Gem), Freebies, Gift Box, XP",
+  "activeCodes": 28
+},
+{
+  "name": "Pet Quest",
+  "image": "Images/PetQuest.webp",
+  "url": "roblox/pet-quest",
+  "lastupdate": "2026-04-28T00:00:12Z",
+  "tooltip": "Redeem working codes for free Freebies in Pet Quest Roblox.",
+  "rewards": "Freebies, Coins, Eggs, Boosts, Enchants",
+  "activeCodes": 39
+},
+{
+  "name": "Choose An Ability",
+  "image": "Images/Choose-An-Ability.webp",
+  "url": "roblox/choose-an-ability",
+  "lastupdate": "2026-04-29T00:00:03Z",
+  "tooltip": "Redeem working codes for free Cash in Choose An Ability Roblox.",
+  "rewards": "Cash",
+  "activeCodes": 7
+},
+{
+  "name": "Train Arm to Punch",
+  "image": "Images/Train-Arm-To-Punch.webp",
+  "url": "roblox/train-arm-to-punch",
+  "lastupdate": "2026-04-29T00:00:04Z",
+  "tooltip": "Redeem working codes for free Freebies, Puppy Knight Pet, and Easter Eggs in Train Arm to Punch Roblox.",
+  "rewards": "Freebies, Puppy Knight Pet, Easter Eggs",
+  "activeCodes": 3
+},
+{
+  "name": "Anime Apocalypse",
+  "image": "Images/Anime-Apocalypse.webp",
+  "url": "roblox/anime-apocalypse",
+  "lastupdate": "2026-04-29T00:00:05Z",
+  "tooltip": "Redeem working codes for free Coins, Spins, Raid Tickets, and Boosts in Anime Apocalypse Roblox.",
+  "rewards": "Coins, Spins, Raid Tickets, Boosts",
+  "activeCodes": 4
+},
+{
+  "name": "Navy Tycoon",
+  "image": "Images/Navy-Tycoon.webp",
+  "url": "roblox/navy-tycoon",
+  "lastupdate": "2026-04-29T00:00:06Z",
+  "tooltip": "Redeem working codes for free Spins and Cash in Navy Tycoon Roblox.",
+  "rewards": "Spins, Cash",
+  "activeCodes": 3
 }
-
 
 ]
