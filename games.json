@@ -2511,6 +2511,24 @@
   "tooltip": "Redeem working codes for free Spins and Cash in Navy Tycoon Roblox.",
   "rewards": "Spins, Cash",
   "activeCodes": 3
+},
+{
+  "name": "Dont Get Caught For Hackers",
+  "image": "Images/Dont-Get-Caught-For-Hackers.webp",
+  "url": "roblox/dont-get-caught-for-hackers",
+  "lastupdate": "2026-04-29T00:00:07Z",
+  "tooltip": "Redeem working codes for free Cash in Dont Get Caught For Hackers Roblox.",
+  "rewards": "Cash",
+  "activeCodes": 6
+},
+{
+  "name": "Coding Simulator 2",
+  "image": "Images/Coding-Simulator-2.webp",
+  "url": "roblox/coding-simulator-2",
+  "lastupdate": "2026-04-29T00:00:08Z",
+  "tooltip": "Redeem working codes for free Diamonds and Potions in Coding Simulator 2 Roblox.",
+  "rewards": "Diamonds, Potions",
+  "activeCodes": 2
 }
 
 ]

@@ -677,6 +677,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/coding-simulator-2</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/cog</loc>
     <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -799,6 +805,12 @@
   <url>
     <loc>https://bloxburst.com/roblox/dollys-factory</loc>
     <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/roblox/dont-get-caught-for-hackers</loc>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
