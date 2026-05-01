@@ -1,4 +1,15 @@
 [
+  {
+  "id": "kick-a-lucky-block",
+  "title": "Kick A Lucky Block",
+  "description": "Pro Tips & Tricks for Kick A Lucky Block",
+  "category": "Beginner",
+  "readTime": "15 min",
+  "thumbnail": "Images/KickALuckyBlock-7tips.webp",
+  "link": "game-guides/kick-a-lucky-block",
+  "releaseDate": "Apr 30, 2026",
+  "tags": ["simulator", "idle", "rebirth"]
+},
 {
   "id": "sailor-piece",
   "title": "Sailor Piece",
@@ -9,16 +20,6 @@
   "link": "game-guides/sailor-piece",
   "releaseDate": "Apr 22, 2026",
   "tags": ["pirates", "adventure"]
-},
-{
-  "id": "kick-a-lucky-block",
-  "title": "Kick A Lucky Block",
-  "description": "Pro Tips & Tricks for Kick A Lucky Block",
-  "category": "Beginner",
-  "readTime": "15 min",
-  "thumbnail": "Images/KickALuckyBlock-7tips.webp",
-  "link": "game-guides/kick-a-lucky-block",
-  "releaseDate": "Apr 30, 2026",
-  "tags": ["simulator", "idle", "rebirth"]
 }
+
 ]
