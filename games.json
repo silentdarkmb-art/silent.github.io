@@ -2574,6 +2574,15 @@
   "tooltip": "Redeem working codes for free Grade Tokens and Random Rainbow Packs in Youtuber Card Collection Roblox.",
   "rewards": "Grade Tokens, Random Rainbow Pack, Packs, Gems",
   "activeCodes": 2
+},
+{
+  "name": "Roll an Anime",
+  "image": "Images/Roll-An-Anime.webp",
+  "url": "roblox/roll-an-anime",
+  "lastupdate": "2026-05-02T00:00:01Z",
+  "tooltip": "Redeem working codes for free Luffy in Roll an Anime Roblox.",
+  "rewards": "Luffy",
+  "activeCodes": 1
 }
 
 ]
