@@ -435,10 +435,10 @@
     "name": "Anime Eternal",
     "image": "Images/AnimeEternal.webp",
     "url": "roblox/anime-eternal",
-    "lastupdate": "2026-04-26T00:00:24Z",
+    "lastupdate": "2026-05-02T00:00:14Z",
     "tooltip": "Power up with free Potions and Credits in Anime Eternal — give your roster the boost it needs.",
     "rewards": "Potions, Credits",
-    "activeCodes": 33
+    "activeCodes": 35
   },
   {
   "name": "Build a Brainrot Farm",
@@ -2637,6 +2637,24 @@
   "tooltip": "Redeem working codes for free Potions and Freebies in CardFantasy RNG Roblox.",
   "rewards": "Potions, Freebies",
   "activeCodes": 8
+},
+{
+  "name": "Fuse 3 Dragons",
+  "image": "Images/Fuse-3-Dragons.webp",
+  "url": "roblox/fuse-3-dragons",
+  "lastupdate": "2026-05-02T00:00:12Z",
+  "tooltip": "Redeem working codes for free Green Dragon 4 in Fuse 3 Dragons Roblox.",
+  "rewards": "Green Dragon 4, Freebies",
+  "activeCodes": 1
+},
+{
+  "name": "All Star Tower Defense X",
+  "image": "Images/All-Star-Tower-Defense-X.webp",
+  "url": "roblox/all-star-tower-defense-x",
+  "lastupdate": "2026-05-02T00:00:13Z",
+  "tooltip": "Redeem working codes for free Gems, Capsules, Trait Burners, and Freebies in All Star Tower Defense X Roblox.",
+  "rewards": "Gems, Capsules, Trait Burners, Skill Orb Bags, Cloud Summons, Freebies, Tower Progress Restore",
+  "activeCodes": 56
 }
 
 ]
