@@ -2583,6 +2583,42 @@
   "tooltip": "Redeem working codes for free Luffy in Roll an Anime Roblox.",
   "rewards": "Luffy",
   "activeCodes": 1
+},
+{
+  "name": "Mojave Valley",
+  "image": "Images/Mojave-Valley.webp",
+  "url": "roblox/mojave-valley",
+  "lastupdate": "2026-05-02T00:00:05Z",
+  "tooltip": "Redeem working codes for free Freebies and Cash in Mojave Valley Roblox.",
+  "rewards": "Freebies, Cash",
+  "activeCodes": 1
+},
+{
+  "name": "Open Packs for Anime",
+  "image": "Images/Open-Packs-For-Anime.webp",
+  "url": "roblox/open-packs-for-anime",
+  "lastupdate": "2026-05-02T00:00:06Z",
+  "tooltip": "Redeem working codes for free Freebies, Potion Packs, and Open All Packs uses in Open Packs for Anime Roblox.",
+  "rewards": "Freebies, Big Potion Pack, Small Potion Pack, Open All Packs, Shop Bundles",
+  "activeCodes": 14
+},
+{
+  "name": "Hooked",
+  "image": "Images/Hooked.webp",
+  "url": "roblox/hooked",
+  "lastupdate": "2026-05-02T00:00:07Z",
+  "tooltip": "Redeem working codes for free Coins, Gold, Skill Shards, and Freebies in Hooked Roblox.",
+  "rewards": "Coins, Gold, Skill Shards, Freebies",
+  "activeCodes": 10
+},
+{
+  "name": "The Button Room",
+  "image": "Images/The-Button-Room.webp",
+  "url": "roblox/the-button-room",
+  "lastupdate": "2026-05-02T00:00:08Z",
+  "tooltip": "Redeem working codes for free Slot Coins, Cards, Crypto-Buttons, and Titles in The Button Room Roblox.",
+  "rewards": "Slot Coins, Cards, Crypto-Buttons, Titles, Freebies, Laser Gun Card, Holy Grenade, Spektra Visor, Blue Tape, Tablet, Rare Cards",
+  "activeCodes": 10
 }
 
 ]
