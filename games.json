@@ -2619,6 +2619,24 @@
   "tooltip": "Redeem working codes for free Slot Coins, Cards, Crypto-Buttons, and Titles in The Button Room Roblox.",
   "rewards": "Slot Coins, Cards, Crypto-Buttons, Titles, Freebies, Laser Gun Card, Holy Grenade, Spektra Visor, Blue Tape, Tablet, Rare Cards",
   "activeCodes": 10
+},
+{
+  "name": "Reborn Incremental",
+  "image": "Images/Reborn-Incremental.webp",
+  "url": "roblox/reborn-incremental",
+  "lastupdate": "2026-05-02T00:00:10Z",
+  "tooltip": "Redeem working codes for free Potions, Tokens, and Shards in Reborn Incremental Roblox.",
+  "rewards": "Potions, Tokens, Shards, Rune Luck Potions, Rune Speed Potions, Rune Bulk Potions, Freebies",
+  "activeCodes": 8
+},
+{
+  "name": "CardFantasy RNG",
+  "image": "Images/CardFantasy-RNG.webp",
+  "url": "roblox/cardfantasy-rng",
+  "lastupdate": "2026-05-02T00:00:11Z",
+  "tooltip": "Redeem working codes for free Potions and Freebies in CardFantasy RNG Roblox.",
+  "rewards": "Potions, Freebies",
+  "activeCodes": 8
 }
 
 ]
