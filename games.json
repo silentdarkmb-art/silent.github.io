@@ -2654,6 +2654,15 @@
   "tooltip": "Redeem working codes for free Gems, Capsules, Trait Burners, and Freebies in All Star Tower Defense X Roblox.",
   "rewards": "Gems, Capsules, Trait Burners, Skill Orb Bags, Cloud Summons, Freebies, Tower Progress Restore",
   "activeCodes": 56
+},
+{
+  "name": "Inazuma Strikers",
+  "image": "Images/Inazuma-Strikers.webp",
+  "url": "roblox/inazuma-strikers",
+  "lastupdate": "2026-05-03T00:00:10Z",
+  "tooltip": "Redeem working codes for free Coins, Manuals, Element Rerolls, and Freebies in Inazuma Strikers Roblox.",
+  "rewards": "Coins, Manuals (Rare/Uncommon/Mythical), Element Reroll, Stats Reset, Evolution Gems, Double XP, Double Coins, Freebies",
+  "activeCodes": 15
 }
 
 ]
