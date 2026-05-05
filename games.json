@@ -498,10 +498,10 @@
     "name": "Anime Final Quest",
     "image": "Images/Anime Final Quest.webp",
     "url": "roblox/anime-final-quest",
-    "lastupdate": "2026-04-26T00:00:24",
+    "lastupdate": "2026-05-05T00:00:04Z",
     "tooltip": "Spin your way to a better build — these Anime Final Quest codes award free Spins, Runes, and Cash for your adventure.",
     "rewards": "Spins, Runes, Cash",
-    "activeCodes": 7
+    "activeCodes": 10
   },
   {
     "name": "Plant Brainrot Simulator",
@@ -2672,6 +2672,15 @@
   "tooltip": "Redeem working codes for free Freebies, Spins, Silver Charm, and Luck Fountain in Bee Garden Roblox.",
   "rewards": "Freebies, Spins, Silver Charm, Luck Fountain",
   "activeCodes": 5
+},
+{
+  "name": "Retro Tower Defense",
+  "image": "Images/Retro-Tower-Defense.webp",
+  "url": "roblox/retro-tower-defense",
+  "lastupdate": "2026-05-05T00:00:03Z",
+  "tooltip": "Redeem working codes for free Tix, Coins, Luck Summons, and Boosts in Retro Tower Defense Roblox.",
+  "rewards": "Tix, Disaster Coins, Luck Summons, x3 Luck Summons, Tix Boosts (+15%/+35%), EXP, Skins, Revive, Freebies",
+  "activeCodes": 1
 }
 
 ]

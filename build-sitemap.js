@@ -1,6 +1,6 @@
 /**
  * ====================================================
- *  BLOXBURST — Auto Sitemap Generator
+ *  BLOXBURST — Auto Sitemap Generator (FIXED: Clean URLs)
  *  Usage: node build-sitemap.js
  *  Output: sitemap.xml (sa root ng project mo)
  * ====================================================
@@ -16,7 +16,7 @@ const staticPages = [
   { loc: '/',                                        changefreq: 'daily',   priority: '1.0' },
   { loc: '/gamecode',                           changefreq: 'daily',   priority: '0.9' },
   { loc: '/promo-latest-codes',                 changefreq: 'daily',   priority: '0.9' },
-  { loc: '/wiki.html',                               changefreq: 'weekly',  priority: '0.8' },
+  { loc: '/wiki',                               changefreq: 'weekly',  priority: '0.8' }, // ✅ NA-REMOVE NA ANG .html
   { loc: '/Terms-and-Condition/about',          changefreq: 'monthly', priority: '0.6' },
   { loc: '/Terms-and-Condition/faq',            changefreq: 'monthly', priority: '0.6' },
   { loc: '/Terms-and-Condition/contactus',      changefreq: 'monthly', priority: '0.5' },
@@ -30,14 +30,20 @@ let gamePages = [];
 
 if (fs.existsSync(robloxFolder)) {
   const files = fs.readdirSync(robloxFolder)
-    .filter(f => f.endsWith(''))
+    .filter(f => f.endsWith('.html')) // ✅ Filter lang ang .html files
     .sort();
 
-  gamePages = files.map(file => ({
-    loc:        `/roblox/${file}`,
-    changefreq: 'daily',
-    priority:   '0.8',
-  }));
+  gamePages = files.map(file => {
+    // ✅ GAMITIN ANG path.parse PARA SAFELY TANGGALIN ANG EXTENSION
+    const parsed = path.parse(file); // { name: 'adopt-me', ext: '.html' }
+    const cleanName = parsed.name;   // 'adopt-me' lang, walang .html
+    
+    return {
+      loc:        `/roblox/${cleanName}`, // 👉 Clean URL: /roblox/adopt-me
+      changefreq: 'daily',
+      priority:   '0.8',
+    };
+  });
 
   console.log(`✅ Found ${gamePages.length} game pages in /roblox/`);
 } else {
