@@ -14,14 +14,14 @@ const BASE_URL = 'https://bloxburst.com';
 // ── Static pages (hindi nagbabago) ──────────────────
 const staticPages = [
   { loc: '/',                                        changefreq: 'daily',   priority: '1.0' },
-  { loc: '/gamecode.html',                           changefreq: 'daily',   priority: '0.9' },
-  { loc: '/promo-latest-codes.html',                 changefreq: 'daily',   priority: '0.9' },
+  { loc: '/gamecode',                           changefreq: 'daily',   priority: '0.9' },
+  { loc: '/promo-latest-codes',                 changefreq: 'daily',   priority: '0.9' },
   { loc: '/wiki.html',                               changefreq: 'weekly',  priority: '0.8' },
-  { loc: '/Terms-and-Condition/about.html',          changefreq: 'monthly', priority: '0.6' },
-  { loc: '/Terms-and-Condition/faq.html',            changefreq: 'monthly', priority: '0.6' },
-  { loc: '/Terms-and-Condition/contactus.html',      changefreq: 'monthly', priority: '0.5' },
-  { loc: '/Terms-and-Condition/terms.html',          changefreq: 'monthly', priority: '0.5' },
-  { loc: '/Terms-and-Condition/privacy.html',        changefreq: 'monthly', priority: '0.5' },
+  { loc: '/Terms-and-Condition/about',          changefreq: 'monthly', priority: '0.6' },
+  { loc: '/Terms-and-Condition/faq',            changefreq: 'monthly', priority: '0.6' },
+  { loc: '/Terms-and-Condition/contactus',      changefreq: 'monthly', priority: '0.5' },
+  { loc: '/Terms-and-Condition/terms',          changefreq: 'monthly', priority: '0.5' },
+  { loc: '/Terms-and-Condition/privacy',        changefreq: 'monthly', priority: '0.5' },
 ];
 
 // ── Auto-scan ang roblox/ folder ────────────────────
@@ -30,7 +30,7 @@ let gamePages = [];
 
 if (fs.existsSync(robloxFolder)) {
   const files = fs.readdirSync(robloxFolder)
-    .filter(f => f.endsWith('.html'))
+    .filter(f => f.endsWith(''))
     .sort();
 
   gamePages = files.map(file => ({

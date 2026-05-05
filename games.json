@@ -2663,6 +2663,15 @@
   "tooltip": "Redeem working codes for free Coins, Manuals, Element Rerolls, and Freebies in Inazuma Strikers Roblox.",
   "rewards": "Coins, Manuals (Rare/Uncommon/Mythical), Element Reroll, Stats Reset, Evolution Gems, Double XP, Double Coins, Freebies",
   "activeCodes": 15
+},
+{
+  "name": "Bee Garden",
+  "image": "Images/Bee-Garden.webp",
+  "url": "roblox/bee-garden",
+  "lastupdate": "2026-05-05T00:00:02Z",
+  "tooltip": "Redeem working codes for free Freebies, Spins, Silver Charm, and Luck Fountain in Bee Garden Roblox.",
+  "rewards": "Freebies, Spins, Silver Charm, Luck Fountain",
+  "activeCodes": 5
 }
 
 ]
