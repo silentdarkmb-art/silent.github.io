@@ -2726,6 +2726,15 @@
   "tooltip": "Redeem working codes for free Spins and Freebies in Superstar Baseball Roblox.",
   "rewards": "Spins, Lucky Spins, Freebies, Free Style Spins",
   "activeCodes": 12
+},
+{
+  "name": "The Vampire Legacies 2",
+  "image": "Images/The-Vampire-Legends-2.webp",
+  "url": "roblox/the-vampire-legacies-2",
+  "lastupdate": "2026-05-05T00:00:18Z",
+  "tooltip": "Redeem working codes for free Coins and Moonstones in The Vampire Legacies 2 Roblox.",
+  "rewards": "Coins, Moonstones, Limited Edition Tools",
+  "activeCodes": 1
 }
 
 ]
