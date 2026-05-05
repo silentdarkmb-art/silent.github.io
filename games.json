@@ -1398,10 +1398,10 @@
   "name": "Azara's RNG",
   "image": "Images/AzarasRNG.webp",
   "url": "roblox/azaras-rng",
-  "lastupdate": "2026-04-26T00:00:31",
+  "lastupdate": "2026-05-05T00:00:07Z",
   "tooltip": "Redeem Azara's RNG codes for free Potions and special boosts to increase your luck, improve rolls, and obtain rarer auras faster in this RNG-based experience.",
   "rewards": "Potions, Boosts",
-  "activeCodes": 13
+  "activeCodes": 17
   },
   {
   "name": "Slay a Slime",
@@ -1497,10 +1497,10 @@
   "name": "Dungeon Heroes",
   "image": "Images/DungeonHeroes.webp",
   "url": "roblox/dungeon-heroes",
-  "lastupdate": "2026-05-02T00:00:02Z",
+  "lastupdate": "2026-05-05T00:00:06Z",
   "tooltip": "Redeem Dungeon Heroes codes for free Gold, Boosts, Gear, and Pets to upgrade your character, improve combat performance, and progress faster through dungeons.",
   "rewards": "Gold, Boosts, Gear, Pets",
-  "activeCodes": 22
+  "activeCodes": 25
   },
   {
   "name": "Dying Days Zombies",
@@ -2681,6 +2681,15 @@
   "tooltip": "Redeem working codes for free Tix, Coins, Luck Summons, and Boosts in Retro Tower Defense Roblox.",
   "rewards": "Tix, Disaster Coins, Luck Summons, x3 Luck Summons, Tix Boosts (+15%/+35%), EXP, Skins, Revive, Freebies",
   "activeCodes": 1
+},
+{
+  "name": "Basketball Legends",
+  "image": "Images/Basketball-Legends.webp",
+  "url": "roblox/basketball-legends",
+  "lastupdate": "2026-05-05T00:00:09Z",
+  "tooltip": "Redeem working codes for free Coins, Effect Cases, Skin Cases, and Freebies in Basketball Legends Roblox.",
+  "rewards": "Coins, Freebies, Spring Effect Case, Spring Skin Case, Halloween Cases, Christmas Cases, Summer Cases, Anime Cases, Boosts, Exclusive Effects, Skins",
+  "activeCodes": 3
 }
 
 ]
