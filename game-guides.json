@@ -1,7 +1,18 @@
 [
   {
+    "id": "slime-rng-money",
+    "title": "Slime RNG - The Best Money Guide",
+    "description": "The Best Money Guide in Slime RNG Roblox - Maximize Coins & Wealth",
+    "category": "Strategy",
+    "readTime": "15 min",
+    "thumbnail": "Images/slime-rng-index-rewards.webp",
+    "link": "game-guides/slime-rng-money",
+    "releaseDate": "May 6, 2026",
+    "tags": ["money", "coins", "upgrades", "afk", "crafting", "index"]
+  },
+  {
   "id": "slime-rng",
-  "title": "Slime RNG",
+  "title": "Slime RNG - HOW TO GET More RARE Slimes",
   "description": "HOW TO GET More RARE Slimes In Slime RNG!!",
   "category": "Beginner",
   "readTime": "15 min",
@@ -12,7 +23,7 @@
   },
   {
   "id": "kick-a-lucky-block",
-  "title": "Kick A Lucky Block",
+  "title": "Kick A Lucky Block - Pro Tips & Tricks",
   "description": "Pro Tips & Tricks for Kick A Lucky Block",
   "category": "Beginner",
   "readTime": "15 min",
@@ -23,7 +34,7 @@
 },
 {
   "id": "sailor-piece",
-  "title": "Sailor Piece",
+  "title": "Sailor Piece - 7 Essential Tips",
   "description": "7 Essential Tips You NEED To Know in Sailor Piece",
   "category": "Beginner",
   "readTime": "18 min",
