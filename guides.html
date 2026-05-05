@@ -13,116 +13,71 @@
   <meta name="language" content="en">
   <meta name="revisit-after" content="3 days">
 
-  <meta property="og:title" content="Game Guides - Bloxburst | Roblox Tips, Tricks & Tutorials">
-  <meta property="og:description" content="Browse all Roblox game guides on Bloxburst. Find tips, tricks, tutorials, and strategies to level up faster and dominate your favorite games!">
-  <meta property="og:image" content="https://bloxburst.com/Images/FinalLogo.png">
-  <meta property="og:image:width" content="260">
-  <meta property="og:image:height" content="150">
-  <meta property="og:image:alt" content="Bloxburst Game Guides - Roblox Tips & Tutorials">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bloxburst.com/game-guides">
-  <meta property="og:site_name" content="Bloxburst">
-  <meta property="og:locale" content="en_US">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@Bloxburst">
-  <meta name="twitter:creator" content="@Bloxburst">
-  <meta name="twitter:title" content="Game Guides - Bloxburst | Roblox Tips, Tricks & Tutorials">
-  <meta name="twitter:description" content="Browse all Roblox game guides on Bloxburst. Find tips, tricks, tutorials, and strategies to level up faster!">
-  <meta name="twitter:image" content="https://bloxburst.com/Images/FinalLogo.png">
-  <meta name="twitter:image:alt" content="Bloxburst Game Guides - Roblox Tips & Tutorials">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": "https://bloxburst.com/guides#collection",
-        "name": "Game Guides - Bloxburst",
-        "description": "Browse all Roblox game guides on Bloxburst. Find tips, tricks, tutorials, and strategies to level up faster, redeem codes, and dominate your favorite games.",
-        "url": "https://bloxburst.com/guides",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Bloxburst",
-          "url": "https://bloxburst.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://bloxburst.com/Images/FinalLogo.png",
-            "width": 260,
-            "height": 150
-          }
-        },
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://bloxburst.com/#website",
-          "name": "Bloxburst"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://bloxburst.com/guides#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://bloxburst.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Game Guides",
-            "item": "https://bloxburst.com/guides"
-          }
-        ]
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://bloxburst.com/#organization",
-        "name": "Bloxburst",
-        "url": "https://bloxburst.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://bloxburst.com/Images/FinalLogo.png",
-          "width": 260,
-          "height": 150
-        },
-        "sameAs": [
-          "https://twitter.com/Bloxburst",
-          "https://www.roblox.com/groups/Bloxburst"
-        ]
-      }
-    ]
-  }
-  </script>
-
   <link rel="icon" type="image/png" href="Images/FinalLogo.png">
-  <link rel="preload" as="image" href="Images/FinalLogo.png">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ELF86MPP23', { 'anonymize_ip': true });
-  </script>
-
   <style>
-    :root {
-      --primary-purple: #7d5cff;
-      --primary-green: #00ff88;
-      --dark-bg: #151a4d;
-      --glass-bg: rgba(255,255,255,0.06);
-      --glass-border: rgba(255,255,255,0.12);
+    /* ── DROPDOWN STYLES - CENTERED ── */
+    .dropdown-arrow {
+      font-size: 10px;
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+      display: inline-block;
     }
+    .nav-dropdown.active .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+    
+    .nav-dropdown {
+      position: relative !important;
+      display: inline-block !important;
+    }
+    
+    .nav-menu {
+      position: absolute !important;
+      top: calc(100% + 12px) !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      min-width: 180px !important;
+      background: linear-gradient(135deg, #1a1f4d, #252b6b) !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      border-radius: 12px !important;
+      padding: 8px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+      z-index: 9999 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .nav-dropdown.active .nav-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateX(-50%) translateY(0) !important;
+    }
+    
+    .nav-item {
+      display: block !important;
+      padding: 10px 16px !important;
+      color: rgba(255,255,255,0.9) !important;
+      text-decoration: none !important;
+      border-radius: 8px !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      transition: all 0.2s ease !important;
+      margin: 4px 0 !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+    
+    .nav-item:hover {
+      background: rgba(125,92,255,0.3) !important;
+      color: #fff !important;
+    }
+    /* ── END DROPDOWN STYLES ── */
 
-    body { font-family: 'Poppins', sans-serif; }
-
-    /* ── EXACT COPY FROM index.html ── */
     @media (min-width: 769px) {
       .index-header-wrap { display: contents; }
       .top-text-link { position: absolute !important; top: 28px !important; left: 28px !important; }
@@ -262,7 +217,6 @@
       position: relative;
     }
 
-    /* ── UPDATED: Release Date Badge ── */
     .game-guide-diff {
       position: absolute;
       top: 10px;
@@ -328,7 +282,6 @@
       font-size: 15px;
     }
 
-    /* ── UPDATED: Inline Count (moved to header side) ── */
     .games-count-inline {
       font-size: 13px;
       color: rgba(255,255,255,0.5);
@@ -340,16 +293,10 @@
       border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.08);
     }
-    .games-count {
-      display: none; /* Hide old bottom count */
-    }
+    .games-count { display: none; }
 
-    /* Mobile: stack count below header */
     @media (max-width: 768px) {
-      .wiki-section-head {
-        flex-wrap: wrap;
-        gap: 8px;
-      }
+      .wiki-section-head { flex-wrap: wrap; gap: 8px; }
       .games-count-inline {
         margin-left: 0;
         width: 100%;
@@ -364,25 +311,33 @@
 
 <main class="page">
 
-  <!-- ✅ NAV — same structure as index.html -->
+  <!-- ✅ HEADER WITH DROPDOWNS -->
   <div class="index-header-wrap">
-    <a href="guides" class="top-text-link" aria-label="BLOXBURST Home">
+    <a href="/" class="top-text-link" aria-label="BLOXBURST Home">
       <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img" fetchpriority="high">
     </a>
     <div class="top-nav">
-
       <a href="guides" class="nav-box nav-link">Guides</a>
-
+      
+      <!-- Codes Dropdown -->
       <div class="nav-dropdown" id="codesDropdown">
-        <a href="gamecode" class="mini-btn" id="codesBtn">Codes</a>
+        <button class="mini-btn" id="codesBtn">Codes <span class="dropdown-arrow">▼</span></button>
         <div class="nav-menu" id="codesMenu">
           <a class="nav-item" href="gamecode">Game Codes</a>
           <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
         </div>
       </div>
-
+      
       <a href="wiki" class="nav-box nav-link">Wiki</a>
-
+      
+      <!-- More Dropdown -->
+      <div class="nav-dropdown" id="moreDropdown">
+        <button class="mini-btn" id="moreBtn">More <span class="dropdown-arrow">▼</span></button>
+        <div class="nav-menu" id="moreMenu">
+          <a class="nav-item" href="guides">Game Calculator</a>
+          <a class="nav-item" href="wiki">Roblox Outfit</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -402,7 +357,6 @@
     </div>
   </div>
 
-  <!-- ── UPDATED: Count inline with header ── -->
   <div class="wiki-section-head">
     <h2>🎮 Games with Guides</h2>
     <div class="wiki-section-line"></div>
@@ -448,7 +402,7 @@
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
-      <a href="../guides">Guides</a>
+      <a href="guides">Guides</a>
       <a href="gamecode">Game Codes</a>
       <a href="promo-latest-codes">Promo Codes</a>
       <a href="wiki">Wiki</a>
@@ -551,19 +505,32 @@
     }
 
     // ── DROPDOWN TOGGLE ──
-    const dropdown = document.getElementById('codesDropdown');
-    const btn      = document.getElementById('codesBtn');
-
-    if (dropdown && btn) {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        dropdown.classList.toggle('active');
-      });
-      document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target)) dropdown.classList.remove('active');
-      });
+    function setupDropdown(btnId, dropdownId) {
+      const btn = document.getElementById(btnId);
+      const dropdown = document.getElementById(dropdownId);
+      
+      if (btn && dropdown) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          // Close other dropdowns
+          document.querySelectorAll('.nav-dropdown').forEach(d => {
+            if (d !== dropdown) d.classList.remove('active');
+          });
+          // Toggle current
+          dropdown.classList.toggle('active');
+        });
+      }
     }
+    
+    setupDropdown('codesBtn', 'codesDropdown');
+    setupDropdown('moreBtn', 'moreDropdown');
+    
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
+      }
+    });
   });
 </script>
 

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slime Rarity Calculator - Bloxburst</title>
+  <meta name="description" content="Calculate Slime RNG rarity, stats, and mutation multipliers for Slime RNG on Roblox. Updated by Bloxburst!">
+  <link rel="icon" type="image/png" href="Images/FinalLogo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0b0c14;
+      color: rgba(255,255,255,0.88);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── Background ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(124,92,252,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,229,160,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 30% at 60% 30%, rgba(255,107,53,0.06) 0%, transparent 40%);
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── MOBILE HEADER FIX ── */
+    @media (min-width: 769px) {
+      .index-header-wrap { display: contents; }
+      .top-text-link { position: absolute !important; top: 28px !important; left: 28px !important; }
+      .top-text-link .logo-img { height: 120px !important; width: auto !important; max-width: 220px !important; object-fit: contain !important; }
+    }
+    @media (max-width: 768px) {
+      .index-header-wrap { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 8px !important; padding: 10px 0 6px !important; margin-bottom: 6px !important; }
+      .index-header-wrap .top-text-link { position: static !important; }
+      .index-header-wrap .top-text-link .logo-img { height: 60px !important; max-width: 150px !important; width: auto !important; }
+      .index-header-wrap .top-nav { position: static !important; display: flex !important; flex-direction: row !important; justify-content: center !important; gap: 8px !important; width: 80% !important; max-width: 260px !important; margin: 0 auto !important; }
+      .nav-box, .mini-btn { height: 36px !important; padding: 0 !important; font-size: 13px !important; border-radius: 10px !important; flex: 1 1 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown { flex: 1 1 0 !important; display: flex !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown .mini-btn { width: 100% !important; flex: 1 !important; }
+    }
+
+    /* ── Page wrapper ── */
+    .page { position: relative; z-index: 1; padding-bottom: 60px; }
+
+    /* ── Calculator Container ── */
+    .calc-wrap {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+    }
+
+    /* ── Page Hero ── */
+    .calc-hero {
+      background: linear-gradient(135deg, rgba(124,92,252,0.18) 0%, rgba(0,229,160,0.08) 50%, rgba(255,107,53,0.1) 100%);
+      border: 1px solid rgba(124,92,252,0.3);
+      border-radius: 24px;
+      padding: 44px 48px 36px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .calc-hero::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(124,92,252,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .calc-hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(124,92,252,0.2); border: 1px solid rgba(124,92,252,0.4);
+      border-radius: 999px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600; color: #a78bfa;
+      margin-bottom: 16px; letter-spacing: 0.06em;
+    }
+    .calc-hero h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700; color: #fff;
+      line-height: 1.2; margin-bottom: 12px;
+    }
+    .calc-hero p {
+      font-size: 15px; color: rgba(255,255,255,0.65);
+      max-width: 520px; margin: 0 auto; line-height: 1.7;
+    }
+    .beta-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(255,107,53,0.15); border: 1px solid rgba(255,107,53,0.3);
+      border-radius: 999px; padding: 3px 12px;
+      font-size: 11px; font-weight: 700; color: #ff6b35;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-left: 10px; vertical-align: middle;
+    }
+
+    /* ── Search ── */
+    .calc-search {
+      width: 100%; padding: 14px 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; color: #fff;
+      font-size: 15px; font-family: 'DM Sans', sans-serif;
+      margin-bottom: 14px; outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .calc-search::placeholder { color: rgba(255,255,255,0.3); }
+    .calc-search:focus { border-color: rgba(124,92,252,0.5); background: rgba(255,255,255,0.07); }
+
+    /* ── Slime Grid ── */
+    #slime-grid {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px; padding: 14px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 8px; max-height: 320px; overflow-y: auto; margin-bottom: 24px;
+    }
+    #slime-grid::-webkit-scrollbar { width: 5px; }
+    #slime-grid::-webkit-scrollbar-track { background: transparent; }
+    #slime-grid::-webkit-scrollbar-thumb { background: rgba(124,92,252,0.4); border-radius: 3px; }
+
+    .slime-card {
+      padding: 11px 8px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      cursor: pointer; text-align: center;
+      transition: all 0.15s; font-family: 'DM Sans', sans-serif;
+    }
+    .slime-card:hover { background: rgba(124,92,252,0.12); border-color: rgba(124,92,252,0.35); transform: translateY(-2px); }
+    .slime-card.active { border-color: rgba(124,92,252,0.7); background: rgba(124,92,252,0.2); box-shadow: 0 0 16px rgba(124,92,252,0.25); }
+    .slime-name { font-size: 12px; font-weight: 700; color: #fff; display: block; margin-bottom: 4px; }
+    .slime-tier { font-size: 10px; display: block; font-weight: 600; letter-spacing: 0.03em; }
+
+    /* ── Section Label ── */
+    .section-label {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px; font-weight: 600; color: rgba(124,92,252,0.9);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin: 0 0 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, rgba(124,92,252,0.3), transparent);
+    }
+
+    /* ── Level Row ── */
+    .level-row {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 14px 20px; margin-bottom: 24px;
+    }
+    .level-row label { font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 600; white-space: nowrap; }
+    .level-input {
+      width: 110px; padding: 8px 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(124,92,252,0.25);
+      border-radius: 10px; color: #fff;
+      font-size: 15px; font-family: 'DM Sans', sans-serif;
+      text-align: center; outline: none; transition: border-color 0.2s;
+    }
+    .level-input:focus { border-color: rgba(124,92,252,0.6); }
+    .level-input::-webkit-inner-spin-button { opacity: 0.5; }
+
+    /* ── Mutation Buttons ── */
+    #mutation-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+    .mut-btn {
+      padding: 9px 22px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.75); font-size: 14px;
+      cursor: pointer; transition: all 0.15s;
+      font-family: 'DM Sans', sans-serif; font-weight: 600;
+    }
+    .mut-btn:hover { background: rgba(124,92,252,0.15); border-color: rgba(124,92,252,0.4); color: #fff; }
+    .mut-btn.active { background: rgba(124,92,252,0.25); border-color: rgba(124,92,252,0.7); color: #c4b5fd; box-shadow: 0 0 14px rgba(124,92,252,0.25); }
+    .mut-btn.disabled-btn { opacity: 0.25; cursor: not-allowed; }
+    #mut-warning { font-size: 12px; color: #ff6b6b; min-height: 16px; margin: 0 0 20px; }
+
+    /* ── Result Box ── */
+    .result-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px; padding: 28px 32px; margin-top: 20px;
+      position: relative; overflow: hidden;
+    }
+    .result-box::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, #7c5cfc, #00e5a0, #ff6b35);
+      border-radius: 20px 20px 0 0;
+    }
+
+    /* Top stat row */
+    .result-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 20px; }
+    .result-stat-item {}
+    .result-stat-label {
+      font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px;
+    }
+    .result-stat-value { font-size: 16px; font-weight: 700; color: #fff; }
+
+    /* Divider */
+    .result-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 0 0 20px; }
+
+    /* Final Rarity */
+    .final-rarity-wrap { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+    .final-rarity-left { flex: 1; min-width: 180px; }
+    .final-label {
+      font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;
+    }
+    #rarity-value {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 38px; font-weight: 700; color: #fff;
+      margin: 0 0 10px; min-height: 46px; line-height: 1.1;
+    }
+    #rarity-indicator {
+      width: 48px; height: 4px;
+      background: rgba(124,92,252,0.5);
+      border-radius: 2px; margin-bottom: 10px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    #rarity-label { font-size: 14px; color: rgba(255,255,255,0.4); }
+
+    /* Stats Panel */
+    .stats-panel {
+      flex: 1; min-width: 240px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 18px 22px;
+    }
+    .stats-panel-title {
+      font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px;
+    }
+    .stats-grid { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .stat-item {}
+    .stat-item-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .stat-item-value { font-size: 18px; font-weight: 700; color: #00e5a0; }
+
+    /* Combo Hint */
+    #combo-hint {
+      display: none;
+      background: rgba(124,92,252,0.1);
+      border: 1px solid rgba(124,92,252,0.25);
+      border-radius: 12px; padding: 12px 18px; margin-top: 16px;
+    }
+    .combo-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+    .combo-name-text { font-size: 14px; font-weight: 700; margin: 0; color: #c4b5fd; }
+
+    /* Reset Button */
+    .reset-btn {
+      font-size: 13px; font-weight: 600; padding: 8px 22px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.7);
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: all 0.15s;
+    }
+    .reset-btn:hover { background: rgba(255,107,53,0.15); border-color: rgba(255,107,53,0.4); color: #ff6b35; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .calc-hero { padding: 32px 20px 28px; }
+      .calc-wrap { padding: 0 14px; }
+      .result-box { padding: 20px 18px; }
+      #slime-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+      .result-stats { gap: 1rem; }
+      .stats-grid { gap: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+<main class="page">
+
+  <!-- ── HEADER (same as Bloxburst) ── -->
+  <div class="index-header-wrap">
+    <a href="/" class="top-text-link" aria-label="BLOXBURST Home">
+      <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
+    </a>
+    <div class="top-nav">
+      <a href="guides" class="nav-box nav-link">Guides</a>
+      <div class="nav-dropdown" id="codesDropdown">
+        <a href="gamecode" class="mini-btn" id="codesBtn">Codes</a>
+        <div class="nav-menu" id="codesMenu">
+          <a class="nav-item" href="gamecode">Game Codes</a>
+          <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
+        </div>
+      </div>
+      <a href="wiki" class="nav-box nav-link">Wiki</a>
+    </div>
+  </div>
+
+  <!-- ── CALCULATOR ── -->
+  <div class="calc-wrap">
+
+    <!-- Hero -->
+    <div class="calc-hero">
+      <div class="calc-hero-badge">🧪 Slime RNG Tool</div>
+      <h1>Slime Rarity Calculator <span class="beta-pill">Beta</span></h1>
+      <p>Calculate the exact rarity, stats, and mutation multipliers for any slime in Slime RNG on Roblox.</p>
+    </div>
+
+    <!-- Search -->
+    <input type="text" id="search" class="calc-search" placeholder="🔍 Search slimes..." />
+
+    <!-- Grid -->
+    <div id="slime-grid"></div>
+
+    <!-- Level -->
+    <p class="section-label">Level</p>
+    <div class="level-row">
+      <label>Level</label>
+      <input type="number" id="level-num" class="level-input" min="1" max="9999" value="1" oninput="syncLevel()">
+    </div>
+
+    <!-- Mutations -->
+    <p class="section-label">Mutations</p>
+    <div id="mutation-buttons"></div>
+    <p id="mut-warning"></p>
+
+    <!-- Result -->
+    <div class="result-box">
+
+      <!-- Top Stats Row -->
+      <div class="result-stats">
+        <div class="result-stat-item">
+          <div class="result-stat-label">Slime</div>
+          <div class="result-stat-value" id="sel-slime">—</div>
+        </div>
+        <div class="result-stat-item">
+          <div class="result-stat-label">Level</div>
+          <div class="result-stat-value" id="res-level">0</div>
+        </div>
+        <div class="result-stat-item">
+          <div class="result-stat-label">Base Rarity</div>
+          <div class="result-stat-value" id="base-rarity">—</div>
+        </div>
+        <div class="result-stat-item">
+          <div class="result-stat-label">Mutations</div>
+          <div class="result-stat-value" id="active-label">None</div>
+        </div>
+        <div style="margin-left:auto;">
+          <button class="reset-btn" onclick="resetAll()">↺ Reset</button>
+        </div>
+      </div>
+
+      <hr class="result-divider">
+
+      <!-- Final Rarity + Stats -->
+      <div class="final-rarity-wrap">
+        <div class="final-rarity-left">
+          <div class="final-label">Final Rarity</div>
+          <div id="rarity-value">—</div>
+          <div id="rarity-indicator"></div>
+          <div id="rarity-label">Select a slime to begin</div>
+        </div>
+
+        <div class="stats-panel">
+          <div class="stats-panel-title">Stats at this level &amp; mutations</div>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-item-label">💪 ATK</div>
+              <div class="stat-item-value" id="stat-atk">—</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-item-label">❤️ HP</div>
+              <div class="stat-item-value" id="stat-hp">—</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-item-label">Stat multi</div>
+              <div class="stat-item-value" id="stat-multi">x1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Combo Hint -->
+      <div id="combo-hint">
+        <p class="combo-sub">✨ Matched preset combo</p>
+        <p class="combo-name-text" id="combo-name"></p>
+      </div>
+
+    </div><!-- /result-box -->
+  </div><!-- /calc-wrap -->
+
+</main>
+
+<!-- ── FOOTER (same as Bloxburst) ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">BLOXBURST🔥</div>
+      <p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="guides">Guides</a>
+      <a href="gamecode">Game Codes</a>
+      <a href="promo-latest-codes">Promo Codes</a>
+      <a href="wiki">Wiki</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="Terms-and-Condition/about">About Us</a>
+      <a href="Terms-and-Condition/faq">FAQ</a>
+      <a href="Terms-and-Condition/contactus">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="Terms-and-Condition/terms">Terms of Use</a>
+      <a href="Terms-and-Condition/privacy">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+    <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* ── All original logic preserved exactly ── */
+const slimes = [
+  {name:"Goopy",base:3,tier:"Basic",color:"#aaaaaa",atk:4,hp:10},
+  {name:"Sunset",base:5,tier:"Basic",color:"#aaaaaa",atk:5,hp:15},
+  {name:"Fin",base:8,tier:"Common",color:"#a6ff8b",atk:6,hp:20},
+  {name:"Leafy",base:11,tier:"Common",color:"#a6ff8b",atk:7,hp:22},
+  {name:"Meow",base:35,tier:"Uncommon",color:"#98f0be",atk:8,hp:27},
+  {name:"Glo",base:57,tier:"Uncommon",color:"#98f0be",atk:10,hp:30},
+  {name:"Buggy",base:103,tier:"Rare",color:"#85d0fb",atk:13,hp:36},
+  {name:"Boomy",base:160,tier:"Rare",color:"#85d0fb",atk:15,hp:43},
+  {name:"Brutis",base:263,tier:"Rare",color:"#85d0fb",atk:18,hp:50},
+  {name:"Frankenslime",base:415,tier:"Rare",color:"#85d0fb",atk:20,hp:60},
+  {name:"Orca",base:719,tier:"Epic",color:"#ba85ff",atk:25,hp:72},
+  {name:"Spike",base:1260,tier:"Epic",color:"#ba85ff",atk:29,hp:88},
+  {name:"Axolotl",base:2390,tier:"Epic",color:"#ba85ff",atk:36,hp:105},
+  {name:"Spidey",base:4270,tier:"Legendary",color:"#ffac7b",atk:43,hp:121},
+  {name:"Mushy",base:7770,tier:"Legendary",color:"#ffac7b",atk:50,hp:148},
+  {name:"Rocky",base:13900,tier:"Legendary",color:"#ffac7b",atk:58,hp:176},
+  {name:"Lucky",base:21500,tier:"Mythic",color:"#ff87bf",atk:67,hp:200},
+  {name:"Stump",base:35900,tier:"Mythic",color:"#ff87bf",atk:75,hp:232},
+  {name:"Lily",base:53800,tier:"Mythic",color:"#ff87bf",atk:85,hp:256},
+  {name:"Crafty",base:57400,tier:"Mythic",color:"#ff87bf",atk:90,hp:270},
+  {name:"Icy",base:86100,tier:"Divine",color:"#fee989",atk:96,hp:290},
+  {name:"Orbit",base:126000,tier:"Divine",color:"#fee989",atk:115,hp:344},
+  {name:"Aegis",base:215000,tier:"Divine",color:"#fee989",atk:138,hp:414},
+  {name:"Wicked",base:326000,tier:"Divine",color:"#fee989",atk:166,hp:496},
+  {name:"Thorn",base:330000,tier:"Divine",color:"#fee989",atk:167,hp:500},
+  {name:"King",base:538000,tier:"Prismatic",color:"#5dfbcb",atk:189,hp:567},
+  {name:"Guest",base:861000,tier:"Prismatic",color:"#5dfbcb",atk:208,hp:624},
+  {name:"Ninja",base:1260000,tier:"Prismatic",color:"#5dfbcb",atk:230,hp:690},
+  {name:"Buzz",base:2150000,tier:"Prismatic",color:"#5dfbcb",atk:270,hp:810},
+  {name:"Stormy",base:3070000,tier:"Prismatic",color:"#5dfbcb",atk:291,hp:870},
+  {name:"Geode",base:3110000,tier:"Prismatic",color:"#5dfbcb",atk:300,hp:900},
+  {name:"Bucky",base:4780000,tier:"Transcendent",color:"#e084ff",atk:333,hp:999},
+  {name:"Pokey",base:7180000,tier:"Transcendent",color:"#e084ff",atk:371,hp:1110},
+  {name:"SlimeSlime",base:10700000,tier:"Transcendent",color:"#e084ff",atk:419,hp:1250},
+  {name:"Unicorn",base:17900000,tier:"Transcendent",color:"#e084ff",atk:508,hp:1520},
+  {name:"Wizzy",base:26900000,tier:"Ethereal",color:"#aadeff",atk:612,hp:1830},
+  {name:"Petal",base:39100000,tier:"Ethereal",color:"#aadeff",atk:734,hp:2300},
+  {name:"SlimeSlimeSlime",base:42900000,tier:"Ethereal",color:"#aadeff",atk:676,hp:2020},
+  {name:"Shelly",base:61500000,tier:"Ethereal",color:"#aadeff",atk:880,hp:2640},
+  {name:"Derpy",base:89700000,tier:"Ethereal",color:"#aadeff",atk:1050,hp:3150},
+  {name:"Octo",base:134000000,tier:"Ethereal",color:"#aadeff",atk:1260,hp:3780},
+  {name:"Puffy",base:195000000,tier:"Ethereal",color:"#aadeff",atk:1400,hp:4200},
+  {name:"Halo",base:195000000,tier:"Ethereal",color:"#aadeff",atk:1510,hp:4500},
+  {name:"Bomber",base:307000000,tier:"Secret",color:"#ff4a4a",atk:1810,hp:5430},
+  {name:"UFO",base:478000000,tier:"Secret",color:"#ff4a4a",atk:2170,hp:6510},
+  {name:"Witchy",base:718000000,tier:"Secret",color:"#ff4a4a",atk:2600,hp:7800},
+  {name:"Blackhole",base:1070000000,tier:"Secret",color:"#ff4a4a",atk:3120,hp:9360},
+  {name:"Ember",base:1720000000,tier:"Secret",color:"#ff4a4a",atk:3740,hp:11200},
+  {name:"Astro",base:2470000000,tier:"Secret",color:"#ff4a4a",atk:4100,hp:12300},
+  {name:"Pumpkin",base:2770000000,tier:"Secret",color:"#ff4a4a",atk:4490,hp:13500},
+  {name:"Ouchy",base:4390000000,tier:"Celestial",color:"#b6e8ff",atk:5400,hp:16200},
+  {name:"Sharky",base:6470000000,tier:"Celestial",color:"#b6e8ff",atk:6500,hp:19400},
+  {name:"Dino",base:10100000000,tier:"Celestial",color:"#b6e8ff",atk:7800,hp:23400},
+  {name:"Sunny",base:11800000000,tier:"Celestial",color:"#b6e8ff",atk:8100,hp:24300},
+  {name:"Monke",base:15300000000,tier:"Celestial",color:"#b6e8ff",atk:9360,hp:28000},
+  {name:"Prickly",base:23900000000,tier:"Celestial",color:"#b6e8ff",atk:11200,hp:33700},
+  {name:"Zoomy",base:34200000000,tier:"Celestial",color:"#b6e8ff",atk:13400,hp:40300},
+  {name:"Waxie",base:50100000000,tier:"Astral",color:"#4189e0",atk:16100,hp:48200},
+  {name:"Drakey",base:74300000000,tier:"Astral",color:"#4189e0",atk:19300,hp:58000},
+  {name:"Germy",base:133000000000,tier:"Astral",color:"#4189e0",atk:23100,hp:70000},
+  {name:"Palmy",base:172000000000,tier:"Astral",color:"#4189e0",atk:27700,hp:83000},
+  {name:"Melly",base:237000000000,tier:"Astral",color:"#4189e0",atk:31000,hp:93000},
+  {name:"Snazzy",base:269000000000,tier:"Astral",color:"#4189e0",atk:33200,hp:100000},
+  {name:"Bemmy",base:414000000000,tier:"Astral",color:"#4189e0",atk:40000,hp:120000},
+  {name:"Mato",base:673000000000,tier:"Nova",color:"#db88d3",atk:48000,hp:144000},
+  {name:"Frosty",base:1070000000000,tier:"Nova",color:"#db88d3",atk:57600,hp:172000},
+];
+
+const mutations = [
+  {id:'big',label:'big',mult:100},{id:'shiny',label:'shiny',mult:250},
+  {id:'huge',label:'huge',mult:1000},{id:'inverted',label:'inverted',mult:2500},
+];
+const exclusions = {big:'huge',huge:'big'};
+const presets = [
+  {ids:['big','shiny'],name:'shiny big',mult:25000},
+  {ids:['huge','shiny'],name:'shiny huge',mult:250000},
+  {ids:['big','inverted'],name:'inverted big',mult:250000},
+  {ids:['inverted','shiny'],name:'shiny inverted',mult:625000},
+  {ids:['huge','inverted'],name:'inverted huge',mult:2500000},
+  {ids:['big','inverted','shiny'],name:'shiny big inverted',mult:62500000},
+  {ids:['huge','inverted','shiny'],name:'shiny huge inverted',mult:625000000},
+];
+const statMultipliers = {
+  '':1,'big':4,'shiny':6,'huge':10,'inverted':13,
+  'big+inverted':52,'huge+inverted':130,'inverted+shiny':78,
+  'big+shiny':24,'huge+shiny':60,
+  'big+inverted+shiny':312,'huge+inverted+shiny':780,
+};
+
+let selectedSlime = null, currentLevel = 1;
+const selectedMuts = new Set();
+
+function fmtNum(n) {
+  if (n >= 1e18) return (n/1e18).toFixed(2).replace(/\.?0+$/,'') + 'Qn';
+  if (n >= 1e15) return (n/1e15).toFixed(2).replace(/\.?0+$/,'') + 'Qd';
+  if (n >= 1e12) return (n/1e12).toFixed(2).replace(/\.?0+$/,'') + 'T';
+  if (n >= 1e9)  return (n/1e9).toFixed(2).replace(/\.?0+$/,'') + 'B';
+  if (n >= 1e6)  return (n/1e6).toFixed(2).replace(/\.?0+$/,'') + 'M';
+  if (n >= 1e3)  return (n/1e3).toFixed(2).replace(/\.?0+$/,'') + 'K';
+  return Math.round(n).toLocaleString();
+}
+function fmt(n) { return '1 / ' + fmtNum(n); }
+
+function syncLevel() {
+  currentLevel = Math.max(1, parseInt(document.getElementById('level-num').value) || 1);
+  update();
+}
+
+function renderGrid(filter) {
+  const grid = document.getElementById('slime-grid');
+  grid.innerHTML = '';
+  const q = (filter||'').toLowerCase();
+  slimes.filter(s => s.name.toLowerCase().includes(q)).forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'slime-card' + (selectedSlime === s.name ? ' active' : '');
+    card.innerHTML = `<span class="slime-name">${s.name}</span><span class="slime-tier" style="color:${s.color}">${s.tier}</span>`;
+    card.onclick = () => {
+      selectedSlime = s.name;
+      document.querySelectorAll('.slime-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      update();
+    };
+    grid.appendChild(card);
+  });
+}
+
+const mutBtns = {};
+mutations.forEach(m => {
+  const btn = document.createElement('button');
+  btn.className = 'mut-btn'; btn.textContent = m.label;
+  btn.onclick = () => {
+    if (btn.classList.contains('disabled-btn')) return;
+    if (selectedMuts.has(m.id)) { selectedMuts.delete(m.id); btn.classList.remove('active'); }
+    else { selectedMuts.add(m.id); btn.classList.add('active'); }
+    const excl = exclusions[m.id];
+    if (excl && selectedMuts.has(m.id)) { selectedMuts.delete(excl); mutBtns[excl].classList.remove('active'); }
+    refreshMutButtons(); update();
+  };
+  mutBtns[m.id] = btn;
+  document.getElementById('mutation-buttons').appendChild(btn);
+});
+
+function refreshMutButtons() {
+  mutations.forEach(m => {
+    const btn = mutBtns[m.id];
+    const blockedBy = exclusions[m.id];
+    if (blockedBy && selectedMuts.has(blockedBy)) btn.classList.add('disabled-btn');
+    else btn.classList.remove('disabled-btn');
+  });
+}
+
+function resetAll() {
+  selectedSlime = null; selectedMuts.clear(); currentLevel = 1;
+  document.getElementById('search').value = '';
+  document.getElementById('level-num').value = 1;
+  Object.values(mutBtns).forEach(b => b.classList.remove('active','disabled-btn'));
+  document.getElementById('mut-warning').textContent = '';
+  document.getElementById('combo-hint').style.display = 'none';
+  document.getElementById('rarity-indicator').style.background = 'rgba(124,92,252,0.5)';
+  document.getElementById('rarity-indicator').style.boxShadow = 'none';
+  renderGrid(); update();
+}
+
+document.getElementById('search').addEventListener('input', e => renderGrid(e.target.value));
+
+function update() {
+  const slime = slimes.find(s => s.name === selectedSlime);
+  const sorted = [...selectedMuts].sort();
+  document.getElementById('active-label').textContent = sorted.length ? sorted.join(' + ') : 'None';
+  document.getElementById('res-level').textContent = currentLevel;
+
+  if (!slime) {
+    ['sel-slime','base-rarity','rarity-value','stat-atk','stat-hp'].forEach(id => document.getElementById(id).textContent = '—');
+    document.getElementById('stat-multi').textContent = 'x1';
+    document.getElementById('rarity-label').textContent = 'Select a slime to begin';
+    document.getElementById('rarity-label').style.color = 'rgba(255,255,255,0.35)';
+    document.getElementById('rarity-indicator').style.background = 'rgba(124,92,252,0.4)';
+    document.getElementById('rarity-indicator').style.boxShadow = 'none';
+    document.getElementById('combo-hint').style.display = 'none';
+    return;
+  }
+
+  document.getElementById('sel-slime').textContent = slime.name;
+  document.getElementById('base-rarity').textContent = fmt(slime.base);
+
+  let mutMult = 1, presetMatch = null;
+  if (sorted.length > 0) {
+    presetMatch = presets.find(p => { const ps=[...p.ids].sort(); return ps.length===sorted.length&&ps.every((v,i)=>v===sorted[i]); });
+    mutMult = presetMatch ? presetMatch.mult : sorted.reduce((acc,id) => { const m=mutations.find(x=>x.id===id); return acc*(m?m.mult:1); },1);
+  }
+  document.getElementById('rarity-value').textContent = fmt(slime.base * mutMult);
+  document.getElementById('rarity-label').textContent = slime.tier + (sorted.length ? ' + ' + sorted.join(' ') : '');
+  document.getElementById('rarity-label').style.color = slime.color;
+  document.getElementById('rarity-indicator').style.background = slime.color;
+  document.getElementById('rarity-indicator').style.boxShadow = `0 0 10px ${slime.color}66`;
+
+  const statKey = sorted.join('+');
+  const statMult = statMultipliers[statKey] ?? 1;
+  const atk = Math.round((slime.atk / 10) * (9 + currentLevel) * statMult);
+  const hp  = Math.round((slime.hp / 10) * (9 + currentLevel) * statMult);
+  document.getElementById('stat-atk').textContent = fmtNum(atk);
+  document.getElementById('stat-hp').textContent = fmtNum(hp);
+  document.getElementById('stat-multi').textContent = 'x' + statMult;
+
+  if (presetMatch) {
+    document.getElementById('combo-hint').style.display = 'block';
+    document.getElementById('combo-name').textContent = presetMatch.name + ' (x' + presetMatch.mult.toLocaleString() + ' multiplier)';
+  } else { document.getElementById('combo-hint').style.display = 'none'; }
+}
+
+// Codes dropdown
+const codesBtn = document.getElementById('codesBtn');
+const codesMenu = document.getElementById('codesMenu');
+if (codesBtn && codesMenu) {
+  codesBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    codesMenu.style.display = codesMenu.style.display === 'block' ? 'none' : 'block';
+  });
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('codesDropdown').contains(e.target)) codesMenu.style.display = 'none';
+  });
+}
+
+renderGrid();
+</script>
+</body>
+</html>

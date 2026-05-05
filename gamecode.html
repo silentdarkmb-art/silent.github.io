@@ -25,6 +25,65 @@
     body { overflow-x: hidden; }
     img  { max-width: 100%; height: auto; display: block; }
 
+    /* ── DROPDOWN STYLES ── */
+    .dropdown-arrow {
+      font-size: 10px;
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+    .nav-dropdown.active .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+    
+    .nav-dropdown {
+      position: relative !important;
+      display: inline-block !important;
+    }
+    
+    .nav-menu {
+      position: absolute !important;
+      top: calc(100% + 12px) !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      min-width: 180px !important;
+      background: linear-gradient(135deg, #1a1f4d, #252b6b) !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      border-radius: 12px !important;
+      padding: 8px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+      z-index: 9999 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .nav-dropdown.active .nav-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateX(-50%) translateY(0) !important;
+    }
+    
+    .nav-item {
+      display: block !important;
+      padding: 10px 16px !important;
+      color: rgba(255,255,255,0.9) !important;
+      text-decoration: none !important;
+      border-radius: 8px !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      transition: all 0.2s ease !important;
+      margin: 4px 0 !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+    
+    .nav-item:hover {
+      background: rgba(125,92,255,0.3) !important;
+      color: #fff !important;
+    }
+    /* ── END DROPDOWN STYLES ── */
+
     /* ── HERO SECTION ── */
     .gc-hero {
       width: 100%;
@@ -293,20 +352,33 @@
 <body>
 <main class="page">
 
+  <!-- ✅ HEADER WITH DROPDOWNS -->
   <div class="gamecode-header">
-    <a href="https://bloxburst.com/" class="top-text-link" aria-label="BLOXBURST Home">
+    <a href="/" class="top-text-link" aria-label="BLOXBURST Home">
       <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img" fetchpriority="high">
     </a>
     <div class="top-nav">
       <a href="guides" class="nav-box nav-link">Guides</a>
+      
+      <!-- Codes Dropdown -->
       <div class="nav-dropdown" id="codesDropdown">
-        <a href="gamecode" class="mini-btn" id="codesBtn">Codes</a>
+        <button class="mini-btn" id="codesBtn">Codes <span class="dropdown-arrow">▼</span></button>
         <div class="nav-menu" id="codesMenu">
           <a class="nav-item" href="gamecode">Game Codes</a>
           <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
         </div>
       </div>
+      
       <a href="wiki" class="nav-box nav-link">Wiki</a>
+      
+      <!-- More Dropdown -->
+      <div class="nav-dropdown" id="moreDropdown">
+        <button class="mini-btn" id="moreBtn">More <span class="dropdown-arrow">▼</span></button>
+        <div class="nav-menu" id="moreMenu">
+          <a class="nav-item" href="guides">Game Calculator</a>
+          <a class="nav-item" href="wiki">Roblox Outfit</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -412,7 +484,7 @@
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
-      <a href="../guides">Guides</a>
+      <a href="guides">Guides</a>
       <a href="gamecode">Game Codes</a>
       <a href="promo-latest-codes">Promo Codes</a>
       <a href="wiki">Wiki</a>
@@ -436,5 +508,52 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- ✅ DROPDOWN TOGGLE SCRIPT -->
+<script>
+  // Dropdown Toggle Function
+  function setupDropdown(btnId, dropdownId) {
+    const btn = document.getElementById(btnId);
+    const dropdown = document.getElementById(dropdownId);
+    
+    if (btn && dropdown) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Close other dropdowns
+        document.querySelectorAll('.nav-dropdown').forEach(d => {
+          if (d !== dropdown) d.classList.remove('active');
+        });
+        
+        // Toggle current
+        dropdown.classList.toggle('active');
+      });
+    }
+  }
+  
+  // Initialize both dropdowns
+  setupDropdown('codesBtn', 'codesDropdown');
+  setupDropdown('moreBtn', 'moreDropdown');
+  
+  // Close when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => {
+        d.classList.remove('active');
+      });
+    }
+  });
+  
+  // Clear search function
+  function clearGlobalSearch() {
+    const input = document.getElementById('globalSearch');
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
+  }
+</script>
+
 </body>
 </html>

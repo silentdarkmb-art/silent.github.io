@@ -129,6 +129,65 @@
   </script>
 
   <style>
+    /* ── DROPDOWN STYLES ── */
+    .dropdown-arrow {
+      font-size: 10px;
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+    .nav-dropdown.active .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+    
+    .nav-dropdown {
+      position: relative !important;
+      display: inline-block !important;
+    }
+    
+    .nav-menu {
+      position: absolute !important;
+      top: calc(100% + 12px) !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      min-width: 180px !important;
+      background: linear-gradient(135deg, #1a1f4d, #252b6b) !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      border-radius: 12px !important;
+      padding: 8px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+      z-index: 9999 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .nav-dropdown.active .nav-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateX(-50%) translateY(0) !important;
+    }
+    
+    .nav-item {
+      display: block !important;
+      padding: 10px 16px !important;
+      color: rgba(255,255,255,0.9) !important;
+      text-decoration: none !important;
+      border-radius: 8px !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      transition: all 0.2s ease !important;
+      margin: 4px 0 !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+    
+    .nav-item:hover {
+      background: rgba(125,92,255,0.3) !important;
+      color: #fff !important;
+    }
+    /* ── END DROPDOWN STYLES ── */
+
     /* ── Wiki Hero ── */
     .wiki-hero {
       width: 100%;
@@ -365,6 +424,37 @@
       font-size: 14px;
       line-height: 1.7;
     }
+
+    @media (min-width: 769px) {
+      .top-text-link { position: absolute; top: 28px; left: 28px; }
+      .top-text-link .logo-img { height: 160px !important; width: auto; max-width: 220px; object-fit: contain; }
+    }
+
+    @media (max-width: 768px) {
+      main.page { padding-top: 10px !important; padding-left: 14px !important; padding-right: 14px !important; padding-bottom: 24px !important; width: 100% !important; }
+      .top-text-link { position: static !important; }
+      .top-text-link .logo-img { height: 60px !important; max-width: 150px !important; }
+      .top-nav { position: static !important; display: flex !important; flex-direction: row !important; justify-content: center !important; gap: 8px !important; width: 80% !important; max-width: 260px !important; margin: 0 auto !important; }
+      .nav-box, .mini-btn { height: 36px !important; padding: 0 !important; font-size: 13px !important; border-radius: 10px !important; flex: 1 1 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown { flex: 1 1 0 !important; display: flex !important; width: 0 !important; min-width: 0 !important; }
+      .nav-dropdown .mini-btn { width: 100% !important; flex: 1 !important; }
+      .wiki-hero { padding: 30px 20px 24px !important; border-radius: 18px !important; }
+      .wiki-hero h1 { font-size: 28px !important; }
+      .wiki-hero p { font-size: 14px !important; }
+      .wiki-search-box { width: 100% !important; max-width: 100% !important; }
+      .wiki-section-head h2 { font-size: 18px !important; }
+      .game-wiki-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .wiki-featured { padding: 24px 20px !important; }
+      .wiki-featured-text h2 { font-size: 18px !important; }
+      .wiki-tips { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .footer-inner { grid-template-columns: 1fr !important; gap: 12px !important; width: 86% !important; }
+      .footer-logo { font-size: 18px !important; }
+      .footer-desc { font-size: 11px !important; }
+      .footer-col h4 { font-size: 11px !important; }
+      .footer-col a { font-size: 10px !important; margin: 3px 0 !important; }
+      .footer-bottom { margin-top: 12px !important; padding: 8px 14px 0 !important; }
+      .footer-meta, .footer-copy { font-size: 10px !important; }
+    }
   </style>
 </head>
 
@@ -372,23 +462,38 @@
 
 <main class="page">
 
-  <!-- ── HEADER (same as Index HTML) ── -->
-  <a href="../wiki.html" class="top-text-link" aria-label="BLOXBURST Home">
+  <!-- ✅ HEADER WITH DROPDOWNS -->
+    <!-- ✅ HEADER WITH ALL BUTTONS -->
+  <a href="/" class="top-text-link" aria-label="BLOXBURST Home">
     <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
   </a>
 
   <div class="top-nav">
+    <!-- Guides Button -->
+    <a href="guides.html" class="nav-box nav-link">Guides</a>
+    
+    <!-- Codes Dropdown -->
     <div class="nav-dropdown" id="codesDropdown">
-      <a href="gamecode.html" class="mini-btn" id="codesBtn">Codes</a>
+      <button class="mini-btn" id="codesBtn">Codes <span class="dropdown-arrow">▼</span></button>
       <div class="nav-menu" id="codesMenu">
         <a class="nav-item" href="gamecode.html">Game Codes</a>
         <a class="nav-item" href="promo-latest-codes.html">Promo Codes</a>
       </div>
     </div>
+    
     <a href="wiki.html" class="nav-box nav-link">Wiki</a>
+    
+    <!-- More Dropdown -->
+    <div class="nav-dropdown" id="moreDropdown">
+      <button class="mini-btn" id="moreBtn">More <span class="dropdown-arrow">▼</span></button>
+      <div class="nav-menu" id="moreMenu">
+        <a class="nav-item" href="guides.html">Game Calculator</a>
+        <a class="nav-item" href="wiki.html">Roblox Outfit</a>
+      </div>
+    </div>
   </div>
 
-  <!-- ── HERO ── -->
+  <!-- ── HERO ─ -->
   <div class="wiki-hero">
     <h1>📚 BLOXBURST Wiki</h1>
     <p>
@@ -518,42 +623,35 @@
 
 <!-- ── FOOTER (same as Index HTML) ── -->
 <footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-left">
-      <div class="footer-logo">BLOXBURST🔥</div>
-      <p class="footer-desc">
-        BLOXBURST is the premier destination for the latest Roblox Game Codes and in-depth Wiki Guides. Access verified, working codes, unlock exclusive rewards, and explore expertly curated game insights designed to help you progress faster and stay ahead in your favorite Roblox experiences.
-      </p>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">BLOXBURST🔥</div>
+        <p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games. Find codes, learn how to redeem them, and get help when something's not working.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="guides">Guides</a>
+        <a href="gamecode">Game Codes</a>
+        <a href="promo-latest-codes">Promo Codes</a>
+        <a href="wiki">Wiki</a>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="Terms-and-Condition/about">About Us</a>
+        <a href="Terms-and-Condition/faq">FAQ</a>
+        <a href="Terms-and-Condition/contactus">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Policies</h4>
+        <a href="Terms-and-Condition/terms">Terms of Use</a>
+        <a href="Terms-and-Condition/privacy">Privacy Policy</a>
+      </div>
     </div>
-
-    <div class="footer-col">
-      <h4>Navigation</h4>
-      <a href="gamecode.html">Game Codes</a>
-      <a href="promo-latest-codes.html">Promo Codes</a>
-      <a href="wiki.html">Wiki</a>
+    <div class="footer-bottom">
+      <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+      <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
     </div>
-
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="Terms-and-Condition/about.html">About Us</a>
-      <a href="Terms-and-Condition/faq.html">FAQ</a>
-      <a href="Terms-and-Condition/contactus.html">Contact Us</a>
-    </div>
-
-    <div class="footer-col">
-      <h4>Policies</h4>
-      <a href="Terms-and-Condition/terms.html">Terms of Use</a>
-      <a href="Terms-and-Condition/privacy.html">Privacy Policy</a>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
-    <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
-  </div>
-</footer>
+  </footer>
 
 <script src="script.js"></script>
 <script>
@@ -572,6 +670,40 @@
     document.querySelectorAll('#wikiGrid .wiki-card').forEach(card => {
       card.style.display = card.innerText.toLowerCase().includes(q) ? '' : 'none';
     });
+  });
+
+  // ── DROPDOWN TOGGLE LOGIC ──
+  function setupDropdown(btnId, dropdownId) {
+    const btn = document.getElementById(btnId);
+    const dropdown = document.getElementById(dropdownId);
+    
+    if (btn && dropdown) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Close other dropdowns
+        document.querySelectorAll('.nav-dropdown').forEach(d => {
+          if (d !== dropdown) d.classList.remove('active');
+        });
+        
+        // Toggle current
+        dropdown.classList.toggle('active');
+      });
+    }
+  }
+  
+  // Initialize both dropdowns
+  setupDropdown('codesBtn', 'codesDropdown');
+  setupDropdown('moreBtn', 'moreDropdown');
+  
+  // Close when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => {
+        d.classList.remove('active');
+      });
+    }
   });
 </script>
 

@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Bloxburst – Roblox Game Codes, Wiki & Guides (2026)</title>
-  
   <meta name="description" content="Find working Roblox game codes, promo codes, wiki guides, and tips at Bloxburst. Codes are tested before we post them. Updated regularly so you don't waste time on expired ones.">
-  
   <meta name="keywords" content="Roblox codes, Roblox game codes, working codes, promo codes, free rewards, Roblox wiki">
   <meta name="robots" content="index, follow">
-  
   <link rel="canonical" href="https://bloxburst.com/" />
-  
   <meta name="author" content="BLOXBURST">
   <meta name="language" content="en">
   <meta name="revisit-after" content="1 day">
@@ -31,7 +27,6 @@
   <meta property="og:url" content="https://bloxburst.com/">
   <meta property="og:site_name" content="Bloxburst">
   <meta property="og:locale" content="en_US">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Bloxburst">
   <meta name="twitter:creator" content="@Bloxburst">
@@ -59,12 +54,7 @@
           "@type": "Organization",
           "name": "Bloxburst",
           "url": "https://bloxburst.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://bloxburst.com/Images/FinalLogo.png",
-            "width": 260,
-            "height": 150
-          }
+          "logo": { "@type": "ImageObject", "url": "https://bloxburst.com/Images/FinalLogo.png", "width": 260, "height": 150 }
         }
       },
       {
@@ -72,28 +62,13 @@
         "@id": "https://bloxburst.com/#organization",
         "name": "Bloxburst",
         "url": "https://bloxburst.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://bloxburst.com/Images/FinalLogo.png",
-          "width": 260,
-          "height": 150
-        },
-        "sameAs": [
-          "https://twitter.com/Bloxburst",
-          "https://www.roblox.com/groups/Bloxburst"
-        ]
+        "logo": { "@type": "ImageObject", "url": "https://bloxburst.com/Images/FinalLogo.png", "width": 260, "height": 150 },
+        "sameAs": ["https://twitter.com/Bloxburst", "https://www.roblox.com/groups/Bloxburst"]
       },
       {
         "@type": "BreadcrumbList",
         "@id": "https://bloxburst.com/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://bloxburst.com/"
-          }
-        ]
+        "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bloxburst.com/" }]
       }
     ]
   }
@@ -102,9 +77,8 @@
   <link rel="icon" type="image/png" href="Images/FinalLogo.png">
   <link rel="preload" as="image" href="Images/FinalLogo.png">
   <link rel="stylesheet" href="style.css">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
   <script>
@@ -116,71 +90,85 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-    body { overflow-x: hidden; }
+    body { overflow-x: hidden; font-family: 'Poppins', sans-serif; }
     img  { max-width: 100%; height: auto; display: block; }
 
-    .game-card {
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #151a4d, #1c2266) !important;
-      padding: 16px 18px !important;
-      border-radius: 18px !important;
-      border: 1px solid rgba(255,255,255,0.07) !important;
-      transition: all 0.25s ease !important;
-      position: relative;
-      overflow: visible;
-      gap: 14px;
+    /* ── Dropdown Arrow Style ── */
+    .dropdown-arrow {
+      font-size: 10px;
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .nav-dropdown.active .dropdown-arrow {
+      transform: rotate(180deg);
     }
 
+    /* ── Dropdown Menu Style ── */
+    .nav-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #1a1f4d, #252b6b);
+      border: 1px solid rgba(125,92,255,0.3);
+      border-radius: 12px;
+      padding: 8px;
+      min-width: 160px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      z-index: 100;
+    }
+    .nav-dropdown.active .nav-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-item {
+      display: block;
+      padding: 10px 16px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      margin: 4px 0;
+      text-align: center;
+    }
+    .nav-item:hover {
+      background: rgba(125,92,255,0.3);
+      color: #fff;
+    }
+
+    .game-card {
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, #151a4d, #1c2266) !important;
+      padding: 16px 18px !important; border-radius: 18px !important;
+      border: 1px solid rgba(255,255,255,0.07) !important;
+      transition: all 0.25s ease !important;
+      position: relative; overflow: visible; gap: 14px;
+    }
     .game-card:hover {
       transform: translateY(-6px) !important;
       border-color: rgba(125,92,255,0.55) !important;
-      box-shadow:
-        0 0 0 1px rgba(125,92,255,0.35),
-        0 0 22px rgba(125,92,255,0.25),
-        0 16px 40px rgba(0,0,0,0.5) !important;
+      box-shadow: 0 0 0 1px rgba(125,92,255,0.35), 0 0 22px rgba(125,92,255,0.25), 0 16px 40px rgba(0,0,0,0.5) !important;
     }
-
-    .game-thumb {
-      width: 58px !important;
-      height: 58px !important;
-      border-radius: 14px !important;
-      object-fit: cover;
-      flex-shrink: 0;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-      transition: transform 0.25s ease;
-    }
+    .game-thumb { width: 58px !important; height: 58px !important; border-radius: 14px !important; object-fit: cover; flex-shrink: 0; box-shadow: 0 6px 18px rgba(0,0,0,0.4); transition: transform 0.25s ease; }
     .game-card:hover .game-thumb { transform: scale(1.06); }
-
     .game-info { flex: 1; min-width: 0; }
     .game-info h3 { font-size: 14px !important; font-weight: 900; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 4px; }
     .game-info p  { font-size: 12px !important; color: rgba(157,243,196,0.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; }
     .game-info span { color: #00ff88; font-weight: 900; }
-
-    .game-new-badge {
-      position: absolute;
-      background: linear-gradient(135deg, #00ff88, #00d4aa) !important;
-      color: #002b1f !important; font-size: 10px !important; font-weight: 900 !important;
-      padding: 4px 10px !important; border-radius: 999px !important;
-      box-shadow: 0 0 14px rgba(0,255,136,0.55) !important;
-      top: 10px !important; right: 10px !important;
-    }
-
-    .game-card::after {
-      content: "➜"; position: absolute; right: 14px; bottom: 12px;
-      font-size: 12px; color: rgba(0,255,136,0.7); opacity: 0;
-      transform: translateX(-4px); transition: all 0.2s ease; pointer-events: none;
-    }
+    .game-new-badge { position: absolute; background: linear-gradient(135deg, #00ff88, #00d4aa) !important; color: #002b1f !important; font-size: 10px !important; font-weight: 900 !important; padding: 4px 10px !important; border-radius: 999px !important; box-shadow: 0 0 14px rgba(0,255,136,0.55) !important; top: 10px !important; right: 10px !important; }
+    .game-card::after { content: "➜"; position: absolute; right: 14px; bottom: 12px; font-size: 12px; color: rgba(0,255,136,0.7); opacity: 0; transform: translateX(-4px); transition: all 0.2s ease; pointer-events: none; }
     .game-card:hover::after { opacity: 1; transform: translateX(0); }
 
-    /* STATS */
-    .stats-section {
-      width: 100%; margin: 10px 0 30px; padding: 28px 32px;
-      background: linear-gradient(135deg, rgba(21,26,77,0.8), rgba(28,34,102,0.7));
-      border: 1px solid rgba(125,92,255,0.22); border-radius: 24px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 40px rgba(125,92,255,0.08);
-    }
+    .stats-section { width: 100%; margin: 10px 0 30px; padding: 28px 32px; background: linear-gradient(135deg, rgba(21,26,77,0.8), rgba(28,34,102,0.7)); border: 1px solid rgba(125,92,255,0.22); border-radius: 24px; backdrop-filter: blur(12px); box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 40px rgba(125,92,255,0.08); }
     .stats-title { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 900; text-align: center; color: rgba(255,255,255,0.9); margin-bottom: 24px; letter-spacing: 0.5px; }
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .stat-card { text-align: center; padding: 20px 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; transition: 0.25s ease; }
@@ -189,22 +177,69 @@
     .stat-number { font-family: 'Fredoka', sans-serif; font-size: 32px; font-weight: 900; color: #00ff88; line-height: 1; margin-bottom: 6px; letter-spacing: -0.5px; }
     .stat-label { font-size: 13px; color: rgba(255,255,255,0.65); font-weight: 700; }
 
-    .section-divider-title {
-      display: flex; align-items: center; gap: 14px; width: 100%; margin: 0 0 20px;
-    }
-    .section-divider-title::before,
-    .section-divider-title::after {
-      content: ''; flex: 1; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-    }
-    .section-divider-title span {
-      font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700;
-      color: rgba(255,255,255,0.92); white-space: nowrap; letter-spacing: 0.5px;
-    }
+    .section-divider-title { display: flex; align-items: center; gap: 14px; width: 100%; margin: 0 0 20px; }
+    .section-divider-title::before, .section-divider-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent); }
+    .section-divider-title span { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.92); white-space: nowrap; letter-spacing: 0.5px; }
+    .games-loading { text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.4); font-size: 14px; }
 
-    .games-loading {
-      text-align: center; padding: 40px 20px;
-      color: rgba(255,255,255,0.4); font-size: 14px;
+    /* ── HOME GAME GUIDES SECTION ── */
+    .home-guides-section { width: 100%; margin: 0 0 28px; }
+    .home-guides-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .home-guides-head h2 { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .home-guides-count { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 600; padding: 4px 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; white-space: nowrap; }
+
+    .home-guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; } @media (max-width: 900px) { .home-guides-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+
+    .home-guide-card { text-decoration: none; color: inherit; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .home-guide-card:hover { transform: translateY(-5px); border-color: rgba(125,92,255,0.45); box-shadow: 0 0 0 1px rgba(125,92,255,0.25), 0 16px 35px rgba(0,0,0,0.4); }
+    .home-guide-img { width: 100%; height: 130px; position: relative; overflow: hidden; }
+    .home-guide-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .home-guide-card:hover .home-guide-img img { transform: scale(1.05); }
+    .home-guide-date { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); padding: 4px 10px; border-radius: 7px; font-size: 11px; font-weight: 700; color: #00ff88; backdrop-filter: blur(4px); border: 1px solid rgba(0,255,136,0.25); }
+    .home-guide-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+    .home-guide-tag { font-size: 10px; font-weight: 900; padding: 3px 9px; border-radius: 999px; background: rgba(125,92,255,0.22); color: rgba(180,160,255,0.95); width: fit-content; letter-spacing: 0.04em; }
+    .home-guide-body h3 { font-size: 14px; font-weight: 900; color: #fff; line-height: 1.35; margin: 3px 0; }
+    .home-guide-body p { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.5; flex: 1; }
+    .home-guide-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+    .home-guide-cta { font-size: 12px; font-weight: 900; color: #00ff88; }
+    .home-guide-time { font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 600; }
+
+    .home-guides-btn-wrap { text-align: center; margin-top: 4px; }
+    .home-guides-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: rgba(125,92,255,0.15); border: 1px solid rgba(125,92,255,0.35); border-radius: 999px; color: rgba(180,160,255,0.95); font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.2s; font-family: 'Poppins', sans-serif; }
+    .home-guides-btn:hover { background: rgba(125,92,255,0.28); border-color: rgba(125,92,255,0.6); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(125,92,255,0.2); }
+
+    /* Hero Banner */
+    .home-guides-hero {
+      width: 100%;
+      text-align: center;
+      padding: 44px 32px 36px;
+      background: rgba(21,26,77,0.65);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      margin-bottom: 24px;
+    }
+    .home-guides-hero-icon { font-size: 36px; margin-bottom: 10px; }
+    .home-guides-hero-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .hero-brand-text { color: #fff; }
+    .home-guides-hero-sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .home-guides-hero { padding: 28px 20px 24px !important; border-radius: 14px !important; margin-bottom: 16px !important; }
+      .home-guides-hero-title { font-size: 22px !important; }
+      .home-guides-hero-sub { font-size: 13px !important; }
+      .home-guides-hero-icon { font-size: 28px !important; }
     }
 
     @media (min-width: 769px) {
@@ -216,16 +251,71 @@
     @media (max-width: 768px) {
       html { font-size: 13px; }
       main.page { padding-top: 10px !important; padding-left: 14px !important; padding-right: 14px !important; padding-bottom: 24px !important; width: 100% !important; }
-      .index-header-wrap { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 8px !important; padding: 10px 0 6px !important; margin-bottom: 6px !important; }
+      
+      /* ✅ FIXED HEADER LAYOUT - No more compression */
+      .index-header-wrap { 
+        display: flex !important; 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        gap: 10px !important; 
+        padding: 12px 10px !important; 
+        margin-bottom: 6px !important; 
+      }
       .index-header-wrap .top-text-link { position: static !important; }
-      .index-header-wrap .top-text-link .logo-img, .top-text-link .logo-img { height: 60px !important; max-width: 150px !important; width: auto !important; }
-      .index-header-wrap .top-nav, .top-nav { position: static !important; display: flex !important; flex-direction: row !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: 80% !important; max-width: 260px !important; margin: 0 auto !important; }
-      .nav-box, .mini-btn { height: 36px !important; padding: 0 !important; font-size: 13px !important; border-radius: 10px !important; flex: 1 1 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; width: 0 !important; min-width: 0 !important; }
-      .nav-dropdown { flex: 1 1 0 !important; display: flex !important; width: 0 !important; min-width: 0 !important; }
-      .nav-dropdown .mini-btn { width: 100% !important; flex: 1 !important; }
+      .index-header-wrap .top-text-link .logo-img, .top-text-link .logo-img { 
+        height: 55px !important; 
+        max-width: 140px !important; 
+        width: auto !important; 
+      }
+      
+      /* ✅ FIXED NAV CONTAINER - Allow wrapping, no forced compression */
+      .index-header-wrap .top-nav, .top-nav { 
+        position: static !important; 
+        display: flex !important; 
+        flex-wrap: wrap !important; /* ✅ Allow buttons to wrap to next row */
+        justify-content: center !important; 
+        align-items: center !important; 
+        gap: 8px !important; 
+        width: 100% !important; 
+        max-width: 100% !important; 
+        margin: 0 auto !important;
+        padding: 4px 6px !important;
+      }
+      
+      /* ✅ FIXED BUTTON SIZING - Natural width, proper padding */
+      .nav-box, .mini-btn { 
+        height: auto !important;
+        min-height: 38px !important;
+        padding: 8px 14px !important; /* ✅ Proper padding so text breathes */
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        border-radius: 10px !important;
+        flex: 0 0 auto !important; /* ✅ STOP COMPRESSION - take natural width */
+        display: flex !important; 
+        align-items: center !important; 
+        justify-content: center !important; 
+        white-space: nowrap !important; /* ✅ Keep text on one line */
+        width: auto !important; /* ✅ Natural width */
+        min-width: auto !important;
+        max-width: none !important;
+      }
+      
+      /* ✅ FIXED DROPDOWN CONTAINER */
+      .nav-dropdown { 
+        flex: 0 0 auto !important;
+        display: flex !important;
+        width: auto !important;
+        min-width: auto !important;
+        max-width: none !important;
+      }
+      .nav-dropdown .mini-btn { 
+        width: auto !important;
+        padding: 8px 14px !important;
+      }
+      
       .hero-title { font-size: 18px !important; margin: 8px 0 6px !important; }
       .search-wrap { margin-bottom: 12px !important; width: 100% !important; }
-      .search-shell { height: 36px !important; padding: 0 12px !important; border-width: 1.5px !important; width: 100% !important; border-radius: 999px !important; }
+      .search-shell { height: 38px !important; padding: 0 12px !important; border-width: 1.5px !important; width: 100% !important; border-radius: 999px !important; }
       .search-shell input { font-size: 13px !important; }
       .topGames-text { font-size: 15px !important; margin-bottom: 10px !important; }
       .games-row { grid-template-columns: 1fr !important; gap: 8px !important; }
@@ -269,6 +359,10 @@
       .footer-col a  { font-size: 10px !important; margin: 3px 0 !important; }
       .footer-bottom { margin-top: 12px !important; padding: 8px 14px 0 !important; gap: 4px !important; }
       .footer-meta, .footer-copy { font-size: 10px !important; }
+      /* Mobile guides grid */
+      .home-guides-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+      .home-guides-head h2 { font-size: 17px !important; }
+      .home-guide-img { height: 110px !important; }
     }
   </style>
 </head>
@@ -283,13 +377,20 @@
       <div class="top-nav">
         <a href="guides" class="nav-box nav-link">Guides</a>
         <div class="nav-dropdown" id="codesDropdown">
-          <a href="gamecode" class="mini-btn" id="codesBtn">Codes</a>
+          <a href="gamecode" class="mini-btn" id="codesBtn">Codes <span class="dropdown-arrow">▼</span></a>
           <div class="nav-menu" id="codesMenu">
             <a class="nav-item" href="gamecode">Game Codes</a>
             <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
           </div>
         </div>
         <a href="wiki" class="nav-box nav-link">Wiki</a>
+        <div class="nav-dropdown" id="moreDropdown">
+          <a href="#" class="mini-btn" id="moreBtn">More <span class="dropdown-arrow">▼</span></a>
+          <div class="nav-menu" id="moreMenu">
+            <a class="nav-item" href="guides">Game Calculator</a>
+            <a class="nav-item" href="wiki">Roblox Outfit</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -304,8 +405,6 @@
     </div>
 
     <!-- STATS COUNTER -->
-    <!-- Hard-coded so Google/crawlers can see real numbers -->
-    <!-- JS animation overrides this for real users -->
     <section class="stats-section">
       <p class="stats-title">📊 What's on Bloxburst</p>
       <div class="stats-grid">
@@ -320,9 +419,9 @@
           <div class="stat-label">Codes Listed</div>
         </div>
         <div class="stat-card">
-          <span class="stat-icon">✅</span>
-          <div class="stat-number" data-target="100" data-suffix="%">100%</div>
-          <div class="stat-label">Codes We Tested</div>
+          <span class="stat-icon">📚</span>
+          <div class="stat-number" data-target="50" data-suffix="+">50+</div>
+          <div class="stat-label">Guides & Tips</div>
         </div>
         <div class="stat-card">
           <span class="stat-icon">⚡</span>
@@ -334,27 +433,15 @@
 
     <div class="topGames-text">Recently Updated Games</div>
 
-    <!-- script.js fills this automatically from games.json -->
     <div class="games-scroll">
       <div class="games-row" data-max="16">
         <div class="games-loading">Loading games...</div>
       </div>
     </div>
-    
+
     <div class="explore-section">
       <a href="gamecode" class="explore-btn">🚀 See All Game Codes</a>
     </div>
-
-    <!-- SEO Static Content — visible to Google crawlers -->
-    <section style="max-width:860px; margin:0 auto 28px; padding:0 28px; text-align:center;">
-      <h2 style="font-family:'Fredoka',sans-serif; font-size:20px; color:#fff; margin-bottom:10px;">Roblox Game Codes, Wiki & Guides</h2>
-      <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.8; margin-bottom:12px;">
-        Bloxburst is a Roblox fan site where you can find working codes for popular Roblox games, promo codes for free items, and wiki guides to help you out. We test every code before adding it to the list — if a code is here, it was working when we checked it.
-      </p>
-      <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.8;">
-        Looking for something specific? Search for your game above, browse the full codes list, or check the wiki section for guides on how to redeem codes, fix common errors, and get the most out of your favorite Roblox games. We try to keep everything updated so you're not stuck using codes that stopped working weeks ago.
-      </p>
-    </section>
 
     <!-- Promo Codes Section -->
     <section class="promo-section">
@@ -384,6 +471,27 @@
       </div>
       <div class="promo-btn-wrap">
         <a class="wiki-btn" href="promo-latest-codes">🎟️ View All Promo Codes</a>
+      </div>
+    </section>
+
+     <section class="bottom-text">
+      <h2>Game Guides</h2>
+      <p>Unlock step-by-step walkthroughs, pro strategies, and hidden secrets for your favorite Roblox games. </p>
+      <p>Discover smarter ways to progress and outplay other players. Level up faster, earn more rewards, and stay ahead every time.</p>
+    </section>
+
+    <!-- ✅ GAME GUIDES PREVIEW SECTION -->
+    <section class="home-guides-section">
+
+      <div class="home-guides-head" style="margin-top:24px; justify-content:center; position:relative; padding:0 12px;">
+        <div class="topGames-text" style="margin:0; text-align:center;">Recently Updated Guides</div>
+        <span class="home-guides-count" id="homeGuidesCount" style="position:absolute; right:12px;">Loading...</span>
+      </div>
+      <div class="home-guides-grid" id="homeGuidesGrid">
+        <div class="games-loading">Loading guides...</div>
+      </div>
+      <div class="home-guides-btn-wrap">
+        <a href="guides" class="home-guides-btn">📖 See All Game Guides</a>
       </div>
     </section>
 
@@ -420,23 +528,25 @@
 
     <!-- SUGGESTION FOR YOU -->
     <section class="suggest-bottom">
-      <div class="section-divider-title">
-        <span>✨ You Might Like</span>
-      </div>
+      <div class="section-divider-title"><span>✨ You Might Like</span></div>
       <div class="suggest-grid" id="suggestGrid"></div>
     </section>
 
     <!-- GAME WIKI -->
     <section class="suggest-bottom">
-      <div class="section-divider-title">
-        <span>🎮 Game Wiki</span>
-      </div>
+      <div class="section-divider-title"><span>🎮 Game Wiki</span></div>
       <div class="suggest-grid" id="gameWikiGrid"></div>
     </section>
 
-    <section class="bottom-text">
-      <h2>New Codes Drop All the Time</h2>
-      <p>We check for new Roblox codes regularly and remove ones that stop working, so the list stays useful.</p>
+    <!-- SEO Static Content -->
+    <section style="max-width:860px; margin:0 auto 28px; padding:0 28px; text-align:center;">
+      <h2 style="font-family:'Fredoka',sans-serif; font-size:20px; color:#fff; margin-bottom:10px;">Roblox Game Codes, Wiki & Guides</h2>
+      <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.8; margin-bottom:12px;">
+        Bloxburst is a Roblox fan site where you can find working codes for popular Roblox games, promo codes for free items, and wiki guides to help you out. We test every code before adding it to the list — if a code is here, it was working when we checked it.
+      </p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.8;">
+        Looking for something specific? Search for your game above, browse the full codes list, or check the wiki section for guides on how to redeem codes, fix common errors, and get the most out of your favorite Roblox games. We try to keep everything updated so you're not stuck using codes that stopped working weeks ago.
+      </p>
     </section>
 
   </main>
@@ -445,9 +555,7 @@
     <div class="footer-inner">
       <div class="footer-left">
         <div class="footer-logo">BLOXBURST🔥</div>
-        <p class="footer-desc">
-          Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games. Find codes, learn how to redeem them, and get help when something's not working.
-        </p>
+        <p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games. Find codes, learn how to redeem them, and get help when something's not working.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -479,19 +587,17 @@
   <!-- STATS COUNTER ANIMATION -->
   <script>
     function animateCounter(el) {
-      const target     = parseInt(el.dataset.target, 10);
-      const suffix     = el.dataset.suffix || '';
-      const duration   = 1800;
-      const step       = 16;
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800, step = 16;
       const increments = Math.ceil(duration / step);
-      let current      = 0;
-      const timer      = setInterval(() => {
+      let current = 0;
+      const timer = setInterval(() => {
         current += Math.ceil(target / increments);
         if (current >= target) { current = target; clearInterval(timer); }
         el.textContent = current.toLocaleString() + suffix;
       }, step);
     }
-
     const statsSection = document.querySelector('.stats-section');
     if (statsSection) {
       const observer = new IntersectionObserver((entries) => {
@@ -504,9 +610,85 @@
       }, { threshold: 0.1 });
       observer.observe(statsSection);
     }
+    window.addEventListener('load', () => { document.querySelectorAll('.stat-number').forEach(animateCounter); });
+  </script>
 
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.stat-number').forEach(animateCounter);
+  <!-- ✅ GAME GUIDES LOADER — reads from game-guides.json (same file as guides.html) -->
+  <script>
+    async function loadHomeGuides() {
+      const grid  = document.getElementById('homeGuidesGrid');
+      const count = document.getElementById('homeGuidesCount');
+      try {
+        const res  = await fetch('game-guides.json?v=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed');
+        const data = await res.json();
+
+        // Show latest 3 guides only on homepage
+        const preview = data.slice(0, 6);
+        count.textContent = 'Showing ' + data.length + ' guide' + (data.length !== 1 ? 's' : '');
+        grid.innerHTML = '';
+
+        preview.forEach(g => {
+          grid.innerHTML += `
+            <a class="home-guide-card" href="${g.link || '#'}">
+              <div class="home-guide-img">
+                <img src="${g.thumbnail || 'Images/FinalLogo.png'}" alt="${g.title}" loading="lazy">
+                <span class="home-guide-date">${g.releaseDate || ''}</span>
+              </div>
+              <div class="home-guide-body">
+                <span class="home-guide-tag">${(g.category || 'GUIDE').toUpperCase()}</span>
+                <h3>${g.title || 'Untitled'}</h3>
+                <p>${g.description || g.desc || ''}</p>
+                <div class="home-guide-footer">
+                  <span class="home-guide-cta">Read Guide ➜</span>
+                  <span class="home-guide-time">⏱️ ${g.readTime || ''}</span>
+                </div>
+              </div>
+            </a>
+          `;
+        });
+      } catch (e) {
+        grid.innerHTML = '<p style="color:rgba(255,255,255,0.4);font-size:13px;padding:20px 0;">No guides available yet.</p>';
+        count.textContent = '0 guides';
+      }
+    }
+    loadHomeGuides();
+  </script>
+
+  <!-- ✅ DROPDOWN TOGGLE SCRIPT -->
+  <script>
+    // Codes Dropdown
+    const codesBtn = document.getElementById('codesBtn');
+    const codesDropdown = document.getElementById('codesDropdown');
+    
+    if (codesBtn && codesDropdown) {
+      codesBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        codesDropdown.classList.toggle('active');
+      });
+    }
+    
+    // More Dropdown
+    const moreBtn = document.getElementById('moreBtn');
+    const moreDropdown = document.getElementById('moreDropdown');
+    
+    if (moreBtn && moreDropdown) {
+      moreBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        moreDropdown.classList.toggle('active');
+      });
+    }
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!codesDropdown.contains(e.target)) {
+        codesDropdown.classList.remove('active');
+      }
+      if (!moreDropdown.contains(e.target)) {
+        moreDropdown.classList.remove('active');
+      }
     });
   </script>
 
