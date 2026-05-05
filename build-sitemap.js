@@ -40,7 +40,7 @@ if (fs.existsSync(robloxFolder)) {
     
     return {
       loc:        `/roblox/${cleanName}`, // 👉 Clean URL: /roblox/adopt-me
-      changefreq: 'daily',
+      changefreq: 'weekly',
       priority:   '0.8',
     };
   });
