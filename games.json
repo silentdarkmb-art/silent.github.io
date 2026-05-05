@@ -2690,6 +2690,15 @@
   "tooltip": "Redeem working codes for free Coins, Effect Cases, Skin Cases, and Freebies in Basketball Legends Roblox.",
   "rewards": "Coins, Freebies, Spring Effect Case, Spring Skin Case, Halloween Cases, Christmas Cases, Summer Cases, Anime Cases, Boosts, Exclusive Effects, Skins",
   "activeCodes": 3
+},
+{
+  "name": "Prodigy Drift",
+  "image": "Images/Prodigy-Drift.webp",
+  "url": "roblox/prodigy-drift",
+  "lastupdate": "2026-05-05T00:00:10Z",
+  "tooltip": "Redeem working codes for free Cash in Prodigy Drift Roblox.",
+  "rewards": "Cash",
+  "activeCodes": 3
 }
 
 ]
