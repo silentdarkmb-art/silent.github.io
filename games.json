@@ -2735,6 +2735,15 @@
   "tooltip": "Redeem working codes for free Coins and Moonstones in The Vampire Legacies 2 Roblox.",
   "rewards": "Coins, Moonstones, Limited Edition Tools",
   "activeCodes": 1
+},
+{
+  "name": "Animatronic Nights",
+  "image": "Images/Animatronic-Nights.webp",
+  "url": "roblox/animatronic-nights",
+  "lastupdate": "2026-05-05T00:00:00Z",
+  "tooltip": "Redeem working codes for free Coins in Animatronic Nights Roblox.",
+  "rewards": "Coins",
+  "activeCodes": 8
 }
 
 ]
