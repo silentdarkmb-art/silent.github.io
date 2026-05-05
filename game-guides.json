@@ -1,15 +1,15 @@
 [
   {
-  "id": "kick-a-lucky-block",
-  "title": "Kick A Lucky Block",
-  "description": "Pro Tips & Tricks for Kick A Lucky Block",
+  "id": "slime-rng",
+  "title": "Slime RNG",
+  "description": "HOW TO GET More RARE Slimes In Slime RNG!!",
   "category": "Beginner",
   "readTime": "15 min",
-  "thumbnail": "Images/KickALuckyBlock-7tips.webp",
-  "link": "game-guides/kick-a-lucky-block",
-  "releaseDate": "Apr 30, 2026",
-  "tags": ["simulator", "idle", "rebirth"]
-},
+  "thumbnail": "Images/slimerng-beginner.webp",
+  "link": "game-guides/slime-rng",
+  "releaseDate": "May 5, 2026",
+  "tags": ["rng", "luck", "idle","rebirth"]
+  },
   {
   "id": "kick-a-lucky-block",
   "title": "Kick A Lucky Block",
@@ -20,50 +20,6 @@
   "link": "game-guides/kick-a-lucky-block",
   "releaseDate": "Apr 30, 2026",
   "tags": ["simulator", "idle", "rebirth"]
-},
-  {
-  "id": "kick-a-lucky-block",
-  "title": "Kick A Lucky Block",
-  "description": "Pro Tips & Tricks for Kick A Lucky Block",
-  "category": "Beginner",
-  "readTime": "15 min",
-  "thumbnail": "Images/KickALuckyBlock-7tips.webp",
-  "link": "game-guides/kick-a-lucky-block",
-  "releaseDate": "Apr 30, 2026",
-  "tags": ["simulator", "idle", "rebirth"]
-},
-  {
-  "id": "kick-a-lucky-block",
-  "title": "Kick A Lucky Block",
-  "description": "Pro Tips & Tricks for Kick A Lucky Block",
-  "category": "Beginner",
-  "readTime": "15 min",
-  "thumbnail": "Images/KickALuckyBlock-7tips.webp",
-  "link": "game-guides/kick-a-lucky-block",
-  "releaseDate": "Apr 30, 2026",
-  "tags": ["simulator", "idle", "rebirth"]
-},
-{
-  "id": "sailor-piece",
-  "title": "Sailor Piece",
-  "description": "7 Essential Tips You NEED To Know in Sailor Piece",
-  "category": "Beginner",
-  "readTime": "18 min",
-  "thumbnail": "Images/SailorPiece-7tips.webp",
-  "link": "game-guides/sailor-piece",
-  "releaseDate": "Apr 22, 2026",
-  "tags": ["pirates", "adventure"]
-},
-{
-  "id": "sailor-piece",
-  "title": "Sailor Piece",
-  "description": "7 Essential Tips You NEED To Know in Sailor Piece",
-  "category": "Beginner",
-  "readTime": "18 min",
-  "thumbnail": "Images/SailorPiece-7tips.webp",
-  "link": "game-guides/sailor-piece",
-  "releaseDate": "Apr 22, 2026",
-  "tags": ["pirates", "adventure"]
 },
 {
   "id": "sailor-piece",

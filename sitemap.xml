@@ -1906,5 +1906,23 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
+<!-- ═══ Game Guides Pages ═══ -->
+<url>
+    <loc>https://bloxburst.com/game-guides/kick-a-lucky-block</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://bloxburst.com/game-guides/sailor-piece</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloxburst.com/game-guides/slime-rng</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
