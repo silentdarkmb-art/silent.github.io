@@ -2717,6 +2717,15 @@
   "tooltip": "Redeem working codes for free Money and Bumpmobile 3000 in Baseplate Drifting Roblox.",
   "rewards": "Money, Bumpmobile 3000",
   "activeCodes": 14
+},
+{
+  "name": "Superstar Baseball",
+  "image": "Images/Superstar-Baseball.webp",
+  "url": "roblox/superstar-baseball",
+  "lastupdate": "2026-05-05T00:00:17Z",
+  "tooltip": "Redeem working codes for free Spins and Freebies in Superstar Baseball Roblox.",
+  "rewards": "Spins, Lucky Spins, Freebies, Free Style Spins",
+  "activeCodes": 12
 }
 
 ]

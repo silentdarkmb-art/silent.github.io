@@ -1750,6 +1750,12 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://bloxburst.com/roblox/superstar-baseball</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://bloxburst.com/roblox/swerve</loc>
     <lastmod>2026-05-05</lastmod>
