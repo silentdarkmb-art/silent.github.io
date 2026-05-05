@@ -2699,6 +2699,15 @@
   "tooltip": "Redeem working codes for free Cash in Prodigy Drift Roblox.",
   "rewards": "Cash",
   "activeCodes": 3
+},
+{
+  "name": "Dig to find Dad",
+  "image": "Images/Dig-to-find-Dad.webp",
+  "url": "roblox/dig-to-find-dad",
+  "lastupdate": "2026-05-05T00:00:11Z",
+  "tooltip": "Redeem working codes for free Points in Dig to find Dad Roblox.",
+  "rewards": "Points",
+  "activeCodes": 19
 }
 
 ]
