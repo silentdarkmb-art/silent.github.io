@@ -2744,6 +2744,15 @@
   "tooltip": "Redeem working codes for free Coins in Animatronic Nights Roblox.",
   "rewards": "Coins",
   "activeCodes": 8
+},
+{
+  "name": "Final Fates Tower Defense",
+  "image": "Images/Final-Fates-Tower-Defense.webp",
+  "url": "roblox/final-fates-tower-defense",
+  "lastupdate": "2026-05-05T00:00:22Z",
+  "tooltip": "Redeem working codes for free Crystals, Trait Shards, and Freebies in Final Fates Tower Defense Roblox.",
+  "rewards": "Crystals, Trait Shards, Freebies, Winter Barrels",
+  "activeCodes": 53
 }
 
 ]
