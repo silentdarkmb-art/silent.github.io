@@ -830,7 +830,7 @@
 
       let guides = [];
       try {
-        const res = await fetch(base + 'Game-Guides.Json?v=' + Date.now(), { cache: 'no-store' });
+        const res = await fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' });
         const raw = await res.json();
         // Deduplicate by id
         const seen = new Set();
