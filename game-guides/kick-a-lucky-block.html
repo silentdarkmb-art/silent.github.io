@@ -80,7 +80,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'DM Sans', sans-serif;
-      /* ✅ Matches homepage background */
       background: linear-gradient(135deg, #050a2a, #0a0f3d, #02061a);
       background-attachment: fixed;
       color: rgba(255,255,255,0.88);
@@ -110,407 +109,278 @@
       z-index: 0;
     }
 
-    /* ══════════════════════════════
-       DROPDOWN
-    ══════════════════════════════ */
-    .dropdown-arrow {
-      font-size: 10px; margin-left: 5px;
-      transition: transform 0.3s ease; display: inline-block;
-    }
+    /* ══════════════════════════════ DROPDOWN ══════════════════════════════ */
+    .dropdown-arrow { font-size: 10px; margin-left: 5px; transition: transform 0.3s ease; display: inline-block; }
     .nav-dropdown.active .dropdown-arrow { transform: rotate(180deg); }
     .nav-dropdown { position: relative !important; display: inline-block !important; }
     .nav-menu {
-      position: absolute !important;
-      top: calc(100% + 10px) !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-      min-width: 180px !important;
+      position: absolute !important; top: calc(100% + 10px) !important; left: 50% !important;
+      transform: translateX(-50%) !important; min-width: 180px !important;
       background: linear-gradient(135deg, #1a1f4d, #252b6b) !important;
-      border: 1px solid rgba(255,255,255,0.1) !important;
-      border-radius: 12px !important;
-      padding: 8px !important;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-      z-index: 9999 !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
+      border: 1px solid rgba(255,255,255,0.1) !important; border-radius: 12px !important;
+      padding: 8px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+      z-index: 9999 !important; opacity: 0 !important; visibility: hidden !important;
       transition: all 0.3s ease !important;
     }
-    .nav-dropdown.active .nav-menu {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translateX(-50%) translateY(0) !important;
-    }
+    .nav-dropdown.active .nav-menu { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
     .nav-item {
-      display: block !important; padding: 10px 16px !important;
-      color: rgba(255,255,255,0.9) !important; text-decoration: none !important;
-      border-radius: 8px !important; font-size: 13px !important; font-weight: 600 !important;
-      transition: all 0.2s ease !important; margin: 4px 0 !important;
+      display: block !important; padding: 10px 16px !important; color: rgba(255,255,255,0.9) !important;
+      text-decoration: none !important; border-radius: 8px !important; font-size: 13px !important;
+      font-weight: 600 !important; transition: all 0.2s ease !important; margin: 4px 0 !important;
       text-align: center !important; white-space: nowrap !important;
     }
     .nav-item:hover { background: rgba(125,92,255,0.3) !important; color: #fff !important; }
 
-    /* ══════════════════════════════
-       GUIDE HEADER
-    ══════════════════════════════ */
-    .guide-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 40px;
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      box-sizing: border-box;
-      position: relative;
-      z-index: 100;
-    }
-
-    .guide-header .gh-logo {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      flex: 0 0 auto;
-    }
-    .guide-header .gh-logo img {
-      height: 90px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* Search */
-    .guide-header .gh-search {
-      flex: 1 1 auto;
-      max-width: 420px;
-      position: relative;
-    }
-    .gh-search-box {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 46px;
-      padding: 0 16px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-      box-sizing: border-box;
-      gap: 8px;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .gh-search-box:focus-within {
-      border-color: rgba(0,229,160,0.5);
-      background: rgba(255,255,255,0.10);
-    }
+    /* ══════════════════════════════ GUIDE HEADER ══════════════════════════════ */
+    .guide-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 40px; width: 100%; max-width: 1400px; margin: 0 auto; box-sizing: border-box; position: relative; z-index: 100; }
+    .guide-header .gh-logo { display: inline-flex; align-items: center; text-decoration: none; flex: 0 0 auto; }
+    .guide-header .gh-logo img { height: 90px; width: auto; object-fit: contain; display: block; }
+    .guide-header .gh-search { flex: 1 1 auto; max-width: 420px; position: relative; }
+    .gh-search-box { display: flex; align-items: center; width: 100%; height: 46px; padding: 0 16px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; box-sizing: border-box; gap: 8px; transition: border-color 0.2s, background 0.2s; }
+    .gh-search-box:focus-within { border-color: rgba(0,229,160,0.5); background: rgba(255,255,255,0.10); }
     .gh-search-icon { font-size: 15px; flex-shrink: 0; }
-    .gh-search-input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      font-size: 14px;
-      font-family: 'DM Sans', sans-serif;
-      color: #fff;
-    }
+    .gh-search-input { flex: 1; background: transparent; border: none; outline: none; font-size: 14px; font-family: 'DM Sans', sans-serif; color: #fff; }
     .gh-search-input::placeholder { color: rgba(255,255,255,0.38); }
-    .gh-clear-btn {
-      background: none; border: none; color: rgba(255,255,255,0.35);
-      cursor: pointer; font-size: 14px; padding: 0; transition: color 0.2s; flex-shrink: 0;
-    }
+    .gh-clear-btn { background: none; border: none; color: rgba(255,255,255,0.35); cursor: pointer; font-size: 14px; padding: 0; transition: color 0.2s; flex-shrink: 0; }
     .gh-clear-btn:hover { color: #fff; }
-
-    /* Suggestions */
-    .gh-suggestions {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0; right: 0;
-      background: linear-gradient(135deg, #181d50, #20266a);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      overflow: hidden;
-      z-index: 9998;
-      display: none;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.55);
-    }
+    .gh-suggestions { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: linear-gradient(135deg, #181d50, #20266a); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; overflow: hidden; z-index: 9998; display: none; box-shadow: 0 14px 40px rgba(0,0,0,0.55); }
     .gh-suggestions.open { display: block; }
-    .gh-suggest-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 14px;
-      cursor: pointer;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: background 0.15s;
-    }
+    .gh-suggest-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.15s; }
     .gh-suggest-item:last-child { border-bottom: none; }
     .gh-suggest-item:hover { background: rgba(255,255,255,0.07); }
-    .gh-suggest-item img {
-      width: 44px; height: 44px;
-      object-fit: cover; border-radius: 8px; flex-shrink: 0;
-    }
+    .gh-suggest-item img { width: 44px; height: 44px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
     .gh-suggest-info { flex: 1; min-width: 0; }
-    .gh-suggest-title {
-      font-size: 13px; font-weight: 700; color: #fff;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
+    .gh-suggest-title { font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .gh-suggest-meta { font-size: 11px; color: rgba(255,255,255,0.42); margin-top: 2px; }
-    .gh-suggest-pill {
-      font-size: 11px; font-weight: 800;
-      background: rgba(0,229,160,0.15);
-      border: 1px solid rgba(0,229,160,0.3);
-      color: #00e5a0;
-      padding: 3px 10px; border-radius: 999px; flex-shrink: 0;
-    }
+    .gh-suggest-pill { font-size: 11px; font-weight: 800; background: rgba(0,229,160,0.15); border: 1px solid rgba(0,229,160,0.3); color: #00e5a0; padding: 3px 10px; border-radius: 999px; flex-shrink: 0; }
     .gh-no-result { padding: 14px 18px; font-size: 13px; color: rgba(255,255,255,0.4); }
-
-    /* Nav buttons */
-    .guide-header .gh-nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 0 0 auto;
-    }
+    .guide-header .gh-nav { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
     .guide-header .gh-nav .nav-dropdown { width: 100px; min-width: 100px; }
-    .guide-header .gh-nav .mini-btn,
-    .guide-header .gh-nav .nav-box,
-    .guide-header .gh-nav .nav-link,
-    .guide-header .gh-nav .nav-dropdown #codesBtn,
-    .guide-header .gh-nav .nav-dropdown #moreBtn {
-      width: 100px; min-width: 100px; max-width: 100px;
-      height: 42px; padding: 0;
-      font-size: 14px; font-weight: 800;
-      display: inline-flex; align-items: center; justify-content: center;
-      box-sizing: border-box; white-space: nowrap;
-      background: rgba(143,140,199,0.25);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 10px; color: #fff;
-      text-decoration: none; cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      transition: background 0.2s, border-color 0.2s;
+    .guide-header .gh-nav .mini-btn, .guide-header .gh-nav .nav-box, .guide-header .gh-nav .nav-link, .guide-header .gh-nav .nav-dropdown #codesBtn, .guide-header .gh-nav .nav-dropdown #moreBtn {
+      width: 100px; min-width: 100px; max-width: 100px; height: 42px; padding: 0; font-size: 14px; font-weight: 800;
+      display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; white-space: nowrap;
+      background: rgba(143,140,199,0.25); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; color: #fff;
+      text-decoration: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s, border-color 0.2s;
     }
-    .guide-header .gh-nav .mini-btn:hover,
-    .guide-header .gh-nav .nav-box:hover,
-    .guide-header .gh-nav .nav-dropdown #codesBtn:hover,
-    .guide-header .gh-nav .nav-dropdown #moreBtn:hover {
-      background: rgba(143,140,199,0.45);
-      border-color: rgba(255,255,255,0.5);
-    }
+    .guide-header .gh-nav .mini-btn:hover, .guide-header .gh-nav .nav-box:hover, .guide-header .gh-nav .nav-dropdown #codesBtn:hover, .guide-header .gh-nav .nav-dropdown #moreBtn:hover { background: rgba(143,140,199,0.45); border-color: rgba(255,255,255,0.5); }
 
-    /* ── Tablet ≤ 960px ── */
     @media (max-width: 960px) {
       .guide-header { padding: 12px 20px; gap: 12px; }
       .guide-header .gh-logo img { height: 70px !important; }
       .guide-header .gh-search { max-width: 260px; }
-      .guide-header .gh-nav .mini-btn,
-      .guide-header .gh-nav .nav-box,
-      .guide-header .gh-nav .nav-link,
-      .guide-header .gh-nav .nav-dropdown #codesBtn,
-      .guide-header .gh-nav .nav-dropdown #moreBtn {
-        width: 82px !important; min-width: 82px !important;
-        font-size: 12px !important; height: 38px !important;
-      }
+      .guide-header .gh-nav .mini-btn, .guide-header .gh-nav .nav-box, .guide-header .gh-nav .nav-link, .guide-header .gh-nav .nav-dropdown #codesBtn, .guide-header .gh-nav .nav-dropdown #moreBtn { width: 82px !important; min-width: 82px !important; font-size: 12px !important; height: 38px !important; }
       .guide-header .gh-nav .nav-dropdown { width: 82px !important; min-width: 82px !important; }
     }
-
-    /* ── Mobile ≤ 600px ── */
     @media (max-width: 600px) {
-      .guide-header {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 14px 14px 10px !important;
-        gap: 10px !important;
-      }
+      .guide-header { flex-direction: column !important; align-items: center !important; padding: 14px 14px 10px !important; gap: 10px !important; }
       .guide-header .gh-logo { width: 100%; justify-content: center; }
       .guide-header .gh-logo img { height: 62px !important; margin: 0 auto !important; }
       .guide-header .gh-search { width: 100% !important; max-width: 100% !important; }
       .gh-search-box { height: 40px !important; }
-      .guide-header .gh-nav {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 6px !important; width: 100% !important;
-      }
+      .guide-header .gh-nav { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 6px !important; width: 100% !important; }
       .guide-header .gh-nav .nav-dropdown { width: 100% !important; min-width: 0 !important; }
-      .guide-header .gh-nav .mini-btn,
-      .guide-header .gh-nav .nav-box,
-      .guide-header .gh-nav .nav-link,
-      .guide-header .gh-nav .nav-dropdown #codesBtn,
-      .guide-header .gh-nav .nav-dropdown #moreBtn {
-        width: 100% !important; min-width: 0 !important; max-width: none !important;
-        height: 36px !important; font-size: 11px !important; padding: 0 4px !important;
-      }
+      .guide-header .gh-nav .mini-btn, .guide-header .gh-nav .nav-box, .guide-header .gh-nav .nav-link, .guide-header .gh-nav .nav-dropdown #codesBtn, .guide-header .gh-nav .nav-dropdown #moreBtn { width: 100% !important; min-width: 0 !important; max-width: none !important; height: 36px !important; font-size: 11px !important; padding: 0 4px !important; }
     }
 
-    /* ══════════════════════════════
-       ARTICLE STYLES
-    ══════════════════════════════ */
+    /* ══════════════════════════════ ARTICLE STYLES ══════════════════════════════ */
     .page { position: relative; z-index: 1; }
-
     .article-hero { position: relative; max-width: 900px; margin: 36px auto 0; padding: 0 24px; }
-    .hero-card {
-      position: relative;
-      background: linear-gradient(135deg, rgba(124,92,252,0.2) 0%, rgba(0,229,160,0.1) 50%, rgba(255,107,53,0.12) 100%);
-      border: 1px solid rgba(124,92,252,0.3);
-      border-radius: 24px; padding: 52px 48px 44px; overflow: hidden;
-      animation: fadeSlideUp 0.6s ease both;
-    }
-    .hero-card::before {
-      content: ''; position: absolute; top: -60px; right: -60px;
-      width: 280px; height: 280px;
-      background: radial-gradient(circle, rgba(124,92,252,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-card::after {
-      content: ''; position: absolute; bottom: -40px; left: -40px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(0,229,160,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(124,92,252,0.2); border: 1px solid rgba(124,92,252,0.4);
-      border-radius: 999px; padding: 6px 16px; font-size: 13px; font-weight: 600;
-      color: #a78bfa; margin-bottom: 20px; letter-spacing: 0.04em;
-    }
-    .hero-card h1 {
-      font-family: 'Fredoka', sans-serif; font-size: clamp(28px, 4vw, 42px);
-      font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px;
-    }
+    .hero-card { position: relative; background: linear-gradient(135deg, rgba(124,92,252,0.2) 0%, rgba(0,229,160,0.1) 50%, rgba(255,107,53,0.12) 100%); border: 1px solid rgba(124,92,252,0.3); border-radius: 24px; padding: 52px 48px 44px; overflow: hidden; animation: fadeSlideUp 0.6s ease both; }
+    .hero-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(124,92,252,0.18) 0%, transparent 70%); pointer-events: none; }
+    .hero-card::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,229,160,0.1) 0%, transparent 70%); pointer-events: none; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(124,92,252,0.2); border: 1px solid rgba(124,92,252,0.4); border-radius: 999px; padding: 6px 16px; font-size: 13px; font-weight: 600; color: #a78bfa; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .hero-card h1 { font-family: 'Fredoka', sans-serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; }
-    .meta-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 999px; padding: 5px 14px; font-size: 13px;
-      color: var(--text-muted); font-weight: 500;
-    }
-
+    .meta-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; padding: 5px 14px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
     .article-container { max-width: 900px; margin: 40px auto 80px; padding: 0 24px; }
-
-    .article-intro {
-      font-size: 17px; line-height: 1.9; color: rgba(255,255,255,0.78);
-      margin-bottom: 40px; padding: 28px 32px; background: var(--surface);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      animation: fadeSlideUp 0.7s 0.1s ease both;
-    }
-
-    .quick-nav {
-      background: rgba(124,92,252,0.07); border: 1px solid rgba(124,92,252,0.2);
-      border-radius: var(--radius); padding: 28px 32px; margin-bottom: 52px;
-      animation: fadeSlideUp 0.7s 0.15s ease both;
-    }
+    .article-intro { font-size: 17px; line-height: 1.9; color: rgba(255,255,255,0.78); margin-bottom: 40px; padding: 28px 32px; background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; animation: fadeSlideUp 0.7s 0.1s ease both; }
+    .quick-nav { background: rgba(124,92,252,0.07); border: 1px solid rgba(124,92,252,0.2); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 52px; animation: fadeSlideUp 0.7s 0.15s ease both; }
     .quick-nav h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; color: #fff; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
     .quick-nav ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4px 20px; }
     .quick-nav li { counter-increment: toc; }
-    .quick-nav a {
-      display: flex; align-items: center; gap: 10px; padding: 9px 0;
-      color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14.5px; font-weight: 500;
-      border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s, padding-left 0.2s;
-    }
+    .quick-nav a { display: flex; align-items: center; gap: 10px; padding: 9px 0; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14.5px; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s, padding-left 0.2s; }
     .quick-nav a::before { content: '→'; color: var(--accent); font-size: 13px; opacity: 0; transition: opacity 0.2s; }
     .quick-nav a:hover { color: var(--accent); padding-left: 4px; }
     .quick-nav a:hover::before { opacity: 1; }
-
     .guide-section { margin-bottom: 64px; animation: fadeSlideUp 0.6s ease both; }
-    .section-header {
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
-    }
-    .section-number {
-      width: 40px; height: 40px;
-      background: linear-gradient(135deg, var(--accent2), var(--accent));
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0;
-    }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .section-number { width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent2), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0; }
     .guide-section h2 { font-family: 'Fredoka', sans-serif; font-size: clamp(22px, 3vw, 28px); color: #fff; font-weight: 700; }
-    .guide-section h3 {
-      font-family: 'Fredoka', sans-serif; font-size: 20px; color: rgba(255,255,255,0.95);
-      margin: 32px 0 12px; display: flex; align-items: center; gap: 8px;
-    }
+    .guide-section h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; color: rgba(255,255,255,0.95); margin: 32px 0 12px; display: flex; align-items: center; gap: 8px; }
     .guide-section h3::before { content: ''; display: inline-block; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; }
     .guide-section p { font-size: 16.5px; color: rgba(255,255,255,0.78); margin-bottom: 18px; line-height: 1.9; }
     .guide-section ul, .guide-section ol { margin-bottom: 20px; padding-left: 0; list-style: none; }
-    .guide-section ul li, .guide-section ol li {
-      position: relative; padding: 10px 16px 10px 44px; margin-bottom: 8px;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; font-size: 15.5px; color: rgba(255,255,255,0.8);
-      counter-increment: list-counter;
-    }
+    .guide-section ul li, .guide-section ol li { position: relative; padding: 10px 16px 10px 44px; margin-bottom: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; font-size: 15.5px; color: rgba(255,255,255,0.8); counter-increment: list-counter; }
     .guide-section ul li::before { content: '✦'; position: absolute; left: 16px; color: var(--accent); font-size: 12px; top: 50%; transform: translateY(-50%); }
     .guide-section ol { counter-reset: list-counter; }
-    .guide-section ol li::before {
-      content: counter(list-counter); position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
-      width: 22px; height: 22px; background: var(--accent2); border-radius: 6px;
-      display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff;
-    }
+    .guide-section ol li::before { content: counter(list-counter); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; background: var(--accent2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; }
     .guide-section strong { color: #fff; font-weight: 600; }
     .highlight { color: var(--accent); font-weight: 600; }
     .highlight-orange { color: var(--accent3); font-weight: 600; }
-
-    .tip-box {
-      display: flex; gap: 14px; background: rgba(0,229,160,0.07);
-      border: 1px solid rgba(0,229,160,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0;
-    }
+    .tip-box { display: flex; gap: 14px; background: rgba(0,229,160,0.07); border: 1px solid rgba(0,229,160,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
     .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
     .tip-box p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.8); }
-    .warn-box {
-      display: flex; gap: 14px; background: rgba(255,107,53,0.07);
-      border: 1px solid rgba(255,107,53,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0;
-    }
+    .warn-box { display: flex; gap: 14px; background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
     .warn-box p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.8); }
-
-    .guide-img {
-      width: 100%; max-width: 740px; height: auto; border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08); display: block; margin: 28px auto 0;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s;
-    }
+    .guide-img { width: 100%; max-width: 740px; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); display: block; margin: 28px auto 0; box-shadow: 0 12px 40px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; }
     .guide-img:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
     .guide-caption { text-align: center; font-size: 13px; color: var(--text-muted); margin: 10px auto 36px; font-style: italic; max-width: 600px; }
-
-    .faq-item {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s;
-    }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s; }
     .faq-item:hover { border-color: rgba(124,92,252,0.3); }
-    .faq-q {
-      padding: 18px 22px; font-size: 16px; font-weight: 600; color: #fff;
-      cursor: pointer; display: flex; align-items: center; gap: 12px; user-select: none;
-    }
-    .faq-q::before {
-      content: '?'; width: 28px; height: 28px; background: rgba(124,92,252,0.25);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 700; color: #a78bfa; flex-shrink: 0;
-    }
+    .faq-q { padding: 18px 22px; font-size: 16px; font-weight: 600; color: #fff; cursor: pointer; display: flex; align-items: center; gap: 12px; user-select: none; }
+    .faq-q::before { content: '?'; width: 28px; height: 28px; background: rgba(124,92,252,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #a78bfa; flex-shrink: 0; }
     .faq-a { padding: 0 22px 18px 62px; font-size: 15.5px; color: rgba(255,255,255,0.72); line-height: 1.8; }
-
-    .bonus-section {
-      background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(124,92,252,0.1) 100%);
-      border: 1px solid rgba(255,107,53,0.25); border-radius: var(--radius); padding: 36px 40px; margin-bottom: 64px;
-    }
+    .bonus-section { background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(124,92,252,0.1) 100%); border: 1px solid rgba(255,107,53,0.25); border-radius: var(--radius); padding: 36px 40px; margin-bottom: 64px; }
     .bonus-section h2 { font-family: 'Fredoka', sans-serif; font-size: 26px; color: #fff; margin-bottom: 16px; }
     .bonus-section p { font-size: 16.5px; color: rgba(255,255,255,0.78); line-height: 1.9; margin: 0; }
-
-    .article-footer-note {
-      padding: 24px 28px; border-top: 1px solid var(--border); border-radius: var(--radius);
-      background: var(--surface); color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-top: 56px;
-    }
+    .article-footer-note { padding: 24px 28px; border-top: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-top: 56px; }
     .article-footer-note span { color: var(--accent); }
-
-    .back-to-top {
-      position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
-      background: linear-gradient(135deg, var(--accent2), var(--accent));
-      border: none; border-radius: 50%; color: #fff; font-size: 20px;
-      cursor: pointer; opacity: 0; transform: translateY(20px);
-      transition: all 0.3s; z-index: 999; box-shadow: 0 4px 20px rgba(124,92,252,0.4);
-    }
+    .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent2), var(--accent)); border: none; border-radius: 50%; color: #fff; font-size: 20px; cursor: pointer; opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 999; box-shadow: 0 4px 20px rgba(124,92,252,0.4); }
     .back-to-top.visible { opacity: 1; transform: translateY(0); }
     .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(124,92,252,0.5); }
 
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    /* ══════════════════════════════ MORE GUIDES SECTION ══════════════════════════════ */
+    .more-guides-section { max-width: 900px; margin: 0 auto 48px; padding: 0 24px; position: relative; z-index: 1; }
+    .more-guides-head { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .more-guides-divider { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(124,92,252,0.5), rgba(0,229,160,0.3), transparent); }
+    .more-guides-label { display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,160,0.08)); border: 1px solid rgba(124,92,252,0.28); border-radius: 999px; padding: 8px 20px; white-space: nowrap; }
+    .more-guides-label span.label-text { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; background: linear-gradient(135deg, #fff 30%, rgba(200,185,255,0.95) 65%, #00e5a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; }
+    .more-guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .more-guide-card { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; background: linear-gradient(135deg, rgba(21,26,77,0.88), rgba(15,20,60,0.80)); border: 1px solid rgba(255,255,255,0.07); text-decoration: none; color: #fff; transition: all 0.25s cubic-bezier(0.22,1,0.36,1); position: relative; overflow: hidden; }
+    .more-guide-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent2), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    .more-guide-card:hover { transform: translateY(-5px); border-color: rgba(124,92,252,0.28); box-shadow: 0 18px 45px rgba(0,0,0,0.45); }
+    .more-guide-card:hover::after { transform: scaleX(1); }
+    .more-guide-card img { width: 54px; height: 54px; object-fit: cover; border-radius: 12px; flex-shrink: 0; transition: transform 0.25s ease; }
+    .more-guide-card:hover img { transform: scale(1.08) rotate(-2deg); }
+    .more-guide-card .mgc-info { flex: 1; min-width: 0; }
+    .more-guide-card .mgc-info h3 { font-size: 13px; font-weight: 800; color: #fff; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-bottom: 4px; }
+    .more-guide-card .mgc-info p { font-size: 11px; color: rgba(255,255,255,0.42); margin: 0; }
+    .editor-badge { position: absolute; top: 8px; right: 8px; background: linear-gradient(135deg, #ffd700, #ffaa00); color: #000; font-size: 9px; font-weight: 800; padding: 3px 8px; border-radius: 6px; box-shadow: 0 2px 8px rgba(255,215,0,0.3); }
+    @media (max-width: 640px) { .more-guides-grid { grid-template-columns: 1fr !important; gap: 9px !important; } .more-guide-card { padding: 10px 12px !important; border-radius: 14px !important; } .more-guide-card img { width: 42px !important; height: 42px !important; } .more-guide-card .mgc-info h3 { font-size: 12px !important; } .more-guides-section { padding: 0 14px; } .more-guides-label span.label-text { font-size: 15px !important; } }
 
+    /* ══════════════════════════════ SUGGESTION CODES SECTION ══════════════════════════════ */
+    .more-section { max-width: 900px; margin: 48px auto 30px; padding: 0 24px; position: relative; z-index: 1; }
+    .more-section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .more-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(124,92,252,0.5), rgba(0,229,160,0.3), transparent); }
+    .more-divider-label { display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,160,0.08)); border: 1px solid rgba(124,92,252,0.28); border-radius: 999px; padding: 8px 20px; white-space: nowrap; }
+    .more-text { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; background: linear-gradient(135deg, #fff 30%, rgba(200,185,255,0.95) 65%, #00e5a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; }
+    .more-fire { font-size: 18px; }
+    .more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .more-card { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 18px; background: linear-gradient(135deg, rgba(21,26,77,0.88), rgba(15,20,60,0.80)); border: 1px solid rgba(255,255,255,0.07); text-decoration: none; color: #fff; transition: all 0.25s cubic-bezier(0.22,1,0.36,1); position: relative; overflow: hidden; }
+    .more-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #7c5cfc, #00e5a0); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    .more-card:hover { transform: translateY(-5px); border-color: rgba(124,92,252,0.28); box-shadow: 0 18px 45px rgba(0,0,0,0.45); }
+    .more-card:hover::after { transform: scaleX(1); }
+    .more-card img { width: 54px; height: 54px; border-radius: 12px; object-fit: cover; flex-shrink: 0; transition: transform 0.25s ease; }
+    .more-card:hover img { transform: scale(1.08) rotate(-2deg); }
+    .more-info h3 { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .more-info p { font-size: 11px; color: rgba(255,255,255,0.45); margin: 0; }
+
+        /* ══════════════════════════════ WIKI INLINE CARDS - FIXED ══════════════════════════════ */
+.wiki-section-inline { 
+  max-width: 1200px; /* Wider */
+  margin: 40px auto; 
+  background: rgba(255,255,255,0.04); 
+  border-radius: 20px; 
+  padding: 32px 28px; /* More padding */
+}
+
+.wiki-inline-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+  gap: 16px; 
+}
+
+.wiki-inline-card { 
+  background: rgba(255,255,255,0.06); 
+  border-radius: 14px; 
+  padding: 20px; 
+  transition: all 0.25s ease; 
+  border: 1px solid rgba(255,255,255,0.06);
+  min-height: 180px; /* Consistent height */
+}
+
+.wiki-inline-card:hover { 
+  background: rgba(255,255,255,0.1); 
+  border-color: rgba(124,92,252,0.3); 
+  transform: translateY(-3px); 
+}
+
+.wiki-inline-card h3 { 
+  font-size: 14px; 
+  color: #fff; 
+  font-weight: 700; 
+  margin: 10px 0; 
+  line-height: 1.4; 
+}
+
+.wiki-inline-card p { 
+  font-size: 12px; 
+  color: rgba(255,255,255,0.5); 
+  margin: 0 0 12px; 
+  line-height: 1.5; 
+}
+
+.read-link { 
+  font-size: 12px; 
+  color: #00e676; 
+  font-weight: 600; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 4px; 
+  transition: gap 0.2s; 
+}
+
+.wiki-inline-card:hover .read-link { 
+  gap: 8px; 
+}
+
+/* Comment Section - Fixed */
+section[style*="max-width:900px"] {
+  max-width: 900px !important;
+  margin: 40px auto !important;
+  padding: 32px 28px !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .wiki-inline-grid { 
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 640px) {
+  .wiki-inline-grid { 
+    grid-template-columns: 1fr !important; /* 1 column on mobile */
+    gap: 12px !important;
+  }
+  
+  .wiki-section-inline {
+    padding: 24px 18px !important;
+  }
+  
+  .wiki-inline-card {
+    min-height: auto; /* Remove min-height on mobile */
+  }
+}
+
+    /* ══════════════════════════════ COMMENT FORM ══════════════════════════════ */
+    .comment-clean { max-width: 850px; margin: 40px auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 40px; }
+    .comment-clean input:focus, .comment-clean textarea:focus { border-color: rgba(124,92,252,0.4); background: rgba(255,255,255,0.06); box-shadow: 0 0 0 3px rgba(124,92,252,0.08); }
+    .comment-clean button:hover { background: linear-gradient(135deg, #8b5cf6, #b065fc); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(124,92,252,0.25); }
+    
+    @media (max-width: 968px) {
+      .wiki-inline-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
     @media (max-width: 640px) {
+      .wiki-inline-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .wiki-section-inline { padding: 24px 18px !important; }
+      .wiki-inline-card { min-height: auto !important; padding: 12px !important; }
+      .comment-clean { padding: 28px 20px !important; }
+      .comment-clean > div:first-child > form > div:first-child { grid-template-columns: 1fr !important; }
+      .more-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+      .more-card { padding: 12px 14px !important; }
+      .more-card img { width: 48px !important; height: 48px !important; }
+      .more-info h3 { font-size: 13px !important; }
       .hero-card { padding: 36px 24px 32px; }
       .article-container { padding: 0 16px; }
       .quick-nav { padding: 22px 20px; }
@@ -518,39 +388,26 @@
       .article-intro { padding: 22px 20px; }
       .guide-section ul li, .guide-section ol li { padding: 10px 14px 10px 42px; font-size: 14.5px; }
     }
+
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 
 <body>
 
-  <!-- ══════════════════════════════
-       HEADER — Guides | Codes ▼ | Wiki | More ▼
-  ══════════════════════════════ -->
+  <!-- HEADER -->
   <header class="guide-header">
-
-    <a href="../" class="gh-logo">
-      <img src="../Images/FinalLogo.png" alt="BLOXBURST">
-    </a>
-
-    <!-- Search Game Guides — unique ID, won't be hijacked by script.js -->
+    <a href="../" class="gh-logo"><img src="../Images/FinalLogo.png" alt="BLOXBURST"></a>
     <div class="gh-search">
       <div class="gh-search-box">
         <span class="gh-search-icon">🔍</span>
-        <input
-          id="guideSearchInput"
-          type="text"
-          class="gh-search-input"
-          placeholder="Search Game Guides..."
-          autocomplete="off"
-        >
+        <input id="guideSearchInput" type="text" class="gh-search-input" placeholder="Search Game Guides..." autocomplete="off">
         <button class="gh-clear-btn" id="ghClearBtn" type="button">✕</button>
       </div>
       <div class="gh-suggestions" id="ghSuggestions"></div>
     </div>
-
     <nav class="gh-nav">
       <a href="../guides" class="nav-box nav-link">Guides</a>
-
       <div id="codesDropdown" class="nav-dropdown">
         <button class="mini-btn" id="codesBtn">Codes <span class="dropdown-arrow">▼</span></button>
         <div class="nav-menu" id="codesMenu">
@@ -558,9 +415,7 @@
           <a class="nav-item" href="../promo-latest-codes">Promo Codes</a>
         </div>
       </div>
-
       <a href="../wiki" class="nav-box nav-link">Wiki</a>
-
       <div id="moreDropdown" class="nav-dropdown">
         <button class="mini-btn" id="moreBtn">More <span class="dropdown-arrow">▼</span></button>
         <div class="nav-menu" id="moreMenu">
@@ -586,29 +441,18 @@
         </div>
       </div>
     </div>
-      
-        <div class="game-banner">
-    <img src="../Images/kick-a-lucky-block.webp" alt="24 Hours Overnight Banner">
-  </div>
 
-      <div class="game-quick-links">
-    <a class="icon-link" href="https://discord.com/invite/tfwUnqvdUX" target="_blank" data-tooltip="Discord Server">
-      <img src="../Images/Discord-Logo.png" alt="Discord">
-    </a>
-    <a class="quick-link play" href="https://www.roblox.com/games/89469502395769/Kick-a-Lucky-Block" target="_blank">
-      <span class="play-icon">▶</span> Play Game <span class="play-arrow">➜</span>
-    </a>
-    <a class="icon-link" href="https://www.roblox.com/communities/1041977165/No-More-Flops#!/about" target="_blank" data-tooltip="Roblox Group">
-      <img src="../Images/roblox_logoyea.png" alt="Roblox">
-    </a>
-  </div>
+    <div class="game-banner"><img src="../Images/kick-a-lucky-block.webp" alt="Kick A Lucky Block Beginner Guide Banner"></div>
+
+    <div class="game-quick-links">
+      <a class="icon-link" href="https://discord.com/invite/tfwUnqvdUX" target="_blank" data-tooltip="Discord Server"><img src="../Images/Discord-Logo.png" alt="Discord"></a>
+      <a class="quick-link play" href="https://www.roblox.com/games/89469502395769/Kick-a-Lucky-Block" target="_blank"><span class="play-icon">▶</span> Play Game <span class="play-arrow">➜</span></a>
+      <a class="icon-link" href="https://www.roblox.com/communities/1041977165/No-More-Flops#!/about" target="_blank" data-tooltip="Roblox Group"><img src="../Images/roblox_logoyea.png" alt="Roblox"></a>
+    </div>
 
     <!-- ARTICLE -->
     <div class="article-container">
-
-      <p class="article-intro">
-        Kick A Lucky Block might look simple at first glance — just kick a block and run — but don't let the colorful visuals fool you. This Roblox simulator hides a surprisingly deep progression system where timing, upgrade balance, and strategic planning separate casual players from top earners. This guide cuts through the noise and walks you through every essential mechanic, giving you a clear roadmap to maximize your earnings from day one.
-      </p>
+      <p class="article-intro">Kick A Lucky Block might look simple at first glance — just kick a block and run — but don't let the colorful visuals fool you. This Roblox simulator hides a surprisingly deep progression system where timing, upgrade balance, and strategic planning separate casual players from top earners. This guide cuts through the noise and walks you through every essential mechanic, giving you a clear roadmap to maximize your earnings from day one.</p>
 
       <!-- TOC -->
       <div class="quick-nav">
@@ -625,155 +469,123 @@
         </ul>
       </div>
 
-      <!-- SECTION 1 -->
-      <div class="guide-section" id="tip1">
-        <div class="section-header"><div class="section-number">1</div><h2>Core Loop: Kick, Run, Secure</h2></div>
-        <p>Everything in Kick A Lucky Block revolves around one tense cycle: launch your lucky block, then sprint back to base before a destructive wave catches you. Nail it, and you earn a Brainrot — a quirky collectible that generates passive income. Fail, and you lose that reward entirely.</p>
-        <h3>Master the Perfect Kick Timing</h3>
-        <p>When you hold to charge your kick, a bar fills up. Hitting the very top triggers a <span class="highlight">Perfect</span> bonus that significantly increases distance. Greater distance directly improves the rarity and earning potential of your Brainrot.</p>
-        <div class="tip-box"><div class="tip-icon">💡</div><p><strong>Pro Tip:</strong> Practice Perfect timing in low-stakes early runs before pushing for max distance. Consistency beats luck every time.</p></div>
-        <h3>Don't Ignore the Wave</h3>
-        <p>The wave moves fast — if it catches you before you return to base, you lose the Brainrot. Always prioritize your return path. If your run speed feels tight, don't push for max distance until you've upgraded your movement.</p>
-        <h3>Claim Rewards Immediately</h3>
-        <p>Once you safely return with a Brainrot, place it in your base <span class="highlight">right away</span>. Unslotted units earn $0. Treat this as a non-negotiable habit: <strong>secure → slot → upgrade.</strong></p>
-        <img src="../Images/kick-charge-wave-kick-a-lucky-block.webp" alt="Kick charge bar and wave chase mechanic" class="guide-img">
-        <p class="guide-caption">Figure 1: Time your kick for Perfect, then sprint back before the wave catches you.</p>
-      </div>
+      <!-- SECTIONS 1-6 + BONUS + FAQ (same as your original) -->
+      <div class="guide-section" id="tip1"><div class="section-header"><div class="section-number">1</div><h2>Core Loop: Kick, Run, Secure</h2></div><p>Everything in Kick A Lucky Block revolves around one tense cycle: launch your lucky block, then sprint back to base before a destructive wave catches you. Nail it, and you earn a Brainrot — a quirky collectible that generates passive income. Fail, and you lose that reward entirely.</p><h3>Master the Perfect Kick Timing</h3><p>When you hold to charge your kick, a bar fills up. Hitting the very top triggers a <span class="highlight">Perfect</span> bonus that significantly increases distance. Greater distance directly improves the rarity and earning potential of your Brainrot.</p><div class="tip-box"><div class="tip-icon">💡</div><p><strong>Pro Tip:</strong> Practice Perfect timing in low-stakes early runs before pushing for max distance. Consistency beats luck every time.</p></div><h3>Don't Ignore the Wave</h3><p>The wave moves fast — if it catches you before you return to base, you lose the Brainrot. Always prioritize your return path. If your run speed feels tight, don't push for max distance until you've upgraded your movement.</p><h3>Claim Rewards Immediately</h3><p>Once you safely return with a Brainrot, place it in your base <span class="highlight">right away</span>. Unslotted units earn $0. Treat this as a non-negotiable habit: <strong>secure → slot → upgrade.</strong></p><img src="../Images/kick-charge-wave-kick-a-lucky-block.webp" alt="Kick charge bar and wave chase mechanic" class="guide-img"><p class="guide-caption">Figure 1: Time your kick for Perfect, then sprint back before the wave catches you.</p></div>
 
-      <!-- SECTION 2 -->
-      <div class="guide-section" id="tip2">
-        <div class="section-header"><div class="section-number">2</div><h2>Upgrade Strategy: Power vs. Speed Balance</h2></div>
-        <p>New players often dump all their currency into kick power, only to realize they can't outrun the wave. Progress isn't about maxing one stat — it's about balancing two critical upgrades that work together.</p>
-        <h3>The Weight Shop: Your Kick Power Engine</h3>
-        <p>Weights determine how far your lucky block travels. Work toward high-tier purchases like the <span class="highlight">Gold Star</span>, which grants massive kick power per second.</p>
-        <h3>The Speed Stand: Don't Get Caught</h3>
-        <p>Run speed is your safety net. Alternate purchases between weights and speed early on. If you're consistently getting caught, pause power upgrades and focus on speed.</p>
-        <h3>Manual Bonus: Click Those Purple Targets</h3>
-        <p>Clicking purple circular targets grants a temporary <span class="highlight-orange">double-power boost</span>. If you're playing actively, make clicking these a habit.</p>
-        <div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Don't Max One Stat:</strong> Maxing kick power without upgrading speed is the most common beginner mistake. Always alternate upgrades.</p></div>
-        <img src="../Images/weight-shop-speed-stand-kick-a-lucky-block.webp" alt="Weight Shop and Speed Stand upgrade interfaces" class="guide-img">
-        <p class="guide-caption">Figure 2: Balance kick power (weights) and run speed upgrades for optimal progress.</p>
-      </div>
+      <div class="guide-section" id="tip2"><div class="section-header"><div class="section-number">2</div><h2>Upgrade Strategy: Power vs. Speed Balance</h2></div><p>New players often dump all their currency into kick power, only to realize they can't outrun the wave. Progress isn't about maxing one stat — it's about balancing two critical upgrades that work together.</p><h3>The Weight Shop: Your Kick Power Engine</h3><p>Weights determine how far your lucky block travels. Work toward high-tier purchases like the <span class="highlight">Gold Star</span>, which grants massive kick power per second.</p><h3>The Speed Stand: Don't Get Caught</h3><p>Run speed is your safety net. Alternate purchases between weights and speed early on. If you're consistently getting caught, pause power upgrades and focus on speed.</p><h3>Manual Bonus: Click Those Purple Targets</h3><p>Clicking purple circular targets grants a temporary <span class="highlight-orange">double-power boost</span>. If you're playing actively, make clicking these a habit.</p><div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Don't Max One Stat:</strong> Maxing kick power without upgrading speed is the most common beginner mistake. Always alternate upgrades.</p></div><img src="../Images/weight-shop-speed-stand-kick-a-lucky-block.webp" alt="Weight Shop and Speed Stand upgrade interfaces" class="guide-img"><p class="guide-caption">Figure 2: Balance kick power (weights) and run speed upgrades for optimal progress.</p></div>
 
-      <!-- SECTION 3 -->
-      <div class="guide-section" id="tip3">
-        <div class="section-header"><div class="section-number">3</div><h2>Brainrot Management & Floor Expansion</h2></div>
-        <p>Brainrots are your income engines. How you place, upgrade, and prioritize them directly determines your earning speed.</p>
-        <h3>Slot First, Upgrade Aggressively</h3>
-        <p>Never let a Brainrot sit in your inventory. Place it immediately, then spam the <span class="highlight-orange">orange upgrade button</span> to level it. Early upgrades provide exponential returns.</p>
-        <h3>Expand Your Floors Strategically</h3>
-        <p>You start with one floor but can unlock up to three (30 total slots). Unlock new floors as soon as you can afford them. More slots = more Brainrots = more passive income.</p>
-        <h3>Organize for Efficiency</h3>
-        <p>Place your highest-earning Brainrots on the bottom floor for quick visual reference. This saves time when managing upgrades or swapping units.</p>
-        <img src="../Images/brainrot-floors-upgrade-kick-a-lucky-block.webp" alt="Brainrot slots across three floors" class="guide-img">
-        <p class="guide-caption">Figure 3: Slot Brainrots immediately, upgrade aggressively, and expand floors as you progress.</p>
-      </div>
+      <div class="guide-section" id="tip3"><div class="section-header"><div class="section-number">3</div><h2>Brainrot Management & Floor Expansion</h2></div><p>Brainrots are your income engines. How you place, upgrade, and prioritize them directly determines your earning speed.</p><h3>Slot First, Upgrade Aggressively</h3><p>Never let a Brainrot sit in your inventory. Place it immediately, then spam the <span class="highlight-orange">orange upgrade button</span> to level it. Early upgrades provide exponential returns.</p><h3>Expand Your Floors Strategically</h3><p>You start with one floor but can unlock up to three (30 total slots). Unlock new floors as soon as you can afford them. More slots = more Brainrots = more passive income.</p><h3>Organize for Efficiency</h3><p>Place your highest-earning Brainrots on the bottom floor for quick visual reference. This saves time when managing upgrades or swapping units.</p><img src="../Images/brainrot-floors-upgrade-kick-a-lucky-block.webp" alt="Brainrot slots across three floors" class="guide-img"><p class="guide-caption">Figure 3: Slot Brainrots immediately, upgrade aggressively, and expand floors as you progress.</p></div>
 
-      <!-- SECTION 4 -->
-      <div class="guide-section" id="tip4">
-        <div class="section-header"><div class="section-number">4</div><h2>Mutations, AFK Setup & Offline Earnings</h2></div>
-        <p>Once you've filled your base, the next leap in earnings comes from mutations and smart AFK planning.</p>
-        <h3>Prioritize Mutated Brainrots</h3>
-        <p>Mutations apply massive money multipliers. Once your base is full, start replacing non-mutated units with mutated ones first. The earnings jump is statistically significant.</p>
-        <h3>Online AFK > Offline Earnings</h3>
-        <p>You earn <span class="highlight">more</span> while logged in and AFK than offline. If you can leave the game running safely, do it.</p>
-        <h3>Pre-Logout Checklist</h3>
-        <ol>
-          <li>Slot any unplaced Brainrots</li>
-          <li>Upgrade your top earners to current max</li>
-          <li>Ensure your character is in a safe AFK position</li>
-          <li>Verify weights are generating kick power passively</li>
-        </ol>
-        <div class="tip-box"><div class="tip-icon">⚡</div><p>This 60-second pre-logout routine can <strong>double your passive income</strong> while you're away.</p></div>
-        <img src="../Images/mutations-afk-setup-kick-a-lucky-block.webp" alt="Mutated Brainrot icons and AFK setup" class="guide-img">
-        <p class="guide-caption">Figure 4: Replace non-mutated Brainrots first, and optimize your AFK setup before logging off.</p>
-      </div>
+      <div class="guide-section" id="tip4"><div class="section-header"><div class="section-number">4</div><h2>Mutations, AFK Setup & Offline Earnings</h2></div><p>Once you've filled your base, the next leap in earnings comes from mutations and smart AFK planning.</p><h3>Prioritize Mutated Brainrots</h3><p>Mutations apply massive money multipliers. Once your base is full, start replacing non-mutated units with mutated ones first. The earnings jump is statistically significant.</p><h3>Online AFK > Offline Earnings</h3><p>You earn <span class="highlight">more</span> while logged in and AFK than offline. If you can leave the game running safely, do it.</p><h3>Pre-Logout Checklist</h3><ol><li>Slot any unplaced Brainrots</li><li>Upgrade your top earners to current max</li><li>Ensure your character is in a safe AFK position</li><li>Verify weights are generating kick power passively</li></ol><div class="tip-box"><div class="tip-icon">⚡</div><p>This 60-second pre-logout routine can <strong>double your passive income</strong> while you're away.</p></div><img src="../Images/mutations-afk-setup-kick-a-lucky-block.webp" alt="Mutated Brainrot icons and AFK setup" class="guide-img"><p class="guide-caption">Figure 4: Replace non-mutated Brainrots first, and optimize your AFK setup before logging off.</p></div>
 
-      <!-- SECTION 5 -->
-      <div class="guide-section" id="tip5">
-        <div class="section-header"><div class="section-number">5</div><h2>Rebirth System: When & How to Reset</h2></div>
-        <p>Rebirthing is the single most impactful progression mechanic — but also the most misunderstood.</p>
-        <h3>Why Rebirth? The Multiplier Math</h3>
-        <p>Each rebirth grants a permanent money multiplier: 2x, 3x, 4x, and so on. At rebirth 7, you're earning <span class="highlight">7x your base income</span>.</p>
-        <h3>When to Rebirth: The Smart Trigger</h3>
-        <p>Secure 1-2 strong Brainrots before resetting. Then rebirth the moment you qualify — don't wait to "feel ready." The multiplier benefit outweighs any marginal gain from delaying.</p>
-        <h3>Post-Rebirth Priority</h3>
-        <ol>
-          <li>Re-purchase basic weights to rebuild kick power</li>
-          <li>Re-slot your strongest Brainrots</li>
-          <li>Resume speed upgrades to maintain wave safety</li>
-          <li>Target the next rebirth threshold immediately</li>
-        </ol>
-        <img src="../Images/rebirth-multiplier-menu-kick-a-lucky-block.webp" alt="Rebirth menu showing multiplier progression" class="guide-img">
-        <p class="guide-caption">Figure 5: Rebirth for permanent multipliers — secure key Brainrots first, then reset aggressively.</p>
-      </div>
+      <div class="guide-section" id="tip5"><div class="section-header"><div class="section-number">5</div><h2>Rebirth System: When & How to Reset</h2></div><p>Rebirthing is the single most impactful progression mechanic — but also the most misunderstood.</p><h3>Why Rebirth? The Multiplier Math</h3><p>Each rebirth grants a permanent money multiplier: 2x, 3x, 4x, and so on. At rebirth 7, you're earning <span class="highlight">7x your base income</span>.</p><h3>When to Rebirth: The Smart Trigger</h3><p>Secure 1-2 strong Brainrots before resetting. Then rebirth the moment you qualify — don't wait to "feel ready." The multiplier benefit outweighs any marginal gain from delaying.</p><h3>Post-Rebirth Priority</h3><ol><li>Re-purchase basic weights to rebuild kick power</li><li>Re-slot your strongest Brainrots</li><li>Resume speed upgrades to maintain wave safety</li><li>Target the next rebirth threshold immediately</li></ol><img src="../Images/rebirth-multiplier-menu-kick-a-lucky-block.webp" alt="Rebirth menu showing multiplier progression" class="guide-img"><p class="guide-caption">Figure 5: Rebirth for permanent multipliers — secure key Brainrots first, then reset aggressively.</p></div>
 
-      <!-- SECTION 6 -->
-      <div class="guide-section" id="tip6">
-        <div class="section-header"><div class="section-number">6</div><h2>Bonus Boosts: Friends, Game Passes & Click Targets</h2></div>
-        <p>Beyond core mechanics, several optional systems can significantly boost your earnings.</p>
-        <h3>Friends Boost: The 40% Multiplier</h3>
-        <p>Invite up to four friends to your VIP server for ~10% money multiplier per friend (<span class="highlight">40% max</span>). This stacks multiplicatively with rebirth multipliers.</p>
-        <h3>Game Passes: Worth the Investment?</h3>
-        <p>Two passes stand out: <span class="highlight">2x Cash</span> and <span class="highlight">2x Power</span>. At ~300 Robux each, they pay for themselves quickly if you play regularly.</p>
-        <h3>Freebies & Index</h3>
-        <p>Claim the free Brainrot in the shop — it's an easy early boost. The Index feature is optional; focus on core systems first.</p>
-        <img src="../Images/friends-boost-gamepasses-kick-a-lucky-block.webp" alt="Friends boost indicator and game pass shop" class="guide-img">
-        <p class="guide-caption">Figure 6: Stack friends boost with game passes for maximum earnings acceleration.</p>
-      </div>
+      <div class="guide-section" id="tip6"><div class="section-header"><div class="section-number">6</div><h2>Bonus Boosts: Friends, Game Passes & Click Targets</h2></div><p>Beyond core mechanics, several optional systems can significantly boost your earnings.</p><h3>Friends Boost: The 40% Multiplier</h3><p>Invite up to four friends to your VIP server for ~10% money multiplier per friend (<span class="highlight">40% max</span>). This stacks multiplicatively with rebirth multipliers.</p><h3>Game Passes: Worth the Investment?</h3><p>Two passes stand out: <span class="highlight">2x Cash</span> and <span class="highlight">2x Power</span>. At ~300 Robux each, they pay for themselves quickly if you play regularly.</p><h3>Freebies & Index</h3><p>Claim the free Brainrot in the shop — it's an easy early boost. The Index feature is optional; focus on core systems first.</p><img src="../Images/friends-boost-gamepasses-kick-a-lucky-block.webp" alt="Friends boost indicator and game pass shop" class="guide-img"><p class="guide-caption">Figure 6: Stack friends boost with game passes for maximum earnings acceleration.</p></div>
 
-      <!-- BONUS -->
-      <div class="bonus-section" id="bonus">
-        <h2>💡 Honorable Mention: The Bottom-Floor Strategy</h2>
-        <p>Place your highest-earning Brainrots on the bottom floor of your base for <strong>visual efficiency.</strong> When rapidly upgrading or swapping units, having your money-makers in a consistent, easy-to-scan location reduces decision time. It's a tiny organizational tweak, but over hundreds of sessions, those saved seconds compound into meaningful progress.</p>
-      </div>
+      <div class="bonus-section" id="bonus"><h2>💡 Honorable Mention: The Bottom-Floor Strategy</h2><p>Place your highest-earning Brainrots on the bottom floor of your base for <strong>visual efficiency.</strong> When rapidly upgrading or swapping units, having your money-makers in a consistent, easy-to-scan location reduces decision time. It's a tiny organizational tweak, but over hundreds of sessions, those saved seconds compound into meaningful progress.</p></div>
 
-      <!-- FAQ -->
-      <div class="guide-section" id="faq">
-        <div class="section-header"><div class="section-number">?</div><h2>Frequently Asked Questions</h2></div>
-        <div class="faq-item"><div class="faq-q">How do I get more kick power in Kick A Lucky Block?</div><div class="faq-a">Visit the Weight Shop and purchase upgrades. Higher-tier weights like the Gold Star grant massive kick power per second. Balance with run speed upgrades.</div></div>
-        <div class="faq-item"><div class="faq-q">What are Brainrots and how do I use them?</div><div class="faq-a">Brainrots are collectible units earned by kicking the lucky block. Place them in base slots and upgrade using the orange button to generate passive income. Mutated Brainrots provide significant money multipliers.</div></div>
-        <div class="faq-item"><div class="faq-q">Should I rebirth early in Kick A Lucky Block?</div><div class="faq-a">Yes — rebirth as soon as you qualify. It resets kick power but grants permanent money multipliers (2x, 3x, 4x, etc.). Secure 1-2 strong Brainrots first.</div></div>
-        <div class="faq-item"><div class="faq-q">Do codes work in Kick A Lucky Block?</div><div class="faq-a">Codes are occasionally released for free Brainrots or boosts. Check the BLOXBURST Codes page for verified, working codes. Always redeem immediately — codes expire fast!</div></div>
-      </div>
+      <div class="guide-section" id="faq"><div class="section-header"><div class="section-number">?</div><h2>Frequently Asked Questions</h2></div><div class="faq-item"><div class="faq-q">How do I get more kick power in Kick A Lucky Block?</div><div class="faq-a">Visit the Weight Shop and purchase upgrades. Higher-tier weights like the Gold Star grant massive kick power per second. Balance with run speed upgrades.</div></div><div class="faq-item"><div class="faq-q">What are Brainrots and how do I use them?</div><div class="faq-a">Brainrots are collectible units earned by kicking the lucky block. Place them in base slots and upgrade using the orange button to generate passive income. Mutated Brainrots provide significant money multipliers.</div></div><div class="faq-item"><div class="faq-q">Should I rebirth early in Kick A Lucky Block?</div><div class="faq-a">Yes — rebirth as soon as you qualify. It resets kick power but grants permanent money multipliers (2x, 3x, 4x, etc.). Secure 1-2 strong Brainrots first.</div></div><div class="faq-item"><div class="faq-q">Do codes work in Kick A Lucky Block?</div><div class="faq-a">Codes are occasionally released for free Brainrots or boosts. Check the BLOXBURST Codes page for verified, working codes. Always redeem immediately — codes expire fast!</div></div></div>
 
-      <div class="article-footer-note">
-        <span>✅ Updated for April 2026</span> — Game mechanics, upgrade costs, and UI elements may shift with major updates. Bookmark this page and check back for revisions.
-      </div>
-
+      <div class="article-footer-note"><span>✅ Updated for April 2026</span> — Game mechanics, upgrade costs, and UI elements may shift with major updates. Bookmark this page and check back for revisions.</div>
     </div>
+
   </main>
+
+  <!-- ══════════════════════════════ MORE GUIDES SECTION ══════════════════════════════ -->
+  <section class="more-guides-section">
+    <div class="more-guides-head">
+      <div class="more-guides-divider"></div>
+      <div class="more-guides-label"><span>📖</span><span class="label-text">More Guides</span><span>📖</span></div>
+      <div class="more-guides-divider"></div>
+    </div>
+    <div class="more-guides-grid" id="moreGuidesGrid"></div>
+  </section>
+
+  <!-- ══════════════════════════════ SUGGESTION CODES SECTION ══════════════════════════════ -->
+  <section class="more-section" id="moreSection">
+    <div class="more-section-head">
+      <div class="more-divider-line"></div>
+      <div class="more-divider-label"><span class="more-fire">🎮</span><span class="more-text">Suggestion Codes</span><span class="more-fire">🎮</span></div>
+      <div class="more-divider-line"></div>
+    </div>
+    <div class="more-grid" id="moreGrid"></div>
+  </section>
+
+  <!-- ══════════════════════════════ LATEST UPDATE WIKI ══════════════════════════════ -->
+  <section class="wiki-section-inline">
+    <h2 style="font-family:'Fredoka',sans-serif; font-size:18px; color:#fff; margin-bottom:4px;">Latest Update Wiki</h2>
+    <p style="font-size:12px; color:rgba(255,255,255,0.45); margin-bottom:20px;">Fresh guides + updates from BLOXBURST Wiki</p>
+    <div class="wiki-inline-grid">
+      <a href="../Wiki-Folder/wiki-redeem-codes" style="text-decoration:none;">
+        <div class="wiki-inline-card">
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
+            <span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">UPDATE</span>
+            <span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 22, 2026</span>
+          </div>
+          <h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px; line-height:1.4;">How to Redeem Roblox Codes (Step-by-step)</h3>
+          <p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px; line-height:1.5;">A quick guide to make sure you don't make mistakes when redeeming.</p>
+          <span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span>
+        </div>
+      </a>
+      <a href="../Wiki-Folder/wiki-how-we-check-codes" style="text-decoration:none;">
+        <div class="wiki-inline-card">
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
+            <span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">GUIDE</span>
+            <span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 21, 2026</span>
+          </div>
+          <h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px; line-height:1.4;">How we check codes (manual testing)</h3>
+          <p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px; line-height:1.5;">An explanation of how we scan and test codes.</p>
+          <span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span>
+        </div>
+      </a>
+      <a href="../Wiki-Folder/wiki-invalid-code-reasons" style="text-decoration:none;">
+        <div class="wiki-inline-card">
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
+            <span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">NEW</span>
+            <span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 19, 2026</span>
+          </div>
+          <h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px; line-height:1.4;">Common reasons for "Invalid Code".</h3>
+          <p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px; line-height:1.5;">Common issues and fast solutions.</p>
+          <span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <a href="../wiki" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); color:#fff; text-decoration:none; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:600; transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+        📚 Open Wiki
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ COMMENT FORM ══════════════════════════════ -->
+  <section class="comment-clean">
+    <div style="margin-bottom:28px;">
+      <h2 style="font-family:'Fredoka',sans-serif; font-size:22px; color:#fff; margin:0 0 8px; display:flex; align-items:center; gap:10px;"><span>💬</span><span>Leave a Comment</span></h2>
+      <p style="font-size:13px; color:rgba(255,255,255,0.45); margin:0;">Have a question or feedback about Kick A Lucky Block? Send it to us!</p>
+    </div>
+    <form action="https://formspree.io/f/mojnpjgd" method="POST" id="commentForm">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+        <div><label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Name</label><input type="text" name="name" placeholder="Enter your name" required style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; transition:all 0.2s;"></div>
+        <div><label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Email</label><input type="email" name="email" placeholder="Enter your email" required style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; transition:all 0.2s;"></div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Comment</label>
+        <textarea name="message" placeholder="Write your comment here..." required rows="5" style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; resize:vertical; transition:all 0.2s;"></textarea>
+      </div>
+      <button type="submit" style="width:100%; background:linear-gradient(135deg, #7c3aed, #a855f7); color:#fff; border:none; padding:14px 28px; border-radius:12px; font-size:14px; font-weight:700; cursor:pointer; transition:all 0.3s ease;">Send Comment 🚀</button>
+    </form>
+    <div id="successMsg" style="display:none; margin-top:20px; background:rgba(0,229,160,0.08); border:1px solid rgba(0,229,160,0.2); border-radius:10px; padding:14px; text-align:center; color:#00e5a0; font-size:13px; font-weight:600;">✅ Comment sent! Thank you for your feedback!</div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-left">
-        <div class="footer-logo">BLOXBURST🔥</div>
-        <p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <a href="../guides">Guides</a>
-        <a href="../gamecode">Game Codes</a>
-        <a href="../promo-latest-codes">Promo Codes</a>
-        <a href="../wiki">Wiki</a>
-      </div>
-      <div class="footer-col">
-        <h4>More</h4>
-        <a href="../Terms-and-Condition/about">About Us</a>
-        <a href="../Terms-and-Condition/faq">FAQ</a>
-        <a href="../Terms-and-Condition/contactus">Contact Us</a>
-      </div>
-      <div class="footer-col">
-        <h4>Policies</h4>
-        <a href="../Terms-and-Condition/terms">Terms of Use</a>
-        <a href="../Terms-and-Condition/privacy">Privacy Policy</a>
-      </div>
+      <div class="footer-left"><div class="footer-logo">BLOXBURST🔥</div><p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><a href="../guides">Guides</a><a href="../gamecode">Game Codes</a><a href="../promo-latest-codes">Promo Codes</a><a href="../wiki">Wiki</a></div>
+      <div class="footer-col"><h4>More</h4><a href="../Terms-and-Condition/about">About Us</a><a href="../Terms-and-Condition/faq">FAQ</a><a href="../Terms-and-Condition/contactus">Contact Us</a></div>
+      <div class="footer-col"><h4>Policies</h4><a href="../Terms-and-Condition/terms">Terms of Use</a><a href="../Terms-and-Condition/privacy">Privacy Policy</a></div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
-      <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
-    </div>
+    <div class="footer-bottom"><div class="footer-meta">v1.0.0 • Powered by Zenken</div><div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div></div>
   </footer>
 
   <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
@@ -794,101 +606,81 @@
       });
     }, { threshold: 0.08 });
     document.querySelectorAll('.guide-section, .bonus-section, .article-intro, .quick-nav').forEach(s => {
-      s.style.opacity = '0';
-      s.style.transform = 'translateY(20px)';
-      observer.observe(s);
+      s.style.opacity = '0'; s.style.transform = 'translateY(20px)'; observer.observe(s);
     });
 
     /* ── Nav Dropdowns ── */
     function setupDropdown(btnId, dropdownId) {
-      const btn = document.getElementById(btnId);
-      const dd  = document.getElementById(dropdownId);
+      const btn = document.getElementById(btnId), dd = document.getElementById(dropdownId);
       if (!btn || !dd) return;
-      btn.addEventListener('click', (e) => {
-        e.preventDefault(); e.stopPropagation();
-        document.querySelectorAll('.nav-dropdown').forEach(d => { if (d !== dd) d.classList.remove('active'); });
-        dd.classList.toggle('active');
-      });
+      btn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); document.querySelectorAll('.nav-dropdown').forEach(d => { if (d !== dd) d.classList.remove('active'); }); dd.classList.toggle('active'); });
     }
-    setupDropdown('codesBtn', 'codesDropdown');
-    setupDropdown('moreBtn',  'moreDropdown');
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav-dropdown'))
-        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
-    });
+    setupDropdown('codesBtn', 'codesDropdown'); setupDropdown('moreBtn', 'moreDropdown');
+    document.addEventListener('click', (e) => { if (!e.target.closest('.nav-dropdown')) document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active')); });
 
-    /* ══════════════════════════════════════════
-       GUIDE SEARCH — reads Game-Guides.Json
-       Unique IDs so script.js won't interfere
-    ══════════════════════════════════════════ */
+    /* ── Guide Search ── */
     (async () => {
-      const input    = document.getElementById('guideSearchInput');
-      const clearBtn = document.getElementById('ghClearBtn');
-      const box      = document.getElementById('ghSuggestions');
-      const base     = '../';
-
+      const input = document.getElementById('guideSearchInput'), clearBtn = document.getElementById('ghClearBtn'), box = document.getElementById('ghSuggestions'), base = '../';
       let guides = [];
-      try {
-        const res = await fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' });
-        const raw = await res.json();
-        const seen = new Set();
-        guides = raw.filter(g => { if (seen.has(g.id)) return false; seen.add(g.id); return true; });
-      } catch (e) {
-        console.warn('Could not load Game-Guides.Json:', e);
-      }
-
-      function search(q) {
-        q = q.toLowerCase().trim();
-        if (!q) return [];
-        return guides.filter(g =>
-          g.title.toLowerCase().includes(q) ||
-          (g.description && g.description.toLowerCase().includes(q)) ||
-          (g.tags && g.tags.some(t => t.toLowerCase().includes(q)))
-        );
-      }
-
-      function render(results) {
-        box.innerHTML = '';
-        if (!results.length) {
-          box.innerHTML = `<div class="gh-no-result">No guides found.</div>`;
-        } else {
-          results.slice(0, 6).forEach(g => {
-            const el = document.createElement('div');
-            el.className = 'gh-suggest-item';
-            el.innerHTML = `
-              <img src="${base}${g.thumbnail}" alt="${g.title}" loading="lazy" onerror="this.style.display='none'">
-              <div class="gh-suggest-info">
-                <div class="gh-suggest-title">${g.title}</div>
-                <div class="gh-suggest-meta">${g.category} · ${g.readTime} read · ${g.releaseDate}</div>
-              </div>
-              <span class="gh-suggest-pill">Open</span>
-            `;
-            el.addEventListener('click', () => window.location.href = base + g.link);
-            box.appendChild(el);
-          });
-        }
-        box.classList.add('open');
-      }
-
+      try { const res = await fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }); const raw = await res.json(); const seen = new Set(); guides = raw.filter(g => { if (seen.has(g.id)) return false; seen.add(g.id); return true; }); } catch (e) { console.warn('Could not load Game-Guides.Json:', e); }
+      function search(q) { q = q.toLowerCase().trim(); if (!q) return []; return guides.filter(g => g.title.toLowerCase().includes(q) || (g.description && g.description.toLowerCase().includes(q)) || (g.tags && g.tags.some(t => t.toLowerCase().includes(q)))); }
+      function render(results) { box.innerHTML = ''; if (!results.length) { box.innerHTML = `<div class="gh-no-result">No guides found.</div>`; } else { results.slice(0, 6).forEach(g => { const el = document.createElement('div'); el.className = 'gh-suggest-item'; el.innerHTML = `<img src="${base}${g.thumbnail}" alt="${g.title}" loading="lazy" onerror="this.style.display='none'"><div class="gh-suggest-info"><div class="gh-suggest-title">${g.title}</div><div class="gh-suggest-meta">${g.category} · ${g.readTime} read · ${g.releaseDate}</div></div><span class="gh-suggest-pill">Open</span>`; el.addEventListener('click', () => window.location.href = base + g.link); box.appendChild(el); }); } box.classList.add('open'); }
       function hide() { box.classList.remove('open'); box.innerHTML = ''; }
-
-      input.addEventListener('input', function () {
-        if (!this.value.trim()) { hide(); return; }
-        render(search(this.value));
-      });
-
-      input.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          const r = search(this.value);
-          if (r.length) window.location.href = base + r[0].link;
-        }
-        if (e.key === 'Escape') hide();
-      });
-
+      input.addEventListener('input', function () { if (!this.value.trim()) { hide(); return; } render(search(this.value)); });
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); const r = search(this.value); if (r.length) window.location.href = base + r[0].link; } if (e.key === 'Escape') hide(); });
       clearBtn.addEventListener('click', () => { input.value = ''; hide(); input.focus(); });
       document.addEventListener('click', (e) => { if (!e.target.closest('.gh-search')) hide(); });
     })();
+
+    /* ── More Guides Section ── */
+    (function () {
+      var grid = document.getElementById('moreGuidesGrid'); if (!grid) return; var base = '../'; var currentId = 'kick-a-lucky-block';
+      fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
+        var seen = new Set(); var guides = data.filter(function (g) { if (seen.has(g.id)) return false; seen.add(g.id); return true; });
+        guides = guides.filter(function (g) { return g.id !== currentId; });
+        for (var i = guides.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = guides[i]; guides[i] = guides[j]; guides[j] = t; }
+        grid.innerHTML = ''; guides.slice(0, 9).forEach(function (g) {
+          var a = document.createElement('a'); a.className = 'more-guide-card'; a.href = base + g.link;
+          var html = '<img src="' + base + g.thumbnail + '" alt="' + g.title + '" loading="lazy" onerror="this.style.display=\'none\'"><div class="mgc-info"><h3>' + g.title + '</h3><p>' + g.category + ' · ' + g.readTime + '</p></div>';
+          if (g.featured === true) { html += '<span class="editor-badge">⭐ Editor\'s Pick</span>'; }
+          a.innerHTML = html; grid.appendChild(a);
+        });
+      }).catch(function (e) { console.warn('Could not load Game-Guides.Json for More Guides:', e); });
+    })();
+
+    /* ── Suggestion Codes Section ── */
+    (function () {
+      var grid = document.getElementById('moreGrid'); if (!grid) return; var base = '../'; var currentPath = window.location.pathname;
+      fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
+        var seen = new Set(); var guides = data.filter(function (g) { if (seen.has(g.id)) return false; seen.add(g.id); return true; });
+        guides = guides.filter(function (g) { return !currentPath.includes(g.id); });
+        for (var i = guides.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = guides[i]; guides[i] = guides[j]; guides[j] = t; }
+        grid.innerHTML = ''; guides.slice(0, 6).forEach(function (g) {
+          var a = document.createElement('a'); a.className = 'more-card'; a.href = base + g.link;
+          a.innerHTML = '<img src="' + base + g.thumbnail + '" alt="' + g.title + '" loading="lazy" onerror="this.style.display=\'none\'"><div class="more-info"><h3>' + g.title + '</h3><p>' + g.category + ' · ' + g.readTime + '</p></div>';
+          grid.appendChild(a);
+        });
+      }).catch(function (e) { console.warn('Could not load game-guides.json for Suggestion Codes:', e); });
+    })();
+
+    /* ── Comment Form Handler ── */
+    (function() {
+      var form = document.getElementById('commentForm'), successMsg = document.getElementById('successMsg');
+      if (!form || !successMsg) return;
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault(); var formData = new FormData(form);
+        try {
+          var response = await fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+          if (response.ok) { form.reset(); form.style.display = 'none'; successMsg.style.display = 'block'; setTimeout(function() { successMsg.style.display = 'none'; form.style.display = 'block'; }, 5000); }
+        } catch (error) { console.error('Error:', error); alert('Error sending comment. Please try again.'); }
+      });
+    })();
+
+    /* ── Wiki Card Hover Effects ── */
+    document.querySelectorAll('.wiki-inline-card').forEach(function(card) {
+      card.addEventListener('mouseenter', function() { this.style.background = 'rgba(255,255,255,0.1)'; this.style.borderColor = 'rgba(124,92,252,0.3)'; this.style.transform = 'translateY(-3px)'; });
+      card.addEventListener('mouseleave', function() { this.style.background = 'rgba(255,255,255,0.06)'; this.style.borderColor = 'rgba(255,255,255,0.06)'; this.style.transform = 'translateY(0)'; });
+    });
   </script>
 </body>
 </html>

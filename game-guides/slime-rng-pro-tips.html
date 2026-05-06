@@ -81,7 +81,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'DM Sans', sans-serif;
-      /* ✅ Matches homepage background */
       background: linear-gradient(135deg, #050a2a, #0a0f3d, #02061a);
       background-attachment: fixed;
       color: rgba(255,255,255,0.88);
@@ -111,407 +110,273 @@
       z-index: 0;
     }
 
-    /* ══════════════════════════════
-       DROPDOWN
-    ══════════════════════════════ */
-    .dropdown-arrow {
-      font-size: 10px; margin-left: 5px;
-      transition: transform 0.3s ease; display: inline-block;
-    }
+    /* ══════════════════════════════ DROPDOWN ══════════════════════════════ */
+    .dropdown-arrow { font-size: 10px; margin-left: 5px; transition: transform 0.3s ease; display: inline-block; }
     .nav-dropdown.active .dropdown-arrow { transform: rotate(180deg); }
     .nav-dropdown { position: relative !important; display: inline-block !important; }
     .nav-menu {
-      position: absolute !important;
-      top: calc(100% + 10px) !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-      min-width: 180px !important;
+      position: absolute !important; top: calc(100% + 10px) !important; left: 50% !important;
+      transform: translateX(-50%) !important; min-width: 180px !important;
       background: linear-gradient(135deg, #1a1f4d, #252b6b) !important;
-      border: 1px solid rgba(255,255,255,0.1) !important;
-      border-radius: 12px !important;
-      padding: 8px !important;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-      z-index: 9999 !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
+      border: 1px solid rgba(255,255,255,0.1) !important; border-radius: 12px !important;
+      padding: 8px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+      z-index: 9999 !important; opacity: 0 !important; visibility: hidden !important;
       transition: all 0.3s ease !important;
     }
-    .nav-dropdown.active .nav-menu {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translateX(-50%) translateY(0) !important;
-    }
+    .nav-dropdown.active .nav-menu { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
     .nav-item {
-      display: block !important; padding: 10px 16px !important;
-      color: rgba(255,255,255,0.9) !important; text-decoration: none !important;
-      border-radius: 8px !important; font-size: 13px !important; font-weight: 600 !important;
-      transition: all 0.2s ease !important; margin: 4px 0 !important;
+      display: block !important; padding: 10px 16px !important; color: rgba(255,255,255,0.9) !important;
+      text-decoration: none !important; border-radius: 8px !important; font-size: 13px !important;
+      font-weight: 600 !important; transition: all 0.2s ease !important; margin: 4px 0 !important;
       text-align: center !important; white-space: nowrap !important;
     }
     .nav-item:hover { background: rgba(125,92,255,0.3) !important; color: #fff !important; }
 
-    /* ══════════════════════════════
-       GUIDE HEADER
-    ══════════════════════════════ */
-    .guide-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 40px;
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      box-sizing: border-box;
-      position: relative;
-      z-index: 100;
-    }
-
-    .guide-header .gh-logo {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      flex: 0 0 auto;
-    }
-    .guide-header .gh-logo img {
-      height: 90px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* Search */
-    .guide-header .gh-search {
-      flex: 1 1 auto;
-      max-width: 420px;
-      position: relative;
-    }
-    .gh-search-box {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 46px;
-      padding: 0 16px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-      box-sizing: border-box;
-      gap: 8px;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .gh-search-box:focus-within {
-      border-color: rgba(0,229,160,0.5);
-      background: rgba(255,255,255,0.10);
-    }
+    /* ══════════════════════════════ GUIDE HEADER ══════════════════════════════ */
+    .guide-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 40px; width: 100%; max-width: 1400px; margin: 0 auto; box-sizing: border-box; position: relative; z-index: 100; }
+    .guide-header .gh-logo { display: inline-flex; align-items: center; text-decoration: none; flex: 0 0 auto; }
+    .guide-header .gh-logo img { height: 90px; width: auto; object-fit: contain; display: block; }
+    .guide-header .gh-search { flex: 1 1 auto; max-width: 420px; position: relative; }
+    .gh-search-box { display: flex; align-items: center; width: 100%; height: 46px; padding: 0 16px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; box-sizing: border-box; gap: 8px; transition: border-color 0.2s, background 0.2s; }
+    .gh-search-box:focus-within { border-color: rgba(0,229,160,0.5); background: rgba(255,255,255,0.10); }
     .gh-search-icon { font-size: 15px; flex-shrink: 0; }
-    .gh-search-input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      font-size: 14px;
-      font-family: 'DM Sans', sans-serif;
-      color: #fff;
-    }
+    .gh-search-input { flex: 1; background: transparent; border: none; outline: none; font-size: 14px; font-family: 'DM Sans', sans-serif; color: #fff; }
     .gh-search-input::placeholder { color: rgba(255,255,255,0.38); }
-    .gh-clear-btn {
-      background: none; border: none; color: rgba(255,255,255,0.35);
-      cursor: pointer; font-size: 14px; padding: 0; transition: color 0.2s; flex-shrink: 0;
-    }
+    .gh-clear-btn { background: none; border: none; color: rgba(255,255,255,0.35); cursor: pointer; font-size: 14px; padding: 0; transition: color 0.2s; flex-shrink: 0; }
     .gh-clear-btn:hover { color: #fff; }
-
-    /* Suggestions */
-    .gh-suggestions {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0; right: 0;
-      background: linear-gradient(135deg, #181d50, #20266a);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      overflow: hidden;
-      z-index: 9998;
-      display: none;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.55);
-    }
+    .gh-suggestions { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: linear-gradient(135deg, #181d50, #20266a); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; overflow: hidden; z-index: 9998; display: none; box-shadow: 0 14px 40px rgba(0,0,0,0.55); }
     .gh-suggestions.open { display: block; }
-    .gh-suggest-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 14px;
-      cursor: pointer;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: background 0.15s;
-    }
+    .gh-suggest-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.15s; }
     .gh-suggest-item:last-child { border-bottom: none; }
     .gh-suggest-item:hover { background: rgba(255,255,255,0.07); }
-    .gh-suggest-item img {
-      width: 44px; height: 44px;
-      object-fit: cover; border-radius: 8px; flex-shrink: 0;
-    }
+    .gh-suggest-item img { width: 44px; height: 44px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
     .gh-suggest-info { flex: 1; min-width: 0; }
-    .gh-suggest-title {
-      font-size: 13px; font-weight: 700; color: #fff;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
+    .gh-suggest-title { font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .gh-suggest-meta { font-size: 11px; color: rgba(255,255,255,0.42); margin-top: 2px; }
-    .gh-suggest-pill {
-      font-size: 11px; font-weight: 800;
-      background: rgba(0,229,160,0.15);
-      border: 1px solid rgba(0,229,160,0.3);
-      color: #00e5a0;
-      padding: 3px 10px; border-radius: 999px; flex-shrink: 0;
-    }
+    .gh-suggest-pill { font-size: 11px; font-weight: 800; background: rgba(0,229,160,0.15); border: 1px solid rgba(0,229,160,0.3); color: #00e5a0; padding: 3px 10px; border-radius: 999px; flex-shrink: 0; }
     .gh-no-result { padding: 14px 18px; font-size: 13px; color: rgba(255,255,255,0.4); }
-
-    /* Nav buttons */
-    .guide-header .gh-nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 0 0 auto;
-    }
+    .guide-header .gh-nav { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
     .guide-header .gh-nav .nav-dropdown { width: 100px; min-width: 100px; }
-    .guide-header .gh-nav .mini-btn,
-    .guide-header .gh-nav .nav-box,
-    .guide-header .gh-nav .nav-link,
-    .guide-header .gh-nav .nav-dropdown #codesBtn,
-    .guide-header .gh-nav .nav-dropdown #moreBtn {
-      width: 100px; min-width: 100px; max-width: 100px;
-      height: 42px; padding: 0;
-      font-size: 14px; font-weight: 800;
-      display: inline-flex; align-items: center; justify-content: center;
-      box-sizing: border-box; white-space: nowrap;
-      background: rgba(143,140,199,0.25);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 10px; color: #fff;
-      text-decoration: none; cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      transition: background 0.2s, border-color 0.2s;
+    .guide-header .gh-nav .mini-btn, .guide-header .gh-nav .nav-box, .guide-header .gh-nav .nav-link, .guide-header .gh-nav .nav-dropdown #codesBtn, .guide-header .gh-nav .nav-dropdown #moreBtn {
+      width: 100px; min-width: 100px; max-width: 100px; height: 42px; padding: 0; font-size: 14px; font-weight: 800;
+      display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; white-space: nowrap;
+      background: rgba(143,140,199,0.25); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; color: #fff;
+      text-decoration: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s, border-color 0.2s;
     }
-    .guide-header .gh-nav .mini-btn:hover,
-    .guide-header .gh-nav .nav-box:hover,
-    .guide-header .gh-nav .nav-dropdown #codesBtn:hover,
-    .guide-header .gh-nav .nav-dropdown #moreBtn:hover {
-      background: rgba(143,140,199,0.45);
-      border-color: rgba(255,255,255,0.5);
-    }
+    .guide-header .gh-nav .mini-btn:hover, .guide-header .gh-nav .nav-box:hover, .guide-header .gh-nav .nav-dropdown #codesBtn:hover, .guide-header .gh-nav .nav-dropdown #moreBtn:hover { background: rgba(143,140,199,0.45); border-color: rgba(255,255,255,0.5); }
 
-    /* ── Tablet ≤ 960px ── */
     @media (max-width: 960px) {
       .guide-header { padding: 12px 20px; gap: 12px; }
       .guide-header .gh-logo img { height: 70px !important; }
       .guide-header .gh-search { max-width: 260px; }
-      .guide-header .gh-nav .mini-btn,
-      .guide-header .gh-nav .nav-box,
-      .guide-header .gh-nav .nav-link,
-      .guide-header .gh-nav .nav-dropdown #codesBtn,
-      .guide-header .gh-nav .nav-dropdown #moreBtn {
-        width: 82px !important; min-width: 82px !important;
-        font-size: 12px !important; height: 38px !important;
-      }
+      .guide-header .gh-nav .mini-btn, .guide-header .gh-nav .nav-box, .guide-header .gh-nav .nav-link, .guide-header .gh-nav .nav-dropdown #codesBtn, .guide-header .gh-nav .nav-dropdown #moreBtn { width: 82px !important; min-width: 82px !important; font-size: 12px !important; height: 38px !important; }
       .guide-header .gh-nav .nav-dropdown { width: 82px !important; min-width: 82px !important; }
     }
-
-    /* ── Mobile ≤ 600px ── */
     @media (max-width: 600px) {
-      .guide-header {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 14px 14px 10px !important;
-        gap: 10px !important;
-      }
+      .guide-header { flex-direction: column !important; align-items: center !important; padding: 14px 14px 10px !important; gap: 10px !important; }
       .guide-header .gh-logo { width: 100%; justify-content: center; }
       .guide-header .gh-logo img { height: 62px !important; margin: 0 auto !important; }
       .guide-header .gh-search { width: 100% !important; max-width: 100% !important; }
       .gh-search-box { height: 40px !important; }
-      .guide-header .gh-nav {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 6px !important; width: 100% !important;
-      }
+      .guide-header .gh-nav { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 6px !important; width: 100% !important; }
       .guide-header .gh-nav .nav-dropdown { width: 100% !important; min-width: 0 !important; }
-      .guide-header .gh-nav .mini-btn,
-      .guide-header .gh-nav .nav-box,
-      .guide-header .gh-nav .nav-link,
-      .guide-header .gh-nav .nav-dropdown #codesBtn,
-      .guide-header .gh-nav .nav-dropdown #moreBtn {
-        width: 100% !important; min-width: 0 !important; max-width: none !important;
-        height: 36px !important; font-size: 11px !important; padding: 0 4px !important;
-      }
+      .guide-header .gh-nav .mini-btn, .guide-header .gh-nav .nav-box, .guide-header .gh-nav .nav-link, .guide-header .gh-nav .nav-dropdown #codesBtn, .guide-header .gh-nav .nav-dropdown #moreBtn { width: 100% !important; min-width: 0 !important; max-width: none !important; height: 36px !important; font-size: 11px !important; padding: 0 4px !important; }
     }
 
-    /* ══════════════════════════════
-       ARTICLE STYLES
-    ══════════════════════════════ */
+    /* ══════════════════════════════ ARTICLE STYLES ══════════════════════════════ */
     .page { position: relative; z-index: 1; }
-
     .article-hero { position: relative; max-width: 900px; margin: 36px auto 0; padding: 0 24px; }
-    .hero-card {
-      position: relative;
-      background: linear-gradient(135deg, rgba(124,92,252,0.2) 0%, rgba(0,229,160,0.1) 50%, rgba(255,107,53,0.12) 100%);
-      border: 1px solid rgba(124,92,252,0.3);
-      border-radius: 24px; padding: 52px 48px 44px; overflow: hidden;
-      animation: fadeSlideUp 0.6s ease both;
-    }
-    .hero-card::before {
-      content: ''; position: absolute; top: -60px; right: -60px;
-      width: 280px; height: 280px;
-      background: radial-gradient(circle, rgba(124,92,252,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-card::after {
-      content: ''; position: absolute; bottom: -40px; left: -40px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(0,229,160,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(124,92,252,0.2); border: 1px solid rgba(124,92,252,0.4);
-      border-radius: 999px; padding: 6px 16px; font-size: 13px; font-weight: 600;
-      color: #a78bfa; margin-bottom: 20px; letter-spacing: 0.04em;
-    }
-    .hero-card h1 {
-      font-family: 'Fredoka', sans-serif; font-size: clamp(28px, 4vw, 42px);
-      font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px;
-    }
+    .hero-card { position: relative; background: linear-gradient(135deg, rgba(124,92,252,0.2) 0%, rgba(0,229,160,0.1) 50%, rgba(255,107,53,0.12) 100%); border: 1px solid rgba(124,92,252,0.3); border-radius: 24px; padding: 52px 48px 44px; overflow: hidden; animation: fadeSlideUp 0.6s ease both; }
+    .hero-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(124,92,252,0.18) 0%, transparent 70%); pointer-events: none; }
+    .hero-card::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,229,160,0.1) 0%, transparent 70%); pointer-events: none; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(124,92,252,0.2); border: 1px solid rgba(124,92,252,0.4); border-radius: 999px; padding: 6px 16px; font-size: 13px; font-weight: 600; color: #a78bfa; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .hero-card h1 { font-family: 'Fredoka', sans-serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; }
-    .meta-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 999px; padding: 5px 14px; font-size: 13px;
-      color: var(--text-muted); font-weight: 500;
-    }
-
+    .meta-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; padding: 5px 14px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
     .article-container { max-width: 900px; margin: 40px auto 80px; padding: 0 24px; }
-
-    .article-intro {
-      font-size: 17px; line-height: 1.9; color: rgba(255,255,255,0.78);
-      margin-bottom: 40px; padding: 28px 32px; background: var(--surface);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      animation: fadeSlideUp 0.7s 0.1s ease both;
-    }
-
-    .quick-nav {
-      background: rgba(124,92,252,0.07); border: 1px solid rgba(124,92,252,0.2);
-      border-radius: var(--radius); padding: 28px 32px; margin-bottom: 52px;
-      animation: fadeSlideUp 0.7s 0.15s ease both;
-    }
+    .article-intro { font-size: 17px; line-height: 1.9; color: rgba(255,255,255,0.78); margin-bottom: 40px; padding: 28px 32px; background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; animation: fadeSlideUp 0.7s 0.1s ease both; }
+    .quick-nav { background: rgba(124,92,252,0.07); border: 1px solid rgba(124,92,252,0.2); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 52px; animation: fadeSlideUp 0.7s 0.15s ease both; }
     .quick-nav h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; color: #fff; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
     .quick-nav ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4px 20px; }
     .quick-nav li { counter-increment: toc; }
-    .quick-nav a {
-      display: flex; align-items: center; gap: 10px; padding: 9px 0;
-      color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14.5px; font-weight: 500;
-      border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s, padding-left 0.2s;
-    }
+    .quick-nav a { display: flex; align-items: center; gap: 10px; padding: 9px 0; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14.5px; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s, padding-left 0.2s; }
     .quick-nav a::before { content: '→'; color: var(--accent); font-size: 13px; opacity: 0; transition: opacity 0.2s; }
     .quick-nav a:hover { color: var(--accent); padding-left: 4px; }
     .quick-nav a:hover::before { opacity: 1; }
-
     .guide-section { margin-bottom: 64px; animation: fadeSlideUp 0.6s ease both; }
-    .section-header {
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
-    }
-    .section-number {
-      width: 40px; height: 40px;
-      background: linear-gradient(135deg, var(--accent2), var(--accent));
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0;
-    }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .section-number { width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent2), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0; }
     .guide-section h2 { font-family: 'Fredoka', sans-serif; font-size: clamp(22px, 3vw, 28px); color: #fff; font-weight: 700; }
-    .guide-section h3 {
-      font-family: 'Fredoka', sans-serif; font-size: 20px; color: rgba(255,255,255,0.95);
-      margin: 32px 0 12px; display: flex; align-items: center; gap: 8px;
-    }
+    .guide-section h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; color: rgba(255,255,255,0.95); margin: 32px 0 12px; display: flex; align-items: center; gap: 8px; }
     .guide-section h3::before { content: ''; display: inline-block; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; }
     .guide-section p { font-size: 16.5px; color: rgba(255,255,255,0.78); margin-bottom: 18px; line-height: 1.9; }
     .guide-section ul, .guide-section ol { margin-bottom: 20px; padding-left: 0; list-style: none; }
-    .guide-section ul li, .guide-section ol li {
-      position: relative; padding: 10px 16px 10px 44px; margin-bottom: 8px;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; font-size: 15.5px; color: rgba(255,255,255,0.8);
-      counter-increment: list-counter;
-    }
+    .guide-section ul li, .guide-section ol li { position: relative; padding: 10px 16px 10px 44px; margin-bottom: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; font-size: 15.5px; color: rgba(255,255,255,0.8); counter-increment: list-counter; }
     .guide-section ul li::before { content: '✦'; position: absolute; left: 16px; color: var(--accent); font-size: 12px; top: 50%; transform: translateY(-50%); }
     .guide-section ol { counter-reset: list-counter; }
-    .guide-section ol li::before {
-      content: counter(list-counter); position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
-      width: 22px; height: 22px; background: var(--accent2); border-radius: 6px;
-      display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff;
-    }
+    .guide-section ol li::before { content: counter(list-counter); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; background: var(--accent2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; }
     .guide-section strong { color: #fff; font-weight: 600; }
     .highlight { color: var(--accent); font-weight: 600; }
     .highlight-orange { color: var(--accent3); font-weight: 600; }
-
-    .tip-box {
-      display: flex; gap: 14px; background: rgba(0,229,160,0.07);
-      border: 1px solid rgba(0,229,160,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0;
-    }
+    .tip-box { display: flex; gap: 14px; background: rgba(0,229,160,0.07); border: 1px solid rgba(0,229,160,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
     .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
     .tip-box p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.8); }
-    .warn-box {
-      display: flex; gap: 14px; background: rgba(255,107,53,0.07);
-      border: 1px solid rgba(255,107,53,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0;
-    }
+    .warn-box { display: flex; gap: 14px; background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
     .warn-box p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.8); }
-
-    .guide-img {
-      width: 100%; max-width: 740px; height: auto; border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08); display: block; margin: 28px auto 0;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s;
-    }
+    .guide-img { width: 100%; max-width: 740px; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); display: block; margin: 28px auto 0; box-shadow: 0 12px 40px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; }
     .guide-img:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
     .guide-caption { text-align: center; font-size: 13px; color: var(--text-muted); margin: 10px auto 36px; font-style: italic; max-width: 600px; }
-
-    .faq-item {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s;
-    }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s; }
     .faq-item:hover { border-color: rgba(124,92,252,0.3); }
-    .faq-q {
-      padding: 18px 22px; font-size: 16px; font-weight: 600; color: #fff;
-      cursor: pointer; display: flex; align-items: center; gap: 12px; user-select: none;
-    }
-    .faq-q::before {
-      content: '?'; width: 28px; height: 28px; background: rgba(124,92,252,0.25);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 700; color: #a78bfa; flex-shrink: 0;
-    }
+    .faq-q { padding: 18px 22px; font-size: 16px; font-weight: 600; color: #fff; cursor: pointer; display: flex; align-items: center; gap: 12px; user-select: none; }
+    .faq-q::before { content: '?'; width: 28px; height: 28px; background: rgba(124,92,252,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #a78bfa; flex-shrink: 0; }
     .faq-a { padding: 0 22px 18px 62px; font-size: 15.5px; color: rgba(255,255,255,0.72); line-height: 1.8; }
-
-    .bonus-section {
-      background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(124,92,252,0.1) 100%);
-      border: 1px solid rgba(255,107,53,0.25); border-radius: var(--radius); padding: 36px 40px; margin-bottom: 64px;
-    }
+    .bonus-section { background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(124,92,252,0.1) 100%); border: 1px solid rgba(255,107,53,0.25); border-radius: var(--radius); padding: 36px 40px; margin-bottom: 64px; }
     .bonus-section h2 { font-family: 'Fredoka', sans-serif; font-size: 26px; color: #fff; margin-bottom: 16px; }
     .bonus-section p { font-size: 16.5px; color: rgba(255,255,255,0.78); line-height: 1.9; margin: 0; }
-
-    .article-footer-note {
-      padding: 24px 28px; border-top: 1px solid var(--border); border-radius: var(--radius);
-      background: var(--surface); color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-top: 56px;
-    }
+    .article-footer-note { padding: 24px 28px; border-top: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-top: 56px; }
     .article-footer-note span { color: var(--accent); }
-
-    .back-to-top {
-      position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
-      background: linear-gradient(135deg, var(--accent2), var(--accent));
-      border: none; border-radius: 50%; color: #fff; font-size: 20px;
-      cursor: pointer; opacity: 0; transform: translateY(20px);
-      transition: all 0.3s; z-index: 999; box-shadow: 0 4px 20px rgba(124,92,252,0.4);
-    }
+    .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent2), var(--accent)); border: none; border-radius: 50%; color: #fff; font-size: 20px; cursor: pointer; opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 999; box-shadow: 0 4px 20px rgba(124,92,252,0.4); }
     .back-to-top.visible { opacity: 1; transform: translateY(0); }
     .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(124,92,252,0.5); }
 
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    /* ══════════════════════════════ MORE GUIDES SECTION ══════════════════════════════ */
+    .more-guides-section { max-width: 900px; margin: 0 auto 48px; padding: 0 24px; position: relative; z-index: 1; }
+    .more-guides-head { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .more-guides-divider { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(124,92,252,0.5), rgba(0,229,160,0.3), transparent); }
+    .more-guides-label { display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,160,0.08)); border: 1px solid rgba(124,92,252,0.28); border-radius: 999px; padding: 8px 20px; white-space: nowrap; }
+    .more-guides-label span.label-text { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; background: linear-gradient(135deg, #fff 30%, rgba(200,185,255,0.95) 65%, #00e5a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; }
+    .more-guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .more-guide-card { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; background: linear-gradient(135deg, rgba(21,26,77,0.88), rgba(15,20,60,0.80)); border: 1px solid rgba(255,255,255,0.07); text-decoration: none; color: #fff; transition: all 0.25s cubic-bezier(0.22,1,0.36,1); position: relative; overflow: hidden; }
+    .more-guide-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent2), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    .more-guide-card:hover { transform: translateY(-5px); border-color: rgba(124,92,252,0.28); box-shadow: 0 18px 45px rgba(0,0,0,0.45); }
+    .more-guide-card:hover::after { transform: scaleX(1); }
+    .more-guide-card img { width: 54px; height: 54px; object-fit: cover; border-radius: 12px; flex-shrink: 0; transition: transform 0.25s ease; }
+    .more-guide-card:hover img { transform: scale(1.08) rotate(-2deg); }
+    .more-guide-card .mgc-info { flex: 1; min-width: 0; }
+    .more-guide-card .mgc-info h3 { font-size: 13px; font-weight: 800; color: #fff; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-bottom: 4px; }
+    .more-guide-card .mgc-info p { font-size: 11px; color: rgba(255,255,255,0.42); margin: 0; }
+    .editor-badge { position: absolute; top: 8px; right: 8px; background: linear-gradient(135deg, #ffd700, #ffaa00); color: #000; font-size: 9px; font-weight: 800; padding: 3px 8px; border-radius: 6px; box-shadow: 0 2px 8px rgba(255,215,0,0.3); }
+    @media (max-width: 640px) { .more-guides-grid { grid-template-columns: 1fr !important; gap: 9px !important; } .more-guide-card { padding: 10px 12px !important; border-radius: 14px !important; } .more-guide-card img { width: 42px !important; height: 42px !important; } .more-guide-card .mgc-info h3 { font-size: 12px !important; } .more-guides-section { padding: 0 14px; } .more-guides-label span.label-text { font-size: 15px !important; } }
 
+    /* ══════════════════════════════ SUGGESTION CODES SECTION ══════════════════════════════ */
+    .more-section { max-width: 900px; margin: 48px auto 30px; padding: 0 24px; position: relative; z-index: 1; }
+    .more-section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .more-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(124,92,252,0.5), rgba(0,229,160,0.3), transparent); }
+    .more-divider-label { display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,160,0.08)); border: 1px solid rgba(124,92,252,0.28); border-radius: 999px; padding: 8px 20px; white-space: nowrap; }
+    .more-text { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; background: linear-gradient(135deg, #fff 30%, rgba(200,185,255,0.95) 65%, #00e5a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; }
+    .more-fire { font-size: 18px; }
+    .more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .more-card { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 18px; background: linear-gradient(135deg, rgba(21,26,77,0.88), rgba(15,20,60,0.80)); border: 1px solid rgba(255,255,255,0.07); text-decoration: none; color: #fff; transition: all 0.25s cubic-bezier(0.22,1,0.36,1); position: relative; overflow: hidden; }
+    .more-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #7c5cfc, #00e5a0); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    .more-card:hover { transform: translateY(-5px); border-color: rgba(124,92,252,0.28); box-shadow: 0 18px 45px rgba(0,0,0,0.45); }
+    .more-card:hover::after { transform: scaleX(1); }
+    .more-card img { width: 54px; height: 54px; border-radius: 12px; object-fit: cover; flex-shrink: 0; transition: transform 0.25s ease; }
+    .more-card:hover img { transform: scale(1.08) rotate(-2deg); }
+    .more-info h3 { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .more-info p { font-size: 11px; color: rgba(255,255,255,0.45); margin: 0; }
+
+    /* ══════════════════════════════ WIKI INLINE CARDS - FIXED ══════════════════════════════ */
+.wiki-section-inline { 
+  max-width: 1200px; /* Wider */
+  margin: 40px auto; 
+  background: rgba(255,255,255,0.04); 
+  border-radius: 20px; 
+  padding: 32px 28px; /* More padding */
+}
+
+.wiki-inline-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+  gap: 16px; 
+}
+
+.wiki-inline-card { 
+  background: rgba(255,255,255,0.06); 
+  border-radius: 14px; 
+  padding: 20px; 
+  transition: all 0.25s ease; 
+  border: 1px solid rgba(255,255,255,0.06);
+  min-height: 180px; /* Consistent height */
+}
+
+.wiki-inline-card:hover { 
+  background: rgba(255,255,255,0.1); 
+  border-color: rgba(124,92,252,0.3); 
+  transform: translateY(-3px); 
+}
+
+.wiki-inline-card h3 { 
+  font-size: 14px; 
+  color: #fff; 
+  font-weight: 700; 
+  margin: 10px 0; 
+  line-height: 1.4; 
+}
+
+.wiki-inline-card p { 
+  font-size: 12px; 
+  color: rgba(255,255,255,0.5); 
+  margin: 0 0 12px; 
+  line-height: 1.5; 
+}
+
+.read-link { 
+  font-size: 12px; 
+  color: #00e676; 
+  font-weight: 600; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 4px; 
+  transition: gap 0.2s; 
+}
+
+.wiki-inline-card:hover .read-link { 
+  gap: 8px; 
+}
+
+/* Comment Section - Fixed */
+section[style*="max-width:900px"] {
+  max-width: 900px !important;
+  margin: 40px auto !important;
+  padding: 32px 28px !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .wiki-inline-grid { 
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 640px) {
+  .wiki-inline-grid { 
+    grid-template-columns: 1fr !important; /* 1 column on mobile */
+    gap: 12px !important;
+  }
+  
+  .wiki-section-inline {
+    padding: 24px 18px !important;
+  }
+  
+  .wiki-inline-card {
+    min-height: auto; /* Remove min-height on mobile */
+  }
+}
+
+    /* ══════════════════════════════ COMMENT FORM ══════════════════════════════ */
+    .comment-clean { max-width: 850px; margin: 40px auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 40px; }
+    .comment-clean input:focus, .comment-clean textarea:focus { border-color: rgba(124,92,252,0.4); background: rgba(255,255,255,0.06); box-shadow: 0 0 0 3px rgba(124,92,252,0.08); }
+    .comment-clean button:hover { background: linear-gradient(135deg, #8b5cf6, #b065fc); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(124,92,252,0.25); }
     @media (max-width: 640px) {
+      .comment-clean { padding: 28px 20px !important; }
+      .comment-clean > div:first-child > form > div:first-child { grid-template-columns: 1fr !important; }
+      .more-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+      .more-card { padding: 12px 14px !important; }
+      .more-card img { width: 48px !important; height: 48px !important; }
+      .more-info h3 { font-size: 13px !important; }
+      .wiki-inline-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+      .wiki-inline-card { padding: 12px !important; }
       .hero-card { padding: 36px 24px 32px; }
       .article-container { padding: 0 16px; }
       .quick-nav { padding: 22px 20px; }
@@ -519,39 +384,26 @@
       .article-intro { padding: 22px 20px; }
       .guide-section ul li, .guide-section ol li { padding: 10px 14px 10px 42px; font-size: 14.5px; }
     }
+
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 
 <body>
 
-  <!-- ══════════════════════════════
-       HEADER — Guides | Codes ▼ | Wiki | More ▼
-  ══════════════════════════════ -->
+  <!-- HEADER -->
   <header class="guide-header">
-
-    <a href="../" class="gh-logo">
-      <img src="../Images/FinalLogo.png" alt="BLOXBURST">
-    </a>
-
-    <!-- Search Game Guides — unique ID, won't be hijacked by script.js -->
+    <a href="../" class="gh-logo"><img src="../Images/FinalLogo.png" alt="BLOXBURST"></a>
     <div class="gh-search">
       <div class="gh-search-box">
         <span class="gh-search-icon">🔍</span>
-        <input
-          id="guideSearchInput"
-          type="text"
-          class="gh-search-input"
-          placeholder="Search Game Guides..."
-          autocomplete="off"
-        >
+        <input id="guideSearchInput" type="text" class="gh-search-input" placeholder="Search Game Guides..." autocomplete="off">
         <button class="gh-clear-btn" id="ghClearBtn" type="button">✕</button>
       </div>
       <div class="gh-suggestions" id="ghSuggestions"></div>
     </div>
-
     <nav class="gh-nav">
       <a href="../guides" class="nav-box nav-link">Guides</a>
-
       <div id="codesDropdown" class="nav-dropdown">
         <button class="mini-btn" id="codesBtn">Codes <span class="dropdown-arrow">▼</span></button>
         <div class="nav-menu" id="codesMenu">
@@ -559,9 +411,7 @@
           <a class="nav-item" href="../promo-latest-codes">Promo Codes</a>
         </div>
       </div>
-
       <a href="../wiki" class="nav-box nav-link">Wiki</a>
-
       <div id="moreDropdown" class="nav-dropdown">
         <button class="mini-btn" id="moreBtn">More <span class="dropdown-arrow">▼</span></button>
         <div class="nav-menu" id="moreMenu">
@@ -588,28 +438,17 @@
       </div>
     </div>
 
-     <div class="game-banner">
-    <img src="../Images/slime-rng.webp" alt="Slime RNG Pro Tips Banner">
-  </div>
+    <div class="game-banner"><img src="../Images/slime-rng.webp" alt="Slime RNG Pro Tips Banner"></div>
 
-      <div class="game-quick-links">
-    <a class="icon-link" href="https://discord.com/invite/aKUe7ngpjd" target="_blank" data-tooltip="Discord Server">
-      <img src="../Images/Discord-Logo.png" alt="Discord">
-    </a>
-    <a class="quick-link play" href="https://www.roblox.com/games/92416421522960/Slime-RNG" target="_blank">
-      <span class="play-icon">▶</span> Play Game <span class="play-arrow">➜</span>
-    </a>
-    <a class="icon-link" href="https://www.roblox.com/communities/15794692/Stouts-Studio#!/about" target="_blank" data-tooltip="Roblox Group">
-      <img src="../Images/roblox_logoyea.png" alt="Roblox">
-    </a>
-  </div>
+    <div class="game-quick-links">
+      <a class="icon-link" href="https://discord.com/invite/aKUe7ngpjd" target="_blank" data-tooltip="Discord Server"><img src="../Images/Discord-Logo.png" alt="Discord"></a>
+      <a class="quick-link play" href="https://www.roblox.com/games/92416421522960/Slime-RNG" target="_blank"><span class="play-icon">▶</span> Play Game <span class="play-arrow">➜</span></a>
+      <a class="icon-link" href="https://www.roblox.com/communities/15794692/Stouts-Studio#!/about" target="_blank" data-tooltip="Roblox Group"><img src="../Images/roblox_logoyea.png" alt="Roblox"></a>
+    </div>
 
     <!-- ARTICLE -->
     <div class="article-container">
-
-      <p class="article-intro">
-        Rolling rare slimes in Slime RNG isn't purely about luck — it's about systematic optimization. Veteran players consistently hit quadrillion-tier rarities by mastering inventory management, multiplicative luck scaling, zone progression math, and post-rebirth momentum. This advanced guide breaks down the exact pro strategies used by leaderboard players, from saving high-value dice for optimal multiplier thresholds to auto-crafting Index completions for permanent 3x luck boosts. Whether you're pushing for your first inverted variant or hunting leaderboard-only drops, these actionable techniques will drastically increase your rare slime acquisition rate.
-      </p>
+      <p class="article-intro">Rolling rare slimes in Slime RNG isn't purely about luck — it's about systematic optimization. Veteran players consistently hit quadrillion-tier rarities by mastering inventory management, multiplicative luck scaling, zone progression math, and post-rebirth momentum. This advanced guide breaks down the exact pro strategies used by leaderboard players, from saving high-value dice for optimal multiplier thresholds to auto-crafting Index completions for permanent 3x luck boosts. Whether you're pushing for your first inverted variant or hunting leaderboard-only drops, these actionable techniques will drastically increase your rare slime acquisition rate.</p>
 
       <!-- TOC -->
       <div class="quick-nav">
@@ -626,154 +465,89 @@
         </ul>
       </div>
 
-      <!-- SECTION 1 -->
-      <div class="guide-section" id="tip1">
-        <div class="section-header"><div class="section-number">1</div><h2>Strategic Dice & Item Inventory Management</h2></div>
-        <p>The single most common progression mistake in Slime RNG is spamming high-value dice like Jackpot Spins, Big Dice, Shiny Dice, and Huge Dice early in the game. These items carry significant value (often equivalent to ~350 Robux or earned through rare Index rewards and mutated enemy drops), and their effectiveness <span class="highlight">scales directly with your current luck multiplier</span>.</p>
-        <h3>The Multiplier Threshold Rule</h3>
-        <p>Using a Jackpot Spin at a 10,000 luck multiplier yields marginal returns. Using that exact same spin at 11 million+ luck can trigger 1-in-25-quadrillion rarity drops. The dice didn't change — your luck multiplier did. Pro players treat rare dice as <span class="highlight">strategic reserves</span>, only deploying them after crossing major luck milestones or during high-yield update events.</p>
-        <h3>Mutated Dice Acquisition</h3>
-        <p>Recent updates introduced mutated enemies that drop mutated variants of premium dice. These drops are exceptionally rare, making them even more valuable than standard premium dice. Farm mutated enemies strategically, but <span class="highlight-orange">never rush to open them</span>. Save until your base luck multiplier justifies the investment.</p>
-        <div class="tip-box"><div class="tip-icon">💎</div><p><strong>Pro Inventory Rule:</strong> Only deploy Jackpot Spins, Big/Shiny/Huge Dice when your luck multiplier exceeds 10M+. Track your inventory and set personal milestones (e.g., "First Jackpot at 15M luck") to prevent impulse usage.</p></div>
-        <img src="../Images/slime-rng-dice-inventory.webp" alt="Slime RNG premium dice inventory showing Jackpot Spins, Big, Shiny, and Huge Dice" class="guide-img">
-        <p class="guide-caption">Figure 1: Premium dice effectiveness scales with your luck multiplier. Save them for 10M+ thresholds to maximize rarity potential.</p>
-      </div>
+      <!-- SECTIONS 1-6 + BONUS + FAQ (same as your original) -->
+      <div class="guide-section" id="tip1"><div class="section-header"><div class="section-number">1</div><h2>Strategic Dice & Item Inventory Management</h2></div><p>The single most common progression mistake in Slime RNG is spamming high-value dice like Jackpot Spins, Big Dice, Shiny Dice, and Huge Dice early in the game. These items carry significant value (often equivalent to ~350 Robux or earned through rare Index rewards and mutated enemy drops), and their effectiveness <span class="highlight">scales directly with your current luck multiplier</span>.</p><h3>The Multiplier Threshold Rule</h3><p>Using a Jackpot Spin at a 10,000 luck multiplier yields marginal returns. Using that exact same spin at 11 million+ luck can trigger 1-in-25-quadrillion rarity drops. The dice didn't change — your luck multiplier did. Pro players treat rare dice as <span class="highlight">strategic reserves</span>, only deploying them after crossing major luck milestones or during high-yield update events.</p><h3>Mutated Dice Acquisition</h3><p>Recent updates introduced mutated enemies that drop mutated variants of premium dice. These drops are exceptionally rare, making them even more valuable than standard premium dice. Farm mutated enemies strategically, but <span class="highlight-orange">never rush to open them</span>. Save until your base luck multiplier justifies the investment.</p><div class="tip-box"><div class="tip-icon">💎</div><p><strong>Pro Inventory Rule:</strong> Only deploy Jackpot Spins, Big/Shiny/Huge Dice when your luck multiplier exceeds 10M+. Track your inventory and set personal milestones (e.g., "First Jackpot at 15M luck") to prevent impulse usage.</p></div><img src="../Images/slime-rng-dice-inventory.webp" alt="Slime RNG premium dice inventory showing Jackpot Spins, Big, Shiny, and Huge Dice" class="guide-img"><p class="guide-caption">Figure 1: Premium dice effectiveness scales with your luck multiplier. Save them for 10M+ thresholds to maximize rarity potential.</p></div>
 
-      <!-- SECTION 2 -->
-      <div class="guide-section" id="tip2">
-        <div class="section-header"><div class="section-number">2</div><h2>Maximize Friendly Luck with Group Play</h2></div>
-        <p>Solo play leaves massive luck potential untapped. The Friendly Luck upgrade system provides <span class="highlight">multiplicative bonuses</span> when playing with others, often jumping your luck multiplier from 11M to 18M+ with a fully optimized group. This isn't a minor bonus — it's a foundational requirement for consistent rare slime acquisition.</p>
-        <h3>Optimal Server Composition</h3>
-        <p>Friendly Luck scales with active players in your server. The maximum bonus requires <span class="highlight">6 additional players</span> (7 total including you). While you don't need a full public server, creating a VIP group with dedicated farming partners guarantees consistent bonus activation without relying on random matchmaking.</p>
-        <h3>Upgrade Priority for Social Play</h3>
-        <p>Before investing in standard luck upgrades, fully max out the Friendly Luck tree. The ROI is exceptional: social luck bonuses compound with base multipliers, equipment bonuses, and Index rewards. Players who ignore this system effectively cap their luck at 50-60% of its potential ceiling.</p>
-        <h3>Coordination Strategy</h3>
-        <p>Establish a farming schedule with your group. Consistent session times ensure you're always benefiting from maxed Friendly Luck. Pro players maintain dedicated Discord groups for server hopping, rebirth synchronization, and rare drop coordination.</p>
-        <div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Common Mistake:</strong> Relying on random public servers for Friendly Luck bonuses. Population fluctuates wildly, causing inconsistent multiplier scaling. Build a core group of 4-6 active players for reliable optimization.</p></div>
-        <img src="../Images/slime-rng-friendly-luck.webp" alt="Slime RNG Friendly Luck upgrade interface with 6-player server bonus active" class="guide-img">
-        <p class="guide-caption">Figure 2: Fully maxed Friendly Luck with 6+ players can boost your multiplier by 50-70%, dramatically increasing rare slime odds.</p>
-      </div>
+      <div class="guide-section" id="tip2"><div class="section-header"><div class="section-number">2</div><h2>Maximize Friendly Luck with Group Play</h2></div><p>Solo play leaves massive luck potential untapped. The Friendly Luck upgrade system provides <span class="highlight">multiplicative bonuses</span> when playing with others, often jumping your luck multiplier from 11M to 18M+ with a fully optimized group. This isn't a minor bonus — it's a foundational requirement for consistent rare slime acquisition.</p><h3>Optimal Server Composition</h3><p>Friendly Luck scales with active players in your server. The maximum bonus requires <span class="highlight">6 additional players</span> (7 total including you). While you don't need a full public server, creating a VIP group with dedicated farming partners guarantees consistent bonus activation without relying on random matchmaking.</p><h3>Upgrade Priority for Social Play</h3><p>Before investing in standard luck upgrades, fully max out the Friendly Luck tree. The ROI is exceptional: social luck bonuses compound with base multipliers, equipment bonuses, and Index rewards. Players who ignore this system effectively cap their luck at 50-60% of its potential ceiling.</p><h3>Coordination Strategy</h3><p>Establish a farming schedule with your group. Consistent session times ensure you're always benefiting from maxed Friendly Luck. Pro players maintain dedicated Discord groups for server hopping, rebirth synchronization, and rare drop coordination.</p><div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Common Mistake:</strong> Relying on random public servers for Friendly Luck bonuses. Population fluctuates wildly, causing inconsistent multiplier scaling. Build a core group of 4-6 active players for reliable optimization.</p></div><img src="../Images/slime-rng-friendly-luck.webp" alt="Slime RNG Friendly Luck upgrade interface with 6-player server bonus active" class="guide-img"><p class="guide-caption">Figure 2: Fully maxed Friendly Luck with 6+ players can boost your multiplier by 50-70%, dramatically increasing rare slime odds.</p></div>
 
-      <!-- SECTION 3 -->
-      <div class="guide-section" id="tip3">
-        <div class="section-header"><div class="section-number">3</div><h2>Fast Rebirth Strategy: Goop & Zone Progression</h2></div>
-        <p>Rebirthing is the primary engine for luck accumulation, but inefficient progression wastes hours of grinding. Speed-running to the farthest accessible zone before resetting is the fastest path to massive Goop gains, which directly fuels your rebirth cycle.</p>
-        <h3>Zone-Based Goop Generation</h3>
-        <p>Goop rewards scale exponentially with zone depth. Reaching the Steampunk zone yields thousands of Goop per kill, while early zones like Grasslands provide fractions of a single unit. <span class="highlight">Distance = Goop = Rebirths = Luck</span>. This linear progression dictates your upgrade priorities.</p>
-        <h3>Upgrade Allocation Framework</h3>
-        <p>Prioritize these upgrades for maximum zone progression speed:
-        <br>1. <strong>Enemy Track Unlocks:</strong> Required to access deeper zones
-        <br>2. <strong>Coin Upgrades:</strong> Funds faster equipment and track purchases
-        <br>3. <strong>More Enemies Spawn:</strong> Increases kill volume per minute
-        <br><span class="highlight-orange">Delay:</span> Offline Loot and Overkill upgrades early on — they don't accelerate zone progression.</p>
-        <h3>Rebirth Timing Logic</h3>
-        <p>Rebirth when you've maxed out your current zone's Goop efficiency. Don't reset prematurely just because the button is available. Calculate: if pushing one zone deeper doubles your Goop/min, farm it first. Consistent zone progression outperforms frequent, low-yield resets.</p>
-        <div class="tip-box"><div class="tip-icon">⚡</div><p><strong>Progression Tip:</strong> Focus on damage output and coin generation to reach Steampunk faster. High-Goop zones accelerate rebirth cycles, which directly compounds your permanent luck multiplier.</p></div>
-      </div>
+      <div class="guide-section" id="tip3"><div class="section-header"><div class="section-number">3</div><h2>Fast Rebirth Strategy: Goop & Zone Progression</h2></div><p>Rebirthing is the primary engine for luck accumulation, but inefficient progression wastes hours of grinding. Speed-running to the farthest accessible zone before resetting is the fastest path to massive Goop gains, which directly fuels your rebirth cycle.</p><h3>Zone-Based Goop Generation</h3><p>Goop rewards scale exponentially with zone depth. Reaching the Steampunk zone yields thousands of Goop per kill, while early zones like Grasslands provide fractions of a single unit. <span class="highlight">Distance = Goop = Rebirths = Luck</span>. This linear progression dictates your upgrade priorities.</p><h3>Upgrade Allocation Framework</h3><p>Prioritize these upgrades for maximum zone progression speed:<br>1. <strong>Enemy Track Unlocks:</strong> Required to access deeper zones<br>2. <strong>Coin Upgrades:</strong> Funds faster equipment and track purchases<br>3. <strong>More Enemies Spawn:</strong> Increases kill volume per minute<br><span class="highlight-orange">Delay:</span> Offline Loot and Overkill upgrades early on — they don't accelerate zone progression.</p><h3>Rebirth Timing Logic</h3><p>Rebirth when you've maxed out your current zone's Goop efficiency. Don't reset prematurely just because the button is available. Calculate: if pushing one zone deeper doubles your Goop/min, farm it first. Consistent zone progression outperforms frequent, low-yield resets.</p><div class="tip-box"><div class="tip-icon">⚡</div><p><strong>Progression Tip:</strong> Focus on damage output and coin generation to reach Steampunk faster. High-Goop zones accelerate rebirth cycles, which directly compounds your permanent luck multiplier.</p></div></div>
 
-      <!-- SECTION 4 -->
-      <div class="guide-section" id="tip4">
-        <div class="section-header"><div class="section-number">4</div><h2>Feed & Level Slimes for Massive Damage Scaling</h2></div>
-        <p>Slime damage isn't just for combat aesthetics — it's your primary bottleneck for zone progression. Higher zones feature enemies with exponentially increased HP. Without scaled damage, you'll stall in mid-tier areas, severely limiting Goop and coin generation.</p>
-        <h3>Food Item Utilization</h3>
-        <p>Food items like chickens and cherries are dropped through regular gameplay and act as <span class="highlight">slime experience catalysts</span>. Feeding a slime can multiply its base damage by up to 10x. A standard slime dealing 150k damage can easily reach 1.1M+ with proper leveling, directly impacting zone clearance speed.</p>
-        <h3>Team Composition Optimization</h3>
-        <p>Pro players maintain teams where nearly every slime approaches 1M damage. This isn't achieved through random rolling alone — it's a deliberate investment of food items into your highest-potential slimes. Prioritize leveling your core damage dealers before distributing resources to newer, untested rolls.</p>
-        <h3>The Zone Damage Threshold</h3>
-        <p>Each zone has a minimum viable damage output. If your team can't clear enemies within 3-5 seconds, you're operating below the efficiency threshold. Feed items strategically to bridge this gap, unlock deeper zones, and accelerate your Goop accumulation for faster rebirths.</p>
-        <div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Common Mistake:</strong> Hoarding food items for "later." Food doesn't expire, but delayed damage scaling directly delays zone progression, Goop generation, and rebirth cycles. Level your best slimes immediately.</p></div>
-        <img src="../Images/slime-rng-slime-feeding.webp" alt="Slime RNG feeding interface showing damage increase from level 10 to 100" class="guide-img">
-        <p class="guide-caption">Figure 3: Feeding slimes food items can multiply base damage by up to 10x, enabling faster clearance of high-HP late-game zones.</p>
-      </div>
+      <div class="guide-section" id="tip4"><div class="section-header"><div class="section-number">4</div><h2>Feed & Level Slimes for Massive Damage Scaling</h2></div><p>Slime damage isn't just for combat aesthetics — it's your primary bottleneck for zone progression. Higher zones feature enemies with exponentially increased HP. Without scaled damage, you'll stall in mid-tier areas, severely limiting Goop and coin generation.</p><h3>Food Item Utilization</h3><p>Food items like chickens and cherries are dropped through regular gameplay and act as <span class="highlight">slime experience catalysts</span>. Feeding a slime can multiply its base damage by up to 10x. A standard slime dealing 150k damage can easily reach 1.1M+ with proper leveling, directly impacting zone clearance speed.</p><h3>Team Composition Optimization</h3><p>Pro players maintain teams where nearly every slime approaches 1M damage. This isn't achieved through random rolling alone — it's a deliberate investment of food items into your highest-potential slimes. Prioritize leveling your core damage dealers before distributing resources to newer, untested rolls.</p><h3>The Zone Damage Threshold</h3><p>Each zone has a minimum viable damage output. If your team can't clear enemies within 3-5 seconds, you're operating below the efficiency threshold. Feed items strategically to bridge this gap, unlock deeper zones, and accelerate your Goop accumulation for faster rebirths.</p><div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Common Mistake:</strong> Hoarding food items for "later." Food doesn't expire, but delayed damage scaling directly delays zone progression, Goop generation, and rebirth cycles. Level your best slimes immediately.</p></div><img src="../Images/slime-rng-slime-feeding.webp" alt="Slime RNG feeding interface showing damage increase from level 10 to 100" class="guide-img"><p class="guide-caption">Figure 3: Feeding slimes food items can multiply base damage by up to 10x, enabling faster clearance of high-HP late-game zones.</p></div>
 
-      <!-- SECTION 5 -->
-      <div class="guide-section" id="tip5">
-        <div class="section-header"><div class="section-number">5</div><h2>Currency Boost Timing & Post-Rebirth Optimization</h2></div>
-        <p>Timing your Currency Boost potions incorrectly can waste dozens of minutes per rebirth cycle. Since zones reset to Grasslands after every rebirth, your early progression speed dictates how quickly you return to high-yield farming zones.</p>
-        <h3>The Immediate Activation Strategy</h3>
-        <p>Activate Currency Boost potions <span class="highlight">the second you complete a rebirth</span>. The 2x coin multiplier applied to early zones accelerates equipment purchases, track unlocks, and damage upgrades, drastically reducing the time spent in low-Goop areas. Waiting until you reach mid-tier zones wastes the potion's maximum potential impact.</p>
-        <h3>Opportunity Cost of Delayed Boosts</h3>
-        <p>Every minute stuck in Grasslands or early forests is a minute not generating high-tier Goop or rolling with your current multiplier. By front-loading coin boosts, you compress your post-rebirth progression window, returning to optimal farming zones 30-50% faster than unoptimized players.</p>
-        <h3>Stacking for Maximum Momentum</h3>
-        <p>Combine Currency Boost with Ultra Luck and Roll Speed potions immediately post-rebirth. This triple-stack creates a temporary but highly efficient grinding window, allowing you to rapidly rebuild your team, secure Index progress, and reach Steampunk before your multipliers expire.</p>
-        <div class="tip-box"><div class="tip-icon">⏱️</div><p><strong>Timing Rule:</strong> Currency Boost lasts 3 minutes. Use it immediately after rebirthing to speedrun early zones. Hoarding it for "later" wastes its highest-value progression window.</p></div>
-      </div>
+      <div class="guide-section" id="tip5"><div class="section-header"><div class="section-number">5</div><h2>Currency Boost Timing & Post-Rebirth Optimization</h2></div><p>Timing your Currency Boost potions incorrectly can waste dozens of minutes per rebirth cycle. Since zones reset to Grasslands after every rebirth, your early progression speed dictates how quickly you return to high-yield farming zones.</p><h3>The Immediate Activation Strategy</h3><p>Activate Currency Boost potions <span class="highlight">the second you complete a rebirth</span>. The 2x coin multiplier applied to early zones accelerates equipment purchases, track unlocks, and damage upgrades, drastically reducing the time spent in low-Goop areas. Waiting until you reach mid-tier zones wastes the potion's maximum potential impact.</p><h3>Opportunity Cost of Delayed Boosts</h3><p>Every minute stuck in Grasslands or early forests is a minute not generating high-tier Goop or rolling with your current multiplier. By front-loading coin boosts, you compress your post-rebirth progression window, returning to optimal farming zones 30-50% faster than unoptimized players.</p><h3>Stacking for Maximum Momentum</h3><p>Combine Currency Boost with Ultra Luck and Roll Speed potions immediately post-rebirth. This triple-stack creates a temporary but highly efficient grinding window, allowing you to rapidly rebuild your team, secure Index progress, and reach Steampunk before your multipliers expire.</p><div class="tip-box"><div class="tip-icon">⏱️</div><p><strong>Timing Rule:</strong> Currency Boost lasts 3 minutes. Use it immediately after rebirthing to speedrun early zones. Hoarding it for "later" wastes its highest-value progression window.</p></div></div>
 
-      <!-- SECTION 6 -->
-      <div class="guide-section" id="tip6">
-        <div class="section-header"><div class="section-number">6</div><h2>Auto-Craft Everything & Index Multiplier Mastery</h2></div>
-        <p>The Index system is your permanent luck multiplier engine, and Auto-Craft is the fastest way to complete it. Many players overlook this system, but mastering it can triple your effective luck multiplier through guaranteed progression rather than pure RNG.</p>
-        <h3>Auto-Craft as Passive Index Completion</h3>
-        <p>Set Auto-Craft to run continuously for all available craftable slime variants. Even low-probability variants (e.g., 1-in-2,500 Inverted types) become guaranteed through volume. Crafting 7,000+ units ensures near-100% completion rates for missing variants.</p>
-        <h3>Index Multiplier Compounding</h3>
-        <p>Each completed Index slot grants permanent luck multipliers. Completing craftable families alone can push your multiplier from 11M to 33M+ through stacked rewards. This isn't a minor bonus — it's a <span class="highlight-orange">3x luck increase</span> achieved purely through systematic crafting.</p>
-        <h3>Variant Hunting Priority</h3>
-        <ol>
-          <li><strong>Identify missing variants:</strong> Check Index for incomplete craftable lines (Normal → Big → Huge → Shiny → Inverted)</li>
-          <li><strong>Set Auto-Craft for targets:</strong> Prioritize missing high-tier variants first</li>
-          <li><strong>Claim Index rewards immediately:</strong> Multipliers compound instantly upon claiming</li>
-          <li><strong>Reinvest luck gains:</strong> Higher luck improves rare roll rates, accelerating further Index completion</li>
-        </ol>
-        <img src="../Images/slime-rng-autocraft-index.webp" alt="Slime RNG auto-craft interface running alongside Index multiplier progression" class="guide-img">
-        <p class="guide-caption">Figure 4: Continuous auto-crafting fills Index slots rapidly, unlocking permanent 3x+ luck multipliers without relying on random drops.</p>
-      </div>
+      <div class="guide-section" id="tip6"><div class="section-header"><div class="section-number">6</div><h2>Auto-Craft Everything & Index Multiplier Mastery</h2></div><p>The Index system is your permanent luck multiplier engine, and Auto-Craft is the fastest way to complete it. Many players overlook this system, but mastering it can triple your effective luck multiplier through guaranteed progression rather than pure RNG.</p><h3>Auto-Craft as Passive Index Completion</h3><p>Set Auto-Craft to run continuously for all available craftable slime variants. Even low-probability variants (e.g., 1-in-2,500 Inverted types) become guaranteed through volume. Crafting 7,000+ units ensures near-100% completion rates for missing variants.</p><h3>Index Multiplier Compounding</h3><p>Each completed Index slot grants permanent luck multipliers. Completing craftable families alone can push your multiplier from 11M to 33M+ through stacked rewards. This isn't a minor bonus — it's a <span class="highlight-orange">3x luck increase</span> achieved purely through systematic crafting.</p><h3>Variant Hunting Priority</h3><ol><li><strong>Identify missing variants:</strong> Check Index for incomplete craftable lines (Normal → Big → Huge → Shiny → Inverted)</li><li><strong>Set Auto-Craft for targets:</strong> Prioritize missing high-tier variants first</li><li><strong>Claim Index rewards immediately:</strong> Multipliers compound instantly upon claiming</li><li><strong>Reinvest luck gains:</strong> Higher luck improves rare roll rates, accelerating further Index completion</li></ol><img src="../Images/slime-rng-autocraft-index.webp" alt="Slime RNG auto-craft interface running alongside Index multiplier progression" class="guide-img"><p class="guide-caption">Figure 4: Continuous auto-crafting fills Index slots rapidly, unlocking permanent 3x+ luck multipliers without relying on random drops.</p></div>
 
-      <!-- BONUS -->
-      <div class="bonus-section" id="bonus">
-        <h2>💡 Pro Insight: Luck Stacking Mindset</h2>
-        <p>Consistent rare slime acquisition isn't about one perfect strategy — it's about <span class="highlight">systematic layering</span>. Save premium dice until your multiplier hits 10M+, max Friendly Luck with a 6-player group, prioritize zone progression for Goop, feed slimes to overcome damage thresholds, trigger Currency Boost immediately post-rebirth, and run Auto-Craft continuously for Index multipliers. Each system compounds the next. Players who ignore one bottleneck cap their entire progression chain. Optimize holistically, track your multipliers, and let the math work in your favor. Rare slimes aren't luck — they're engineered.</p>
-      </div>
+      <div class="bonus-section" id="bonus"><h2>💡 Pro Insight: Luck Stacking Mindset</h2><p>Consistent rare slime acquisition isn't about one perfect strategy — it's about <span class="highlight">systematic layering</span>. Save premium dice until your multiplier hits 10M+, max Friendly Luck with a 6-player group, prioritize zone progression for Goop, feed slimes to overcome damage thresholds, trigger Currency Boost immediately post-rebirth, and run Auto-Craft continuously for Index multipliers. Each system compounds the next. Players who ignore one bottleneck cap their entire progression chain. Optimize holistically, track your multipliers, and let the math work in your favor. Rare slimes aren't luck — they're engineered.</p></div>
 
-      <!-- FAQ -->
-      <div class="guide-section" id="faq">
-        <div class="section-header"><div class="section-number">?</div><h2>Frequently Asked Questions</h2></div>
-        <div class="faq-item"><div class="faq-q">Should I use Jackpot Spins and rare dice early in Slime RNG?</div><div class="faq-a">No. Save high-value dice like Jackpot Spins, Big Dice, Shiny Dice, and Huge Dice until your luck multiplier reaches at least 10M+. Their effectiveness scales with your current luck, so using them early wastes their massive rarity potential. Track your inventory and deploy only at major milestones.</div></div>
-        <div class="faq-item"><div class="faq-q">How many friends do I need to max out Friendly Luck?</div><div class="faq-a">You need up to 6 friends in a VIP or populated server to fully max out the Friendly Luck upgrade path. This can easily jump your luck multiplier by 50-70%, dramatically increasing rare slime drop chances. Coordinate with a dedicated farming group for consistent bonus activation.</div></div>
-        <div class="faq-item"><div class="faq-q">Why should I feed my slimes food items in Slime RNG?</div><div class="faq-a">Feeding slimes items like chickens or cherries levels them up and massively increases their damage output. Higher-tier zones feature enemies with exponentially more HP, so leveled slimes clear them faster, generating significantly more coins and Goop per minute. Prioritize feeding your highest-potential slimes immediately.</div></div>
-        <div class="faq-item"><div class="faq-q">When is the best time to use Currency Boost potions?</div><div class="faq-a">Activate Currency Boost immediately after rebirthing. Since zones reset to Grasslands, the 2x coin multiplier speeds up early progression, helping you reach high-Goop zones like Steampunk faster without wasting rolling time in low-yield areas. Don't hoard them for later — their highest value is in the post-rebirth window.</div></div>
-        <div class="faq-item"><div class="faq-q">Does auto-crafting actually help get rare slimes?</div><div class="faq-a">Yes. Auto-crafting continuously completes Index slots, granting permanent luck multipliers. Completing all craftable variants can triple your effective luck multiplier (e.g., 11M to 33M). Even low-probability variants become guaranteed through mass crafting volume, making it the most reliable progression method outside of pure RNG.</div></div>
-      </div>
+      <div class="guide-section" id="faq"><div class="section-header"><div class="section-number">?</div><h2>Frequently Asked Questions</h2></div><div class="faq-item"><div class="faq-q">Should I use Jackpot Spins and rare dice early in Slime RNG?</div><div class="faq-a">No. Save high-value dice like Jackpot Spins, Big Dice, Shiny Dice, and Huge Dice until your luck multiplier reaches at least 10M+. Their effectiveness scales with your current luck, so using them early wastes their massive rarity potential. Track your inventory and deploy only at major milestones.</div></div><div class="faq-item"><div class="faq-q">How many friends do I need to max out Friendly Luck?</div><div class="faq-a">You need up to 6 friends in a VIP or populated server to fully max out the Friendly Luck upgrade path. This can easily jump your luck multiplier by 50-70%, dramatically increasing rare slime drop chances. Coordinate with a dedicated farming group for consistent bonus activation.</div></div><div class="faq-item"><div class="faq-q">Why should I feed my slimes food items in Slime RNG?</div><div class="faq-a">Feeding slimes items like chickens or cherries levels them up and massively increases their damage output. Higher-tier zones feature enemies with exponentially more HP, so leveled slimes clear them faster, generating significantly more coins and Goop per minute. Prioritize feeding your highest-potential slimes immediately.</div></div><div class="faq-item"><div class="faq-q">When is the best time to use Currency Boost potions?</div><div class="faq-a">Activate Currency Boost immediately after rebirthing. Since zones reset to Grasslands, the 2x coin multiplier speeds up early progression, helping you reach high-Goop zones like Steampunk faster without wasting rolling time in low-yield areas. Don't hoard them for later — their highest value is in the post-rebirth window.</div></div><div class="faq-item"><div class="faq-q">Does auto-crafting actually help get rare slimes?</div><div class="faq-a">Yes. Auto-crafting continuously completes Index slots, granting permanent luck multipliers. Completing all craftable variants can triple your effective luck multiplier (e.g., 11M to 33M). Even low-probability variants become guaranteed through mass crafting volume, making it the most reliable progression method outside of pure RNG.</div></div></div>
 
-      <div class="article-footer-note">
-        <span>Updated for May 2026</span> Game mechanics, upgrade costs, features, and UI elements may change with major updates, patches, or balance adjustments. We do our best to keep this information accurate and up to date, but some details may shift over time. Be sure to bookmark BLOXBURST and check back regularly for the latest revisions, improvements, and newly added content.</span> pages.
-        For the latest verified codes and updates, click here:
-        <a href="../gamecode" target="_blank" style="color:#22c55e;">
-  🔗 View Active Game Codes</a>
-      </div>
-
+      <div class="article-footer-note"><span>Updated for May 2026</span> Game mechanics, upgrade costs, features, and UI elements may change with major updates, patches, or balance adjustments. We do our best to keep this information accurate and up to date, but some details may shift over time. Be sure to bookmark BLOXBURST and check back regularly for the latest revisions, improvements, and newly added content. For the latest verified codes and updates, click here: <a href="../gamecode" target="_blank" style="color:#22c55e;">🔗 View Active Game Codes</a></div>
     </div>
+
   </main>
+
+  <!-- ══════════════════════════════ MORE GUIDES SECTION ══════════════════════════════ -->
+  <section class="more-guides-section">
+    <div class="more-guides-head">
+      <div class="more-guides-divider"></div>
+      <div class="more-guides-label"><span>📖</span><span class="label-text">More Guides</span><span>📖</span></div>
+      <div class="more-guides-divider"></div>
+    </div>
+    <div class="more-guides-grid" id="moreGuidesGrid"></div>
+  </section>
+
+  <!-- ══════════════════════════════ SUGGESTION CODES SECTION ══════════════════════════════ -->
+  <section class="more-section" id="moreSection">
+    <div class="more-section-head">
+      <div class="more-divider-line"></div>
+      <div class="more-divider-label"><span class="more-fire">🎮</span><span class="more-text">Suggestion Codes</span><span class="more-fire">🎮</span></div>
+      <div class="more-divider-line"></div>
+    </div>
+    <div class="more-grid" id="moreGrid"></div>
+  </section>
+
+  <!-- ══════════════════════════════ LATEST UPDATE WIKI ══════════════════════════════ -->
+  <section class="wiki-section-inline" style="max-width:900px; margin:20px auto; background:rgba(255,255,255,0.04); border-radius:16px; padding:20px 14px;">
+    <h2 style="font-family:'Fredoka',sans-serif; font-size:18px; color:#fff; margin-bottom:4px;">Latest Update Wiki</h2>
+    <p style="font-size:12px; color:rgba(255,255,255,0.45); margin-bottom:14px;">Fresh guides + updates from BLOXBURST Wiki</p>
+    <div class="wiki-inline-grid">
+      <a href="../Wiki-Folder/wiki-redeem-codes"><div class="wiki-inline-card"><div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;"><span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">UPDATE</span><span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 22, 2026</span></div><h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px;">How to Redeem Roblox Codes (Step-by-step)</h3><p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px;">A quick guide to make sure you don't make mistakes when redeeming.</p><span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span></div></a>
+      <a href="../Wiki-Folder/wiki-how-we-check-codes"><div class="wiki-inline-card"><div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;"><span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">GUIDE</span><span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 21, 2026</span></div><h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px;">How we check codes (manual testing)</h3><p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px;">An explanation of how we scan and test codes.</p><span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span></div></a>
+      <a href="../Wiki-Folder/wiki-invalid-code-reasons"><div class="wiki-inline-card"><div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;"><span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">NEW</span><span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 19, 2026</span></div><h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px;">Common reasons for "Invalid Code".</h3><p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px;">Common issues and fast solutions.</p><span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span></div></a>
+    </div>
+    <div style="text-align:center; margin-top:16px;"><a href="../wiki" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); color:#fff; text-decoration:none; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:600;">📚 Open Wiki</a></div>
+  </section>
+
+  <!-- ══════════════════════════════ COMMENT FORM ══════════════════════════════ -->
+  <section class="comment-clean">
+    <div style="margin-bottom:28px;">
+      <h2 style="font-family:'Fredoka',sans-serif; font-size:22px; color:#fff; margin:0 0 8px; display:flex; align-items:center; gap:10px;"><span>💬</span><span>Leave a Comment</span></h2>
+      <p style="font-size:13px; color:rgba(255,255,255,0.45); margin:0;">Have a question or feedback about Slime RNG? Send it to us!</p>
+    </div>
+    <form action="https://formspree.io/f/mojnpjgd" method="POST" id="commentForm">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+        <div><label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Name</label><input type="text" name="name" placeholder="Enter your name" required style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; transition:all 0.2s;"></div>
+        <div><label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Email</label><input type="email" name="email" placeholder="Enter your email" required style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; transition:all 0.2s;"></div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Comment</label>
+        <textarea name="message" placeholder="Write your comment here..." required rows="5" style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; resize:vertical; transition:all 0.2s;"></textarea>
+      </div>
+      <button type="submit" style="width:100%; background:linear-gradient(135deg, #7c3aed, #a855f7); color:#fff; border:none; padding:14px 28px; border-radius:12px; font-size:14px; font-weight:700; cursor:pointer; transition:all 0.3s ease;">Send Comment 🚀</button>
+    </form>
+    <div id="successMsg" style="display:none; margin-top:20px; background:rgba(0,229,160,0.08); border:1px solid rgba(0,229,160,0.2); border-radius:10px; padding:14px; text-align:center; color:#00e5a0; font-size:13px; font-weight:600;">✅ Comment sent! Thank you for your feedback!</div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-left">
-        <div class="footer-logo">BLOXBURST🔥</div>
-        <p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <a href="../guides">Guides</a>
-        <a href="../gamecode">Game Codes</a>
-        <a href="../promo-latest-codes">Promo Codes</a>
-        <a href="../wiki">Wiki</a>
-      </div>
-      <div class="footer-col">
-        <h4>More</h4>
-        <a href="../Terms-and-Condition/about">About Us</a>
-        <a href="../Terms-and-Condition/faq">FAQ</a>
-        <a href="../Terms-and-Condition/contactus">Contact Us</a>
-      </div>
-      <div class="footer-col">
-        <h4>Policies</h4>
-        <a href="../Terms-and-Condition/terms">Terms of Use</a>
-        <a href="../Terms-and-Condition/privacy">Privacy Policy</a>
-      </div>
+      <div class="footer-left"><div class="footer-logo">BLOXBURST🔥</div><p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><a href="../guides">Guides</a><a href="../gamecode">Game Codes</a><a href="../promo-latest-codes">Promo Codes</a><a href="../wiki">Wiki</a></div>
+      <div class="footer-col"><h4>More</h4><a href="../Terms-and-Condition/about">About Us</a><a href="../Terms-and-Condition/faq">FAQ</a><a href="../Terms-and-Condition/contactus">Contact Us</a></div>
+      <div class="footer-col"><h4>Policies</h4><a href="../Terms-and-Condition/terms">Terms of Use</a><a href="../Terms-and-Condition/privacy">Privacy Policy</a></div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
-      <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
-    </div>
+    <div class="footer-bottom"><div class="footer-meta">v1.0.0 • Powered by Zenken</div><div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div></div>
   </footer>
 
   <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
@@ -794,101 +568,81 @@
       });
     }, { threshold: 0.08 });
     document.querySelectorAll('.guide-section, .bonus-section, .article-intro, .quick-nav').forEach(s => {
-      s.style.opacity = '0';
-      s.style.transform = 'translateY(20px)';
-      observer.observe(s);
+      s.style.opacity = '0'; s.style.transform = 'translateY(20px)'; observer.observe(s);
     });
 
     /* ── Nav Dropdowns ── */
     function setupDropdown(btnId, dropdownId) {
-      const btn = document.getElementById(btnId);
-      const dd  = document.getElementById(dropdownId);
+      const btn = document.getElementById(btnId), dd = document.getElementById(dropdownId);
       if (!btn || !dd) return;
-      btn.addEventListener('click', (e) => {
-        e.preventDefault(); e.stopPropagation();
-        document.querySelectorAll('.nav-dropdown').forEach(d => { if (d !== dd) d.classList.remove('active'); });
-        dd.classList.toggle('active');
-      });
+      btn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); document.querySelectorAll('.nav-dropdown').forEach(d => { if (d !== dd) d.classList.remove('active'); }); dd.classList.toggle('active'); });
     }
-    setupDropdown('codesBtn', 'codesDropdown');
-    setupDropdown('moreBtn',  'moreDropdown');
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav-dropdown'))
-        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
-    });
+    setupDropdown('codesBtn', 'codesDropdown'); setupDropdown('moreBtn', 'moreDropdown');
+    document.addEventListener('click', (e) => { if (!e.target.closest('.nav-dropdown')) document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active')); });
 
-    /* ══════════════════════════════════════════
-       GUIDE SEARCH — reads Game-Guides.Json
-       Unique IDs so script.js won't interfere
-    ══════════════════════════════════════════ */
+    /* ── Guide Search ── */
     (async () => {
-      const input    = document.getElementById('guideSearchInput');
-      const clearBtn = document.getElementById('ghClearBtn');
-      const box      = document.getElementById('ghSuggestions');
-      const base     = '../';
-
+      const input = document.getElementById('guideSearchInput'), clearBtn = document.getElementById('ghClearBtn'), box = document.getElementById('ghSuggestions'), base = '../';
       let guides = [];
-      try {
-        const res = await fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' });
-        const raw = await res.json();
-        const seen = new Set();
-        guides = raw.filter(g => { if (seen.has(g.id)) return false; seen.add(g.id); return true; });
-      } catch (e) {
-        console.warn('Could not load Game-Guides.Json:', e);
-      }
-
-      function search(q) {
-        q = q.toLowerCase().trim();
-        if (!q) return [];
-        return guides.filter(g =>
-          g.title.toLowerCase().includes(q) ||
-          (g.description && g.description.toLowerCase().includes(q)) ||
-          (g.tags && g.tags.some(t => t.toLowerCase().includes(q)))
-        );
-      }
-
-      function render(results) {
-        box.innerHTML = '';
-        if (!results.length) {
-          box.innerHTML = `<div class="gh-no-result">No guides found.</div>`;
-        } else {
-          results.slice(0, 6).forEach(g => {
-            const el = document.createElement('div');
-            el.className = 'gh-suggest-item';
-            el.innerHTML = `
-              <img src="${base}${g.thumbnail}" alt="${g.title}" loading="lazy" onerror="this.style.display='none'">
-              <div class="gh-suggest-info">
-                <div class="gh-suggest-title">${g.title}</div>
-                <div class="gh-suggest-meta">${g.category} · ${g.readTime} read · ${g.releaseDate}</div>
-              </div>
-              <span class="gh-suggest-pill">Open</span>
-            `;
-            el.addEventListener('click', () => window.location.href = base + g.link);
-            box.appendChild(el);
-          });
-        }
-        box.classList.add('open');
-      }
-
+      try { const res = await fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }); const raw = await res.json(); const seen = new Set(); guides = raw.filter(g => { if (seen.has(g.id)) return false; seen.add(g.id); return true; }); } catch (e) { console.warn('Could not load Game-Guides.Json:', e); }
+      function search(q) { q = q.toLowerCase().trim(); if (!q) return []; return guides.filter(g => g.title.toLowerCase().includes(q) || (g.description && g.description.toLowerCase().includes(q)) || (g.tags && g.tags.some(t => t.toLowerCase().includes(q)))); }
+      function render(results) { box.innerHTML = ''; if (!results.length) { box.innerHTML = `<div class="gh-no-result">No guides found.</div>`; } else { results.slice(0, 6).forEach(g => { const el = document.createElement('div'); el.className = 'gh-suggest-item'; el.innerHTML = `<img src="${base}${g.thumbnail}" alt="${g.title}" loading="lazy" onerror="this.style.display='none'"><div class="gh-suggest-info"><div class="gh-suggest-title">${g.title}</div><div class="gh-suggest-meta">${g.category} · ${g.readTime} read · ${g.releaseDate}</div></div><span class="gh-suggest-pill">Open</span>`; el.addEventListener('click', () => window.location.href = base + g.link); box.appendChild(el); }); } box.classList.add('open'); }
       function hide() { box.classList.remove('open'); box.innerHTML = ''; }
-
-      input.addEventListener('input', function () {
-        if (!this.value.trim()) { hide(); return; }
-        render(search(this.value));
-      });
-
-      input.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          const r = search(this.value);
-          if (r.length) window.location.href = base + r[0].link;
-        }
-        if (e.key === 'Escape') hide();
-      });
-
+      input.addEventListener('input', function () { if (!this.value.trim()) { hide(); return; } render(search(this.value)); });
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); const r = search(this.value); if (r.length) window.location.href = base + r[0].link; } if (e.key === 'Escape') hide(); });
       clearBtn.addEventListener('click', () => { input.value = ''; hide(); input.focus(); });
       document.addEventListener('click', (e) => { if (!e.target.closest('.gh-search')) hide(); });
     })();
+
+    /* ── More Guides Section ── */
+    (function () {
+      var grid = document.getElementById('moreGuidesGrid'); if (!grid) return; var base = '../'; var currentId = 'slime-rng-pro-tips';
+      fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
+        var seen = new Set(); var guides = data.filter(function (g) { if (seen.has(g.id)) return false; seen.add(g.id); return true; });
+        guides = guides.filter(function (g) { return g.id !== currentId; });
+        for (var i = guides.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = guides[i]; guides[i] = guides[j]; guides[j] = t; }
+        grid.innerHTML = ''; guides.slice(0, 9).forEach(function (g) {
+          var a = document.createElement('a'); a.className = 'more-guide-card'; a.href = base + g.link;
+          var html = '<img src="' + base + g.thumbnail + '" alt="' + g.title + '" loading="lazy" onerror="this.style.display=\'none\'"><div class="mgc-info"><h3>' + g.title + '</h3><p>' + g.category + ' · ' + g.readTime + '</p></div>';
+          if (g.featured === true) { html += '<span class="editor-badge">⭐ Editor\'s Pick</span>'; }
+          a.innerHTML = html; grid.appendChild(a);
+        });
+      }).catch(function (e) { console.warn('Could not load Game-Guides.Json for More Guides:', e); });
+    })();
+
+    /* ── Suggestion Codes Section ── */
+    (function () {
+      var grid = document.getElementById('moreGrid'); if (!grid) return; var base = '../'; var currentPath = window.location.pathname;
+      fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
+        var seen = new Set(); var guides = data.filter(function (g) { if (seen.has(g.id)) return false; seen.add(g.id); return true; });
+        guides = guides.filter(function (g) { return !currentPath.includes(g.id); });
+        for (var i = guides.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = guides[i]; guides[i] = guides[j]; guides[j] = t; }
+        grid.innerHTML = ''; guides.slice(0, 6).forEach(function (g) {
+          var a = document.createElement('a'); a.className = 'more-card'; a.href = base + g.link;
+          a.innerHTML = '<img src="' + base + g.thumbnail + '" alt="' + g.title + '" loading="lazy" onerror="this.style.display=\'none\'"><div class="more-info"><h3>' + g.title + '</h3><p>' + g.category + ' · ' + g.readTime + '</p></div>';
+          grid.appendChild(a);
+        });
+      }).catch(function (e) { console.warn('Could not load game-guides.json for Suggestion Codes:', e); });
+    })();
+
+    /* ── Comment Form Handler ── */
+    (function() {
+      var form = document.getElementById('commentForm'), successMsg = document.getElementById('successMsg');
+      if (!form || !successMsg) return;
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault(); var formData = new FormData(form);
+        try {
+          var response = await fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+          if (response.ok) { form.reset(); form.style.display = 'none'; successMsg.style.display = 'block'; setTimeout(function() { successMsg.style.display = 'none'; form.style.display = 'block'; }, 5000); }
+        } catch (error) { console.error('Error:', error); alert('Error sending comment. Please try again.'); }
+      });
+    })();
+
+    /* ── Wiki Card Hover Effects ── */
+    document.querySelectorAll('.wiki-inline-card').forEach(function(card) {
+      card.addEventListener('mouseenter', function() { this.style.background = 'rgba(255,255,255,0.1)'; this.style.borderColor = 'rgba(124,92,252,0.3)'; this.style.transform = 'translateY(-3px)'; });
+      card.addEventListener('mouseleave', function() { this.style.background = 'rgba(255,255,255,0.06)'; this.style.borderColor = 'rgba(255,255,255,0.06)'; this.style.transform = 'translateY(0)'; });
+    });
   </script>
 </body>
 </html>
