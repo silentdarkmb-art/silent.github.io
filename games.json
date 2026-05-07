@@ -2798,6 +2798,15 @@
   "tooltip": "Redeem working codes for free Spins and Refund Stats in Shinobi Way Roblox.",
   "rewards": "Spins, Refund Stats, Elements, Lineage Rolls",
   "activeCodes": 4
+},
+{
+  "name": "Anime Card Battle X",
+  "image": "Images/Anime-Card-Battle-X.webp",
+  "url": "roblox/anime-card-battle-x",
+  "lastupdate": "2026-05-07T00:00:13Z",
+  "tooltip": "Redeem working codes for free Weather Rerolls and Potions in Anime Card Battle X Roblox.",
+  "rewards": "Weather Rerolls, Potions",
+  "activeCodes": 2
 }
 
 ]
