@@ -2843,6 +2843,15 @@
   "tooltip": "Redeem working codes for free Gold in Portal Incremental Roblox.",
   "rewards": "Gold",
   "activeCodes": 3
+},
+{
+  "name": "Craft Jewelry",
+  "image": "Images/Craft-Jewelry.webp",
+  "url": "roblox/craft-jewelry",
+  "lastupdate": "2026-05-07T00:00:19Z",
+  "tooltip": "Redeem working codes for free Gems and Boosts in Craft Jewelry Roblox.",
+  "rewards": "Gems, Coins, Boosts, Freebies",
+  "activeCodes": 5
 }
 
 ]
