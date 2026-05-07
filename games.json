@@ -15,7 +15,7 @@
     "lastupdate": "2026-02-26T10:00",
     "tooltip": "Stock up on Dusty Coins, Easter Eggs, and Highland Tokens with these a dusty trip codes — fuel your desert run today.",
     "rewards": "Dusty Coins, Easter Eggs, Highland Tokens",
-    "activeCodes": 4
+    "activeCodes": 3
   },
   {
   "name": "Build a Mini Golf",
@@ -33,7 +33,7 @@
     "lastupdate": "2026-02-26T10:00",
     "tooltip": "Claim the Golden Leaf Body, Head, and Neck accessories for free — these A Lion's Pride Beta codes won't last long.",
     "rewards": "Golden Leaf Body, Head, Neck",
-    "activeCodes": 2
+    "activeCodes": 1 
   },
   {
     "name": "Build A Pet Factory",
@@ -60,7 +60,7 @@
     "lastupdate": "2026-03-08T00:00",
     "tooltip": "Descend into monster-infested floors, scavenge supplies, and extract alive in Deadly Delivery — 32 active codes unlock free Z-Ray Guns, Revive Tickets, Gold Bars, and Gear Bundles.",
     "rewards": "Z-Ray Guns, Revive Tickets, Gold Bars, Gear Bundles",
-    "activeCodes": 32
+    "activeCodes": 4
   },
   {
   "name": "Drive World",
@@ -69,7 +69,7 @@
   "lastupdate": "2026-03-23T00:00",
   "tooltip": "Race, drift, and grab free Cash, Gold, Wraps, and Cars — these Drive World codes stock your garage before your first lap.",
   "rewards": "Cash, Gold, Wraps, Rims, Cars",
-  "activeCodes": 22
+  "activeCodes": 23
   },
   {
     "name": "Fistborn",
@@ -114,7 +114,7 @@
     "lastupdate": "2026-03-20T06:21",
     "tooltip": "Defend against animatronic waves in this FNAF-inspired tower defense sequel — 60 active codes award over 100,000 free Coins, Souls, Tokens, and Presents to build the strongest Season 3 defense roster.",
     "rewards": "Coins, Souls, Tokens, Presents",
-    "activeCodes": 60
+    "activeCodes": 62
   },
   {
     "name": "Five Nights Hunted",
@@ -438,7 +438,7 @@
     "lastupdate": "2026-05-02T00:00:14Z",
     "tooltip": "Power up with free Potions and Credits in Anime Eternal — give your roster the boost it needs.",
     "rewards": "Potions, Credits",
-    "activeCodes": 35
+    "activeCodes": 14
   },
   {
   "name": "Build a Brainrot Farm",
@@ -591,7 +591,7 @@
     "lastupdate": "2026-03-05T19:00",
     "tooltip": "Express yourself for free — these Azure Latch codes give you Cash, Style Coins, and exclusive Emotes to customize your look.",
     "rewards": "Cash, Style Coins, Emotes",
-    "activeCodes": 6
+    "activeCodes": 4
   },
   {
     "name": "Rogue Piece",
@@ -609,7 +609,7 @@
     "lastupdate": "2026-04-22T00:00",
     "tooltip": "Don't leave these Forgotten codes behind — claim your free Cash and get back into the fight.",
     "rewards": "Cash",
-    "activeCodes": 12
+    "activeCodes": 13
   },
   {
     "name": "A Universal Time",
@@ -618,7 +618,7 @@
     "lastupdate": "2026-03-05T19:00",
     "tooltip": "Stop time and grab your rewards — these A Universal Time codes give you free UCoins, UShards, and Skin Crates.",
     "rewards": "UCoins, UShards, Skin Crates",
-    "activeCodes": 11
+    "activeCodes": 5
   },
   {
     "name": "Asylum Life",
@@ -627,7 +627,7 @@
     "lastupdate": "2026-03-05T19:00",
     "tooltip": "Escape the grind — these Asylum Life codes unlock free EXP Boosters, Credits, and exclusive in-game items for your character.",
     "rewards": "EXP Boosters, Credits",
-    "activeCodes": 11
+    "activeCodes": 33
   },
   {
     "name": "Arsenal",
@@ -636,7 +636,7 @@
     "lastupdate": "2026-03-05T19:00",
     "tooltip": "Look good while you frag — these Arsenal codes award free Skins, Announcer Packs, BattleBucks, and Kill Effects.",
     "rewards": "Skins, BattleBucks, Kill Effects",
-    "activeCodes": 11
+    "activeCodes": 13
   },
   {
   "name": "Tensura Incremental",
@@ -654,7 +654,7 @@
   "lastupdate": "2026-05-05T00:00:29Z",
   "tooltip": "Free Potions and Luck Boosts to roll rarer auras faster — redeem all 108 working Hot's RNG codes before they expire.",
   "rewards": "Potions, Luck Boosts, Free Rewards",
-  "activeCodes": 58
+  "activeCodes": 52
   },
   {
   "name": "Build a Military Base",
@@ -672,7 +672,7 @@
     "lastupdate": "2026-03-05T19:00",
     "tooltip": "Crush the competition faster — these Arm Wrestle Simulator codes give you free Stat Boosts and Strength multipliers.",
     "rewards": "Stat Boosts, Strength Multipliers",
-    "activeCodes": 11
+    "activeCodes": 3
   },
   {
     "name": "Dig Training",
@@ -699,7 +699,7 @@
     "lastupdate": "2026-03-05T19:00",
     "tooltip": "Strengthen your Shadow Army with free Tickets, Gems, and Potions — ARISE CROSSOVER codes are all verified.",
     "rewards": "Gems, Tickets, Potions",
-    "activeCodes": 132
+    "activeCodes": 22
   },
   {
     "name": "AniPixels",
@@ -744,7 +744,7 @@
     "lastupdate": "2026-03-04T19:00",
     "tooltip": "Hold the line with a stronger team — these Anime Last Stand codes give you free Emeralds, Rerolls, Pearls, and Shard Locks.",
     "rewards": "Emeralds, Rerolls, Pearls, Shard Locks",
-    "activeCodes": 43
+    "activeCodes": 45
   },
   {
     "name": "Anime Ghosts",
@@ -780,7 +780,7 @@
     "lastupdate": "2026-03-04T19:00",
     "tooltip": "Earn UGC items while you idle — these AFK for UGC codes boost your Points and Clicks to speed up your UGC collection.",
     "rewards": "Points, Clicks, UGC Items",
-    "activeCodes": 8
+    "activeCodes": 1
   },
   {
     "name": "Adopt Me",
@@ -789,7 +789,7 @@
     "lastupdate": "2026-02-22T19:00",
     "tooltip": "Grow your pet family for free — these Adopt Me codes award Bucks, pets, boosters, and seasonal items for your collection.",
     "rewards": "Bucks, Pets, Boosters",
-    "activeCodes": 3
+    "activeCodes": 0
   },
   {
     "name": "Arise Shadow Hunt",
@@ -906,7 +906,7 @@
     "lastupdate": "2026-04-21T07:49",
     "tooltip": "Skip the zero stage — these Zero to Hero codes give you free Gems, Dungeon Coins, and Potions to kick off your hero journey.",
     "rewards": "Gems, Dungeon Coins, Potions",
-    "activeCodes": 4
+    "activeCodes": 5
   },
   {
     "name": "99 Nights in the Wild West",
@@ -915,7 +915,7 @@
     "lastupdate": "2026-04-26T00:00:18Z",
     "tooltip": "Survive the frontier with extra resources — these 99 Nights in the Wild West codes give you free Gems and Candy.",
     "rewards": "Gems, Candy",
-    "activeCodes": 10
+    "activeCodes": 8
   },
   {
     "name": "KAIZEN",
@@ -1293,7 +1293,7 @@
     "lastupdate": "2026-04-29T00:00:09",
     "tooltip": "Get free Cash with these Midnight Chasers codes — swerve through traffic, race supercars and motorcycles, and dominate the highway!",
     "rewards": "Cash",
-    "activeCodes": 75
+    "activeCodes": 28
   },
   {
     "name": "Boom Sumo",
@@ -1365,7 +1365,7 @@
   "lastupdate": "2026-0-30T00:00:04Z",
   "tooltip": "Redeem Anime Crash codes for free Shards, Coins, Potions, Keys, Tokens, and special items to boost your progression, unlock champions, and progress faster in battles.",
   "rewards": "Shards, Coins, Potions, Keys, Tokens, Skill Items",
-  "activeCodes": 13
+  "activeCodes": 16
   },
   {
   "name": "Dice Rolling Incremental",
@@ -1419,7 +1419,7 @@
   "lastupdate": "2026-04-14T08:02",
   "tooltip": "Redeem WEST INDIES codes for free Cash to buy better cars, expand your garage, and progress faster across the island.",
   "rewards": "Cash",
-  "activeCodes": 11
+  "activeCodes": 13
   },
   {
   "name": "Ascension Incremental",
@@ -1828,7 +1828,7 @@
 },
 {
   "name": "Swerve",
-  "image": "Images/Swerve.webp",
+  "image": "Images/swerve.webp",
   "url": "roblox/swerve",
   "lastupdate": "2026-04-21T00:00:00Z",
   "tooltip": "Redeem working codes for free Cash and Cars in Swerve Roblox.",
@@ -1995,7 +1995,7 @@
   "lastupdate": "2026-04-30T00:00:06Z",
   "tooltip": "Redeem working codes for free Magic Scrolls, Potions, Emblems, and Quirk Books in +1 Slayer Blade Roblox.",
   "rewards": "Magic Scrolls, Gold +100% Potions, Eggshells, Quirk Books, +100 Damage Potions, Snow, +2 Luck Potions, +100% Damage Potions, +100% Power Potions, +100% Gold Potions, Common Emblems, Rare Emblems, Epic Emblems, Legendary Emblems, Mythical Emblems, Quirk 1 Books",
-  "activeCodes": 91
+  "activeCodes": 89
 },
 {
   "name": "Stadium Simulator 2",
@@ -2004,7 +2004,7 @@
   "lastupdate": "2026-04-23T00:00:00Z",
   "tooltip": "Redeem working codes for free Fans, Tickets, and Capacity in Stadium Simulator 2 Roblox.",
   "rewards": "Fans, Tickets, Capacity",
-  "activeCodes": 8
+  "activeCodes": 10
 },
 {
   "name": "My Hello Kitty Cafe",
@@ -2049,7 +2049,7 @@
   "lastupdate": "2026-04-24T05:00:00Z",
   "tooltip": "Redeem working codes for free Cash, Gems, and Unit Spins in Skibidi Masters Tower Defense Roblox.",
   "rewards": "Cash, Gems, Unit Spins, Skibidi Tokens, Freebies",
-  "activeCodes": 8
+  "activeCodes": 13
 },
 {
   "name": "Dungeon Lootr",
@@ -2112,7 +2112,7 @@
   "lastupdate": "2026-04-25T12:00:00Z",
   "tooltip": "Redeem working codes for free Tier 3 Potions in Sandbox Hatchers X Roblox.",
   "rewards": "Tier 3 Potions, Gems",
-  "activeCodes": 4
+  "activeCodes": 5
 },
 {
   "name": "SCP Architect X",
@@ -2194,7 +2194,7 @@
   "lastupdate": "2026-04-26T00:00:06Z",
   "tooltip": "Redeem working codes for free Coins, EXP, Freebies, and Tier 1 Daily Chest in Pixel Blade Roblox.",
   "rewards": "Freebies, Coins, EXP, Wooden Sword, Tier 1 Daily Chest",
-  "activeCodes": 56
+  "activeCodes": 51
 },
 {
   "name": "Locked 2",
@@ -2230,7 +2230,7 @@
   "lastupdate": "2026-04-26T00:00:13Z",
   "tooltip": "Redeem working codes for free Cash in My Prison Roblox.",
   "rewards": "Free Cash",
-  "activeCodes": 1
+  "activeCodes": 4
 },
 {
   "name": "Dead Spells",
@@ -2289,7 +2289,7 @@
 {
   "name": "Own a Fish Pond",
   "image": "Images/Own-a-Fish-Pond.webp",
-  "url": "roblox/Own-a-Fish-Pond",
+  "url": "roblox/own-a-fish-pond",
   "lastupdate": "2026-05-05:00:00:23Z",
   "tooltip": "Redeem working codes for free OG Buckets, Lovelost Buckets, Easter Buckets, and Whale Buckets in Own a Fish Pond Roblox.",
   "rewards": "OG Bucket, Lovelost Bucket, Easter Bucket, Whale Bucket, Freebies, Fishing Rods, Premium Packs, Tools",
@@ -2347,7 +2347,7 @@
   "lastupdate": "2026-04-27T00:00:06Z",
   "tooltip": "Redeem working codes for free Crystals, Trait Rerolls, Tokens, and Stat Cubes in Anime Overload Roblox.",
   "rewards": "Crystals, Crystal Shards, Trait Rerolls, Tokens, Basic Stat Cubes, Advanced Stat Cubes, Bloodied Chains, Freebies",
-  "activeCodes": 19
+  "activeCodes": 15
 },
 {
   "name": "Adventure Guild Battles",
@@ -2368,9 +2368,9 @@
   "activeCodes": 20
 },
 {
-  "name": "Roblox Bees",
+  "name": "Bees",
   "image": "Images/Bees.webp",
-  "url": "roblox/roblox-bees",
+  "url": "roblox/bees",
   "lastupdate": "2026-05-03T00:00:4Z",
   "tooltip": "Redeem working codes for free Luck Potions, XP Potions, and Spins in Roblox Bees.",
   "rewards": "Luck Potions, XP Potions, Spins",
@@ -2410,7 +2410,7 @@
   "lastupdate": "2026-04-28T00:00:01Z",
   "tooltip": "Redeem working codes for free Cash, Properties, and Freebies in Ronopoly Roblox.",
   "rewards": "Cash, Properties, Freebies, Dice Rolls, Boosts",
-  "activeCodes": 5
+  "activeCodes": 1
 },
 {
   "name": "Waste Time",
@@ -2536,7 +2536,7 @@
   "lastupdate": "2026-04-29T00:00:09Z",
   "tooltip": "Redeem working codes for free Tokens, Cash, Bloodstone, EXP Boosts, and Freebies in Sakura Stand Roblox.",
   "rewards": "Tokens, Cash, Bloodstone, EXP Boosts, Candy Corn, Ornaments, Titles, Adjucha Spawns, Freebies",
-  "activeCodes": 159
+  "activeCodes": 157
 },
 {
   "name": "Scam Call Center Simulator",
@@ -2728,9 +2728,9 @@
   "activeCodes": 12
 },
 {
-  "name": "The Vampire Legacies 2",
+  "name": "The Vampire Legends 2",
   "image": "Images/The-Vampire-Legends-2.webp",
-  "url": "roblox/the-vampire-legacies-2",
+  "url": "roblox/the-vampire-legends-2",
   "lastupdate": "2026-05-05T00:00:18Z",
   "tooltip": "Redeem working codes for free Coins and Moonstones in The Vampire Legacies 2 Roblox.",
   "rewards": "Coins, Moonstones, Limited Edition Tools",
@@ -2761,7 +2761,7 @@
   "lastupdate": "2026-05-07T00:00:02Z",
   "tooltip": "Redeem working codes for free Spins, Cash, and Freebies in Meta Lock Roblox.",
   "rewards": "Spins, Cash/Yen, Freebies, Talent Spins",
-  "activeCodes": 7
+  "activeCodes": 8
 },
 {
   "name": "Eagle Nation",
@@ -2851,7 +2851,7 @@
   "lastupdate": "2026-05-07T00:00:19Z",
   "tooltip": "Redeem working codes for free Gems and Boosts in Craft Jewelry Roblox.",
   "rewards": "Gems, Coins, Boosts, Freebies",
-  "activeCodes": 5
+  "activeCodes": 2
 }
 
 ]
