@@ -2807,6 +2807,15 @@
   "tooltip": "Redeem working codes for free Weather Rerolls and Potions in Anime Card Battle X Roblox.",
   "rewards": "Weather Rerolls, Potions",
   "activeCodes": 2
+},
+{
+  "name": "Orbs",
+  "image": "Images/Orbs.webp",
+  "url": "roblox/orbs",
+  "lastupdate": "2026-05-07T00:00:14Z",
+  "tooltip": "Redeem working codes for free Diamonds, Presents, Beans, and Orbitals in Orbs Roblox.",
+  "rewards": "Diamonds, Presents, Beans, Santa Orbital, Couch Orbital, Turkey Orbital",
+  "activeCodes": 5
 }
 
 ]
