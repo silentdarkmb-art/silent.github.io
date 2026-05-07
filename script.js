@@ -191,7 +191,7 @@ ${a?'<span class="game-new-badge" style="display:inline-flex;">NEW</span>':""}
       var e = await g();
       var e = e.map(e => {
         let t = "Code Release!";
-        "gamecode.html" === c && (a = e.activeCodes || 0, t = 1 === a ? "1 Active Code" : a + " Active Codes");
+        ("gamecode.html" === c || "gamecode" === c) && (a = e.activeCodes || 0, t = 1 === a ? "1 Active Code" : a + " Active Codes");
         var a = (e.name[0] || "#").toUpperCase(),
           a = /^[A-Z]$/.test(a) ? a : "#";
         return {

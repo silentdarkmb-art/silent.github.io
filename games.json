@@ -2789,6 +2789,15 @@
   "tooltip": "Redeem working codes for free Spins, Cash, and Freebies in Soccer Zero Roblox.",
   "rewards": "Spins, Cash/Money, Freebies, Lucky Style Spins, Lucky Flow Spins",
   "activeCodes": 2
+},
+{
+  "name": "Shinobi Way",
+  "image": "Images/Shinobi-Way.webp",
+  "url": "roblox/shinobi-way",
+  "lastupdate": "2026-05-07T00:00:12Z",
+  "tooltip": "Redeem working codes for free Spins and Refund Stats in Shinobi Way Roblox.",
+  "rewards": "Spins, Refund Stats, Elements, Lineage Rolls",
+  "activeCodes": 4
 }
 
 ]
