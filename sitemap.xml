@@ -1319,6 +1319,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/meta-lock</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/midnight-chasers</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>

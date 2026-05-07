@@ -2753,6 +2753,15 @@
   "tooltip": "Redeem working codes for free Crystals, Trait Shards, and Freebies in Final Fates Tower Defense Roblox.",
   "rewards": "Crystals, Trait Shards, Freebies, Winter Barrels",
   "activeCodes": 53
+},
+{
+  "name": "Meta Lock",
+  "image": "Images/Meta-Lock.webp",
+  "url": "roblox/meta-lock",
+  "lastupdate": "2026-05-07T00:00:02Z",
+  "tooltip": "Redeem working codes for free Spins, Cash, and Freebies in Meta Lock Roblox.",
+  "rewards": "Spins, Cash/Yen, Freebies, Talent Spins",
+  "activeCodes": 7
 }
 
 ]
