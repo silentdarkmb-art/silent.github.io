@@ -2780,6 +2780,15 @@
   "tooltip": "Redeem working codes for free Stat Reroll Tickets in Just a RNG Game Roblox.",
   "rewards": "Stat Reroll Tickets",
   "activeCodes": 2
+},
+{
+  "name": "Soccer Zero",
+  "image": "Images/Soccer-Zero.webp",
+  "url": "roblox/soccer-zero",
+  "lastupdate": "2026-05-07T00:00:08Z",
+  "tooltip": "Redeem working codes for free Spins, Cash, and Freebies in Soccer Zero Roblox.",
+  "rewards": "Spins, Cash/Money, Freebies, Lucky Style Spins, Lucky Flow Spins",
+  "activeCodes": 2
 }
 
 ]
