@@ -2834,6 +2834,15 @@
   "tooltip": "Redeem working codes for free Glug Pet in Punch A Door Roblox.",
   "rewards": "Glug Pet, Pets, Coins",
   "activeCodes": 1
+},
+{
+  "name": "Portal Incremental",
+  "image": "Images/Portal-Incremental.webp",
+  "url": "roblox/portal-incremental",
+  "lastupdate": "2026-05-07T00:00:18Z",
+  "tooltip": "Redeem working codes for free Gold in Portal Incremental Roblox.",
+  "rewards": "Gold",
+  "activeCodes": 3
 }
 
 ]
