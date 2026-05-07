@@ -2825,6 +2825,15 @@
   "tooltip": "Redeem working codes for free Malachor in Toons Universe Roblox.",
   "rewards": "Malachor",
   "activeCodes": 1
+},
+{
+  "name": "Punch A Door",
+  "image": "Images/Punch-A-Door.webp",
+  "url": "roblox/punch-a-door",
+  "lastupdate": "2026-05-07T00:00:17Z",
+  "tooltip": "Redeem working codes for free Glug Pet in Punch A Door Roblox.",
+  "rewards": "Glug Pet, Pets, Coins",
+  "activeCodes": 1
 }
 
 ]
