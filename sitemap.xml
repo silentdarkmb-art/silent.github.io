@@ -1840,6 +1840,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://bloxburst.com/roblox/toons-universe</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://bloxburst.com/roblox/train-arm-to-punch</loc>
     <lastmod>2026-05-05</lastmod>

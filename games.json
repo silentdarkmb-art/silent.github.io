@@ -2816,6 +2816,15 @@
   "tooltip": "Redeem working codes for free Diamonds, Presents, Beans, and Orbitals in Orbs Roblox.",
   "rewards": "Diamonds, Presents, Beans, Santa Orbital, Couch Orbital, Turkey Orbital",
   "activeCodes": 5
+},
+{
+  "name": "Toons Universe",
+  "image": "Images/Toons-Universe.webp",
+  "url": "roblox/toons-universe",
+  "lastupdate": "2026-05-07T00:00:16Z",
+  "tooltip": "Redeem working codes for free Malachor in Toons Universe Roblox.",
+  "rewards": "Malachor",
+  "activeCodes": 1
 }
 
 ]
