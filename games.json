@@ -2771,6 +2771,15 @@
   "tooltip": "Redeem working codes for free Cash in Eagle Nation Roblox.",
   "rewards": "Cash",
   "activeCodes": 18
+},
+{
+  "name": "Just a RNG Game",
+  "image": "Images/Just-a-RNG-Game.webp",
+  "url": "roblox/just-a-rng-game",
+  "lastupdate": "2026-05-07T00:00:07Z",
+  "tooltip": "Redeem working codes for free Stat Reroll Tickets in Just a RNG Game Roblox.",
+  "rewards": "Stat Reroll Tickets",
+  "activeCodes": 2
 }
 
 ]
