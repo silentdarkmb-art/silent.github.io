@@ -2762,6 +2762,15 @@
   "tooltip": "Redeem working codes for free Spins, Cash, and Freebies in Meta Lock Roblox.",
   "rewards": "Spins, Cash/Yen, Freebies, Talent Spins",
   "activeCodes": 7
+},
+{
+  "name": "Eagle Nation",
+  "image": "Images/Eagle-Nation.webp",
+  "url": "roblox/eagle-nation",
+  "lastupdate": "2026-05-07T00:00:03Z",
+  "tooltip": "Redeem working codes for free Cash in Eagle Nation Roblox.",
+  "rewards": "Cash",
+  "activeCodes": 18
 }
 
 ]
