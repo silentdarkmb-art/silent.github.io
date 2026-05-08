@@ -1839,10 +1839,10 @@
   "name": "World Fighters",
   "image": "Images/WorldFighters.webp",
   "url": "roblox/world-fighters",
-  "lastupdate": "2026-05-07T00:00:5Z",
+  "lastupdate": "2026-05-08T00:00:03Z",
   "tooltip": "Redeem working codes for free Freebies, Potions, Gems, Saiyan Keys, and Dragon Ball Tokens in World Fighters Roblox.",
   "rewards": "Freebies, Potions, Gems, Saiyan Keys, Dragon Ball Tokens, Gadi Jetpack Mount, Yen, Boosts, Powers",
-  "activeCodes": 88
+  "activeCodes": 89
 },
 {
   "name": "Bite By Night",
@@ -2852,6 +2852,15 @@
   "tooltip": "Redeem working codes for free Gems and Boosts in Craft Jewelry Roblox.",
   "rewards": "Gems, Coins, Boosts, Freebies",
   "activeCodes": 2
+},
+{
+  "name": "Football RNG",
+  "image": "Images/Football-RNG.webp",
+  "url": "roblox/football-rng",
+  "lastupdate": "2026-05-08T00:00:02Z",
+  "tooltip": "Redeem working codes for free Cash and Rewards in Football RNG Roblox.",
+  "rewards": "Cash, Free Rewards",
+  "activeCodes": 7
 }
 
 ]
