@@ -1,14 +1,14 @@
 [
   {
-  "id": "slime-rng-fast-rebirth",
-  "title": "How to Rebirth FAST in Slime RNG! (Goop & Luck Guide 2026)",
-  "description": "Master fast rebirths in Slime RNG with goop farming strategies, skill tree optimization, enemy spawn limits, AFK loot tips, and damage scaling for maximum luck progression.",
-  "category": "Progression",
-  "readTime": "13 min",
+  "id": "slime-rng-farming",
+  "title": "Slime RNG Complete - Coins & Goop Farming Tips",
+  "description": "Master Slime RNG with our complete farming guide! Learn coin multipliers, goop chance optimization, rebirth strategies, and AFK setups for maximum progression.",
+  "category": "Beginner · RNG · Farming",
+  "readTime": "12 min",
   "thumbnail": "Images/slime-rng-zone-comparison.webp",
-  "link": "game-guides/slime-rng-fast-rebirth",
-  "releaseDate": "May 8, 2026",
-  "tags": ["fast rebirth", "goop farming", "skill tree", "AFK loot", "zone scaling", "luck multiplier", "progression guide"]
+  "link": "guides/slime-rng-farming",
+  "releaseDate": "May 9, 2026",
+  "tags": ["slime rng", "coin farming", "goop guide", "skill tree", "rebirth strategy", "afk loot", "enemy settings", "progression tips"]
 },
   {
   "id": "slime-rng-fast-rebirth",
