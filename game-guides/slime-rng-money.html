@@ -583,7 +583,7 @@
         var seen = new Set(); var guides = data.filter(function (g) { if (seen.has(g.id)) return false; seen.add(g.id); return true; });
         guides = guides.filter(function (g) { return g.id !== currentId; });
         for (var i = guides.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = guides[i]; guides[i] = guides[j]; guides[j] = t; }
-        grid.innerHTML = ''; guides.slice(0, 9).forEach(function (g) {
+        grid.innerHTML = ''; guides.slice(0, 6).forEach(function (g) {
           var a = document.createElement('a'); a.className = 'more-guide-card'; a.href = base + g.link;
           var html = '<img src="' + base + g.thumbnail + '" alt="' + g.title + '" loading="lazy" onerror="this.style.display=\'none\'"><div class="mgc-info"><h3>' + g.title + '</h3><p>' + g.category + ' · ' + g.readTime + '</p></div>';
           if (g.featured === true) { html += '<span class="editor-badge">⭐ Editor\'s Pick</span>'; }
