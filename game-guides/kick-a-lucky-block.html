@@ -78,36 +78,50 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: linear-gradient(135deg, #050a2a, #0a0f3d, #02061a);
-      background-attachment: fixed;
-      color: rgba(255,255,255,0.88);
-      overflow-x: hidden;
-      line-height: 1.85;
-    }
-    img { max-width: 100%; height: auto; display: block; }
 
     :root {
       --accent: #00e5a0;
       --accent2: #7c5cfc;
       --accent3: #ff6b35;
+      --accent4: #ffd700;
       --surface: rgba(255,255,255,0.04);
+      --surface-hover: rgba(255,255,255,0.07);
       --border: rgba(255,255,255,0.08);
-      --text-muted: rgba(255,255,255,0.5);
-      --radius: 16px;
+      --border-accent: rgba(124,92,252,0.25);
+      --text-muted: rgba(255,255,255,0.45);
+      --text-body: rgba(255,255,255,0.80);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --shadow-glow: 0 0 40px rgba(124,92,252,0.15);
+      --shadow-card: 0 8px 32px rgba(0,0,0,0.35);
+      --shadow-hover: 0 20px 56px rgba(0,0,0,0.5);
     }
 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #060a20;
+      background-image:
+        radial-gradient(ellipse 100% 60% at 15% 0%, rgba(124,92,252,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 85% 20%, rgba(0,229,160,0.10) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 50% 80%, rgba(255,107,53,0.07) 0%, transparent 45%),
+        radial-gradient(ellipse 30% 30% at 70% 60%, rgba(124,92,252,0.06) 0%, transparent 40%);
+      background-attachment: fixed;
+      color: var(--text-body);
+      overflow-x: hidden;
+      line-height: 1.85;
+    }
+
+    /* Subtle noise overlay */
     body::before {
       content: '';
       position: fixed; inset: 0;
-      background:
-        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(124,92,252,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,229,160,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 30% at 60% 30%, rgba(255,107,53,0.06) 0%, transparent 40%);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 0;
+      opacity: 0.4;
     }
+
+    img { max-width: 100%; height: auto; display: block; }
 
     /* ══════════════════════════════ DROPDOWN ══════════════════════════════ */
     .dropdown-arrow { font-size: 10px; margin-left: 5px; transition: transform 0.3s ease; display: inline-block; }
@@ -131,7 +145,7 @@
     }
     .nav-item:hover { background: rgba(125,92,255,0.3) !important; color: #fff !important; }
 
-    /* ══════════════════════════════ GUIDE HEADER ══════════════════════════════ */
+    /* ══════════════════════════════ GUIDE HEADER (UNCHANGED) ══════════════════════════════ */
     .guide-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 40px; width: 100%; max-width: 1400px; margin: 0 auto; box-sizing: border-box; position: relative; z-index: 100; }
     .guide-header .gh-logo { display: inline-flex; align-items: center; text-decoration: none; flex: 0 0 auto; }
     .guide-header .gh-logo img { height: 90px; width: auto; object-fit: contain; display: block; }
@@ -182,220 +196,954 @@
       .guide-header .gh-nav .mini-btn, .guide-header .gh-nav .nav-box, .guide-header .gh-nav .nav-link, .guide-header .gh-nav .nav-dropdown #codesBtn, .guide-header .gh-nav .nav-dropdown #moreBtn { width: 100% !important; min-width: 0 !important; max-width: none !important; height: 36px !important; font-size: 11px !important; padding: 0 4px !important; }
     }
 
-    /* ══════════════════════════════ ARTICLE STYLES ══════════════════════════════ */
+    /* ══════════════════════════════ GAME BANNER ══════════════════════════════ */
+    .game-banner {
+      max-width: 900px;
+      margin: 28px auto 0;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .game-banner img {
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 16px 56px rgba(0,0,0,0.55), 0 0 0 1px rgba(124,92,252,0.12);
+      object-fit: cover;
+      max-height: 340px;
+    }
+
+    /* ══════════════════════════════ GAME QUICK LINKS ══════════════════════════════ */
+    .game-quick-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      max-width: 900px;
+      margin: 18px auto 0;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 12px;
+      transition: all 0.25s ease;
+      overflow: hidden;
+      position: relative;
+    }
+    .icon-link img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+    .icon-link:hover {
+      background: rgba(124,92,252,0.2);
+      border-color: rgba(124,92,252,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(124,92,252,0.25);
+    }
+    /* Tooltip */
+    .icon-link[data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20,20,50,0.95);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .icon-link[data-tooltip]:hover::after { opacity: 1; }
+
+    .quick-link.play {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: linear-gradient(135deg, #00c97a, #00e5a0);
+      color: #021a10;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 0 24px;
+      height: 46px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 20px rgba(0,229,160,0.3);
+      letter-spacing: 0.01em;
+    }
+    .quick-link.play:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,229,160,0.45);
+      background: linear-gradient(135deg, #00e5a0, #00ffd5);
+    }
+    .play-icon { font-size: 12px; }
+    .play-arrow { font-size: 13px; opacity: 0.7; }
+
+    /* ══════════════════════════════ PAGE WRAPPER ══════════════════════════════ */
     .page { position: relative; z-index: 1; }
-    .article-hero { position: relative; max-width: 900px; margin: 36px auto 0; padding: 0 24px; }
-    .hero-card { position: relative; background: linear-gradient(135deg, rgba(124,92,252,0.2) 0%, rgba(0,229,160,0.1) 50%, rgba(255,107,53,0.12) 100%); border: 1px solid rgba(124,92,252,0.3); border-radius: 24px; padding: 52px 48px 44px; overflow: hidden; animation: fadeSlideUp 0.6s ease both; }
-    .hero-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(124,92,252,0.18) 0%, transparent 70%); pointer-events: none; }
-    .hero-card::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,229,160,0.1) 0%, transparent 70%); pointer-events: none; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(124,92,252,0.2); border: 1px solid rgba(124,92,252,0.4); border-radius: 999px; padding: 6px 16px; font-size: 13px; font-weight: 600; color: #a78bfa; margin-bottom: 20px; letter-spacing: 0.04em; }
-    .hero-card h1 { font-family: 'Fredoka', sans-serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
-    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; }
-    .meta-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; padding: 5px 14px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
-    .article-container { max-width: 900px; margin: 40px auto 80px; padding: 0 24px; }
-    .article-intro { font-size: 17px; line-height: 1.9; color: rgba(255,255,255,0.78); margin-bottom: 40px; padding: 28px 32px; background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; animation: fadeSlideUp 0.7s 0.1s ease both; }
-    .quick-nav { background: rgba(124,92,252,0.07); border: 1px solid rgba(124,92,252,0.2); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 52px; animation: fadeSlideUp 0.7s 0.15s ease both; }
-    .quick-nav h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; color: #fff; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
-    .quick-nav ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4px 20px; }
+
+    /* ══════════════════════════════ ARTICLE HERO ══════════════════════════════ */
+    .article-hero {
+      max-width: 900px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+    }
+    .hero-card {
+      position: relative;
+      background: linear-gradient(135deg,
+        rgba(124,92,252,0.18) 0%,
+        rgba(10,14,48,0.85) 40%,
+        rgba(0,229,160,0.08) 100%
+      );
+      border: 1px solid rgba(124,92,252,0.28);
+      border-radius: 26px;
+      padding: 52px 52px 44px;
+      overflow: hidden;
+      animation: fadeSlideUp 0.65s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    /* Glowing orb top-right */
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(124,92,252,0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    /* Glowing orb bottom-left */
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(0,229,160,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    /* Animated shimmer line on top border */
+    .hero-card .hero-shimmer {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--accent2) 30%, var(--accent) 60%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmerSlide 3s linear infinite;
+    }
+    @keyframes shimmerSlide {
+      0% { background-position: -100% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(124,92,252,0.18);
+      border: 1px solid rgba(124,92,252,0.38);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #c4b5fd;
+      margin-bottom: 22px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero-card h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(28px, 4.2vw, 44px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.18;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 20px rgba(124,92,252,0.3);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.58);
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    .meta-pill:hover {
+      background: rgba(124,92,252,0.15);
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ══════════════════════════════ ARTICLE CONTAINER ══════════════════════════════ */
+    .article-container {
+      max-width: 900px;
+      margin: 44px auto 80px;
+      padding: 0 24px;
+    }
+
+    /* Intro paragraph */
+    .article-intro {
+      font-size: 17px;
+      line-height: 1.95;
+      color: rgba(255,255,255,0.80);
+      margin-bottom: 44px;
+      padding: 30px 36px;
+      background: rgba(255,255,255,0.035);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      animation: fadeSlideUp 0.7s 0.1s cubic-bezier(0.22,1,0.36,1) both;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-intro::before {
+      content: '"';
+      position: absolute;
+      top: -10px; left: 10px;
+      font-size: 100px;
+      font-family: 'Fredoka', sans-serif;
+      color: rgba(0,229,160,0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* TOC */
+    .quick-nav {
+      background: rgba(124,92,252,0.06);
+      border: 1px solid rgba(124,92,252,0.18);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 56px;
+      animation: fadeSlideUp 0.7s 0.15s cubic-bezier(0.22,1,0.36,1) both;
+      position: relative;
+      overflow: hidden;
+    }
+    .quick-nav::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,92,252,0.6), transparent);
+    }
+    .quick-nav h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .quick-nav ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px 24px;
+    }
     .quick-nav li { counter-increment: toc; }
-    .quick-nav a { display: flex; align-items: center; gap: 10px; padding: 9px 0; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14.5px; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s, padding-left 0.2s; }
-    .quick-nav a::before { content: '→'; color: var(--accent); font-size: 13px; opacity: 0; transition: opacity 0.2s; }
-    .quick-nav a:hover { color: var(--accent); padding-left: 4px; }
-    .quick-nav a:hover::before { opacity: 1; }
-    .guide-section { margin-bottom: 64px; animation: fadeSlideUp 0.6s ease both; }
-    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
-    .section-number { width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent2), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0; }
-    .guide-section h2 { font-family: 'Fredoka', sans-serif; font-size: clamp(22px, 3vw, 28px); color: #fff; font-weight: 700; }
-    .guide-section h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; color: rgba(255,255,255,0.95); margin: 32px 0 12px; display: flex; align-items: center; gap: 8px; }
-    .guide-section h3::before { content: ''; display: inline-block; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; }
-    .guide-section p { font-size: 16.5px; color: rgba(255,255,255,0.78); margin-bottom: 18px; line-height: 1.9; }
-    .guide-section ul, .guide-section ol { margin-bottom: 20px; padding-left: 0; list-style: none; }
-    .guide-section ul li, .guide-section ol li { position: relative; padding: 10px 16px 10px 44px; margin-bottom: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; font-size: 15.5px; color: rgba(255,255,255,0.8); counter-increment: list-counter; }
-    .guide-section ul li::before { content: '✦'; position: absolute; left: 16px; color: var(--accent); font-size: 12px; top: 50%; transform: translateY(-50%); }
+    .quick-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      color: rgba(255,255,255,0.60);
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: color 0.2s, padding-left 0.2s, gap 0.2s;
+    }
+    .quick-nav a::before {
+      content: '→';
+      color: var(--accent);
+      font-size: 13px;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      transform: translateX(-4px);
+    }
+    .quick-nav a:hover {
+      color: var(--accent);
+      padding-left: 6px;
+    }
+    .quick-nav a:hover::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ══════════════════════════════ GUIDE SECTIONS ══════════════════════════════ */
+    .guide-section {
+      margin-bottom: 68px;
+      animation: fadeSlideUp 0.6s ease both;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+    }
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0;
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      border-radius: 2px;
+    }
+    .section-number {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(124,92,252,0.35);
+    }
+    .guide-section h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      color: #fff;
+      font-weight: 700;
+    }
+    .guide-section h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 19px;
+      color: rgba(255,255,255,0.97);
+      margin: 34px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .guide-section h3::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(180deg, var(--accent2), var(--accent));
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .guide-section p {
+      font-size: 16.5px;
+      color: var(--text-body);
+      margin-bottom: 18px;
+      line-height: 1.95;
+    }
+
+    /* Lists */
+    .guide-section ul, .guide-section ol {
+      margin-bottom: 22px;
+      padding-left: 0;
+      list-style: none;
+    }
+    .guide-section ul li, .guide-section ol li {
+      position: relative;
+      padding: 12px 18px 12px 48px;
+      margin-bottom: 8px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      font-size: 15.5px;
+      color: var(--text-body);
+      counter-increment: list-counter;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .guide-section ul li:hover, .guide-section ol li:hover {
+      background: rgba(124,92,252,0.07);
+      border-color: rgba(124,92,252,0.18);
+      transform: translateX(3px);
+    }
+    .guide-section ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 17px;
+      color: var(--accent);
+      font-size: 11px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
     .guide-section ol { counter-reset: list-counter; }
-    .guide-section ol li::before { content: counter(list-counter); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; background: var(--accent2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; }
-    .guide-section strong { color: #fff; font-weight: 600; }
+    .guide-section ol li::before {
+      content: counter(list-counter);
+      position: absolute;
+      left: 14px; top: 50%;
+      transform: translateY(-50%);
+      width: 24px; height: 24px;
+      background: linear-gradient(135deg, var(--accent2), rgba(124,92,252,0.8));
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(124,92,252,0.3);
+    }
+
+    .guide-section strong { color: #fff; font-weight: 700; }
     .highlight { color: var(--accent); font-weight: 600; }
     .highlight-orange { color: var(--accent3); font-weight: 600; }
-    .tip-box { display: flex; gap: 14px; background: rgba(0,229,160,0.07); border: 1px solid rgba(0,229,160,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
-    .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-    .tip-box p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.8); }
-    .warn-box { display: flex; gap: 14px; background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
-    .warn-box p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.8); }
-    .guide-img { width: 100%; max-width: 740px; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); display: block; margin: 28px auto 0; box-shadow: 0 12px 40px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; }
-    .guide-img:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-    .guide-caption { text-align: center; font-size: 13px; color: var(--text-muted); margin: 10px auto 36px; font-style: italic; max-width: 600px; }
-    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s; }
-    .faq-item:hover { border-color: rgba(124,92,252,0.3); }
-    .faq-q { padding: 18px 22px; font-size: 16px; font-weight: 600; color: #fff; cursor: pointer; display: flex; align-items: center; gap: 12px; user-select: none; }
-    .faq-q::before { content: '?'; width: 28px; height: 28px; background: rgba(124,92,252,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #a78bfa; flex-shrink: 0; }
-    .faq-a { padding: 0 22px 18px 62px; font-size: 15.5px; color: rgba(255,255,255,0.72); line-height: 1.8; }
-    .bonus-section { background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(124,92,252,0.1) 100%); border: 1px solid rgba(255,107,53,0.25); border-radius: var(--radius); padding: 36px 40px; margin-bottom: 64px; }
-    .bonus-section h2 { font-family: 'Fredoka', sans-serif; font-size: 26px; color: #fff; margin-bottom: 16px; }
-    .bonus-section p { font-size: 16.5px; color: rgba(255,255,255,0.78); line-height: 1.9; margin: 0; }
-    .article-footer-note { padding: 24px 28px; border-top: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-top: 56px; }
-    .article-footer-note span { color: var(--accent); }
-    .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent2), var(--accent)); border: none; border-radius: 50%; color: #fff; font-size: 20px; cursor: pointer; opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 999; box-shadow: 0 4px 20px rgba(124,92,252,0.4); }
-    .back-to-top.visible { opacity: 1; transform: translateY(0); }
-    .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(124,92,252,0.5); }
+
+    /* Tip & Warning boxes */
+    .tip-box {
+      display: flex;
+      gap: 16px;
+      background: linear-gradient(135deg, rgba(0,229,160,0.07), rgba(0,229,160,0.03));
+      border: 1px solid rgba(0,229,160,0.2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 22px;
+      margin: 26px 0;
+    }
+    .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+    .tip-box p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.82); }
+
+    .warn-box {
+      display: flex;
+      gap: 16px;
+      background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(255,107,53,0.03));
+      border: 1px solid rgba(255,107,53,0.22);
+      border-left: 3px solid var(--accent3);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 22px;
+      margin: 26px 0;
+    }
+    .warn-box p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.82); }
+
+    /* Images */
+    .guide-img {
+      width: 100%;
+      max-width: 740px;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.07);
+      display: block;
+      margin: 30px auto 0;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.45), 0 0 0 1px rgba(124,92,252,0.08);
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease;
+    }
+    .guide-img:hover {
+      transform: translateY(-5px) scale(1.005);
+      box-shadow: 0 28px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(124,92,252,0.16);
+    }
+    .guide-caption {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 12px auto 38px;
+      font-style: italic;
+      max-width: 580px;
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .faq-item:hover {
+      border-color: rgba(124,92,252,0.28);
+      background: rgba(124,92,252,0.04);
+    }
+    .faq-q {
+      padding: 20px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      user-select: none;
+    }
+    .faq-q::before {
+      content: '?';
+      width: 30px;
+      height: 30px;
+      background: rgba(124,92,252,0.22);
+      border: 1px solid rgba(124,92,252,0.3);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: #a78bfa;
+      flex-shrink: 0;
+    }
+    .faq-a {
+      padding: 0 24px 20px 68px;
+      font-size: 15.5px;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.82;
+    }
+
+    /* Bonus Section */
+    .bonus-section {
+      background: linear-gradient(135deg,
+        rgba(255,215,0,0.06) 0%,
+        rgba(255,107,53,0.08) 40%,
+        rgba(124,92,252,0.08) 100%
+      );
+      border: 1px solid rgba(255,215,0,0.18);
+      border-radius: var(--radius);
+      padding: 40px 44px;
+      margin-bottom: 68px;
+      position: relative;
+      overflow: hidden;
+    }
+    .bonus-section::before {
+      content: '💡';
+      position: absolute;
+      right: 24px; top: 24px;
+      font-size: 56px;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .bonus-section h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .bonus-section p {
+      font-size: 16.5px;
+      color: var(--text-body);
+      line-height: 1.92;
+      margin: 0;
+    }
+
+    /* Article footer note */
+    .article-footer-note {
+      padding: 22px 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.025);
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .article-footer-note span { color: var(--accent); font-weight: 600; }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 32px; right: 32px;
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+      transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(124,92,252,0.4);
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .back-to-top:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(124,92,252,0.55);
+    }
 
     /* ══════════════════════════════ MORE GUIDES SECTION ══════════════════════════════ */
-    .more-guides-section { max-width: 900px; margin: 0 auto 48px; padding: 0 24px; position: relative; z-index: 1; }
-    .more-guides-head { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
-    .more-guides-divider { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(124,92,252,0.5), rgba(0,229,160,0.3), transparent); }
-    .more-guides-label { display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,160,0.08)); border: 1px solid rgba(124,92,252,0.28); border-radius: 999px; padding: 8px 20px; white-space: nowrap; }
-    .more-guides-label span.label-text { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; background: linear-gradient(135deg, #fff 30%, rgba(200,185,255,0.95) 65%, #00e5a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; }
-    .more-guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .more-guide-card { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; background: linear-gradient(135deg, rgba(21,26,77,0.88), rgba(15,20,60,0.80)); border: 1px solid rgba(255,255,255,0.07); text-decoration: none; color: #fff; transition: all 0.25s cubic-bezier(0.22,1,0.36,1); position: relative; overflow: hidden; }
-    .more-guide-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent2), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
-    .more-guide-card:hover { transform: translateY(-5px); border-color: rgba(124,92,252,0.28); box-shadow: 0 18px 45px rgba(0,0,0,0.45); }
+    .more-guides-section {
+      max-width: 900px;
+      margin: 0 auto 52px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .more-guides-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .more-guides-divider {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,92,252,0.5), rgba(0,229,160,0.3), transparent);
+    }
+    .more-guides-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,160,0.08));
+      border: 1px solid rgba(124,92,252,0.28);
+      border-radius: 999px;
+      padding: 9px 22px;
+      white-space: nowrap;
+    }
+    .more-guides-label span.label-text {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff 30%, rgba(200,185,255,0.95) 65%, #00e5a0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.04em;
+    }
+    .more-guides-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .more-guide-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(15,20,60,0.7);
+      border: 1px solid rgba(255,255,255,0.07);
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.28s cubic-bezier(0.22,1,0.36,1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+    .more-guide-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .more-guide-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(124,92,252,0.28);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.45);
+      background: rgba(20,28,80,0.85);
+    }
     .more-guide-card:hover::after { transform: scaleX(1); }
-    .more-guide-card img { width: 54px; height: 54px; object-fit: cover; border-radius: 12px; flex-shrink: 0; transition: transform 0.25s ease; }
+    .more-guide-card img {
+      width: 54px; height: 54px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+      transition: transform 0.28s ease;
+    }
     .more-guide-card:hover img { transform: scale(1.08) rotate(-2deg); }
     .more-guide-card .mgc-info { flex: 1; min-width: 0; }
-    .more-guide-card .mgc-info h3 { font-size: 13px; font-weight: 800; color: #fff; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-bottom: 4px; }
-    .more-guide-card .mgc-info p { font-size: 11px; color: rgba(255,255,255,0.42); margin: 0; }
-    .editor-badge { position: absolute; top: 8px; right: 8px; background: linear-gradient(135deg, #ffd700, #ffaa00); color: #000; font-size: 9px; font-weight: 800; padding: 3px 8px; border-radius: 6px; box-shadow: 0 2px 8px rgba(255,215,0,0.3); }
-    @media (max-width: 640px) { .more-guides-grid { grid-template-columns: 1fr !important; gap: 9px !important; } .more-guide-card { padding: 10px 12px !important; border-radius: 14px !important; } .more-guide-card img { width: 42px !important; height: 42px !important; } .more-guide-card .mgc-info h3 { font-size: 12px !important; } .more-guides-section { padding: 0 14px; } .more-guides-label span.label-text { font-size: 15px !important; } }
+    .more-guide-card .mgc-info h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin-bottom: 4px;
+    }
+    .more-guide-card .mgc-info p { font-size: 11px; color: rgba(255,255,255,0.4); margin: 0; }
+    .editor-badge {
+      position: absolute;
+      top: 8px; right: 8px;
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      color: #000;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(255,215,0,0.3);
+    }
 
     /* ══════════════════════════════ SUGGESTION CODES SECTION ══════════════════════════════ */
-    .more-section { max-width: 900px; margin: 48px auto 30px; padding: 0 24px; position: relative; z-index: 1; }
-    .more-section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
-    .more-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(124,92,252,0.5), rgba(0,229,160,0.3), transparent); }
-    .more-divider-label { display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,160,0.08)); border: 1px solid rgba(124,92,252,0.28); border-radius: 999px; padding: 8px 20px; white-space: nowrap; }
-    .more-text { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; background: linear-gradient(135deg, #fff 30%, rgba(200,185,255,0.95) 65%, #00e5a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 1px; }
+    .more-section {
+      max-width: 900px;
+      margin: 52px auto 32px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .more-section-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .more-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,92,252,0.5), rgba(0,229,160,0.3), transparent);
+    }
+    .more-divider-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,160,0.08));
+      border: 1px solid rgba(124,92,252,0.28);
+      border-radius: 999px;
+      padding: 9px 22px;
+      white-space: nowrap;
+    }
+    .more-text {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff 30%, rgba(200,185,255,0.95) 65%, #00e5a0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.04em;
+    }
     .more-fire { font-size: 18px; }
-    .more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    .more-card { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 18px; background: linear-gradient(135deg, rgba(21,26,77,0.88), rgba(15,20,60,0.80)); border: 1px solid rgba(255,255,255,0.07); text-decoration: none; color: #fff; transition: all 0.25s cubic-bezier(0.22,1,0.36,1); position: relative; overflow: hidden; }
-    .more-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #7c5cfc, #00e5a0); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
-    .more-card:hover { transform: translateY(-5px); border-color: rgba(124,92,252,0.28); box-shadow: 0 18px 45px rgba(0,0,0,0.45); }
+    .more-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .more-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(15,20,60,0.7);
+      border: 1px solid rgba(255,255,255,0.07);
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.28s cubic-bezier(0.22,1,0.36,1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+    .more-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #7c5cfc, #00e5a0);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .more-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(124,92,252,0.28);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.45);
+    }
     .more-card:hover::after { transform: scaleX(1); }
-    .more-card img { width: 54px; height: 54px; border-radius: 12px; object-fit: cover; flex-shrink: 0; transition: transform 0.25s ease; }
+    .more-card img {
+      width: 54px; height: 54px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      transition: transform 0.28s ease;
+    }
     .more-card:hover img { transform: scale(1.08) rotate(-2deg); }
-    .more-info h3 { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .more-info p { font-size: 11px; color: rgba(255,255,255,0.45); margin: 0; }
+    .more-info h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin: 0 0 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .more-info p { font-size: 11px; color: rgba(255,255,255,0.42); margin: 0; }
 
-        /* ══════════════════════════════ WIKI INLINE CARDS - FIXED ══════════════════════════════ */
-.wiki-section-inline { 
-  max-width: 1200px; /* Wider */
-  margin: 40px auto; 
-  background: rgba(255,255,255,0.04); 
-  border-radius: 20px; 
-  padding: 32px 28px; /* More padding */
-}
-
-.wiki-inline-grid { 
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
-  gap: 16px; 
-}
-
-.wiki-inline-card { 
-  background: rgba(255,255,255,0.06); 
-  border-radius: 14px; 
-  padding: 20px; 
-  transition: all 0.25s ease; 
-  border: 1px solid rgba(255,255,255,0.06);
-  min-height: 180px; /* Consistent height */
-}
-
-.wiki-inline-card:hover { 
-  background: rgba(255,255,255,0.1); 
-  border-color: rgba(124,92,252,0.3); 
-  transform: translateY(-3px); 
-}
-
-.wiki-inline-card h3 { 
-  font-size: 14px; 
-  color: #fff; 
-  font-weight: 700; 
-  margin: 10px 0; 
-  line-height: 1.4; 
-}
-
-.wiki-inline-card p { 
-  font-size: 12px; 
-  color: rgba(255,255,255,0.5); 
-  margin: 0 0 12px; 
-  line-height: 1.5; 
-}
-
-.read-link { 
-  font-size: 12px; 
-  color: #00e676; 
-  font-weight: 600; 
-  display: inline-flex; 
-  align-items: center; 
-  gap: 4px; 
-  transition: gap 0.2s; 
-}
-
-.wiki-inline-card:hover .read-link { 
-  gap: 8px; 
-}
-
-/* Comment Section - Fixed */
-section[style*="max-width:900px"] {
-  max-width: 900px !important;
-  margin: 40px auto !important;
-  padding: 32px 28px !important;
-}
-
-/* Mobile Responsive */
-@media (max-width: 968px) {
-  .wiki-inline-grid { 
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns on tablet */
-  }
-}
-
-@media (max-width: 640px) {
-  .wiki-inline-grid { 
-    grid-template-columns: 1fr !important; /* 1 column on mobile */
-    gap: 12px !important;
-  }
-  
-  .wiki-section-inline {
-    padding: 24px 18px !important;
-  }
-  
-  .wiki-inline-card {
-    min-height: auto; /* Remove min-height on mobile */
-  }
-}
+    /* ══════════════════════════════ WIKI INLINE CARDS ══════════════════════════════ */
+    .wiki-section-inline {
+      max-width: 900px;
+      margin: 44px auto;
+      padding: 36px 32px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .wiki-section-inline > h2 {
+      font-family: 'Fredoka', sans-serif !important;
+      font-size: 20px !important;
+      color: #fff !important;
+      margin-bottom: 6px !important;
+    }
+    .wiki-section-inline > p {
+      font-size: 13px !important;
+      color: rgba(255,255,255,0.42) !important;
+      margin-bottom: 24px !important;
+    }
+    .wiki-inline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .wiki-inline-card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.25s cubic-bezier(0.22,1,0.36,1);
+      border: 1px solid rgba(255,255,255,0.06);
+      text-decoration: none;
+      display: block;
+    }
+    .wiki-inline-card:hover {
+      background: rgba(124,92,252,0.1);
+      border-color: rgba(124,92,252,0.28);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+    }
+    .wiki-inline-card h3 {
+      font-size: 13.5px;
+      color: #fff;
+      font-weight: 700;
+      margin: 10px 0 6px;
+      line-height: 1.4;
+    }
+    .wiki-inline-card p {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.47);
+      margin: 0 0 14px;
+      line-height: 1.55;
+    }
+    .badge {
+      font-size: 10px !important;
+      font-weight: 800 !important;
+      padding: 3px 9px !important;
+      border-radius: 20px !important;
+    }
+    .read-link {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.2s;
+    }
+    .wiki-inline-card:hover .read-link { gap: 9px; }
 
     /* ══════════════════════════════ COMMENT FORM ══════════════════════════════ */
-    .comment-clean { max-width: 850px; margin: 40px auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 40px; }
-    .comment-clean input:focus, .comment-clean textarea:focus { border-color: rgba(124,92,252,0.4); background: rgba(255,255,255,0.06); box-shadow: 0 0 0 3px rgba(124,92,252,0.08); }
-    .comment-clean button:hover { background: linear-gradient(135deg, #8b5cf6, #b065fc); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(124,92,252,0.25); }
-    
+    .comment-clean {
+      max-width: 900px;
+      margin: 44px auto 60px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px;
+      padding: 44px 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .comment-clean input,
+    .comment-clean textarea {
+      transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+    }
+    .comment-clean input:focus,
+    .comment-clean textarea:focus {
+      border-color: rgba(124,92,252,0.45) !important;
+      background: rgba(255,255,255,0.07) !important;
+      box-shadow: 0 0 0 3px rgba(124,92,252,0.10) !important;
+    }
+    .comment-clean button {
+      transition: all 0.28s cubic-bezier(0.22,1,0.36,1) !important;
+    }
+    .comment-clean button:hover {
+      background: linear-gradient(135deg, #8b5cf6, #b065fc) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 10px 28px rgba(124,92,252,0.35) !important;
+    }
+
+    /* ══════════════════════════════ RESPONSIVE ══════════════════════════════ */
     @media (max-width: 968px) {
       .wiki-inline-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .more-guides-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
     @media (max-width: 640px) {
       .wiki-inline-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
-      .wiki-section-inline { padding: 24px 18px !important; }
-      .wiki-inline-card { min-height: auto !important; padding: 12px !important; }
-      .comment-clean { padding: 28px 20px !important; }
-      .comment-clean > div:first-child > form > div:first-child { grid-template-columns: 1fr !important; }
+      .wiki-section-inline { padding: 24px 18px !important; margin: 24px 16px !important; }
+      .more-guides-grid { grid-template-columns: 1fr !important; gap: 9px !important; }
+      .more-guide-card { padding: 10px 12px !important; border-radius: 14px !important; }
+      .more-guide-card img { width: 42px !important; height: 42px !important; }
+      .more-guide-card .mgc-info h3 { font-size: 12px !important; }
+      .more-guides-section { padding: 0 14px; }
+      .more-guides-label span.label-text { font-size: 15px !important; }
+      .comment-clean { padding: 28px 20px !important; margin: 24px 16px !important; }
       .more-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
       .more-card { padding: 12px 14px !important; }
       .more-card img { width: 48px !important; height: 48px !important; }
       .more-info h3 { font-size: 13px !important; }
-      .hero-card { padding: 36px 24px 32px; }
+      .hero-card { padding: 36px 26px 32px; }
       .article-container { padding: 0 16px; }
-      .quick-nav { padding: 22px 20px; }
+      .quick-nav { padding: 24px 20px; }
       .bonus-section { padding: 28px 24px; }
-      .article-intro { padding: 22px 20px; }
-      .guide-section ul li, .guide-section ol li { padding: 10px 14px 10px 42px; font-size: 14.5px; }
+      .article-intro { padding: 22px 22px; }
+      .guide-section ul li, .guide-section ol li { padding: 10px 14px 10px 44px; font-size: 14.5px; }
+      .more-section { padding: 0 14px; }
+      .game-banner { padding: 0 14px; }
+      .game-quick-links { padding: 0 14px; gap: 10px; }
     }
 
-    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (UNCHANGED) -->
   <header class="guide-header">
     <a href="../" class="gh-logo"><img src="../Images/FinalLogo.png" alt="BLOXBURST"></a>
     <div class="gh-search">
@@ -431,6 +1179,7 @@ section[style*="max-width:900px"] {
     <!-- HERO -->
     <div class="article-hero">
       <div class="hero-card">
+        <div class="hero-shimmer"></div>
         <div class="hero-badge">🎮 Game Guide</div>
         <h1>🎯 Kick A Lucky Block<br>Complete Beginner Guide (2026)</h1>
         <div class="hero-meta">
@@ -469,29 +1218,124 @@ section[style*="max-width:900px"] {
         </ul>
       </div>
 
-      <!-- SECTIONS 1-6 + BONUS + FAQ (same as your original) -->
-      <div class="guide-section" id="tip1"><div class="section-header"><div class="section-number">1</div><h2>Core Loop: Kick, Run, Secure</h2></div><p>Everything in Kick A Lucky Block revolves around one tense cycle: launch your lucky block, then sprint back to base before a destructive wave catches you. Nail it, and you earn a Brainrot — a quirky collectible that generates passive income. Fail, and you lose that reward entirely.</p><h3>Master the Perfect Kick Timing</h3><p>When you hold to charge your kick, a bar fills up. Hitting the very top triggers a <span class="highlight">Perfect</span> bonus that significantly increases distance. Greater distance directly improves the rarity and earning potential of your Brainrot.</p><div class="tip-box"><div class="tip-icon">💡</div><p><strong>Pro Tip:</strong> Practice Perfect timing in low-stakes early runs before pushing for max distance. Consistency beats luck every time.</p></div><h3>Don't Ignore the Wave</h3><p>The wave moves fast — if it catches you before you return to base, you lose the Brainrot. Always prioritize your return path. If your run speed feels tight, don't push for max distance until you've upgraded your movement.</p><h3>Claim Rewards Immediately</h3><p>Once you safely return with a Brainrot, place it in your base <span class="highlight">right away</span>. Unslotted units earn $0. Treat this as a non-negotiable habit: <strong>secure → slot → upgrade.</strong></p><img src="../Images/kick-charge-wave-kick-a-lucky-block.webp" alt="Kick charge bar and wave chase mechanic" class="guide-img"><p class="guide-caption">Figure 1: Time your kick for Perfect, then sprint back before the wave catches you.</p></div>
+      <!-- SECTION 1 -->
+      <div class="guide-section" id="tip1">
+        <div class="section-header"><div class="section-number">1</div><h2>Core Loop: Kick, Run, Secure</h2></div>
+        <p>Everything in Kick A Lucky Block revolves around one tense cycle: launch your lucky block, then sprint back to base before a destructive wave catches you. Nail it, and you earn a Brainrot — a quirky collectible that generates passive income. Fail, and you lose that reward entirely.</p>
+        <h3>Master the Perfect Kick Timing</h3>
+        <p>When you hold to charge your kick, a bar fills up. Hitting the very top triggers a <span class="highlight">Perfect</span> bonus that significantly increases distance. Greater distance directly improves the rarity and earning potential of your Brainrot.</p>
+        <div class="tip-box"><div class="tip-icon">💡</div><p><strong>Pro Tip:</strong> Practice Perfect timing in low-stakes early runs before pushing for max distance. Consistency beats luck every time.</p></div>
+        <h3>Don't Ignore the Wave</h3>
+        <p>The wave moves fast — if it catches you before you return to base, you lose the Brainrot. Always prioritize your return path. If your run speed feels tight, don't push for max distance until you've upgraded your movement.</p>
+        <h3>Claim Rewards Immediately</h3>
+        <p>Once you safely return with a Brainrot, place it in your base <span class="highlight">right away</span>. Unslotted units earn $0. Treat this as a non-negotiable habit: <strong>secure → slot → upgrade.</strong></p>
+        <img src="../Images/kick-charge-wave-kick-a-lucky-block.webp" alt="Kick charge bar and wave chase mechanic" class="guide-img">
+        <p class="guide-caption">Figure 1: Time your kick for Perfect, then sprint back before the wave catches you.</p>
+      </div>
 
-      <div class="guide-section" id="tip2"><div class="section-header"><div class="section-number">2</div><h2>Upgrade Strategy: Power vs. Speed Balance</h2></div><p>New players often dump all their currency into kick power, only to realize they can't outrun the wave. Progress isn't about maxing one stat — it's about balancing two critical upgrades that work together.</p><h3>The Weight Shop: Your Kick Power Engine</h3><p>Weights determine how far your lucky block travels. Work toward high-tier purchases like the <span class="highlight">Gold Star</span>, which grants massive kick power per second.</p><h3>The Speed Stand: Don't Get Caught</h3><p>Run speed is your safety net. Alternate purchases between weights and speed early on. If you're consistently getting caught, pause power upgrades and focus on speed.</p><h3>Manual Bonus: Click Those Purple Targets</h3><p>Clicking purple circular targets grants a temporary <span class="highlight-orange">double-power boost</span>. If you're playing actively, make clicking these a habit.</p><div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Don't Max One Stat:</strong> Maxing kick power without upgrading speed is the most common beginner mistake. Always alternate upgrades.</p></div><img src="../Images/weight-shop-speed-stand-kick-a-lucky-block.webp" alt="Weight Shop and Speed Stand upgrade interfaces" class="guide-img"><p class="guide-caption">Figure 2: Balance kick power (weights) and run speed upgrades for optimal progress.</p></div>
+      <!-- SECTION 2 -->
+      <div class="guide-section" id="tip2">
+        <div class="section-header"><div class="section-number">2</div><h2>Upgrade Strategy: Power vs. Speed Balance</h2></div>
+        <p>New players often dump all their currency into kick power, only to realize they can't outrun the wave. Progress isn't about maxing one stat — it's about balancing two critical upgrades that work together.</p>
+        <h3>The Weight Shop: Your Kick Power Engine</h3>
+        <p>Weights determine how far your lucky block travels. Work toward high-tier purchases like the <span class="highlight">Gold Star</span>, which grants massive kick power per second.</p>
+        <h3>The Speed Stand: Don't Get Caught</h3>
+        <p>Run speed is your safety net. Alternate purchases between weights and speed early on. If you're consistently getting caught, pause power upgrades and focus on speed.</p>
+        <h3>Manual Bonus: Click Those Purple Targets</h3>
+        <p>Clicking purple circular targets grants a temporary <span class="highlight-orange">double-power boost</span>. If you're playing actively, make clicking these a habit.</p>
+        <div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Don't Max One Stat:</strong> Maxing kick power without upgrading speed is the most common beginner mistake. Always alternate upgrades.</p></div>
+        <img src="../Images/weight-shop-speed-stand-kick-a-lucky-block.webp" alt="Weight Shop and Speed Stand upgrade interfaces" class="guide-img">
+        <p class="guide-caption">Figure 2: Balance kick power (weights) and run speed upgrades for optimal progress.</p>
+      </div>
 
-      <div class="guide-section" id="tip3"><div class="section-header"><div class="section-number">3</div><h2>Brainrot Management & Floor Expansion</h2></div><p>Brainrots are your income engines. How you place, upgrade, and prioritize them directly determines your earning speed.</p><h3>Slot First, Upgrade Aggressively</h3><p>Never let a Brainrot sit in your inventory. Place it immediately, then spam the <span class="highlight-orange">orange upgrade button</span> to level it. Early upgrades provide exponential returns.</p><h3>Expand Your Floors Strategically</h3><p>You start with one floor but can unlock up to three (30 total slots). Unlock new floors as soon as you can afford them. More slots = more Brainrots = more passive income.</p><h3>Organize for Efficiency</h3><p>Place your highest-earning Brainrots on the bottom floor for quick visual reference. This saves time when managing upgrades or swapping units.</p><img src="../Images/brainrot-floors-upgrade-kick-a-lucky-block.webp" alt="Brainrot slots across three floors" class="guide-img"><p class="guide-caption">Figure 3: Slot Brainrots immediately, upgrade aggressively, and expand floors as you progress.</p></div>
+      <!-- SECTION 3 -->
+      <div class="guide-section" id="tip3">
+        <div class="section-header"><div class="section-number">3</div><h2>Brainrot Management & Floor Expansion</h2></div>
+        <p>Brainrots are your income engines. How you place, upgrade, and prioritize them directly determines your earning speed.</p>
+        <h3>Slot First, Upgrade Aggressively</h3>
+        <p>Never let a Brainrot sit in your inventory. Place it immediately, then spam the <span class="highlight-orange">orange upgrade button</span> to level it. Early upgrades provide exponential returns.</p>
+        <h3>Expand Your Floors Strategically</h3>
+        <p>You start with one floor but can unlock up to three (30 total slots). Unlock new floors as soon as you can afford them. More slots = more Brainrots = more passive income.</p>
+        <h3>Organize for Efficiency</h3>
+        <p>Place your highest-earning Brainrots on the bottom floor for quick visual reference. This saves time when managing upgrades or swapping units.</p>
+        <img src="../Images/brainrot-floors-upgrade-kick-a-lucky-block.webp" alt="Brainrot slots across three floors" class="guide-img">
+        <p class="guide-caption">Figure 3: Slot Brainrots immediately, upgrade aggressively, and expand floors as you progress.</p>
+      </div>
 
-      <div class="guide-section" id="tip4"><div class="section-header"><div class="section-number">4</div><h2>Mutations, AFK Setup & Offline Earnings</h2></div><p>Once you've filled your base, the next leap in earnings comes from mutations and smart AFK planning.</p><h3>Prioritize Mutated Brainrots</h3><p>Mutations apply massive money multipliers. Once your base is full, start replacing non-mutated units with mutated ones first. The earnings jump is statistically significant.</p><h3>Online AFK > Offline Earnings</h3><p>You earn <span class="highlight">more</span> while logged in and AFK than offline. If you can leave the game running safely, do it.</p><h3>Pre-Logout Checklist</h3><ol><li>Slot any unplaced Brainrots</li><li>Upgrade your top earners to current max</li><li>Ensure your character is in a safe AFK position</li><li>Verify weights are generating kick power passively</li></ol><div class="tip-box"><div class="tip-icon">⚡</div><p>This 60-second pre-logout routine can <strong>double your passive income</strong> while you're away.</p></div><img src="../Images/mutations-afk-setup-kick-a-lucky-block.webp" alt="Mutated Brainrot icons and AFK setup" class="guide-img"><p class="guide-caption">Figure 4: Replace non-mutated Brainrots first, and optimize your AFK setup before logging off.</p></div>
+      <!-- SECTION 4 -->
+      <div class="guide-section" id="tip4">
+        <div class="section-header"><div class="section-number">4</div><h2>Mutations, AFK Setup & Offline Earnings</h2></div>
+        <p>Once you've filled your base, the next leap in earnings comes from mutations and smart AFK planning.</p>
+        <h3>Prioritize Mutated Brainrots</h3>
+        <p>Mutations apply massive money multipliers. Once your base is full, start replacing non-mutated units with mutated ones first. The earnings jump is statistically significant.</p>
+        <h3>Online AFK > Offline Earnings</h3>
+        <p>You earn <span class="highlight">more</span> while logged in and AFK than offline. If you can leave the game running safely, do it.</p>
+        <h3>Pre-Logout Checklist</h3>
+        <ol>
+          <li>Slot any unplaced Brainrots</li>
+          <li>Upgrade your top earners to current max</li>
+          <li>Ensure your character is in a safe AFK position</li>
+          <li>Verify weights are generating kick power passively</li>
+        </ol>
+        <div class="tip-box"><div class="tip-icon">⚡</div><p>This 60-second pre-logout routine can <strong>double your passive income</strong> while you're away.</p></div>
+        <img src="../Images/mutations-afk-setup-kick-a-lucky-block.webp" alt="Mutated Brainrot icons and AFK setup" class="guide-img">
+        <p class="guide-caption">Figure 4: Replace non-mutated Brainrots first, and optimize your AFK setup before logging off.</p>
+      </div>
 
-      <div class="guide-section" id="tip5"><div class="section-header"><div class="section-number">5</div><h2>Rebirth System: When & How to Reset</h2></div><p>Rebirthing is the single most impactful progression mechanic — but also the most misunderstood.</p><h3>Why Rebirth? The Multiplier Math</h3><p>Each rebirth grants a permanent money multiplier: 2x, 3x, 4x, and so on. At rebirth 7, you're earning <span class="highlight">7x your base income</span>.</p><h3>When to Rebirth: The Smart Trigger</h3><p>Secure 1-2 strong Brainrots before resetting. Then rebirth the moment you qualify — don't wait to "feel ready." The multiplier benefit outweighs any marginal gain from delaying.</p><h3>Post-Rebirth Priority</h3><ol><li>Re-purchase basic weights to rebuild kick power</li><li>Re-slot your strongest Brainrots</li><li>Resume speed upgrades to maintain wave safety</li><li>Target the next rebirth threshold immediately</li></ol><img src="../Images/rebirth-multiplier-menu-kick-a-lucky-block.webp" alt="Rebirth menu showing multiplier progression" class="guide-img"><p class="guide-caption">Figure 5: Rebirth for permanent multipliers — secure key Brainrots first, then reset aggressively.</p></div>
+      <!-- SECTION 5 -->
+      <div class="guide-section" id="tip5">
+        <div class="section-header"><div class="section-number">5</div><h2>Rebirth System: When & How to Reset</h2></div>
+        <p>Rebirthing is the single most impactful progression mechanic — but also the most misunderstood.</p>
+        <h3>Why Rebirth? The Multiplier Math</h3>
+        <p>Each rebirth grants a permanent money multiplier: 2x, 3x, 4x, and so on. At rebirth 7, you're earning <span class="highlight">7x your base income</span>.</p>
+        <h3>When to Rebirth: The Smart Trigger</h3>
+        <p>Secure 1-2 strong Brainrots before resetting. Then rebirth the moment you qualify — don't wait to "feel ready." The multiplier benefit outweighs any marginal gain from delaying.</p>
+        <h3>Post-Rebirth Priority</h3>
+        <ol>
+          <li>Re-purchase basic weights to rebuild kick power</li>
+          <li>Re-slot your strongest Brainrots</li>
+          <li>Resume speed upgrades to maintain wave safety</li>
+          <li>Target the next rebirth threshold immediately</li>
+        </ol>
+        <img src="../Images/rebirth-multiplier-menu-kick-a-lucky-block.webp" alt="Rebirth menu showing multiplier progression" class="guide-img">
+        <p class="guide-caption">Figure 5: Rebirth for permanent multipliers — secure key Brainrots first, then reset aggressively.</p>
+      </div>
 
-      <div class="guide-section" id="tip6"><div class="section-header"><div class="section-number">6</div><h2>Bonus Boosts: Friends, Game Passes & Click Targets</h2></div><p>Beyond core mechanics, several optional systems can significantly boost your earnings.</p><h3>Friends Boost: The 40% Multiplier</h3><p>Invite up to four friends to your VIP server for ~10% money multiplier per friend (<span class="highlight">40% max</span>). This stacks multiplicatively with rebirth multipliers.</p><h3>Game Passes: Worth the Investment?</h3><p>Two passes stand out: <span class="highlight">2x Cash</span> and <span class="highlight">2x Power</span>. At ~300 Robux each, they pay for themselves quickly if you play regularly.</p><h3>Freebies & Index</h3><p>Claim the free Brainrot in the shop — it's an easy early boost. The Index feature is optional; focus on core systems first.</p><img src="../Images/friends-boost-gamepasses-kick-a-lucky-block.webp" alt="Friends boost indicator and game pass shop" class="guide-img"><p class="guide-caption">Figure 6: Stack friends boost with game passes for maximum earnings acceleration.</p></div>
+      <!-- SECTION 6 -->
+      <div class="guide-section" id="tip6">
+        <div class="section-header"><div class="section-number">6</div><h2>Bonus Boosts: Friends, Game Passes & Click Targets</h2></div>
+        <p>Beyond core mechanics, several optional systems can significantly boost your earnings.</p>
+        <h3>Friends Boost: The 40% Multiplier</h3>
+        <p>Invite up to four friends to your VIP server for ~10% money multiplier per friend (<span class="highlight">40% max</span>). This stacks multiplicatively with rebirth multipliers.</p>
+        <h3>Game Passes: Worth the Investment?</h3>
+        <p>Two passes stand out: <span class="highlight">2x Cash</span> and <span class="highlight">2x Power</span>. At ~300 Robux each, they pay for themselves quickly if you play regularly.</p>
+        <h3>Freebies & Index</h3>
+        <p>Claim the free Brainrot in the shop — it's an easy early boost. The Index feature is optional; focus on core systems first.</p>
+        <img src="../Images/friends-boost-gamepasses-kick-a-lucky-block.webp" alt="Friends boost indicator and game pass shop" class="guide-img">
+        <p class="guide-caption">Figure 6: Stack friends boost with game passes for maximum earnings acceleration.</p>
+      </div>
 
-      <div class="bonus-section" id="bonus"><h2>💡 Honorable Mention: The Bottom-Floor Strategy</h2><p>Place your highest-earning Brainrots on the bottom floor of your base for <strong>visual efficiency.</strong> When rapidly upgrading or swapping units, having your money-makers in a consistent, easy-to-scan location reduces decision time. It's a tiny organizational tweak, but over hundreds of sessions, those saved seconds compound into meaningful progress.</p></div>
+      <!-- BONUS -->
+      <div class="bonus-section" id="bonus">
+        <h2>💡 Honorable Mention: The Bottom-Floor Strategy</h2>
+        <p>Place your highest-earning Brainrots on the bottom floor of your base for <strong>visual efficiency.</strong> When rapidly upgrading or swapping units, having your money-makers in a consistent, easy-to-scan location reduces decision time. It's a tiny organizational tweak, but over hundreds of sessions, those saved seconds compound into meaningful progress.</p>
+      </div>
 
-      <div class="guide-section" id="faq"><div class="section-header"><div class="section-number">?</div><h2>Frequently Asked Questions</h2></div><div class="faq-item"><div class="faq-q">How do I get more kick power in Kick A Lucky Block?</div><div class="faq-a">Visit the Weight Shop and purchase upgrades. Higher-tier weights like the Gold Star grant massive kick power per second. Balance with run speed upgrades.</div></div><div class="faq-item"><div class="faq-q">What are Brainrots and how do I use them?</div><div class="faq-a">Brainrots are collectible units earned by kicking the lucky block. Place them in base slots and upgrade using the orange button to generate passive income. Mutated Brainrots provide significant money multipliers.</div></div><div class="faq-item"><div class="faq-q">Should I rebirth early in Kick A Lucky Block?</div><div class="faq-a">Yes — rebirth as soon as you qualify. It resets kick power but grants permanent money multipliers (2x, 3x, 4x, etc.). Secure 1-2 strong Brainrots first.</div></div><div class="faq-item"><div class="faq-q">Do codes work in Kick A Lucky Block?</div><div class="faq-a">Codes are occasionally released for free Brainrots or boosts. Check the BLOXBURST Codes page for verified, working codes. Always redeem immediately — codes expire fast!</div></div></div>
+      <!-- FAQ -->
+      <div class="guide-section" id="faq">
+        <div class="section-header"><div class="section-number">?</div><h2>Frequently Asked Questions</h2></div>
+        <div class="faq-item"><div class="faq-q">How do I get more kick power in Kick A Lucky Block?</div><div class="faq-a">Visit the Weight Shop and purchase upgrades. Higher-tier weights like the Gold Star grant massive kick power per second. Balance with run speed upgrades.</div></div>
+        <div class="faq-item"><div class="faq-q">What are Brainrots and how do I use them?</div><div class="faq-a">Brainrots are collectible units earned by kicking the lucky block. Place them in base slots and upgrade using the orange button to generate passive income. Mutated Brainrots provide significant money multipliers.</div></div>
+        <div class="faq-item"><div class="faq-q">Should I rebirth early in Kick A Lucky Block?</div><div class="faq-a">Yes — rebirth as soon as you qualify. It resets kick power but grants permanent money multipliers (2x, 3x, 4x, etc.). Secure 1-2 strong Brainrots first.</div></div>
+        <div class="faq-item"><div class="faq-q">Do codes work in Kick A Lucky Block?</div><div class="faq-a">Codes are occasionally released for free Brainrots or boosts. Check the BLOXBURST Codes page for verified, working codes. Always redeem immediately — codes expire fast!</div></div>
+      </div>
 
       <div class="article-footer-note"><span>✅ Updated for April 2026</span> — Game mechanics, upgrade costs, and UI elements may shift with major updates. Bookmark this page and check back for revisions.</div>
     </div>
 
   </main>
 
-  <!-- ══════════════════════════════ MORE GUIDES SECTION ══════════════════════════════ -->
+  <!-- MORE GUIDES SECTION -->
   <section class="more-guides-section">
     <div class="more-guides-head">
       <div class="more-guides-divider"></div>
@@ -501,7 +1345,7 @@ section[style*="max-width:900px"] {
     <div class="more-guides-grid" id="moreGuidesGrid"></div>
   </section>
 
-  <!-- ══════════════════════════════ SUGGESTION CODES SECTION ══════════════════════════════ -->
+  <!-- SUGGESTION CODES SECTION -->
   <section class="more-section" id="moreSection">
     <div class="more-section-head">
       <div class="more-divider-line"></div>
@@ -511,73 +1355,73 @@ section[style*="max-width:900px"] {
     <div class="more-grid" id="moreGrid"></div>
   </section>
 
-  <!-- ══════════════════════════════ LATEST UPDATE WIKI ══════════════════════════════ -->
+  <!-- WIKI INLINE CARDS -->
   <section class="wiki-section-inline">
-    <h2 style="font-family:'Fredoka',sans-serif; font-size:18px; color:#fff; margin-bottom:4px;">Latest Update Wiki</h2>
-    <p style="font-size:12px; color:rgba(255,255,255,0.45); margin-bottom:20px;">Fresh guides + updates from BLOXBURST Wiki</p>
+    <h2 style="font-family:'Fredoka',sans-serif; font-size:20px; color:#fff; margin-bottom:6px;">Latest Update Wiki</h2>
+    <p style="font-size:13px; color:rgba(255,255,255,0.42); margin-bottom:24px;">Fresh guides + updates from BLOXBURST Wiki</p>
     <div class="wiki-inline-grid">
-      <a href="../Wiki-Folder/wiki-redeem-codes" style="text-decoration:none;">
-        <div class="wiki-inline-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
-            <span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">UPDATE</span>
-            <span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 22, 2026</span>
-          </div>
-          <h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px; line-height:1.4;">How to Redeem Roblox Codes (Step-by-step)</h3>
-          <p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px; line-height:1.5;">A quick guide to make sure you don't make mistakes when redeeming.</p>
-          <span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span>
+      <a href="../Wiki-Folder/wiki-redeem-codes" class="wiki-inline-card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
+          <span class="badge" style="background:linear-gradient(135deg,#4f46e5,#6d5fff); color:#fff;">UPDATE</span>
+          <span style="font-size:10px; color:rgba(255,255,255,0.38);">Feb 22, 2026</span>
         </div>
+        <h3>How to Redeem Roblox Codes (Step-by-step)</h3>
+        <p>A quick guide to make sure you don't make mistakes when redeeming.</p>
+        <span class="read-link">Read →</span>
       </a>
-      <a href="../Wiki-Folder/wiki-how-we-check-codes" style="text-decoration:none;">
-        <div class="wiki-inline-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
-            <span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">GUIDE</span>
-            <span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 21, 2026</span>
-          </div>
-          <h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px; line-height:1.4;">How we check codes (manual testing)</h3>
-          <p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px; line-height:1.5;">An explanation of how we scan and test codes.</p>
-          <span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span>
+      <a href="../Wiki-Folder/wiki-how-we-check-codes" class="wiki-inline-card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
+          <span class="badge" style="background:linear-gradient(135deg,#4f46e5,#6d5fff); color:#fff;">GUIDE</span>
+          <span style="font-size:10px; color:rgba(255,255,255,0.38);">Feb 21, 2026</span>
         </div>
+        <h3>How we check codes (manual testing)</h3>
+        <p>An explanation of how we scan and test codes.</p>
+        <span class="read-link">Read →</span>
       </a>
-      <a href="../Wiki-Folder/wiki-invalid-code-reasons" style="text-decoration:none;">
-        <div class="wiki-inline-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
-            <span class="badge" style="background:#4f46e5; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:20px;">NEW</span>
-            <span class="date" style="font-size:10px; color:rgba(255,255,255,0.4);">Feb 19, 2026</span>
-          </div>
-          <h3 style="font-size:13px; color:#fff; font-weight:700; margin-bottom:6px; line-height:1.4;">Common reasons for "Invalid Code".</h3>
-          <p style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px; line-height:1.5;">Common issues and fast solutions.</p>
-          <span class="read-link" style="font-size:12px; color:#00e676; font-weight:600;">Read →</span>
+      <a href="../Wiki-Folder/wiki-invalid-code-reasons" class="wiki-inline-card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:4px;">
+          <span class="badge" style="background:linear-gradient(135deg,#059669,#00e5a0); color:#fff;">NEW</span>
+          <span style="font-size:10px; color:rgba(255,255,255,0.38);">Feb 19, 2026</span>
         </div>
+        <h3>Common reasons for "Invalid Code".</h3>
+        <p>Common issues and fast solutions.</p>
+        <span class="read-link">Read →</span>
       </a>
     </div>
-    <div style="text-align:center; margin-top:24px;">
-      <a href="../wiki" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); color:#fff; text-decoration:none; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:600; transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+    <div style="text-align:center; margin-top:28px;">
+      <a href="../wiki" style="display:inline-flex; align-items:center; gap:9px; background:rgba(124,92,252,0.12); border:1px solid rgba(124,92,252,0.25); color:#c4b5fd; text-decoration:none; padding:11px 26px; border-radius:999px; font-size:13px; font-weight:700; transition:all 0.25s ease; letter-spacing:0.02em;" onmouseover="this.style.background='rgba(124,92,252,0.22)';this.style.borderColor='rgba(124,92,252,0.45)'" onmouseout="this.style.background='rgba(124,92,252,0.12)';this.style.borderColor='rgba(124,92,252,0.25)'">
         📚 Open Wiki
       </a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════ COMMENT FORM ══════════════════════════════ -->
+  <!-- COMMENT FORM -->
   <section class="comment-clean">
-    <div style="margin-bottom:28px;">
-      <h2 style="font-family:'Fredoka',sans-serif; font-size:22px; color:#fff; margin:0 0 8px; display:flex; align-items:center; gap:10px;"><span>💬</span><span>Leave a Comment</span></h2>
-      <p style="font-size:13px; color:rgba(255,255,255,0.45); margin:0;">Have a question or feedback about Kick A Lucky Block? Send it to us!</p>
+    <div style="margin-bottom:30px;">
+      <h2 style="font-family:'Fredoka',sans-serif; font-size:24px; color:#fff; margin:0 0 8px; display:flex; align-items:center; gap:10px;"><span>💬</span><span>Leave a Comment</span></h2>
+      <p style="font-size:13px; color:rgba(255,255,255,0.42); margin:0;">Have a question or feedback about Kick A Lucky Block? Send it to us!</p>
     </div>
     <form action="https://formspree.io/f/mojnpjgd" method="POST" id="commentForm">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
-        <div><label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Name</label><input type="text" name="name" placeholder="Enter your name" required style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; transition:all 0.2s;"></div>
-        <div><label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Email</label><input type="email" name="email" placeholder="Enter your email" required style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; transition:all 0.2s;"></div>
+        <div>
+          <label style="font-size:12px; color:rgba(255,255,255,0.50); display:block; margin-bottom:7px; font-weight:600; letter-spacing:0.03em;">YOUR NAME</label>
+          <input type="text" name="name" placeholder="Enter your name" required style="width:100%; padding:13px 16px; border-radius:11px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:14px; outline:none; font-family:'DM Sans',sans-serif;">
+        </div>
+        <div>
+          <label style="font-size:12px; color:rgba(255,255,255,0.50); display:block; margin-bottom:7px; font-weight:600; letter-spacing:0.03em;">YOUR EMAIL</label>
+          <input type="email" name="email" placeholder="Enter your email" required style="width:100%; padding:13px 16px; border-radius:11px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:14px; outline:none; font-family:'DM Sans',sans-serif;">
+        </div>
       </div>
-      <div style="margin-bottom:20px;">
-        <label style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-bottom:6px;">Your Comment</label>
-        <textarea name="message" placeholder="Write your comment here..." required rows="5" style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:13px; outline:none; resize:vertical; transition:all 0.2s;"></textarea>
+      <div style="margin-bottom:22px;">
+        <label style="font-size:12px; color:rgba(255,255,255,0.50); display:block; margin-bottom:7px; font-weight:600; letter-spacing:0.03em;">YOUR COMMENT</label>
+        <textarea name="message" placeholder="Write your comment here..." required rows="5" style="width:100%; padding:13px 16px; border-radius:11px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#fff; font-size:14px; outline:none; resize:vertical; font-family:'DM Sans',sans-serif;"></textarea>
       </div>
-      <button type="submit" style="width:100%; background:linear-gradient(135deg, #7c3aed, #a855f7); color:#fff; border:none; padding:14px 28px; border-radius:12px; font-size:14px; font-weight:700; cursor:pointer; transition:all 0.3s ease;">Send Comment 🚀</button>
+      <button type="submit" style="width:100%; background:linear-gradient(135deg,#7c3aed,#a855f7); color:#fff; border:none; padding:15px 28px; border-radius:12px; font-size:14px; font-weight:800; cursor:pointer; font-family:'DM Sans',sans-serif; letter-spacing:0.02em;">Send Comment 🚀</button>
     </form>
-    <div id="successMsg" style="display:none; margin-top:20px; background:rgba(0,229,160,0.08); border:1px solid rgba(0,229,160,0.2); border-radius:10px; padding:14px; text-align:center; color:#00e5a0; font-size:13px; font-weight:600;">✅ Comment sent! Thank you for your feedback!</div>
+    <div id="successMsg" style="display:none; margin-top:20px; background:rgba(0,229,160,0.07); border:1px solid rgba(0,229,160,0.2); border-radius:12px; padding:16px; text-align:center; color:var(--accent); font-size:14px; font-weight:700;">✅ Comment sent! Thank you for your feedback!</div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (UNCHANGED) -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-left"><div class="footer-logo">BLOXBURST🔥</div><p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games.</p></div>
@@ -600,13 +1444,13 @@ section[style*="max-width:900px"] {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.animation = 'fadeSlideUp 0.6s ease both';
+          entry.target.style.animation = 'fadeSlideUp 0.6s cubic-bezier(0.22,1,0.36,1) both';
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.08 });
     document.querySelectorAll('.guide-section, .bonus-section, .article-intro, .quick-nav').forEach(s => {
-      s.style.opacity = '0'; s.style.transform = 'translateY(20px)'; observer.observe(s);
+      s.style.opacity = '0'; s.style.transform = 'translateY(22px)'; observer.observe(s);
     });
 
     /* ── Nav Dropdowns ── */
@@ -675,12 +1519,6 @@ section[style*="max-width:900px"] {
         } catch (error) { console.error('Error:', error); alert('Error sending comment. Please try again.'); }
       });
     })();
-
-    /* ── Wiki Card Hover Effects ── */
-    document.querySelectorAll('.wiki-inline-card').forEach(function(card) {
-      card.addEventListener('mouseenter', function() { this.style.background = 'rgba(255,255,255,0.1)'; this.style.borderColor = 'rgba(124,92,252,0.3)'; this.style.transform = 'translateY(-3px)'; });
-      card.addEventListener('mouseleave', function() { this.style.background = 'rgba(255,255,255,0.06)'; this.style.borderColor = 'rgba(255,255,255,0.06)'; this.style.transform = 'translateY(0)'; });
-    });
   </script>
 </body>
 </html>
