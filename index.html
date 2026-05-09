@@ -624,7 +624,7 @@
         const data = await res.json();
 
         // Show latest 3 guides only on homepage
-        const preview = data.slice(0, 6);
+        const preview = data.slice(0, 9);
         count.textContent = 'Showing ' + data.length + ' guide' + (data.length !== 1 ? 's' : '');
         grid.innerHTML = '';
 

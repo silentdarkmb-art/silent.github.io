@@ -138,6 +138,7 @@ ${a?'<span class="game-new-badge" style="display:inline-flex;">NEW</span>':""}
   // ✅ ADDED: More Dropdown (Game Calculator & Roblox Outfit)
   setupDropdown("moreDropdown", "moreBtn");
 
+  // ── More Grid (with rewards) ──
   (async () => {
     let a = document.getElementById("moreGrid");
     if (a) {
@@ -152,7 +153,10 @@ ${a?'<span class="game-new-badge" style="display:inline-flex;">NEW</span>':""}
         var t = document.createElement("a");
         t.className = "more-card", t.href = m + e.url, t.innerHTML = `
 <img src="${m}${e.image}" alt="${e.name}" loading="lazy">
-<div class="more-info"><h3>${e.name} Codes</h3></div>
+<div class="more-info">
+  <h3>${e.name} Codes</h3>
+  <p style="font-size:11px;color:rgba(255,255,255,0.45);margin:2px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">${e.rewards || "Free Rewards"}</p>
+</div>
 `, a.appendChild(t)
       })
     }

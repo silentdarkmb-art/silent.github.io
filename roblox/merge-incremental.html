@@ -574,42 +574,66 @@
 
 /* Search bar */
 .main-header .header-search {
-  flex: 1 !important;
-  min-width: 200px !important;
-  max-width: 400px !important;
+  order: 3 !important;
+  width: 100% !important;
+  max-width: 600px !important;
+  margin-top: 60px !important;
+  position: static !important;  /* Remove absolute positioning */
+  transform: none !important;    /* Remove transform centering */
+  left: auto !important;
+  top: auto !important;
+}
+
+/* Make sure header uses flexbox column on all screens */
+.main-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 15px !important;
+  padding: 15px 20px !important;
+  flex-wrap: wrap !important;
+  flex-direction: row !important;  /* Keep row for desktop */
 }
 
 /* Navigation buttons */
 .main-header .header-actions {
+  order: 2 !important;
   display: flex !important;
   gap: 10px !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
 }
 
-/* Mobile: Smaller logo */
+/* Logo stays first */
+.main-header .logo {
+  order: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  .main-header .logo,
-  .main-header .logo img {
-    max-width: 120px !important;
-    max-height: 60px !important;
-  }
-  
   .main-header {
     flex-direction: column !important;
     gap: 10px !important;
     padding: 10px 15px !important;
   }
   
+  .main-header .logo,
+  .main-header .logo img {
+    max-width: 120px !important;
+    max-height: 60px !important;
+  }
+  
   .main-header .header-search {
     width: 100% !important;
     max-width: 100% !important;
-    order: 2 !important;
+    order: 3 !important;
+    margin-top: 10px !important;
   }
   
   .main-header .header-actions {
     width: 100% !important;
-    order: 3 !important;
+    order: 2 !important;
   }
 }
   </style>
@@ -968,6 +992,48 @@
       </a>
     </div>
   </section>
+
+  <!-- more guides -->
+<section class="more-section" id="moreGuidesSection" style="margin-top:0;">
+  <div class="more-section-head">
+    <div class="more-divider-line"></div>
+    <div class="more-divider-label">
+      <span class="more-fire">📖</span>
+      <span class="more-text">More Guides</span>
+      <span class="more-fire">📖</span>
+    </div>
+    <div class="more-divider-line"></div>
+  </div>
+  <div class="more-grid" id="moreGuidesGrid"></div>
+</section>
+
+<script>
+(function() {
+  var grid = document.getElementById('moreGuidesGrid');
+  if (!grid) return;
+  fetch('../game-guides.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var seen = new Set();
+      var guides = data.filter(function(g) {
+        if (seen.has(g.id)) return false;
+        seen.add(g.id); return true;
+      });
+      for (var i = guides.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = guides[i]; guides[i] = guides[j]; guides[j] = t;
+      }
+      grid.innerHTML = '';
+      guides.slice(0, 6).forEach(function(g) {
+        var a = document.createElement('a');
+        a.className = 'more-card';
+        a.href = '../' + g.link;
+        a.innerHTML = '<img src="../' + g.thumbnail + '" alt="' + g.title + '" loading="lazy" onerror="this.style.display=\'none\'"><div class="more-info"><h3>' + g.title + '</h3><p style="font-size:11px;color:rgba(255,255,255,0.45);margin:2px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">' + (g.category || '') + ' · ' + (g.readTime || '') + '</p></div>';
+        grid.appendChild(a);
+      });
+    }).catch(function(e) { console.warn('Could not load guides:', e); });
+})();
+</script>
 
   <!-- comment form -->
   <section style="max-width:900px; margin:20px auto 0; background:rgba(255,255,255,0.04); border-radius:16px; padding:20px 14px;">
