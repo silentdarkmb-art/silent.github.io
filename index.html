@@ -243,10 +243,12 @@
     }
 
     @media (min-width: 769px) {
-      .index-header-wrap { display: contents; }
-      .top-text-link { position: absolute !important; top: 28px !important; left: 28px !important; }
-      .top-text-link .logo-img { height: 120px !important; width: auto !important; max-width: 220px !important; object-fit: contain !important; }
-    }
+  .index-header-wrap { display: contents; }
+  .top-text-link { position: absolute !important; top: 28px !important; left: 28px !important; }
+  .top-text-link .logo-img { height: 120px !important; width: auto !important; max-width: 220px !important; object-fit: contain !important; }
+  .top-nav { gap: 12px !important; }
+  .nav-links { gap: 12px !important; display: flex !important; align-items: center !important; }
+}
 
     @media (max-width: 768px) {
       html { font-size: 13px; }
@@ -364,6 +366,215 @@
       .home-guides-head h2 { font-size: 17px !important; }
       .home-guide-img { height: 110px !important; }
     }
+
+/* ─ HAMBURGER BUTTON - CORRECT POSITIONING ── */
+.hamburger-btn {
+  display: none !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  z-index: 300 !important;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: 35px !important; /* AAYON SA LOGO LEVEL */
+    transform: none !important;
+    margin: 0 !important;
+    order: 999 !important;
+  }
+  
+  .header-actions .nav-box,
+  .header-actions .nav-dropdown {
+    display: none !important;
+  }
+}
+
+/* ── MOBILE MENU OVERLAY ── */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+}
+.mobile-menu-overlay.open { display: block; }
+
+.mobile-menu-panel {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: linear-gradient(180deg, #1a1f4d, #0f1235);
+  border-bottom: 1px solid rgba(125,92,255,0.3);
+  padding: 0 0 16px;
+  z-index: 250;
+  transform: translateY(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.mobile-menu-panel.open { transform: translateY(0); }
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 12px;
+}
+.mobile-menu-header span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+}
+.mobile-menu-close {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.mobile-menu-body { padding: 0 16px; display: flex; flex-direction: column; gap: 6px; }
+
+.mobile-nav-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.08em;
+  padding: 8px 4px 2px;
+}
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.mobile-nav-item:hover { background: rgba(255,255,255,0.1); }
+.mobile-nav-item.purple {
+  background: rgba(125,92,255,0.1);
+  border-color: rgba(125,92,255,0.2);
+  color: #c4b5ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.mobile-nav-item.green {
+  background: rgba(0,255,136,0.07);
+  border-color: rgba(0,255,136,0.15);
+  color: #00ff88;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hamburger-btn { display: flex !important; }
+  .nav-links { display: none !important; }
+  .top-nav {
+    flex-wrap: nowrap !important;
+    justify-content: flex-end !important;
+    padding: 8px 0 !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   🎯 CENTER NAV BUTTONS - INDEX PAGE
+   ═══════════════════════════════════════════ */
+
+/* Desktop - Center the nav buttons */
+@media (min-width: 769px) {
+  .top-nav {
+    justify-content: center !important; /* Center horizontally */
+    width: 100% !important;
+    position: relative !important;
+  }
+  
+  .nav-links {
+    justify-content: center !important; /* Center flex items */
+    width: 100% !important;
+  }
+}
+
+/* Mobile - Already centered via flex-wrap */
+@media (max-width: 768px) {
+  .top-nav {
+    justify-content: center !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   📏 ADJUST NAV BUTTONS GAP
+   ═══════════════════════════════════════════ */
+
+/* Desktop - Adjust gap between buttons */
+@media (min-width: 769px) {
+  .nav-links {
+    gap: 20px !important; /* BAGUHIN ITO: Mas maliit = mas dikit, Mas malaki = mas layo */
+  }
+  
+  /* Optional: Adjust button padding for tighter look */
+  .nav-box, .mini-btn {
+    padding: 10px 24px !important; /* Adjust horizontal padding */
+  }
+}
+
+/* Mobile - Adjust gap */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 6px !important; /* Smaller gap on mobile */
+  }
+  
+  .nav-box, .mini-btn {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   📱 ADJUST LOGO SIZE - MOBILE
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .index-header-wrap .top-text-link .logo-img, 
+  .top-text-link .logo-img { 
+    height: 80px !important;      /* BAGUHIN ITO: Mas malaki = mas mataas */
+    max-width: 180px !important;  /* BAGUHIN ITO: Mas malaki = mas lapad */
+    width: auto !important; 
+    object-fit: contain !important;
+  }
+}
   </style>
 </head>
 
@@ -375,24 +586,43 @@
         <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img" fetchpriority="high">
       </a>
       <div class="top-nav">
-        <a href="guides" class="nav-box nav-link">Guides</a>
-        <div class="nav-dropdown" id="codesDropdown">
-          <a href="gamecode" class="mini-btn" id="codesBtn">Codes <span class="dropdown-arrow">▼</span></a>
-          <div class="nav-menu" id="codesMenu">
-            <a class="nav-item" href="gamecode">Game Codes</a>
-            <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
-          </div>
-        </div>
-        <a href="wiki" class="nav-box nav-link">Wiki</a>
-        <div class="nav-dropdown" id="moreDropdown">
-          <a href="#" class="mini-btn" id="moreBtn">More <span class="dropdown-arrow">▼</span></a>
-          <div class="nav-menu" id="moreMenu">
-            <a class="nav-item" href="guides">Game Calculator</a>
-            <a class="nav-item" href="wiki">Roblox Outfit</a>
-          </div>
-        </div>
+  <!-- Hamburger Button (mobile only) -->
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Nav Links -->
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-box nav-link">🏠 Home</a>
+    <a href="updates" class="nav-box nav-link">🔔 Updates</a>
+
+    <div class="nav-dropdown" id="guidesDropdown">
+      <a href="guides" class="mini-btn" id="guidesBtn">📖 Guides <span class="dropdown-arrow">▼</span></a>
+      <div class="nav-menu" id="guidesMenu">
+        <a class="nav-item" href="guides">⚔️ Game Guides</a>
+        <a class="nav-item" href="beginner-tips">💡 Beginner Tips</a>
       </div>
     </div>
+
+    <div class="nav-dropdown" id="codesDropdown">
+      <a href="gamecode" class="mini-btn" id="codesBtn">🎁 Codes <span class="dropdown-arrow">▼</span></a>
+      <div class="nav-menu" id="codesMenu">
+        <a class="nav-item" href="gamecode">🎮 Game Codes</a>
+        <a class="nav-item" href="promo-latest-codes">🎟️ Promo Codes</a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown" id="moreDropdown">
+      <a href="#" class="mini-btn" id="moreBtn">📂 More <span class="dropdown-arrow">▼</span></a>
+      <div class="nav-menu" id="moreMenu">
+        <a class="nav-item" href="tier-list">🏆 Tier List</a>
+        <a class="nav-item" href="game-tools">🛠️ Game Tools</a>
+      </div>
+    </div>
+  </div>
+</div>
 
     <h1 class="hero-title">🔍 Find Roblox Game Codes</h1>
 
@@ -611,6 +841,7 @@
       observer.observe(statsSection);
     }
     window.addEventListener('load', () => { document.querySelectorAll('.stat-number').forEach(animateCounter); });
+    
   </script>
 
   <!-- ✅ GAME GUIDES LOADER — reads from game-guides.json (same file as guides.html) -->
@@ -656,41 +887,106 @@
   </script>
 
   <!-- ✅ DROPDOWN TOGGLE SCRIPT -->
-  <script>
-    // Codes Dropdown
-    const codesBtn = document.getElementById('codesBtn');
-    const codesDropdown = document.getElementById('codesDropdown');
-    
-    if (codesBtn && codesDropdown) {
-      codesBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        codesDropdown.classList.toggle('active');
+<!-- ✅ DROPDOWN TOGGLE SCRIPT -->
+<script>
+  window.addEventListener('load', function() {
+
+    // ── DROPDOWNS ──
+    const dropdowns = [
+      { dropId: 'guidesDropdown', btnId: 'guidesBtn' },
+      { dropId: 'codesDropdown',  btnId: 'codesBtn'  },
+      { dropId: 'moreDropdown',   btnId: 'moreBtn'   },
+    ];
+
+    function closeAllDropdowns() {
+      dropdowns.forEach(({ dropId }) => {
+        document.getElementById(dropId)?.classList.remove('active');
+        document.getElementById(dropId)?.classList.remove('open');
       });
     }
-    
-    // More Dropdown
-    const moreBtn = document.getElementById('moreBtn');
-    const moreDropdown = document.getElementById('moreDropdown');
-    
-    if (moreBtn && moreDropdown) {
-      moreBtn.addEventListener('click', function(e) {
+
+    dropdowns.forEach(({ dropId, btnId }) => {
+      const btn  = document.getElementById(btnId);
+      const drop = document.getElementById(dropId);
+      if (!btn || !drop) return;
+
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+
+      newBtn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        moreDropdown.classList.toggle('active');
+        const isActive = drop.classList.contains('active') || drop.classList.contains('open');
+        closeAllDropdowns();
+        if (!isActive) {
+          drop.classList.add('active');
+          drop.classList.add('open');
+        }
       });
+    });
+
+    // ── MOBILE PANEL MENU ──  ← BAGO IDINAGDAG
+    const hamburgerBtn  = document.getElementById('hamburgerBtn');
+    const mobilePanel   = document.getElementById('mobilePanel');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileClose   = document.getElementById('mobileClose');
+
+    function openMobileMenu() {
+      mobilePanel?.classList.add('open');
+      mobileOverlay?.classList.add('open');
+      hamburgerBtn?.classList.add('open');
+      document.body.style.overflow = 'hidden';
     }
-    
-    // Close dropdowns when clicking outside
+    function closeMobileMenu() {
+      mobilePanel?.classList.remove('open');
+      mobileOverlay?.classList.remove('open');
+      hamburgerBtn?.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
+    if (mobileClose)  mobileClose.addEventListener('click', closeMobileMenu);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+
+    // ── CLOSE LAHAT PAG CLICK SA LABAS ──
     document.addEventListener('click', function(e) {
-      if (!codesDropdown.contains(e.target)) {
-        codesDropdown.classList.remove('active');
-      }
-      if (!moreDropdown.contains(e.target)) {
-        moreDropdown.classList.remove('active');
+      const insidePanel     = mobilePanel?.contains(e.target);
+      const insideHamburger = hamburgerBtn?.contains(e.target);
+
+      if (!insidePanel && !insideHamburger) {
+        closeAllDropdowns();
+        closeMobileMenu();
       }
     });
-  </script>
+
+  });
+</script>
+
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu-panel" id="mobilePanel">
+  <div class="mobile-menu-header">
+    <span>BLOXBURST 🔥</span>
+    <button class="mobile-menu-close" id="mobileClose">✕</button>
+  </div>
+  <div class="mobile-menu-body">
+    <a href="index.html" class="mobile-nav-item">🏠 Home</a>
+    <a href="updates" class="mobile-nav-item">🔔 Updates</a>
+
+    <div class="mobile-nav-label">GUIDES</div>
+    <a href="guides" class="mobile-nav-item purple">⚔️ Game Guides</a>
+    <a href="beginner-tips" class="mobile-nav-item purple">💡 Beginner Tips</a>
+
+    <div class="mobile-nav-label">CODES</div>
+    <a href="gamecode" class="mobile-nav-item green">🎮 Game Codes</a>
+    <a href="promo-latest-codes" class="mobile-nav-item green">🎟️ Promo Codes</a>
+
+    <div class="mobile-nav-label">MORE</div>
+    <a href="tier-list" class="mobile-nav-item">🏆 Tier List</a>
+    <a href="game-tools" class="mobile-nav-item">🛠️ Game Tools</a>
+  </div>
+</div>
 
 </body>
 </html>

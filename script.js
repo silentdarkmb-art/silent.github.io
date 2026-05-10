@@ -109,25 +109,35 @@ ${a?'<span class="game-new-badge" style="display:inline-flex;">NEW</span>':""}
   })();
 
   // ── DROPDOWN SETUP FUNCTION ──
-  function setupDropdown(dropdownId, btnId) {
-    var drop = document.getElementById(dropdownId);
-    var btn = document.getElementById(btnId);
-    if (drop && btn) {
-      let isOpen = !1;
-      btn.addEventListener("click", e => {
-        e.preventDefault(), isOpen = !isOpen, drop.classList.toggle("open", isOpen)
+ function setupDropdown(dropdownId, btnId) {
+  var drop = document.getElementById(dropdownId);
+  var btn = document.getElementById(btnId);
+  if (drop && btn) {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Close all other dropdowns first
+      document.querySelectorAll('.nav-dropdown').forEach(d => {
+        if (d !== drop) {
+          d.classList.remove('active');
+          d.classList.remove('open');
+        }
       });
-      drop.addEventListener("mouseenter", () => {
-        isOpen || drop.classList.add("open")
-      });
-      drop.addEventListener("mouseleave", () => {
-        isOpen || drop.classList.remove("open")
-      });
-      document.addEventListener("click", e => {
-        drop.contains(e.target) || (isOpen = !1, drop.classList.remove("open"))
-      })
-    }
+      
+      // Toggle current
+      drop.classList.toggle('active');
+      drop.classList.toggle('open');
+    });
+
+    document.addEventListener("click", e => {
+      if (!drop.contains(e.target)) {
+        drop.classList.remove('active');
+        drop.classList.remove('open');
+      }
+    });
   }
+}
 
   // ── Initialize ALL Dropdowns ──
   setupDropdown("codesDropdown", "codesBtn");
@@ -137,6 +147,7 @@ ${a?'<span class="game-new-badge" style="display:inline-flex;">NEW</span>':""}
   
   // ✅ ADDED: More Dropdown (Game Calculator & Roblox Outfit)
   setupDropdown("moreDropdown", "moreBtn");
+  
 
   // ── More Grid (with rewards) ──
   (async () => {
