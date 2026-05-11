@@ -602,7 +602,20 @@
   display: none !important;
 }
 
+/* ═══════════════════════════════════════════
+   📏 ADJUST NAV BUTTONS GAP - DESKTOP
+   ═══════════════════════════════════════════ */
 
+@media (min-width: 769px) {
+  .header-actions {
+    gap: 28px !important; /* BAGUHIN ITO: Default 10px → 16px */
+  }
+  
+  /* Optional: Mas maluwag na padding sa buttons */
+  .nav-box, .mini-btn {
+    padding: 12px 26px !important; /* Default: 10px 20px */
+  }
+}
   </style>
 </head>
 
