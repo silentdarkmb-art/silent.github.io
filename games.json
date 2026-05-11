@@ -2888,6 +2888,15 @@
   "tooltip": "Redeem working codes for free Gold and EXP in Medieval Life Roblox.",
   "rewards": "Gold, EXP",
   "activeCodes": 1
+},
+{
+  "name": "Super Tag",
+  "image": "Images/SuperTag.webp",
+  "url": "roblox/super-tag",
+  "lastupdate": "2026-05-11T00:00:02Z",
+  "tooltip": "Redeem working codes for free Gold in Super Tag Roblox.",
+  "rewards": "Gold",
+  "activeCodes": 1
 }
 
 ]
