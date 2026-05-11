@@ -1337,6 +1337,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bloxburst.com/roblox/medieval</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bloxburst.com/roblox/medieval-war-tycoon</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>

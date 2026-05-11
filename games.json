@@ -2879,6 +2879,15 @@
   "tooltip": "Redeem working codes for free Cash and Freebies in Uma Racing Roblox.",
   "rewards": "Cash, Freebies",
   "activeCodes": 29
+},
+{
+  "name": "Medieval Life",
+  "image": "Images/MedievalLife.webp",
+  "url": "roblox/medieval-life",
+  "lastupdate": "2026-05-11T00:00:01Z",
+  "tooltip": "Redeem working codes for free Gold and EXP in Medieval Life Roblox.",
+  "rewards": "Gold, EXP",
+  "activeCodes": 1
 }
 
 ]
