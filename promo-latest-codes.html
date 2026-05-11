@@ -9,934 +9,433 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELF86MPP23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELF86MPP23');
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { overflow-x: hidden; }
     img  { max-width: 100%; height: auto; display: block; }
 
     /* ── DROPDOWN STYLES ── */
-    .dropdown-arrow {
-      font-size: 10px;
-      margin-left: 5px;
-      transition: transform 0.3s ease;
-      display: inline-block;
-    }
-    .nav-dropdown.active .dropdown-arrow {
-      transform: rotate(180deg);
-    }
-    
-    .nav-dropdown {
-      position: relative !important;
-      display: inline-block !important;
-    }
-    
+    .dropdown-arrow { font-size: 10px; margin-left: 5px; transition: transform 0.3s ease; display: inline-block; }
+    .nav-dropdown.active .dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown { position: relative !important; display: inline-block !important; }
     .nav-menu {
-      position: absolute !important;
-      top: calc(100% + 12px) !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-      min-width: 180px !important;
+      position: absolute !important; top: calc(100% + 12px) !important; left: 50% !important;
+      transform: translateX(-50%) !important; min-width: 180px !important;
       background: linear-gradient(135deg, #1a1f4d, #252b6b) !important;
-      border: 1px solid rgba(255,255,255,0.1) !important;
-      border-radius: 12px !important;
-      padding: 8px !important;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-      z-index: 9999 !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
+      border: 1px solid rgba(255,255,255,0.1) !important; border-radius: 12px !important;
+      padding: 8px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+      z-index: 9999 !important; opacity: 0 !important; visibility: hidden !important;
       transition: all 0.3s ease !important;
     }
-    
-    .nav-dropdown.active .nav-menu {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translateX(-50%) translateY(0) !important;
-    }
-    
-    .nav-item {
-      display: block !important;
-      padding: 10px 16px !important;
-      color: rgba(255,255,255,0.9) !important;
-      text-decoration: none !important;
-      border-radius: 8px !important;
-      font-size: 13px !important;
-      font-weight: 600 !important;
-      transition: all 0.2s ease !important;
-      margin: 4px 0 !important;
-      text-align: center !important;
-      white-space: nowrap !important;
-    }
-    
-    .nav-item:hover {
-      background: rgba(125,92,255,0.3) !important;
-      color: #fff !important;
-    }
-    /* ── END DROPDOWN STYLES ── */
+    .nav-dropdown.active .nav-menu { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
+    .nav-item { display: block !important; padding: 10px 16px !important; color: rgba(255,255,255,0.9) !important; text-decoration: none !important; border-radius: 8px !important; font-size: 13px !important; font-weight: 600 !important; transition: all 0.2s ease !important; margin: 4px 0 !important; text-align: center !important; white-space: nowrap !important; }
+    .nav-item:hover { background: rgba(125,92,255,0.3) !important; color: #fff !important; }
 
-    /* ============================================================
-       GRIDS
-       ============================================================ */
-    .promo-codes-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+    /* ══════════════════════════════════════
+       HEADER — Standard layout (root page)
+    ══════════════════════════════════════ */
+    .main-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 20px !important;
+      padding: 15px 50px !important;
+      flex-wrap: wrap !important;
+      position: relative !important;
+      width: 100%;
     }
+    .main-header .logo {
+      order: 1 !important; flex-shrink: 0 !important;
+      position: absolute !important; left: 40px !important;
+      top: 50% !important; transform: translateY(-50%) !important; margin: 0 !important;
+    }
+    .main-header .logo img, .logo-img {
+      width: 240px !important; max-width: 240px !important; height: auto !important;
+      max-height: 150px !important; object-fit: contain !important; display: block !important;
+    }
+    .header-actions {
+      order: 2 !important; display: flex !important; gap: 10px !important;
+      flex-wrap: wrap !important; justify-content: center !important; align-items: center !important;
+      position: relative !important; overflow: visible !important;
+      margin: 0 auto !important; flex: 1 !important; z-index: 200000 !important;
+    }
+    .nav-box, .mini-btn {
+      display: inline-flex !important; align-items: center !important; justify-content: center !important;
+      padding: 10px 20px !important;
+      background: linear-gradient(135deg, #1a1f4d, #252b6b) !important;
+      border: 1px solid rgba(125,92,255,0.45) !important; border-radius: 10px !important;
+      color: #fff !important; font-size: 14px !important; font-weight: 700 !important;
+      text-decoration: none !important; cursor: pointer !important;
+      white-space: nowrap !important; transition: all 0.25s ease !important;
+    }
+    .nav-box:hover, .mini-btn:hover {
+      background: linear-gradient(135deg, #252b6b, #3a3f8f) !important;
+      border-color: rgba(125,92,255,0.75) !important;
+      box-shadow: 0 4px 16px rgba(125,92,255,0.25) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* ── PROMO GRIDS ── */
+    .promo-codes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     @media (max-width: 1100px) { .promo-codes-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 600px)  { .promo-codes-grid { grid-template-columns: 1fr; } }
 
-    .game-promo-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
+    .game-promo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     @media (max-width: 600px) { .game-promo-grid { grid-template-columns: 1fr; } }
 
-    /* ============================================================
-       ENHANCED PROMO CARD
-       ============================================================ */
-    .promo-card-wrap {
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(145deg, rgba(21,26,77,0.9), rgba(28,34,102,0.8));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 16px;
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .promo-card-wrap::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #7d5cff, #00ff88);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-      border-radius: 20px 20px 0 0;
-    }
-
-    .promo-card-wrap:hover {
-      transform: translateY(-6px);
-      border-color: rgba(125,92,255,0.45);
-      box-shadow:
-        0 0 0 1px rgba(125,92,255,0.25),
-        0 0 24px rgba(125,92,255,0.15),
-        0 18px 45px rgba(0,0,0,0.45);
-    }
-
+    /* ── PROMO CARD ── */
+    .promo-card-wrap { display: flex; flex-direction: column; background: linear-gradient(145deg, rgba(21,26,77,0.9), rgba(28,34,102,0.8)); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 16px; transition: all 0.25s ease; position: relative; overflow: hidden; }
+    .promo-card-wrap::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #7d5cff, #00ff88); opacity: 0; transition: opacity 0.25s ease; border-radius: 20px 20px 0 0; }
+    .promo-card-wrap:hover { transform: translateY(-6px); border-color: rgba(125,92,255,0.45); box-shadow: 0 0 0 1px rgba(125,92,255,0.25), 0 0 24px rgba(125,92,255,0.15), 0 18px 45px rgba(0,0,0,0.45); }
     .promo-card-wrap:hover::before { opacity: 1; }
-
-    .promo-card-title {
-      font-weight: 900;
-      font-size: 16px;
-      margin-bottom: 12px;
-      color: #ffffff;
-    }
-
-    .promo-img-box {
-      position: relative;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      transition: 0.25s ease;
-    }
-
-    .promo-card-wrap:hover .promo-img-box {
-      border-color: rgba(125,92,255,0.3);
-    }
-
-    .promo-img {
-      max-width: 75%;
-      max-height: 75%;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-
+    .promo-card-title { font-weight: 900; font-size: 16px; margin-bottom: 12px; color: #ffffff; }
+    .promo-img-box { position: relative; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; height: 160px; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: 0.25s ease; }
+    .promo-card-wrap:hover .promo-img-box { border-color: rgba(125,92,255,0.3); }
+    .promo-img { max-width: 75%; max-height: 75%; object-fit: contain; transition: transform 0.3s ease; }
     .promo-card-wrap:hover .promo-img { transform: scale(1.06); }
+    .promo-pill { position: absolute; bottom: 10px; right: 10px; font-size: 11px; font-weight: 900; padding: 5px 10px; border-radius: 10px; background: rgba(125,92,255,0.35); border: 1px solid rgba(125,92,255,0.5); color: #ffffff; }
+    .active-badge { position: absolute; top: 10px; left: 10px; font-size: 10px; font-weight: 900; padding: 4px 9px; border-radius: 999px; background: rgba(0,255,136,0.18); border: 1px solid rgba(0,255,136,0.4); color: #00ff88; display: flex; align-items: center; gap: 4px; }
+    .active-dot { width: 6px; height: 6px; border-radius: 50%; background: #00ff88; box-shadow: 0 0 6px #00ff88; animation: pulse-dot 1.5s infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.75); } }
+    .code-card { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 14px; }
 
-    .promo-pill {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 11px;
-      font-weight: 900;
-      padding: 5px 10px;
-      border-radius: 10px;
-      background: rgba(125,92,255,0.35);
-      border: 1px solid rgba(125,92,255,0.5);
-      color: #ffffff;
-    }
-
-    /* Active badge */
-    .active-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 10px;
-      font-weight: 900;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(0,255,136,0.18);
-      border: 1px solid rgba(0,255,136,0.4);
-      color: #00ff88;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .active-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #00ff88;
-      box-shadow: 0 0 6px #00ff88;
-      animation: pulse-dot 1.5s infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(0.75); }
-    }
-
-    /* Code card area */
-    .code-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    /* ============================================================
-       ENHANCED COPY BUTTON
-       ============================================================ */
-    .copy-btn {
-      width: 100%;
-      word-break: break-all;
-      text-align: center;
-      background: rgba(125,92,255,0.22);
-      border: 1px solid rgba(125,92,255,0.45);
-      color: #ffffff;
-      font-weight: 900;
-      font-size: 13px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.2s ease;
-    }
-
-    .copy-btn:hover {
-      background: rgba(125,92,255,0.38);
-      border-color: rgba(125,92,255,0.7);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(125,92,255,0.3);
-    }
-
+    /* ── COPY BUTTON ── */
+    .copy-btn { width: 100%; word-break: break-all; text-align: center; background: rgba(125,92,255,0.22); border: 1px solid rgba(125,92,255,0.45); color: #ffffff; font-weight: 900; font-size: 13px; padding: 10px 14px; border-radius: 10px; cursor: pointer; letter-spacing: 0.5px; position: relative; overflow: hidden; transition: all 0.2s ease; }
+    .copy-btn:hover { background: rgba(125,92,255,0.38); border-color: rgba(125,92,255,0.7); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(125,92,255,0.3); }
     .copy-btn:active { transform: scale(0.97); }
-
-    .copy-btn.copied {
-      background: rgba(0,255,136,0.2) !important;
-      border-color: rgba(0,255,136,0.5) !important;
-      color: #00ff88 !important;
-      box-shadow: 0 0 18px rgba(0,255,136,0.25) !important;
-    }
-
-    .copy-btn::after {
-      content: '';
-      position: absolute;
-      top: -60%; left: -40%;
-      width: 40%; height: 220%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transform: rotate(18deg);
-      opacity: 0;
-      transition: none;
-    }
-    .copy-btn:hover::after {
-      opacity: 1;
-      animation: btnShine 0.6s ease forwards;
-    }
-    @keyframes btnShine {
-      0%   { left: -40%; }
-      100% { left: 140%; }
-    }
-
-    .redeem-link {
-      width: 100%;
-      display: block;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      padding: 6px;
-      border-radius: 8px;
-      transition: 0.2s ease;
-    }
+    .copy-btn.copied { background: rgba(0,255,136,0.2) !important; border-color: rgba(0,255,136,0.5) !important; color: #00ff88 !important; box-shadow: 0 0 18px rgba(0,255,136,0.25) !important; }
+    .redeem-link { width: 100%; display: block; text-align: center; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.65); text-decoration: none; padding: 6px; border-radius: 8px; transition: 0.2s ease; }
     .redeem-link:hover { color: #00ff88; }
 
-    /* ============================================================
-       HOW TO REDEEM SECTION
-       ============================================================ */
-    .how-to-redeem {
-      width: 100%;
-      margin: 40px 0 10px;
-      padding: 32px 36px;
-      background: linear-gradient(135deg, rgba(21,26,77,0.85), rgba(28,34,102,0.75));
-      border: 1px solid rgba(125,92,255,0.2);
-      border-radius: 24px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    }
-
-    .how-to-redeem h2 {
-      font-family: 'Fredoka', sans-serif;
-      font-size: 24px;
-      font-weight: 900;
-      color: #ffffff;
-      margin-bottom: 6px;
-    }
-
-    .how-to-redeem .section-sub {
-      color: rgba(255,255,255,0.6);
-      font-size: 14px;
-      margin-bottom: 28px;
-    }
-
-    .redeem-steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .redeem-step {
-      text-align: center;
-      padding: 20px 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 16px;
-      position: relative;
-      transition: 0.25s ease;
-    }
-
-    .redeem-step:hover {
-      background: rgba(125,92,255,0.1);
-      border-color: rgba(125,92,255,0.3);
-      transform: translateY(-3px);
-    }
-
-    .step-num {
-      font-family: 'Fredoka', sans-serif;
-      font-size: 28px;
-      font-weight: 900;
-      color: rgba(125,92,255,0.8);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
+    /* ── HOW TO REDEEM ── */
+    .how-to-redeem { width: 100%; margin: 40px 0 10px; padding: 32px 36px; background: linear-gradient(135deg, rgba(21,26,77,0.85), rgba(28,34,102,0.75)); border: 1px solid rgba(125,92,255,0.2); border-radius: 24px; backdrop-filter: blur(10px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+    .how-to-redeem h2 { font-family: 'Fredoka', sans-serif; font-size: 24px; font-weight: 900; color: #ffffff; margin-bottom: 6px; }
+    .how-to-redeem .section-sub { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 28px; }
+    .redeem-steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .redeem-step { text-align: center; padding: 20px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; transition: 0.25s ease; }
+    .redeem-step:hover { background: rgba(125,92,255,0.1); border-color: rgba(125,92,255,0.3); transform: translateY(-3px); }
+    .step-num { font-family: 'Fredoka', sans-serif; font-size: 28px; font-weight: 900; color: rgba(125,92,255,0.8); line-height: 1; margin-bottom: 10px; }
     .step-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+    .redeem-step h3 { font-size: 14px; font-weight: 900; color: #ffffff; margin-bottom: 6px; }
+    .redeem-step p { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+    .redeem-cta { display: flex; justify-content: center; margin-top: 22px; }
+    .redeem-cta a { text-decoration: none; font-weight: 900; padding: 12px 28px; border-radius: 999px; background: linear-gradient(135deg, rgba(125,92,255,0.85), rgba(0,255,136,0.75)); color: #ffffff; font-size: 14px; transition: 0.2s ease; box-shadow: 0 8px 22px rgba(125,92,255,0.3); }
+    .redeem-cta a:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(125,92,255,0.45); }
 
-    .redeem-step h3 {
-      font-size: 14px;
-      font-weight: 900;
-      color: #ffffff;
-      margin-bottom: 6px;
+    /* ── CHECKLIST ── */
+    .checklist-section { width: 100%; margin: 16px 0; padding: 28px 32px; background: rgba(21,26,77,0.7); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; backdrop-filter: blur(10px); }
+    .checklist-section h2 { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 900; color: #ffffff; margin-bottom: 6px; }
+    .checklist-section .section-sub { color: rgba(255,255,255,0.6); font-size: 13px; margin-bottom: 20px; }
+    .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .checklist-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; cursor: pointer; transition: 0.2s ease; user-select: none; }
+    .checklist-item:hover { background: rgba(0,255,136,0.06); border-color: rgba(0,255,136,0.2); }
+    .checklist-item.checked { background: rgba(0,255,136,0.1); border-color: rgba(0,255,136,0.35); }
+    .check-box { width: 22px; height: 22px; border-radius: 6px; border: 2px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; transition: 0.2s ease; margin-top: 1px; }
+    .checklist-item.checked .check-box { background: #00ff88; border-color: #00ff88; color: #002b1f; }
+    .check-text h4 { font-size: 13px; font-weight: 900; color: #ffffff; margin-bottom: 3px; }
+    .check-text p { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+    .checklist-item.checked .check-text h4 { text-decoration: line-through; color: rgba(255,255,255,0.5); }
+    .checklist-progress { margin-top: 16px; display: flex; align-items: center; gap: 12px; }
+    .progress-bar-wrap { flex: 1; height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: linear-gradient(90deg, #7d5cff, #00ff88); border-radius: 999px; transition: width 0.4s ease; width: 0%; }
+    .progress-label { font-size: 12px; font-weight: 900; color: rgba(255,255,255,0.65); white-space: nowrap; }
+
+    /* ── SUGGEST GRID ── */
+    .more-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 12px !important; }
+    @media (max-width: 900px) { .more-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+    @media (max-width: 500px)  { .more-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; } }
+    .suggest-card { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important; padding: 10px 12px !important; border-radius: 12px !important; background: rgba(21,26,77,0.75) !important; border: 1px solid rgba(255,255,255,0.07) !important; text-decoration: none !important; transition: all 0.2s ease !important; overflow: hidden !important; }
+    .suggest-card:hover { border-color: rgba(125,92,255,0.35) !important; background: rgba(30,36,100,0.85) !important; transform: translateY(-2px) !important; }
+    .suggest-card img { width: 52px !important; height: 52px !important; min-width: 52px !important; object-fit: cover !important; border-radius: 8px !important; flex-shrink: 0 !important; }
+    .suggest-info { flex: 1 !important; min-width: 0 !important; }
+    .suggest-info h3 { font-size: 12px !important; font-weight: 800 !important; color: #fff !important; margin: 0 0 3px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+    .suggest-info p { font-size: 11px !important; color: rgba(255,255,255,0.50) !important; margin: 0 !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+    .more-section { margin-bottom: 40px !important; }
+    .more-title { font-family: 'Fredoka', sans-serif !important; font-size: 20px !important; font-weight: 700 !important; color: #fff !important; }
+
+    /* ── HAMBURGER ── */
+    .hamburger-btn { display: none !important; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 10px 12px; cursor: pointer; z-index: 300 !important; }
+    .hamburger-btn span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease; }
+    .hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn.open span:nth-child(2) { opacity: 0; }
+    .hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu-overlay { display: none; position: fixed; top:0;left:0;right:0;bottom:0; background: rgba(0,0,0,0.5); z-index: 200; }
+    .mobile-menu-overlay.open { display: block; }
+    .mobile-menu-panel { position: fixed; top:0;left:0;right:0; background: linear-gradient(180deg,#1a1f4d,#0f1235); border-bottom: 1px solid rgba(125,92,255,0.3); padding: 0 0 16px; z-index: 250; transform: translateY(-100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); max-height: 90vh; overflow-y: auto; }
+    .mobile-menu-panel.open { transform: translateY(0); }
+    .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 12px; }
+    .mobile-menu-header span { color: #fff; font-weight: 800; font-size: 16px; }
+    .mobile-menu-close { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 10px 12px; cursor: pointer; color: #fff; font-size: 18px; line-height: 1; }
+    .mobile-menu-body { padding: 0 16px; display: flex; flex-direction: column; gap: 6px; }
+    .mobile-nav-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; padding: 8px 4px 2px; }
+    .mobile-nav-item { display: flex; align-items: center; gap: 12px; padding: 13px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; text-decoration: none; color: #fff; font-size: 14px; font-weight: 700; transition: all 0.2s; }
+    .mobile-nav-item:hover { background: rgba(255,255,255,0.1); }
+    .mobile-nav-item.purple { background: rgba(125,92,255,0.1); border-color: rgba(125,92,255,0.2); color: #c4b5ff; font-size: 13px; font-weight: 600; }
+    .mobile-nav-item.green { background: rgba(0,255,136,0.07); border-color: rgba(0,255,136,0.15); color: #00ff88; font-size: 13px; font-weight: 600; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) { .redeem-steps-grid { grid-template-columns: repeat(2, 1fr) !important; } .checklist-grid { grid-template-columns: 1fr !important; } }
+    @media (max-width: 768px) {
+      .main-header { flex-direction: column !important; align-items: center !important; gap: 12px !important; padding: 12px 10px !important; }
+      .main-header .logo { position: static !important; transform: none !important; left: auto !important; top: auto !important; }
+      .main-header .logo img, .logo-img { width: 160px !important; max-width: 160px !important; max-height: 70px !important; }
+      .header-actions { order: 2 !important; width: 100% !important; justify-content: center !important; gap: 8px !important; }
+      .hamburger-btn { display: flex !important; }
+      .header-actions .nav-box, .header-actions .nav-dropdown { display: none !important; }
     }
-
-    .redeem-step p {
-      font-size: 12px;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.6;
-    }
-
-    .redeem-cta {
-      display: flex;
-      justify-content: center;
-      margin-top: 22px;
-    }
-
-    .redeem-cta a {
-      text-decoration: none;
-      font-weight: 900;
-      padding: 12px 28px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(125,92,255,0.85), rgba(0,255,136,0.75));
-      color: #ffffff;
-      font-size: 14px;
-      transition: 0.2s ease;
-      box-shadow: 0 8px 22px rgba(125,92,255,0.3);
-    }
-
-    .redeem-cta a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(125,92,255,0.45);
-    }
-
-    /* ============================================================
-       CODE CHECKLIST SECTION
-       ============================================================ */
-    .checklist-section {
-      width: 100%;
-      margin: 16px 0;
-      padding: 28px 32px;
-      background: rgba(21,26,77,0.7);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 24px;
-      backdrop-filter: blur(10px);
-    }
-
-    .checklist-section h2 {
-      font-family: 'Fredoka', sans-serif;
-      font-size: 22px;
-      font-weight: 900;
-      color: #ffffff;
-      margin-bottom: 6px;
-    }
-
-    .checklist-section .section-sub {
-      color: rgba(255,255,255,0.6);
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
-
-    .checklist-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .checklist-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px;
-      cursor: pointer;
-      transition: 0.2s ease;
-      user-select: none;
-    }
-
-    .checklist-item:hover {
-      background: rgba(0,255,136,0.06);
-      border-color: rgba(0,255,136,0.2);
-    }
-
-    .checklist-item.checked {
-      background: rgba(0,255,136,0.1);
-      border-color: rgba(0,255,136,0.35);
-    }
-
-    .check-box {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
-      border: 2px solid rgba(255,255,255,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 13px;
-      transition: 0.2s ease;
-      margin-top: 1px;
-    }
-
-    .checklist-item.checked .check-box {
-      background: #00ff88;
-      border-color: #00ff88;
-      color: #002b1f;
-    }
-
-    .check-text h4 {
-      font-size: 13px;
-      font-weight: 900;
-      color: #ffffff;
-      margin-bottom: 3px;
-    }
-
-    .check-text p {
-      font-size: 11px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.5;
-    }
-
-    .checklist-item.checked .check-text h4 {
-      text-decoration: line-through;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .checklist-progress {
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .progress-bar-wrap {
-      flex: 1;
-      height: 6px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #7d5cff, #00ff88);
-      border-radius: 999px;
-      transition: width 0.4s ease;
-      width: 0%;
-    }
-
-    .progress-label {
-      font-size: 12px;
-      font-weight: 900;
-      color: rgba(255,255,255,0.65);
-      white-space: nowrap;
-    }
-
-    /* ============================================================
-       HEADER — CSS Grid
-       ============================================================ */
-    body.subpage .main-header {
-      display: grid !important;
-      grid-template-columns: 1fr auto 1fr !important;
-      align-items: center !important;
-      gap: 16px !important;
-      min-height: unset !important;
-      padding: 12px 30px !important;
-      width: min(1400px, 92%) !important;
-      margin: 0 auto !important;
-      box-sizing: border-box !important;
-      position: relative !important;
-    }
-
-    body.subpage .main-header > a.logo {
-      justify-self: start !important;
-      align-self: center !important;
-    }
-
-    body.subpage .main-header .logo-img,
-    body.subpage .main-header .logo img {
-      position: static !important;
-      top: auto !important;
-      left: auto !important;
-      height: 150px !important;
-      width: auto !important;
-      max-width: 240px !important;
-      object-fit: contain !important;
-      display: block !important;
-    }
-
-    body.subpage .main-header .header-search {
-      position: static !important;
-      left: auto !important;
-      top: auto !important;
-      transform: none !important;
-      justify-self: center !important;
-      width: 380px !important;
-      max-width: 380px !important;
-      min-width: 180px !important;
-      flex: none !important;
-    }
-
-    body.subpage .main-header .header-search .search-shell {
-      width: 100% !important;
-      height: 46px !important;
-      padding: 0 18px !important;
-      box-sizing: border-box !important;
-    }
-
-    body.subpage .main-header .header-search .search-shell input { font-size: 15px !important; }
-
-    body.subpage .header-actions {
-      position: static !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-      justify-self: end !important;
-      flex-shrink: 0 !important;
-    }
-
-    body.subpage .header-actions .nav-dropdown {
-      width: 100px !important;
-      min-width: 100px !important;
-      display: block !important;
-    }
-
-    body.subpage .header-actions .mini-btn,
-    body.subpage .header-actions .nav-dropdown #codesBtn {
-      width: 100px !important;
-      min-width: 100px !important;
-      max-width: 100px !important;
-      height: 42px !important;
-      padding: 0 !important;
-      font-size: 14px !important;
-      font-weight: 700 !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-sizing: border-box !important;
-      white-space: nowrap !important;
-    }
-
-    .update-floating {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      text-align: center !important;
-      gap: 4px !important;
-      font-size: 15px !important;
-      padding: 16px 22px !important;
-    }
-    .update-floating .update-date { display: block !important; margin-top: 2px !important; }
-
-    body.subpage .sub-main { padding-top: 32px !important; padding-bottom: 40px !important; }
-
-    /* ============================================================
-       TABLET ≤ 900px
-       ============================================================ */
-    @media (max-width: 900px) {
-      body.subpage .main-header {
-        grid-template-columns: auto 1fr auto !important;
-        gap: 12px !important;
-        padding: 12px 18px !important;
-      }
-      body.subpage .main-header .logo-img,
-      body.subpage .main-header .logo img { height: 90px !important; }
-      body.subpage .main-header .header-search { width: 100% !important; max-width: 100% !important; }
-
-      .redeem-steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
-      .checklist-grid    { grid-template-columns: 1fr !important; }
-    }
-
-    /* ============================================================
-       MOBILE ≤ 600px — IMPROVED VERSION
-       ============================================================ */
     @media (max-width: 600px) {
       html { font-size: 13px; }
-
-      /* Header: flex column, centered */
-      body.subpage .main-header {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 10px !important;
-        padding: 14px 16px 12px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Logo — centered, reasonable size */
-      body.subpage .main-header > a.logo {
-        display: flex !important;
-        justify-content: center !important;
-        width: 100% !important;
-      }
-      body.subpage .main-header .logo-img,
-      body.subpage .main-header .logo img {
-        height: 72px !important;
-        width: auto !important;
-        max-width: 200px !important;
-        margin: 0 auto !important;
-      }
-
-      /* Search — full width */
-      body.subpage .main-header .header-search {
-        position: static !important;
-        transform: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        flex: none !important;
-      }
-      body.subpage .main-header .header-search .search-shell {
-        width: 100% !important;
-        height: 42px !important;
-        padding: 0 14px !important;
-        box-sizing: border-box !important;
-      }
-      body.subpage .main-header .header-search .search-shell input {
-        font-size: 14px !important;
-      }
-
-      /* ✅ IMPROVED: Nav buttons row — 4 equal-width pills in one row using CSS Grid */
-      body.subpage .header-actions {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 6px !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        justify-items: stretch !important;
-      }
-
-      /* Every nav item (links + dropdown wrappers) fills its grid cell */
-      body.subpage .header-actions .mini-btn,
-      body.subpage .header-actions .nav-box,
-      body.subpage .header-actions .nav-link {
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: none !important;
-        height: 38px !important;
-        font-size: 12px !important;
-        padding: 0 6px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        box-sizing: border-box !important;
-        white-space: nowrap !important;
-        background: rgba(143,140,199,0.25) !important;
-        border: 1px solid rgba(255,255,255,0.25) !important;
-        border-radius: 10px !important;
-        color: #fff !important;
-        text-decoration: none !important;
-      }
-
-      /* Dropdown wrapper stretches, inner button fills it */
-      body.subpage .header-actions .nav-dropdown {
-        display: block !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: none !important;
-        position: relative !important;
-      }
-      body.subpage .header-actions .nav-dropdown #codesBtn,
-      body.subpage .header-actions .nav-dropdown #moreBtn {
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: none !important;
-        height: 38px !important;
-        font-size: 12px !important;
-        padding: 0 6px !important;
-        box-sizing: border-box !important;
-      }
-
-      .sub-main    { padding: 10px 14px 14px !important; width: 100% !important; }
-      .sub-content { width: 100% !important; padding: 0 !important; }
-      .sub-title   { font-size: 17px !important; margin-top: 6px !important; }
-
-      .update-floating {
-        width: 82% !important; font-size: 11px !important;
-        padding: 7px 10px !important; margin: 8px auto !important;
-      }
-
-      .legal-card  { padding: 10px !important; border-radius: 10px !important; margin-bottom: 10px !important; }
-      .legal-card h2 { font-size: 13px !important; }
-
+      .sub-main { padding: 10px 14px 14px !important; width: 100% !important; }
       .promo-card-wrap { padding: 10px !important; border-radius: 14px !important; }
-      .promo-img-box   { height: 110px !important; }
-      .promo-pill      { font-size: 9px !important; padding: 3px 6px !important; }
-      .copy-btn        { font-size: 11px !important; padding: 8px 10px !important; }
-      .redeem-link     { font-size: 10px !important; }
-      .code-note       { font-size: 10px !important; padding: 6px 8px !important; }
-
+      .promo-img-box { height: 110px !important; }
+      .copy-btn { font-size: 11px !important; padding: 8px 10px !important; }
       .how-to-redeem { padding: 20px 16px !important; margin: 24px 0 10px !important; }
-      .how-to-redeem h2 { font-size: 18px !important; }
       .redeem-steps-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-      .redeem-step { padding: 14px 10px !important; border-radius: 12px !important; }
-      .step-num    { font-size: 22px !important; }
-      .step-icon   { font-size: 20px !important; margin-bottom: 6px !important; }
-      .redeem-step h3 { font-size: 12px !important; }
-      .redeem-step p  { font-size: 10px !important; }
-
       .checklist-section { padding: 18px 14px !important; }
-      .checklist-section h2 { font-size: 18px !important; }
       .checklist-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
-      .checklist-item { padding: 10px 12px !important; }
-      .check-text h4  { font-size: 12px !important; }
-      .check-text p   { font-size: 10px !important; }
-
-      .wiki-card    { padding: 8px !important; min-height: unset !important; }
-      .wiki-card h3 { font-size: 11px !important; }
-      .wiki-card p  { font-size: 10px !important; }
-      .game-promo-img { height: 80px !important; }
-
-      .promo-discovery { width: 100% !important; padding: 0 14px !important; }
-      .promo-discovery .more-grid { grid-template-columns: 1fr !important; gap: 6px !important; }
-      .more-card    { padding: 7px 8px !important; gap: 8px !important; }
-      .more-card img { width: 54px !important; height: 36px !important; }
-      .more-title   { font-size: 14px !important; }
-
-      .wiki-faq     { padding: 0 14px !important; }
-      .wiki-faq h2  { font-size: 14px !important; }
-      .faq-question { font-size: 11px !important; padding: 10px 12px !important; }
-      .faq-answer   { font-size: 10px !important; }
-
-      .promo-helper { padding: 12px 10px !important; margin: 12px 0 !important; }
-      .promo-helper h2 { font-size: 14px !important; }
-      .promo-helper p  { font-size: 11px !important; }
-      .promo-helper-btn { width: 100% !important; font-size: 11px !important; }
-
-      .site-footer  { margin-top: 18px !important; padding: 18px 0 12px !important; }
-      .footer-inner { grid-template-columns: 1fr !important; gap: 14px !important; width: 85% !important; }
-      .footer-logo  { font-size: 20px !important; }
-      .footer-desc  { font-size: 11px !important; }
-      .footer-col h4 { font-size: 12px !important; }
-      .footer-col a  { font-size: 11px !important; }
-      .footer-meta,
-      .footer-copy  { font-size: 10px !important; }
     }
 
-    /* ============================================================
-       VERY SMALL ≤ 380px
-       ============================================================ */
-    @media (max-width: 380px) {
-      body.subpage .header-actions {
-        gap: 4px !important;
-      }
-      body.subpage .header-actions .mini-btn,
-      body.subpage .header-actions .nav-box,
-      body.subpage .header-actions .nav-link,
-      body.subpage .header-actions .nav-dropdown #codesBtn,
-      body.subpage .header-actions .nav-dropdown #moreBtn {
-        font-size: 11px !important;
-        height: 34px !important;
-      }
+    /* ══════════════════════════════════════
+       FOOTER — EQUAL COLUMNS (root paths)
+    ══════════════════════════════════════ */
+    .site-footer { margin-top: 48px; padding: 40px 0 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; max-width: 1100px; margin: 0 auto; padding: 0 40px; align-items: start; }
+    .footer-left { display: flex; flex-direction: column; gap: 12px; }
+    .footer-logo { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700; color: #fff; }
+    .footer-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 260px; }
+    .footer-col { display: flex; flex-direction: column; gap: 8px; }
+    .footer-col h4 { font-size: 12px; font-weight: 800; color: rgba(255,255,255,0.9); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-col a { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; line-height: 1.5; }
+    .footer-col a:hover { color: #00e676; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 24px auto 0; padding: 16px 40px 0; border-top: 1px solid rgba(255,255,255,0.06); font-size: 11px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 8px; }
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; padding: 0 20px; } .footer-left { grid-column: 1 / -1; } .footer-desc { max-width: 100%; } }
+    @media (max-width: 768px) {
+      .site-footer { margin-top: 16px !important; padding: 16px 0 10px !important; }
+      .footer-inner { grid-template-columns: 1fr 1fr !important; gap: 20px !important; padding: 0 16px !important; width: 100% !important; box-sizing: border-box !important; }
+      .footer-left { grid-column: 1 / -1 !important; }
+      .footer-logo { font-size: 18px !important; }
+      .footer-desc { font-size: 11px !important; max-width: 100% !important; }
+      .footer-col h4 { font-size: 11px !important; }
+      .footer-col a { font-size: 11px !important; }
+      .footer-bottom { flex-direction: column !important; text-align: center !important; padding: 12px 16px 0 !important; margin: 16px auto 0 !important; font-size: 10px !important; gap: 4px !important; }
     }
+    /* Add this to your CSS inside the @media (max-width: 768px) section */
+.hamburger-btn.open {
+  display: none !important;
+}
 
-    /* ============================================================
-   SUGGEST CARD — Smaller size fix
-   Idagdag sa <style> ng bawat page na may suggestGrid / moreFromGrid
-   ============================================================ */
+  .site-footer {
+  margin-top: 48px;
+  padding: 40px 0 20px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
 
-/* Grid layout — 3 columns sa desktop, 2 sa tablet */
-.more-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 12px !important;
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  align-items: start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-logo {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  max-width: 260px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-col h4 {
+  font-size: 17px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-col a {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.5;
+}
+
+.footer-col a:hover {
+  color: #00e676;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 24px auto 0;
+  padding: 16px 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 @media (max-width: 900px) {
-  .more-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 0 20px;
+  }
+  .footer-left {
+    grid-column: 1 / -1;
+  }
+  .footer-desc {
+    max-width: 100%;
   }
 }
 
-@media (max-width: 500px) {
-  .more-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px !important;
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .footer-left {
+    grid-column: 1 / -1 !important;
+  }
+  .footer-logo { font-size: 18px !important; }
+  .footer-desc { font-size: 11px !important; }
+  .footer-col h4 { font-size: 11px !important; }
+  .footer-col a { font-size: 11px !important; }
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 12px 16px 0 !important;
+    margin: 16px auto 0 !important;
+    font-size: 10px !important;
+    gap: 4px !important;
   }
 }
 
-/* Card itself — compact */
-.suggest-card {
-  display: flex !important;
-  flex-direction: row !important;       /* image left, text right */
-  align-items: center !important;
-  gap: 10px !important;
-  padding: 10px 12px !important;        /* was probably ~20px+ */
-  border-radius: 12px !important;
-  background: rgba(21, 26, 77, 0.75) !important;
-  border: 1px solid rgba(255,255,255,0.07) !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease !important;
-  overflow: hidden !important;
-  min-height: unset !important;         /* remove any forced tall height */
+/* ── HAMBURGER BUTTON ── */
+.hamburger-btn {
+  display: none !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  z-index: 300 !important;
 }
 
-.suggest-card:hover {
-  border-color: rgba(125, 92, 255, 0.35) !important;
-  background: rgba(30, 36, 100, 0.85) !important;
-  transform: translateY(-2px) !important;
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-/* Thumbnail — small square */
-.suggest-card img {
-  width: 52px !important;
-  height: 52px !important;
-  min-width: 52px !important;
-  object-fit: cover !important;
-  border-radius: 8px !important;
-  flex-shrink: 0 !important;
-}
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Text block */
-.suggest-info {
-  flex: 1 !important;
-  min-width: 0 !important;             /* prevent text overflow */
-}
-
-.suggest-info h3 {
-  font-size: 12px !important;
-  font-weight: 800 !important;
-  color: #fff !important;
-  margin: 0 0 3px !important;
-  line-height: 1.3 !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-}
-
-.suggest-info p {
-  font-size: 11px !important;
-  color: rgba(255,255,255,0.50) !important;
-  margin: 0 !important;
-  line-height: 1.3 !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-}
-
-/* Section spacing */
-.more-section {
-  margin-bottom: 40px !important;
-}
-
-.more-title {
-  font-family: 'Fredoka', sans-serif !important;
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  color: #fff !important;
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: -70px !important;
+    transform: none !important;
+    margin: 0 !important;
+    order: 999 !important;
+  }
+  
+  .header-actions .nav-box,
+  .header-actions .nav-dropdown {
+    display: none !important;
+  }
 }
   </style>
 </head>
 
-<body class="subpage">
+<body>
 
-<!-- ✅ COMPLETE HEADER WITH ALL 4 NAV ITEMS -->
+<!-- ✅ HEADER — STANDARD NAV (Home, Updates, Guides, Codes, More) -->
 <header class="main-header">
-  <a href="https://bloxburst.com/" class="logo">
+  <a href="/" class="logo">
     <img src="Images/FinalLogo.png" alt="BLOXBURST" class="logo-img">
   </a>
-  <div class="header-search">
-    <div class="search-shell">
-      <input id="globalSearch" type="text" placeholder="🔍 Search Roblox Code" autocomplete="off">
-      <button class="clear-btn" type="button" onclick="clearGlobalSearch()">✕</button>
-      <div id="searchSuggestions" class="suggestions"></div>
-    </div>
-  </div>
+
   <div class="header-actions">
-    <!-- 1. Guides Button -->
-    <a href="guides" class="nav-box nav-link">Guides</a>
-    
-    <!-- 2. Codes Dropdown -->
-    <div id="codesDropdown" class="nav-dropdown">
-      <button class="mini-btn" id="codesBtn">Codes <span class="dropdown-arrow">▼</span></button>
-      <div class="nav-menu" id="codesMenu">
-        <a class="nav-item" href="gamecode">Game Codes</a>
-        <a class="nav-item" href="promo-latest-codes">Promo Codes</a>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="/" class="nav-box nav-link">🏠 Home</a>
+    <a href="updates" class="nav-box nav-link">🔔 Updates</a>
+
+    <div class="nav-dropdown" id="guidesDropdown">
+      <button class="mini-btn" id="guidesBtn">📖 Guides <span class="dropdown-arrow">▼</span></button>
+      <div class="nav-menu" id="guidesMenu">
+        <a class="nav-item" href="guides">⚔️ Game Guides</a>
+        <a class="nav-item" href="beginner-tips">💡 Beginner Tips</a>
       </div>
     </div>
-    
-    <!-- 3. Wiki Button -->
-    <a href="wiki" class="nav-box nav-link">Wiki</a>
-    
-    <!-- 4. More Dropdown -->
+
+    <div class="nav-dropdown" id="codesDropdown">
+      <button class="mini-btn" id="codesBtn">🎁 Codes <span class="dropdown-arrow">▼</span></button>
+      <div class="nav-menu" id="codesMenu">
+        <a class="nav-item" href="gamecode">🎮 Game Codes</a>
+        <a class="nav-item" href="promo-latest-codes">🎟️ Promo Codes</a>
+      </div>
+    </div>
+
     <div class="nav-dropdown" id="moreDropdown">
-      <button class="mini-btn" id="moreBtn">More <span class="dropdown-arrow">▼</span></button>
+      <button class="mini-btn" id="moreBtn">📂 More <span class="dropdown-arrow">▼</span></button>
       <div class="nav-menu" id="moreMenu">
-        <a class="nav-item" href="guides">Game Calculator</a>
-        <a class="nav-item" href="wiki">Roblox Outfit</a>
+        <a class="nav-item" href="tier-list">🏆 Tier List</a>
+        <a class="nav-item" href="game-tools">🛠️ Game Tools</a>
       </div>
     </div>
   </div>
@@ -945,7 +444,7 @@
 <main class="sub-main">
   <h1 class="sub-title">Latest Promo Codes</h1>
 
-  <div class="update-floating">
+  <div class="update-floating" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;font-size:15px;padding:16px 22px;">
     <span>🎟️ <strong>Updated promo codes list</strong></span>
     <span class="update-date">Updated: Feb 22, 2026</span>
   </div>
@@ -955,7 +454,6 @@
       <h2 style="font-family:'Fredoka',sans-serif; margin-bottom:18px;">Roblox Promo Codes:</h2>
 
       <div class="promo-codes-grid">
-
         <div class="promo-card-wrap">
           <div class="promo-card-title">The Bird Says_____.</div>
           <div class="promo-img-box">
@@ -1007,7 +505,6 @@
             <a href="https://www.roblox.com/redeem" target="_blank" class="redeem-link">↗ Redeem on Roblox</a>
           </div>
         </div>
-
       </div>
 
       <div class="code-note" style="margin-top:18px;">
@@ -1047,7 +544,7 @@
     </div>
   </section>
 
-  <!-- HOW TO REDEEM SECTION -->
+  <!-- HOW TO REDEEM -->
   <section class="how-to-redeem">
     <h2>🎯 How To Redeem Promo Codes</h2>
     <p class="section-sub">Follow these 4 simple steps to claim your free items</p>
@@ -1089,51 +586,31 @@
     <div class="checklist-grid">
       <div class="checklist-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">
-          <h4>I copied the code exactly</h4>
-          <p>No extra spaces, correct capitalization</p>
-        </div>
+        <div class="check-text"><h4>I copied the code exactly</h4><p>No extra spaces, correct capitalization</p></div>
       </div>
       <div class="checklist-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">
-          <h4>I'm logged into my Roblox account</h4>
-          <p>Must be logged in to redeem any code</p>
-        </div>
+        <div class="check-text"><h4>I'm logged into my Roblox account</h4><p>Must be logged in to redeem any code</p></div>
       </div>
       <div class="checklist-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">
-          <h4>I haven't used this code before</h4>
-          <p>Most promo codes are one-time use per account</p>
-        </div>
+        <div class="check-text"><h4>I haven't used this code before</h4><p>Most promo codes are one-time use per account</p></div>
       </div>
       <div class="checklist-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">
-          <h4>Code is still marked as Active</h4>
-          <p>Check the green Active badge on the card above</p>
-        </div>
+        <div class="check-text"><h4>Code is still marked as Active</h4><p>Check the green Active badge on the card above</p></div>
       </div>
       <div class="checklist-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">
-          <h4>I'm on the correct redeem page</h4>
-          <p>Use roblox.com/redeem — not the in-game menu</p>
-        </div>
+        <div class="check-text"><h4>I'm on the correct redeem page</h4><p>Use roblox.com/redeem — not the in-game menu</p></div>
       </div>
       <div class="checklist-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">
-          <h4>I checked my Roblox inventory after</h4>
-          <p>Items appear in Avatar → Wardrobe section</p>
-        </div>
+        <div class="check-text"><h4>I checked my Roblox inventory after</h4><p>Items appear in Avatar → Wardrobe section</p></div>
       </div>
     </div>
     <div class="checklist-progress">
-      <div class="progress-bar-wrap">
-        <div class="progress-bar-fill" id="checkProgress"></div>
-      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="checkProgress"></div></div>
       <span class="progress-label" id="checkLabel">0 / 6 done</span>
     </div>
   </section>
@@ -1149,7 +626,6 @@
     </section>
   </section>
 
-  <!-- ✅ FIXED: wiki-faq INSIDE main -->
   <div class="wiki-faq">
     <h2>Quick FAQ</h2>
     <div class="faq-container">
@@ -1163,12 +639,11 @@
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button">Why do some codes not work? <span>+</span></button>
-        <div class="faq-answer">Common reasons: expired, wrong spelling/case, already redeemed, or may group/level/server requirement.</div>
+        <div class="faq-answer">Common reasons: expired, wrong spelling/case, already redeemed, or may have a group/level/server requirement.</div>
       </div>
     </div>
   </div>
 
-  <!-- ✅ FIXED: promo-helper INSIDE main + CENTERED -->
   <section class="promo-helper" style="text-align:center;">
     <h2>Promo Helper</h2>
     <p>Copy the code, redeem on Roblox, then refresh this page for the latest updated list. We update promo codes regularly.</p>
@@ -1185,21 +660,29 @@
 
 </main>
 
+<!-- FOOTER — ROOT PATHS (walang ../) -->
 <footer class="site-footer">
   <div class="footer-inner">
-
     <div class="footer-left">
       <div class="footer-logo">BLOXBURST🔥</div>
       <p class="footer-desc">
-        Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games. Find codes, learn how to redeem them, and get help when something's not working.
+        Bloxburst is a Roblox fan site featuring game codes, promo codes, wiki guides, tier lists, and tips for popular Roblox games. Find working codes, learn how to redeem them, and get help whenever something isn't working.
       </p>
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
-      <a href="../guides">Guides</a>
+      <a href="updates">Updates</a>
+      <a href="guides">Game Guides</a>
+      <a href="beginner-tips">Beginner Tips</a>
+      <a href="tier-list">Tier List</a>
+      <a href="game-tools">Game Tools</a>
+    </div>
+    <div class="footer-col">
+      <h4>Codes</h4>
       <a href="gamecode">Game Codes</a>
       <a href="promo-latest-codes">Promo Codes</a>
-      <a href="wiki">Wiki</a>
+      <a href="promo-how-to-redeem">How to Redeem</a>
+      <a href="promo-troubleshoot">Troubleshooting</a>
     </div>
     <div class="footer-col">
       <h4>More</h4>
@@ -1214,7 +697,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-meta">v1.0.0 • Powered by Zenken</div>
+    <div class="footer-meta">v2.0.0 • Powered by Zenken</div>
     <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
   </div>
 </footer>
@@ -1222,7 +705,6 @@
 <script src="script.js"></script>
 
 <script>
-  // Copy Code Function
   function copyCode(btn, code) {
     navigator.clipboard.writeText(code).catch(() => {
       const ta = document.createElement('textarea');
@@ -1233,17 +715,12 @@
     const orig = btn.textContent;
     btn.textContent = '✓ Copied!';
     btn.classList.add('copied');
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.classList.remove('copied');
-    }, 2000);
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
   }
 
-  // Checklist Toggle
   function toggleCheck(item) {
     item.classList.toggle('checked');
-    item.querySelector('.check-box').textContent =
-      item.classList.contains('checked') ? '✓' : '';
+    item.querySelector('.check-box').textContent = item.classList.contains('checked') ? '✓' : '';
     updateProgress();
   }
 
@@ -1255,36 +732,97 @@
     document.getElementById('checkLabel').textContent    = checked + ' / ' + total + ' done';
   }
 
-  // ✅ DROPDOWN TOGGLE LOGIC
-  function setupDropdown(btnId, dropdownId) {
-    const btn = document.getElementById(btnId);
-    const dropdown = document.getElementById(dropdownId);
-    if (btn && dropdown) {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        document.querySelectorAll('.nav-dropdown').forEach(d => {
-          if (d !== dropdown) d.classList.remove('active');
-        });
-        dropdown.classList.toggle('active');
-      });
-    }
-  }
-  setupDropdown('codesBtn', 'codesDropdown');
-  setupDropdown('moreBtn', 'moreDropdown');
-  
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
-    }
-  });
-
-  // Clear Search
   function clearGlobalSearch() {
     const input = document.getElementById('globalSearch');
     if (input) { input.value = ''; input.focus(); }
   }
 </script>
+
+<script>
+  window.addEventListener('load', function() {
+    const dropdowns = [
+      { dropId: 'guidesDropdown', btnId: 'guidesBtn' },
+      { dropId: 'codesDropdown',  btnId: 'codesBtn'  },
+      { dropId: 'moreDropdown',   btnId: 'moreBtn'   },
+    ];
+
+    function closeAllDropdowns() {
+      dropdowns.forEach(({ dropId }) => {
+        document.getElementById(dropId)?.classList.remove('active');
+        document.getElementById(dropId)?.classList.remove('open');
+      });
+    }
+
+    dropdowns.forEach(({ dropId, btnId }) => {
+      const btn  = document.getElementById(btnId);
+      const drop = document.getElementById(dropId);
+      if (!btn || !drop) return;
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+      newBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isActive = drop.classList.contains('active') || drop.classList.contains('open');
+        closeAllDropdowns();
+        if (!isActive) { drop.classList.add('active'); drop.classList.add('open'); }
+      });
+    });
+
+    const hamburgerBtn  = document.getElementById('hamburgerBtn');
+    const mobilePanel   = document.getElementById('mobilePanel');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileClose   = document.getElementById('mobileClose');
+
+    function openMobileMenu() {
+      mobilePanel?.classList.add('open');
+      mobileOverlay?.classList.add('open');
+      hamburgerBtn?.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileMenu() {
+      mobilePanel?.classList.remove('open');
+      mobileOverlay?.classList.remove('open');
+      hamburgerBtn?.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
+    if (mobileClose)  mobileClose.addEventListener('click', closeMobileMenu);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+
+    document.addEventListener('click', function(e) {
+      const insidePanel     = mobilePanel?.contains(e.target);
+      const insideHamburger = hamburgerBtn?.contains(e.target);
+      if (!insidePanel && !insideHamburger) { closeAllDropdowns(); closeMobileMenu(); }
+    });
+  });
+</script>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu-panel" id="mobilePanel">
+  <div class="mobile-menu-header">
+    <span>BLOXBURST 🔥</span>
+    <button class="mobile-menu-close" id="mobileClose">✕</button>
+  </div>
+  <div class="mobile-menu-body">
+    <a href="/" class="mobile-nav-item">🏠 Home</a>
+    <a href="updates" class="mobile-nav-item">🔔 Updates</a>
+    <div class="mobile-nav-label">GUIDES</div>
+    <a href="guides" class="mobile-nav-item purple">⚔️ Game Guides</a>
+    <a href="beginner-tips" class="mobile-nav-item purple">💡 Beginner Tips</a>
+    <div class="mobile-nav-label">CODES</div>
+    <a href="gamecode" class="mobile-nav-item green">🎮 Game Codes</a>
+    <a href="promo-latest-codes" class="mobile-nav-item green">🎟️ Promo Codes</a>
+    <div class="mobile-nav-label">MORE</div>
+    <a href="tier-list" class="mobile-nav-item">🏆 Tier List</a>
+    <a href="game-tools" class="mobile-nav-item">🛠️ Game Tools</a>
+    <div class="mobile-nav-label">HELP</div>
+    <a href="promo-how-to-redeem" class="mobile-nav-item">📋 How to Redeem</a>
+    <a href="promo-troubleshoot" class="mobile-nav-item">🔧 Troubleshoot</a>
+    <a href="Terms-and-Condition/faq" class="mobile-nav-item">❓ FAQ</a>
+  </div>
+</div>
 
 </body>
 </html>
