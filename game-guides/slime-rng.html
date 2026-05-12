@@ -123,344 +123,133 @@
       transition: all 0.3s ease !important;
     }
     .nav-dropdown.active .nav-menu { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
-    .nav-item {
-      display: block !important; padding: 10px 16px !important; color: rgba(255,255,255,0.9) !important;
-      text-decoration: none !important; border-radius: 8px !important; font-size: 13px !important;
-      font-weight: 600 !important; transition: all 0.2s ease !important; margin: 4px 0 !important;
-      text-align: center !important; white-space: nowrap !important;
-    }
+    .nav-item { display: block !important; padding: 10px 16px !important; color: rgba(255,255,255,0.9) !important; text-decoration: none !important; border-radius: 8px !important; font-size: 13px !important; font-weight: 600 !important; transition: all 0.2s ease !important; margin: 4px 0 !important; text-align: center !important; white-space: nowrap !important; }
     .nav-item:hover { background: rgba(125,92,255,0.3) !important; color: #fff !important; }
 
     /* ══════════════════════════════ GUIDE HEADER ══════════════════════════════ */
-    /* ══════════════════════════════ GUIDE HEADER ══════════════════════════════ */
-.guide-header { 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px; 
-  padding: 25px 40px; 
-  width: 100%; 
-  max-width: 1400px; 
-  margin: 0 auto; 
-  box-sizing: border-box; 
-  position: relative; 
-  z-index: 100; 
-}
+    .guide-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 25px 40px;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 100;
+    }
 
-.header-top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-}
+    .header-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+    }
 
-.guide-header .gh-logo { 
-  display: inline-flex; 
-  align-items: center; 
-  text-decoration: none; 
-}
+    .guide-header .gh-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .guide-header .gh-logo img { height: 120px; width: auto; object-fit: contain; display: block; }
+    
 
-.guide-header .gh-logo img { 
-  height: 120px; 
-  width: auto; 
-  object-fit: contain; 
-  display: block; 
-}
 
-.guide-header .gh-nav { 
-  display: flex; 
-  align-items: center; 
-  gap: 10px; 
-}
-
-.guide-header .gh-nav .nav-dropdown { 
-  position: relative;
-}
-
-.guide-header .gh-nav .mini-btn, 
-.guide-header .gh-nav .nav-box, 
+    /* ── Nav buttons ── */
+.guide-header .gh-nav { display: flex; align-items: center; gap: 20px; width: 80%;}
+.guide-header .gh-nav .mini-btn,
+.guide-header .gh-nav .nav-box,
 .guide-header .gh-nav .nav-link {
-  min-width: 110px; 
-  height: 46px; 
-  padding: 0 20px; 
-  font-size: 14px; 
-  font-weight: 700;
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center; 
-  box-sizing: border-box; 
-  white-space: nowrap;
-  background: rgba(143,140,199,0.25); 
-  border: 1px solid rgba(255,255,255,0.25); 
-  border-radius: 12px; 
+  min-width: 130px; height: 46px; padding: 1 20px; font-size: 16px; font-weight: 9999;
+  display: inline-flex; align-items: center; justify-content: center;
+  box-sizing: border-box; white-space: nowrap;
+  
+  /* UPDATED: Darker purple/slate color */
+  background: rgba(45, 50, 85, 0.6);
+  border: 1px solid rgba(125, 92, 255, 0.25);
+  
   color: #fff;
-  text-decoration: none; 
-  cursor: pointer; 
-  font-family: 'DM Sans', sans-serif; 
-  transition: all 0.2s ease;
+  text-decoration: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
 }
 
-.guide-header .gh-nav .mini-btn:hover, 
-.guide-header .gh-nav .nav-box:hover { 
-  background: rgba(143,140,199,0.45); 
-  border-color: rgba(255,255,255,0.5); 
+/* UPDATED Hover Effect */
+.guide-header .gh-nav .mini-btn:hover,
+.guide-header .gh-nav .nav-box:hover {
+  background: rgba(55, 60, 95, 0.75);
+  border-color: rgba(125, 92, 255, 0.45);
+  box-shadow: 0 4px 16px rgba(125, 92, 255, 0.15);
+  transform: translateY(-1px);
 }
 
-/* Search Bar */
-.guide-header .gh-search { 
-  width: 100%;
-  max-width: 700px;
-  position: relative; 
-}
+    /* ── Search Bar — PRESERVED ── */
+    .guide-header .gh-search { width: 100%; max-width: 700px; position: relative; }
+    .gh-search-box { display: flex; align-items: center; width: 100%; height: 52px; padding: 0 20px; background: rgba(255,255,255,0.07); border: 2px solid rgba(255,255,255,0.15); border-radius: 999px; box-sizing: border-box; gap: 10px; transition: all 0.3s ease; }
+    .gh-search-box:focus-within { border-color: rgba(0,229,160,0.5); background: rgba(255,255,255,0.10); }
+    .gh-search-icon { font-size: 16px; flex-shrink: 0; }
+    .gh-search-input { flex: 1; background: transparent; border: none; outline: none; font-size: 15px; font-family: 'DM Sans', sans-serif; color: #fff; }
+    .gh-search-input::placeholder { color: rgba(255,255,255,0.4); }
+    .gh-clear-btn { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; font-size: 16px; padding: 0; transition: color 0.2s; flex-shrink: 0; }
+    .gh-clear-btn:hover { color: #fff; }
+    .gh-suggestions { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: linear-gradient(135deg, #181d50, #20266a); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; overflow: hidden; z-index: 9998; display: none; box-shadow: 0 14px 40px rgba(0,0,0,0.55); }
+    .gh-suggestions.open { display: block; }
+    .gh-suggest-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.15s; }
+    .gh-suggest-item:last-child { border-bottom: none; }
+    .gh-suggest-item:hover { background: rgba(255,255,255,0.07); }
+    .gh-suggest-item img { width: 44px; height: 44px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+    .gh-suggest-info { flex: 1; min-width: 0; }
+    .gh-suggest-title { font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .gh-suggest-meta { font-size: 11px; color: rgba(255,255,255,0.42); margin-top: 2px; }
+    .gh-suggest-pill { font-size: 11px; font-weight: 800; background: rgba(0,229,160,0.15); border: 1px solid rgba(0,229,160,0.3); color: #00e5a0; padding: 3px 10px; border-radius: 999px; flex-shrink: 0; }
+    .gh-no-result { padding: 14px 18px; font-size: 13px; color: rgba(255,255,255,0.4); }
 
-.gh-search-box { 
-  display: flex; 
-  align-items: center; 
-  width: 100%; 
-  height: 52px; 
-  padding: 0 20px; 
-  background: rgba(255,255,255,0.07); 
-  border: 2px solid rgba(255,255,255,0.15); 
-  border-radius: 999px; 
-  box-sizing: border-box; 
-  gap: 10px; 
-  transition: all 0.3s ease; 
-}
+    /* ── HAMBURGER ── */
+    .hamburger-btn { display: none !important; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 10px 12px; cursor: pointer; z-index: 300 !important; }
+    .hamburger-btn span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s ease; }
+    .hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn.open span:nth-child(2) { opacity: 0; }
+    .hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.gh-search-box:focus-within { 
-  border-color: rgba(0,229,160,0.5); 
-  background: rgba(255,255,255,0.10); 
-}
+    /* ── MOBILE MENU ── */
+    .mobile-menu-overlay { display: none; position: fixed; top:0;left:0;right:0;bottom:0; background: rgba(0,0,0,0.5); z-index: 200; }
+    .mobile-menu-overlay.open { display: block; }
+    .mobile-menu-panel { position: fixed; top:0;left:0;right:0; background: linear-gradient(180deg,#1a1f4d,#0f1235); border-bottom: 1px solid rgba(125,92,255,0.3); padding: 0 0 16px; z-index: 250; transform: translateY(-100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); max-height: 90vh; overflow-y: auto; }
+    .mobile-menu-panel.open { transform: translateY(0); }
+    .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 12px; }
+    .mobile-menu-header span { color: #fff; font-weight: 800; font-size: 16px; }
+    .mobile-menu-close { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 10px 12px; cursor: pointer; color: #fff; font-size: 18px; line-height: 1; }
+    .mobile-menu-body { padding: 0 16px; display: flex; flex-direction: column; gap: 6px; }
+    .mobile-nav-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; padding: 8px 4px 2px; }
+    .mobile-nav-item { display: flex; align-items: center; gap: 12px; padding: 13px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; text-decoration: none; color: #fff; font-size: 14px; font-weight: 700; transition: all 0.2s; }
+    .mobile-nav-item:hover { background: rgba(255,255,255,0.1); }
+    .mobile-nav-item.purple { background: rgba(125,92,255,0.1); border-color: rgba(125,92,255,0.2); color: #c4b5ff; font-size: 13px; font-weight: 600; }
+    .mobile-nav-item.green { background: rgba(0,255,136,0.07); border-color: rgba(0,255,136,0.15); color: #00ff88; font-size: 13px; font-weight: 600; }
 
-.gh-search-icon { 
-  font-size: 16px; 
-  flex-shrink: 0; 
-}
+    /* ── RESPONSIVE HEADER ── */
+    @media (max-width: 960px) {
+      .guide-header { padding: 20px 20px; gap: 16px; }
+      .header-top-row { flex-direction: column; gap: 14px; }
+      .guide-header .gh-logo img { height: 70px !important; }
+      .guide-header .gh-nav { flex-wrap: wrap; justify-content: center; }
+      .guide-header .gh-nav .mini-btn,
+      .guide-header .gh-nav .nav-box { min-width: 90px !important; font-size: 12px !important; height: 40px !important; }
+      .guide-header .gh-search { max-width: 100%; }
+    }
 
-.gh-search-input { 
-  flex: 1; 
-  background: transparent; 
-  border: none; 
-  outline: none; 
-  font-size: 15px; 
-  font-family: 'DM Sans', sans-serif; 
-  color: #fff; 
-}
+    @media (max-width: 768px) {
+      .guide-header .gh-nav .mini-btn,
+      .guide-header .gh-nav .nav-box,
+      .guide-header .gh-nav .nav-dropdown { display: none !important; }
+      .hamburger-btn { display: flex !important; }
+    }
 
-.gh-search-input::placeholder { 
-  color: rgba(255,255,255,0.4); 
-}
-
-.gh-clear-btn { 
-  background: none; 
-  border: none; 
-  color: rgba(255,255,255,0.4); 
-  cursor: pointer; 
-  font-size: 16px; 
-  padding: 0; 
-  transition: color 0.2s; 
-  flex-shrink: 0; 
-}
-
-.gh-clear-btn:hover { 
-  color: #fff; 
-}
-
-/* Dropdown Arrow */
-.dropdown-arrow { 
-  font-size: 10px; 
-  margin-left: 6px; 
-  transition: transform 0.3s ease; 
-  display: inline-block; 
-}
-
-.nav-dropdown.active .dropdown-arrow { 
-  transform: rotate(180deg); 
-}
-
-/* Dropdown Menu */
-.nav-menu {
-  position: absolute; 
-  top: calc(100% + 10px); 
-  left: 50%;
-  transform: translateX(-50%); 
-  min-width: 180px;
-  background: linear-gradient(135deg, #1a1f4d, #252b6b);
-  border: 1px solid rgba(255,255,255,0.1); 
-  border-radius: 12px;
-  padding: 8px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  z-index: 9999; 
-  opacity: 0; 
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.nav-dropdown.active .nav-menu { 
-  opacity: 1; 
-  visibility: visible; 
-}
-
-.nav-item {
-  display: block; 
-  padding: 10px 16px; 
-  color: rgba(255,255,255,0.9);
-  text-decoration: none; 
-  border-radius: 8px; 
-  font-size: 13px;
-  font-weight: 600; 
-  transition: all 0.2s ease; 
-  margin: 4px 0;
-  text-align: center; 
-  white-space: nowrap;
-}
-
-.nav-item:hover { 
-  background: rgba(125,92,255,0.3); 
-  color: #fff; 
-}
-
-/* Suggestions */
-.gh-suggestions { 
-  position: absolute; 
-  top: calc(100% + 8px); 
-  left: 0; 
-  right: 0; 
-  background: linear-gradient(135deg, #181d50, #20266a); 
-  border: 1px solid rgba(255,255,255,0.12); 
-  border-radius: 14px; 
-  overflow: hidden; 
-  z-index: 9998; 
-  display: none; 
-  box-shadow: 0 14px 40px rgba(0,0,0,0.55); 
-}
-
-.gh-suggestions.open { 
-  display: block; 
-}
-
-.gh-suggest-item { 
-  display: flex; 
-  align-items: center; 
-  gap: 12px; 
-  padding: 10px 14px; 
-  cursor: pointer; 
-  border-bottom: 1px solid rgba(255,255,255,0.06); 
-  transition: background 0.15s; 
-}
-
-.gh-suggest-item:last-child { 
-  border-bottom: none; 
-}
-
-.gh-suggest-item:hover { 
-  background: rgba(255,255,255,0.07); 
-}
-
-.gh-suggest-item img { 
-  width: 44px; 
-  height: 44px; 
-  object-fit: cover; 
-  border-radius: 8px; 
-  flex-shrink: 0; 
-}
-
-.gh-suggest-info { 
-  flex: 1; 
-  min-width: 0; 
-}
-
-.gh-suggest-title { 
-  font-size: 13px; 
-  font-weight: 700; 
-  color: #fff; 
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-}
-
-.gh-suggest-meta { 
-  font-size: 11px; 
-  color: rgba(255,255,255,0.42); 
-  margin-top: 2px; 
-}
-
-.gh-suggest-pill { 
-  font-size: 11px; 
-  font-weight: 800; 
-  background: rgba(0,229,160,0.15); 
-  border: 1px solid rgba(0,229,160,0.3); 
-  color: #00e5a0; 
-  padding: 3px 10px; 
-  border-radius: 999px; 
-  flex-shrink: 0; 
-}
-
-.gh-no-result { 
-  padding: 14px 18px; 
-  font-size: 13px; 
-  color: rgba(255,255,255,0.4); 
-}
-
-/* Responsive */
-@media (max-width: 960px) {
-  .guide-header { 
-    padding: 20px 20px; 
-    gap: 16px; 
-  }
-  .header-top-row {
-    flex-direction: column;
-    gap: 14px;
-  }
-  .guide-header .gh-logo img { 
-    height: 70px !important; 
-  }
-  .guide-header .gh-nav { 
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .guide-header .gh-nav .mini-btn, 
-  .guide-header .gh-nav .nav-box { 
-    min-width: 90px !important; 
-    font-size: 12px !important; 
-    height: 40px !important; 
-  }
-  .guide-header .gh-search { 
-    max-width: 100%; 
-  }
-}
-
-@media (max-width: 600px) {
-  .guide-header { 
-    padding: 16px 14px; 
-    gap: 12px; 
-  }
-  .guide-header .gh-logo img { 
-    height: 60px !important; 
-  }
-  .guide-header .gh-nav { 
-    display: grid !important; 
-    grid-template-columns: repeat(4, 1fr) !important; 
-    gap: 6px !important; 
-    width: 100% !important; 
-  }
-  .guide-header .gh-nav .nav-dropdown { 
-    width: 100% !important; 
-  }
-  .guide-header .gh-nav .mini-btn, 
-  .guide-header .gh-nav .nav-box { 
-    width: 100% !important; 
-    min-width: 0 !important; 
-    height: 38px !important; 
-    font-size: 11px !important; 
-    padding: 0 8px !important; 
-  }
-  .gh-search-box { 
-    height: 46px !important; 
-  }
-}
+    @media (max-width: 600px) {
+      .guide-header { padding: 16px 14px; gap: 12px; }
+      .guide-header .gh-logo img { height: 60px !important; }
+      .gh-search-box { height: 46px !important; }
+    }
 
     /* ══════════════════════════════ ARTICLE STYLES ══════════════════════════════ */
     .page { position: relative; z-index: 1; }
@@ -555,101 +344,23 @@
     .more-info h3 { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .more-info p { font-size: 11px; color: rgba(255,255,255,0.45); margin: 0; }
 
-    /* ══════════════════════════════ WIKI INLINE CARDS - FIXED ══════════════════════════════ */
-.wiki-section-inline { 
-  max-width: 1200px; /* Wider */
-  margin: 40px auto; 
-  background: rgba(255,255,255,0.04); 
-  border-radius: 20px; 
-  padding: 32px 28px; /* More padding */
-}
+    /* ══════════════════════════════ WIKI INLINE ══════════════════════════════ */
+    .wiki-section-inline { max-width: 1200px; margin: 40px auto; background: rgba(255,255,255,0.04); border-radius: 20px; padding: 32px 28px; }
+    .wiki-inline-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .wiki-inline-card { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 20px; transition: all 0.25s ease; border: 1px solid rgba(255,255,255,0.06); min-height: 180px; }
+    .wiki-inline-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(124,92,252,0.3); transform: translateY(-3px); }
+    .wiki-inline-card h3 { font-size: 14px; color: #fff; font-weight: 700; margin: 10px 0; line-height: 1.4; }
+    .wiki-inline-card p { font-size: 12px; color: rgba(255,255,255,0.5); margin: 0 0 12px; line-height: 1.5; }
+    .read-link { font-size: 12px; color: #00e676; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; transition: gap 0.2s; }
+    .wiki-inline-card:hover .read-link { gap: 8px; }
+    @media (max-width: 968px) { .wiki-inline-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+    @media (max-width: 640px) { .wiki-inline-grid { grid-template-columns: 1fr !important; gap: 12px !important; } .wiki-section-inline { padding: 24px 18px !important; } .wiki-inline-card { min-height: auto; } }
 
-.wiki-inline-grid { 
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
-  gap: 16px; 
-}
-
-.wiki-inline-card { 
-  background: rgba(255,255,255,0.06); 
-  border-radius: 14px; 
-  padding: 20px; 
-  transition: all 0.25s ease; 
-  border: 1px solid rgba(255,255,255,0.06);
-  min-height: 180px; /* Consistent height */
-}
-
-.wiki-inline-card:hover { 
-  background: rgba(255,255,255,0.1); 
-  border-color: rgba(124,92,252,0.3); 
-  transform: translateY(-3px); 
-}
-
-.wiki-inline-card h3 { 
-  font-size: 14px; 
-  color: #fff; 
-  font-weight: 700; 
-  margin: 10px 0; 
-  line-height: 1.4; 
-}
-
-.wiki-inline-card p { 
-  font-size: 12px; 
-  color: rgba(255,255,255,0.5); 
-  margin: 0 0 12px; 
-  line-height: 1.5; 
-}
-
-.read-link { 
-  font-size: 12px; 
-  color: #00e676; 
-  font-weight: 600; 
-  display: inline-flex; 
-  align-items: center; 
-  gap: 4px; 
-  transition: gap 0.2s; 
-}
-
-.wiki-inline-card:hover .read-link { 
-  gap: 8px; 
-}
-
-/* Comment Section - Fixed */
-section[style*="max-width:900px"] {
-  max-width: 900px !important;
-  margin: 40px auto !important;
-  padding: 32px 28px !important;
-}
-
-/* Mobile Responsive */
-@media (max-width: 968px) {
-  .wiki-inline-grid { 
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns on tablet */
-  }
-}
-
-@media (max-width: 640px) {
-  .wiki-inline-grid { 
-    grid-template-columns: 1fr !important; /* 1 column on mobile */
-    gap: 12px !important;
-  }
-  
-  .wiki-section-inline {
-    padding: 24px 18px !important;
-  }
-  
-  .wiki-inline-card {
-    min-height: auto; /* Remove min-height on mobile */
-  }
-}
-    /* Mobile Responsive */
     @media (max-width: 640px) {
       .more-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
       .more-card { padding: 12px 14px !important; }
       .more-card img { width: 48px !important; height: 48px !important; }
       .more-info h3 { font-size: 13px !important; }
-      .wiki-inline-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
-      .wiki-inline-card { padding: 12px !important; }
       .hero-card { padding: 36px 24px 32px; }
       .article-container { padding: 0 16px; }
       .quick-nav { padding: 22px 20px; }
@@ -658,62 +369,250 @@ section[style*="max-width:900px"] {
       .guide-section ul li, .guide-section ol li { padding: 10px 14px 10px 42px; font-size: 14.5px; }
     }
 
-    
-
     @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-    
+    /* ══════════════════════════════ FOOTER ══════════════════════════════ */
+    .site-footer { margin-top: 48px; padding: 40px 0 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; max-width: 1100px; margin: 0 auto; padding: 0 40px; align-items: start; }
+    .footer-left { display: flex; flex-direction: column; gap: 12px; }
+    .footer-logo { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700; color: #fff; }
+    .footer-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 260px; }
+    .footer-col { display: flex; flex-direction: column; gap: 8px; }
+    .footer-col h4 { font-size: 12px; font-weight: 800; color: rgba(255,255,255,0.9); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-col a { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; line-height: 1.5; }
+    .footer-col a:hover { color: #00e676; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 24px auto 0; padding: 16px 40px 0; border-top: 1px solid rgba(255,255,255,0.06); font-size: 11px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 8px; }
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; padding: 0 20px; } .footer-left { grid-column: 1 / -1; } .footer-desc { max-width: 100%; } }
+    @media (max-width: 768px) {
+      .site-footer { margin-top: 16px !important; padding: 16px 0 10px !important; }
+      .footer-inner { grid-template-columns: 1fr 1fr !important; gap: 20px !important; padding: 0 16px !important; width: 100% !important; box-sizing: border-box !important; }
+      .footer-left { grid-column: 1 / -1 !important; }
+      .footer-logo { font-size: 18px !important; }
+      .footer-desc { font-size: 11px !important; max-width: 100% !important; }
+      .footer-col h4 { font-size: 11px !important; }
+      .footer-col a { font-size: 11px !important; }
+      .footer-bottom { flex-direction: column !important; text-align: center !important; padding: 12px 16px 0 !important; margin: 16px auto 0 !important; font-size: 10px !important; gap: 4px !important; }
+    }
+
+    .site-footer {
+  margin-top: 48px;
+  padding: 40px 0 20px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  align-items: start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-logo {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  max-width: 260px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-col h4 {
+  font-size: 17px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-col a {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.5;
+}
+
+.footer-col a:hover {
+  color: #00e676;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 24px auto 0;
+  padding: 16px 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 0 20px;
+  }
+  .footer-left {
+    grid-column: 1 / -1;
+  }
+  .footer-desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .footer-left {
+    grid-column: 1 / -1 !important;
+  }
+  .footer-logo { font-size: 18px !important; }
+  .footer-desc { font-size: 11px !important; }
+  .footer-col h4 { font-size: 11px !important; }
+  .footer-col a { font-size: 11px !important; }
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 12px 16px 0 !important;
+    margin: 16px auto 0 !important;
+    font-size: 10px !important;
+    gap: 4px !important;
+  }
+}
+
+/* ── HAMBURGER BUTTON ── */
+.hamburger-btn {
+  display: none !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  z-index: 300 !important;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: 30px !important;
+    transform: none !important;
+    margin: 0 !important;
+    order: 999 !important;
+  }
+ 
+  .header-actions .nav-box,
+  .header-actions .nav-dropdown {
+    display: none !important;
+  }
+}
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <!-- HEADER -->
-<header class="guide-header">
-  <!-- Top Row: Logo at Navigation -->
-  <div class="header-top-row">
-    <a href="../" class="gh-logo">
-      <img src="../Images/FinalLogo.png" alt="BLOXBURST">
-    </a>
-    
-    <nav class="gh-nav">
-      <a href="../guides" class="nav-box nav-link">Guides</a>
-      
-      <div id="codesDropdown" class="nav-dropdown">
-        <button class="mini-btn" id="codesBtn">
-          Codes <span class="dropdown-arrow">▼</span>
+  <!-- ✅ HEADER — Standard Nav + Search Bar preserved (../ paths — nasa guides folder) -->
+  <header class="guide-header">
+    <div class="header-top-row">
+      <a href="../" class="gh-logo">
+        <img src="../Images/FinalLogo.png" alt="BLOXBURST">
+      </a>
+
+      <nav class="gh-nav">
+        <!-- Hamburger (mobile only) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
         </button>
-        <div class="nav-menu" id="codesMenu">
-          <a class="nav-item" href="../gamecode">Game Codes</a>
-          <a class="nav-item" href="../promo-latest-codes">Promo Codes</a>
+
+        <a href="../" class="nav-box nav-link">🏠 Home</a>
+        <a href="../updates" class="nav-box nav-link">🔔 Updates</a>
+
+        <div id="guidesDropdown" class="nav-dropdown">
+          <button class="mini-btn" id="guidesBtn">📖 Guides <span class="dropdown-arrow">▼</span></button>
+          <div class="nav-menu" id="guidesMenu">
+            <a class="nav-item" href="../guides">⚔️ Game Guides</a>
+            <a class="nav-item" href="../beginner-tips">💡 Beginner Tips</a>
+          </div>
         </div>
-      </div>
-      
-      <a href="../wiki" class="nav-box nav-link">Wiki</a>
-      
-      <div id="moreDropdown" class="nav-dropdown">
-        <button class="mini-btn" id="moreBtn">
-          More <span class="dropdown-arrow">▼</span>
-        </button>
-        <div class="nav-menu" id="moreMenu">
-          <a class="nav-item" href="../guides">Game Calculator</a>
-          <a class="nav-item" href="../wiki">Roblox Outfit</a>
+
+        <div id="codesDropdown" class="nav-dropdown">
+          <button class="mini-btn" id="codesBtn">🎁 Codes <span class="dropdown-arrow">▼</span></button>
+          <div class="nav-menu" id="codesMenu">
+            <a class="nav-item" href="../gamecode">🎮 Game Codes</a>
+            <a class="nav-item" href="../promo-latest-codes">🎟️ Promo Codes</a>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
-  
-  <!-- Bottom: Search Bar (Centered) -->
-  <div class="gh-search">
-    <div class="gh-search-box">
-      <span class="gh-search-icon">🔍</span>
-      <input id="guideSearchInput" type="text" class="gh-search-input" placeholder="Search Game Guides..." autocomplete="off">
-      <button class="gh-clear-btn" id="ghClearBtn" type="button">✕</button>
+
+        <div id="moreDropdown" class="nav-dropdown">
+          <button class="mini-btn" id="moreBtn">📂 More <span class="dropdown-arrow">▼</span></button>
+          <div class="nav-menu" id="moreMenu">
+            <a class="nav-item" href="../tier-list">🏆 Tier List</a>
+            <a class="nav-item" href="../game-tools">🛠️ Game Tools</a>
+          </div>
+        </div>
+      </nav>
     </div>
-    <div class="gh-suggestions" id="ghSuggestions"></div>
-  </div>
-</header>
+
+    <!-- ✅ SEARCH BAR — PRESERVED, hindi tinanggal -->
+    <div class="gh-search">
+      <div class="gh-search-box">
+        <span class="gh-search-icon">🔍</span>
+        <input id="guideSearchInput" type="text" class="gh-search-input" placeholder="Search Game Guides..." autocomplete="off">
+        <button class="gh-clear-btn" id="ghClearBtn" type="button">✕</button>
+      </div>
+      <div class="gh-suggestions" id="ghSuggestions"></div>
+    </div>
+  </header>
 
   <main class="page">
 
@@ -731,7 +630,7 @@ section[style*="max-width:900px"] {
       </div>
     </div>
 
-    <div class="game-banner"><img src="../Images/slime-rng.webp" alt="24 Hours Overnight Banner"></div>
+    <div class="game-banner"><img src="../Images/slime-rng.webp" alt="Slime RNG Banner"></div>
 
     <div class="game-quick-links">
       <a class="icon-link" href="https://discord.com/invite/aKUe7ngpjd" target="_blank" data-tooltip="Discord Server"><img src="../Images/Discord-Logo.png" alt="Discord"></a>
@@ -758,7 +657,7 @@ section[style*="max-width:900px"] {
         </ul>
       </div>
 
-      <!-- SECTIONS 1-6 + BONUS + FAQ (same as original) -->
+      <!-- SECTIONS -->
       <div class="guide-section" id="tip1"><div class="section-header"><div class="section-number">1</div><h2>Core Loop: Luck, Rolls & Collection</h2></div><p>At its heart, Slime RNG revolves around a satisfying cycle: roll dice to generate slimes with varying rarity odds, collect them to boost your Index progress, and reinvest earnings into upgrades that compound your luck multiplier. Unlike pure idle games, success here demands active decision-making about <span class="highlight">when to roll</span>, <span class="highlight">which upgrades to prioritize</span>, and <span class="highlight">how to manage limited resources</span> like Goop and special dice.</p><h3>Understanding the Luck Multiplier</h3><p>Your luck stat is the single most important number in Slime RNG. It directly influences the probability of rolling rare slimes — a 12 million luck multiplier doesn't just feel better than 6 million; it statistically <span class="highlight-orange">doubles your chances</span> of hitting high-tier rarities. Every system in the game ultimately feeds into boosting this number.</p><div class="tip-box"><div class="tip-icon">💡</div><p><strong>Pro Tip:</strong> Always check your total luck multiplier before using valuable dice. A small increase in luck can dramatically improve your odds on expensive rolls.</p></div><h3>The Roll Mechanic Explained</h3><p>Each roll consumes dice currency and generates a slime based on current odds. Faster roll speed doesn't improve rarity, but it <span class="highlight">accelerates currency generation</span> since you earn dice currency from rolling itself. This creates a positive feedback loop: faster rolls → more currency → more upgrades → better luck → rarer slimes.</p><img src="../Images/slime-rng-luck-ui.webp" alt="Slime RNG luck multiplier interface and roll screen" class="guide-img"><p class="guide-caption">Figure 1: Your luck multiplier (top) directly impacts slime rarity odds. Monitor it before using valuable dice.</p></div>
 
       <div class="guide-section" id="tip2"><div class="section-header"><div class="section-number">2</div><h2>Friendly Luck & Social Play Strategy</h2></div><p>One of the most overlooked yet impactful systems in Slime RNG is Friendly Luck — upgrades that grant multiplicative bonuses when playing with others. Ignoring this system means leaving massive luck gains on the table, often <span class="highlight">doubling your effective multiplier</span> with minimal effort.</p><h3>Why Friendly Luck Upgrades Come First</h3><p>Early-game Friendly Luck upgrades are significantly cheaper than standard luck upgrades, yet they provide compounding returns. Prioritize these before sinking coins into generic luck stats. The ROI difference is substantial: spending 1M coins on Friendly Luck might grant +500K effective luck with friends, while the same coins on base luck might only yield +100K.</p><h3>Building Your Lucky Squad</h3><p>You don't need a full server of friends to benefit. Even 2-3 active players in your VIP server can trigger meaningful bonuses. Join the official Slime RNG Discord or community hubs to find reliable farming partners. Pro players often maintain dedicated farming groups for consistent luck stacking.</p><h3>Server Selection Strategy</h3><p>When joining public servers, look for ones with active players already present. The Friendly Luck bonus applies retroactively once you're grouped, so hopping into a populated server can instantly boost your multiplier without coordination overhead.</p><div class="warn-box"><div class="tip-icon">⚠️</div><p><strong>Common Mistake:</strong> Players often postpone Friendly Luck upgrades thinking "I'll play with friends later." This delays your luck growth curve significantly. Upgrade them early, even if playing solo temporarily.</p></div><img src="../Images/slime-rng-friendly-upgrades.webp" alt="Friendly Luck upgrade interface in Slime RNG" class="guide-img"><p class="guide-caption">Figure 2: Friendly Luck upgrades provide multiplicative bonuses. Prioritize these early for exponential luck growth.</p></div>
@@ -775,12 +674,12 @@ section[style*="max-width:900px"] {
 
       <div class="guide-section" id="faq"><div class="section-header"><div class="section-number">?</div><h2>Frequently Asked Questions</h2></div><div class="faq-item"><div class="faq-q">How do I increase my luck in Slime RNG?</div><div class="faq-a">Prioritize Friendly Luck upgrades, play with friends for multiplicative bonuses, claim all Index rewards, rebirth strategically to accumulate luck multipliers, and save buff dice for high-luck milestones. Avoid spreading resources too thin early on.</div></div><div class="faq-item"><div class="faq-q">Should I use buff dice immediately in Slime RNG?</div><div class="faq-a">No — save special dice like Jackpot Spins, Golden Dice, and Void Dice for late game when your luck multiplier is significantly higher. Their effectiveness scales with your current luck, so patience yields exponentially better results.</div></div><div class="faq-item"><div class="faq-q">What is Goop and does it reset on rebirth?</div><div class="faq-a">Goop is a special currency used for high-tier upgrades. Unlike coins and zone progress, Goop does NOT reset when you rebirth. Accumulate Goop before resetting to minimize post-rebirth downtime and accelerate your next progression cycle.</div></div><div class="faq-item"><div class="faq-q">How important is the Index system?</div><div class="faq-a">Extremely important. Each completed Index slot grants permanent luck multipliers. Craftable slimes provide guaranteed progression paths. Completing all 8 craftable slimes alone can boost your total luck by ~25%, making Index completion one of the most reliable progression methods.</div></div></div>
 
-      <div class="article-footer-note"><span>Updated for May 2026</span> — Game mechanics, upgrade costs, features, and UI elements may change with major updates, patches, or balance adjustments. We do our best to keep this information accurate and up to date, but some details may shift over time. Be sure to bookmark BLOXBURST and check back regularly for the latest revisions, improvements, and newly added content. For the latest verified codes and updates, click here: <a href="../gamecode" target="_blank" style="color:#22c55e;">🔗 View Active Game Codes</a></div>
+      <div class="article-footer-note"><span>Updated for May 2026</span> — Game mechanics, upgrade costs, features, and UI elements may change with major updates. We do our best to keep this information accurate. For the latest verified codes, click here: <a href="../gamecode" target="_blank" style="color:#22c55e;">🔗 View Active Game Codes</a></div>
     </div>
 
   </main>
 
-  <!-- ══════════════════════════════ MORE GUIDES SECTION (EXISTING) ══════════════════════════════ -->
+  <!-- MORE GUIDES -->
   <section class="more-guides-section">
     <div class="more-guides-head">
       <div class="more-guides-divider"></div>
@@ -790,7 +689,7 @@ section[style*="max-width:900px"] {
     <div class="more-guides-grid" id="moreGuidesGrid"></div>
   </section>
 
-  <!-- ══════════════════════════════ MORE GAMES SECTION (NEW) ══════════════════════════════ -->
+  <!-- MORE GAMES -->
   <section class="more-section" id="moreSection">
     <div class="more-section-head">
       <div class="more-divider-line"></div>
@@ -800,7 +699,7 @@ section[style*="max-width:900px"] {
     <div class="more-grid" id="moreGrid"></div>
   </section>
 
-  <!-- ══════════════════════════════ LATEST UPDATE WIKI (NEW) ══════════════════════════════ -->
+  <!-- WIKI INLINE -->
   <section class="wiki-section-inline" style="max-width:900px; margin:20px auto; background:rgba(255,255,255,0.04); border-radius:16px; padding:20px 14px;">
     <h2 style="font-family:'Fredoka',sans-serif; font-size:18px; color:#fff; margin-bottom:4px;">Latest Update Wiki</h2>
     <p style="font-size:12px; color:rgba(255,255,255,0.45); margin-bottom:14px;">Fresh guides + updates from BLOXBURST Wiki</p>
@@ -812,7 +711,7 @@ section[style*="max-width:900px"] {
     <div style="text-align:center; margin-top:16px;"><a href="../wiki" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); color:#fff; text-decoration:none; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:600;">📚 Open Wiki</a></div>
   </section>
 
-  <!-- ══════════════════════════════ COMMENT FORM (NEW) ══════════════════════════════ -->
+  <!-- COMMENT FORM -->
   <section style="max-width:900px; margin:20px auto 0; background:rgba(255,255,255,0.04); border-radius:16px; padding:20px 14px;">
     <h2 style="font-family:'Fredoka',sans-serif; font-size:18px; color:#fff; margin-bottom:4px;">💬 Leave a Comment</h2>
     <p style="font-size:12px; color:rgba(255,255,255,0.45); margin-bottom:14px;">Have a question or feedback about Slime RNG? Send it to us!</p>
@@ -825,15 +724,44 @@ section[style*="max-width:900px"] {
     <div id="successMsg" style="display:none; margin-top:14px; background:rgba(0,230,118,0.1); border:1px solid rgba(0,230,136,0.3); border-radius:10px; padding:12px; text-align:center; color:#00e676; font-size:13px; font-weight:600;">✅ Comment sent! Thank you for your feedback!</div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER — subpage paths (../) -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-left"><div class="footer-logo">BLOXBURST🔥</div><p class="footer-desc">Bloxburst is a Roblox fan site with game codes, promo codes, wiki guides, and tips for popular Roblox games.</p></div>
-      <div class="footer-col"><h4>Navigation</h4><a href="../guides">Guides</a><a href="../gamecode">Game Codes</a><a href="../promo-latest-codes">Promo Codes</a><a href="../wiki">Wiki</a></div>
-      <div class="footer-col"><h4>More</h4><a href="../Terms-and-Condition/about">About Us</a><a href="../Terms-and-Condition/faq">FAQ</a><a href="../Terms-and-Condition/contactus">Contact Us</a></div>
-      <div class="footer-col"><h4>Policies</h4><a href="../Terms-and-Condition/terms">Terms of Use</a><a href="../Terms-and-Condition/privacy">Privacy Policy</a></div>
+      <div class="footer-left">
+        <div class="footer-logo">BLOXBURST🔥</div>
+        <p class="footer-desc">Bloxburst is a Roblox fan site featuring game codes, promo codes, wiki guides, tier lists, and tips for popular Roblox games. Find working codes, learn how to redeem them, and get help whenever something isn't working.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="../updates">Updates</a>
+        <a href="../guides">Game Guides</a>
+        <a href="../beginner-tips">Beginner Tips</a>
+        <a href="../tier-list">Tier List</a>
+        <a href="../game-tools">Game Tools</a>
+      </div>
+      <div class="footer-col">
+        <h4>Codes</h4>
+        <a href="../gamecode">Game Codes</a>
+        <a href="../promo-latest-codes">Promo Codes</a>
+        <a href="../promo-how-to-redeem">How to Redeem</a>
+        <a href="../promo-troubleshoot">Troubleshooting</a>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="../Terms-and-Condition/about">About Us</a>
+        <a href="../Terms-and-Condition/faq">FAQ</a>
+        <a href="../Terms-and-Condition/contactus">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Policies</h4>
+        <a href="../Terms-and-Condition/terms">Terms of Use</a>
+        <a href="../Terms-and-Condition/privacy">Privacy Policy</a>
+      </div>
     </div>
-    <div class="footer-bottom"><div class="footer-meta">v1.0.0 • Powered by Zenken</div><div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div></div>
+    <div class="footer-bottom">
+      <div class="footer-meta">v2.0.0 • Powered by Zenken</div>
+      <div class="footer-copy">© 2026 BLOXBURST – All Rights Reserved</div>
+    </div>
   </footer>
 
   <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
@@ -858,19 +786,48 @@ section[style*="max-width:900px"] {
     });
 
     /* ── Nav Dropdowns ── */
-    function setupDropdown(btnId, dropdownId) {
-      const btn = document.getElementById(btnId), dd = document.getElementById(dropdownId);
-      if (!btn || !dd) return;
-      btn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); document.querySelectorAll('.nav-dropdown').forEach(d => { if (d !== dd) d.classList.remove('active'); }); dd.classList.toggle('active'); });
-    }
-    setupDropdown('codesBtn', 'codesDropdown'); setupDropdown('moreBtn', 'moreDropdown');
-    document.addEventListener('click', (e) => { if (!e.target.closest('.nav-dropdown')) document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active')); });
+    window.addEventListener('load', function() {
+      const dropdowns = [
+        { dropId: 'guidesDropdown', btnId: 'guidesBtn' },
+        { dropId: 'codesDropdown',  btnId: 'codesBtn'  },
+        { dropId: 'moreDropdown',   btnId: 'moreBtn'   },
+      ];
+      function closeAllDropdowns() { dropdowns.forEach(({ dropId }) => { document.getElementById(dropId)?.classList.remove('active'); document.getElementById(dropId)?.classList.remove('open'); }); }
+      dropdowns.forEach(({ dropId, btnId }) => {
+        const btn  = document.getElementById(btnId);
+        const drop = document.getElementById(dropId);
+        if (!btn || !drop) return;
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        newBtn.addEventListener('click', function(e) {
+          e.preventDefault(); e.stopPropagation();
+          const isActive = drop.classList.contains('active') || drop.classList.contains('open');
+          closeAllDropdowns();
+          if (!isActive) { drop.classList.add('active'); drop.classList.add('open'); }
+        });
+      });
 
-    /* ── Guide Search ── */
+      const hamburgerBtn  = document.getElementById('hamburgerBtn');
+      const mobilePanel   = document.getElementById('mobilePanel');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const mobileClose   = document.getElementById('mobileClose');
+      function openMobileMenu() { mobilePanel?.classList.add('open'); mobileOverlay?.classList.add('open'); hamburgerBtn?.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeMobileMenu() { mobilePanel?.classList.remove('open'); mobileOverlay?.classList.remove('open'); hamburgerBtn?.classList.remove('open'); document.body.style.overflow = ''; }
+      if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
+      if (mobileClose)  mobileClose.addEventListener('click', closeMobileMenu);
+      if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+      document.addEventListener('click', function(e) {
+        const insidePanel = mobilePanel?.contains(e.target);
+        const insideHamburger = hamburgerBtn?.contains(e.target);
+        if (!insidePanel && !insideHamburger) { closeAllDropdowns(); closeMobileMenu(); }
+      });
+    });
+
+    /* ── Guide Search (PRESERVED) ── */
     (async () => {
       const input = document.getElementById('guideSearchInput'), clearBtn = document.getElementById('ghClearBtn'), box = document.getElementById('ghSuggestions'), base = '../';
       let guides = [];
-      try { const res = await fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }); const raw = await res.json(); const seen = new Set(); guides = raw.filter(g => { if (seen.has(g.id)) return false; seen.add(g.id); return true; }); } catch (e) { console.warn('Could not load Game-Guides.Json:', e); }
+      try { const res = await fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }); const raw = await res.json(); const seen = new Set(); guides = raw.filter(g => { if (seen.has(g.id)) return false; seen.add(g.id); return true; }); } catch (e) { console.warn('Could not load game-guides.json:', e); }
       function search(q) { q = q.toLowerCase().trim(); if (!q) return []; return guides.filter(g => g.title.toLowerCase().includes(q) || (g.description && g.description.toLowerCase().includes(q)) || (g.tags && g.tags.some(t => t.toLowerCase().includes(q)))); }
       function render(results) { box.innerHTML = ''; if (!results.length) { box.innerHTML = `<div class="gh-no-result">No guides found.</div>`; } else { results.slice(0, 6).forEach(g => { const el = document.createElement('div'); el.className = 'gh-suggest-item'; el.innerHTML = `<img src="${base}${g.thumbnail}" alt="${g.title}" loading="lazy" onerror="this.style.display='none'"><div class="gh-suggest-info"><div class="gh-suggest-title">${g.title}</div><div class="gh-suggest-meta">${g.category} · ${g.readTime} read · ${g.releaseDate}</div></div><span class="gh-suggest-pill">Open</span>`; el.addEventListener('click', () => window.location.href = base + g.link); box.appendChild(el); }); } box.classList.add('open'); }
       function hide() { box.classList.remove('open'); box.innerHTML = ''; }
@@ -880,7 +837,7 @@ section[style*="max-width:900px"] {
       document.addEventListener('click', (e) => { if (!e.target.closest('.gh-search')) hide(); });
     })();
 
-    /* ── More Guides Section (EXISTING) ── */
+    /* ── More Guides Section ── */
     (function () {
       var grid = document.getElementById('moreGuidesGrid'); if (!grid) return; var base = '../'; var currentId = 'slime-rng';
       fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
@@ -893,10 +850,10 @@ section[style*="max-width:900px"] {
           if (g.featured === true) { html += '<span class="editor-badge">⭐ Editor\'s Pick</span>'; }
           a.innerHTML = html; grid.appendChild(a);
         });
-      }).catch(function (e) { console.warn('Could not load Game-Guides.Json for More Guides:', e); });
+      }).catch(function (e) { console.warn('Could not load game-guides.json for More Guides:', e); });
     })();
 
-    /* ── More Games Section (NEW) ── */
+    /* ── More Games Section ── */
     (function () {
       var grid = document.getElementById('moreGrid'); if (!grid) return; var base = '../'; var currentPath = window.location.pathname;
       fetch(base + 'game-guides.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
@@ -911,7 +868,7 @@ section[style*="max-width:900px"] {
       }).catch(function (e) { console.warn('Could not load game-guides.json for More Games:', e); });
     })();
 
-    /* ── Comment Form Handler ── */
+    /* ── Comment Form ── */
     (function() {
       var form = document.getElementById('commentForm'), successMsg = document.getElementById('successMsg');
       if (!form || !successMsg) return;
@@ -930,5 +887,32 @@ section[style*="max-width:900px"] {
       card.addEventListener('mouseleave', function() { this.style.background = 'rgba(255,255,255,0.06)'; this.style.borderColor = 'rgba(255,255,255,0.06)'; this.style.transform = 'translateY(0)'; });
     });
   </script>
+
+  <!-- MOBILE MENU — subpage paths (../) -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu-panel" id="mobilePanel">
+    <div class="mobile-menu-header">
+      <span>BLOXBURST 🔥</span>
+      <button class="mobile-menu-close" id="mobileClose">✕</button>
+    </div>
+    <div class="mobile-menu-body">
+      <a href="../" class="mobile-nav-item">🏠 Home</a>
+      <a href="../updates" class="mobile-nav-item">🔔 Updates</a>
+      <div class="mobile-nav-label">GUIDES</div>
+      <a href="../guides" class="mobile-nav-item purple">⚔️ Game Guides</a>
+      <a href="../beginner-tips" class="mobile-nav-item purple">💡 Beginner Tips</a>
+      <div class="mobile-nav-label">CODES</div>
+      <a href="../gamecode" class="mobile-nav-item green">🎮 Game Codes</a>
+      <a href="../promo-latest-codes" class="mobile-nav-item green">🎟️ Promo Codes</a>
+      <div class="mobile-nav-label">MORE</div>
+      <a href="../tier-list" class="mobile-nav-item">🏆 Tier List</a>
+      <a href="../game-tools" class="mobile-nav-item">🛠️ Game Tools</a>
+      <div class="mobile-nav-label">HELP</div>
+      <a href="../promo-how-to-redeem" class="mobile-nav-item">📋 How to Redeem</a>
+      <a href="../promo-troubleshoot" class="mobile-nav-item">🔧 Troubleshoot</a>
+      <a href="../Terms-and-Condition/faq" class="mobile-nav-item">❓ FAQ</a>
+    </div>
+  </div>
+
 </body>
 </html>
